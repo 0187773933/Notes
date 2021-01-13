@@ -2,7 +2,6 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
 	<title>Current</title>
 	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" />
@@ -85,11 +84,11 @@
 			<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (\Omega)}$$</p>
 			<span>Voltage = </span>
 			<input onchange="render_equation_current_from_voltage_and_resistance()" style="width: 40px;" id="eq-cfvr-voltage" type="text" placeholder="0.6"></input>
-			<span style="padding-left: 10px;">millivolts</span>
+			<span style="padding-left: 10px;"><span id="eq-cfvr-voltage-units"></span> volts</span>
 			<br/>
 			<span>Resistance = </span>
 			<input onchange="render_equation_current_from_voltage_and_resistance()" style="width: 40px;" id="eq-cfvr-resistance" type="text" placeholder="0.1"></input>
-			<span style="padding-left: 10px;">Ω</span>
+			<span style="padding-left: 10px;"><span id="eq-cfvr-resistance-units"></span> Ohms (Ω)</span>
 			<p id="equation-cfvr-katex"></p>
 		</div>
 
@@ -123,11 +122,21 @@
 	<script>
 		function render_equation_current_from_voltage_and_resistance() {
 			console.log("render_equation_current_from_voltage_and_resistance()");
-			let voltage = parseFloat( document.getElementById( "eq-cfvr-voltage" ).value ) || 0.1;
-			let resistance = parseFloat( document.getElementById( "eq-cfvr-resistance" ).value ) || 0.6;
+			let voltage_input = parseFloat( document.getElementById( "eq-cfvr-voltage" ).value ) || 0.6;
+			let voltage_units_base_10 = MetricUnits[ document.getElementById( "eq-cfvr-voltage-units-metric-selector" ).selectedIndex ]["base_10"];
+			let voltage_units_label = MetricUnits[ document.getElementById( "eq-cfvr-voltage-units-metric-selector" ).selectedIndex ]["label"];
+			let resistance_input = parseFloat( document.getElementById( "eq-cfvr-resistance" ).value ) || 0.1;
+			let resistance_units_base_10 = MetricUnits[ document.getElementById( "eq-cfvr-resistance-units-metric-selector" ).selectedIndex ]["base_10"];
+			let resistance_units_label = MetricUnits[ document.getElementById( "eq-cfvr-resistance-units-metric-selector" ).selectedIndex ]["label"];
 			let element = document.getElementById( "equation-cfvr-katex" );
+			let voltage = ( voltage_input * ( 1 * 10**voltage_units_base_10 ) );
+			let resistance = ( resistance_input * ( 1 * 10**resistance_units_base_10 ) );
 			let result = ( voltage / resistance );
-			element.innerText = `$$Current\\ (I) = \\frac{${voltage}\\ mV}{${resistance}\\ \\Omega} = ${result.toFixed(9)} ?units?$$`;
+			let start = `$$Current\\ (I) = `;
+			let part_one = `\\frac{${voltage_input}\\ ${voltage_units_label}\\ volts}{${resistance_input}\\ ${resistance_units_label}\\ Ohms\\ (\\Omega)} = `;
+			let part_two = `\\frac{${voltage_input}\\ ${voltage_units_label}\\ volts * \\left(1 * 10^{${voltage_units_base_10}}\\right)}{${resistance_input}\\ ${resistance_units_label}\\ Ohms\\ (\\Omega) * \\left(1 * 10^{${resistance_units_base_10}}\\right)} = `;
+			let end = `\\frac{${result.toFixed(15)}\\ Volts}{1\\ Ohm\\ (\\Omega)}$$`;
+			element.innerText = start + part_one + part_two + end;
 			renderMathInElement( element , { strict: "ignore" } );
 		}
 		function render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential() {
@@ -144,6 +153,8 @@
 		// #eq-cfmpicip-equalirium-potential-units
 		// #eq-cfmpicip-equalirium-potential-units-metric-selector
 		const metric_unit_ids = [
+			[ "eq-cfvr-voltage-units" , "milli" , render_equation_current_from_voltage_and_resistance ] ,
+			[ "eq-cfvr-resistance-units" , "one" , render_equation_current_from_voltage_and_resistance ] ,
 			[ "eq-cfmpicip-membrane-potential-units" , "milli" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
 			[ "eq-cfmpicip-conductance-units" , "micro" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
 			[ "eq-cfmpicip-equalibrium-potential-units" , "milli" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
