@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Charging The Membrane</title>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" />
+
+	<!-- https://www.jsdelivr.com/package/npm/katex -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mhchem.min.js" integrity="sha384-5gCAXJ0ZgozlShOzzT0OWArn7yCPGWVIvgo+BAd8NUKbCmulrJiQuCVR9cHlPHeG" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+	onload="renderMathInElement(document.body , { strict: 'ignore' });"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+<body onload="pre_render()">
+	<!-- view-source:https://sindresorhus.com/github-markdown-css/ -->
+	<!-- https://katex.org/docs/supported.html -->
+	<!-- https://mhchem.github.io/MathJax-mhchem/ -->
+	<!-- https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex -->
+	<article class="markdown-body">
+		<center>
+			<h1>Charging the Membrane</h1>
+			<blockquote>
+				when time is equal to the time constant, we get the definition for charging the membrane
+			</blockquote>
+		</center>
+		<br />
+		<div class="flex-container">
+			<center>
+				<span>\(V_{\infty}\) = </span>
+				<input onchange="render_equation_charging_membrane()" style="width: 40px;" id="eq-charging-membrane-vi" type="text"
+				placeholder="7.0"></input>
+				<span style="padding-left: 10px;">mV</span>
+			</center>
+			<br>
+			<h3>Charging the Membrane</h3>
+			<br>
+			<p>$$ V_m\left(t=\tau \right) = V_{\infty} * \left(1 - e^{-1}\right) $$</p>
+			<p id="charging-katex"></p>
+
+			<br>
+			<h3>Discharging the Membrane</h3>
+			<p>$$ V_m\left(t=\tau \right) = V_{\infty} * e^{-1} $$</p>
+			<br>
+			<p id="discharging-katex"></p>
+		</div>
+	</article>
+
+	<script>
+
+		function render_equation_charging_membrane() {
+			console.log("render_equation_charging_membrane()");
+			let vi = parseFloat( document.getElementById( "eq-charging-membrane-vi" ).value );
+			let charging_katex = document.getElementById( "charging-katex" );
+			let discharging_katex = document.getElementById( "discharging-katex" );
+			let charging_result = (  vi * ( 1 - ( Math.E**-1 ) ) );
+			let discharging_result = (  vi * ( Math.E**-1 ) );
+			charging_katex.innerText = `$$ V_m \\left( t = \\tau \\right) = ${vi}\\ mV * \\left( 1 - e^{-1} \\right) = ${ charging_result.toFixed(9) }\\ mV$$`;
+			renderMathInElement( charging_katex , { strict: "ignore" } );
+			discharging_katex.innerText = `$$ V_m \\left( t = \\tau \\right) = ${vi}\\ mV * e^{-1} = ${ discharging_result.toFixed(9) } \\ mV$$`;
+			renderMathInElement( discharging_katex , { strict: "ignore" } );
+		}
+		function pre_render() {
+			render_equation_charging_membrane();
+		}
+	</script>
+</body>
+</html>
+
+
+
