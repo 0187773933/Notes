@@ -82,13 +82,32 @@
 			<h3>Calculate Current from Voltage and Resistance</h3>
 			<hr style="background-color: black;"></hr>
 			<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (\Omega)}$$</p>
-			<span>Voltage = </span>
-			<input onchange="render_equation_current_from_voltage_and_resistance()" style="width: 40px;" id="eq-cfvr-voltage" type="text" placeholder="0.6"></input>
-			<span style="padding-left: 10px;"><span id="eq-cfvr-voltage-units"></span> volts</span>
-			<br/>
-			<span>Resistance = </span>
-			<input onchange="render_equation_current_from_voltage_and_resistance()" style="width: 40px;" id="eq-cfvr-resistance" type="text" placeholder="0.1"></input>
-			<span style="padding-left: 10px;"><span id="eq-cfvr-resistance-units"></span> Ohms (Ω)</span>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Input Value</th>
+					<th>Metric Prefix</th>
+					<th>Unit Name</th>
+					<th>Desired Metric Prefix</th>
+					<th>Adjusted Value</th>
+				</tr>
+				<tr>
+					<td>Voltage</td>
+					<td><input onchange="equations['cfvr'].render()" style="width: 70px;" id="eq-cfvr-voltage-input" type="text" placeholder="30"></input></td>
+					<td id="eq-cfvr-voltage-units"></td>
+					<td>volts</td>
+					<td id="eq-cfvr-voltage-desired-units"></td>
+					<td id="eq-cfvr-voltage-adjusted-value"></td>
+				</tr>
+				<tr>
+					<td>Resistance</td>
+					<td><input onchange="equations['cfvr'].render()" style="width: 70px;" id="eq-cfvr-resistance-input" type="text" placeholder="0.2"></input></td>
+					<td id="eq-cfvr-resistance-units"></td>
+					<td>Ohms (Ω)</td>
+					<td id="eq-cfvr-resistance-desired-units"></td>
+					<td id="eq-cfvr-resistance-adjusted-value"></td>
+				</tr>
+			</table>
 			<p id="equation-cfvr-katex"></p>
 		</div>
 
@@ -101,17 +120,41 @@
 			<p>$$Current\ of\ Ion \ (I) = \text{Ion's}\ Conductance\ (G) * \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E)\ \right)$$</p>
 			<p>$$Current\ of\ Ion\ (I) = \text{Ion's}\ Conductance\ (G) * \left(\ \text{Ion's}\ Driving\ Force\ \right)$$</p>
 			<br/>
-			<span>\(Membrane\ Potential\ (V_m) = \)</span>
-			<input onchange="render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential()" style="width: 40px;" id="eq-cfmpicip-membrane-potential" type="text" placeholder="30"></input>
-			<span style="padding-left: 10px;"><span id="eq-cfmpicip-membrane-potential-units"></span> volts</span>
-			<br/>
-			<span>\(\text{Ion's}\ Conductance\ (G) = \)</span>
-			<input onchange="render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential()" style="width: 40px;" id="eq-cfmpicip-conductance" type="text" placeholder="30"></input>
-			<span style="padding-left: 10px;"><span id="eq-cfmpicip-conductance-units"></span> Siemens</span>
-			<br/>
-			<span>\(\text{Ion's}\ Equalibrium\ Potential\ (E) = \)</span>
-			<input onchange="render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential()" style="width: 40px;" id="eq-cfmpicip-equalibrium-potential" type="text" placeholder="1.0"></input>
-			<span style="padding-left: 10px;"><span id="eq-cfmpicip-equalibrium-potential-units"></span> volts</span>
+
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Input Value</th>
+					<th>Metric Prefix</th>
+					<th>Unit Name</th>
+					<th>Desired Metric Prefix</th>
+					<th>Adjusted Value</th>
+				</tr>
+				<tr>
+					<td>\(Membrane\ Potential\ (V_m)\)</td>
+					<td><input onchange="equations['cfmpicip'].render()" style="width: 70px;" id="eq-cfmpicip-membrane-potential-input" type="text" placeholder="30"></input></td>
+					<td id="eq-cfmpicip-membrane-potential-units"></td>
+					<td>volts</td>
+					<td id="eq-cfmpicip-membrane-potential-desired-units"></td>
+					<td id="eq-cfmpicip-membrane-potential-adjusted-value"></td>
+				</tr>
+				<tr>
+					<td>\(\text{Ion's}\ Conductance\ (G)\)</td>
+					<td><input onchange="equations['cfmpicip'].render()" style="width: 70px;" id="eq-cfmpicip-conductance-input" type="text" placeholder="30"></input></td>
+					<td id="eq-cfmpicip-conductance-units"></td>
+					<td>Siemens</td>
+					<td id="eq-cfmpicip-conductance-desired-units"></td>
+					<td id="eq-cfmpicip-conductance-adjusted-value"></td>
+				</tr>
+				<tr>
+					<td>\(\text{Ion's}\ Equalibrium\ Potential\ (E)\)</td>
+					<td><input onchange="equations['cfmpicip'].render()" style="width: 70px;" id="eq-cfmpicip-equalibrium-potential-input" type="text" placeholder="30"></input></td>
+					<td id="eq-cfmpicip-equalibrium-potential-units"></td>
+					<td>volts</td>
+					<td id="eq-cfmpicip-equalibrium-potential-desired-units"></td>
+					<td id="eq-cfmpicip-equalibrium-potential-adjusted-value"></td>
+				</tr>
+			</table>
 			<p id="equation-cfmpicip-katex"></p>
 		</div>
 
@@ -120,49 +163,265 @@
 	</article>
 
 	<script>
-		function render_equation_current_from_voltage_and_resistance() {
-			console.log("render_equation_current_from_voltage_and_resistance()");
-			let voltage_input = parseFloat( document.getElementById( "eq-cfvr-voltage" ).value ) || 0.6;
-			let voltage_units_base_10 = MetricUnits[ document.getElementById( "eq-cfvr-voltage-units-metric-selector" ).selectedIndex ]["base_10"];
-			let voltage_units_label = MetricUnits[ document.getElementById( "eq-cfvr-voltage-units-metric-selector" ).selectedIndex ]["label"];
-			let resistance_input = parseFloat( document.getElementById( "eq-cfvr-resistance" ).value ) || 0.1;
-			let resistance_units_base_10 = MetricUnits[ document.getElementById( "eq-cfvr-resistance-units-metric-selector" ).selectedIndex ]["base_10"];
-			let resistance_units_label = MetricUnits[ document.getElementById( "eq-cfvr-resistance-units-metric-selector" ).selectedIndex ]["label"];
-			let element = document.getElementById( "equation-cfvr-katex" );
-			let voltage = ( voltage_input * ( 1 * 10**voltage_units_base_10 ) );
-			let resistance = ( resistance_input * ( 1 * 10**resistance_units_base_10 ) );
-			let result = ( voltage / resistance );
-			let start = `$$Current\\ (I) = `;
-			let part_one = `\\frac{${voltage_input}\\ ${voltage_units_label}\\ volts}{${resistance_input}\\ ${resistance_units_label}\\ Ohms\\ (\\Omega)} = `;
-			let part_two = `\\frac{${voltage_input}\\ ${voltage_units_label}\\ volts * \\left(1 * 10^{${voltage_units_base_10}}\\right)}{${resistance_input}\\ ${resistance_units_label}\\ Ohms\\ (\\Omega) * \\left(1 * 10^{${resistance_units_base_10}}\\right)} = `;
-			let end = `\\frac{${result.toFixed(15)}\\ Volts}{1\\ Ohm\\ (\\Omega)}$$`;
-			element.innerText = start + part_one + part_two + end;
-			renderMathInElement( element , { strict: "ignore" } );
+		let equations = {
+			cfvr: {
+				operators: {
+					voltage: {
+						input: {
+							element_id: "eq-cfvr-voltage-input" ,
+							default_value: 0.0 ,
+							current_value: 0.0 ,
+							units: {
+								element_id: "eq-cfvr-voltage-units" ,
+								metric_selector_element_id: "eq-cfvr-voltage-units-metric-selector" ,
+								default_base10: -3 ,
+								current_base10: 0 ,
+								current_label: "" ,
+							} ,
+						} ,
+						output: {
+							units: {
+								element_id: "eq-cfvr-voltage-desired-units" ,
+								metric_selector_element_id: "eq-cfvr-voltage-desired-units-metric-selector" ,
+								default_base10: 0 ,
+								current_base10: 0 ,
+								current_label: "" ,
+								conversion_latex_string: "" ,
+							} ,
+							adjusted_value: 0.0 ,
+						}
+					} ,
+					resistance: {
+						input: {
+							element_id: "eq-cfvr-resistance-input" ,
+							default_value: 0.0 ,
+							current_value: 0.0 ,
+							units: {
+								element_id: "eq-cfvr-resistance-units" ,
+								metric_selector_element_id: "eq-cfvr-resistance-units-metric-selector" ,
+								default_base10: 0 ,
+								current_base10: 0 ,
+								current_label: "" ,
+							} ,
+						} ,
+						output: {
+							units: {
+								element_id: "eq-cfvr-resistance-desired-units" ,
+								metric_selector_element_id: "eq-cfvr-resistance-desired-units-metric-selector" ,
+								default_base10: 0 ,
+								current_base10: 0 ,
+								current_label: "" ,
+								conversion_latex_string: "" ,
+							} ,
+							adjusted_value: 0.0 ,
+						}
+					}
+				} ,
+				output_katex_element_id: "equation-cfvr-katex" ,
+				result: 0.0 ,
+				render: ( event ) => {
+					console.log("render_equation_current_from_voltage_and_resistance()");
+
+					// Step-1.) Grab Current State Slice and Adjust Units To Desired Output Scale
+					for ( const operator in equations["cfvr"].operators ) {
+
+						// a.) Cache "Pointer?" to the Metric Units Selector Element
+						let input_meteric_units_selector_element = document.getElementById( equations["cfvr"].operators[operator].input.units.metric_selector_element_id );
+						let output_meteric_units_selector_element = document.getElementById( equations["cfvr"].operators[operator].output.units.metric_selector_element_id );
+
+						// b.) Take 'Slice' of Current State
+						let input_state = parseFloat( document.getElementById( equations["cfvr"].operators[operator].input.element_id ).value ) || equations["cfvr"].operators[operator].input.default_value;
+						equations["cfvr"].operators[operator].input.current_value = input_state;
+						equations["cfvr"].operators[operator].output.adjusted_value = input_state;
+
+						// c.) If Desired Output Scale != Input Scale , Calculate Metric Unit Conversion
+						let input_units_base_10 = MetricUnits[ input_meteric_units_selector_element.selectedIndex ]["base_10"];
+						let input_units_label = MetricUnits[ input_meteric_units_selector_element.selectedIndex ]["label"];
+						equations["cfvr"].operators[operator].input.units.current_base10 = input_units_base_10;
+						equations["cfvr"].operators[operator].input.units.current_label = input_units_label;
+
+						let output_units_base_10 = MetricUnits[ output_meteric_units_selector_element.selectedIndex ]["base_10"];
+						let output_units_label = MetricUnits[ output_meteric_units_selector_element.selectedIndex ]["label"];
+						equations["cfvr"].operators[operator].output.units.current_base10 = output_units_base_10;
+						equations["cfvr"].operators[operator].output.units.current_label = output_units_label;
+
+						if ( input_units_base_10 !== output_units_base_10 ) {
+							equations["cfvr"].operators[operator].output.units.conversion_latex_string = ` * \\left(1 * 10^{${input_units_base_10}}\\right) * \\left(1 * 10^{${output_units_base_10}}\\right)`;
+							equations["cfvr"].operators[operator].output.adjusted_value = ( ( input_state * ( 1 * 10**input_units_base_10 ) ) * ( 1 * 10**output_units_base_10 ) );
+						} else { equations["cfvr"].operators[operator].output.units.conversion_latex_string = ""; }
+
+					}
+
+					// Step-2.) Create Variable Name Pointers
+					let voltage_input = equations["cfvr"].operators["voltage"].input.current_value;
+					let voltage_input_unit_label = equations["cfvr"].operators["voltage"].input.units.current_label;
+					let voltage_unit_conversion_string = equations["cfvr"].operators["voltage"].output.units.conversion_latex_string;
+					let voltage_ouput = equations["cfvr"].operators["voltage"].output.adjusted_value;
+					let voltage_output_unit_label = equations["cfvr"].operators["voltage"].output.units.current_label;
+					let resistance_input = equations["cfvr"].operators["resistance"].input.current_value;
+					let resistance_input_unit_label = equations["cfvr"].operators["resistance"].input.units.current_label;
+					let resistance_unit_conversion_string = equations["cfvr"].operators["resistance"].output.units.conversion_latex_string;
+					let resistance_output = equations["cfvr"].operators["resistance"].output.adjusted_value;
+					let resistance_output_unit_label = equations["cfvr"].operators["resistance"].output.units.current_label;
+
+					// Step-3.) Perform Calculation
+					let result = ( voltage_ouput / resistance_output );
+
+					// Step-4.) Render Equation
+					let output_element = document.getElementById( equations["cfvr"].output_katex_element_id );
+					let render_string = `$$Current\\ (I) = \\frac{${voltage_input}\\ ${voltage_input_unit_label}\\ volts}{${resistance_input}\\ ${resistance_input_unit_label}\\ Ohms\\ (\\Omega)} = `;
+					if ( voltage_unit_conversion_string !== "" || resistance_unit_conversion_string !== "" ) {
+						render_string += `\\frac{${voltage_input}\\ ${voltage_input_unit_label}\\ volts ${voltage_unit_conversion_string}}{${resistance_input}\\ ${resistance_input_unit_label}\\ Ohms\\ (\\Omega) ${resistance_unit_conversion_string}} = `;
+					}
+					render_string += `\\frac{${result.toFixed(15)}\\ ${voltage_output_unit_label}\\ Volts}{1\\ ${resistance_output_unit_label}\\ Ohm\\ (\\Omega)}$$`;
+					output_element.innerText = render_string
+					renderMathInElement( output_element , { strict: "ignore" } );
+				}
+			} ,
+			cfmpicip: {
+				operators: {
+					membrane_potential: {
+						input: {
+							element_id: "eq-cfmpicip-membrane-potential-input" ,
+							default_value: 0.0 ,
+							current_value: 0.0 ,
+							units: {
+								element_id: "eq-cfmpicip-membrane-potential-units" ,
+								metric_selector_element_id: "eq-cfmpicip-membrane-potential-units-metric-selector" ,
+								default_base10: -3 ,
+								current_base10: 0 ,
+								current_label: "" ,
+							} ,
+						} ,
+						output: {
+							units: {
+								element_id: "eq-cfmpicip-membrane-potential-desired-units" ,
+								metric_selector_element_id: "eq-cfmpicip-membrane-potential-desired-units-metric-selector" ,
+								default_base10: -3 ,
+								current_base10: 0 ,
+								current_label: "" ,
+								conversion_latex_string: "" ,
+							} ,
+							adjusted_value: 0.0 ,
+						}
+					} ,
+					conductance: {
+						input: {
+							element_id: "eq-cfmpicip-conductance-input" ,
+							default_value: 0.0 ,
+							current_value: 0.0 ,
+							units: {
+								element_id: "eq-cfmpicip-conductance-units" ,
+								metric_selector_element_id: "eq-cfmpicip-conductance-units-metric-selector" ,
+								default_base10: -6 ,
+								current_base10: 0 ,
+								current_label: "" ,
+							} ,
+						} ,
+						output: {
+							units: {
+								element_id: "eq-cfmpicip-conductance-desired-units" ,
+								metric_selector_element_id: "eq-cfmpicip-conductance-desired-units-metric-selector" ,
+								default_base10: -6 ,
+								current_base10: 0 ,
+								current_label: "" ,
+								conversion_latex_string: "" ,
+							} ,
+							adjusted_value: 0.0 ,
+						}
+					} ,
+					equalibrium_potential: {
+						input: {
+							element_id: "eq-cfmpicip-equalibrium-potential-input" ,
+							default_value: 0.0 ,
+							current_value: 0.0 ,
+							units: {
+								element_id: "eq-cfmpicip-equalibrium-potential-units" ,
+								metric_selector_element_id: "eq-cfmpicip-equalibrium-potential-units-metric-selector" ,
+								default_base10: -6 ,
+								current_base10: 0 ,
+								current_label: "" ,
+							} ,
+						} ,
+						output: {
+							units: {
+								element_id: "eq-cfmpicip-equalibrium-potential-desired-units" ,
+								metric_selector_element_id: "eq-cfmpicip-equalibrium-potential-desired-units-metric-selector" ,
+								default_base10: -6 ,
+								current_base10: 0 ,
+								current_label: "" ,
+								conversion_latex_string: "" ,
+							} ,
+							adjusted_value: 0.0 ,
+						}
+					}
+				} ,
+				result: 0.0 ,
+				render: ( event ) => {
+					console.log("render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential()");
+				} ,
+			}
 		}
+
+		// function render_equation_current_from_voltage_and_resistance() {
+		// 	console.log("render_equation_current_from_voltage_and_resistance()");
+		// 	let voltage_input = parseFloat( document.getElementById( "eq-cfvr-voltage-input" ).value ) || 0.6;
+		// 	let voltage_units_base_10 = MetricUnits[ document.getElementById( "eq-cfvr-voltage-units-metric-selector" ).selectedIndex ]["base_10"];
+		// 	let voltage_units_label = MetricUnits[ document.getElementById( "eq-cfvr-voltage-units-metric-selector" ).selectedIndex ]["label"];
+		// 	let resistance_input = parseFloat( document.getElementById( "eq-cfvr-resistance-input" ).value ) || 0.1;
+		// 	let resistance_units_base_10 = MetricUnits[ document.getElementById( "eq-cfvr-resistance-units-metric-selector" ).selectedIndex ]["base_10"];
+		// 	let resistance_units_label = MetricUnits[ document.getElementById( "eq-cfvr-resistance-units-metric-selector" ).selectedIndex ]["label"];
+		// 	let element = document.getElementById( "equation-cfvr-katex" );
+		// 	let voltage = ( voltage_input * ( 1 * 10**voltage_units_base_10 ) );
+		// 	let resistance = ( resistance_input * ( 1 * 10**resistance_units_base_10 ) );
+		// 	let result = ( voltage / resistance );
+		// 	let start = `$$Current\\ (I) = `;
+		// 	let part_one = `\\frac{${voltage_input}\\ ${voltage_units_label}\\ volts}{${resistance_input}\\ ${resistance_units_label}\\ Ohms\\ (\\Omega)} = `;
+		// 	let part_two = `\\frac{${voltage_input}\\ ${voltage_units_label}\\ volts * \\left(1 * 10^{${voltage_units_base_10}}\\right)}{${resistance_input}\\ ${resistance_units_label}\\ Ohms\\ (\\Omega) * \\left(1 * 10^{${resistance_units_base_10}}\\right)} = `;
+		// 	let end = `\\frac{${result.toFixed(15)}\\ Volts}{1\\ Ohm\\ (\\Omega)}$$`;
+		// 	element.innerText = start + part_one + part_two + end;
+		// 	renderMathInElement( element , { strict: "ignore" } );
+		// }
+
+
+		// function render_equation_current_from_voltage_and_resistance() {
+
+
+		// }
+
+
+
 		function render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential() {
-			console.log("render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential()");
-			let membrane_potential = parseFloat( document.getElementById( "eq-cfmpicip-membrane-potential" ).value ) || 0.1;
-			let ions_conductance = parseFloat( document.getElementById( "eq-cfmpicip-conductance" ).value ) || 0.6;
-			let ions_equalibrium_potential = parseFloat( document.getElementById( "eq-cfmpicip-equalibrium-potential" ).value ) || 1.0;
-			let driving_force = ( membrane_potential - ions_equalibrium_potential );
-			let result = ( ions_conductance * driving_force );
-			let element = document.getElementById( "equation-cfmpicip-katex" );
-			element.innerText = `$$ Current\\ of\\ Ion \\ (I) = ${ions_conductance.toFixed(3)}\\ \\mu S * \\left(\\ ${membrane_potential.toFixed(3)}\\ mV -  ${ions_equalibrium_potential.toFixed(3)}\\ mV\\ \\right) = ${result.toFixed(9)}\\ $$`;
-			renderMathInElement( element , { strict: "ignore" } );
+			// console.log("render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential()");
+
+
+			// for ( let i = 0; i < render.units.length; ++i ) {
+			// 	let input_state = parseFloat( document.getElementById( render.units[ i ].input_id ).value || render.units[ i ].default_value );
+			// 	let label =  MetricUnits[ document.getElementById( render.units[ i ].selector_id ).selectedIndex ]["label"];
+			// 	let base_10 =  MetricUnits[ document.getElementById( render.units[ i ].selector_id ).selectedIndex ]["base_10"];
+			// 	render.units[i].adjusted_value = ( ( input_state * ( 1 * 10**base_10 ) ) * ( 1 * 10**render.units[i].desired_output_units_base10 ) );
+			// }
+
+			// let membrane_potential = render.units[0].adjusted_value;
+			// let ions_conductance = render.units[1].adjusted_value;
+			// let ions_equalibrium_potential = render.units[2].adjusted_value;
+
+			// let driving_force = ( membrane_potential - ions_equalibrium_potential );
+			// let result = ( ions_conductance * driving_force );
+			// let element = document.getElementById( "equation-cfmpicip-katex" );
+			// element.innerText = `$$ Current\\ of\\ Ion \\ (I) = ${ions_conductance.toFixed(3)}\\ \\mu S * \\left(\\ ${membrane_potential.toFixed(3)}\\ mV -  ${ions_equalibrium_potential.toFixed(3)}\\ mV\\ \\right) = ${result.toFixed(9)}\\ $$`;
+			// renderMathInElement( element , { strict: "ignore" } );
 		}
 		// #eq-cfmpicip-equalirium-potential-units
 		// #eq-cfmpicip-equalirium-potential-units-metric-selector
-		const metric_unit_ids = [
-			[ "eq-cfvr-voltage-units" , "milli" , render_equation_current_from_voltage_and_resistance ] ,
-			[ "eq-cfvr-resistance-units" , "one" , render_equation_current_from_voltage_and_resistance ] ,
-			[ "eq-cfmpicip-membrane-potential-units" , "milli" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
-			[ "eq-cfmpicip-conductance-units" , "micro" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
-			[ "eq-cfmpicip-equalibrium-potential-units" , "milli" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
-		];
 		function pre_render() {
-			MetricUnitsSetupPageCommon( metric_unit_ids );
-			render_equation_current_from_voltage_and_resistance();
-			render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential();
+			//MetricUnitsSetupPageCommon( metric_unit_ids );
+			MetricUnitsSetupInputs( equations );
+			for ( const equation_id in equations ) {
+				equations[equation_id].render();
+			}
+			// render_equation_current_from_voltage_and_resistance();
+			// render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential();
 		}
 	</script>
 </body>
