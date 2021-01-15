@@ -85,7 +85,7 @@
 		<br>
 		<br>
 
-		<div class="flex-container">
+		<!-- <div class="flex-container">
 			<h3>Calculate Current from Voltage and Resistance</h3>
 			<hr style="background-color: black;"></hr>
 			<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (\Omega)}$$</p>
@@ -119,9 +119,23 @@
 		</div>
 
 		<br>
-		<br>
+		<br> -->
 
+		<!-- To Use ABCEquations.js , you have to have everything matching this structure -->
+		<!-- The ID of the top-level abc-equation div must match the function name passed in the script tag -->
+		<!-- The function name has to be ID+'CalculationFunction' . If you know how JSX works or another way, -->
+		<!-- You Optionally Pass the Title and as Necessary Operators -->
+		<!-- In the function, "this" is bound to the ABCEquationWrapper class. -->
+		<!-- If the operators were defined in the html correctly, this.<Operator Name> should be available -->
+		<!-- Then you also have to make sure to store the calculation result in: this.result -->
 		<div class="abc-equation" name="Current Example Calculation 1" id="CurrentExample1" >
+			<div class="title">
+				<h3>Calculate Current from Voltage and Resistance</h3>
+				<hr style="background-color: black;"></hr>
+			</div>
+			<div class="equation-display">
+				<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (Ohms)(\Omega)}$$</p>
+			</div>
 			<div class="operator" name="voltage" >
 				<div class="input" unit_name="volts" default_value="30.0" default_base10="-3" ></div>
 				<div class="output" default_base10="-3" ></div>
@@ -132,9 +146,12 @@
 			</div>
 			<script>
 				function CurrentExample1CalculationFunction() {
-					console.log( "hola from embeded CurrentExample1Function()" );
-					console.log( this );
-					this.result = ( this.voltage / this.resistance );
+					this.result = ( this.voltage.value / this.resistance.value );
+					this.equation_live_string_latex = String.raw`$$Current\ (I) = `;
+					this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.value}\ ${this.voltage.units.label}\ volts}`;
+					this.equation_live_string_latex += String.raw`{ ${this.resistance.value}\ ${this.resistance.units.label}\ (Ohms)(\Omega)}`;
+					this.equation_live_string_latex += String.raw`= \frac{${this.result}\ ${this.voltage.units.label}\ volts}{${this.resistance.units.label}\ (Ohms)(\Omega)}$$`;
+					this.equation_live_string = String.raw`Current (I) = ( ( Voltage (V) ) / ( Resistance (Ohms)(Ω) ) )`;
 				}
 			</script>
 		</div>
@@ -143,7 +160,7 @@
 
 	<script>
 		function init() {
-			renderMathInElement( document.body , { strict: 'ignore' } );
+			renderMathInElement( document.body , { strict: "ignore" } );
 			ABCEquationsHookDIVS();
 			console.log( GLOBAL_EQUATION_WRAPPERS );
 		}
