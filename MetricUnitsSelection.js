@@ -230,6 +230,9 @@ function MetricUnitsSetupInputs( equations ) {
 	}
 }
 
+// https://github.com/ben-ng/convert-units
+// https://github.com/gentooboontoo/js-quantities
+// https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 class ABCEquationWrapper {
 	constructor ( options ) {
 		if ( !renderMathInElement ) { alert( "we can't find katex.renderMathInElement()" ); return; }
@@ -240,11 +243,16 @@ class ABCEquationWrapper {
 	build() {
 		console.log("inside build()");
 
+		//let volt = Qty("1 volt")
+		// volt._units: "Volts"
+		//let t = Qty("1 Siemens")
+		//let t = Qty("1 microSiemens")
+		//t.to("yottaSiemens")
+
 		// 1.) Build Display Latex Template String Placeholder Element
 		// 2.) Build Display Pilot/Simple Template String Placeholder Element
 
 		// 3.) Build HTML Input/Output Table
-
 
 		// 4.) Parse Defined Operator HTML and Add to Input/Ouput Table as Text Input Fields with Metric Unit Selectors
 		this.operator_elements = [ ...this.options.element.querySelectorAll("div.operator") ];
