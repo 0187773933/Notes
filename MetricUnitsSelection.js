@@ -233,6 +233,12 @@ function MetricUnitsSetupInputs( equations ) {
 // https://github.com/ben-ng/convert-units
 // https://github.com/gentooboontoo/js-quantities
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
+
+// https://github.com/ben-ng/convert-units
+// https://github.com/gentooboontoo/js-quantities
+// https://github.com/nosferatoy/units-converter
+// https://github.com/GhostWrench/pqm
+// https://github.com/alanhussey/unit-system
 class ABCEquationWrapper {
 	constructor ( options ) {
 		if ( !renderMathInElement ) { alert( "we can't find katex.renderMathInElement()" ); return; }
@@ -243,6 +249,7 @@ class ABCEquationWrapper {
 	build() {
 		console.log("inside build()");
 
+		// https://github.com/gentooboontoo/js-quantities
 		//let volt = Qty("1 volt")
 		// volt._units: "Volts"
 		//let t = Qty("1 Siemens")
