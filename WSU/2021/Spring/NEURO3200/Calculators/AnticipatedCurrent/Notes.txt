@@ -1,0 +1,43 @@
+9)	Draw the anticipated currents and changes in membrane potential that will occur as a result of the previous three scenarios.
+
+the "positive" and "negative" values for current and potential are the direction/sign of the post-synaptic potential curve
+
+
+6.) 
+Vm = -65 mV
+ECl = -50 mV
+Driving Force = -15 mV = Flows Outside
+Post Synaptic Current = Negative
+Post Synaptic Potential = Should Make It More Positive
+
+7.) 
+Driving Force = ( -65mV – ( -70 ) ) = 5 mV = Flows Inside
+Post Synaptic Current = Positive
+Post Synaptic Potential = Should Make It More Negative
+
+8.) 
+Driving Force ( -65mV – ( -65 ) ) = 0 mV = Zero NET Flow
+Post Synaptic Current = 0
+Post Synaptic Potential = No Action Potential
+
+
+
+Driving Force = ( -40 mV – ( -70 mV ) ) = 30 mV = Flows Inside
+Current = Positive
+Potential = Negative
+
+Driving Force = ( -65 mV – ( -70 mV ) ) = 5 mV = Flows Inside
+Current = Positive
+Potential = Negative
+
+Driving Force = ( -70 mV – ( -70 mV ) ) = 0 mV = Zero Flow
+Current = Zero
+Potential = Zero
+
+Driving Force = ( -80 mV – ( -70 mV ) ) = -10 mV = Flows Outside
+Current = Negative
+Potential = Positive
+
+Driving Force = ( -100 mV – ( -70 mV ) ) = -30 mV = Flows Outside
+Current = Negative
+Potential = Positive
