@@ -256,6 +256,15 @@ class ABCEquationWrapper {
 		//let t = Qty("1 microSiemens")
 		//t.to("yottaSiemens")
 
+		// let t_mol = Qty("1/mol"); // or qty.inverse();
+		// let gas_constant = Qty("joules/kelvin");
+		// gas_constant = gas_constant.mul(t_mol );
+		// gas_constant = gas_constant.mul("8.314");
+		// let gas_constant = Qty("8.314J/degK*mol")
+		// console.log( gas_constant );
+		// console.log( gas_constant.numerator );
+		// console.log( gas_constant.denominator );
+
 		// 1.) Build Display Latex Template String Placeholder Element
 		// 2.) Build Display Pilot/Simple Template String Placeholder Element
 

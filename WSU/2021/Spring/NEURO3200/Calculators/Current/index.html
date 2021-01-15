@@ -131,10 +131,13 @@
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<script>
-				// the only other option I can think of is putting the whole thing in backticks and then ??
 				function CurrentExample1CalculationFunction() {
 					console.log( "hola from embeded CurrentExample1Function()" );
 					console.log( this );
+					let gas_constant = Qty( "8.314J/degK*mol" )
+					console.log( gas_constant );
+					console.log( gas_constant.numerator );
+					console.log( gas_constant.denominator );
 				}
 			</script>
 		</div>
