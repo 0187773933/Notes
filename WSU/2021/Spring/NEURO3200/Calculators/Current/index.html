@@ -134,10 +134,7 @@
 				function CurrentExample1CalculationFunction() {
 					console.log( "hola from embeded CurrentExample1Function()" );
 					console.log( this );
-					let gas_constant = Qty( "8.314J/degK*mol" )
-					console.log( gas_constant );
-					console.log( gas_constant.numerator );
-					console.log( gas_constant.denominator );
+					this.result = ( this.voltage / this.resistance );
 				}
 			</script>
 		</div>

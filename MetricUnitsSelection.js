@@ -245,6 +245,7 @@ class ABCEquationWrapper {
 		this.options = options;
 		this.build();
 		this.calculate();
+		this.render();
 	}
 	build() {
 		console.log("inside build()");
@@ -334,10 +335,13 @@ class ABCEquationWrapper {
 	calculate () {
 		console.log("inside calculate()");
 		// ElementID + CalculationFunction
+		this.voltage = 3;
+		this.resistance = 2;
 		eval("CurrentExample1CalculationFunction").call( this );
 	}
 	render() {
-
+		console.log("inside calculate()");
+		console.log( this.result );
 	}
 }
 
