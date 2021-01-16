@@ -20,6 +20,10 @@
 	<!-- <script src="https://raw.githubusercontent.com/gentooboontoo/js-quantities/v1.7.6/build/quantities.js"></script> -->
 	<script src="https://39363.org/NOTES/quantities.js"></script>
 	<!-- <script onload="renderMathInElement( document.body , { strict: 'ignore' });"></script> -->
+
+	<!-- <script src="https://39363.org/NOTES/copy-to-clipboard.js"></script> -->
+	<!-- copyToClipboard("wadu") -->
+
 	<style>
 		.markdown-body {
 			box-sizing: border-box;
@@ -132,6 +136,7 @@
 		</div>
 
 		<br><br>
+
 		<div class="abc-equation" name="Current Example Calculation 2" id="CurrentExample2" >
 			<div class="title">
 				<h3>Calculate Current from Membrane Potential, Ion's Conductance, and Ion's Equalibrium Potential</h3>
@@ -142,7 +147,7 @@
 				<p>$$Current\ of\ Ion\ (I) = \text{Ion's}\ Conductance\ (G) * \left(\ \text{Ion's}\ Driving\ Force\ \right)$$</p>
 			</div>
 			<div class="operator" name="membrane-potential" >
-				<div class="input" unit_name="volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="10"></div>
+				<div class="input" unit_name="Volts" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="10"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<div class="operator" name="conductance" >
@@ -150,31 +155,31 @@
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<div class="operator" name="equalibrium-potential" >
-				<div class="input" unit_name="Volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="3.0"></div>
+				<div class="input" unit_name="Volts" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="3.0"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<script>
 				function CurrentExample2CalculationFunction() {
 					console.log( "CurrentExample2CalculationFunction()" );
-					console.log( this["membrane-potential"] );
-					console.log( this["conductance"] );
-					console.log( this["equalibrium-potential"] );
+					// console.log( this["membrane-potential"] );
+					// console.log( this["conductance"] );
+					// console.log( this["equalibrium-potential"] );
 
 					let driving_force = ( this["membrane-potential"].output.adjusted_value - this["equalibrium-potential"].output.adjusted_value );
 					this.result = ( this["conductance"].output.adjusted_value * driving_force );
 
 					// 4.) Update Equation Latex
 					// ${value}${adjustment_latex_string}\ ${output.units.label}\ ${input.unit_name}
-					this.equation_live_string_latex = String.raw`$$Current\ of\ Ion\ (I) = \left(\ ${this["conductance"].output.final_string}\ \right)`;
-					this.equation_live_string_latex += String.raw` * \left(\ \left(\ ${this["membrane-potential"].output.final_string} \ \right) - \left(\ ${this["equalibrium-potential"].output.final_string} \ \right) \ \right)$$`;
+					this.equation_live_string_latex = String.raw`$$Current\ (I) = \left(\ ${this["conductance"].output.final_latex_string}\ \right)`;
+					this.equation_live_string_latex += String.raw` * \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) - \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right) \ \right)`;
+					this.equation_live_string_latex += String.raw` = ${this.result}\ ${this["conductance"].output.units.label}\ Siemens\ ⋅\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
 
 					// 5.) Update Equation Pilot/Simple Strings
-					this.equation_live_string = String.raw`Current (I) = ( ( Voltage (V) ) / ( Resistance (Ohms)(Ω) ) )`;
-
+					this.equation_live_string = `Current (I) = ( ( ${this["conductance"].output.final_string} ) * ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) ) )`;
+					this.equation_live_string += ` = ${this.result} ${this["conductance"].output.units.label} Siemens ⋅ ${this["membrane-potential"].output.units.label} Volts`
 				}
 			</script>
 		</div>
-
 
 	</article>
 

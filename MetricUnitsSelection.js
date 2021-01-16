@@ -224,6 +224,12 @@ class ABCEquationWrapper {
 		this.operator_elements = [ ...this.options.element.querySelectorAll( "div.operator" ) ];
 		let our_position_in_global_equations = GLOBAL_EQUATION_WRAPPERS.length;
 
+		// TO ADD
+		// Options Table or some options area where you select to display "show pilot string" , "show inputs" , "show slider" , "show text input" , "calculate different outputBase10 scale" , "show final value"
+		// THen we just need to build pilot strings, and I think its ready
+		// no copy and paste ...
+		// we have to clean up both current equations
+
 		// 1.) Start Building HTML Input/Output Table HTML String
 		this.io_table_element = document.createElement( "table" );
 		let io_table_html_string = "<tr><th>Name</th><th>Input Value</th><th>Input Base10</th><th>Unit Name</th><th>Output Base10</th><th>Final Value</th></tr>";
@@ -317,9 +323,10 @@ class ABCEquationWrapper {
 				console.log( "Ouput Base10 is Different than Input Base10" );
 				adjusted_value = ( ( input_value * ( 1 * 10**( input_units.base_10 - output_units.base_10 ) ) ) );
 				adjustment_latex_string = String.raw` * \left(\ 1 * 10^{\left(\ \left(\ ${input_units.base_10}\ \right) - \left(\ ${output_units.base_10}\ \right) \ \right)}\ \right)`;
-				adjustment_string = `( 1 * 10^( ( ${input_units.base_10} ) - ( ${input_units.base_10} ) ) )`;
+				adjustment_string = ` * ( 1 * 10^( ( ${input_units.base_10} ) - ( ${output_units.base_10} ) ) )`;
 			}
-			let final_string = String.raw`${input_value}${adjustment_latex_string}\ ${output_units.label}\ ${input_unit_name}`;
+			let final_latex_string = String.raw`${input_value}${adjustment_latex_string}\ ${output_units.label}\ ${input_unit_name}`;
+			let final_string = `${input_value}${adjustment_string} ${output_units.label} ${input_unit_name}`;
 			this.options.element.querySelectorAll( "p.adjusted-value" )[ i ].innerText = adjusted_value;
 			this[ operator_name ] = {
 				input: {
@@ -332,6 +339,7 @@ class ABCEquationWrapper {
 					adjusted_value: adjusted_value ,
 					adjustment_latex_string: adjustment_latex_string ,
 					adjustment_string: adjustment_string ,
+					final_latex_string: final_latex_string ,
 					final_string: final_string ,
 				}
 			};
@@ -346,6 +354,7 @@ class ABCEquationWrapper {
 		// console.log( this.equation_live_string_latex );
 		// console.log( this.equation_live_string );
 		this.result_katex_element.innerText = this.equation_live_string_latex;
+		this.result_string_element.innerHTML = `<center>${this.equation_live_string}</center>`;
 		renderMathInElement( this.result_katex_element , { strict: "ignore" } );
 	}
 	metricUnitsUpdate( select ) {
