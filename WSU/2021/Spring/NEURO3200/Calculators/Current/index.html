@@ -146,6 +146,9 @@
 			</div>
 			<script>
 				function CurrentExample1CalculationFunction() {
+					console.log( "CurrentExample1CalculationFunction()" );
+					console.log( this.voltage );
+					console.log( this.resistance );
 					// 1.) Must Update this.result
 					this.result = ( this.voltage.value / this.resistance.value );
 

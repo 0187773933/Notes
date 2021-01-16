@@ -331,8 +331,10 @@ class ABCEquationWrapper {
 
 			// d.) Add to Input/Ouput Table
 			io_table_html_string += `<tr><td>${operator_name}</td>`;
-			io_table_html_string += `<td><input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="text_input" style="width: 70px;" type="text" placeholder="${input_default_value}"></input>`;
-			io_table_html_string += `<input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="range_slider" type="range" min="${input_slider_min}" max="${input_slider_max}" step="${input_slider_step}" defaultValue="${input_default_value}"></td>`;
+			//io_table_html_string += `<td><input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="text_input" style="width: 70px;" type="text" placeholder="${input_default_value}"></input>`;
+			io_table_html_string += `<td><input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].textInputUpdate(this)" class="text_input" style="width: 70px;" type="text" placeholder="${input_default_value}"></input>`;
+			//io_table_html_string += `<input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="range_slider" type="range" min="${input_slider_min}" max="${input_slider_max}" step="${input_slider_step}" defaultValue="${input_default_value}"></td>`;
+			io_table_html_string += `<input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].sliderInputUpdate(this)" class="range_slider" type="range" min="${input_slider_min}" max="${input_slider_max}" step="${input_slider_step}" defaultValue="${input_default_value}"></td>`;
 			io_table_html_string += `<td class="metric-units">${input_metric_selector_html_string}</td>`;
 			io_table_html_string += `<td>${input_units_name}</td>`;
 			io_table_html_string += `<td class="metric-units">${output_metric_selector_html_string}</td>`;
@@ -362,27 +364,14 @@ class ABCEquationWrapper {
 	}
 	calculate() {
 		console.log( "inside calculate()" );
-		// ElementID + CalculationFunction
-		this.voltage = {
-			value: 3 ,
-			units: {
-				id: 14 ,
-				value: "milli" ,
-				label: "milli" ,
-				symbol: "m" ,
-				base_10: -3 ,
+		// Update The Global Equation Objects State to Match Inputs
+		// All we did in sliderInputUpdate() and textInputUpdate() was sync all updates across similar inputs
+		for ( let i = 0; i < this.operator_elements.length; ++i ) {
+			this[ this.operator_elements[i].getAttribute( "name" ) ] = {
+				value: this.options.element.querySelectorAll( "input.text_input" )[ i ].value || this.operator_elements[i].querySelector( "div.input" ).getAttribute( "default_value" ) ,
+				units: MetricUnits[ this.options.element.querySelectorAll( "select.input" )[ i ].selectedIndex ]
 			}
-		};
-		this.resistance = {
-			value: 0.5 ,
-			units: {
-				id: 15 ,
-				value: "micro" ,
-				label: "micro" ,
-				symbol: "µ" ,
-				base_10: -6 ,
-			}
-		};
+		}
 		eval( "CurrentExample1CalculationFunction" ).call( this );
 	}
 	render() {
@@ -392,6 +381,18 @@ class ABCEquationWrapper {
 		console.log( this.equation_live_string );
 		this.result_katex_element.innerText = this.equation_live_string_latex;
 		renderMathInElement( this.result_katex_element , { strict: "ignore" } );
+	}
+	textInputUpdate( input ) {
+		console.log( input.value );
+		// Update Slider Value
+		input.nextSibling.value = input.value;
+		this.update();
+	}
+	sliderInputUpdate( slider ) {
+		console.log( slider.value );
+		// Update Text Input Value
+		slider.previousSibling.value = slider.value;
+		this.update();
 	}
 	update() {
 		console.log( "update()" );
