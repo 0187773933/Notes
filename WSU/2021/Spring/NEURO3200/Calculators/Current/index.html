@@ -106,7 +106,7 @@
 				<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (Ohms)(\Omega)}$$</p>
 			</div>
 			<div class="operator" name="voltage" >
-				<div class="input" unit_name="volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="10"></div>
+				<div class="input" unit_name="Volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="10"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<div class="operator" name="resistance" >
@@ -116,22 +116,19 @@
 			<script>
 				function CurrentExample1CalculationFunction() {
 					console.log( "CurrentExample1CalculationFunction()" );
-					console.log( this.voltage );
-					console.log( this.resistance );
 
+					// 1.) Calculate Result
 					this.result = ( this.voltage.output.adjusted_value / this.resistance.output.adjusted_value );
 
-					// Normally , Every Values Final Latex "thing" should be like this:
-					// ${value}${adjustment_latex_string}\ ${output.units.label}\ ${input.unit_name}
+					// 2.) Update Equation Latex
+					this.equation_live_string_latex = String.raw`$$Current\ (I) = \frac{\ ${this.voltage.output.final_latex_string}\ }{\ ${this.resistance.output.final_latex_string}\ }`;
+					this.equation_live_string_latex += String.raw`= \frac{\ ${this.result}\ ${this.voltage.output.units.label}\ Volts\ }{\ ${this.resistance.output.units.label}\ Ohms\ }$$`;
 
-					// 4.) Update Equation Latex
-					this.equation_live_string_latex = String.raw`$$Current\ (I) = `;
-					this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.input.value}${this.voltage.output.adjustment_latex_string}\ ${this.voltage.output.units.label}\ volts}`;
-					this.equation_live_string_latex += String.raw`{ ${this.resistance.input.value}\ ${this.resistance.input.units.label}\ Ohms}`;
-					this.equation_live_string_latex += String.raw`= \frac{${this.result}\ ${this.voltage.output.units.label}\ volts}{${this.resistance.output.units.label}\ Ohms}$$`;
-
-					// 5.) Update Equation Pilot/Simple Strings
-					this.equation_live_string = String.raw`Current (I) = ( ( Voltage (V) ) / ( Resistance (Ohms)(Ω) ) )`;
+					// 3.) Update Equation Pilot/Simple Strings
+					//( ${this["conductance"].output.final_string} ) * ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) )
+					this.equation_live_string = `Current (I) = ( ( ${this.voltage.output.final_string} ) / ( ${this.resistance.output.final_string} ) )`;
+					console.log( this.resistance.output.units );
+					this.equation_live_string += ` = ( ( ${this.result}\ ${this.voltage.output.units.label}\ Volts ) / ( ${this.resistance.output.units.label} Ohms\ ) )`;
 
 				}
 			</script>
