@@ -166,42 +166,6 @@ function _get_id_from_base_10(base_10) {
   }
   return false;
 }
-function _add_metric_units_dropdown_to_element_id(
-  element_id,
-  default_label = "micro",
-  on_change_function
-) {
-  let select = document.createElement("select");
-  select.id = `${element_id}-metric-selector`;
-  select.onchange = on_change_function;
-  select.default_index = _get_id_from_value_name(default_label);
-  for (let i = 0; i < MetricUnits.length; ++i) {
-	if (i === select.default_index) {
-	  select.innerHTML += `<option selected="selected" value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
-	} else {
-	  select.innerHTML += `<option value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
-	}
-  }
-  document.getElementById(element_id).appendChild(select);
-}
-
-// const metric_unit_ids = [
-// 	[ "eq-cfvr-voltage-units" , "milli" , render_equation_current_from_voltage_and_resistance ] ,
-// 	[ "eq-cfvr-resistance-units" , "one" , render_equation_current_from_voltage_and_resistance ] ,
-// 	[ "eq-cfmpicip-membrane-potential-units" , "milli" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
-// 	[ "eq-cfmpicip-conductance-units" , "micro" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
-// 	[ "eq-cfmpicip-equalibrium-potential-units" , "milli" , render_equation_current_from_membrane_potential_ion_conductance_equalibrium_potential ] ,
-// ];
-function MetricUnitsSetupPageCommon(build_list) {
-  for (let i = 0; i < build_list.length; ++i) {
-	_add_metric_units_dropdown_to_element_id(
-	  build_list[i][0],
-	  build_list[i][1],
-	  build_list[i][2]
-	);
-  }
-}
-
 
 // https://github.com/ben-ng/convert-units
 // https://github.com/gentooboontoo/js-quantities
@@ -331,9 +295,7 @@ class ABCEquationWrapper {
 
 			// d.) Add to Input/Ouput Table
 			io_table_html_string += `<tr><td>${operator_name}</td>`;
-			//io_table_html_string += `<td><input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="text_input" style="width: 70px;" type="text" placeholder="${input_default_value}"></input>`;
 			io_table_html_string += `<td><input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].textInputUpdate(this)" class="text_input" style="width: 70px;" type="text" placeholder="${input_default_value}"></input>`;
-			//io_table_html_string += `<input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="range_slider" type="range" min="${input_slider_min}" max="${input_slider_max}" step="${input_slider_step}" defaultValue="${input_default_value}"></td>`;
 			io_table_html_string += `<input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].sliderInputUpdate(this)" class="range_slider" type="range" min="${input_slider_min}" max="${input_slider_max}" step="${input_slider_step}" defaultValue="${input_default_value}"></td>`;
 			io_table_html_string += `<td class="metric-units">${input_metric_selector_html_string}</td>`;
 			io_table_html_string += `<td>${input_units_name}</td>`;
@@ -355,7 +317,7 @@ class ABCEquationWrapper {
 
 		// 5.) Force Update Range Slider ???
 		let range_slider = this.options.element.querySelector( "input.range_slider" );
-		console.log( range_slider );
+		// console.log( range_slider );
 		range_slider.value = range_slider.getAttribute( "defaultValue" );
 		range_slider.step = range_slider.getAttribute( "step" );
 
@@ -363,7 +325,7 @@ class ABCEquationWrapper {
 
 	}
 	calculate() {
-		console.log( "inside calculate()" );
+		console.log( "calculate()" );
 		// Update The Global Equation Objects State to Match Inputs
 		// All we did in sliderInputUpdate() and textInputUpdate() was sync all updates across similar inputs
 		for ( let i = 0; i < this.operator_elements.length; ++i ) {
@@ -376,9 +338,9 @@ class ABCEquationWrapper {
 	}
 	render() {
 		console.log( "render()" );
-		console.log( this.result );
-		console.log( this.equation_live_string_latex );
-		console.log( this.equation_live_string );
+		// console.log( this.result );
+		// console.log( this.equation_live_string_latex );
+		// console.log( this.equation_live_string );
 		this.result_katex_element.innerText = this.equation_live_string_latex;
 		renderMathInElement( this.result_katex_element , { strict: "ignore" } );
 	}
