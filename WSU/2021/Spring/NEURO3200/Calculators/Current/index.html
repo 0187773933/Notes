@@ -50,7 +50,7 @@
 
 	<article class="markdown-body">
 		<center>
-			<h1>Current (I)</h1>
+			<h1>Current \((I)\)</h1>
 			<blockquote>the rate of flow of electric charge past a point or region</blockquote>
 			<br>
 			<blockquote>
@@ -82,44 +82,7 @@
 			</blockquote>
 		</center>
 
-		<br>
-		<br>
-
-		<!-- <div class="flex-container">
-			<h3>Calculate Current from Voltage and Resistance</h3>
-			<hr style="background-color: black;"></hr>
-			<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (\Omega)}$$</p>
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>Input Value</th>
-					<th>Metric Prefix</th>
-					<th>Unit Name</th>
-					<th>Desired Metric Prefix</th>
-					<th>Adjusted Value</th>
-				</tr>
-				<tr>
-					<td>Voltage</td>
-					<td><input onchange="equations['cfvr'].render()" style="width: 70px;" id="eq-cfvr-voltage-input" type="text" placeholder="30"></input></td>
-					<td id="eq-cfvr-voltage-units"></td>
-					<td>volts</td>
-					<td id="eq-cfvr-voltage-desired-units"></td>
-					<td id="eq-cfvr-voltage-adjusted-value"></td>
-				</tr>
-				<tr>
-					<td>Resistance</td>
-					<td><input onchange="equations['cfvr'].render()" style="width: 70px;" id="eq-cfvr-resistance-input" type="text" placeholder="0.2"></input></td>
-					<td id="eq-cfvr-resistance-units"></td>
-					<td>Ohms (Ω)</td>
-					<td id="eq-cfvr-resistance-desired-units"></td>
-					<td id="eq-cfvr-resistance-adjusted-value"></td>
-				</tr>
-			</table>
-			<p id="equation-cfvr-katex"></p>
-		</div>
-
-		<br>
-		<br> -->
+		<br><br>
 
 		<!-- To Use ABCEquations.js , you have to have everything matching this structure -->
 		<!-- The ID of the top-level abc-equation div must match the function name passed in the script tag -->
@@ -141,7 +104,7 @@
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<div class="operator" name="resistance" >
-				<div class="input" unit_name="Siemens" default_value="0.5" default_base10="-6" slider_min="-100.0" slider_max="100.0" slider_step="3.0"></div>
+				<div class="input" unit_name="Ohms" default_value="0.5" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="3.0"></div>
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<script>
@@ -149,17 +112,18 @@
 					console.log( "CurrentExample1CalculationFunction()" );
 					console.log( this.voltage );
 					console.log( this.resistance );
-					// 1.) Must Update this.result
-					this.result = ( this.voltage.value / this.resistance.value );
 
-					// 2.) Must Update this.equation_live_string_latex
+					this.result = ( this.voltage.output.adjusted_value / this.resistance.output.adjusted_value );
+
+					// 4.) Update Equation Latex
 					this.equation_live_string_latex = String.raw`$$Current\ (I) = `;
-					this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.value}\ ${this.voltage.units.label}\ volts}`;
-					this.equation_live_string_latex += String.raw`{ ${this.resistance.value}\ ${this.resistance.units.label}\ (Ohms)(\Omega)}`;
-					this.equation_live_string_latex += String.raw`= \frac{${this.result}\ ${this.voltage.units.label}\ volts}{${this.resistance.units.label}\ (Ohms)(\Omega)}$$`;
+					this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.input.value}${this.voltage.output.adjustment_latex_string}\ ${this.voltage.output.units.label}\ volts}`;
+					this.equation_live_string_latex += String.raw`{ ${this.resistance.input.value}\ ${this.resistance.input.units.label}\ Ohms}`;
+					this.equation_live_string_latex += String.raw`= \frac{${this.result}\ ${this.voltage.output.units.label}\ volts}{${this.resistance.output.units.label}\ Ohms}$$`;
 
-					// 3.) Must Update this.equation_live_string
+					// 5.) Update Equation Pilot/Simple Strings
 					this.equation_live_string = String.raw`Current (I) = ( ( Voltage (V) ) / ( Resistance (Ohms)(Ω) ) )`;
+
 				}
 			</script>
 		</div>

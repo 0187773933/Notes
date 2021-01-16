@@ -195,7 +195,7 @@ function _get_id_from_base_10(base_10) {
 // console.log( gas_constant.denominator );
 
 function _build_metric_unit_selector_html_string( equations_global_index , base10 , class_name ) {
-	let html_string = `<select onchange="GLOBAL_EQUATION_WRAPPERS[ ${equations_global_index} ].update()" class="${class_name}">`;
+	let html_string = `<select onchange="GLOBAL_EQUATION_WRAPPERS[ ${equations_global_index} ].metricUnitsUpdate(this)" class="${class_name}">`;
 	let default_index = _get_id_from_base_10( base10 );
 	for ( let i = 0; i < MetricUnits.length; ++i ) {
 		if ( i === default_index ) {
@@ -227,7 +227,7 @@ class ABCEquationWrapper {
 
 		// 1.) Start Building HTML Input/Output Table HTML String
 		this.io_table_element = document.createElement( "table" );
-		let io_table_html_string = "<tr><th>Name</th><th>Input Value</th><th>Input Base10</th><th>Unit Name</th><th>Output Base10</th><th>Adjusted Value</th></tr>";
+		let io_table_html_string = "<tr><th>Name</th><th>Input Value</th><th>Input Base10</th><th>Unit Name</th><th>Output Base10</th><th>Final Value</th></tr>";
 
 		// 2.) Parse Defined Operator HTML and Add to Input/Ouput Table as Text Input Fields with Metric Unit Selectors
 		this.operator_elements = [ ...this.options.element.querySelectorAll( "div.operator" ) ];
@@ -257,31 +257,6 @@ class ABCEquationWrapper {
 			let input_slider_step = parseFloat( input_element.getAttribute( "slider_step" ) );
 			let output_default_base10 = parseInt( input_element.getAttribute( "default_base10" ) );
 
-			this.operators.push({
-				input: {
-					element_id: "" ,
-					default_value: 0.0 ,
-					current_value: 0.0 ,
-					units: {
-					element_id: "" ,
-					metric_selector_element_id: "" ,
-					default_base10: -3 ,
-					current_base10: 0 ,
-					current_label: "" ,
-					} ,
-				} ,
-				output: {
-					units: {
-					element_id: "" ,
-					metric_selector_element_id: "" ,
-					default_base10: -3 ,
-					current_base10: 0 ,
-					current_label: "" ,
-					conversion_latex_string: "" ,
-					} ,
-					adjusted_value: 0.0 ,
-				} ,
-			});
 			// console.log(
 			// 	input_units_name ,
 			// 	input_default_value ,
@@ -300,7 +275,7 @@ class ABCEquationWrapper {
 			io_table_html_string += `<td class="metric-units">${input_metric_selector_html_string}</td>`;
 			io_table_html_string += `<td>${input_units_name}</td>`;
 			io_table_html_string += `<td class="metric-units">${output_metric_selector_html_string}</td>`;
-			io_table_html_string += `<td></td></tr>`;
+			io_table_html_string += `<td><p class="adjusted-value"></p></td></tr>`;
 			this.io_table_element.innerHTML = io_table_html_string;
 
 		}
@@ -329,10 +304,34 @@ class ABCEquationWrapper {
 		// Update The Global Equation Objects State to Match Inputs
 		// All we did in sliderInputUpdate() and textInputUpdate() was sync all updates across similar inputs
 		for ( let i = 0; i < this.operator_elements.length; ++i ) {
-			this[ this.operator_elements[i].getAttribute( "name" ) ] = {
-				value: this.options.element.querySelectorAll( "input.text_input" )[ i ].value || this.operator_elements[i].querySelector( "div.input" ).getAttribute( "default_value" ) ,
-				units: MetricUnits[ this.options.element.querySelectorAll( "select.input" )[ i ].selectedIndex ]
+
+			// Capture Current State of Operator
+			let operator_name = this.operator_elements[i].getAttribute( "name" )
+			let input_value = this.options.element.querySelectorAll( "input.text_input" )[ i ].value || this.operator_elements[i].querySelector( "div.input" ).getAttribute( "default_value" );
+			let input_units = MetricUnits[ this.options.element.querySelectorAll( "select.input" )[ i ].selectedIndex ];
+			let output_units = MetricUnits[ this.options.element.querySelectorAll( "select.output" )[ i ].selectedIndex ];
+			let adjusted_value = input_value;
+			let adjustment_latex_string = "";
+			let adjustment_string = "";
+			if ( input_units.base_10 !== output_units.base_10 ) {
+				console.log( "Ouput Base10 is Different than Input Base10" );
+				adjusted_value = ( ( input_value * ( 1 * 10**( input_units.base_10 - output_units.base_10 ) ) ) );
+				adjustment_latex_string = String.raw` * \left(\ 1 * 10^{\left(\ \left(\ ${input_units.base_10}\ \right) - \left(\ ${output_units.base_10}\ \right) \ \right)}\ \right)`;
+				adjustment_string = `( 1 * 10^( ( ${input_units.base_10} ) - ( ${input_units.base_10} ) ) )`;
 			}
+			this.options.element.querySelectorAll( "p.adjusted-value" )[ i ].innerText = adjusted_value;
+			this[ operator_name ] = {
+				input: {
+					value: input_value ,
+					units: input_units ,
+				} ,
+				output: {
+					units: output_units ,
+					adjusted_value: adjusted_value ,
+					adjustment_latex_string: adjustment_latex_string ,
+					adjustment_string: adjustment_string ,
+				}
+			};
 		}
 		eval( "CurrentExample1CalculationFunction" ).call( this );
 	}
@@ -343,6 +342,10 @@ class ABCEquationWrapper {
 		// console.log( this.equation_live_string );
 		this.result_katex_element.innerText = this.equation_live_string_latex;
 		renderMathInElement( this.result_katex_element , { strict: "ignore" } );
+	}
+	metricUnitsUpdate( select ) {
+		console.log( select );
+		this.update();
 	}
 	textInputUpdate( input ) {
 		// console.log( input.value );
