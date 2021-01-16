@@ -165,16 +165,8 @@
 
 					// 4.) Update Equation Latex
 					// ${value}${adjustment_latex_string}\ ${output.units.label}\ ${input.unit_name}
-					this.equation_live_string_latex = String.raw`$$Current\ of\ Ion\ (I) = ${this["conductance"].output.final_string}$$`;
-					//this.equation_live_string_latex += String.raw`${this["conductance"].input.value}${this["conductance"].output.adjustment_latex_string}\ ${this["conductance"].output.units.label}\ ${this["conductance"].input.unit_name}`;
-					//let membrane_potential_part = String.raw`\left(\ ${this["membrane-potential"].input.value}${this["membrane-potential"].output.adjustment_latex_string}\ ${this["membrane-potential"].output.units.label}\ ${this["membrane-potential"].input.unit_name} \ \right)`;
-					//let equalibrium_potential_part = String.raw`\left(\  \ \right)`;
-					//this.equation_live_string_latex += String.raw` * \left(\ ${membrane_potential_part} - ${equalibrium_potential_part}\ \right)`;
-
-
-					//this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.input.value}${this.voltage.output.adjustment_latex_string}\ ${this.voltage.output.units.label}\ volts}`;
-					//this.equation_live_string_latex += String.raw`{ ${this.resistance.input.value}\ ${this.resistance.input.units.label}\ Ohms}`;
-					//this.equation_live_string_latex += String.raw`= \frac{${this.result}\ ${this.voltage.output.units.label}\ volts}{${this.resistance.output.units.label}\ Ohms}$$`;
+					this.equation_live_string_latex = String.raw`$$Current\ of\ Ion\ (I) = \left(\ ${this["conductance"].output.final_string}\ \right)`;
+					this.equation_live_string_latex += String.raw` * \left(\ \left(\ ${this["membrane-potential"].output.final_string} \ \right) - \left(\ ${this["equalibrium-potential"].output.final_string} \ \right) \ \right)$$`;
 
 					// 5.) Update Equation Pilot/Simple Strings
 					this.equation_live_string = String.raw`Current (I) = ( ( Voltage (V) ) / ( Resistance (Ohms)(Ω) ) )`;
