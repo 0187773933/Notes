@@ -127,7 +127,6 @@
 					// 3.) Update Equation Pilot/Simple Strings
 					//( ${this["conductance"].output.final_string} ) * ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) )
 					this.equation_live_string = `Current (I) = ( ( ${this.voltage.output.final_string} ) / ( ${this.resistance.output.final_string} ) )`;
-					console.log( this.resistance.output.units );
 					this.equation_live_string += ` = ( ( ${this.result}\ ${this.voltage.output.units.label}\ Volts ) / ( ${this.resistance.output.units.label} Ohms\ ) )`;
 
 				}
