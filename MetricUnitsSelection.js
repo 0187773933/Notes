@@ -234,7 +234,7 @@ class ABCEquationWrapper {
 		if ( !this.operator_elements ) { return "no operators"; }
 		this.operators = [];
 		for ( let i = 0; i < this.operator_elements.length; ++i ) {
-			console.log( this.operator_elements[ i ] );
+			// console.log( this.operator_elements[ i ] );
 
 			// a.) Parse Operator Attributes
 			let operator_name = this.operator_elements[ i ].getAttribute( "name" );
@@ -282,12 +282,12 @@ class ABCEquationWrapper {
 					adjusted_value: 0.0 ,
 				} ,
 			});
-			console.log(
-				input_units_name ,
-				input_default_value ,
-				input_default_base10 ,
-				output_default_base10
-			);
+			// console.log(
+			// 	input_units_name ,
+			// 	input_default_value ,
+			// 	input_default_base10 ,
+			// 	output_default_base10
+			// );
 
 			// c.) Build Input and Output Metric Selector Elements
 			let input_metric_selector_html_string = _build_metric_unit_selector_html_string( our_position_in_global_equations , input_default_base10 , "input" );
@@ -345,13 +345,13 @@ class ABCEquationWrapper {
 		renderMathInElement( this.result_katex_element , { strict: "ignore" } );
 	}
 	textInputUpdate( input ) {
-		console.log( input.value );
+		// console.log( input.value );
 		// Update Slider Value
 		input.nextSibling.value = input.value;
 		this.update();
 	}
 	sliderInputUpdate( slider ) {
-		console.log( slider.value );
+		// console.log( slider.value );
 		// Update Text Input Value
 		slider.previousSibling.value = slider.value;
 		this.update();
