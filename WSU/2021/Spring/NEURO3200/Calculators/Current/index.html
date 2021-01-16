@@ -115,6 +115,9 @@
 
 					this.result = ( this.voltage.output.adjusted_value / this.resistance.output.adjusted_value );
 
+					// Normally , Every Values Final Latex "thing" should be like this:
+					// ${value}${adjustment_latex_string}\ ${output.units.label}\ ${input.unit_name}
+
 					// 4.) Update Equation Latex
 					this.equation_live_string_latex = String.raw`$$Current\ (I) = `;
 					this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.input.value}${this.voltage.output.adjustment_latex_string}\ ${this.voltage.output.units.label}\ volts}`;
@@ -127,6 +130,59 @@
 				}
 			</script>
 		</div>
+
+		<br><br>
+		<div class="abc-equation" name="Current Example Calculation 2" id="CurrentExample2" >
+			<div class="title">
+				<h3>Calculate Current from Membrane Potential, Ion's Conductance, and Ion's Equalibrium Potential</h3>
+				<hr style="background-color: black;"></hr>
+			</div>
+			<div class="equation-display">
+				<p>$$Current\ of\ Ion \ (I) = \text{Ion's}\ Conductance\ (G) * \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E)\ \right)$$</p>
+				<p>$$Current\ of\ Ion\ (I) = \text{Ion's}\ Conductance\ (G) * \left(\ \text{Ion's}\ Driving\ Force\ \right)$$</p>
+			</div>
+			<div class="operator" name="membrane-potential" >
+				<div class="input" unit_name="volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="10"></div>
+				<div class="output" default_base10="-3" ></div>
+			</div>
+			<div class="operator" name="conductance" >
+				<div class="input" unit_name="Siemens" default_value="0.5" default_base10="-6" slider_min="-100.0" slider_max="100.0" slider_step="3.0"></div>
+				<div class="output" default_base10="-6" ></div>
+			</div>
+			<div class="operator" name="equalibrium-potential" >
+				<div class="input" unit_name="Volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="3.0"></div>
+				<div class="output" default_base10="-3" ></div>
+			</div>
+			<script>
+				function CurrentExample2CalculationFunction() {
+					console.log( "CurrentExample2CalculationFunction()" );
+					console.log( this["membrane-potential"] );
+					console.log( this["conductance"] );
+					console.log( this["equalibrium-potential"] );
+
+					let driving_force = ( this["membrane-potential"].output.adjusted_value - this["equalibrium-potential"].output.adjusted_value );
+					this.result = ( this["conductance"].output.adjusted_value * driving_force );
+
+					// 4.) Update Equation Latex
+					// ${value}${adjustment_latex_string}\ ${output.units.label}\ ${input.unit_name}
+					this.equation_live_string_latex = String.raw`$$Current\ of\ Ion\ (I) = ${this["conductance"].output.final_string}$$`;
+					//this.equation_live_string_latex += String.raw`${this["conductance"].input.value}${this["conductance"].output.adjustment_latex_string}\ ${this["conductance"].output.units.label}\ ${this["conductance"].input.unit_name}`;
+					//let membrane_potential_part = String.raw`\left(\ ${this["membrane-potential"].input.value}${this["membrane-potential"].output.adjustment_latex_string}\ ${this["membrane-potential"].output.units.label}\ ${this["membrane-potential"].input.unit_name} \ \right)`;
+					//let equalibrium_potential_part = String.raw`\left(\  \ \right)`;
+					//this.equation_live_string_latex += String.raw` * \left(\ ${membrane_potential_part} - ${equalibrium_potential_part}\ \right)`;
+
+
+					//this.equation_live_string_latex += String.raw`\frac{ ${this.voltage.input.value}${this.voltage.output.adjustment_latex_string}\ ${this.voltage.output.units.label}\ volts}`;
+					//this.equation_live_string_latex += String.raw`{ ${this.resistance.input.value}\ ${this.resistance.input.units.label}\ Ohms}`;
+					//this.equation_live_string_latex += String.raw`= \frac{${this.result}\ ${this.voltage.output.units.label}\ volts}{${this.resistance.output.units.label}\ Ohms}$$`;
+
+					// 5.) Update Equation Pilot/Simple Strings
+					this.equation_live_string = String.raw`Current (I) = ( ( Voltage (V) ) / ( Resistance (Ohms)(Ω) ) )`;
+
+				}
+			</script>
+		</div>
+
 
 	</article>
 

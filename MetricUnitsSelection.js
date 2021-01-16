@@ -222,8 +222,7 @@ class ABCEquationWrapper {
 
 		// 0.)
 		this.operator_elements = [ ...this.options.element.querySelectorAll( "div.operator" ) ];
-		let our_position_in_global_equations = GLOBAL_EQUATION_WRAPPERS.length - 1;
-		if ( our_position_in_global_equations < 0 ) { our_position_in_global_equations = 0; }
+		let our_position_in_global_equations = GLOBAL_EQUATION_WRAPPERS.length;
 
 		// 1.) Start Building HTML Input/Output Table HTML String
 		this.io_table_element = document.createElement( "table" );
@@ -309,6 +308,7 @@ class ABCEquationWrapper {
 			let operator_name = this.operator_elements[i].getAttribute( "name" )
 			let input_value = this.options.element.querySelectorAll( "input.text_input" )[ i ].value || this.operator_elements[i].querySelector( "div.input" ).getAttribute( "default_value" );
 			let input_units = MetricUnits[ this.options.element.querySelectorAll( "select.input" )[ i ].selectedIndex ];
+			let input_unit_name = this.operator_elements[i].querySelector( "div.input" ).getAttribute( "unit_name" );
 			let output_units = MetricUnits[ this.options.element.querySelectorAll( "select.output" )[ i ].selectedIndex ];
 			let adjusted_value = input_value;
 			let adjustment_latex_string = "";
@@ -319,21 +319,26 @@ class ABCEquationWrapper {
 				adjustment_latex_string = String.raw` * \left(\ 1 * 10^{\left(\ \left(\ ${input_units.base_10}\ \right) - \left(\ ${output_units.base_10}\ \right) \ \right)}\ \right)`;
 				adjustment_string = `( 1 * 10^( ( ${input_units.base_10} ) - ( ${input_units.base_10} ) ) )`;
 			}
+			let final_string = String.raw`${input_value}${adjustment_latex_string}\ ${output_units.label}\ ${input_unit_name}`;
 			this.options.element.querySelectorAll( "p.adjusted-value" )[ i ].innerText = adjusted_value;
 			this[ operator_name ] = {
 				input: {
 					value: input_value ,
 					units: input_units ,
+					unit_name: input_unit_name ,
 				} ,
 				output: {
 					units: output_units ,
 					adjusted_value: adjusted_value ,
 					adjustment_latex_string: adjustment_latex_string ,
 					adjustment_string: adjustment_string ,
+					final_string: final_string ,
 				}
 			};
 		}
-		eval( "CurrentExample1CalculationFunction" ).call( this );
+		let function_name = `${this.options.element.id}CalculationFunction`;
+		console.log( `Calling: ${function_name}()` );
+		eval( function_name ).call( this );
 	}
 	render() {
 		console.log( "render()" );
