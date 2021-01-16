@@ -202,57 +202,6 @@ function MetricUnitsSetupPageCommon(build_list) {
   }
 }
 
-function MetricUnitsSetupInputs(equations) {
-  for (const equation_id in equations) {
-	for (const operator in equations[equation_id].operators) {
-	  // 1.) Setup Input Units
-	  let input_select = document.createElement("select");
-	  input_select.id =
-		equations[equation_id].operators[
-		  operator
-		].input.units.metric_selector_element_id;
-	  input_select.onchange = equations[equation_id].render;
-	  input_select.default_index = _get_id_from_base_10(
-		equations[equation_id].operators[operator].input.units.default_base10
-	  );
-	  for (let i = 0; i < MetricUnits.length; ++i) {
-		if (i === input_select.default_index) {
-		  input_select.innerHTML += `<option selected="selected" value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
-		} else {
-		  input_select.innerHTML += `<option value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
-		}
-	  }
-	  document
-		.getElementById(
-		  equations[equation_id].operators[operator].input.units.element_id
-		)
-		.appendChild(input_select);
-
-	  // 2.) Setup Desired Output Units
-	  let output_select = document.createElement("select");
-	  output_select.id =
-		equations[equation_id].operators[
-		  operator
-		].output.units.metric_selector_element_id;
-	  output_select.onchange = equations[equation_id].render;
-	  output_select.default_index = _get_id_from_base_10(
-		equations[equation_id].operators[operator].output.units.default_base10
-	  );
-	  for (let i = 0; i < MetricUnits.length; ++i) {
-		if (i === output_select.default_index) {
-		  output_select.innerHTML += `<option selected="selected" value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
-		} else {
-		  output_select.innerHTML += `<option value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
-		}
-	  }
-	  document
-		.getElementById(
-		  equations[equation_id].operators[operator].output.units.element_id
-		)
-		.appendChild(output_select);
-	}
-  }
-}
 
 // https://github.com/ben-ng/convert-units
 // https://github.com/gentooboontoo/js-quantities
@@ -281,8 +230,23 @@ function MetricUnitsSetupInputs(equations) {
 // console.log( gas_constant.numerator );
 // console.log( gas_constant.denominator );
 
+function _build_metric_unit_selector_html_string( equations_global_index , base10 , class_name ) {
+	let html_string = `<select onchange="GLOBAL_EQUATION_WRAPPERS[ ${equations_global_index} ].update()" class="${class_name}">`;
+	let default_index = _get_id_from_base_10( base10 );
+	for ( let i = 0; i < MetricUnits.length; ++i ) {
+		if ( i === default_index ) {
+			html_string += `<option selected="selected" value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
+		} else {
+			html_string += `<option value="${MetricUnits[i]["id"]}">${MetricUnits[i]["label"]} (${MetricUnits[i]["symbol"]}) (${MetricUnits[i]["base_10"]})</option>`;
+		}
+	}
+	html_string += "</select>"
+	return html_string;
+}
+
 class ABCEquationWrapper {
 	constructor( options ) {
+		console.log( "constructor()" );
 		if ( !renderMathInElement ) { alert( "we can't find katex.renderMathInElement()" ); return; }
 		this.options = options;
 		this.build();
@@ -290,79 +254,112 @@ class ABCEquationWrapper {
 		this.render();
 	}
 	build() {
-	console.log( "inside build()" );
+		console.log( "build()" );
 
-	// 1.) Build HTML Input/Output Table
+		// 0.)
+		this.operator_elements = [ ...this.options.element.querySelectorAll( "div.operator" ) ];
+		let our_position_in_global_equations = GLOBAL_EQUATION_WRAPPERS.length - 1;
+		if ( our_position_in_global_equations < 0 ) { our_position_in_global_equations = 0; }
 
-	// 2.) Parse Defined Operator HTML and Add to Input/Ouput Table as Text Input Fields with Metric Unit Selectors
-	this.operator_elements = [ ...this.options.element.querySelectorAll( "div.operator" ) ];
-	if ( !this.operator_elements ) { return "no operators"; }
-	this.operators = {};
-	for ( let i = 0; i < this.operator_elements.length; ++i ) {
-		console.log( this.operator_elements[ i ] );
+		// 1.) Start Building HTML Input/Output Table HTML String
+		this.io_table_element = document.createElement( "table" );
+		let io_table_html_string = "<tr><th>Name</th><th>Input Value</th><th>Input Base10</th><th>Unit Name</th><th>Output Base10</th><th>Adjusted Value</th></tr>";
 
-		// a.) Parse Operator Attributes
-		let operator_name = this.operator_elements[ i ].getAttribute( "name" );
+		// 2.) Parse Defined Operator HTML and Add to Input/Ouput Table as Text Input Fields with Metric Unit Selectors
+		this.operator_elements = [ ...this.options.element.querySelectorAll( "div.operator" ) ];
+		if ( !this.operator_elements ) { return "no operators"; }
+		this.operators = [];
+		for ( let i = 0; i < this.operator_elements.length; ++i ) {
+			console.log( this.operator_elements[ i ] );
 
-		// b.) Parse Input and Output Fields
-		let input = this.operator_elements[ i ].querySelector( "div.input" );
-		if ( !input ) { return "no input on operator"; }
-		let output = this.operator_elements[ i ].querySelector( "div.output" );
-		if ( !output ) {
-			output = document.createElement( "div" );
-			output.className = "output";
-			output.setAttribute( "default_base10" , input.getAttribute( "default_base10" ) );
-			this.operator_elements[i].appendChild( output );
+			// a.) Parse Operator Attributes
+			let operator_name = this.operator_elements[ i ].getAttribute( "name" );
+
+			// b.) Parse Input and Output Fields
+			let input_element = this.operator_elements[ i ].querySelector( "div.input" );
+			if ( !input_element ) { return "no input on operator"; }
+			let output_element = this.operator_elements[ i ].querySelector( "div.output" );
+			if ( !output_element ) {
+				output_element = document.createElement( "div" );
+				output_element.className = "output";
+				output_element.setAttribute( "default_base10" , input_element.getAttribute( "default_base10" ) );
+				this.operator_elements[ i ].appendChild( output_element );
+			}
+			let input_units_name = input_element.getAttribute( "unit_name" );
+			let input_default_value = parseFloat( input_element.getAttribute( "default_value" ) );
+			let input_default_base10 = parseInt( input_element.getAttribute( "default_base10" ) );
+			let input_slider_min = parseFloat( input_element.getAttribute( "slider_min" ) );
+			let input_slider_max = parseFloat( input_element.getAttribute( "slider_max" ) );
+			let input_slider_step = parseFloat( input_element.getAttribute( "slider_step" ) );
+			let output_default_base10 = parseInt( input_element.getAttribute( "default_base10" ) );
+
+			this.operators.push({
+				input: {
+					element_id: "" ,
+					default_value: 0.0 ,
+					current_value: 0.0 ,
+					units: {
+					element_id: "" ,
+					metric_selector_element_id: "" ,
+					default_base10: -3 ,
+					current_base10: 0 ,
+					current_label: "" ,
+					} ,
+				} ,
+				output: {
+					units: {
+					element_id: "" ,
+					metric_selector_element_id: "" ,
+					default_base10: -3 ,
+					current_base10: 0 ,
+					current_label: "" ,
+					conversion_latex_string: "" ,
+					} ,
+					adjusted_value: 0.0 ,
+				} ,
+			});
+			console.log(
+				input_units_name ,
+				input_default_value ,
+				input_default_base10 ,
+				output_default_base10
+			);
+
+			// c.) Build Input and Output Metric Selector Elements
+			let input_metric_selector_html_string = _build_metric_unit_selector_html_string( our_position_in_global_equations , input_default_base10 , "input" );
+			let output_metric_selector_html_string = _build_metric_unit_selector_html_string( our_position_in_global_equations , output_default_base10 , "output" );
+
+			// d.) Add to Input/Ouput Table
+			io_table_html_string += `<tr><td>${operator_name}</td>`;
+			io_table_html_string += `<td><input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="text_input" style="width: 70px;" type="text" placeholder="${input_default_value}"></input>`;
+			io_table_html_string += `<input onchange="GLOBAL_EQUATION_WRAPPERS[ ${our_position_in_global_equations} ].update()" class="range_slider" type="range" min="${input_slider_min}" max="${input_slider_max}" step="${input_slider_step}" defaultValue="${input_default_value}"></td>`;
+			io_table_html_string += `<td class="metric-units">${input_metric_selector_html_string}</td>`;
+			io_table_html_string += `<td>${input_units_name}</td>`;
+			io_table_html_string += `<td class="metric-units">${output_metric_selector_html_string}</td>`;
+			io_table_html_string += `<td></td></tr>`;
+			this.io_table_element.innerHTML = io_table_html_string;
+
 		}
-		let input_units_name = input.getAttribute( "unit_name" );
-		let input_default_value = parseFloat( input.getAttribute( "default_value" ) );
-		let input_default_base10 = parseInt( input.getAttribute( "default_base10" ) );
-		let output_default_base10 = parseInt( output.getAttribute( "default_base10" ) );
 
-		this.operators[ operator_name ] = {
-			input: {
-				element_id: "" ,
-				default_value: 0.0 ,
-				current_value: 0.0 ,
-				units: {
-				element_id: "" ,
-				metric_selector_element_id: "" ,
-				default_base10: -3 ,
-				current_base10: 0 ,
-				current_label: "" ,
-				} ,
-			} ,
-			output: {
-				units: {
-				element_id: "" ,
-				metric_selector_element_id: "" ,
-				default_base10: -3 ,
-				current_base10: 0 ,
-				current_label: "" ,
-				conversion_latex_string: "" ,
-				} ,
-				adjusted_value: 0.0 ,
-			} ,
-		};
-		console.log(
-			input_units_name ,
-			input_default_value ,
-			input_default_base10 ,
-			output_default_base10
-		);
+		this.options.element.appendChild( this.io_table_element );
 
-		// c.) Add to Input/Ouput Table
+		// 3.) Build Live Latex Template String Placeholder Element
+		this.result_katex_element = document.createElement( "p" );
+		this.options.element.appendChild( this.result_katex_element );
+
+		// 4.) Build Live Pilot/Simple Template String Placeholder Element
+		this.result_string_element = document.createElement( "p" );
+		this.options.element.appendChild( this.result_string_element );
+
+		// 5.) Force Update Range Slider ???
+		let range_slider = this.options.element.querySelector( "input.range_slider" );
+		console.log( range_slider );
+		range_slider.value = range_slider.getAttribute( "defaultValue" );
+		range_slider.step = range_slider.getAttribute( "step" );
+
+		//this.options.element.insertBefore( this.io_table_element , this.options.element.children[ this.options.element.children.length - 3 ] );
+
 	}
-
-	// 3.) Build Live Latex Template String Placeholder Element
-	this.result_katex_element = document.createElement( "p" );
-	this.options.element.appendChild( this.result_katex_element );
-
-	// 4.) Build Live Pilot/Simple Template String Placeholder Element
-	this.result_string_element = document.createElement( "p" );
-	this.options.element.appendChild( this.result_string_element );
-
-  }
 	calculate() {
 		console.log( "inside calculate()" );
 		// ElementID + CalculationFunction
@@ -387,14 +384,19 @@ class ABCEquationWrapper {
 			}
 		};
 		eval( "CurrentExample1CalculationFunction" ).call( this );
-  }
+	}
 	render() {
-		console.log( "inside render()" );
+		console.log( "render()" );
 		console.log( this.result );
 		console.log( this.equation_live_string_latex );
 		console.log( this.equation_live_string );
 		this.result_katex_element.innerText = this.equation_live_string_latex;
 		renderMathInElement( this.result_katex_element , { strict: "ignore" } );
+	}
+	update() {
+		console.log( "update()" );
+		this.calculate();
+		this.render();
 	}
 }
 
