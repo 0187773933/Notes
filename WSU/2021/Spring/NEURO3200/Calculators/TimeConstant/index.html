@@ -44,15 +44,19 @@
 		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
 		<label for="show_info">&nbsp;Info&nbsp;</label>
 		<div id="info" style="display:none;" >
-			<br><br>
+			<!-- <br><br>
 			<center>
 			</center>
-			<br><br>
+			<br><br> -->
 		</div>
 
 		<!-- Equation 1 -->
 		<br><br>
 		<div class="abc-equation" name="Time Constant Equation 1" id="TimeConstantEquation1" >
+			<div class="title">
+				<h3>Calculate Time Constant from Resistance and Capacitance</h3>
+				<hr style="background-color: black;"></hr>
+			</div>
 			<div class="equation-display">
 				<p>$$\tau = Resistance_{membrane} * Capacitance_{membrane}$$</p>
 			</div>
@@ -66,7 +70,7 @@
 			</div>
 			<script>
 				function TimeConstantEquation1CalculationFunction() {
-					console.log( "DrivingForceEquation1CalculationFunction()" );
+					console.log( "TimeConstantEquation1CalculationFunction()" );
 					this.result = ( this.resistance.output.adjusted_value - this.capacitance.output.adjusted_value );
 					this.equation_live_string_latex = String.raw`$$\tau = \left(\ \left(\ ${this.resistance.output.final_latex_string} \ \right) *  \left(\ ${this.capacitance.output.final_latex_string} \ \right)\ \right)`;
 					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this.resistance.output.units.label}\ Ohm \cdot ${this.capacitance.output.units.label}\ Farads$$`;
@@ -75,23 +79,35 @@
 			</script>
 		</div>
 
-
-	</article>
-</body>
-
-
-		<div class="flex-container">
-			<h3>Equation 2</h3>
+		<!-- Equation 2 -->
+		<br><br>
+		<div class="abc-equation" name="Time Constant Equation 2" id="TimeConstantEquation2" >
+			<div class="title">
+				<h3>Calculate Time Constant from Capacitance and Diameter</h3>
+				<hr style="background-color: black;"></hr>
+			</div>
+			<div class="equation-display">
 				<p>$$\tau = \frac{Capacitance\ of\ Membrane\ (C_m)(Farads)}{\pi * diameter}$$</p>
-			<span>diameter = </span>
-			<input onchange="render_equation_2()" style="width: 40px;" id="eq-2-diameter" type="text" placeholder="7.0"></input>
-			<span style="padding-left: 10px;">µm</span>
-			<br/>
-			<span>\(Capacitance_{membrane} = \)</span>
-			<input onchange="render_equation_2()" style="width: 40px;" id="eq-2-capacitance-membrane" type="text" placeholder="0.6"></input>
-			<span style="padding-left: 10px;">µF</span>
-				<p id="equation-2-katex"></p>
+			</div>
+			<div class="operator" name="capacitance" >
+				<div class="input" unit_name="Farads" default_value="0.6" default_base10="-6" slider_min="-20.0" slider_max="20.0" slider_step="0.1"></div>
+				<div class="output" default_base10="-6" ></div>
+			</div>
+			<div class="operator" name="diameter" >
+				<div class="input" unit_name="Meters" default_value="0.5" default_base10="-6" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
+				<div class="output" default_base10="-6" ></div>
+			</div>
+			<script>
+				function TimeConstantEquation2CalculationFunction() {
+					console.log( "TimeConstantEquation2CalculationFunction()" );
+					this.result = ( this.capacitance.output.adjusted_value ) / ( Math.PI * this.diameter.output.adjusted_value );
+					this.equation_live_string_latex = String.raw`$$\tau = \frac{ ${this.capacitance.output.final_latex_string} }{ \pi * ${this.diameter.output.final_latex_string} }`;
+					this.equation_live_string_latex += String.raw`= \frac{ ${this.result}\ ${this.capacitance.output.units.label}\ Farads}{ ${this.diameter.output.units.label}\ Meters }$$`;
+					this.equation_live_string = `𝜏 = ( ( ${this.capacitance.output.final_string} ) / ( π * ${this.diameter.output.final_string} ) ) = ${ this.result } ${this.capacitance.output.units.label}\ Farads / ${this.diameter.output.units.label}\ Meters`;
+				}
+			</script>
 		</div>
+
 	</article>
 
 	<script>
