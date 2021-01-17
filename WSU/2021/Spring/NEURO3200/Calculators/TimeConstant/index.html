@@ -67,10 +67,10 @@
 			<script>
 				function TimeConstantEquation1CalculationFunction() {
 					console.log( "DrivingForceEquation1CalculationFunction()" );
-					this.result = ( this["membrane-potential"].output.adjusted_value - this["equalibrium-potential"].output.adjusted_value );
-					this.equation_live_string_latex = String.raw`$$Driving\ Force = \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) -  \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right)\ \right)`;
-					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
-					this.equation_live_string = `Driving Force = ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) ) = ${this.result} ${this["equalibrium-potential"].output.units.label}\ Volts`;
+					this.result = ( this.resistance.output.adjusted_value - this.capacitance.output.adjusted_value );
+					this.equation_live_string_latex = String.raw`$$\tau = \left(\ \left(\ ${this.resistance.output.final_latex_string} \ \right) *  \left(\ ${this.capacitance.output.final_latex_string} \ \right)\ \right)`;
+					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this.resistance.output.units.label}\ Ohm \cdot ${this.capacitance.output.units.label}\ Farads$$`;
+					this.equation_live_string = `𝜏 = ( ( ${this.resistance.output.final_string} ) * ( ${this.capacitance.output.final_string} ) ) = ${this.result} ${this.resistance.output.units.label} Ohm ⋅ ${this.capacitance.output.units.label} Farads`;
 				}
 			</script>
 		</div>
