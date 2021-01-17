@@ -66,6 +66,19 @@
 						<td>Low</td>
 					</tr>
 				</table>
+				<br>
+				<!-- <blockquote>
+					<ul>
+						<li>an ion will always flow in the direction across the membrane such that \(V_m\) approaches \(E_{ion}\)</li>
+						<li>as driving force increases, so does the potential energy for \(V_m\) to reach \(E_{ion}\)</li>
+						<li>as the membrane potential approaches the ions equilibrium potential, the driving force gets smaller and smaller</li>
+						<li>when \(V_m\) = \(V_{eq}\) , there is no driving force</li>
+					</ul>
+				</blockquote> -->
+				<blockquote><p>an ion will always flow in the direction across the membrane such that \(V_m\) approaches \(E_{ion}\)</p></blockquote>
+				<blockquote><p>as driving force increases, so does the potential energy for \(V_m\) to reach \(E_{ion}\)</p></blockquote>
+				<blockquote><p>as the membrane potential approaches the ions equilibrium potential, the driving force gets smaller and smaller</p></blockquote>
+				<blockquote><p>when \(V_m\) = \(V_{eq}\) , there is no driving force</p></blockquote>
 			</center>
 			<br><br>
 		</div>
@@ -73,7 +86,7 @@
 		<br><br>
 		<div class="abc-equation" name="Current Example Calculation 1" id="DrivingForceEquation1" >
 			<div class="equation-display">
-				<p>$$Driving\ Force = \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E)\ \right)$$</p>
+				<p>$$Driving\ Force = \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E_{ion})\ \right)$$</p>
 			</div>
 			<div class="operator" name="membrane-potential" >
 				<div class="input" unit_name="Volts" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
@@ -90,6 +103,36 @@
 					this.equation_live_string_latex = String.raw`$$Driving\ Force = \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) -  \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right)\ \right)`;
 					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
 					this.equation_live_string = `Driving Force = ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) ) = ${this.result} ${this["equalibrium-potential"].output.units.label}\ Volts`;
+
+					let sign_of_driving_force = Math.sign( this.result );
+					let ion_flow_direction_element;
+					let existing = this.options.element.querySelectorAll( "div.sign-ion-flow" );
+					if ( existing ) {
+						if ( existing[0] ) {
+							ion_flow_direction_element = existing[0];
+						} else {
+							ion_flow_direction_element = document.createElement( "div" );
+							ion_flow_direction_element.className = "sign-ion-flow";
+							this.options.element.appendChild( ion_flow_direction_element );
+						}
+					} else {
+						ion_flow_direction_element = document.createElement( "div" );
+						ion_flow_direction_element.className = "sign-ion-flow";
+						this.options.element.appendChild( ion_flow_direction_element );
+					}
+					switch( sign_of_driving_force ) {
+						case 1:
+							ion_flow_direction_element.innerHTML = `<br><center><p>Sign of Driving Force = POSITIVE</p><p>Cations = Flowing Outside</p><p>Anions = Flowing Inside</p></center>`;
+							break;
+						case -1:
+							ion_flow_direction_element.innerHTML = `<br><center><p>Sign of Driving Force = NEGATIVE</p><p>Cations = Flowing Inside</p><p>Anions = Flowing Outside</p></center>`;
+							break;
+						case 0:
+							break
+						default:
+							break;
+					}
+
 				}
 			</script>
 		</div>
