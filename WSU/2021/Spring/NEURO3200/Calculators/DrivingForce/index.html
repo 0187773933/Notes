@@ -1,1 +1,114 @@
-<h1>To Do</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Driving Force</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+<body onload="init()">
+	<article class="markdown-body">
+		<center>
+			<h1>Electrochemical Driving Force</h1>
+			<blockquote>if the membrane potential is not exactly at the equilibrium potential for an ion, then an electrochemical driving force acts on the ion which causes the ion to flow into or out of the cell </blockquote>
+		</center>
+
+		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
+			<center>
+				<blockquote>
+					<a href="hhttps://www.physiologyweb.com/lecture_notes/resting_membrane_potential/resting_membrane_potential_electrochemical_driving_force_acting_on_ions.html">Electrochemical Driving Force</a><br>
+				</blockquote>
+				<table>
+					<tr>
+						<th>Ion</th>
+						<th>Resting</th>
+						<th>Depolarization</th>
+						<th>Reploarization</th>
+						<th>Hyperpolarization</th>
+					</tr>
+					<tr>
+						<th>\(Na^{+}\)</th>
+						<td>High</td>
+						<td>Decreasing</td>
+						<td>Increasing</td>
+						<td>Low</td>
+					</tr>
+					<tr>
+						<th>\(K^{+}\)</th>
+						<td>High</td>
+						<td>Increasing</td>
+						<td>Decreasing</td>
+						<td>Low</td>
+					</tr>
+				</table>
+			</center>
+		</div>
+
+
+		<br><br>
+		<div class="abc-equation" name="Current Example Calculation 1" id="DrivingForceEquation1" >
+			<div class="equation-display">
+				<p>$$Driving\ Force = \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E)\ \right)$$</p>
+			</div>
+			<div class="operator" name="membrane-potential" >
+				<div class="input" unit_name="Volts" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="-3" ></div>
+			</div>
+			<div class="operator" name="equalibrium-potential" >
+				<div class="input" unit_name="Volts" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="-3" ></div>
+			</div>
+			<script>
+				function DrivingForceEquation1CalculationFunction() {
+					console.log( "DrivingForceEquation1CalculationFunction()" );
+					this.result = ( this["membrane-potential"].output.adjusted_value - this["equalibrium-potential"].output.adjusted_value );
+					this.equation_live_string_latex = String.raw`$$Driving\ Force = \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) -  \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right)\ \right)`;
+					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
+					this.equation_live_string = `Driving Force = ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) ) = ${this.result} ${this["equalibrium-potential"].output.units.label}\ Volts`;
+				}
+			</script>
+		</div>
+
+	</article>
+
+	<script>
+		function init() {
+			document.getElementById( "show_info" ).checked = false;
+			renderMathInElement( document.body , { strict: "ignore" } );
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>
