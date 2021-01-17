@@ -10,7 +10,6 @@
 	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
 	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
 	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
-	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
 	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
 	<style>
 		.markdown-body {
@@ -71,9 +70,8 @@
 			</div>
 			<script>
 				function LengthConstantEquation1CalculationFunction() {
-					console.log( "LengthConstantEquation1CalculationFunction()" );
+					this.log( "LengthConstantEquation1CalculationFunction()" );
 					this.result = Math.sqrt( this.resistance.output.adjusted_value / this.capacitance.output.adjusted_value );
-					console.log( this.result );
 					this.equation_live_string_latex = String.raw`$$\lambda = \sqrt{\ \left(\ \frac{\ ${this.resistance.output.final_latex_string} \ }{\ ${this.capacitance.output.final_latex_string} \ } \ \right) \ }`;
 					this.equation_live_string_latex += String.raw`= \frac{\ ${this.result}\ ${this.resistance.output.units.label}\ Ohms\ }{\ ${this.capacitance.output.units.label}\ Farads \ }$$`;
 					this.equation_live_string = `λ = √( ( ${this.resistance.output.final_string} ) / ( ${this.capacitance.output.final_string} ) ) = ${this.result} ${this.resistance.output.units.label} Ohm / ${this.capacitance.output.units.label} Farads`;

@@ -3,14 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Driving Force</title>
-	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
 	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
 	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
 	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
 	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
 	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
 	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
-	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
 	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
 	<style>
 		.markdown-body {
@@ -89,16 +88,27 @@
 				<p>$$Driving\ Force = \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E_{ion})\ \right)$$</p>
 			</div>
 			<div class="operator" name="membrane-potential" >
-				<div class="input" unit_name="Volts" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Volt" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<div class="operator" name="equalibrium-potential" >
-				<div class="input" unit_name="Volts" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Volt" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<script>
 				function DrivingForceEquation1CalculationFunction() {
-					console.log( "DrivingForceEquation1CalculationFunction()" );
+					this.log( "DrivingForceEquation1CalculationFunction()" );
+
+					// This is where we were going to see about somehow resolving different outputUnitsBase10
+					// But if you just made sure all similar types "outputed" to the same base10 , then everything should be good?
+					// Inputs can vary, but same types have to output to same base10
+					// What that really means is its up to you to make sure everything in the equation is valid like it normally would be if doing by hand
+					// it does check or limit anything
+					// console.log( this["membrane-potential"].input.quantity );
+					// console.log( this["membrane-potential"].output.quantity );
+					// console.log( this["equalibrium-potential"].input.quantity );
+					// console.log( this["equalibrium-potential"].output.quantity );
+
 					this.result = ( this["membrane-potential"].output.adjusted_value - this["equalibrium-potential"].output.adjusted_value );
 					this.equation_live_string_latex = String.raw`$$Driving\ Force = \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) -  \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right)\ \right)`;
 					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
@@ -132,7 +142,6 @@
 						default:
 							break;
 					}
-
 				}
 			</script>
 		</div>

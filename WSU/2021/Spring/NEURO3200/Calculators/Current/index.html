@@ -20,7 +20,9 @@
 	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
 	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
 	<!-- <script src="https://raw.githubusercontent.com/gentooboontoo/js-quantities/v1.7.6/build/quantities.js"></script> -->
-	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
+	<!-- <script src="https://39363.org/CDN/NOTES/quantities.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pluralize/8.0.0/pluralize.min.js" integrity="sha512-4uLji4UnTkA9AWSkIT2+sTQyRqox+O/e+JVkJA7zf+11CJDTxNEaMq13LRvYsu8Mv0kfpnePOIoS0Z0f8VlGgw==" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://39363.org/CDN/NOTES/pluralize.min.js"></script> -->
 	<!-- <script onload="renderMathInElement( document.body , { strict: 'ignore' });"></script> -->
 
 	<!-- <script src="https://39363.org/CDN/NOTES/copy-to-clipboard.js"></script> -->
@@ -115,28 +117,28 @@
 				<p>$$Current\ (I) = \frac{Voltage\ (V)}{Resistance\ (Ohms)(\Omega)}$$</p>
 			</div>
 			<div class="operator" name="voltage" >
-				<div class="input" unit_name="Volts" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Volt" default_value="30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<div class="operator" name="resistance" >
-				<div class="input" unit_name="Ohms" default_value="0.5" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Ohm" default_value="0.5" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<script>
 				function CurrentExample1CalculationFunction() {
-					console.log( "CurrentExample1CalculationFunction()" );
+					this.log( "CurrentExample1CalculationFunction()" );
 
 					// 1.) Calculate Result
 					this.result = ( this.voltage.output.adjusted_value / this.resistance.output.adjusted_value );
 
 					// 2.) Update Equation Latex
 					this.equation_live_string_latex = String.raw`$$Current\ (I) = \frac{\ ${this.voltage.output.final_latex_string}\ }{\ ${this.resistance.output.final_latex_string}\ }`;
-					this.equation_live_string_latex += String.raw`= \frac{\ ${this.result}\ ${this.voltage.output.units.label}\ Volts\ }{\ ${this.resistance.output.units.label}\ Ohms\ }$$`;
+					this.equation_live_string_latex += String.raw`= \frac{\ ${this.result}\ ${this.voltage.output.units.label}\ Volt\ }{\ ${this.resistance.output.units.label}\ Ohm\ }$$`;
 
 					// 3.) Update Equation Pilot/Simple Strings
 					//( ${this["conductance"].output.final_string} ) * ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) )
 					this.equation_live_string = `Current (I) = ( ( ${this.voltage.output.final_string} ) / ( ${this.resistance.output.final_string} ) )`;
-					this.equation_live_string += ` = ( ( ${this.result}\ ${this.voltage.output.units.label}\ Volts ) / ( ${this.resistance.output.units.label} Ohms\ ) )`;
+					this.equation_live_string += ` = ( ( ${this.result}\ ${this.voltage.output.units.label}\ Volt ) / ( ${this.resistance.output.units.label} Ohm\ ) )`;
 
 				}
 			</script>
@@ -154,7 +156,7 @@
 				<p>$$Current\ of\ Ion\ (I) = \text{Ion's}\ Conductance\ (G) * \left(\ \text{Ion's}\ Driving\ Force\ \right)$$</p>
 			</div>
 			<div class="operator" name="membrane-potential" >
-				<div class="input" unit_name="Volts" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Volt" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<div class="operator" name="conductance" >
@@ -162,12 +164,12 @@
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<div class="operator" name="equalibrium-potential" >
-				<div class="input" unit_name="Volts" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Volt" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<script>
 				function CurrentExample2CalculationFunction() {
-					console.log( "CurrentExample2CalculationFunction()" );
+					this.log( "CurrentExample2CalculationFunction()" );
 					// console.log( this["membrane-potential"] );
 					// console.log( this["conductance"] );
 					// console.log( this["equalibrium-potential"] );
@@ -179,11 +181,11 @@
 					// ${value}${adjustment_latex_string}\ ${output.units.label}\ ${input.unit_name}
 					this.equation_live_string_latex = String.raw`$$Current\ (I) = \left(\ ${this["conductance"].output.final_latex_string}\ \right)`;
 					this.equation_live_string_latex += String.raw` * \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) - \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right) \ \right)`;
-					this.equation_live_string_latex += String.raw` = ${this.result}\ ${this["conductance"].output.units.label}\ Siemens\ ⋅\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
+					this.equation_live_string_latex += String.raw` = ${this.result}\ ${this["conductance"].output.units.label}\ Siemens\ ⋅\ ${this["membrane-potential"].output.units.label}\ Volt$$`;
 
 					// 5.) Update Equation Pilot/Simple Strings
 					this.equation_live_string = `Current (I) = ( ( ${this["conductance"].output.final_string} ) * ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) ) )`;
-					this.equation_live_string += ` = ${this.result} ${this["conductance"].output.units.label} Siemens ⋅ ${this["membrane-potential"].output.units.label} Volts`
+					this.equation_live_string += ` = ${this.result} ${this["conductance"].output.units.label} Siemens ⋅ ${this["membrane-potential"].output.units.label} Volt`
 				}
 			</script>
 		</div>

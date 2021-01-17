@@ -10,7 +10,6 @@
 	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
 	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
 	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
-	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
 	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
 	<style>
 		.markdown-body {
@@ -99,7 +98,7 @@
 			</div>
 			<script>
 				function TimeConstantEquation2CalculationFunction() {
-					console.log( "TimeConstantEquation2CalculationFunction()" );
+					this.log( "TimeConstantEquation2CalculationFunction()" );
 					this.result = ( this.capacitance.output.adjusted_value ) / ( Math.PI * this.diameter.output.adjusted_value );
 					this.equation_live_string_latex = String.raw`$$\tau = \frac{ ${this.capacitance.output.final_latex_string} }{ \pi * ${this.diameter.output.final_latex_string} }`;
 					this.equation_live_string_latex += String.raw`= \frac{ ${this.result}\ ${this.capacitance.output.units.label}\ Farads}{ ${this.diameter.output.units.label}\ Meters }$$`;
