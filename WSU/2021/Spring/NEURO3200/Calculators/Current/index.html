@@ -58,37 +58,43 @@
 		<center>
 			<h1>Current \((I)\)</h1>
 			<blockquote>the rate of flow of electric charge past a point or region</blockquote>
-			<br>
-			<blockquote>
-				<a href="https://en.wikipedia.org/wiki/Elementary_charge#Charges_less_than_an_elementary_charge">Elementary Charge</a><br>
-				<a href="https://en.wikipedia.org/wiki/Coulomb">Coulomb</a><br>
-				<a href="https://en.wikipedia.org/wiki/Ampere">Ampere</a><br>
-				<a href=" https://en.wikipedia.org/wiki/Ohm ">Ohm</a><br>
-				<a href="https://en.wikipedia.org/wiki/Siemens_(unit)">Siemens</a><br>
-			</blockquote>
-			<br>
-			<blockquote style="border-left: 5px solid rgb(107,253,203);">
-				$$1\ Coulomb = 1.036 * 10^{-5}\ mols \cdot Na \cdot elementary\ charges$$
-				$$1\ Elementary\ Charge = 1.602176634 * 10^{-19}\ Coulombs$$
-				$$1\ Ampere\ (A)(Amp) = \frac{1\ Coulomb}{1\ Second}$$
-				$$1\ Coulomb\ (A)(Amp) = 1\ Ampere * 1\ Second$$
-				$$1\ Ohm\ (\Omega) = \frac{1\ Joule \cdot Second}{1\ Coulomb^2}$$
-				$$1\ Siemen\ (S) = [\Omega^{-1}] = \frac{1\ Ampere\ (A)}{1\ Volt}$$
-				$$1\ Siemen\ (S) = \frac{1\ Coulomb^2}{1\ Joule \cdot Second}$$
-				$$1\ Volt = \frac{1\ Joule}{1\ Coulomb}$$
-			</blockquote>
-			<br>
-			<blockquote>
-				$$Conductance\ (G) = \frac{1}{Resistance} = \frac{Current\ (I)}{Voltage\ (V)} = Siemens$$
-			</blockquote>
-			<br>
-			<blockquote>
-				$$Current\ (I)\ or\ (A) = \frac{1\ Coulomb}{1\ Second}$$
-				$$Current\ (I)\ or\ (A) = \frac{1\ Volt\ (V)}{1\ Ohm\ (\Omega)}$$
-			</blockquote>
 		</center>
 
-		<br><br>
+		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
+			<br><br>
+			<center>
+				<blockquote>
+					<a href="https://en.wikipedia.org/wiki/Elementary_charge#Charges_less_than_an_elementary_charge">Elementary Charge</a><br>
+					<a href="https://en.wikipedia.org/wiki/Coulomb">Coulomb</a><br>
+					<a href="https://en.wikipedia.org/wiki/Ampere">Ampere</a><br>
+					<a href=" https://en.wikipedia.org/wiki/Ohm ">Ohm</a><br>
+					<a href="https://en.wikipedia.org/wiki/Siemens_(unit)">Siemens</a><br>
+				</blockquote>
+				<br>
+				<blockquote style="border-left: 5px solid rgb(107,253,203);">
+					$$1\ Coulomb = 1.036 * 10^{-5}\ mols \cdot Na \cdot elementary\ charges$$
+					$$1\ Elementary\ Charge = 1.602176634 * 10^{-19}\ Coulombs$$
+					$$1\ Ampere\ (A)(Amp) = \frac{1\ Coulomb}{1\ Second}$$
+					$$1\ Coulomb\ (A)(Amp) = 1\ Ampere * 1\ Second$$
+					$$1\ Ohm\ (\Omega) = \frac{1\ Joule \cdot Second}{1\ Coulomb^2}$$
+					$$1\ Siemen\ (S) = [\Omega^{-1}] = \frac{1\ Ampere\ (A)}{1\ Volt}$$
+					$$1\ Siemen\ (S) = \frac{1\ Coulomb^2}{1\ Joule \cdot Second}$$
+					$$1\ Volt = \frac{1\ Joule}{1\ Coulomb}$$
+				</blockquote>
+				<br>
+				<blockquote>
+					$$Conductance\ (G) = \frac{1}{Resistance} = \frac{Current\ (I)}{Voltage\ (V)} = Siemens$$
+				</blockquote>
+				<br>
+				<blockquote>
+					$$Current\ (I)\ or\ (A) = \frac{1\ Coulomb}{1\ Second}$$
+					$$Current\ (I)\ or\ (A) = \frac{1\ Volt\ (V)}{1\ Ohm\ (\Omega)}$$
+				</blockquote>
+			</center>
+			<br><br>
+		</div>
 
 		<!-- To Use ABCEquations.js , you have to have everything matching this structure -->
 		<!-- The ID of the top-level abc-equation div must match the function name passed in the script tag -->
@@ -183,9 +189,18 @@
 
 	<script>
 		function init() {
+			document.getElementById( "show_info" ).checked = false;
 			renderMathInElement( document.body , { strict: "ignore" } );
 			ABCEquationsHookDIVS();
 			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
 		}
 	</script>
 </body>
