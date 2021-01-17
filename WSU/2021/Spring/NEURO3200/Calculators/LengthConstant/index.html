@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<title>Length Constant</title>
 	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" />
-
-	<!-- https://www.jsdelivr.com/package/npm/katex -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mhchem.min.js" integrity="sha384-5gCAXJ0ZgozlShOzzT0OWArn7yCPGWVIvgo+BAd8NUKbCmulrJiQuCVR9cHlPHeG" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-	onload="renderMathInElement( document.body , { strict: 'ignore' });"></script>
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
 	<style>
 		.markdown-body {
 			box-sizing: border-box;
@@ -27,12 +27,11 @@
 		}
 	</style>
 </head>
-<body onload="pre_render()">
-	<!-- view-source:https://sindresorhus.com/github-markdown-css/ -->
-	<!-- https://katex.org/docs/supported.html -->
-	<!-- https://mhchem.github.io/MathJax-mhchem/ -->
-	<!-- https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex -->
+
+<body onload="init()">
 	<article class="markdown-body">
+
+		<!-- Header -->
 		<center>
 			<h1>Length Constant (𝜆)</h1>
 			<blockquote>
@@ -40,39 +39,96 @@
 			</blockquote>
 		</center>
 
-		<br></br>
-		<div class="flex-container">
-			<p>$$\lambda = \sqrt{\left(\frac{Resistance_{membrane}}{Capacitance_{membrane}}\right)}$$</p>
-		</div>
-		<div class="flex-container">
-			<p>$$\lambda = \sqrt{\left(\frac{ \frac{1}{\pi * diameter} }{ \frac{4}{\pi * diameter^2} }\right)}$$</p>
-		</div>
-		<br></br>
-
-		<div class="flex-container">
-			<!-- <span>\(Resistance_{membrane}\) = </span>
-			<input onchange="pre_render()" style="width: 40px;" id="mean-epp-amplitude" type="text"></input>
-			<span style="padding-left: 10px;">?units Ohms?</span>
+		<!-- Info -->
+		<!-- <input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
 			<br><br>
-			<span>\(Resistance_{intracellular}\) =</span>
-			<input onchange="pre_render()" style="width: 40px;" id="mean-mepp-amplitude" type="text"></input>
-			<span style="padding-left: 10px;">?units Ohms?</span>
-			<br><br> -->
-			<span>Diameter = </span>
-			<input onchange="pre_render()" style="width: 60px;" id="diameter" type="text"></input>
-			<span style="padding-left: 10px;">µm</span>
+			<center>
+				<p>$$\lambda = \sqrt{\left(\frac{Resistance_{membrane}}{Capacitance_{membrane}}\right)}$$</p>
+				<p>$$\lambda = \sqrt{\left(\frac{ \frac{1}{\pi * diameter} }{ \frac{4}{\pi * diameter^2} }\right)}$$</p>
+			</center>
 			<br><br>
+		</div> -->
+
+		<!-- Equation 1 -->
+		<br><br>
+		<div class="abc-equation" name="Length Constant Equation 1" id="LengthConstantEquation1" >
+			<div class="title">
+				<h3>Calculate Length Constant from Resistance and Capacitance</h3>
+				<hr style="background-color: black;"></hr>
+			</div>
+			<div class="equation-display">
+				<p>$$\lambda = \sqrt{\left(\frac{Resistance_{membrane}}{Capacitance_{membrane}}\right)}$$</p>
+			</div>
+			<div class="operator" name="resistance" >
+				<div class="input" unit_name="Ohms" default_value="-30.0" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="capacitance" >
+				<div class="input" unit_name="Farads" default_value="0.6" default_base10="-6" slider_min="-20.0" slider_max="20.0" slider_step="0.1"></div>
+				<div class="output" default_base10="-6" ></div>
+			</div>
+			<script>
+				function LengthConstantEquation1CalculationFunction() {
+					console.log( "LengthConstantEquation1CalculationFunction()" );
+					this.result = Math.sqrt( this.resistance.output.adjusted_value / this.capacitance.output.adjusted_value );
+					console.log( this.result );
+					this.equation_live_string_latex = String.raw`$$\lambda = \sqrt{\ \left(\ \frac{\ ${this.resistance.output.final_latex_string} \ }{\ ${this.capacitance.output.final_latex_string} \ } \ \right) \ }`;
+					this.equation_live_string_latex += String.raw`= \frac{\ ${this.result}\ ${this.resistance.output.units.label}\ Ohms\ }{\ ${this.capacitance.output.units.label}\ Farads \ }$$`;
+					this.equation_live_string = `λ = √( ( ${this.resistance.output.final_string} ) / ( ${this.capacitance.output.final_string} ) ) = ${this.result} ${this.resistance.output.units.label} Ohm / ${this.capacitance.output.units.label} Farads`;
+				}
+			</script>
 		</div>
 
-		<div class="flex-container">
-			<p id="equation-1-katex"></p>
-			<br>
-			<p id="equation-2-katex"></p>
+		<!-- Equation 2 -->
+		<br><br>
+		<div class="abc-equation" name="Length Constant Equation 2" id="LengthConstantEquation2" >
+			<div class="title">
+				<h3>Calculate Length Constant from Diameter</h3>
+				<hr style="background-color: black;"></hr>
+			</div>
+			<div class="equation-display">
+				<p>$$\lambda = \sqrt{\left(\frac{ \frac{1}{\pi * diameter} }{ \frac{4}{\pi * diameter^2} }\right)}$$</p>
+			</div>
+			<div class="operator" name="diameter" >
+				<div class="input" unit_name="Meters" default_value="0.5" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
+				<div class="output" default_base10="-3" ></div>
+			</div>
+			<script>
+				function LengthConstantEquation2CalculationFunction() {
+					console.log( "LengthConstantEquation2CalculationFunction()" );
+					this.result = Math.sqrt( ( 1 / ( Math.PI * this.diameter.output.adjusted_value ) ) / ( 4 / ( Math.PI * this.diameter.output.adjusted_value**2 ) ) );
+					this.equation_live_string_latex = String.raw`$$\lambda = \sqrt{\ \left(\ \frac{\ \frac{\ 1 \ }{\ \pi * ${this.diameter.output.adjusted_value} \ } \ }{\ \frac{\ 4 \ }{\ \pi * ${this.diameter.output.adjusted_value}^2 \ } \ } \ \right) \ }`;
+					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this.diameter.output.units.label}\ Meters$$`;
+					this.equation_live_string = `λ = √( ( 1 / ( π * ${this.diameter.output.adjusted_value} ) ) / ( 4 / ( π * ( ${this.diameter.output.adjusted_value} )² ) ) ) = ${this.result} ${this.diameter.output.units.label} Meters`;
+					//( ${this.resistance.output.final_string} ) * ( ${this.capacitance.output.final_string} ) ) = ${this.result} ${this.resistance.output.units.label} Ohm ⋅ ${this.capacitance.output.units.label} Farads`;
+				}
+			</script>
 		</div>
 
 	</article>
 
 	<script>
+		function init() {
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
+			renderMathInElement( document.body , { strict: "ignore" } );
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>
+
+	<!-- <script>
 		function pre_render() {
 			console.log( "pre_render()" );
 			// let resistance_membrane = parseFloat( document.getElementById( "resistance-membrane" ).value ) || 0.1;
@@ -90,7 +146,7 @@
 		}
 	</script>
 </body>
-</html>
+</html> -->
 
 
 

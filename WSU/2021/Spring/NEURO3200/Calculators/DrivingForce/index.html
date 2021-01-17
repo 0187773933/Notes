@@ -29,6 +29,7 @@
 </head>
 <body onload="init()">
 	<article class="markdown-body">
+
 		<center>
 			<h1>Electrochemical Driving Force</h1>
 			<blockquote>if the membrane potential is not exactly at the equilibrium potential for an ion, then an electrochemical driving force acts on the ion which causes the ion to flow into or out of the cell </blockquote>
@@ -97,7 +98,7 @@
 
 	<script>
 		function init() {
-			document.getElementById( "show_info" ).checked = false;
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
 			renderMathInElement( document.body , { strict: "ignore" } );
 			ABCEquationsHookDIVS();
 			console.log( ABC_EQUATION_WRAPPERS );

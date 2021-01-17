@@ -192,7 +192,7 @@
 
 	<script>
 		function init() {
-			document.getElementById( "show_info" ).checked = false;
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
 			renderMathInElement( document.body , { strict: "ignore" } );
 			ABCEquationsHookDIVS();
 			console.log( ABC_EQUATION_WRAPPERS );

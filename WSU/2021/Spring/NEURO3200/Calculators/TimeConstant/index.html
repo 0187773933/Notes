@@ -41,14 +41,14 @@
 		</center>
 
 		<!-- Info -->
-		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<!-- <input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
 		<label for="show_info">&nbsp;Info&nbsp;</label>
 		<div id="info" style="display:none;" >
-			<!-- <br><br>
+			<br><br>
 			<center>
 			</center>
-			<br><br> -->
-		</div>
+			<br><br>
+		</div> -->
 
 		<!-- Equation 1 -->
 		<br><br>
@@ -112,7 +112,7 @@
 
 	<script>
 		function init() {
-			document.getElementById( "show_info" ).checked = false;
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
 			renderMathInElement( document.body , { strict: "ignore" } );
 			ABCEquationsHookDIVS();
 			console.log( ABC_EQUATION_WRAPPERS );
@@ -128,6 +128,3 @@
 	</script>
 </body>
 </html>
-
-
-
