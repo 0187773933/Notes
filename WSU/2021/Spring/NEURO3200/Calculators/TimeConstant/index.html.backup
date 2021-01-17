@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Time Constant</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/quantities.js"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+<body onload="pre_render()">
+	<!-- view-source:https://sindresorhus.com/github-markdown-css/ -->
+	<!-- https://katex.org/docs/supported.html -->
+	<!-- https://mhchem.github.io/MathJax-mhchem/ -->
+	<!-- https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex -->
+	<article class="markdown-body">
+		<center>
+			<h1>Time Constant (𝜏)</h1>
+			<blockquote>
+				the time it takes for the initial membrane voltage (V<sub>m</sub>) <br />
+				to decline by \(1 - \left(\frac{1}{e}\right)\) or around 63%
+			</blockquote>
+		</center>
+
+		<div class="flex-container">
+			<h3>Equation 1</h3>
+				<p>$$\tau = Resistance_{membrane} * Capacitance_{membrane}$$</p>
+			<span>\(Resistance_{membrane} = \)</span>
+			<input onchange="render_equation_1()" style="width: 40px;" id="eq-1-resistance-membrane" type="text" placeholder="0.1"></input>
+			<span style="padding-left: 10px;">Ω</span>
+			<br/>
+			<span>\(Capacitance_{membrane} = \)</span>
+			<input onchange="render_equation_1()" style="width: 40px;" id="eq-1-capacitance-membrane" type="text" placeholder="0.6"></input>
+			<span style="padding-left: 10px;">µF</span>
+				<p id="equation-1-katex"></p>
+		</div>
+		<hr style="background-color: black;"></hr>
+		<div class="flex-container">
+			<h3>Equation 2</h3>
+				<p>$$\tau = \frac{Capacitance\ of\ Membrane\ (C_m)(Farads)}{\pi * diameter}$$</p>
+			<span>diameter = </span>
+			<input onchange="render_equation_2()" style="width: 40px;" id="eq-2-diameter" type="text" placeholder="7.0"></input>
+			<span style="padding-left: 10px;">µm</span>
+			<br/>
+			<span>\(Capacitance_{membrane} = \)</span>
+			<input onchange="render_equation_2()" style="width: 40px;" id="eq-2-capacitance-membrane" type="text" placeholder="0.6"></input>
+			<span style="padding-left: 10px;">µF</span>
+				<p id="equation-2-katex"></p>
+		</div>
+	</article>
+
+	<script>
+		function render_equation_1() {
+			console.log("render_equation_1()");
+			let resistance_membrane = parseFloat( document.getElementById( "eq-1-resistance-membrane" ).value ) || 0.1;
+			let capacitance_membrane = parseFloat( document.getElementById( "eq-1-capacitance-membrane" ).value ) || 0.6;
+			let element = document.getElementById( "equation-1-katex" );
+			element.innerText = `$$\\tau = ${resistance_membrane}\\ \\Omega * ${capacitance_membrane}\\ \\mu F$$`;
+			renderMathInElement( element , { strict: "ignore" } );
+		}
+		function render_equation_2() {
+			console.log("render_equation_2()");
+			let diameter = parseFloat( document.getElementById( "eq-2-diameter" ).value ) || 7.0;
+			let capacitance_membrane = parseFloat( document.getElementById( "eq-2-capacitance-membrane" ).value ) || 0.6;
+			let element = document.getElementById( "equation-2-katex" );
+			let result = ( ( capacitance_membrane ) / ( Math.PI * diameter ) );
+			element.innerText = `$$\\tau = \\frac{ ${capacitance_membrane}\\ \\mu F}{\\pi * ${diameter}\\ \\mu m} = ${result.toFixed(9)}$$`;
+			renderMathInElement( element , { strict: "ignore" } );
+		}
+		function pre_render() {
+			render_equation_1();
+			render_equation_2();
+		}
+	</script>
+</body>
+</html>
+
+
+
