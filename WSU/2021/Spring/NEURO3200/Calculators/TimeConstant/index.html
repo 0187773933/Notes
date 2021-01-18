@@ -112,7 +112,15 @@
 	<script>
 		function init() {
 			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
-			renderMathInElement( document.body , { strict: "ignore" } );
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
 			ABCEquationsHookDIVS();
 			console.log( ABC_EQUATION_WRAPPERS );
 		}
