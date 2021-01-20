@@ -33,7 +33,6 @@
 			<h1>Reaction Equilibrium</h1>
 			<blockquote>$Q$ symbolizes the mass action expression for any system ( not necessarily at equilibrium )</blockquote>
 			<blockquote><p>$$\ce{aA + bB <=>cC + dD}$$</p></blockquote>
-			<blockquote><p>$$Q = \frac{Products}{Reactants} = \frac{[C]^c*[D]^d}{[A]^a*[B]^b}$$</p></blockquote>
 		</center>
 
 		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
@@ -53,65 +52,53 @@
 			<br><br>
 		</div>
 
-		<div class="abc-equation" name="Current Example Calculation 1" id="DrivingForceEquation1" >
+		<div class="abc-equation" name="Current Example Calculation 1" id="ReactionEqualibriumEquation1" >
 			<div class="equation-display">
-				<p>$$Driving\ Force = \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equilibrium\ Potential\ (E_{ion})\ \right)$$</p>
+				<p>$$Q = \frac{Products}{Reactants} = \frac{[C]^c*[D]^d}{[A]^a*[B]^b}$$</p>
 			</div>
-			<div class="operator" name="membrane-potential" >
-				<div class="input" unit_name="Volt" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
-				<div class="output" default_base10="-3" ></div>
+			<div class="operator" name="coefficient-a" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
 			</div>
-			<div class="operator" name="equilibrium-potential" >
-				<div class="input" unit_name="Volt" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
-				<div class="output" default_base10="-3" ></div>
+			<div class="operator" name="term-a" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="coefficient-b">
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="term-b" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="coefficient-c" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="term-c" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="coefficient-d" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="term-d" >
+				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
+				<div class="output" default_base10="0" ></div>
 			</div>
 			<script>
-				function DrivingForceEquation1CalculationFunction() {
-					this.log( "DrivingForceEquation1CalculationFunction()" );
+				function ReactionEqualibriumEquation1CalculationFunction() {
+					this.log( "ReactionEqualibriumEquation1CalculationFunction()" );
 
-					// This is where we were going to see about somehow resolving different outputUnitsBase10
-					// But if you just made sure all similar types "outputted" to the same base10 , then everything should be good?
-					// Inputs can vary, but same types have to output to same base10
-					// What that really means is its up to you to make sure everything in the equation is valid like it normally would be if doing by hand
-					// it does check or limit anything
-					// console.log( this["membrane-potential"].input.quantity );
-					// console.log( this["membrane-potential"].output.quantity );
-					// console.log( this["equilibrium-potential"].input.quantity );
-					// console.log( this["equilibrium-potential"].output.quantity );
+					this.result = ( ( ( this["term-c"].output.adjusted_value**this["coefficient-c"].output.adjusted_value ) * ( this["term-d"].output.adjusted_value**this["coefficient-d"].output.adjusted_value ) ) / ( ( this["term-a"].output.adjusted_value**this["coefficient-a"].output.adjusted_value ) * ( this["term-b"].output.adjusted_value**this["coefficient-b"].output.adjusted_value ) ) );
 
-					this.result = ( this["membrane-potential"].output.adjusted_value - this["equilibrium-potential"].output.adjusted_value );
-					this.equation_live_string_latex = String.raw`$$Driving\ Force = \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) -  \left(\ ${this["equilibrium-potential"].output.final_latex_string} \ \right)\ \right)`;
-					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
-					this.equation_live_string = `Driving Force = ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equilibrium-potential"].output.final_string} ) ) = ${this.result} ${this["equilibrium-potential"].output.units.label}\ Volts`;
+					this.equation_live_string_latex = String.raw`$$Q = \frac{\ \left[\ ${this["term-c"].output.final_latex_string}\right]^{${this["coefficient-c"].output.final_latex_string}}\  *  \left[\ ${this["term-d"].output.final_latex_string} \right]^{${this["coefficient-d"].output.final_latex_string}} }`;
+					this.equation_live_string_latex += String.raw`{\ \left[\ ${this["term-a"].output.final_latex_string}\right]^{${this["coefficient-a"].output.final_latex_string}}\  *  \left[\ ${this["term-b"].output.final_latex_string} \right]^{${this["coefficient-b"].output.final_latex_string}} }`;
+					this.equation_live_string_latex += String.raw`= ${this.result}$$`;
 
-					let sign_of_driving_force = Math.sign( this.result );
-					let ion_flow_direction_element;
-					let existing = this.options.element.querySelectorAll( "div.sign-ion-flow" );
-					if ( existing ) {
-						if ( existing[0] ) {
-							ion_flow_direction_element = existing[0];
-						} else {
-							ion_flow_direction_element = document.createElement( "div" );
-							ion_flow_direction_element.className = "sign-ion-flow";
-							this.options.element.appendChild( ion_flow_direction_element );
-						}
-					} else {
-						ion_flow_direction_element = document.createElement( "div" );
-						ion_flow_direction_element.className = "sign-ion-flow";
-						this.options.element.appendChild( ion_flow_direction_element );
-					}
-					switch( sign_of_driving_force ) {
-						case 1:
-							ion_flow_direction_element.innerHTML = `<br><center><p>Sign of Driving Force = POSITIVE</p><p>Cations = Flowing Outside</p><p>Anions = Flowing Inside</p></center>`;
-							break;
-						case -1:
-							ion_flow_direction_element.innerHTML = `<br><center><p>Sign of Driving Force = NEGATIVE</p><p>Cations = Flowing Inside</p><p>Anions = Flowing Outside</p></center>`;
-							break;
-						case 0:
-							break
-						default:
-							break;
-					}
+					this.equation_live_string = `Q =`;
 				}
 			</script>
 		</div>
