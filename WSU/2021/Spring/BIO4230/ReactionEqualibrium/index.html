@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Reaction equilibrium</title>
 	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<!-- https://sindresorhus.com/github-markdown-css/ -->
 	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
 	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
 	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
@@ -55,6 +56,15 @@
 		<div class="abc-equation" name="Current Example Calculation 1" id="ReactionEqualibriumEquation1" >
 			<div class="equation-display">
 				<p>$$Q = \frac{Products}{Reactants} = \frac{[C]^c*[D]^d}{[A]^a*[B]^b}$$</p>
+				<pre>
+					<code>if ( products > reactants ) {</code>
+					<code>	Q === LARGE</code>
+					<code>}</code>
+					<code>else if ( reactants > products ) {</code>
+					<code>	Q === SMALL</code>
+					<code>}</code>
+					</code>
+				</pre>
 			</div>
 			<div class="operator" name="coefficient-a" >
 				<div class="input" unit_name="" default_value="1" default_base10="0" type="int" slider_min="0" slider_max="100" slider_step="1"></div>
@@ -98,7 +108,7 @@
 					this.equation_live_string_latex += String.raw`{\ \left[\ ${this["term-a"].output.final_latex_string}\right]^{${this["coefficient-a"].output.final_latex_string}}\  *  \left[\ ${this["term-b"].output.final_latex_string} \right]^{${this["coefficient-b"].output.final_latex_string}} }`;
 					this.equation_live_string_latex += String.raw`= ${this.result}$$`;
 
-					this.equation_live_string = `Q =`;
+					this.equation_live_string = `Q = ( ( [${this["term-c"].output.final_string}]^${this["coefficient-c"].output.final_string} * [${this["term-d"].output.final_string}]^${this["coefficient-d"].output.final_string} ) / ( [${this["term-a"].output.final_string}]^${this["coefficient-a"].output.final_string} * [${this["term-d"].output.final_string}]^${this["coefficient-d"].output.final_string} ) ) = ${this.result}`;
 				}
 			</script>
 		</div>
