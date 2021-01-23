@@ -15,7 +15,7 @@
 		.markdown-body {
 			box-sizing: border-box;
 			min-width: 200px;
-			max-width: 980px;
+			max-width: 1200px;
 			margin: 0 auto;
 			padding: 45px;
 		}
@@ -31,117 +31,56 @@
 
 		<center>
 			<h1>Free Energy Change</h1>
-			<blockquote>if the membrane potential is not exactly at the equilibrium potential for an ion, then an electrochemical driving force acts on the ion which causes the ion to flow into or out of the cell </blockquote>
+			<blockquote>The free energy of a solute/compound $C$ is: $$G_c = Standard\ Free\ Energy\ (\ G_{c}^{\circ} \ ) + \left(\ Gas\ Constant\ (R) * Temperature\ (K) * ln(\ C\ )\ \right)$$</blockquote>
+			<blockquote>$$$$</blockquote>
 		</center>
 
 		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
 		<label for="show_info">&nbsp;Info&nbsp;</label>
 		<div id="info" style="display:none;" >
 			<br><br>
-			<center>
-				<blockquote>
-					<a href="hhttps://www.physiologyweb.com/lecture_notes/resting_membrane_potential/resting_membrane_potential_electrochemical_driving_force_acting_on_ions.html">Electrochemical Driving Force</a><br>
-				</blockquote>
-				<table>
-					<tr>
-						<th>Ion</th>
-						<th>Resting</th>
-						<th>Depolarization</th>
-						<th>Reploarization</th>
-						<th>Hyperpolarization</th>
-					</tr>
-					<tr>
-						<th>\(Na^{+}\)</th>
-						<td>High</td>
-						<td>Decreasing</td>
-						<td>Increasing</td>
-						<td>Low</td>
-					</tr>
-					<tr>
-						<th>\(K^{+}\)</th>
-						<td>High</td>
-						<td>Increasing</td>
-						<td>Decreasing</td>
-						<td>Low</td>
-					</tr>
-				</table>
-				<br>
-				<!-- <blockquote>
-					<ul>
-						<li>an ion will always flow in the direction across the membrane such that \(V_m\) approaches \(E_{ion}\)</li>
-						<li>as driving force increases, so does the potential energy for \(V_m\) to reach \(E_{ion}\)</li>
-						<li>as the membrane potential approaches the ions equilibrium potential, the driving force gets smaller and smaller</li>
-						<li>when \(V_m\) = \(V_{eq}\) , there is no driving force</li>
-					</ul>
-				</blockquote> -->
-				<blockquote><p>an ion will always flow in the direction across the membrane such that \(V_m\) approaches \(E_{ion}\)</p></blockquote>
-				<blockquote><p>as driving force increases, so does the potential energy for \(V_m\) to reach \(E_{ion}\)</p></blockquote>
-				<blockquote><p>as the membrane potential approaches the ions equilibrium potential, the driving force gets smaller and smaller</p></blockquote>
-				<blockquote><p>when \(V_m\) = \(V_{eq}\) , there is no driving force</p></blockquote>
-			</center>
+			<blockquote>
+				$$\Delta G = G_{final} - G_{initial} = G_{products} - G_{reactants}$$
+				$$= \Delta G^{\circ} + \left(\ R * T * ln\left(\ \frac{[C]^c*[D]^d}{[A]^a*[B]^b} \ \right) \ \right)$$
+				$$= \Delta G^{\circ} + \left(\ R * T * ln(\ Q\ ) \ \right)$$
+			</blockquote>
+			<blockquote>
+				<p>The free energy change of a chemical reaction $(\Delta G)$ depends on:</p>
+				<ul>
+					<li>the standard free energy change $(\Delta G^{\circ})$ which uses the equilibrium state as a reference</li>
+					<li>the concentrations of the reactants and products ( described by: $R * T * ln( Q )$ )</li>
+				</ul>
+			</blockquote>
+			<blockquote><p>When the system is at equilibrium , $\Delta G = 0$</p></blockquote>
 			<br><br>
 		</div>
 
-		<br><br>
-		<div class="abc-equation" name="Current Example Calculation 1" id="DrivingForceEquation1" >
+		<div class="abc-equation" name="Gibbs Free Energy" id="GibbsFreeEnergyEquation1" >
 			<div class="equation-display">
-				<p>$$Driving\ Force = \left(\ Membrane\ Potential\ (V_m) -  \text{Ion's}\ Equalibirum\ Potentail\ (E_{ion})\ \right)$$</p>
+				<p>$$\Delta G = Heat\ of\ Reaction (\Delta H) - \left(\ Temperature (T_{kelvin}) * Entropy\ Change\ (\Delta S)\ \right)$$</p>
 			</div>
-			<div class="operator" name="membrane-potential" >
-				<div class="input" unit_name="Volt" default_value="-30.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
-				<div class="output" default_base10="-3" ></div>
+			<div class="operator" name="heat-of-reaction" >
+				<div class="input" unit_name="joule" default_value="-30.0" default_base10="3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="3" ></div>
 			</div>
-			<div class="operator" name="equalibrium-potential" >
-				<div class="input" unit_name="Volt" default_value="55.0" default_base10="-3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
-				<div class="output" default_base10="-3" ></div>
+			<div class="operator" name="temperature" >
+				<div class="input" unit_name="kelvin" default_value="273" default_base10="0" slider_min="0" slider_max="1000.0" slider_step="1.0"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="entropy-change" >
+				<div class="input" unit_name="joule/kelvin" default_value="55.0" default_base10="3" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="3" ></div>
 			</div>
 			<script>
-				function DrivingForceEquation1CalculationFunction() {
-					this.log( "DrivingForceEquation1CalculationFunction()" );
+				function GibbsFreeEnergyEquation1CalculationFunction() {
+					this.log( "GibbsFreeEnergyEquation1CalculationFunction()" );
 
-					// This is where we were going to see about somehow resolving different outputUnitsBase10
-					// But if you just made sure all similar types "outputed" to the same base10 , then everything should be good?
-					// Inputs can vary, but same types have to output to same base10
-					// What that really means is its up to you to make sure everything in the equation is valid like it normally would be if doing by hand
-					// it does check or limit anything
-					// console.log( this["membrane-potential"].input.quantity );
-					// console.log( this["membrane-potential"].output.quantity );
-					// console.log( this["equalibrium-potential"].input.quantity );
-					// console.log( this["equalibrium-potential"].output.quantity );
+					this.result = ( ( this["heat-of-reaction"].output.adjusted_value ) - ( ( this["temperature"].output.adjusted_value ) * ( this["entropy-change"].output.adjusted_value ) ) );
+					this.equation_live_string_latex = String.raw`$$\Delta G = ${this["heat-of-reaction"].output.final_latex_string} - \left(\ \left(\ ${this["temperature"].output.final_latex_string} \ \right) * \left(\ ${this["entropy-change"].output.final_latex_string} \ \right)\ \right)`;
+					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["heat-of-reaction"].output.units.label}\ Joules$$`;
 
-					this.result = ( this["membrane-potential"].output.adjusted_value - this["equalibrium-potential"].output.adjusted_value );
-					this.equation_live_string_latex = String.raw`$$Driving\ Force = \left(\ \left(\ ${this["membrane-potential"].output.final_latex_string} \ \right) -  \left(\ ${this["equalibrium-potential"].output.final_latex_string} \ \right)\ \right)`;
-					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["membrane-potential"].output.units.label}\ Volts$$`;
-					this.equation_live_string = `Driving Force = ( ( ${this["membrane-potential"].output.final_string} ) - ( ${this["equalibrium-potential"].output.final_string} ) ) = ${this.result} ${this["equalibrium-potential"].output.units.label}\ Volts`;
+					this.equation_live_string = `𝝙G = ( ${this["heat-of-reaction"].output.final_string} - ( ( ${this["temperature"].output.final_string} ) * ( ${this["entropy-change"].output.final_string} ) ) ) = ${this.result} ${this["heat-of-reaction"].output.units.label} Joules`;
 
-					let sign_of_driving_force = Math.sign( this.result );
-					let ion_flow_direction_element;
-					let existing = this.options.element.querySelectorAll( "div.sign-ion-flow" );
-					if ( existing ) {
-						if ( existing[0] ) {
-							ion_flow_direction_element = existing[0];
-						} else {
-							ion_flow_direction_element = document.createElement( "div" );
-							ion_flow_direction_element.className = "sign-ion-flow";
-							this.options.element.appendChild( ion_flow_direction_element );
-						}
-					} else {
-						ion_flow_direction_element = document.createElement( "div" );
-						ion_flow_direction_element.className = "sign-ion-flow";
-						this.options.element.appendChild( ion_flow_direction_element );
-					}
-					switch( sign_of_driving_force ) {
-						case 1:
-							ion_flow_direction_element.innerHTML = `<br><center><p>Sign of Driving Force = POSITIVE</p><p>Cations = Flowing Outside</p><p>Anions = Flowing Inside</p></center>`;
-							break;
-						case -1:
-							ion_flow_direction_element.innerHTML = `<br><center><p>Sign of Driving Force = NEGATIVE</p><p>Cations = Flowing Inside</p><p>Anions = Flowing Outside</p></center>`;
-							break;
-						case 0:
-							break
-						default:
-							break;
-					}
 				}
 			</script>
 		</div>
