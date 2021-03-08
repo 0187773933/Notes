@@ -1,0 +1,1342 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Dynamic Study Module - Glycolysis</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+  --mermaid-theme: night;
+  --node-fill: #BDD5EA;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875rem;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.export-detail,
+.export-item.active,
+.export-items-list-control {
+    background: #d6d6d4
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+ :root {--mermaid-font-zoom:1em ;} 
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><center><h1>Dynamic Study Module - Glycolysis</h1></center><ol start='' ><li><span>Hexokinase (HK) is down-regulated by which method?</span></li></ol><blockquote><p><span>Product inhibition</span></p></blockquote><blockquote><p><span>High glucose-6-phosphate (G6P) concentration inhibits hexokinase (HK). As glucose-6-phosphate (G6P) is the product of the hexokinase (HK)-catalyzed reaction, this is an example of </span><strong><span>product inhibition</span></strong><span>. Hexokinase (HK) is not a zymogen nor is it under phosphorylation control. Feedback inhibition would require phosphoenolpyruvate (PEP) or pyruvate (Pyr), which are end products/intermediates of glycolysis, to be inhibitory. Allosteric activation implies that the enzyme is up-regulated by a molecule that alters the shape of hexokinase (HK), causing the enzyme activity to increase.</span></p><p><span>The major mechanism of regulatory control for glycolysis (on the left) and gluconeogenesis, a pathway that synthesizes glucose (on the right), are seen in the figure.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831508508-577304973.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='2' ><li><span>Which enzyme-catalyzed reaction in glycolysis generates CO2?</span></li></ol><blockquote><p><span>None of the enzyme-catalyzed reactions in glycolysis generates CO2.</span></p></blockquote><blockquote><p><span>Although the intermediates in glycolysis become oxidized, </span><strong><span>none of the reactions yield carbon dioxide</span></strong><span>. All of the carbons from glucose will eventually need to go through the pyruvate dehydrogenase complex (PDC/PDH) and the citric acid cycle in order to be completely oxidized as carbon dioxide. Phosphofructokinase (PFK) generates ADP and fructose-1,6-bisphosphate (FBP), glyceraldehyde-3-phosphate dehydrogenase (GAPDH) generates NADH/H+ and BPG, phosphoglycerate kinase (PGK) generates ATP and 3-phosphoglycerate (3PG), and pyruvate kinase (PK) generates ATP and pyruvate (Pyr).</span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='3' ><li><span>Why might it be advantageous to convert some of the pyruvate (Pyr) formed in glycolysis to lactate?</span></li></ol><blockquote><p><span>The reduction of pyruvate to lactate regenerates NAD+, which is a substrate for glycolysis.</span></p></blockquote><blockquote><p><strong><span>The reduction of pyruvate to lactate regenerates NAD+, which is a substrate for glycolysis.</span></strong><span> This enables glycolysis to continue running, as demonstrated by the figure. Lactate is not an intermediate in glycolysis but it is important in the Cori Cycle where excess lactate will exit a muscle cell and find its way to a liver cell for gluconeogenesis. Phosphofructokinase (PFK) is the highest regulated enzyme in glycolysis.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831720443-553434637.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='4' ><li><span>Which of the following is a driving force for the exergonic reaction involving the second irreversible step in glycolysis?</span></li></ol><blockquote><p><span>Separation of negative charge occurs when the gamma phosphate is removed from ATP and transferred to fructose-6-phosphate (F6P).</span></p></blockquote><blockquote><p><span>The reaction catalytic by phosphofructokinase (PFK), the second irreversible step in glycolysis, phosphorylates fructose-6-phosphate (F6P) using ATP to generate fructose-1,6-bisphosphate (FBP), ADP, and H+. A number of factors contribute to the negative Gibbs free energy change in this reaction. </span><strong><span>Separation of negative charge occurs when the gamma phosphate is removed from ATP and transferred to fructose-6-phosphate (F6P)</span></strong><span>, meaning the products are lower in energy than the reactants. Also, the products have more resonance than the reactant, which also indicates that these molecules are lower in energy. Furthermore, as there are more products than reactants, entropy increases, which contributes to the negative change in Gibbs free energy. Finally, the active site Mg2+ serves to stabilize the negative charges on alpha and gamma phosphates of ATP.</span></p></blockquote><ol start='5' ><li><span>Which enzyme in glycolysis is responsible for catalyzing the rate-limiting step?</span></li></ol><blockquote><p><span>Phosphofructokinase (PFK)</span></p></blockquote><blockquote><p><strong><span>Phosphofructokinase (PFK)</span></strong><span> catalyzes the committing step in glycolysis, where a second phosphate is added to the glycolytic intermediate fructose-6-phosphate (F6P). This is the rate-limiting step in glycolysis and phosphofructokinase (PFK) therefore has the highest degree of regulation compared to the other glycolytic enzymes. Hexokinase (HK) catalyzes the “trapping” step in glycolysis, pyruvate kinase (PK) catalyzes the final irreversible step in glycolysis, and aldolase (ALD) catalyzes the reaction that splits fructose-1,6-bisphosphate (FBP) in half.</span></p><p><span>The figure shows the large free energy release (i.e., –ΔG) for three enzymes: HK, PFK, and PK.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831599995-218078154.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='6' ><li><span>Which enzyme in glycolysis is responsible for catalyzing the “committing-step”?</span></li></ol><blockquote><p><span>Phosphofructokinase (PFK)</span></p></blockquote><blockquote><p><strong><span>Phosphofructokinase (PFK)</span></strong><span> catalyzes the committing step in glycolysis, where a second phosphate is added to the glycolytic intermediate fructose-6-phosphate (F6P). This is the rate-limiting step in glycolysis and phosphofructokinase (PFK) therefore has the highest degree of regulation compared to the other glycolytic enzymes. Hexokinase (HK) catalyzes the “trapping” step in glycolysis, pyruvate kinase (PK) catalyzes the final irreversible step in glycolysis, and aldolase (ALD) catalyzes the reaction that splits fructose-1,6-bisphosphate (FBP) in half. </span></p><p><span>The figure shows the large free energy release (i.e., –ΔG) for three enzymes: HK, PFK, and PK.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831599995-218078154.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='7' ><li><span>Does glycolysis require oxygen (O2)?</span></li></ol><blockquote><p><span>No. Oxygen (O2) is not a substrate for any of the enzyme-catalyzed reactions.</span></p></blockquote><blockquote><p><strong><span>Oxygen (O*</span></strong><span>*2</span><strong></strong><span>) is not a substrate for any of the enzyme-catalyzed reactions** and the pathway can produce ATP in the absence of molecular oxygen. Lactate dehydrogenase (LDH) catalyzes the reaction that regenerates NAD+, which is a substrate of glycolysis. This reaction also does not require oxygen. </span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='8' ><li><span>Which enzyme-catalyzed reaction in glycolysis generates NAD+?</span></li></ol><blockquote><p><span>None of the enzyme-catalyzed reactions in glycolysis generates NAD+.</span></p></blockquote><blockquote><p><strong><span>None of the glycolytic reactions generate NAD+</span></strong><span> </span><strong><span>because the substrate is not reduced in any of the steps.</span></strong></p><p><span>Glyceraldehyde-3-phosphate dehydrogenase (GAPDH) uses NAD+ for the oxidation-reduction reaction. Phosphofructokinase (PFK) uses ATP, whereas phosphoglycerate kinase (PGK) and pyruvate kinase (PK) both yield ATP. Lactate dehydrogenase (LDH), which is not part of glycolysis, regenerates NAD+ while reducing pyruvate (Pyr) to lactate.</span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='9' ><li><span>Which of the following enzymes does NOT catalyze an irreversible reaction in glycolysis?</span></li></ol><blockquote><p><span>Glucose-6-phosphate isomerase (G6PI or PGI)</span></p></blockquote><blockquote><p><strong><span>Glucose-6-phosphate isomerase (G6PI or PGI)</span></strong><span> catalyzes the second step in glycolysis where glucose-6-phosphate (G6P) is isomerized to fructose-6-phosphate (F6P). The Gibbs free energy of this reaction is near zero and therefore it is not irreversible and is pulled forward by the proceeding reaction catalyzed by phosphofructokinase (PFK), which is irreversible because it has a large negative Gibbs free energy. Hexokinase (HK) (step 1) and pyruvate kinase (PK) (step 10) also catalyze irreversible reactions with large and negative Gibbs free energy changes associated with each. </span></p><p><span>The figure shows the large free energy release (i.e., –ΔG) for three enzymes: HK, PFK, and PK.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832004326-429158321.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='10' ><li><span>Glycolysis is a 10-step pathway, in which reactions four through nine are reversible. With so many reversible reactions, how does the pathway have an overall directionality towards pyruvate (Pyr)?</span></li></ol><blockquote><p><span>The last step, catalyzed by pyruvate kinase (PK), is irreversible and it therefore keeps the concentration of phosphoenolpyruvate low and pulls all previous reversible reactions forward.</span></p></blockquote><blockquote><p><strong><span>The last step, catalyzed by pyruvate kinase (PK) is irreversible. This step keeps the concentration of phosphoenolpyruvate low by immediately converting it to pyruvate. This pulls all previous reversible reactions forward towards the final pyruvate product.</span></strong><span> All of the irreversible reactions preceding the pyruvate kinase (PK) reaction are pulled forward via Le Châtelier’s principle. Phosphofructokinase (PFK) catalyzes the third irreversible reaction and therefore fructose-1,6-bisphosphate is relatively high, not low, and pushes these reactions forward. Only steps 1, 3, and 10 are the regulated steps. </span></p><p><span>The figure shows the large free energy release (i.e., – ΔG) for three enzymes: HK, PFK, and PK.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832004326-429158321.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='11' ><li><span>Which enzyme-catalyzed reaction in glycolysis generates NADH?</span></li></ol><blockquote><p><span>The reaction catalyzed by glyceraldehyde-3-phosphate dehydrogenase (GAPDH)</span></p></blockquote><blockquote><p><strong><span>Glyceraldehyde-3-phosphate dehydrogenase (GAPDH) catalyzes the oxidation</span></strong><span> of glyceraldehyde-3-phosphate (GAP) to 1,3-bisphosphoglycerate (BGP), where the two electrons are moved to reduce NAD+ to NADH. Hexokinase (HK) generates ADP and glucose-6-phosphate (G6P), phosphoglycerate kinase (PGK) generates ATP and 3-phosphoglycerate (3PG), and phosphofructokinase (PFK) generates ADP and fructose-1,6-bisphosphate (FBP). </span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='12' ><li><span>The net products of glycolysis are </span><strong><span>__</span></strong><strong></strong><span>.</span></li></ol><blockquote><p><span>2 pyruvates (Pyr), 2 ATP, and 2 NADH</span></p></blockquote><blockquote><p><span>Although two ATP are used in the early energy investment phase of glycolysis, four ATP molecules are generated in the second energy pay-off phase. Each three-carbon unit yields two ATPs and 1 NADH. Since there are two three-carbon intermediates, this output is doubled for the pay-off phase = four ATPs and two NADH. Subtracting the initial two ATPs for the investment phase yields a net of </span><strong><span>two ATP, two NADH, and two pyruvates (Pyr)</span></strong><span>. The energy investment and generation phases are illustrated in the diagram.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832070719-367766543.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='13' ><li><span>If a person were deficient in vitamin B3, what enzyme-catalyzed reaction in glycolysis would be directly affected?</span></li></ol><blockquote><p><span>The reaction catalyzed by glyceraldehyde-3-phosphate dehydrogenase (GAPDH)</span></p></blockquote><blockquote><p><span>Vitamin B3 is niacin, which is added to a nucleotide to become NAD+/NADH, as seen in the figure. The only enzyme in glycolysis that directly uses NAD+ is </span><strong><span>glyceraldehyde-3-phosphate dehydrogenase (GAPDH)</span></strong><span>. Hexokinase (HK) uses ATP as a substrate, pyruvate kinase (PK) uses ADP as a substrate, and aldolase (ALD) does not need a coenzyme or ATP to catalyze the cleavage of fructose-1,6-bisphosphate (FBP).</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832117446-436124482.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='14' ><li><span>Vitamin B3, also know as niacin, is a precursor for </span><strong><span>__</span></strong><strong></strong><span>.</span></li></ol><blockquote><p><span>NAD+</span></p></blockquote><blockquote><p><span>Niacin is a key part of the coenzyme </span><strong><span>NAD+</span></strong><span>/NADH (seen in figure). The niacin molecule is covalently attached to a nucleotide. Vitamin B5, pantothenic acid, is the precursor for coenzyme A (CoA). Vitamin B2, riboflavin, is the precursor to FAD/FADH2.</span></p><p><span>Phosphoenolpyruvate (PEP) is a glycolytic intermediate and ATP is a nucleotide; neither have vitamin precursors.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832117446-436124482.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='15' ><li><span>If phosphofructokinase (PFK)-1 is inhibited, which direction will the reaction catalyzed by glucose-6-phosphate isomerase (G6PI or PGI) proceed?</span></li></ol><blockquote><p><span>Toward glucose-6-phosphate (G6P)</span></p></blockquote><blockquote><p><span>Inhibition of phosphofructokinase (PFK) will cause increase in fructose-6-phosphate (F6P)]. This is the product of the reversible reaction catalyzed by glucose-6-phosphate isomerase (G6PI or PGI). Following Le Châtelier’s principle, an increase in product will push the reaction toward reactants. Therefore, inhibition of phosphofructokinase (PFK) will cause the glucose-6-phosphate isomerase (G6PI or PGI) catalyzed reaction to shift </span><strong><span>toward glucose-6-phosphate (G6P)</span></strong><span>.</span></p></blockquote><ol start='16' ><li><span>Which enzyme-catalyzed reaction in glycolysis generates FADH2?</span></li></ol><blockquote><p><span>None of the enzyme-catalyzed reactions in glycolysis generates FADH2</span></p></blockquote><blockquote><p><strong><span>Although the glycolytic intermediates are being oxidized, FAD is not being reduced to FADH2.</span></strong><span> Instead, NAD+ is reduced to NADH. Hexokinase (HK) generates ADP and glucose-6-phosphate (G6P), phosphoglycerate kinase (PGK) generates ATP and 3-phosphoglycerate (3PG), phosphofructokinase (PFK) generates ADP and fructose-1,6-bisphosphate (FBP), and pyruvate kinase (PK) generates ATP and pyruvate (Pyr).</span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='17' ><li><span>Which of the following statements concerning the malate-aspartate shuttle is true?</span></li></ol><blockquote><p><span>The cycle transports electrons from the cytosol to the mitochondrial matrix.</span></p></blockquote><blockquote><p><strong><span>The malate-aspartate shuttle is a cycle for moving the electrons from NADH into the matrix.</span></strong><span> NADH itself is not transported but instead oxaloacetate (OAA) is reduced to malate using NADH in the cytosol. Malate crosses into the mitochondrial matrix where it is oxidized to oxaloacetate (OAA) and NADH is reduced. Oxaloacetate (OAA) can undergo transamination (i.e., addition of an amine) to become Asp. Asp can leave the matrix and enter into the cytosol and the cycle begins again.</span></p></blockquote><ol start='18' ><li><span>Where in a eukaryotic cell does glycolysis occur?</span></li></ol><blockquote><p><span>Cytosol</span></p></blockquote><blockquote><p><span>Glycolysis occurs in the cytoplasm or </span><strong><span>cytosol</span></strong><span> of both eukaryotic and prokaryotic cells. Various other metabolic pathways occur in other cellular compartments, like the mitochondria, peroxisome, etc.</span></p></blockquote><ol start='19' ><li><span>As glucose is oxidized to pyruvate (Pyr), where are the electrons from glucose stored?</span></li></ol><blockquote><p><span>NADH</span></p></blockquote><blockquote><p><span>The electrons stripped from glucose in glycolysis are used to reduce NAD+ to </span><strong><span>NADH</span></strong><span>. NADH therefore stores electrons. Eventually, glucose is oxidized all the way to carbon dioxide and yields a number of electrons that are stored in either NADH or FADH2. ATP serves as a source of phosphates for creating high-energy intermediates in glycolysis and ADP serves as a phosphate acceptor when these high-energy molecules move to lower-energy molecules.</span></p></blockquote><ol start='20' ><li><span>Why is it advantageous for glycolysis to proceed in 10 steps, rather than a one-step conversion of glucose, NAD+, and ADP to pyruvate (Pyr), NADH, and ATP?</span></li></ol><blockquote><p><span>Possessing many intermediates allows for molecules to enter and leave the pathway at different points.</span></p></blockquote><blockquote><p><strong><span>With many intermediates, various molecules can enter and leave the pathway at various points</span></strong><span>, which enables metabolic flexibility. Having more enzymes also allows for many points of regulation, which helps control the output of the pathway. While some of the reactions are reversible, the pathway overall moves in a single direction. In order to reverse the pathway, additional enzymes are necessary.</span></p></blockquote><ol start='21' ><li><span>Phosphofructokinase (PFK) -1 is inhibited by high concentrations of </span><strong><span>__</span></strong><strong></strong><span>.</span></li></ol><blockquote><p><span>ATP</span></p></blockquote><blockquote><p><span>High </span><strong><span>ATP</span></strong><span> allosterically inhibits phosphofructokinase (PFK) via product inhibition since ATP is a product of the reaction catalyzed by phosphofructokinase (PFK). High fructose-2,6-bisphosphate, ADP, and AMP are allosteric activators. NADH and fructose-1,6-bisphosphate (FBP) have no regulatory effect on phosphofructokinase (PFK).</span></p><p><span>The major mechanism of regulatory control for glycolysis (on the left) and gluconeogenesis, a pathway that synthesizes glucose (on the right), are seen in the figure.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832624235-697797932.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='22' ><li><span>When yeast synthesizes </span><strong><span>__</span></strong><strong></strong><span> from pyruvate (Pyr), it results in NADH being converted to NAD+, which is a coenzyme needed in glycolysis.</span></li></ol><blockquote><p><span>ethanol</span></p></blockquote><blockquote><p><span>Yeast, and some bacteria, do not regenerate NAD+ using lactic acid fermentation (i.e., they do not use lactate dehydrogenase (LDH) to regenerate NAD+). Instead, pyruvate (Pyr) is converted to </span><strong><span>ethanol</span></strong><span> in two steps, the second of which yields NAD+ and ethanol. This process is called ethanol fermentation and is seen in the figure.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832645277-951274790.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='23' ><li><span>Which enzyme-catalyzed reaction in glycolysis generates an NTP (where N = any nitrogenous base)?</span></li></ol><blockquote><p><span>The reaction catalyzed by pyruvate kinase (PK)</span></p></blockquote><blockquote><p><span>Two enzyme-catalyzed reactions in glycolysis yield NTPs, those </span><strong><span>catalyzed by pyruvate kinase (PK)</span></strong><span> and by phosphoglycerate kinase (PGK). Both of these reactions generate ATP. Hexokinase (HK) and phosphofructokinase (PFK) use ATP and generate ADP. Glyceraldehyde-3-phosphate dehydrogenase (GAPDH) generates NADH.</span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='24' ><li><span>Phosphofructokinase (PFK) -1 is regulated by which of the following?</span></li></ol><blockquote><p><span>All of the listed responses are correct.</span></p></blockquote><blockquote><p><span>High ATP </span><strong><span>allosterically inhibits</span></strong><span> phosphofructokinase (PFK) in that the excess ATP binds to a site on the PFK enzyme separate from the catalytic site. This binding decreases the activity of PFK. This is also an example of </span><strong><span>product inhibition</span></strong><span> since ATP is a product of the overall cell respiration reaction. Excess ATP signals to regulated enzymes like PFK that the cell has enough ATP so the pathway is no longer needed at that time. In addition, ADP and AMP are all </span><strong><span>allosteric activators</span></strong><span> because they signal to the cell that the energy levels in the cell are low so the overall cell respiration reaction must turn on and therefore activate PFK. </span></p><p><span>The major mechanism of regulatory control for glycolysis (on the left) and gluconeogenesis, a pathway that synthesizes glucose (on the right), are seen in the figure.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832624235-697797932.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='25' ><li><p><span>How many carbon atoms do each of the following molecules contain?</span></p><ol start='' ><li><span>Glucose-6-phosphate (G6P)  </span></li><li><span>Glyceraldehyde-3-phosphate (GAP)  </span></li><li><span>Pyruvate (Pyr)</span></li></ol></li></ol><blockquote><p><span>6, 3, and 3</span></p></blockquote><blockquote><p><span>Glucose has </span><strong><span>six carbons</span></strong><span> and adding a phosphate to it does not change that number. Therefore, glucose-6-phosphate (G6P) has six carbons. Glyceraldehyde-3-phosphate (GAP) and pyruvate (Pyr) are both intermediates in the pay-off phase after the six-carbon intermediate, fructose-1,6-bisphosphate (FBP), is cleaved in half. </span><strong><span>All subsequent intermediates have</span></strong><span> </span><strong><span>three carbons</span></strong><span> since no carbon dioxide molecules are released in the oxidation.</span></p></blockquote><ol start='26' ><li><span>Which enzyme in glycolysis is responsible for “trapping” glucose in the cell?</span></li></ol><blockquote><p><span>Hexokinase (HK)</span></p></blockquote><blockquote><p><strong><span>Hexokinase (HK)</span></strong><span> catalyzes the first step in glycolysis where glucose is phosphorylated. This phosphorylation “traps” glucose inside the cell because the covalently bound phosphate is negatively charged and cannot be transported out of the cell. Phosphofructokinase (PFK) catalyzes the rate-limiting step in glycolysis, pyruvate kinase (PK) catalyzes the final irreversible step in glycolysis, and aldolase (ALD) catalyzes the reaction that splits fructose-1,6-bisphosphate (FBP) in half.</span></p><p><span>The figure shows the large free energy release (i.e., –ΔG) for three enzymes: HK, PFK, and PK.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612832004326-429158321.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='27' ><li><span>The first reaction in glycolysis converts glucose to </span><strong><span>__</span></strong><strong></strong><span>, and is catalyzed by </span><strong><span>__</span></strong><strong></strong><span>.</span></li></ol><blockquote><p><span>glucose-6-phosphate (G6P); hexokinase (HK)</span></p></blockquote><blockquote><p><span>The first enzyme-catalyzed reaction phosphorylates glucose at the sixth carbon, using ATP in a reaction catalyzed by </span><strong><span>hexokinase (HK)</span></strong><span>. The products released are </span><strong><span>glucose-6-phosphate (G6P)</span></strong><span> and ADP. </span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='28' ><li><span>Which enzyme-catalyzed reaction in glycolysis generates H2O?</span></li></ol><blockquote><p><span>The reaction catalyzed by enolase (ENO)</span></p></blockquote><blockquote><p><span>Enolase (ENO) catalyzes the dehydration of a beta-hydroxyl carbonyl compound. Aldolase (ALD) generates glyceraldehyde-3-phosphate (GAP) and dihydroxyacetone phosphate (DHAP), glyceraldehyde-3-phosphate dehydrogenase (GAPDH) generates NADH/H+, and glucose-6-phosphate isomerase (G6PI or PGI) isomerizes glucose-6-phosphate (G6P) to fructose-6-phosphate (F6P). </span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='29' ><li><span>Which of the following is NOT a product of glycolysis?</span></li></ol><blockquote><p><span>Carbon dioxide</span></p></blockquote><blockquote><p><span>While the carbons in glucose are being oxidized to pyruvate, none of the steps release </span><strong><span>carbon dioxide</span></strong><span>, which is the most oxidized state of carbon. The electrons gained from this oxidation are stored in NADH. ATP is generated in two separate steps after splitting the six-carbon metabolite in half. Pyruvate (Pyr) is the final product of glycolysis.</span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote><ol start='30' ><li><span>Which enzyme-catalyzed reaction in glycolysis directly consumes O2?</span></li></ol><blockquote><p><span>None of the enzyme-catalyzed reactions in glycolysis directly consumes O2.</span></p></blockquote><blockquote><p><span>Glycolysis is anaerobic pathway and thus </span><strong><span>none of the reactions need oxygen as a substrate</span></strong><span>. Furthermore, the reaction catalyzed by lactate dehydrogenase (LDH), which regenerates NAD+, also do not require oxygen. Hexokinase (HK) generates ADP and glucose-6-phosphate (G6P), glyceraldehyde-3-phosphate dehydrogenase (GAPDH) generates NADH/H+ and BPG, phosphoglycerate kinase (PGK) generates ATP and 3-phosphoglycerate (3PG), and pyruvate kinase (PK) generates ATP and pyruvate (Pyr).</span></p><p><span>Summary of glycolysis, where common abbreviations are used, is illustrated in the table:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1612831547403-884355737.jpeg" referrerpolicy="no-referrer"></p></blockquote></div>
+</body>
+</html>

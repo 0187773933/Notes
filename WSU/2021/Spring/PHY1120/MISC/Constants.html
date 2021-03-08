@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Current</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" /> -->
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<!-- <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX/TQBcNTh/AAAAAXRSTlPM0jRW/QAAAApJREFUeJxjYgAAAAYAAzY3fKgAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" /> -->
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+
+	<!-- https://www.jsdelivr.com/package/npm/katex -->
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script> -->
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mhchem.min.js" integrity="sha384-5gCAXJ0ZgozlShOzzT0OWArn7yCPGWVIvgo+BAd8NUKbCmulrJiQuCVR9cHlPHeG" crossorigin="anonymous"></script> -->
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script> -->
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body onload="init()">
+
+	<article class="markdown-body"></article>
+    <div class="equation-display">
+        <p>$$1\ Avagadro\ Constant =  \frac{Number\ of\ Particles \ (N)\ 6.02214076 * 10^{23} }{1\ mol}$$</p>
+        <p>$$1\ Joule = \frac{1\ Kilo\ Gram * 1\ Meter^2}{1\ Second^2}$$</p>
+        <p>$$Planck\ Constant\ (h) = \frac{6.62607015*10^{-34}\ Joules}{1\ Second}$$</p>
+        <p>$$Reduced\ Planck\ Constant\ (\hbar) = \frac{Plank\ Constant\ (h)}{2*\pi} = \frac{1.054571817*10^{-34}\ Joules}{1\ Second}$$</p>
+        <p>$$1\ Hertz = \frac{60\ Revolutions}{1\ Minute} = \frac{2 *\ \pi\  Radians}{1\ Second}$$</p>
+        <p>$$Angular\ Veloctiy\ (\omega) = 2 * \pi * Frequency\ (f)\ Hertz$$</p>
+        <p>$$Frequency\ (f) = \frac{Angular\ Velocity\ (\omega)}{2 * \pi}$$</p>
+        <p>$$Speed\ of\ Light = \frac{299792458\ meters}{1\ Second}$$</p>
+
+        <ul>
+            <li>
+                <p>$$1\ Electric\ Constant\ (\epsilon_0)\ (Vacuum\ Permittivity) = \frac{8.854187*10^{-12}\ Farads}{1\ Meter}$$</p>
+            </li>
+            <li>Distributed Capacitance of the Vacuum</li>
+            <li>Cabablity of Electirc Field to Permiate a Vacuume</li>
+        </ul>
+        <p>$$Force\ Between\ Two\ Separated\ Electric\ Charges\ with\ Spherical\ Symmetry\ in\ a\ Vacuum = F_C = \frac{1}{4*\pi * \epsilon_0}*\frac{q_1*q_2}{r^2}$$</p>
+        <p>$$Gravitational\ Constant = \frac{6.67408 * 10^{-11} Meters^3}{1\ Kilogram^3 * 1\ Second^2}$$</p>
+        <p>$$Force_{gravity} = \frac{Gravitatonal\ Constant\ (G)* Mass_1 * Mass_2}{Distance\ Between\ Mass_1\ and\ Mass_2\ (r)}$$</p>
+        <p>$$\frac{Force_{gravity}}{Force_{electric}} = \frac{Gravitational\ Constant\ (G) * Mass_1 * Mass_2}{Coulomb\ Constant * 1\ Elementary\ Charge\ (e^2)}$$</p>
+        <p>$$Acceleration\ Due\ To\ Gravity\ (a) = \frac{Gravitatonal\ Constant\ (G) * Mass}{(Radius\ of\ Earth\ (6.3781 * 10^6\ Meters))^2} = \frac{9.81\ Meters}{1\ Second^2}$$</p>
+        <p>$$Force = Mass * Acceleration$$</p>
+        <p>$$Energy_{photon} = \frac{Planks\ Constant\ (h) * Speed\ of\ Light\ (c)}{Wavelength\ \lambda_{photon} } = 4.66* 10^{-19}\ Joule$$</p>
+        <p>$$Energy_{photon} * Wavelength\ (\lambda)_{photon} = Plank\ Constant\ (h) * Speed\ of\ Light\ (C)$$</p>
+        <p>$$Energy_{photon} = Plank\ Constant\ (h) * Frequency_{Proton}\ (f)$$</p>
+        <p>$$Energy_{photon} = \frac{6.62607015*10^{-34}\ Joules}{1\ Second} * \frac{4.60 * 10^{14}Frequency_{Proton}\ (f)\ Hertz}{1\ Second}$$</p>
+        <p>$$Characterization\ of\ Electromagnetic\ Force , Finate\ Structure\ Constant\ (\alpha) = \frac{2*\pi *\ Coulomb\ Constant (k) *  (1\ Elementary\ Charge)^2}{E_{photon}*Wavelength\ (\lambda)_{photon}} = \frac{2* \pi * Coulomb\ Constant (k) * (1\ Elementary\ Charge)^2}{h *c } = \frac{1}{137}$$</p>
+        <p>$$Fine\ Structure\ Coupling\ Strength\ (1\ Elementary\ Charge^2) = 4 * \pi * Electric\ Constant\ (\epsilon_0) * Reduced\ Planck\ Constant\ (\hbar) * Elementary\ Charge\ (c) * Gap\ Between\ Spectral\ Lines\ of\ Hydrogen\ (\alpha)$$</p>
+        <p>$$1\ Elementary\ Charge = \sqrt{\left(4*\pi *Fine-Structure\ Constant\ (a)\right)} * \sqrt{Reduced\ Planck's\ Constant\ (\hbar ) * Speed\ of\ Light\ (C)}$$</p>
+        <p>$$1\ Elementary\ Charge\ (e) = \frac{1\ Farad}{1\ Avagadro\ Constant}$$</p>
+        <p>$$1\ Elementary\ Charge\ (e) = 1.602176634*10^{-19} Coulomb$$</p>
+        <p>$$1\ Coulomb = 1.036 * 10^{-5}\ mols \cdot Na\ elementary\ charge$$</p>
+        <p>$$1\ Ohm\ (\Omega) = \frac{1\ Joule \cdot Second}{1\ Coulomb^2}$$</p>
+        <p>$$1\ Ampere\ (A)(Amp) = \frac{1\ Coulomb}{1\ Second}$$</p>
+        <p>$$\ Siemen\ (S) = [\Omega^{-1}] = \frac{1\ Ampere\ (A)}{1\ Volt}$$</p>
+        <p>$$1\ Siemen\ (S) = \frac{1\ Coulomb^2}{1\ Joule \cdot Second}$$</p>
+        <p>$$Conductance\ (G) = \frac{1}{Resistance} = \frac{Current\ (I)}{Voltage\ (V)} = Siemens$$</p>
+        <p>$$\left[2\ Plates\ Charge\ Separation\ ,\ (+Q,-Q)\ ,\ Coulomb\ , \frac{1\ Ampere}{1\ Second}\right]$$</p>
+        <p>$$\left[Capacitance\ ,\ (C)\ ,\ Farad\ , \frac{1\ Ampere}{1\ Second}\right]$$</p>
+        <p>$$\left[Potential\ Difference\ ,\  (\Delta V)\ ,\ Volt\ ,\ \frac{1\ Joule}{1\ Coulomb}\right]$$</p>
+        <p>$$Charge\ (Q) = Capacitance\ (C) * Potential\ Difference\ (\Delta V)$$</p>
+        <p>$$Capacitance = \frac{Charge\ (Q)}{Potential\ Difference\ (\Delta V)}$$</p>
+        <p>$$Potential\ Difference\ (\Delta V) = \frac{Charge\ (Q)}{Capacitance\ (C)}$$</p>
+    </div>
+    <div>
+        <br>
+        <a href="http://physics.bu.edu/~duffy/semester2/c07_cap_calculation.html">http://physics.bu.edu/~duffy/semester2/c07_cap_calculation.html</a><br>
+        <a href="https://en.wikipedia.org/wiki/Avogadro_constant#First_measurements">https://en.wikipedia.org/wiki/Avogadro_constant#First_measurements</a><br>
+        <a href="https://en.wikipedia.org/wiki/Planck_constant">https://en.wikipedia.org/wiki/Planck_constant</a><br>
+        <a href="https://en.wikipedia.org/wiki/Elementary_charge">https://en.wikipedia.org/wiki/Elementary_charge</a><br>
+        <a href="https://en.wikipedia.org/wiki/Fine-structure_constant">https://en.wikipedia.org/wiki/Fine-structure_constant</a><br>
+        <a href="https://en.wikipedia.org/wiki/Electric_constant">https://en.wikipedia.org/wiki/Electric_constant</a><br>
+        <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/Forces/couple.html">http://hyperphysics.phy-astr.gsu.edu/hbase/Forces/couple.html</a><br>
+        <a href="https://en.wikipedia.org/wiki/Gravity">https://en.wikipedia.org/wiki/Gravity</a><br>
+        <a href="https://en.wikipedia.org/wiki/Acceleration">https://en.wikipedia.org/wiki/Acceleration</a><br>
+        <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/rutsca.html#c2">http://hyperphysics.phy-astr.gsu.edu/hbase/rutsca.html#c2</a><br>
+        <a href="https://en.wikipedia.org/wiki/Feynman_diagram">https://en.wikipedia.org/wiki/Feynman_diagram"</a><br>
+        <a href="http://www.kentchemistry.com/links/AtomicStructure/waveequations.htm">http://www.kentchemistry.com/links/AtomicStructure/waveequations.htm</a><br>
+    </div>
+	<script>
+		function init() {
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>
