@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width"> -->
+	<title>Mini End Plate Potentials</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" />
+
+	<!-- https://www.jsdelivr.com/package/npm/katex -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mhchem.min.js" integrity="sha384-5gCAXJ0ZgozlShOzzT0OWArn7yCPGWVIvgo+BAd8NUKbCmulrJiQuCVR9cHlPHeG" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+	onload="renderMathInElement(document.body , { strict: 'ignore' });"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+<body onload="pre_render()">
+	<!-- view-source:https://sindresorhus.com/github-markdown-css/ -->
+	<!-- https://katex.org/docs/supported.html -->
+	<!-- https://mhchem.github.io/MathJax-mhchem/ -->
+	<!-- https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex -->
+	<article class="markdown-body">
+		<center>
+			<h1>Mini End Plate Potentials (mEPP's)</h1>
+			<blockquote>
+				<ul>
+					<li>Occurs Spontaneously</li>
+					<li>Thought to be comprised of a single quantal release of neurotransmitter</li>
+					<li>Generated at the motor end plate in resting state due to random fusion of Ach containing vesicles in the presynaptic
+					neural terminal leading to release of Ach in the synaptic cleft</li>
+				</ul>
+			</blockquote>
+		</center>
+
+		<img src="https://39363.org/IMAGE_BUCKET/1610483453546-251894750.jpeg"></img>
+
+		<div class="flex-container">
+			<span>Mean EPP Amplitude = </span>
+			<input onchange="pre_render()" style="width: 40px;" id="mean-epp-amplitude" type="text"></input>
+			<span style="padding-left: 10px;">mV</span>
+			<br><br>
+			<span>Mean mEPP Amplitude = </span>
+			<input onchange="pre_render()" style="width: 40px;" id="mean-mepp-amplitude" type="text"></input>
+			<span style="padding-left: 10px;">mV</span>
+			<br><br>
+			<span>Number of Trials = </span>
+			<input onchange="pre_render()" style="width: 60px;" id="number-of-trials" type="text"></input>
+			<br><br>
+			<span>Number of Failures = </span>
+			<input onchange="pre_render()" style="width: 60px;" id="number-of-failures" type="text"></input>
+			<br><br>
+			<span>Number of Available Sites (n) = </span>
+			<input onchange="pre_render()" style="width: 60px;" id="number-of-available-sites" type="text" ></input>
+			<br><br>
+			<span>Probability of Success (p) = </span>
+			<input onchange="pre_render()" style="width: 60px;" id="probability-of-success" type="text"></input>
+			<br><br>
+			<span>Average Evoked EPP Amplitude = </span>
+			<input onchange="pre_render()" style="width: 60px;" id="average-epp-amplitude" type="text"></input>
+			<span style="padding-left: 10px;">mV</span>
+		</div>
+
+		<div class="flex-container">
+			<br></br>
+			<p id="equation-1-katex"></p>
+			<br>
+			<p id="equation-2-katex"></p>
+			<br>
+			<p id="equation-3-katex"></p>
+			<br>
+			<p id="average-mepp-amplitude"></p>
+		</div>
+
+	</article>
+
+	<script>
+		function pre_render() {
+			console.log("pre_render()");
+			let mean_epp_amplitude = parseFloat( document.getElementById( "mean-epp-amplitude" ).value );
+			let mean_mepp_amplitude = parseFloat( document.getElementById( "mean-mepp-amplitude" ).value );
+			let number_of_trials = parseFloat( document.getElementById( "number-of-trials" ).value );
+			let number_of_failures = parseFloat( document.getElementById( "number-of-failures" ).value );
+			let number_of_available_sites = parseFloat( document.getElementById( "number-of-available-sites" ).value );
+			let probability_of_success = parseFloat( document.getElementById( "probability-of-success" ).value );
+			let average_epp_amplitude = parseFloat( document.getElementById( "average-epp-amplitude" ).value );
+			let equation_1_element = document.getElementById( "equation-1-katex" );
+			let equation_2_element = document.getElementById( "equation-2-katex" );
+			let equation_3_element = document.getElementById( "equation-3-katex" );
+			let average_mepp_amplitude_element = document.getElementById( "average-mepp-amplitude" );
+			let equation_1_result = ( mean_epp_amplitude / mean_mepp_amplitude );
+			let equation_2_result = ( Math.log( ( number_of_trials / number_of_failures ) ) );
+			let equation_3_result = ( number_of_available_sites * probability_of_success );
+			let average_mepp_amplitude_result = ( average_epp_amplitude / ( equation_1_result || equation_2_result || equation_3_result ) );
+			equation_1_element.innerText = `$$m = \\frac{${mean_epp_amplitude}}{${mean_mepp_amplitude}} = ${equation_1_result.toFixed(9)} $$`;
+			equation_2_element.innerText = `$$m = ln\\left(\\frac{${number_of_trials}}{${number_of_failures}}\\right) = ${equation_2_result.toFixed(9)} $$`;
+			equation_3_element.innerText = `$$m = ${number_of_available_sites} * ${probability_of_success} = ${equation_3_result.toFixed(9)} $$`;
+			average_mepp_amplitude_element.innerText = `$$Average\\ mEPP\\ Amplitude = \\frac{${average_epp_amplitude}}{${(equation_1_result || equation_2_result || equation_3_result)}} = ${average_mepp_amplitude_result.toFixed(9)} $$`;
+			renderMathInElement( equation_1_element , { strict: "ignore" } );
+			renderMathInElement( equation_2_element , { strict: "ignore" } );
+			renderMathInElement( equation_3_element , { strict: "ignore" } );
+			renderMathInElement( average_mepp_amplitude_element , { strict: "ignore" } );
+		}
+	</script>
+</body>
+</html>
+
+
+
