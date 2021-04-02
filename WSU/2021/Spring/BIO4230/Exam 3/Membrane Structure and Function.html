@@ -1,0 +1,1345 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Membrane Structure and Function</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+  --mermaid-theme: night;
+  --node-fill: #BDD5EA;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875rem;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.export-detail,
+.export-item.active,
+.export-items-list-control {
+    background: #d6d6d4
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+ :root {--mermaid-font-zoom:1em ;} 
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><center><h1>Membrane Structure and Function</h1></center><p><img src="https://39363.org/IMAGE_BUCKET/1617302679445-517560174.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302691936-889427591.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302726342-943930160.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302742970-276600385.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302782090-251168702.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302793041-197784238.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302806425-633971683.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302834801-882820533.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617302873485-861743655.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617303139267-325576259.jpeg" referrerpolicy="no-referrer"></p><p><span>The extracellular side of a transmembrane helix of an integral membrane protein does </span><span style='color:#BF616A'><span>NOT</span></span><span> contain </span><strong><span>__</span></strong><strong></strong><span>.</span></p><blockquote><p><span>mostly hydrophobic amino acids</span></p></blockquote><blockquote><ul><li><span>As the figure below illustrates, the extracellular side of a transmembrane protein contains </span><strong><span>mostly hydrophilic, not hydrophobic, amino acids</span></strong><span>, as these are exposed to water and can make many favorable intermolecular interactions.</span></li><li><span>This side of the membrane is also glycosylated, as mono/polysaccharides are important for cell-cell recognition, antigen-antibody interactions, etc.</span></li><li><span>These saccharides are covalently bound to glycoproteins via the amino acids Ser, Thr, and Asn, and therefore the extracellular side of the transmembrane protein contains many of these specific residues.</span></li></ul><p><img src="https://39363.org/IMAGE_BUCKET/1616702015597-368309667.jpeg" referrerpolicy="no-referrer"></p></blockquote><p><span>Bacteria that thrive in cooler growth temperatures compensate by </span><strong><span>__</span></strong><strong></strong><span> as compared to bacteria growing at warmer temperatures. </span></p><blockquote><p><span>putting more unsaturated fatty acids into their membranes</span></p><ul><li><span>Bacteria growing at cold temperatures need a membrane composition that facilitates increased membrane fluidity, because the cooler temperatures decrease molecular motion.</span></li><li><span>Therefore, bacteria thriving in cool temperatures have </span><strong><span>increased populations of unsaturated fatty acids on phospholipids</span></strong><span> because the cis double bonds cause kinks or separations within the membrane. </span></li></ul></blockquote><p><span>Consider the following structure:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1616702939051-960994496.jpeg" referrerpolicy="no-referrer"></p><p><span>The molecule’s function is to </span><strong><span>__</span></strong><strong></strong><span>.</span></p><blockquote><p><span>send out localized cellular signals</span></p></blockquote><blockquote><ul><li><span>The structure is a prostaglandin, which is a type of eicosanoid.</span></li><li><span>These lipids are derived from a polyunsaturated fatty acid and have a distinctive five-membered ring that is sometimes oxidized.</span></li><li><span>These are local signaling molecules (</span><strong><span>sending out localized cellular signals</span></strong><span>) that can control pain, inflammation, and local housekeeping.</span>
+<span>They are less polar than steroids and therefore less soluble in the bloodstream, so they do not stray far from the cell that synthesized them.</span></li></ul></blockquote><p><span>Consider the following structure:</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1616703024583-691633904.jpeg" referrerpolicy="no-referrer"></p><p><span>The molecule’s function is to </span><strong><span>__</span></strong><strong></strong><span>.</span></p><blockquote><p><span>send out global cellular signals</span></p></blockquote><blockquote><ul><li><span>The structure is a steroid because it has a steroid nucleus and a higher level of oxidation than a sterol. </span></li><li><span>These molecules are more hydrophilic than sterols and therefore travel throughout the bloodstream readily. </span></li><li><span>They bind to receptor proteins and initiate signaling cascades.</span></li><li><span>Thus it’s function is to </span><strong><span>send out global cellular signals</span></strong><span>.</span></li><li><span>In contrast, eicosanoids are localized signaling molecules because they are less polar.</span></li></ul></blockquote><p><img src="https://39363.org/IMAGE_BUCKET/1617303636611-81374475.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617303654070-755436112.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617303672269-284902855.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617303689078-348073467.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617303703025-770628648.jpeg" referrerpolicy="no-referrer"></p><p><img src="https://39363.org/IMAGE_BUCKET/1617303750530-843047331.jpeg" referrerpolicy="no-referrer"></p><p><span>The active transport of chloride ions into the cytoplasm, from low to high concentration, sets up a(an) </span><strong><span>__</span></strong><strong></strong><span>.</span></p><blockquote><p><span>electrochemical gradient</span></p></blockquote><blockquote><ul><li><p><span>Movement of charged ions across a membrane, resulting in unequal concentrations, has a twofold effect:</span></p><ul><li><span>(1) the concentration difference sets up a concentration gradient, whereas if the chloride moved out of the cell (i.e., down its concentration gradient), it would release energy</span></li><li><span>(2) the charge of the ion sets up membrane polarization, wherein the membrane is more negative on the side of the membrane with the highest chloride concentration.</span></li></ul></li><li><p><span>Again, if chloride were to move out of the cell it would be moving toward the positive side of the membrane and this also releases energy. </span></p></li><li><p><span>The combined effect is the creation of an </span><strong><span>electrochemical gradient</span></strong><span>.</span></p></li><li><p><span>The term is derived as follows:</span></p><ul><li><em><span>electro</span></em><span> for charge separation, </span></li><li><em><span>chemical</span></em><span> because a chemical/ion created this charge separation</span></li><li><em><span>gradient</span></em><span> due to the concentration difference between the sides of the membrane.</span></li></ul></li></ul></blockquote><p><span>A lipid bilayer membrane without pores or transporters is freely permeable to which of the following?</span></p><blockquote><p><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.591ex" height="2.308ex" viewBox="0 -783.2 1976.6 993.6" role="img" focusable="false" style="vertical-align: -0.489ex;"><defs><path stroke-width="0" id="E4-MJMATHI-43" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path stroke-width="0" id="E4-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E4-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E4-MJMATHI-43" x="0" y="0"></use><g transform="translate(760,0)"><use xlink:href="#E4-MJMATHI-4F" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E4-MJMAIN-32" x="1079" y="-213"></use></g></g></svg></span><script type="math/tex">CO_2</script></p></blockquote><blockquote><ul><li><span>Lipid bilayers are permeable to small, uncharged, and nonpolar molecules.</span></li><li><span>Of all the choices, only carbon dioxide (</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.591ex" height="2.308ex" viewBox="0 -783.2 1976.6 993.6" role="img" focusable="false" style="vertical-align: -0.489ex;"><defs><path stroke-width="0" id="E4-MJMATHI-43" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path stroke-width="0" id="E4-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E4-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E4-MJMATHI-43" x="0" y="0"></use><g transform="translate(760,0)"><use xlink:href="#E4-MJMATHI-4F" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E4-MJMAIN-32" x="1079" y="-213"></use></g></g></svg></span><script type="math/tex">CO_2</script><span>) meets all three requirements.</span></li><li><span>Na+ and K+ are small but they are charged, polar ions that require transporters.</span></li><li><span>Glucose is uncharged but it is large and polar, so it also requires a transporter.</span></li><li><span>Lys is a large, charged, and polar molecule that also requires a transporter at pH 7.</span></li></ul></blockquote><p><span>The inner core of a pore transport protein for potassium is most likely lined with </span><strong><span>__</span></strong><strong></strong><span>.</span></p><blockquote><p><span>hydrophilic amino acids</span></p></blockquote><blockquote><ul><li><span>The inner core of the pore is responsible for binding potassium, which is a charged ion.</span></li><li><span>The amino acids that will be attracted to this positive potassium ion through intermolecular interaction are the acidic and polar neutral amino acids, which belong to the </span><strong><span>hydrophilic group of amino acids</span></strong><span>.</span></li><li><span>The surface of the pore protein will be coated in mostly hydrophobic amino acids, as these amino acids will have favorable intermolecular interactions with the hydrophobic lipids’ tails.</span></li><li><span>The figure below shows a pore that transports potassium, illustrating the hydrophilic core and the hydrophobic surface.</span></li></ul><p><img src="https://39363.org/IMAGE_BUCKET/1616908690954-463701656.jpeg" referrerpolicy="no-referrer"></p></blockquote><p><span>Define the terms </span><strong><span>peripheral membrane protein</span></strong><span> and </span><strong><span>integral membrane proteins</span></strong><span>.</span></p><blockquote><ul><li><p><span>Peripheral Membrane Proteins = exposed at only one membrane face or the other</span></p><ul><li><span>Held to the membrane by noncovalent interaction with lipid heads or integral membrane proteins</span></li></ul></li><li><p><span>Integral Membrane Proteins = largely buried within the membrane but are usually exposed on both faces</span></p><ul><li><span>Frequently involved in transporting specific substances, or transducing chemical signals through the membrane</span></li></ul></li></ul></blockquote><p><span>The relative orientation of polar and nonpolar amino acid side chains of integral membrane proteins is &quot;inside-out&quot; compared to the amino acid side chain orientation for globular water-soluble proteins. Explain why.</span></p><blockquote><ul><li><p><span>Membrane proteins are lipid soluble rather than water soluble</span></p><ul><li><span>We want the hydrophobic chains to be touching the lipid rather than pressed in</span></li></ul></li><li><p><span>A typical globular protein is found in the cytosol, and because the cytosol is predominately water, what we typically find is:</span></p><ul><li><span>Any of the amino acid side chains that are hydrophilic are going to be going towards the water or towards the outside</span></li><li><span>Any of the hydrophobic residues are going to be hiding on the inside of the protein and staying as far away from water as possible</span></li></ul></li><li><p><span>The lipid bilayer we have nonpolar regions inside the polar heads.</span></p><ul><li><span>phospholipids, sphinolipids, ect</span></li></ul></li><li><p><span>Because these proteins are embedded inside that region, they&#39;re actually in a nonpolar environment</span></p></li><li><p><span>Our hydrophilic amino acids are not going to like that nonpolar environment</span></p><ul><li><p><span>So we&#39;re going flip everything inside out</span></p><ul><li><span>The hydrophobics are going to be on the outside protecting the hydrophilic which are now hiding on the inside</span></li></ul></li></ul></li></ul></blockquote><p><strong><span>Information</span></strong></p><ul><li><span>Integral membrane proteins often contain helical segments of appropriate length to span the lipid bilayer.</span></li><li><span>In a protein that has a single segment that spans the membrane, the helix usually only contains hydrophobic residues and is called a single-span membrane protein.</span></li><li><span>In transmembrane proteins with multiple segments that span the membrane, hydrophilic residues are often found in sequences of the helices.</span></li></ul><p><span>Why are hydrophobic residues favored in single-span membrane proteins? Find an example of a single-span membrane protein in your book.</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1616789735816-24579464.jpeg" style="zoom:47%;" /></p><blockquote><ul><li><p><span>Hydrophobic residues are favored because the majority of the </span></p><ul><li><span>when we have a single span membrane protein its going to be using</span></li></ul></li><li><p><span>Bacteriorhodopsin - Figure 10.14</span></p></li><li><p><span>Majority of exterior of protein will be interacting with hydrophobic region</span></p></li><li><p><span>When we have a single-span membrane protein, its typically going to have a helix with side chains sticking out</span></p></li><li><p><span>The majority of the single-span membrane protein is going to be in the hydrophobic region</span></p></li></ul></blockquote><p><span>Propose a structural orientation and a function for multiple hydrophilic residues in the helices of multi-span protein. Find an example of a multi-span membrane protein in your book</span></p><blockquote><ul><li><span>We have all of these multispan proteins, some of which are involved in protein transporrt</span></li><li><span>The helices end up forming a circle/pore with hydrophilic residues facing inward because they want to be away from the lipid hydrophobic region</span></li><li><span>For example, sodium is going to come down and interact with those hydrophilic residues in order for the transport protein to push it through from one side of the membrane to the other</span></li><li><span>Example = Retinal</span></li></ul></blockquote><p><span>From your understanding of protein structure and membrane structure, explain the fact that of the approximately 51,000 protein structures (3D) published and listed int he Protein Data Bank (in 2008) only about 930 of theses structures are transmembrane proteins. </span><strong><span>NOTE:</span></strong><span> 3D structures are typically obtained from X-ray crystallography data.</span></p><blockquote><p><a href='https://biology.stackexchange.com/questions/13523/why-are-transmembrane-proteins-difficult-to-crystallise' target='_blank' class='url'>https://biology.stackexchange.com/questions/13523/why-are-transmembrane-proteins-difficult-to-crystallise</a></p><ul><li><p><span>X-Ray Crystallography requires a lot of &quot;salt&quot; in order to crystallize the protein</span></p></li><li><p><span>In a nonpolar solvent, where we would normally expect to find our membrane proteins, it is going to be difficult to get a &quot;salt&quot; in there to make a crystal</span></p></li><li><p><span>So if we take the integral membrane protein and put it into a hydrophilic solution, water for example, and then crystallize it, the general structure is going to be completely changed</span></p><ul><li><span>Because all of the hydrophobic residues are going to want to hide on the inside</span></li><li><span>So the structure observed will not be the &quot;true&quot; structure</span></li></ul></li></ul></blockquote><p><span>Propose a reasonable mode of action by which these antihistamines exert their activity</span></p><blockquote><ul><li><span>Anti-histimines could be a non-competitive inhibitor that makes a conformational change and prevents histimine from binding</span></li><li><span>Claratin could latch onto histimine and prevent it from binding to H1 receptors</span></li><li><span>Competitive antagonist</span></li></ul></blockquote><p><span>Cell membranes are described using the fluid mosaic model, yet they are also discussed as containing microdomains ( lipid rafts ). Define the </span><strong><span>fluid mosaic model</span></strong><span>. Does this model fully describe the reality of the cell membrane? Explain why or why not. Describe lipid rafts and suggest two possible functions.</span></p><blockquote><ul><li><p><span>Fluid = because individual phospholipids and proteins can move side-to-side within the layer</span></p></li><li><p><span>Mosaic = because of the pattern produced by the scattered protein molecules when the membrane is viewed from above</span></p></li><li><p><span>Doesn&#39;t fully describe because there is a lot more going on than what the model shows</span></p><ul><li><span>Current research suggests that membrane surface is even more crowded, and the organization is highly organized.</span></li></ul></li><li><p><span>lipid rafts play significant roles in cell signaling and the sorting of proteins into specific organelles within a cell</span></p></li></ul></blockquote><p><span>Why is it important for determining the function of a membrane protein to know if it spans the bilayer or appears only on one face of the membrane? As part of your answer give three example proteins and their functions.</span></p><blockquote><ul><li><span>Structure and location determines function, knowing if it crosses the entire membrane or is just embedded can tell us.</span></li><li><span>If it spans the entire membrane it could be a transporter or pore for diffusion</span></li><li><span>if its bound to one side only, it would be a peripheral protein</span></li><li><span>Valinomycin</span></li><li><span>GLUT-1</span></li><li><span>sodium–potassium pump</span></li></ul></blockquote><p><span>The protein OmpF porin is embedded in the cell membrane and serves as a pore through the membrane. Structural analysis of the protein shown that the outside of the protein has a band of hydrophobic residues that is 27 Å tall and interacts directly with the nonpolar membrane (</span><a href='https://moscow.sci-hub.se/1767/f59d9ec880059cabca99e2dd397402d9/penel1998.pdf#view=FitH'><span>Penel et al Biochime 1998; 80; 543-51</span></a><span>). The upper and lower bounds of the band are defined by phenylalanine residues. The following shape represents a side view of the protein that is 40 Å tall. Draw the lipid bilayer on the shape below and indicate the location of the phenylalanine residues.</span></p><blockquote><p><span>Phenylalanine is non-polar. Residues inside the protein, parallel to the phospholipids</span></p><p><img src="https://39363.org/IMAGE_BUCKET/1617023610890-523731809.jpeg" referrerpolicy="no-referrer"></p></blockquote><p><span>In your group recall at least three instances of membrane transport that we have discussed so far in central and lipid metabolism. Identify the molecules being transported.</span></p><blockquote><ul><li><span>NAD</span></li><li><span>FADH</span></li><li><span>Carnitine Translocase</span></li><li><span>Glucose entering cell via glucose transporters for glycolysis</span></li></ul></blockquote><p><span>In your group recall at least three instances of membrane transport that we have discussed so far in central and lipid metabolism. Identify the molecules being transported.</span></p><blockquote><ul><li><span>NAD</span></li><li><span>FADH</span></li><li><span>Carnitine Translocase</span></li><li><span>Glucose entering cell via glucose transporters for glycolysis</span></li></ul></blockquote><p><span>What replaces Q in our free energy equation.</span></p><blockquote><p><a href='https://39363.org/NOTES/WSU/2021/Spring/BIO4230/Calculators/MetabolicFreeEnergyChange/' target='_blank' class='url'>https://39363.org/NOTES/WSU/2021/Spring/BIO4230/Calculators/MetabolicFreeEnergyChange/</a></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n286" cid="n286" mdtype="math_block">
+			
+		<div class="md-rawblock-container md-math-container" tabindex="-1"><div class="MathJax_SVG_Display" style="text-align: center;"><span class="MathJax_SVG" id="MathJax-Element-2-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="15.282ex" height="6.058ex" viewBox="0 -1564.5 6579.9 2608.2" role="img" focusable="false" style="vertical-align: -2.424ex; max-width: 100%;"><defs><path stroke-width="0" id="E2-MJMATHI-43" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path stroke-width="0" id="E2-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E2-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E2-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E2-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path stroke-width="0" id="E2-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E2-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E2-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E2-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E2-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path stroke-width="0" id="E2-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path stroke-width="0" id="E2-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path stroke-width="0" id="E2-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g transform="translate(120,0)"><rect stroke="none" width="1288" height="60" x="0" y="220"></rect><g transform="translate(60,676)"><use xlink:href="#E2-MJMATHI-43" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMAIN-32" x="1011" y="-213"></use></g><g transform="translate(60,-686)"><use xlink:href="#E2-MJMATHI-43" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMAIN-31" x="1011" y="-213"></use></g></g><use xlink:href="#E2-MJMAIN-3D" x="1806" y="0"></use><g transform="translate(2584,0)"><g transform="translate(397,0)"><rect stroke="none" width="3477" height="60" x="0" y="220"></rect><g transform="translate(265,765)"><use xlink:href="#E2-MJMATHI-43" x="0" y="0"></use><g transform="translate(715,-150)"><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-65" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-6E" x="466" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-64" x="1066" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-69" x="1589" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-6E" x="1934" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-67" x="2534" y="0"></use></g></g><g transform="translate(60,-686)"><use xlink:href="#E2-MJMATHI-43" x="0" y="0"></use><g transform="translate(715,-150)"><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-73" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-74" x="469" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-61" x="829" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-72" x="1358" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-74" x="1809" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-69" x="2171" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-6E" x="2516" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMATHI-67" x="3116" y="0"></use></g></g></g></g></g></svg></span></div><script type="math/tex; mode=display" id="MathJax-Element-2">\frac{C_2}{C_1} = \frac{C_{ending}}{C_{starting}}</script></div></div></blockquote><p><span>How do we distinguish between the two sides of the membrane?</span></p><blockquote><ul><li><span>Ending/Final Concentration is on top</span></li><li><span>Starting/Initial Concentration is on bottom</span></li><li><a href='https://uh.edu/dtu/05-Transport-1-07.htm' target='_blank' class='url'>https://uh.edu/dtu/05-Transport-1-07.htm</a></li><li><a href='https://www.biology-pages.info/M/MembraneTransport.html' target='_blank' class='url'>https://www.biology-pages.info/M/MembraneTransport.html</a></li></ul></blockquote><p><span>What happens to the equation if we decide to move the molecule in the opposite direction across the membrane? What would this do to the value of </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.76ex" height="2.066ex" viewBox="0 -783.2 1619 889.4" role="img" focusable="false" style="vertical-align: -0.247ex;"><defs><path stroke-width="0" id="E5-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path><path stroke-width="0" id="E5-MJMATHI-47" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E5-MJMAIN-394" x="0" y="0"></use><use xlink:href="#E5-MJMATHI-47" x="833" y="0"></use></g></svg></span><script type="math/tex"> \Delta G</script><span> ? Justify your answer with an example.</span></p><blockquote><p><img src="https://39363.org/IMAGE_BUCKET/1616740521296-997258008.jpeg" style="zoom:67%;" /></p><ul><li><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.76ex" height="2.066ex" viewBox="0 -783.2 1619 889.4" role="img" focusable="false" style="vertical-align: -0.247ex;"><defs><path stroke-width="0" id="E6-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path><path stroke-width="0" id="E6-MJMATHI-47" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E6-MJMAIN-394" x="0" y="0"></use><use xlink:href="#E6-MJMATHI-47" x="833" y="0"></use></g></svg></span><script type="math/tex">\Delta G</script><span> would change signs</span></li></ul></blockquote><p><span>Would moving a molecule of sodium across a membrane into a vesicle which has a high positive charge on its interior have a positive or negative free energy?</span></p><blockquote><p><a href='http://oregonstate.edu/instruct/bb451/451material/lectures/highlightsmembtrans.html' target='_blank' class='url'>http://oregonstate.edu/instruct/bb451/451material/lectures/highlightsmembtrans.html</a></p><ul><li><p><span>Positive , and unfavorable</span></p><ul><li><span>You don&#39;t want to move positive ions into something that is already positive on the inside</span></li></ul></li></ul></blockquote><p><span>Would moving a molecule of magnesium instead of the sodium above be more or less favored? Why?</span></p><blockquote><ul><li><span>Less favored because more positive charge</span></li></ul></blockquote><p><img src="https://39363.org/IMAGE_BUCKET/1617045505710-353823567.jpeg" style="zoom:67%;" /></p><p><span>What molecule is actually moved across the membrane to generate Acetyl-CoA in the cytosol?</span></p><blockquote><p><span>Citrate</span></p></blockquote><p><span>There are two transport mechanisms for the above molecule indicated in the figure. For each determine whether the transport is symport or antiport and which molecules are moving down their concentration gradient and which up.</span></p><blockquote><ul><li><p><span>Citrate/Malate Antiporter</span></p><ul><li><span>Citrate is moving down its concentration gradient</span></li><li><span>Malate is moving up its concentration gradient</span></li></ul></li><li><p><span>Citrate/Phosphate Antiporter</span></p><ul><li><span>Citrate is moving down its concentration gradient</span></li><li><span>Phosphate is moving up its concentration gradient</span></li></ul></li></ul></blockquote><p><span>What is the adenine nucleotide translocase?</span></p><blockquote><ul><li><span>Transports ADP into matrix</span></li><li><span>Transports ATP out of the matrix</span></li></ul></blockquote><p><span>Does it work as an antiporter or symporter?</span></p><blockquote><ul><li><span>Antiporter</span></li></ul></blockquote><p><span>Thermodynamically, why can this transport mechanism work?</span></p><blockquote><ul><li><span>Proton gradient favors highly negative ATP to be transported toward the positive intermembrane space</span></li><li><span>Net decrease in negativity allows us to pull ADP into the matrix</span></li></ul></blockquote><p><span>Why does this transport make logical/evolutionary sense based on the needs of the cell?</span></p><blockquote><ul><li><p><span>we want to get ATP out of the mitochondria to be used by the cell</span></p></li><li><p><span>we want to get ADP into the mitochondria to regenerate ATP</span></p></li><li><p><span>We are worried about ATP concentration</span></p><ul><li><span>This transport mechanism moves ATP outside of the matrix into the cytosol</span></li><li><span>We need ADP in order to do that</span></li><li><span>Le Chatelier&#39;s principle</span></li></ul></li><li><p><span>The cell needs ATP for energy</span></p><ul><li><span>We need to be able to get ATP outside of the matrix and into the cytosol</span></li></ul></li></ul></blockquote><p><img src="https://39363.org/IMAGE_BUCKET/1617207257390-254700236.jpeg" style="zoom:67%;" /></p><p><span>How does the mitochondria obtain its phosphate groups to generate ATP?</span></p><blockquote><ul><li><span>phosphate translocase</span></li><li><span>Both sym and antiporter</span></li></ul></blockquote><p><span>Transport of those phosphate groups can be symport or antiport. What molecules are moving in which directions in this transport</span></p><blockquote><ul><li><p><span>As an antiporter</span></p><ul><li><span>Transports dihydrogen phosphate into the matrix along with two protons</span></li><li><span>Hydroxide leaves the mitochondria</span></li></ul></li><li><p><span>As symporter</span></p><ul><li><span>transports monohydrogen phosphate into matrix with two protons</span></li></ul></li><li><p><span>Both modes of transport maintain electrical neutrality and are driven by the proton concentration difference component of the proton motive force generated by electron transport</span></p></li></ul></blockquote><p><span>For the above phosphate transporters, thermodynamically, why can these transport mechanisms work?</span></p><blockquote><ul><li><p><span>Both are driven by proton concentration difference </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.553ex" height="2.671ex" viewBox="0 -835.3 3252 1149.8" role="img" focusable="false" style="vertical-align: -0.73ex;"><defs><path stroke-width="0" id="E7-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E7-MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path><path stroke-width="0" id="E7-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path stroke-width="0" id="E7-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E7-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E7-MJMAIN-28" x="0" y="0"></use><use xlink:href="#E7-MJMAIN-394" x="389" y="0"></use><use xlink:href="#E7-MJMATHI-70" x="1472" y="0"></use><use xlink:href="#E7-MJMATHI-48" x="1975" y="0"></use><use xlink:href="#E7-MJMAIN-29" x="2863" y="0"></use></g></svg></span><script type="math/tex">(\Delta\ pH)</script><span> component of proton motive force generated by electron transport</span></p></li><li><p><span>maintaining electric neutrality</span></p></li><li><p><span>Antiporter:</span></p><ul><li><span>OH is moving down its gradient</span></li><li><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.01ex" height="3.033ex" viewBox="0 -887.4 3448.7 1306.1" role="img" focusable="false" style="vertical-align: -0.972ex;"><defs><path stroke-width="0" id="E8-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E8-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E8-MJMATHI-50" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path stroke-width="0" id="E8-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E8-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="0" id="E8-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E8-MJMATHI-48" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E8-MJMAIN-32" x="1175" y="-213"></use><use xlink:href="#E8-MJMATHI-50" x="1284" y="0"></use><g transform="translate(2035,0)"><use xlink:href="#E8-MJMATHI-4F" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E8-MJMAIN-2212" x="1079" y="569"></use><use transform="scale(0.707)" xlink:href="#E8-MJMAIN-34" x="1079" y="-445"></use></g></g></svg></span><script type="math/tex">H_2PO_4^-</script><span> is also moving down its gradient </span></li></ul></li><li><p><span>Symporter:</span></p><ul><li><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.91ex" height="3.154ex" viewBox="0 -939.5 3405.7 1358.2" role="img" focusable="false" style="vertical-align: -0.972ex;"><defs><path stroke-width="0" id="E9-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E9-MJMATHI-50" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path stroke-width="0" id="E9-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E9-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="0" id="E9-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E9-MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E9-MJMATHI-48" x="0" y="0"></use><use xlink:href="#E9-MJMATHI-50" x="888" y="0"></use><g transform="translate(1639,0)"><use xlink:href="#E9-MJMATHI-4F" x="0" y="0"></use><g transform="translate(763,402)"><use transform="scale(0.707)" xlink:href="#E9-MJMAIN-2212" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E9-MJMAIN-32" x="778" y="0"></use></g><use transform="scale(0.707)" xlink:href="#E9-MJMAIN-34" x="1079" y="-445"></use></g></g></svg></span><script type="math/tex">HPO_4^{-2}</script><span> is moving down its concentration gradient</span></li><li><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.774ex" height="2.066ex" viewBox="0 -835.3 2055.3 889.4" role="img" focusable="false" style="vertical-align: -0.126ex;"><defs><path stroke-width="0" id="E10-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E10-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E10-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E10-MJMAIN-32" x="0" y="0"></use><g transform="translate(500,0)"><use xlink:href="#E10-MJMATHI-48" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E10-MJMAIN-2B" x="1280" y="513"></use></g></g></svg></span><script type="math/tex">2H^+</script><span> is moving down concentration gradient</span></li></ul></li></ul></blockquote><p><span>For the above phosphate transporters, why do these transports make logical/ evolutionary sense based on the needs of the cell?</span></p><blockquote><ul><li><p><span>couples ADP and Pi inside and drives ATP outside</span></p><ul><li><span>In order to keep producing ATP inside the matrix</span></li></ul></li><li><p><span>Symporter:</span></p><ul><li><p><span>You need hydrogen ions inside the matrix so you can pump them back out</span></p><ul><li><span>This helps generate energy in moving FADH2</span></li></ul></li></ul></li><li><p><span>Antiporter:</span></p><ul><li><span>movement of </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.384ex" height="2.187ex" viewBox="0 -835.3 2318.3 941.5" role="img" focusable="false" style="vertical-align: -0.247ex;"><defs><path stroke-width="0" id="E11-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E11-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E11-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E11-MJMATHI-4F" x="0" y="0"></use><g transform="translate(763,0)"><use xlink:href="#E11-MJMATHI-48" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E11-MJMAIN-2212" x="1280" y="513"></use></g></g></svg></span><script type="math/tex">OH^-</script><span> helps regulate pH in the cytosol and in the matrix</span></li></ul></li></ul></blockquote><p><span>What electron carrier is generated during glycolysis? </span></p><blockquote><p><span>NADH</span></p></blockquote><p><span>Do you suppose the above molecule can easily enter the mitochondria to generate ATP?</span></p><blockquote><ul><li><span>No , it is too large</span></li></ul></blockquote><p><img src="https://39363.org/IMAGE_BUCKET/1617050647811-223445584.jpeg" referrerpolicy="no-referrer"></p><p><span>Identify two strategies that are used to transport the electrons into the mitochondria</span></p><blockquote><ul><li><span>dihydroxyacetone phosphate - glycerol-3-phosphate shuttle</span></li><li><span>malate-aspartate shuttle</span></li></ul></blockquote><p><span> In the malate/aspartate shuttle what molecule is shuttled into the mitochondria?</span></p><blockquote><p><span>Malate</span></p></blockquote><p><span>What happens to that molecule and what is generated?</span></p><blockquote><ul><li><span>Reoxidized to oxaloacetate</span></li><li><span>NADH and H+ is generated</span></li></ul></blockquote><p><span>What other transport mechanism is this similar to? How is it different?</span></p><blockquote><ul><li><p><span>Fatty acid synthesis</span></p></li><li><p><span>Glycolysis</span></p><ul><li><span>moving NADH inside</span></li></ul></li><li><p><span>Gluconeogenesis</span></p><ul><li><span>moves malate out, in order to generate NADH</span></li></ul></li></ul></blockquote><p><span>In the dihydroxyacetone phosphate what molecule is shuttled into the mitochondria?</span></p><blockquote><p><span>Glycerol-3-Phosphate (G3P)</span></p></blockquote><p><span>What then happens to the above molecule? How many ATP are eventually made?</span></p><blockquote><ul><li><span>G3P is reoxidized and FAD is reduced to FADH2</span></li><li><span>We are turning things into FADH2 this time instead of NADH</span></li><li><span>FADH2 transfers electrons to coenzyme Q in complex III</span></li><li><span>It makes FADH2 (1.5 ATP ) instead of NADH (2.5 ATP)</span></li><li><span>1.5 Moles</span></li></ul></blockquote><p><span>Why would a cell transfer the electrons to FADH2 instead of NADH at a loss of 1ATP?</span></p><blockquote><ul><li><p><span>We already have a high concentration of NADH</span></p></li><li><p><span>If we have lots of NADH inside the cell already, we are not going to be able to turn malate into oxaloacetate, generating another NADH</span></p><ul><li><span>This is kind of a shunt that we can use to turn it into FADH2 even at a loss of 1 ATP</span></li></ul></li><li><p><span>High concentration of NADH in mitochondrial matrix occurs from Glycolysis and Anaerobic Respiration</span></p></li><li><p><span>Glycolysis in the cytosol is pumping NADH into the mitochondrial matrix via the malate/aspartate shuttle</span></p></li><li><p><span>Anytime we are in high stress energy, we need lots and lots of ATP</span></p><ul><li><p><span>We are going to be shuttling through glycolysis, through the Citric Acid Cycle, building NADH concentrations up</span></p><ul><li><p><span>It can only move &quot;so fast&quot; through the electron transport chain</span></p><ul><li><span>So we are going to use dihydroxyacetone phosphate - glycerol-3-phosphate shuttle to give us different molecules to work through FADH2</span></li></ul></li></ul></li></ul></li><li><p><span>Different complexes are going to facilitate to give not as much energy, but some energy</span></p><ul><li><span>And allow glycolysis to continue on, because we &quot;freed up&quot; NADH into NAD+</span></li></ul></li><li><p><span>We will be building up molecules of FADH2 and it will still be slow, but we freed NAD+ so we can do more anaerobic glycolysis </span></p></li><li><p><span>dihydroxyacetone phosphate - glycerol-3-phosphate shuttle is mainly in the brain and in the skeletal muscle</span></p><ul><li><span>high areas of activity</span></li></ul></li></ul></blockquote><h3><span style="color:#E6AA60">Things To Know</span></h3><ul><li><p><span>Properties and functions of membranes</span></p><ul><li><span>Acts as a barrier</span></li><li><span>Selectively permissible</span></li><li><span>A fluid mosaic</span></li><li><span>Concentration gradients / isolation</span></li></ul></li><li><p><span>General membrane constituents and their organization</span></p><ul><li><img src="https://39363.org/IMAGE_BUCKET/1617325608717-894062217.jpeg" referrerpolicy="no-referrer"></li></ul></li><li><p><span>Fluid mosaic model and fluidity</span></p></li><li><p><span>Differential content of proteins in membranes</span></p></li><li><p><span>Similarities and differences between membrane protein types</span></p></li><li><p><span>Differences between transmembrane, lipid-linked, and peripheral proteins</span></p><ul><li><p><span>Transmembrane / Integral / Intrinsic</span></p><ul><li><span>Highly associated with the membrane and are typically very difficult to dissociate from the membrane</span></li></ul></li><li><p><span>Lipid- Linked / Anchored</span></p><ul><li><span>Covalently modified with a lipid</span></li></ul></li><li><p><span>Peripheral / Extrinsic</span></p><ul><li><span>Loosely associated with the membrane and easily dissociate from it</span></li></ul></li></ul></li></ul></div>
+</body>
+</html>
