@@ -60,17 +60,18 @@
 				<p>$$\tau = Resistance_{membrane} * Capacitance_{membrane}$$</p>
 			</div>
 			<div class="operator" name="resistance" >
-				<div class="input" unit_name="Ohms" default_value="-30.0" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Ohm" default_value="-30.0" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="0" ></div>
 			</div>
 			<div class="operator" name="capacitance" >
-				<div class="input" unit_name="Farads" default_value="0.6" default_base10="-6" slider_min="-20.0" slider_max="20.0" slider_step="0.1"></div>
+				<div class="input" unit_name="Farad" default_value="0.6" default_base10="-6" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<script>
 				function TimeConstantEquation1CalculationFunction() {
 					console.log( "TimeConstantEquation1CalculationFunction()" );
 					this.result = ( this.resistance.output.adjusted_value - this.capacitance.output.adjusted_value );
+					this.result = this.result.toFixed( window.decimal_places );
 					this.equation_live_string_latex = String.raw`$$\tau = \left(\ \left(\ ${this.resistance.output.final_latex_string} \ \right) *  \left(\ ${this.capacitance.output.final_latex_string} \ \right)\ \right)`;
 					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this.resistance.output.units.label}\ Ohm \cdot ${this.capacitance.output.units.label}\ Farads$$`;
 					this.equation_live_string = `𝜏 = ( ( ${this.resistance.output.final_string} ) * ( ${this.capacitance.output.final_string} ) ) = ${this.result} ${this.resistance.output.units.label} Ohm ⋅ ${this.capacitance.output.units.label} Farads`;
@@ -89,17 +90,18 @@
 				<p>$$\tau = \frac{Capacitance\ of\ Membrane\ (C_m)(Farads)}{\pi * diameter}$$</p>
 			</div>
 			<div class="operator" name="capacitance" >
-				<div class="input" unit_name="Farads" default_value="0.6" default_base10="-6" slider_min="-20.0" slider_max="20.0" slider_step="0.1"></div>
+				<div class="input" unit_name="Farad" default_value="0.6" default_base10="-6" slider_min="-20.0" slider_max="20.0" slider_step="0.1"></div>
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<div class="operator" name="diameter" >
-				<div class="input" unit_name="Meters" default_value="0.5" default_base10="-6" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
+				<div class="input" unit_name="meter" default_value="0.5" default_base10="-6" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<script>
 				function TimeConstantEquation2CalculationFunction() {
 					this.log( "TimeConstantEquation2CalculationFunction()" );
 					this.result = ( this.capacitance.output.adjusted_value ) / ( Math.PI * this.diameter.output.adjusted_value );
+					this.result = this.result.toFixed( window.decimal_places );
 					this.equation_live_string_latex = String.raw`$$\tau = \frac{ ${this.capacitance.output.final_latex_string} }{ \pi * ${this.diameter.output.final_latex_string} }`;
 					this.equation_live_string_latex += String.raw`= \frac{ ${this.result}\ ${this.capacitance.output.units.label}\ Farads}{ ${this.diameter.output.units.label}\ Meters }$$`;
 					this.equation_live_string = `𝜏 = ( ( ${this.capacitance.output.final_string} ) / ( π * ${this.diameter.output.final_string} ) ) = ${ this.result } ${this.capacitance.output.units.label}\ Farads / ${this.diameter.output.units.label}\ Meters`;
@@ -111,6 +113,7 @@
 
 	<script>
 		function init() {
+			window.decimal_places = 3;
 			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
 			renderMathInElement( document.body , {
 				strict: "ignore" ,

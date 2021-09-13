@@ -1,1 +1,316 @@
-<h1>To Do</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Parallel Conductance Equation</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+		#ParallelConductanceEquation-operator-sodium-conductance { background:  #E39582;}
+		#ParallelConductanceEquation-operator-sodium-outside-concentration { background: #E39582; }
+		#ParallelConductanceEquation-operator-sodium-inside-concentration { background: #E39582; }
+		#ParallelConductanceEquation-operator-potassium-conductance { background:  #E8C779;}
+		#ParallelConductanceEquation-operator-potassium-outside-concentration { background: #E8C779; }
+		#ParallelConductanceEquation-operator-potassium-inside-concentration { background: #E8C779; }
+		#ParallelConductanceEquation-operator-chloride-conductance { background:  #56A79A;}
+		#ParallelConductanceEquation-operator-chloride-outside-concentration { background: #56A79A; }
+		#ParallelConductanceEquation-operator-chloride-inside-concentration { background: #56A79A; }
+
+
+	</style>
+</head>
+
+<body onload="init()">
+	<article class="markdown-body">
+
+		<!-- Header -->
+		<center>
+			<h1>Parallel Conductance Equation</h1>
+			<p>$$\text{Let Conductance} = G$$</p>
+			<p>$$\text{Let Equilibrium Potential} = E$$</p>
+			<p>$$\text{Reverse Membrane Potential}\ (V_m) = \frac{(G_{Na}*E_{Na}) + (G_K*E_K)+(G_{Cl}*E_{Cl})}{G_{Na}+G_K+G_{Cl}}$$</p>
+		</center>
+
+		<!-- Info -->
+		<!-- <input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
+			<br><br>
+			<center>
+				<p>$$\lambda = \sqrt{\left(\frac{Resistance_{membrane}}{Capacitance_{membrane}}\right)}$$</p>
+				<p>$$\lambda = \sqrt{\left(\frac{ \frac{1}{\pi * diameter} }{ \frac{4}{\pi * diameter^2} }\right)}$$</p>
+			</center>
+			<br><br>
+		</div> -->
+
+		<div>
+			<input id="use-common-ions" type="checkbox" onchange="on_use_common_ions(this)">&nbspUse Common Ions&nbsp</input>
+			<div id="common-ion-selection">
+				<br />
+				<input id="common-ion-sodium" type="checkbox" onchange="on_ion_input_change(this)">&nbspSodium&nbsp</input>
+				<input id="common-ion-potassium" type="checkbox" onchange="on_ion_input_change(this)">&nbspPotassium&nbsp</input>
+				<input id="common-ion-chloride" type="checkbox" onchange="on_ion_input_change(this)">&nbspChloride&nbsp</input>
+			</div>
+			<div id="other-ion-selection" style="display:none;">
+				<br />
+				<input type="text" id="total-ions-input" value="Not Supported Yet" style="width: 50px;"> Total Ions
+			</div>
+		</div>
+
+		<!-- Equation 1 Common Ions Version-->
+		<br>
+		<div class="abc-equation" name="Parallel Conductance Equation" id="ParallelConductanceEquation" >
+			<div id="common-ion-sodium-operator-group">
+				<div class="operator" name="sodium-conductance" >
+					<div class="input" unit_name="siemens" default_value="37.0" default_base10="-6" slider_min="0" slider_max="300.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+				<div class="operator" name="sodium-outside-concentration" >
+					<div class="input" unit_name="molar" default_value="1.0" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+				<div class="operator" name="sodium-inside-concentration" >
+					<div class="input" unit_name="molar" default_value="1.0" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+			</div>
+			<div id="common-ion-potassium-operator-group">
+				<div class="operator" name="potassium-conductance" >
+					<div class="input" unit_name="siemens" default_value="37.0" default_base10="-6" slider_min="0" slider_max="300.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+				<div class="operator" name="potassium-outside-concentration" >
+					<div class="input" unit_name="molar" default_value="1.0" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+				<div class="operator" name="potassium-inside-concentration" >
+					<div class="input" unit_name="molar" default_value="1.0" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+			</div>
+			<div id="common-ion-chloride-operator-group">
+				<div class="operator" name="chloride-conductance" >
+					<div class="input" unit_name="siemens" default_value="37.0" default_base10="-6" slider_min="0" slider_max="300.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+				<div class="operator" name="chloride-outside-concentration" >
+					<div class="input" unit_name="molar" default_value="1.0" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+				<div class="operator" name="chloride-inside-concentration" >
+					<div class="input" unit_name="molar" default_value="1.0" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
+					<div class="output" default_base10="-3" ></div>
+				</div>
+			</div>
+			<script>
+				function CalculateNernstPotential( celsius_temperature=37.0 , ion_charge=1 , outside_concentration=1.0 , inside_concentration=0.1 ) {
+					let temperature = ( celsius_temperature + 273.15 );
+					let numerator = ( 8.314 * temperature );
+					let denominator = ( ion_charge * 96485 );
+					let natural_log_result = Math.log( outside_concentration / inside_concentration );
+					let result = ( ( numerator / denominator ) * natural_log_result );
+					let millivolt_result = ( result * 1000 );
+					return [ result , millivolt_result ];
+				}
+				function ParallelConductanceEquationCalculationFunction() {
+					this.log( "ParallelConductanceEquationCalculationFunction()" );
+					if ( window.using_common_ions === true ) {
+						let numerator_operators = [];
+						let numerator_operators_latex = [];
+						let numerator_operators_string = [];
+						let denominator_operators = [];
+						let denominator_operators_latex = [];
+						let denominator_operators_string = [];
+						if ( window.using_sodium === true ) {
+							let conductance = parseFloat( this["sodium-conductance"].output.adjusted_value );
+							let conductance_fixed = conductance.toFixed( window.decimal_places );
+							let conductance_units_label = this["sodium-conductance"].output.units.label;
+							// let conductance_units_label = this["sodium-conductance"].output.adjustment_latex_string;
+							let inside_concentration = this["sodium-inside-concentration"].output.adjusted_value;
+							let outside_concentration = this["sodium-outside-concentration"].output.adjusted_value;
+							let concentration_units_label = this["sodium-outside-concentration"].output.units.label;
+							let equilibrium_potential = CalculateNernstPotential( 37.0 , 1 , outside_concentration , inside_concentration );
+							let equilibrium_potential_fixed = equilibrium_potential[0].toFixed( window.decimal_places );
+							numerator_operators.push( ( conductance * equilibrium_potential[0] ) );
+							numerator_operators_latex.push( String.raw`(\textcolor{#E39582}{${conductance_fixed}}\ ${conductance_units_label}\ Siemens * ${equilibrium_potential_fixed}\ ${concentration_units_label}\ Volts)_{\textcolor{#E39582}{Na}}` );
+							numerator_operators_string.push( String.raw`(${conductance_fixed} Siemens * ${equilibrium_potential_fixed} Volts)` );
+							denominator_operators.push( conductance );
+							denominator_operators_latex.push( String.raw`(${conductance_fixed})_{\textcolor{#E39582}{Na}}\ ${conductance_units_label}\ Siemens` );
+							denominator_operators_string.push( String.raw`${conductance_fixed} ${conductance_units_label} Siemens` );
+						}
+						if ( window.using_potassium === true ) {
+							let conductance = parseFloat( this["potassium-conductance"].output.adjusted_value );
+							let conductance_fixed = conductance.toFixed( window.decimal_places );
+							let conductance_units_label = this["potassium-conductance"].output.units.label;
+							let inside_concentration = this["potassium-inside-concentration"].output.adjusted_value;
+							let outside_concentration = this["potassium-outside-concentration"].output.adjusted_value;
+							let concentration_units_label = this["potassium-outside-concentration"].output.units.label;
+							let equilibrium_potential = CalculateNernstPotential( 37.0 , 1 , outside_concentration , inside_concentration );
+							let equilibrium_potential_fixed = equilibrium_potential[0].toFixed( window.decimal_places );
+							numerator_operators.push( ( conductance * equilibrium_potential[0] ) );
+							numerator_operators_latex.push( String.raw`( \textcolor{#E8C779}{${conductance_fixed}}\ ${conductance_units_label}\ Siemens * ${equilibrium_potential_fixed}\ ${concentration_units_label}\ Volts)_{\textcolor{#E8C779}{K}}` );
+							numerator_operators_string.push( String.raw`(${conductance_fixed} Siemens * ${equilibrium_potential_fixed} Volts)` );
+							denominator_operators.push( conductance );
+							denominator_operators_latex.push( String.raw`(${conductance_fixed})_{\textcolor{#E8C779}{K}}\ ${conductance_units_label}\ Siemens` );
+							denominator_operators_string.push( String.raw`${conductance_fixed} ${conductance_units_label} Siemens` );
+						}
+						if ( window.using_chloride === true ) {
+							let conductance = parseFloat( this["chloride-conductance"].output.adjusted_value );
+							let conductance_fixed = conductance.toFixed( window.decimal_places );
+							let conductance_units_label = this["chloride-conductance"].output.units.label;
+							let inside_concentration = this["chloride-inside-concentration"].output.adjusted_value;
+							let outside_concentration = this["chloride-outside-concentration"].output.adjusted_value;
+							let concentration_units_label = this["chloride-outside-concentration"].output.units.label;
+							let equilibrium_potential = CalculateNernstPotential( 37.0 , 1 , outside_concentration , inside_concentration );
+							let equilibrium_potential_fixed = equilibrium_potential[0].toFixed( window.decimal_places );
+							numerator_operators.push( ( conductance * equilibrium_potential[0] ) );
+							numerator_operators_latex.push( String.raw`(\textcolor{#56A79A}{${conductance_fixed}}\ ${conductance_units_label}\ Siemens * ${equilibrium_potential_fixed}\ ${concentration_units_label}\ Volts)_{\textcolor{#56A79A}{Cl}}` );
+							numerator_operators_string.push( String.raw`(${conductance_fixed} Siemens * ${equilibrium_potential_fixed} Volts)` );
+							denominator_operators.push( conductance );
+							denominator_operators_latex.push( String.raw`(${conductance_fixed})_{\textcolor{#56A79A}{Cl}}\ ${conductance_units_label}\ Siemens` );
+							denominator_operators_string.push( String.raw`${conductance_fixed} ${conductance_units_label} Siemens` );
+						}
+						this.result = ( ( numerator_operators.reduce( ( sum , x ) => sum + x ) ) / ( denominator_operators.reduce( ( sum , x ) => sum + x ) ) );
+						this.result = this.result.toFixed( window.decimal_places );
+						this.millivolt_result = ( this.result * 1000 );
+						this.equation_live_string_latex = String.raw`$$(V_m) = \frac{ ${numerator_operators_latex.join(" + ")} }`;
+						this.equation_live_string_latex += String.raw`{ ${denominator_operators_latex.join(" + ")} }`;
+						this.equation_live_string_latex += String.raw` = ${this.result}\ Volts = ${this.millivolt_result}\ milli\ Volts$$`;
+
+						this.equation_live_string = String.raw`(V_m) = ( ${numerator_operators_string.join(" + ")} ) / ( ${denominator_operators_string.join(" + ")} ) = ${this.result} Volts = ${this.millivolt_result} milli Volts`;
+					}
+					else {
+						console.log( "Not Implemented Yet" );
+					}
+
+				}
+			</script>
+		</div>
+
+
+	</article>
+
+	<script>
+		function init() {
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
+			window.decimal_places = 3;
+			window.using_common_ions = true;
+			window.using_sodium = true;
+			window.using_potassium = true;
+			window.using_chloride = true;
+			try { document.getElementById( "use-common-ions" ).checked = true; } catch( e ) {}
+			try { document.getElementById( "common-ion-sodium" ).checked = true; } catch( e ) {}
+			try { document.getElementById( "common-ion-potassium" ).checked = true; } catch( e ) {}
+			try { document.getElementById( "common-ion-chloride" ).checked = true; } catch( e ) {}
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+		function on_use_common_ions( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				window.using_common_ions = true;
+				document.getElementById( "common-ion-selection" ).style.display = "block";
+				document.getElementById( "other-ion-selection" ).style.display = "none";
+			} else {
+				window.using_common_ions = false;
+				document.getElementById( "other-ion-selection" ).style.display = "block";
+				document.getElementById( "common-ion-selection" ).style.display = "none";
+			}
+		}
+		function on_ion_input_change( checkbox ) {
+			window.ions = [];
+			if ( document.getElementById( "use-common-ions" ).checked === true ) {
+				let using_sodium = document.getElementById( "common-ion-sodium" );
+				if ( using_sodium.checked === true ) {
+					window.using_sodium = true;
+					document.getElementById( "ParallelConductanceEquation-operator-sodium-conductance" ).style.display = "";
+					document.getElementById( "ParallelConductanceEquation-operator-sodium-outside-concentration" ).style.display = "";
+					document.getElementById( "ParallelConductanceEquation-operator-sodium-inside-concentration" ).style.display = "";
+					window.ions.push( { "symbol": "Na" , "charge": 1 } );
+				}
+				else {
+					window.using_sodium = false;
+					document.getElementById( "ParallelConductanceEquation-operator-sodium-conductance" ).style.display = "none";
+					document.getElementById( "ParallelConductanceEquation-operator-sodium-outside-concentration" ).style.display = "none";
+					document.getElementById( "ParallelConductanceEquation-operator-sodium-inside-concentration" ).style.display = "none";
+				}
+				let using_potassium = document.getElementById( "common-ion-potassium" );
+				if ( using_potassium.checked === true ) {
+					window.using_potassium = true;
+					document.getElementById( "ParallelConductanceEquation-operator-potassium-conductance" ).style.display = "";
+					document.getElementById( "ParallelConductanceEquation-operator-potassium-outside-concentration" ).style.display = "";
+					document.getElementById( "ParallelConductanceEquation-operator-potassium-inside-concentration" ).style.display = "";
+					window.ions.push( { "symbol": "K" , "charge": 1 } );
+				}
+				else {
+					window.using_potassium = false;
+					document.getElementById( "ParallelConductanceEquation-operator-potassium-conductance" ).style.display = "none";
+					document.getElementById( "ParallelConductanceEquation-operator-potassium-outside-concentration" ).style.display = "none";
+					document.getElementById( "ParallelConductanceEquation-operator-potassium-inside-concentration" ).style.display = "none";
+				}
+				let using_chloride = document.getElementById( "common-ion-chloride" );
+				if ( using_chloride.checked === true ) {
+					window.using_chloride = true;
+					document.getElementById( "ParallelConductanceEquation-operator-chloride-conductance" ).style.display = "";
+					document.getElementById( "ParallelConductanceEquation-operator-chloride-outside-concentration" ).style.display = "";
+					document.getElementById( "ParallelConductanceEquation-operator-chloride-inside-concentration" ).style.display = "";
+					window.ions.push( { "symbol": "Cl" , "charge": -1 } );
+				}
+				else {
+					window.using_chloride = false;
+					document.getElementById( "ParallelConductanceEquation-operator-chloride-conductance" ).style.display = "none";
+					document.getElementById( "ParallelConductanceEquation-operator-chloride-outside-concentration" ).style.display = "none";
+					document.getElementById( "ParallelConductanceEquation-operator-chloride-inside-concentration" ).style.display = "none";
+				}
+			}
+			else {
+				console.log( "Not Implemented Yet" )
+			}
+			for ( let i = 0; i < ABC_EQUATION_WRAPPERS.length; ++i ) {
+				ABC_EQUATION_WRAPPERS[ i ].update();
+			}
+		}
+		document.getElementById( "total-ions-input" ).addEventListener( "input" , function() {
+			window.total_ions_selected = parseInt( this.value );
+			for ( let i = 0; i < ABC_EQUATION_WRAPPERS.length; ++i ) {
+				ABC_EQUATION_WRAPPERS[ i ].update();
+			}
+		});
+	</script>
+</body>
+</html>

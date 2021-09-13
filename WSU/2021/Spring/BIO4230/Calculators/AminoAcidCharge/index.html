@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Amino Acid Charge Calculator</title>
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+		/* code {
+			display: block;
+			white-space: pre-line;
+			background-color: #eee;
+		} */
+	</style>
+</head>
+<body onload="init()">
+	<article class="markdown-body">
+
+		<center>
+			<h1>Amino Acid Charge Calculator</h1>
+			<!-- <pre>
+				<code>if ( ph < pKa of Functional Group ) {</code>
+				<code>	Functional Group = Protonated</code>
+				<code>}</code>
+				<code>else if ( ph > pKa of Functional Group ) {</code>
+				<code>	Functional Group = Deprotonated</code>
+				<code>}</code>
+			</pre> -->
+			<img src="https://39363.org/IMAGE_BUCKET/1629320816276-204059298.png" alt="pH vs pKa of Functional Group">
+		</center>
+
+		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
+			<img src="https://39363.org/IMAGE_BUCKET/1629307094523-69305188.jpeg" alt="Amino Acid pKa Values">
+		</div>
+
+		<br /><br />
+		<!-- <div id="total-ionizable-groups-selection">
+			<input onchange="on_total_ionizable_groups_input_change(this)" type="text" id="total-ionizable-groups-input" value="3" style="width: 50px;"> Total Ionizable Groups
+		</div> -->
+		<div id="amino-acid-selector-wrapper">
+		</div>
+		<br />
+
+		<div class="abc-equation" name="Amino Acid Charge Equation" id="AminoAcidChargeEquation" >
+			<div id="dynamic-operator-box"></div>
+		</div>
+
+	</article>
+
+	<script>
+		function init() {
+			window.decimal_places = 3;
+			window.total_ionizable_groups = 3;
+			window.AMINO_ACIDS = {
+				"arginine": {
+					"c_terminal": 2.2 ,
+					"n_terminal": 9.0 ,
+					"s_amine": 12.5 ,
+				} ,
+				"histidine": {
+					"c_terminal": 1.8 ,
+					"n_terminal": 9.2 ,
+					"s_amine": 6.0
+				} ,
+				"lysine": {
+					"c_terminal": 2.2 ,
+					"n_terminal": 9.0 ,
+					"s_amine": 10.0
+				} ,
+				"aspartic_acid": {
+					"c_terminal": 2.1 ,
+					"n_terminal": 9.8 ,
+					"s_carboxylic_acid": 3.9
+				} ,
+				"glutamic_acid": {
+					"c_terminal": 2.2 ,
+					"n_terminal": 9.7 ,
+					"s_carboxylic_acid": 4.2
+				} ,
+				"serine": {
+					"c_terminal": 2.2 ,
+					"n_terminal": 9.2 ,
+				} ,
+				"threonine": {
+					"c_terminal": 2.6 ,
+					"n_terminal": 10.4 ,
+				} ,
+				"asparagine": {
+					"c_terminal": 2.0 ,
+					"n_terminal": 8.8 ,
+				} ,
+				"glutamine": {
+					"c_terminal": 2.2 ,
+					"n_terminal": 9.1 ,
+				} ,
+				"cysteine": {
+					"c_terminal": 1.8 ,
+					"n_terminal": 10.8 ,
+					"s_thiol": 8.3 ,
+				} ,
+				"glycine": {
+					"c_terminal": 2.3 ,
+					"n_terminal": 9.6 ,
+				} ,
+				"proline": {
+					"c_terminal": 2.0 ,
+					"n_terminal": 10.6 ,
+				} ,
+				"alanine": {
+					"c_terminal": 2.3 ,
+					"n_terminal": 9.7 ,
+				} ,
+				"valine": {
+					"c_terminal": 2.3 ,
+					"n_terminal": 9.6 ,
+				} ,
+				"isoleucine": {
+					"c_terminal": 2.4 ,
+					"n_terminal": 9.7 ,
+				} ,
+				"leucine": {
+					"c_terminal": 2.4 ,
+					"n_terminal": 9.6 ,
+				} ,
+				"methionine": {
+					"c_terminal": 2.3 ,
+					"n_terminal": 9.2 ,
+				} ,
+				"phenylalanine": {
+					"c_terminal": 1.8 ,
+					"n_terminal": 9.1 ,
+				} ,
+				"tyrosine": {
+					"c_terminal": 2.2 ,
+					"n_terminal": 9.1 ,
+					"s_hydroxyl": 10.1 ,
+				} ,
+				"tryptophan": {
+					"c_terminal": 2.4 ,
+					"n_terminal": 9.4 ,
+				}
+			};
+			window.SELECTED_AMINO_ACID = window.AMINO_ACIDS[ "arginine" ];
+			let amino_acid_selector_wrapper_element = document.getElementById( "amino-acid-selector-wrapper" );
+			let amino_acid_selection_html_string = `<select id="amino-acid-selector" onchange="on_amino_acid_input_change(this)" >`;
+			for ( let key in window.AMINO_ACIDS ) {
+				amino_acid_selection_html_string += `<option value="${key}">${key}</option>`;
+			}
+			amino_acid_selection_html_string += `</select>`;
+			amino_acid_selector_wrapper_element.insertAdjacentHTML( "beforeend" , amino_acid_selection_html_string );
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+			on_amino_acid_input_change_init()
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+		function on_amino_acid_input_change_init( input_element ) {
+			let operator_parent_div = document.getElementById( "dynamic-operator-box" );
+			operator_parent_div.innerHTML = "";
+			let operators_html_string = "";
+			if ( window.SELECTED_AMINO_ACID["c_terminal"] ) {
+				operators_html_string += `<div class="operator" name="c-terminal-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['c_terminal']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["n_terminal"] ) {
+				operators_html_string += `<div class="operator" name="n-terminal-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['n_terminal']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_carboxylic_acid"] ) {
+				operators_html_string += `<div class="operator" name="side-carboxylic-acid-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_carboxylic_acid']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_hydroxyl"] ) {
+				operators_html_string += `<div class="operator" name="side-hydroxyl-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_hydroxyl']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_thiol"] ) {
+				operators_html_string += `<div class="operator" name="side-thiol-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_thiol']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_amine"] ) {
+				operators_html_string += `<div class="operator" name="side-amine-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_amine']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			operator_parent_div.insertAdjacentHTML( "beforeend" , operators_html_string );
+			let target_ph_operator_element_html = `<div class="operator" name="target-ph">
+				<div class="input" unit_name="each" default_value="7.4" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+				<div class="output" default_base10="0" ></div>
+			`;
+			operator_parent_div.insertAdjacentHTML( "beforeend" , target_ph_operator_element_html );
+		}
+		function on_amino_acid_input_change( selection_element ) {
+			window.SELECTED_AMINO_ACID = window.AMINO_ACIDS[ selection_element.value ];
+			console.log( window.SELECTED_AMINO_ACID );
+			let equation_parent_div = document.getElementById( "AminoAcidChargeEquation" );
+			equation_parent_div.innerHTML = "";
+			let operators_html_string = "";
+			if ( window.SELECTED_AMINO_ACID["c_terminal"] ) {
+				operators_html_string += `<div class="operator" name="c-terminal-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['c_terminal']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["n_terminal"] ) {
+				operators_html_string += `<div class="operator" name="n-terminal-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['n_terminal']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_carboxylic_acid"] ) {
+				operators_html_string += `<div class="operator" name="side-carboxylic-acid-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_carboxylic_acid']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_hydroxyl"] ) {
+				operators_html_string += `<div class="operator" name="side-hydroxyl-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_hydroxyl']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_thiol"] ) {
+				operators_html_string += `<div class="operator" name="side-thiol-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_thiol']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			if ( window.SELECTED_AMINO_ACID["s_amine"] ) {
+				operators_html_string += `<div class="operator" name="side-amine-pka" >
+					<div class="input" unit_name="each" default_value="${window.SELECTED_AMINO_ACID['s_amine']}" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+			}
+			equation_parent_div.insertAdjacentHTML( "beforeend" , operators_html_string );
+			let target_ph_operator_element_html = `<div class="operator" name="target-ph">
+				<div class="input" unit_name="each" default_value="7.4" default_base10="0" slider_min="0.0" slider_max="14.0" slider_step="0.1"></div>
+				<div class="output" default_base10="0" ></div>
+			`;
+			equation_parent_div.insertAdjacentHTML( "beforeend" , target_ph_operator_element_html );
+			// operator_parent_div.style.display = "block";
+			ABCEquationsHookDIVS();
+		}
+		function AminoAcidChargeEquationCalculationFunction() {
+			this.log( "AminoAcidChargeEquationCalculationFunction()" );
+			let target_ph = parseFloat( this["target-ph"].output.adjusted_value );
+			let total_charge = 0;
+			let summation_latex = "";
+			let summation_string = "";
+			if ( window.SELECTED_AMINO_ACID["c_terminal"] ) {
+				let pKa = parseFloat( this["c-terminal-pka"].output.adjusted_value );
+				if ( target_ph < pKa ) {
+					total_charge += 0.0;
+					summation_latex += String.raw`( 0.0 )_{c-terminal} + `;
+					summation_string += "( 0.0 ) + ";
+				}
+				else if ( target_ph > pKa ) {
+					total_charge += ( -1.0 );
+					summation_latex += String.raw`( -1.0 )_{c-terminal} + `;
+					summation_string += "( -1.0 ) + ";
+				}
+				else if ( target_ph === pKa ) {
+					total_charge += ( -0.5 );
+					summation_latex += String.raw`( -0.5 )_{c-terminal} + `;
+					summation_string += "( -0.5 ) + ";
+				}
+			}
+			if ( window.SELECTED_AMINO_ACID["n_terminal"] ) {
+				let pKa = parseFloat( this["n-terminal-pka"].output.adjusted_value );
+				console.log( target_ph , this["n-terminal-pka"].output.adjusted_value );
+				if ( target_ph < pKa ) {
+					total_charge += ( 1.0 );
+					summation_latex += String.raw`( 1.0 )_{n-terminal} + `;
+					summation_string += "( 1.0 ) + ";
+				}
+				else if ( target_ph > pKa ) {
+					total_charge += 0.0;
+					summation_latex += String.raw`( 0.0 )_{n-terminal} + `;
+					summation_string += "( 0.0 ) + ";
+				}
+				else if ( target_ph === pKa ) {
+					console.log( "n-terminal is exactly equal to target pH" );
+					total_charge += ( 0.5 );
+					summation_latex += String.raw`( 0.5 )_{n-terminal} + `;
+					summation_string += "( 0.5 ) + ";
+				}
+			}
+			if ( window.SELECTED_AMINO_ACID["s_carboxylic_acid"] ) {
+				let pKa = parseFloat( this["side-carboxylic-acid-pka"].output.adjusted_value );
+				if ( target_ph < pKa ) {
+					total_charge += 0.0;
+					summation_latex += String.raw`( 0.0 )_{cooh} + `;
+					summation_string += "( 0.0 ) + ";
+				}
+				else if ( target_ph > pKa ) {
+					total_charge += ( -1.0 );
+					summation_latex += String.raw`( -1.0 )_{cooh} + `;
+					summation_string += "( -1.0 ) + ";
+				}
+				else if ( target_ph === pKa ) {
+					total_charge += ( -0.5 );
+					summation_latex += String.raw`( -0.5 )_{cooh} + `;
+					summation_string += "( -0.5 ) + ";
+				}
+			}
+			if ( window.SELECTED_AMINO_ACID["s_hydroxyl"] ) {
+				let pKa = parseFloat( this["side-hydroxyl-pka"].output.adjusted_value );
+				if ( target_ph < pKa ) {
+					total_charge += 0.0;
+					summation_latex += String.raw`( 0.0 )_{hydroxyl} + `;
+					summation_string += "( 0.0 ) + ";
+				}
+				else if ( target_ph > pKa ) {
+					total_charge += ( -1.0 );
+					summation_latex += String.raw`( -1.0 )_{hydroxyl} + `;
+					summation_string += "( -1.0 ) + ";
+				}
+				else if ( target_ph === pKa ) {
+					total_charge += ( -0.5 );
+					summation_latex += String.raw`( -0.5 )_{hydroxyl} + `;
+					summation_string += "( -0.5 ) + ";
+				}
+			}
+			if ( window.SELECTED_AMINO_ACID["s_thiol"] ) {
+				let pKa = parseFloat( this["side-thiol-pka"].output.adjusted_value );
+				if ( target_ph < pKa ) {
+					total_charge += 0.0;
+					summation_latex += String.raw`( 0.0 )_{thiol} + `;
+					summation_string += "( 0.0 ) + ";
+				}
+				else if ( target_ph > pKa ) {
+					total_charge += ( -1.0 );
+					summation_latex += String.raw`( -1.0 )_{thiol} + `;
+					summation_string += "( -1.0 ) + ";
+				}
+				else if ( target_ph === pKa ) {
+					total_charge += ( -0.5 );
+					summation_latex += String.raw`( -0.5 )_{thiol} + `;
+					summation_string += "( -0.5 ) + ";
+				}
+			}
+			if ( window.SELECTED_AMINO_ACID["s_amine"] ) {
+				let pKa = parseFloat( this["side-amine-pka"].output.adjusted_value );
+				if ( target_ph < pKa ) {
+					total_charge += ( 1.0 );
+					summation_latex += String.raw`( 1.0 )_{amine} + `;
+					summation_string += "( 1.0 ) + ";
+				}
+				else if ( target_ph > pKa ) {
+					total_charge += 0.0;
+					summation_latex += String.raw`( 0.0 )_{amine} + `;
+					summation_string += "( 0.0 ) + ";
+				}
+				else if ( target_ph === pKa ) {
+					total_charge += ( 0.5 );
+					summation_latex += String.raw`( 0.5 )_{amine} + `;
+					summation_string += "( 0.5 ) + ";
+				}
+			}
+			this.result = total_charge;
+			this.result = this.result.toFixed( window.decimal_places );
+			summation_latex = summation_latex.slice( 0 , -3 );
+			summation_string = summation_string.slice( 0 , -3 );
+			this.equation_live_string_latex = String.raw`$$${summation_latex} = ${this.result}$$`;
+			this.equation_live_string = String.raw`${summation_string} = ${this.result}`;
+			// this.result = ( ( this["heat-of-reaction"].output.adjusted_value ) - ( ( this["temperature"].output.adjusted_value ) * ( this["entropy-change"].output.adjusted_value ) ) );
+			// this.equation_live_string_latex = String.raw`$$\Delta G = ${this["heat-of-reaction"].output.final_latex_string} - \left(\ \left(\ ${this["temperature"].output.final_latex_string} \ \right) * \left(\ ${this["entropy-change"].output.final_latex_string} \ \right)\ \right)`;
+			// this.equation_live_string_latex += String.raw`= ${this.result}\ ${this["heat-of-reaction"].output.units.label}\ Joules$$`;
+
+			// this.equation_live_string = `𝝙G = ( ${this["heat-of-reaction"].output.final_string} - ( ( ${this["temperature"].output.final_string} ) * ( ${this["entropy-change"].output.final_string} ) ) ) = ${this.result} ${this["heat-of-reaction"].output.units.label} Joules`;
+		}
+	</script>
+</body>
+</html>

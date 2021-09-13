@@ -1,1 +1,178 @@
-<h1>To Do</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Series Resistance Equation</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+
+<body onload="init()">
+	<article class="markdown-body">
+
+		<!-- Header -->
+		<center>
+			<h1>Series Resistance Equation</h1>
+			<p>$$\text{Total Resistance} = R_T = \sum^{n}_{i=1}\left({R_i}\right)$$</p>
+            <p>Resistors in Series = Cytoplasm / Cytosol</p>
+			<!-- <ul>
+				<li>The voltage across each resistor is the same</li>
+				<li>The current on each branch is determined by the resistance of the branch and the voltage across the branch , calculated using Ohm's Law</li>
+				<li>Resistors in Parallel = Ion (Leak) Channels</li>
+			</ul> -->
+		</center>
+
+		<!-- Info -->
+		<input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="1" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
+			<br><br>
+            <ul>
+                <li>Total Resistance = Sum of All Resistors</li>
+                <li>Voltage = Sum of all the individual voltage drops</li>
+                <li>$Current\ (I) = \frac{Voltage_{total}}{Resistance_{total}}$</li>
+                <li><a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-5/simple-series-circuits/">https://www.allaboutcircuits.com/textbook/direct-current/chpt-5/simple-series-circuits/</a></li>
+            </ul>
+            <p>Why does voltage change with resistors in series but not in parallel?
+            <ul>
+                <li>Due to Kirchhoff's Law , the total voltage in a series circuit is the sum of each voltage drop</li>
+                <li>When in parallel , there are multiple branches the current can take , and electric fields are conservative</li>
+            </ul>
+			<br><br>
+		</div>
+
+		<div id="total-resistors-selection">
+			<input onchange="on_total_resistors_input_change(this)" type="text" id="total-resistors-input" value="3" style="width: 50px;"> Total Resistors
+		</div>
+
+		<!-- Equation 1 Common Ions Version-->
+		<br>
+		<div class="abc-equation" name="Series Resistors Equation" id="SeriesResistorsEquation" >
+			<div id="dynamic-operator-box"></div>
+		</div>
+
+
+	</article>
+
+	<script>
+		function init() {
+			window.decimal_places = 3;
+			window.total_resistors = 3;
+			on_total_resistors_input_change_init();
+			try { document.getElementById( "total-resistors-input" ).value = "3"; } catch( e ) {}
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+		function on_total_resistors_input_change_init( input_element ) {
+			let total_resistors;
+			try { total_resistors = parseInt( input_element.value ); }
+			catch( e ) { total_resistors = 3; }
+			let operator_parent_div = document.getElementById( "dynamic-operator-box" );
+			operator_parent_div.innerHTML = "";
+			window.total_resistors = total_resistors;
+			for ( let i = 0; i < total_resistors; ++i ) {
+				let resistor_operator_element_html = `<div class="operator" name="resistor-${(i + 1)}" >
+					<div class="input" unit_name="ohm" default_value="${(1 * (i+1))}.0" default_base10="0" slider_min="0.0" slider_max="10000.0" slider_step="1.0"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+					operator_parent_div.insertAdjacentHTML( "beforeend" , resistor_operator_element_html );
+			}
+		}
+		function SeriesResistorsEquationCalculationFunction() {
+			this.log( "SeriesResistorsEquationCalculationFunction()" );
+			this.result = 0;
+			let total_resistance = 0.0;
+			let summation_latex = "";
+			let summation_string = "";
+			let last_resistor_key = `resistor-${window.total_resistors}`;
+			console.log( last_resistor_key );
+			let units_label = this[last_resistor_key].output.units.label;
+			for ( let i = 0; i < ( window.total_resistors - 1 ); ++i ) {
+				let operator_key = `resistor-${(i+1)}`;
+				let output_units_label = this[operator_key].output.units.label;
+				let output_value = this[operator_key].output.adjusted_value;
+				total_resistance += parseFloat( output_value );
+				// summation_latex += `(${output_value})\ output_units_label\ Ohms\ )`
+				summation_latex += `${output_value} +`
+				summation_string += `${output_value} + `
+			}
+			summation_latex += `${this[`resistor-${(window.total_resistors)}`].output.adjusted_value}`;
+			summation_string += `${this[`resistor-${(window.total_resistors)}`].output.adjusted_value}`;
+			total_resistance += parseFloat( this[`resistor-${(window.total_resistors)}`].output.adjusted_value );
+            this.result = total_resistance;
+			this.result = this.result.toFixed( window.decimal_places );
+			this.equation_live_string_latex = String.raw`$$R_T = ${summation_latex} = ${this.result}\ ${units_label}\ Ohms$$`;
+			this.equation_live_string = String.raw`RT = ${summation_latex} = ${total_resistance} = ${this.result} ${units_label} Ohms`;
+		}
+		function on_total_resistors_input_change( input_element ) {
+			let total_resistors;
+			try { total_resistors = parseInt( input_element.value ); }
+			catch( e ) { total_resistors = 3; }
+			let equation_parent_div = document.getElementById( "ParallelResistorsEquation" );
+			// let operator_parent_div = document.getElementById( "dynamic-operator-box" );
+			// operator_parent_div.style.display = "none";
+			// while ( operator_parent_div.hasChildNodes() ) {
+			// 	operator_parent_div.removeChild( operator_parent_div.lastChild );
+			// }
+			equation_parent_div.innerHTML = "";
+			window.total_resistors = total_resistors;
+			let operator_html = "";
+			for ( let i = 0; i < total_resistors; ++i ) {
+				let resistor_operator_element_html = `<div class="operator" name="resistor-${(i + 1)}" >
+					<div class="input" unit_name="ohm" default_value="${(1 * (i+1))}.0" default_base10="0" slider_min="0.0" slider_max="10000.0" slider_step="1.0"></div>
+					<div class="output" default_base10="0" ></div>
+				</div>`;
+				// operator_parent_div.insertAdjacentHTML( "beforeend" , resistor_operator_element_html );
+				operator_html += resistor_operator_element_html;
+			}
+			equation_parent_div.insertAdjacentHTML( "beforeend" , operator_html );
+			// operator_parent_div.style.display = "block";
+			ABCEquationsHookDIVS();
+		}
+		// document.getElementById( "total-ions-input" ).addEventListener( "input" , function() {
+		// 	window.total_ions_selected = parseInt( this.value );
+		// 	for ( let i = 0; i < ABC_EQUATION_WRAPPERS.length; ++i ) {
+		// 		ABC_EQUATION_WRAPPERS[ i ].update();
+		// 	}
+		// });
+	</script>
+</body>
+</html>

@@ -61,17 +61,18 @@
 				<p>$$\lambda = \sqrt{\left(\frac{Resistance_{membrane}}{Capacitance_{membrane}}\right)}$$</p>
 			</div>
 			<div class="operator" name="resistance" >
-				<div class="input" unit_name="Ohms" default_value="-30.0" default_base10="0" slider_min="-100.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="input" unit_name="Ohm" default_value="0.1" default_base10="0" slider_min="0.0" slider_max="100.0" slider_step="1.0"></div>
 				<div class="output" default_base10="0" ></div>
 			</div>
 			<div class="operator" name="capacitance" >
-				<div class="input" unit_name="Farads" default_value="0.6" default_base10="-6" slider_min="-20.0" slider_max="20.0" slider_step="0.1"></div>
+				<div class="input" unit_name="Farad" default_value="0.6" default_base10="-6" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
 				<div class="output" default_base10="-6" ></div>
 			</div>
 			<script>
 				function LengthConstantEquation1CalculationFunction() {
 					this.log( "LengthConstantEquation1CalculationFunction()" );
 					this.result = Math.sqrt( this.resistance.output.adjusted_value / this.capacitance.output.adjusted_value );
+					this.result = this.result.toFixed( window.decimal_places );
 					this.equation_live_string_latex = String.raw`$$\lambda = \sqrt{\ \left(\ \frac{\ ${this.resistance.output.final_latex_string} \ }{\ ${this.capacitance.output.final_latex_string} \ } \ \right) \ }`;
 					this.equation_live_string_latex += String.raw`= \frac{\ ${this.result}\ ${this.resistance.output.units.label}\ Ohms\ }{\ ${this.capacitance.output.units.label}\ Farads \ }$$`;
 					this.equation_live_string = `λ = √( ( ${this.resistance.output.final_string} ) / ( ${this.capacitance.output.final_string} ) ) = ${this.result} ${this.resistance.output.units.label} Ohm / ${this.capacitance.output.units.label} Farads`;
@@ -90,13 +91,14 @@
 				<p>$$\lambda = \sqrt{\left(\frac{ \frac{1}{\pi * diameter} }{ \frac{4}{\pi * diameter^2} }\right)}$$</p>
 			</div>
 			<div class="operator" name="diameter" >
-				<div class="input" unit_name="Meters" default_value="0.5" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
+				<div class="input" unit_name="meter" default_value="0.5" default_base10="-3" slider_min="0.0" slider_max="100.0" slider_step="0.1"></div>
 				<div class="output" default_base10="-3" ></div>
 			</div>
 			<script>
 				function LengthConstantEquation2CalculationFunction() {
 					console.log( "LengthConstantEquation2CalculationFunction()" );
 					this.result = Math.sqrt( ( 1 / ( Math.PI * this.diameter.output.adjusted_value ) ) / ( 4 / ( Math.PI * this.diameter.output.adjusted_value**2 ) ) );
+					this.result = this.result.toFixed( window.decimal_places );
 					this.equation_live_string_latex = String.raw`$$\lambda = \sqrt{\ \left(\ \frac{\ \frac{\ 1 \ }{\ \pi * ${this.diameter.output.adjusted_value} \ } \ }{\ \frac{\ 4 \ }{\ \pi * ${this.diameter.output.adjusted_value}^2 \ } \ } \ \right) \ }`;
 					this.equation_live_string_latex += String.raw`= ${this.result}\ ${this.diameter.output.units.label}\ Meters$$`;
 					this.equation_live_string = `λ = √( ( 1 / ( π * ${this.diameter.output.adjusted_value} ) ) / ( 4 / ( π * ( ${this.diameter.output.adjusted_value} )² ) ) ) = ${this.result} ${this.diameter.output.units.label} Meters`;
@@ -109,6 +111,7 @@
 
 	<script>
 		function init() {
+			window.decimal_places = 3;
 			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
 			renderMathInElement( document.body , {
 				strict: "ignore" ,
