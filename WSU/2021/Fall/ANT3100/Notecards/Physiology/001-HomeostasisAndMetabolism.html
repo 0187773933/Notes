@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ANT 3100 - Notecards - Physiology - Homeostasis and Metabolism</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center" style="border: 1px solid red">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green">
+			<div class="col text-center">
+				<div>
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<div class="row justify-content-center" id="row-grading" style="border: 1px solid blue">
+			<div class="col text-center">
+				<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			$( document ).on( "touchstart" , function() {
+				window.DOCUMENT_CLICKED = true;
+			});
+			$( document ).on( "touchmove" , function() {
+				window.DOCUMENT_CLICKED = false;
+			});
+			$( ".card" ).on( "click touchend" , function( event ) {
+				if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+				if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			});
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32: next_card(); break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			console.log( window.DECK.cards.length , window.DECK.active_index );
+			window.DECK.active_index = ( window.DECK.active_index - 1 );
+			if ( window.DECK.active_index < 0 ) { window.DECK.active_index = ( window.DECK.cards.length - 1 ); }
+			render_active_card();
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				$( "#card-body-content" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.cards.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index + 1 );
+				if ( window.DECK.active_index > ( window.DECK.cards.length - 1 ) ) { window.DECK.active_index = 0; }
+				render_active_card();
+			}
+		}
+		function render_active_card() {
+			console.log( window.DECK.cards.length , window.DECK.active_index );
+			$( "#card-title-content" ).html( window.DECK.cards[ window.DECK.active_index ].front );
+			$( "#card-body-content" ).hide();
+			$( "#card-body-content" ).html( window.DECK.cards[ window.DECK.active_index ].back );
+		}
+		function init() {
+			// Preliminary
+			renderMathInElement( document.body );
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.DECK.active_index = 0;
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+
+			// Setup First Card
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {"deck_name": "Homeostasis and Metabolism", "cards": [{"front": "<h2>Homeostasis</h2>", "back": "<ul>\n<li>Maintenance of a normal environment within the body.</li>\n<li>The body is constantly self-regulating to maintain homeostasis</li>\n</ul>"}, {"front": "<h2>Physiology</h2>", "back": "<p>the study of the normal function of the body</p>"}, {"front": "<h2>Pathophysiology</h2>", "back": "<p>the study of the loss of normal functions of the body</p>\n<ul>\n<li>loss of normal functions leads to deleterious conditions ( eg , syndromes , diseases )</li>\n<li>pathophysiology cannot be understood unless physiology is understood first</li>\n</ul>"}, {"front": "<h2>Regulator</h2>", "back": "<p>Sets and maintains the set point ( ie , normal value )</p>\n<ul>\n<li>Homeostatic mechanism</li>\n<li>Some fluctuation around the set point is normal</li>\n<li>\n<p>Therefore , there is a normal range</p>\n</li>\n<li>\n<p>Examples of homeostatic values :</p>\n</li>\n<li>Body temperature = 98.6 \u00b0F ( 37 \u00b0C )</li>\n<li>Blood pH = 7.4</li>\n<li>Blood sodium level = 140 mEq / L ( molar equivalents / 1 Liter )</li>\n</ul>"}, {"front": "<h2>Receptors</h2>", "back": "<p>monitor / sense changes inside and outside of the body and then relay that information to the regulator</p>\n<ul>\n<li>Homeostatic mechanism</li>\n</ul>"}, {"front": "<h2>Effectors</h2>", "back": "<p>drive conditions towards the normal range via input from the regulator</p>\n<ul>\n<li>Homeostatic mechanism</li>\n</ul>"}, {"front": "<h2>Negative Feedback</h2>", "back": "<p>maintenance of the normal range in response to a deviation from the normal range</p>\n<ul>\n<li>( eg , if the value increases it is decreased to maintain a normal value )</li>\n<li>( eg , if the value decreases it is increased to maintain a normal value )</li>\n<li>Involves the homeostatic mechanism</li>\n<li>Therefore , negative feedback maintains homeostasis</li>\n<li>( eg , maintains normal body temperature , pH , sodium level , blood pressure )</li>\n</ul>"}, {"front": "<h2>Positive Feedback</h2>", "back": "<p>increase above the normal range ( eg , of a hormone ) to facilitate a \"special event\"</p>\n<ul>\n<li>Special events : lactation , child birth , blood coagulation</li>\n<li>Does <span style='color:#EE4266'>NOT</span> contribute to homeostasis</li>\n</ul>"}, {"front": "<h2>Metabolism</h2>", "back": "<p>total energy of all the chemical reactions that occur in the body</p>\n<ul>\n<li>Energy releasing and energy requiring process</li>\n</ul>"}, {"front": "<h2>Catabolism</h2>", "back": "<p>breaking down phase of metabolism</p>\n<ul>\n<li>Large molecules being broken down into smaller molecules</li>\n<li>\"catastrophe\" = \"explosion\" = catabolism</li>\n</ul>"}, {"front": "<h2>Anabolism</h2>", "back": "<p>building phase of metabolism</p>\n<ul>\n<li>Small molecules being combined to form larger molecules</li>\n<li>\"anabolic\" steroid users build \"big\" muscles</li>\n</ul>"}, {"front": "<h2>Inorganic Molecules</h2>", "back": "<p>small , relatively simple molecules</p>"}, {"front": "<h2>Water - Locations</h2>", "back": "<ul>\n<li>\n<p>Located in two compartments</p>\n</li>\n<li>\n<p>Intracellular compartment :</p>\n</li>\n<li>compartment within cells : cytosol<ul>\n<li>Human body contains approximately 40 trillion cells</li>\n<li>Approximately 2/3 of the body's water volume</li>\n</ul>\n</li>\n<li>Extracellular compartment :</li>\n<li>compartments located outside of cells<ul>\n<li>Between cells = interstitial fluid</li>\n<li>Blood vessels = plasma</li>\n<li>Lymph vessels = lymph</li>\n<li>Transcellular = transcellular fluids</li>\n</ul>\n</li>\n<li>Approximately 1/3 of the body's water volume</li>\n</ul>"}, {"front": "<h2>Water - Main Functions</h2>", "back": "<ul>\n<li>Mixing Medium :</li>\n<li>Solution :<ul>\n<li>Mixture of very small solutes and water</li>\n<li>( eg , ions mixed in the plasma )</li>\n</ul>\n</li>\n<li>Colloid :<ul>\n<li>Mixture of Medium solutes and water</li>\n<li>Does <span style='color:#EE4266'>NOT</span> precipitate from water</li>\n<li>( eg , proteins mixed in the plasma )</li>\n</ul>\n</li>\n<li>Suspension :<ul>\n<li>mixture of large solutes and water</li>\n<li>Will separate if not continually mixed</li>\n<li>( eg , red blood cells mixed in the plasma )</li>\n</ul>\n</li>\n<li>Transport ( via the blood )</li>\n<li>( eg , oxygen , carbon dioxide , waste , heat )</li>\n<li>Fluid and electrolyte balance</li>\n<li>Lubricant ( eg , in joints )</li>\n<li>Cools the body ( eg , sweat )</li>\n<li>Vital to most chemical reactions</li>\n<li>General homeostasis</li>\n</ul>"}, {"front": "<h2>Interstitial Fluid</h2>", "back": "<p>found in-between cells</p>"}, {"front": "<h2>Plasma</h2>", "back": "<p>found in blood vessels</p>"}, {"front": "<h2>Transcellular fluids</h2>", "back": "<p>found in transcellular compartments</p>"}, {"front": "<h2>Solution</h2>", "back": "<p>mixture of very small solutes and water</p>\n<ul>\n<li>eg , ions mixed in the plasma</li>\n</ul>"}, {"front": "<h2>Colloid</h2>", "back": "<p>mixture of medium solutes and water</p>\n<ul>\n<li>Does <span style='color:#EE4266'>NOT</span> precipitate from water</li>\n<li>( eg , proteins mixed in the plasma )</li>\n</ul>"}, {"front": "<h2>Suspension</h2>", "back": "<p>mixture of large solutes and water</p>\n<ul>\n<li>Will separate if not continually mixed</li>\n<li>( eg , red blood cells mixed in the plasma )</li>\n</ul>"}, {"front": "<h2>Ions ( cations and anions ) / Electrolytes</h2>", "back": "<ul>\n<li>$\\ce{Na+}$ , $\\ce{K+}$ , $\\ce{Ca^2+}$ , $\\ce{Cl-}$ , $\\ce{HCO3-}$ , $\\ce{CO3^2-}$ , $\\ce{PO4^3-}$</li>\n<li>in equilibrium with salts</li>\n<li>eg , $KCl$ , $NaCl$ , $NaHCO_3$ , $Ca_3(PO_4)_2$ , $CaCO_3$</li>\n</ul>"}, {"front": "<h2>Ions ( cations and anions ) / Electrolytes - Main Functions</h2>", "back": "<ul>\n<li>Fluid , electrolyte , and pH balance</li>\n<li>Communication ( eg , action potentials )</li>\n<li>321 NOKIA<ul>\n<li>3 Sodium Out</li>\n<li>2 Potassium In</li>\n<li>1 ATP Used</li>\n</ul>\n</li>\n<li>General homeostasis</li>\n</ul>"}, {"front": "<h2>Acids and Bases</h2>", "back": "<ul>\n<li>Acid = substance that releases $H^+$ ( $H^+$ donor )</li>\n<li>eg , $HCl$ , $CO_2$</li>\n<li>Base = substances that combines with $H^+$ ( $H^+$ acceptor )</li>\n<li>eg , $NaOH$ , $NH_3$</li>\n</ul>"}, {"front": "<h2>pH Scale</h2>", "back": "<p>measure of the concentration of $H^+$ in the solution</p>\n<ul>\n<li>$pH = -log(\\ [H^+] \\ )$</li>\n<li>An increase in $[H^+]$ \u2192 increase acid \u2192 decreases pH</li>\n<li>A decrease in $[H^+]$ \u2192 decrease acid \u2192 increases pH</li>\n<li>Scale = 0 - 14</li>\n<li>Normal pH in arterial blood = 7.4</li>\n<li>Normal range : 7.35 - 7.45</li>\n<li>$-log(\\ [10^{-7.4}] \\ ) = 7.4$</li>\n<li>Normal pH is vital to most reactions / processes in the body</li>\n<li>Involved in general homeostasis</li>\n</ul>"}, {"front": "<h2>Adenosine Triphosphate ( ATP )</h2>", "back": "<p>adenine molecule + ribose molecule + 3 phosphate molecules</p>\n<ul>\n<li>Energy stored in chemical bond between 2nd and 3rd phosphate</li>\n<li>Hydrolysis of the 1st phosphate yields a free phosphate and adenine diphosphate ( ADP )</li>\n<li>Primary energy supply</li>\n<li>Involved in general homeostasis</li>\n</ul>"}, {"front": "<h2>Cellular Respiration</h2>", "back": "<p>production of ATP</p>\n<ul>\n<li>Add a phosphate to adenosine diphosphate</li>\n<li>Part of catabolism</li>\n</ul>"}, {"front": "<h2>Cellular Respiration - Anaerobic</h2>", "back": "<p>production of ATP without the use of oxygen</p>\n<ul>\n<li>Glucose ( main molecule ) and fructose ( not common )</li>\n</ul>"}, {"front": "<h2>Glycolysis</h2>", "back": "<p>series of reactions that occur in the cytoplasm</p>\n<ul>\n<li>\n<p>An anaerobic version of cellular respiration</p>\n</li>\n<li>\n<p>Glucose catabolization yields : </p>\n</li>\n<li>\n<p>two pyruvate molecules</p>\n<ul>\n<li>Pyruvate converted into lactate ( not part of glycolysis )</li>\n<li>Therefore , 2 lactate molecules are produced</li>\n</ul>\n</li>\n<li>\n<p>2 net ATP molecules</p>\n</li>\n<li>\n<p>2 $H_2O$ molecules ( metabolic water )</p>\n</li>\n<li>\n<p>Heat</p>\n</li>\n</ul>"}, {"front": "<h2>Cellular Respiration - Aerobic</h2>", "back": "<p>production of ATP with the use of oxygen</p>\n<ul>\n<li>Molecules that can be used aerobically to produce ATP</li>\n<li>Glucose , fatty acids , ketones , amino acids</li>\n</ul>"}, {"front": "<h2>Acetyl-CoA Formation</h2>", "back": "<ul>\n<li>occurs in the inner compartment of the mitochondrion</li>\n<li>type of aerobic cellular respiration</li>\n<li>pyruvate is converted into acetyl-CoA</li>\n<li>One $NAD^+$ is reduced to one $NADH$ per pyruvate</li>\n<li>Therefore , 2 $NAD^+$ are reduced to 2 $NADH$ for each glucose molecule<ul>\n<li>Because 1 glucose molecule yields 2 pyruvate</li>\n</ul>\n</li>\n<li>Produces 1 $CO_2$ molecule per pyruvate</li>\n<li>Therefore , 2 $CO_2$ molecules produced per pyruvate<ul>\n<li>Therefore , 4 $CO_2$ molecules produced per glucose</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Krebs Cycle / Citric Acid Cycle / TCA Cycle</h2>", "back": "<ul>\n<li>occurs in the inner compartment of the mitochondrion</li>\n<li>Acetyl-CoA combines with oxaloacetic acid to form citric acid</li>\n<li>Produces 1 ATP molecule per acetyl-CoA</li>\n<li>Therefore , 2 total ATP molecules from 1 glucose</li>\n<li>Produces 3 NADH molecules per acetyl-CoA</li>\n<li>Therefore , 6 total NADH molecules from 1 glucose</li>\n<li>Produces one $FADH_2$ molecule per acetyl-CoA</li>\n<li>Therefore , two total $FADH_2$ from 1 glucose</li>\n<li>Produces 2 $CO_2$ molecules per acetyl-CoA</li>\n<li>Therefore , 4 total $CO_2$ from 1 glucose</li>\n</ul>"}, {"front": "<h2>Electron Transport Chain</h2>", "back": "<ul>\n<li>located in the inner membrane of the mitochondrion</li>\n<li>contains a series of proteins that pump $H^+$ ions</li>\n<li>FROM : the inner compartment</li>\n<li>TO : the outer compartment</li>\n<li>NADH and $FADH_2$ donate $H^+$ ( electrons )</li>\n<li>Energy to pump $H^+$ is derived from each protein passing electrons from one protein to the next</li>\n<li>The last electron is passed onto $O_2$ </li>\n<li>$O_2$ then combines with $H+$</li>\n<li>Produces 6 $H_2O$ molecules</li>\n<li>Contains ATP synthase that produces 28 to 32 ATP per glucose molecule</li>\n<li>Energy to make ATP derived by transporting $H^+$ from the outer compartment to inner compartment</li>\n<li>Example of Aerobic Cellular Respiration</li>\n<li>Without oxygen as the final electron acceptor , ATP synthase does not work</li>\n</ul>"}, {"front": "<h2>Aerobic Cellular Respiration - Glucose Summary</h2>", "back": "<ul>\n<li>30 to 34 ATP</li>\n<li>2 ATP molecules from Krebs cycle</li>\n<li>28 to 32 ATP form the electron transport chain</li>\n<li>6 $CO_2$ </li>\n<li>6 $H_2O$ </li>\n<li>Heat</li>\n</ul>"}, {"front": "<h2>Carbohydrates</h2>", "back": "<p>composed of carbon , hydrogen and oxygen</p>\n<ul>\n<li>Ratio comprised of ~ $(CH_2O)_n$</li>\n<li>Large number of oxygen molecules makes them poar</li>\n<li>Therefore they are typically soluble in water<ul>\n<li>\"like dissolves like\"</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Carbohydrates - Main Functions</h2>", "back": "<ul>\n<li>used to make ATP</li>\n<li>provides structure to molecules such as ATP , DNA , and RNA</li>\n<li>General Homeostasis</li>\n</ul>"}, {"front": "<h2>Monosaccharide</h2>", "back": "<p>simplest form of a carbohydrate</p>\n<ul>\n<li>From 3 to 9 carbons</li>\n<li>5 and 6 carbon carbohydrates are the most important to humans</li>\n<li>Five Carbon :</li>\n<li>Deoxyribose</li>\n<li>Ribose</li>\n<li>Six Carbon :</li>\n<li>Glucose</li>\n<li>Fructose</li>\n<li>Galactose</li>\n</ul>"}, {"front": "<h2>Disaccharide</h2>", "back": "<p>pair of monosaccharides linked together</p>\n<ul>\n<li>Maltose = glucose + glucose</li>\n<li>Sucrose = glucose + fructose</li>\n<li>Lactose = glucose + galactose</li>\n</ul>"}, {"front": "<h2>Maltose</h2>", "back": "<p>glucose + glucose</p>"}, {"front": "<h2>Sucrose</h2>", "back": "<p>glucose + fructose</p>"}, {"front": "<h2>Lactose</h2>", "back": "<p>glucose + galactose</p>"}, {"front": "<h2>Polysaccharide</h2>", "back": "<p>many glucose molecules linked together</p>"}, {"front": "<h2>Starch</h2>", "back": "<p>storage form of glucose in plants</p>"}, {"front": "<h2>Glycogen</h2>", "back": "<p>storage form of glucose in the body</p>"}, {"front": "<h2>Fiber</h2>", "back": "<p>indigestible carbohydrate</p>\n<ul>\n<li>( eg cellulose )</li>\n<li>both water-soluble and water-insoluble forms</li>\n</ul>"}, {"front": "<h2>Lipids</h2>", "back": "<p>composed primarily of carbon , hydrogen , and oxygen</p>\n<ul>\n<li>lower ratio of oxygen to carbon</li>\n<li>makes them less polar<ul>\n<li>therefore , insoluble in water , and soluble in other lipids</li>\n<li>\"like dissolves like\"</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Lipids - Main Functions</h2>", "back": "<ul>\n<li>Used to make ATP</li>\n<li>Vital constituent of cell membranes</li>\n<li>Regulation ( eg , hormones eicosanoids )</li>\n<li>Protection ( surround organs ) and insulation ( subcutaenous fat )</li>\n<li>General Homeostasis</li>\n</ul>"}, {"front": "<h2>Triglyceride \u0010/ Triacylglycerol</h2>", "back": "<ul>\n<li>majority of the lipids in the body</li>\n<li>3 fatty acid molecules bound to a glycerol molecule</li>\n<li>Types :</li>\n<li>saturated fatty acids</li>\n<li>unsaturated fatty acids<ul>\n<li>monounsaturated fatty acids</li>\n<li>polyunsaturated fatty acids</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Phospholipids</h2>", "back": "<p>glycerol molecule + two fatty acids + phosphate molecule</p>\n<ul>\n<li>important constituent of membranes and surfactant</li>\n</ul>"}, {"front": "<h2>Cholesterol</h2>", "back": "<ul>\n<li>important constituent of the plasma membrane of cells</li>\n<li>used to make steroids</li>\n<li>approximately one gram produced per day by the liver</li>\n<li>High Density Lipoprotein ( HDL ) = \"good\" cholesterol </li>\n<li>Low Density Lipoprotein ( LDL ) = \"bad\" cholesterol</li>\n</ul>"}, {"front": "<h2>Steroids</h2>", "back": "<ul>\n<li>derived from cholesterol</li>\n<li>structurally distinct from other lipids</li>\n<li>composed of 4 separate carbon rings</li>\n<li>what is attached to the rings characterizes a steroid</li>\n<li>eg , testosterone , estrogen , bile salt</li>\n</ul>"}, {"front": "<h2>Eicosanoids</h2>", "back": "<p>derived from fatty acids</p>"}, {"front": "<h2>Prostaglandins</h2>", "back": "<ul>\n<li>found and produced in nearly all tissues</li>\n<li>type of eicosanoid</li>\n</ul>"}, {"front": "<h2>Thromboxanes</h2>", "back": "<ul>\n<li>produced primarily by platelets</li>\n<li>facilitate the clumping of platelets and constrict blood vessels</li>\n<li>prevent the clumping of platelets and dilate blood vessels</li>\n<li>type of eicosanoid</li>\n</ul>"}, {"front": "<h2>Leukotrienes</h2>", "back": "<ul>\n<li>produced primarily by leukocytes and mast cells</li>\n<li>constrict airways ( can be involved with asthma )</li>\n<li>sustain inflammatory reactions ( can be involved in allergies )</li>\n<li>type of eicosanoid</li>\n</ul>"}, {"front": "<h2>Proteins</h2>", "back": "<ul>\n<li>composed primarily of carbon , hydrogen , oxygen , nitrogen , and sulfur</li>\n<li>Main Functions :</li>\n<li>responsible for cell structure ( eg , cytoskeleton )</li>\n<li>regulation ( enzymes and hormones )</li>\n<li>transport ( hemoglobin , plasma proteins , membrane transporters )</li>\n<li>immunity ( antibodies and complement system )</li>\n<li>General homeostasis</li>\n<li>Made up of amino acids</li>\n<li>Peptide = very small protein = 2 - 10 amino acids</li>\n<li>Polypeptide = small protein = 11 - 50 amino acids</li>\n<li>Medium Size to Large Proteins = greater than 50 amino acids</li>\n<li>Four levels of structure :</li>\n<li>Primary = amino acid sequence ( from 2 to over 5,000 )</li>\n<li>Secondary = twisting and pleating of amino acid side chains</li>\n<li>Tertiary = folding into a globular structure</li>\n<li>Quaternary = combining of two or more tertiary structures<ul>\n<li>Each individual tertiary structure is called a \"subunit\"</li>\n</ul>\n</li>\n<li>Denaturation = change in protein structure by \"extreme conditions\"</li>\n<li>eg , \"extreme\" changes in temperature or \"extreme\" change in pH</li>\n<li>Secondary , tertiary , or quaternary structure is effected<ul>\n<li>Primary structure does NOT become denatured</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Nucleic Acids ( DNA and RNA )</h2>", "back": "<ul>\n<li>composed of carbon , hydrogen , oxygen , nitrogen , and phosphorous</li>\n<li>made up of nucleotides that are linked together to form strands of DNA and RNA</li>\n</ul>"}, {"front": "<h2>Nucleotide</h2>", "back": "<p>phosphate group + monosaccaride + nitrogen base</p>\n<ul>\n<li>Monosaccharide :</li>\n<li>Deoxyribose ( DNA )</li>\n<li>Ribose ( RNA )</li>\n<li>Nitrogen Base : pH is above 7.0</li>\n<li>Adenine</li>\n<li>Guanine</li>\n<li>Cytosine</li>\n<li>Thymine ( DNA )</li>\n<li>Uracil ( RNA )</li>\n</ul>"}, {"front": "<h2>Deoxyribonucleic Acid ( DNA )</h2>", "back": "<ul>\n<li>complimentary base pairing</li>\n<li>adenine pairs with thymine</li>\n<li>guanine pairs with cytosine</li>\n<li>46 DNA molecules contained in the nucleus</li>\n<li>1 DNA molecules contained in the mitochondria</li>\n<li>Made up of genes ( ~30,000 )</li>\n<li>Dictated by the sequence of bases within the DNA molecule<ul>\n<li>Codon = sequence of 3 nucleotide bases</li>\n</ul>\n</li>\n<li>Most ( ~ 20,000 ) genes are recipes for proteins<ul>\n<li>The ~20,000 genes produce ~90,000 different proteins</li>\n</ul>\n</li>\n<li>Comprise the genome</li>\n</ul>"}, {"front": "<h2>Ribonucleic Acids ( RNA )</h2>", "back": "<ul>\n<li>Types ( work together to produce proteins )</li>\n<li>Messenger RNA ( mRNA )<ul>\n<li>Complimentary copy of a gene</li>\n</ul>\n</li>\n<li>Ribosomal RNA ( rRNA )<ul>\n<li>Unit of ribosomes</li>\n<li>Aids in protein synthesis</li>\n<li>reads the mRNA</li>\n</ul>\n</li>\n<li>Transfer RNA ( tRNA )<ul>\n<li>Aids in protein synthesis</li>\n<li>Transfers amino acids to form primary structure</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Transcription</h2>", "back": "<ul>\n<li>process of producing mRNA</li>\n<li>DNA separates and the gene is \"exposed\"</li>\n<li>mRNA is produced by making a complimentary copy of a gene</li>\n<li>Adenine ( of DNA ) is copied to yield Uracil ( of mRNA )</li>\n<li>Cytosine ( of DNA ) is copied to yield Guanine ( of mRNA )</li>\n<li>Guanine ( of DNA ) is copied to yield Cytosine ( of mRNA )</li>\n<li>Thymine ( of DNA ) is copied to yield Adenine ( of mRNA )</li>\n<li>mRNA is transported from the nucleus to the cytoplasm</li>\n</ul>"}, {"front": "<h2>Codon</h2>", "back": "<p>sequence of 3 nucleotide bases</p>\n<ul>\n<li>mRNA codons produced in a specific order based on the order of the gene codon sequence</li>\n<li>mRNA contains anywhere between few codons to thousands of codons </li>\n</ul>"}, {"front": "<h2>Anticodon</h2>", "back": "<p>sequence of three nucleotide bases</p>\n<ul>\n<li>tRNA anticodon compliments mRNA codon</li>\n</ul>"}, {"front": "<h2>Translation</h2>", "back": "<p>process of producing protein primary structure ( ie , protein )</p>\n<ul>\n<li>rRNA of the ribosome reads the mRNA codons</li>\n<li>this attracts specific tRNA based on specific mRNA codons</li>\n<li>tRNA :</li>\n<li>each tRNA contains a specific anticodon</li>\n<li>each tRNA carriers a specific amino acid based on its anticodon</li>\n<li>tRNA anticodon binds to its complimentary mRNA codon</li>\n<li>amino acids of all tRNA molecule placed in a specific order<ul>\n<li>specific order based on the mRNA codon sequence</li>\n<li>produces protein primary structure</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Post-Translational Events</h2>", "back": "<p>modification of proteins after they have been formed</p>\n<ul>\n<li>eg , carbohydrate added</li>\n<li>eg , phosphate added</li>\n</ul>"}, {"front": "<h2>Carbohydrate Metabolism</h2>", "back": "<ul>\n<li>catabolism of glucose via glycolysis to form two pyruvate molecules</li>\n<li>ATP production ceases at that point anaerobically</li>\n<li>ATP production continues from that point aerobically</li>\n<li>Glucose is obtained from :</li>\n<li>the digestive tract</li>\n<li>conversion of fructose and galactose into glucose by the liver</li>\n<li>glycogenolysis<ul>\n<li>breakdown of glycogen in the liver and skeletal muscle</li>\n</ul>\n</li>\n<li>gluconeogenesis<ul>\n<li>conversion of non-carbohydrate substances into glucose</li>\n<li>amino acids , lactic acid , pyruvic acid , glycerol</li>\n<li>occurs in the liver</li>\n</ul>\n</li>\n<li>Excess glucose is stored as glycogen in the liver and skeletal muscles via glycogenesis</li>\n<li>Excess glucose can be converted into fatty acids ( ie , glucose is turned into fat )<ul>\n<li>Occurs in the liver , adipose tissue , and skeletal muscle</li>\n</ul>\n</li>\n</ul>"}, {"front": "<h2>Lipid / Fat Metabolism</h2>", "back": "<p>catabolism of fatty acids via beta-oxidation</p>\n<ul>\n<li>purely aerobic process</li>\n<li>Beta-Oxidation :</li>\n<li>Removal of two caron atoms from fatty acid to form many acetyl-CoA<ul>\n<li>Acetyl-CoA molecule enters the Krebs cycle</li>\n<li>Many ATP produced from that point aerobically</li>\n<li>Acetyl-CoA also used to make ketones ( ketogenesis ) <u>in the liver</u></li>\n<li>Ketones can be used to make ATP aerobically</li>\n<li>Increased ketogenesis leads to ketosis :<ul>\n<li>Elevated levels of ketones in the blood</li>\n<li>Signifies that more fatty acids are being catabolized ( ie , more fat is being \"burned\" )</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>Fatty acids obtained from the digestive tract</li>\n<li>Fatty acids obtained via lipogenesis</li>\n<li>Production of lipid ( eg , from glucose and amino acids )</li>\n<li>Fatty acids obtained via lipolysis</li>\n<li>eg , break down of triglycerides from adipocytes ( fat stored as triglycerides )</li>\n</ul>"}, {"front": "<h2>Protein Metabolism</h2>", "back": "<p>catabolism of amino acids ( mainly glutamate ) via oxidative deamination</p>\n<ul>\n<li>Oxidative Deamination :</li>\n<li>\n<p>removal of amine groups from an amino acid</p>\n<ul>\n<li>produces ammonia and the corresponding keto acid</li>\n<li>liver converts ammonia ( toxic ) into urea ( less toxic )<ul>\n<li>Urea and ammonia are excreted</li>\n</ul>\n</li>\n<li>corresponding keto acid used for metabolic reactions<ul>\n<li>includes reactions that produce ATP aerobically</li>\n<li>last resort process</li>\n<li>the type of amino acid deaminated will yield a particular product<ul>\n<li>eg , converted into pyruvate</li>\n<li>eg , converted into acetyl-CoA</li>\n<li>eg , converted into intermediates of Krebs cycle</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>\n<p>Amino acids obtained from the digestive tract</p>\n</li>\n<li>Amino acids ( specifically non-essential amino acids )  produced via transamination</li>\n<li>Some amino acids are converted into glucose ( gluconeogenesis )</li>\n<li>Some amino acids ( if in excess ) are converted into lipids ( lipogenesis )</li>\n</ul>"}]};
+	</script>
+
+</body>
+</html>
