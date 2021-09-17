@@ -1,0 +1,1553 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+/*blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}*/
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    padding-left: 30px;
+    margin-top: 35px;
+    border-left: 2px solid #D5C5C8;
+    background: #474d54;
+    background-color: #474d54;
+    color: #B197FC;
+}
+
+/*#772D8B , #2660A4 , #D90368 , #048BA8*/
+/*https://coolors.co/d6ffb7-61cc9e-048ba8-ffbfa0-d5c5c8*/
+/*blockquote blockquote { border-left: 3px solid #61CC9E }*/
+blockquote blockquote { border-left: 2px solid #D6FFB7; border-bottom:none; }
+blockquote blockquote blockquote { border-left: 2px solid #FFBFA0; border-bottom:none; }
+blockquote blockquote blockquote blockquote { border-left: 2px solid #048BA8; border-bottom:none; }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #D90368; border-bottom:none; }
+
+blockquote .md-math-block {
+    color: #FFEBFF;
+}
+
+blockquote h2 {
+    color: #EBD6A6;
+}
+
+blockquote h6 {
+    border-radius:2em;
+    opacity: 0.9;
+    background-color:#B1C6FC;
+    color:black;
+    hite-space:normal;
+    display:inline-block;
+    padding:0.2em;
+}
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+/*blockquote {
+    color: #9DA2A6;
+}
+*/
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 4 - Figures</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 4 - Figures</h1></center><center><img src="https://39363.org/IMAGE_BUCKET/1631722218686-246705594.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-1 - <span class="title">Chromosomes in cells</span></span></center>
+<p>(A) Two adjacent plant cells photographed through a light microscope. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> has been stained with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5186/">fluorescent dye</a> (DAPI) that binds to it. The DNA is present in chromosomes, which become visible as distinct structures in the light microscope only when they become compact structures in preparation for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a>, as shown on the left. The cell on the right, which is not dividing, contains identical chromosomes, but they cannot be clearly distinguished in the light microscope at this phase in the cell's life cycle, because they are in a more extended <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a>. (B) Schematic diagram of the outlines of the two cells along with their chromosomes. (A, courtesy of Peter Shaw.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722218853-448937121.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-2 - <span class="title">Experimental demonstration that DNA is the genetic material</span></span></center>
+<p>These experiments, carried out in the 1940s, showed that adding purified <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> to a bacterium changed its properties and that this change was faithfully passed on to subsequent generations. Two closely related strains of the bacterium <i>Streptococcus pneumoniae</i> differ from each other in both their appearance under the microscope and their pathogenicity. One strain appears smooth (S) and causes death when injected into mice, and the other appears rough (R) and is nonlethal. (A) This experiment shows that a substance present in the S strain can change (or transform) the R strain into the S strain and that this change is inherited by subsequent generations of bacteria. (B) This experiment, in which the R strain has been incubated with various classes of biological molecules obtained from the S strain, identifies the substance as DNA.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722223620-469673652.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-3 - <span class="title">DNA and its building blocks</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is made of four types of nucleotides, which are linked covalently into a polynucleotide chain (a DNA strand) with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a>-phosphate backbone from which the bases (A, C, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>, and T) extend. A DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> is composed of two DNA strands held together by hydrogen bonds between the paired bases. The <i>arrowheads</i> at the ends of the DNA strands indicate the polarities of the two strands, which run <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4834/">antiparallel</a> to each other in the DNA molecule. In the diagram at the bottom left of the figure, the DNA molecule is shown straightened out; in reality, it is twisted into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>, as shown on the right. For details, see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26821/figure/A600/?report=objectonly" rid-figpopup="figA600" rid-ob="figobA600" target="object">Figure 4-5</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722223825-815224611.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-4 - <span class="title">Complementary base pairs in the DNA double helix</span></span></center>
+<p>The shapes and chemical structure of the bases allow hydrogen bonds to form efficiently only between A and T and between <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> and C, where atoms that are able to form hydrogen bonds (see <a href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A165/box/A198/?report=objectonly" target="object">Panel 2-3</a>, pp. 114–115) can be brought close together without distorting the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>. As indicated, two hydrogen bonds form between A and T, while three form between G and C. The bases can pair in this way only if the two polynucleotide chains that contain them are <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4834/">antiparallel</a> to each other.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722223998-777921242.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-5 - <span class="title">The DNA double helix</span></span></center>
+<p>(A) A space-filling model of 1.5 turns of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>. Each turn of DNA is made up of 10.4 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs and the center-to-center distance between adjacent nucleotide pairs is 3.4 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a>. The coiling of the two strands around each other creates two grooves in the double helix. As indicated in the figure, the wider groove is called the major groove, and the smaller the minor groove. (B) A short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of the double helix viewed from its side, showing four <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs. The nucleotides are linked together covalently by phosphodiester bonds through the 3′-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">hydroxyl</a> (-OH) group of one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> and the 5′-phosphate (P) of the next. Thus, each polynucleotide strand has a chemical polarity; that is, its two ends are chemically different. The 3′ end carries an unlinked -OH group attached to the 3′ position on the sugar ring; the 5′ end carries a free phosphate group attached to the 5′ position on the sugar ring.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722224136-476826347.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-6 - <span class="title">The relationship between genetic information carried in DNA and proteins</span></span></center><center><img src="https://39363.org/IMAGE_BUCKET/1631722224307-957199340.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-7 - <span class="title">The nucleotide sequence of the human β-globin gene</span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> carries the information for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence of one of the two types of subunits of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5272/">hemoglobin</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, which carries oxygen in the blood. A different gene, the α-globin gene, carries the information for the other type of hemoglobin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> (a hemoglobin molecule has four subunits, two of each type). Only one of the two strands of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> containing the β-globin gene is shown; the other strand has the exact <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> sequence. By convention, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence is written from its 5′ end to its 3′ end, and it should be read from left to right in successive lines down the page as though it were normal English text. The DNA sequences highlighted in <i>yellow</i> show the three regions of the gene that specify the amino sequence for the β-globin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. We see in Chapter 6 how the cell connects these three sequences together to synthesize a full-length β-globin protein.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722224553-659176014.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-8 - <span class="title">DNA as a template for its own duplication</span></span></center>
+<p>As the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> A successfully pairs only with T, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> with C, each strand of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> can specify the sequence of nucleotides in its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> strand. In this way, double-helical DNA can be copied precisely.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722224720-928677146.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-9 - <span class="title">A cross-sectional view of a typical cell nucleus</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5551/">nuclear envelope</a> consists of two membranes, the outer one being continuous with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5131/">endoplasmic reticulum</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2154/figure/A2155/?report=objectonly" rid-figpopup="figA2155" rid-ob="figobA2155" target="object">Figure 12-9</a>). The space inside the endoplasmic reticulum (the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5147/">ER lumen</a>) is colored <i>yellow;</i> it is continuous with the space between the two nuclear membranes. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5399/">lipid</a> bilayers of the inner and outer nuclear membranes are connected at each nuclear pore. Two networks of intermediate filaments <i>(green)</i> provide mechanical support for the nuclear envelope; the intermediate filaments inside the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> form a special supporting structure called the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5554/">nuclear lamina</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721049952-947680274.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-10 - <span class="title">Human chromosomes</span></span></center>
+<p>These chromosomes, from a male, were isolated from a cell undergoing nuclear division (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>) and are therefore highly compacted. Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> has been “painted” a different color to permit its unambiguous identification under the light microscope. Chromosome painting is performed by exposing the chromosomes to a collection of human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules that have been coupled to a combination of fluorescent dyes. For example, DNA molecules derived from chromosome 1 are labeled with one specific dye combination, those from chromosome 2 with another, and so on. Because the labeled DNA can form <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs, or hybridize, only to the chromosome from which it was derived (discussed in Chapter 8), each chromosome is differently labeled. For such experiments, the chromosomes are subjected to treatments that separate the double-helical DNA into individual strands, designed to permit base-pairing with the single-stranded labeled DNA while keeping the chromosome structure relatively intact. (A) The chromosomes visualized as they originally spilled from the lysed cell. (B) The same chromosomes artificially lined up in their numerical order. This arrangement of the full chromosome set is called a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5367/">karyotype</a>. (From E. Schröck et al., <i>Science</i> 273:494–497, 1996. © AAAS.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721050113-486805344.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-11 - <span class="title">The banding patterns of human chromosomes</span></span></center>
+<p>Chromosomes 1–22 are numbered in approximate order of size. A typical human somatic (non-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5228/">germ line</a>) cell contains two of each of these chromosomes, plus two sex chromosomes—two X chromosomes in a female, one X and one Y <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> in a male. The chromosomes used to make these maps were stained at an early stage in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>, when the chromosomes are incompletely compacted. The <i>horizontal green line</i> represents the position of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A628/?report=objectonly" rid-figpopup="figA628" rid-ob="figobA628" target="object">Figure 4-22</a>), which appears as a constriction on mitotic chromosomes; the knobs on chromosomes 13, 14, 15, 21, and 22 indicate the positions of genes that code for the large ribosomal RNAs (discussed in Chapter 6). These patterns are obtained by staining chromosomes with Giemsa stain, and they can be observed under the light microscope. (Adapted from U. Franke, <i>Cytogenet. Cell Genet.</i> 31:24–32, 1981.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721050285-616348672.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-12 - <span class="title">An aberrant human chromosome</span></span></center>
+<p>(A) Two pairs of chromosomes, stained with Giemsa (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A611/?report=objectonly" rid-figpopup="figA611" rid-ob="figobA611" target="object">Figure 4-11</a>), from a patient with ataxia, a disease characterized by progressive deterioration of motor skills. The patient has a normal pair of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 4s <i>(left-hand pair),</i> but one normal chromosome 12 and one aberrant chromosome 12, as seen by its greater length <i>(right-hand pair).</i> The additional material contained on the aberrant chromosome 12 was deduced, from its pattern of bands, as a piece of chromosome 4 that had become attached to chromosome 12 through an abnormal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> event, called a chromosomal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5892/">translocation</a>. (B) The same two chromosome pairs, “painted” <i>blue</i> for chromosome 4 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> and <i>purple</i> for chromosome 12 DNA. The two techniques give rise to the same conclusion regarding the nature of the aberrant chromosome 12, but chromosome painting provides better resolution, and the clear identification of even short pieces of chromosomes that have become translocated. However, Giemsa staining is easier to perform. (From E. Schröck et al., <i>Science</i> 273:494–497, 1996. © AAAS.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721050461-709439696.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-13 - <span class="title">The genome of S. cerevisiae (budding yeast)</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> is distributed over 16 chromosomes, and its complete <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence was <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by a cooperative effort involving scientists working in many different locations, as indicated <i>(gray,</i> Canada; <i>orange,</i> European Union; <i>yellow,</i> United Kingdom; <i>blue,</i> Japan; <i>light green,</i> St Louis, Missouri; <i>dark green,</i> Stanford, California). The constriction present on each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> represents the position of its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A628/?report=objectonly" rid-figpopup="figA628" rid-ob="figobA628" target="object">Figure 4-22</a>). (B) A small region of chromosome 11, highlighted in <i>red</i> in part A, is magnified to show the high density of genes characteristic of this species. As indicated by <i>orange,</i> some genes are transcribed from the lower strand (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4/figure/A12/?report=objectonly" rid-figpopup="figA12" rid-ob="figobA12" target="object">Figure 1-5</a>), while others are transcribed from the upper strand. There are about 6000 genes in the complete genome, which is 12,147,813 nucleotide pairs long.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721050672-456103340.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-14 - <span class="title">Two closely related species of deer with very different chromosome numbers</span></span></center>
+<p>In the evolution of the Indian muntjac, initially separate chromosomes fused, without having a major effect on the animal. These two species have roughly the same number of genes. (Adapted from M.W. Strickberger, Evolution, 3rd edition, 2000, Sudbury, MA: Jones &amp; Bartlett Publishers.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721050843-829503686.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-15 - <span class="title">The organization of genes on a human chromosome</span></span></center>
+<p>(A) Chromosome 22, one of the smallest human chromosomes, contains 48 × 10<sup>6</sup> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs and makes up approximately 1.5% of the entire human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>. Most of the left arm of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 22 consists of short repeated sequences of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> that are packaged in a particularly compact form of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a>), which is discussed later in this chapter. (B) A tenfold expansion of a portion of chromosome 22, with about 40 genes indicated. Those in <i>dark brown</i> are known genes and those in <i>light brown</i> are predicted genes. (C) An expanded portion of (B) shows the entire length of several genes. (D) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5352/">intron</a>-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5161/">exon</a> arrangement of a typical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> is shown after a further tenfold expansion. Each exon <i>(red)</i> codes for a portion of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, while the DNA sequence of the introns <i>(gray)</i> is relatively unimportant. The entire human genome (3.2 × 10<sup>9</sup> nucleotide pairs) is distributed over 22 autosomes and 2 sex chromosomes (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A610/?report=objectonly" rid-figpopup="figA610" rid-ob="figobA610" target="object">Figures 4-10</a> and <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A611/?report=objectonly" rid-figpopup="figA611" rid-ob="figobA611" target="object">4-11</a>). The term <i>human genome sequence</i> refers to the complete nucleotide sequence of DNA in these 24 chromosomes. Being <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5077/">diploid</a>, a human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5814/">somatic cell</a> therefore contains roughly twice this amount of DNA. Humans differ from one another by an average of one nucleotide in every thousand, and a wide variety of humans contributed DNA for the genome sequencing project. The published human genome sequence is therefore a composite of many individual sequences. (Adapted from International Human Genome Sequencing Consortium, <i>Nature</i> 409:860–921, 2001.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721051056-393628193.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-16 - <span class="title">Scale of the human genome</span></span></center>
+<p>If each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pair is drawn as 1 mm as in (A), then the human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> would extend 3200 km (approximately 2000 miles), far enough to stretch across the center of Africa, the site of our human origins <i>(red line</i> in B). At this scale, there would be, on average, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>-coding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> every 300 m. An average gene would extend for 30 m, but the coding sequences in this gene would add up to only just over a meter.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721051234-706463045.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-17 - <span class="title">Representation of the nucleotide sequence content of the human genome</span></span></center>
+<p>LINES, SINES, retroviral-like elements, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-only transposons are all mobile genetic elements that have multiplied in our <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> by replicating themselves and inserting the new copies in different positions. Mobile genetic elements are discussed in Chapter 5. Simple sequence repeats are short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequences (less than 14 nucleotide pairs) that are repeated again and again for long stretches. Segmental duplications are large blocks of the genome (1000–200,000 nucleotide pairs) that are present at two or more locations in the genome. Over half of the unique sequence consists of genes and the remainder is probably regulatory DNA. Most of the DNA present in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a>, a specialized type of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> (discussed later in this chapter) that contains relatively few genes, has not yet been sequenced. (Adapted from Unveiling the Human Genome, Supplement to the Wellcome Trust Newsletter. London: Wellcome Trust, February 2001.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721051429-709199812.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-18 - <span class="title">Conserved synteny between the human and mouse genomes</span></span></center>
+<p>Regions from different mouse chromosomes (indicated by the colors of each mouse in B) show conserved <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5854/">synteny</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> order) with the indicated regions of the human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> (A)<i>.</i> For example the genes present in the upper portion of human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 1 <i>(orange)</i> are present in the same order in a portion of mouse chromosome 4. Regions of human chromosomes that are composed primarily of short, repeated sequences are shown in <i>black.</i> Mouse centromeres (indicated in <i>black</i> in B) are located at the ends of chromosomes; no known genes lie beyond the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a> on any mouse chromosome. For the most part, human centromeres, indicated by constrictions, occupy more internal positions on chromosomes (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A611/?report=objectonly" rid-figpopup="figA611" rid-ob="figobA611" target="object">Figure 4-11</a>). (Adapted from International Human Genome Sequencing Consortium, <i>Nature</i> 409:860–921, 2001.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721051671-171797974.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-19 - <span class="title">A proposed evolutionary history of human chromosome 3 and its relatives in other mammals</span></span></center>
+<p>(A) At the <i>lower left</i> is the order of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 3 segments hypothesized to be present on a chromosome of a mammalian ancestor. Along the <i>top</i> are the patterns of chromosome sequences found in the chromosomes of modern mammals. The minimum changes necessary to account for the appearance of the modern chromosomes from the hypothetical ancestor are marked along each branch. In mammals, these types of changes in chromosome organization are thought to occur once every 5–10 × 10<sup>6</sup> years. The <i>small circles</i> depicted in the modern chromosomes represent the positions of centromeres. (B) Some of the chromosome painting experiments that led to the diagram in (A). Each image shows the chromosome most closely related to human chromosome 3, painted <i>green</i> by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a> with different segments of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>, lettered a, b, c, and d along the <i>bottom</i> of the figure. These letters correspond to the colored segments of the diagram in (A). (From S. Müller et al., <i>Proc. Natl. Acad. Sci. USA</i> 97:206–211, 2000. © National Academy of Sciences.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721051839-759738587.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-20 - <span class="title">A simplified view of the eucaryotic cell cycle</span></span></center>
+<p>During <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a>, the cell is actively expressing its genes and is therefore synthesizing proteins. Also, during interphase and before <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a>, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is replicated and the chromosomes are duplicated. Once DNA replication is complete, the cell can enter <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a>,</i> when <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> occurs and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> is divided into two daughter nuclei. During this stage, the chromosomes condense, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5551/">nuclear envelope</a> breaks down, and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5479/">mitotic spindle</a> forms from microtubules and other proteins. The condensed mitotic chromosomes are captured by the mitotic spindle, and one complete set of chromosomes is then pulled to each end of the cell. A nuclear envelope re-forms around each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> set, and in the final step of M phase, the cell divides to produce two daughter cells. Most of the time in the cell cycle is spent in interphase; M phase is brief in comparison, occupying only about an hour in many mammalian cells.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721052048-648771192.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-21 - <span class="title">A comparison of extended interphase chromatin with the chromatin in a mitotic chromosome</span></span></center>
+<p>(A) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> showing an enormous tangle of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> spilling out of a lysed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. (B) A scanning electron micrograph of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5478/">mitotic chromosome</a>: a condensed duplicated chromosome in which the two new chromosomes are still linked together (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A628/?report=objectonly" rid-figpopup="figA628" rid-ob="figobA628" target="object">Figure 4-22</a>). The constricted region indicates the position of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a>. Note the difference in scales. (A, courtesy of Victoria Foe; B, courtesy of Terry D. Allen.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721052219-503917647.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-22 - <span class="title">The three DNA sequences required to produce a eucaryotic chromosome that can be replicated and then segregated at mitosis</span></span></center>
+<p>Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> has multiple origins of replication, one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a>, and two telomeres. Shown here is the sequence of events a typical chromosome follows during the cell cycle. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replicates in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> beginning at the origins of replication and proceeding bidirectionally from the origins across the chromosome. In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a>, the centromere attaches the duplicated chromosomes to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5479/">mitotic spindle</a> so that one copy is distributed to each daughter cell during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>. The centromere also helps to hold the duplicated chromosomes together until they are ready to be moved apart. The telomeres form special caps at each chromosome end.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721052380-222788959.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-23 - <span class="title">Nucleosomes as seen in the electron microscope</span></span></center>
+<p>(A) Chromatin isolated directly from an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> appears in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5122/">electron microscope</a> as a thread 30 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> thick. (B) This electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows a length of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> that has been experimentally unpacked, or decondensed, after isolation to show the nucleosomes. (A, courtesy of Barbara Hamkalo; B, courtesy of Victoria Foe.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721052570-790688207.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-24 - <span class="title">Structural organization of the nucleosome</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a> contains a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> core made of eight <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> molecules. As indicated, the nucleosome core particle is released from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> by digestion of the linker <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> with a nuclease, an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> that breaks down DNA. (The nuclease can degrade the exposed linker DNA but cannot attack the DNA wound tightly around the nucleosome core.) After dissociation of the isolated nucleosome into its protein core and DNA, the length of the DNA that was wound around the core can be <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a>. This length of 146 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs is sufficient to wrap 1.65 times around the histone core.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721052781-632477109.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-25 - <span class="title">The structure of a nucleosome core particle, as determined by x-ray diffraction analyses of crystals</span></span></center>
+<p>Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> is colored according to the scheme of <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A632/?report=objectonly" rid-figpopup="figA632" rid-ob="figobA632" target="object">Figure 4-24</a>, with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> in <i>light gray.</i> (Reprinted by permission from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Luger et al., <i>Nature</i> 389:251–260, 1997. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721052941-722783646.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-26 - <span class="title">The overall structural organization of the core histones</span></span></center>
+<p>(A) Each of the core histones contains an N-terminal tail, which is subject to several forms of covalent modification, and a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> fold region, as indicated. (B) The structure of the histone fold, which is formed by all four of the core histones. (C) Histones 2A and 2B form a dimer through an interaction known as the “handshake.” Histones H3 and H4 form a dimer through the same type of interaction, as illustrated in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A636/?report=objectonly" rid-figpopup="figA636" rid-ob="figobA636" target="object">Figure 4-27</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721053120-132093159.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-27 - <span class="title">The assembly of a histone octamer</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> H3–H4 dimer and the H2A-H2B dimer are formed from the handshake interaction. An H3-H4 tetramer forms the scaffold of the octamer onto which two H2A-H2B dimers are added, to complete the assembly. The histones are colored as in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A635/?report=objectonly" rid-figpopup="figA635" rid-ob="figobA635" target="object">Figure 4-26</a>. Note that all eight N-terminal tails of the histones protrude from the disc-shaped core structure. In the x-ray crystal (<a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A634/?report=objectonly" rid-figpopup="figA634" rid-ob="figobA634" target="object">Figure 4-25</a>), most of the histone tails were unstructured (and therefore not visible in the structure), suggesting that their conformations are highly flexible. (Adapted from figures by J. Waterborg.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721053358-571509519.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-28 - <span class="title">The bending of DNA in a nucleosome</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> helix makes 1.65 tight turns around the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> octamer. This diagram is drawn approximately to scale, illustrating how the minor groove is compressed on the inside of the turn. Owing to certain structural features of the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, A-T <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs are preferentially accommodated in such a narrow minor groove.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721053524-329688309.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-29 - <span class="title">Variations on the Zigzag model for the 30-nm chromatin fiber</span></span></center>
+<p>(A and B) Electron microscopic evidence for the <i>top</i> and <i>bottom-left</i> model structures depicted in (C). (C) Zigzag variations. An interconversion between these three variations is proposed to occur by an accordion-like expansion and contraction of the fiber length. Differences in the length of the linker between adjacent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a> beads can be accommodated by snaking or coiling of the linker <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>, or by small local changes in the width of the fiber. Formation of the 30-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> fiber requires both <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> H1 and the core histone tails; for simplicity, neither is shown here, but see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A641/?report=objectonly" rid-figpopup="figA641" rid-ob="figobA641" target="object">Figures 4-30</a> and <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A643/?report=objectonly" rid-figpopup="figA643" rid-ob="figobA643" target="object">4-32</a>. (From J. Bednar et al., <i>Proc. Natl. Acad. Sci. USA</i> 95:14173–14178, 1998. © National Academy of Sciences.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721053698-257645881.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-30 - <span class="title">Irregularities in the 30-nm fiber</span></span></center>
+<p>This schematic view of the 30-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> fiber illustrates its interruption by sequence-specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-binding proteins. How these proteins bind tightly to DNA is explained in Chapter 7. The interruptions in the 30-nm fiber may be due to regions of DNA that lack nucleosomes altogether or, more probably, to regions that contain altered or remodeled nucleosomes. Regions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> that are <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a> free or contain remodeled nucleosome can often be detected experimentally by the unusually high susceptibility of their DNA to digestion by nucleases—as compared with the DNA in nucleosomes.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721053876-221234679.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-31 - <span class="title">A speculative model for how histone H1 could change the path of DNA as it exits from the nucleosome</span></span></center>
+<p>Histone H1 <i>(green)</i> consists of a globular core and two extended tails. Part of the effect of H1 on the compaction of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a> organization may result from charge neutralization: like the core histones, H1 is positively charged (especially its C-terminal tail), and this helps to compact the negatively charged <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>. Unlike the core histones, H1 does not seem to be essential for cell viability; in one ciliated protozoan the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> expands nearly twofold in the absence of H1, but the cells otherwise appear normal.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721054041-756127825.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-32 - <span class="title">A speculative model for histone tails in the formation of the 30-nm fiber</span></span></center>
+<p>(A) The approximate exit points of the eight <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> tails, four from each histone <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a>, that extend from each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a>. In the high-resolution structure of the nucleosome (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A634/?report=objectonly" rid-figpopup="figA634" rid-ob="figobA634" target="object">Figure 4-25</a>), the tails are largely unstructured, suggesting that they are highly flexible. (B) A speculative model showing how the histone tails may help to pack nucleosomes together into the 30-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> fiber. This model is based on (1) experimental evidence that histone tails aid in the formation of the 30-nm fiber, (2) the x-ray crystal structure of the nucleosome, which showed that the tails of one nucleosome contact the histone core of an adjacent nucleosome in the crystal lattice, and (3) evidence that the histone tails interact with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721054211-317576317.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-33 - <span class="title">Model for the mechanism of some chromatin remodeling complexes</span></span></center>
+<p>In the absence of remodeling complexes, the interconversion between the three nucleosomal states shown is very slow because of a high activation energy barrier. Using ATP hydrolysis, chromatin-remodeling complexes <i>(green)</i> create an activated intermediate (shown in the center of the figure) in which the histone-DNA contacts have been partly disrupted. This activated state can then decay to any one of the three nucleosomal configurations shown. In this way, the remodeling complexes greatly increase the rate of interconversion between different nucleosomal states. The remodeled state, in which the histone-DNA contacts have been loosened, has a higher free energy level than that of standard nucleosomes and will slowly revert to the standard nucleosome conformation, even in the absence of a remodeling complex. Cells have many different chromatin remodeling complexes, and they differ in their detailed biochemical properties; for example, not all can change the position of a nucleosome, but all use the energy of ATP hydrolysis to alter nucleosome structure. (Adapted from R.E. Kingston and G.J. Narlikar, <i>Genes Dev.</i> 13:2339–2352, 1999.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721054371-979237645.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-34 - <span class="title">A cyclic mechanism for nucleosome disruption and re-formation</span></span></center>
+<p>According to this model, different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> remodeling complexes disrupt and re-form nucleosomes, although, in principle, the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> might catalyze both reactions. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-binding proteins could function in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>, DNA replication, or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5094/">DNA repair</a>, and in some cases their binding could lead to the dissociation of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> core to form <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a>-free regions of DNA like those illustrated in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26834/figure/A641/?report=objectonly" rid-figpopup="figA641" rid-ob="figobA641" target="object">Figure 4-30</a>. (Adapted from A. Travers, <i>Cell</i> 96:311–314, 1999.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721054587-271081236.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-35 - <span class="title">Covalent modification of core histone tails</span></span></center>
+<p>(A) Known modifications of the four <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> core proteins are indicated: Me = methyl group, Ac = <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4757/">acetyl</a> group, P = phosphate, u = <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5910/">ubiquitin</a>. Note that some positions (e.g., lysine 9 of H3) can be modified in more than one way. Most of these modifications add a relatively small <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> onto the histone tails; the exception is ubiquitin, a 76 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> also used in other cellular processes (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1052/figure/A1110/?report=objectonly" rid-figpopup="figA1110" rid-ob="figobA1110" target="object">Figure 6-87</a>). The function of ubiquitin in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> is not well understood: histone H2B can be modified by a single ubiquitin molecule; H2A can be modified by the addition of several ubiquitins. (B) A histone code hypothesis. Histone tails can be marked by different combinations of modifications. According to this hypothesis, each marking conveys a specific meaning to the stretch of chromatin on which it occurs. Only a few of the meanings of the modifications are known. In Chapter 7, we discuss the way a doubly-acetylated H4 tail is “read” by a protein required for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>. In another well-studied case, an H3 tail methylated at lysine 9 is recognized by a set of proteins that create an especially compact form of chromatin, which silences gene expression.</p><p>The acetylation of lysine 14 of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> H3 and lysines 8 and 16 of histone H4—usually associated with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>—is performed by the type A histone acetylases (HATs) in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. In contrast, the acetylation of lysines 5 and 12 of histone H4 and a lysine of histone H3 takes place in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a>, after the histones have been synthesized but before they have been incorporated into nucleosomes; these modifications are catalyzed by type B HATs. These modified histones are deposited onto <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> after DNA replication (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A795/figure/A818/?report=objectonly" rid-figpopup="figA818" rid-ob="figobA818" target="object">Figure 5-41</a>), and their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4757/">acetyl</a> groups are taken off shortly afterwards by histone deacetylases (HDACs). Thus, the acetylation at these positions signals newly replicated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a>.</p><p>Modification of a particular position in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> tail can take on different meanings depending on other features of the local <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> structure. For example, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of position 10 of histone H3 is associated not only with the condensation of chromosomes that takes place in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a> but also with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> of certain genes. Some histone tail modifications are interdependent. For example methylation of H3 position 9 blocks the phosphorylation of H3 position 10, and vice versa.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722236290-727309988.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-36 - <span class="title">Lampbrush chromosomes</span></span></center>
+<p>(A) A light <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of lampbrush chromosomes in an amphibian <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5577/">oocyte</a>. Early in oocyte <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5074/">differentiation</a>, each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> replicates to begin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a>, and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> replicated chromosomes pair to form this highly extended structure containing a total of four replicated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules, or chromatids. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5384/">lampbrush chromosome</a> stage persists for months or years, while the oocyte builds up a supply of materials required for its ultimate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> into a new individual. (B) Fluorescence light micrograph showing a portion of an amphibian lampbrush chromosome. The regions of the chromosome that are being actively expressed are stained <i>green</i> by using antibodies against proteins that process <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> during one of the steps of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> (discussed in Chapter 6). The round granules are thought to correspond to large complexes of the RNA-splicing machinery that will also be discussed in Chapter 6. (A, courtesy of Joseph <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Gall; B, courtesy of Joseph G. Gall and Christine Murphy.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722236493-209449152.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-37 - <span class="title">A model for the structure of a lampbrush chromosome</span></span></center>
+<p>The set of lampbrush chromosomes in many amphibians contains a total of about 10,000 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> loops, although most of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> in each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> remains highly condensed in the chromomeres. Each loop corresponds to a particular DNA sequence. Four copies of each loop are present in each cell, since each of the two chromosomes shown at the top consists of two closely apposed, newly replicated chromosomes. This four-stranded structure is characteristic of this stage of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5577/">oocyte</a>, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5078/">diplotene</a> stage of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a>; see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3686/figure/A3699/?report=objectonly" rid-figpopup="figA3699" rid-ob="figobA3699" target="object">Figure 20-12</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722236699-389718190.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-38 - <span class="title">The entire set of polytene chromosomes in one <i>Drosophila</i> salivary cell</span></span></center>
+<p>These chromosomes have been spread out for viewing by squashing them against a microscope slide. <i>Drosophila</i> has four chromosomes, and there are four different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> pairs present. But each chromosome is tightly paired with its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5291/">homolog</a> (so that each pair appears as a single structure), which is not true in most nuclei (except in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a>). The four polytene chromosomes are normally linked together by regions near their centromeres that aggregate to create a single large chromocenter <i>(pink region).</i> In this preparation, however, the chromocenter has been split into two halves by the squashing procedure used. (Modified from T.S. Painter, <i>J. Hered.</i> 25:465–476, 1934.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722236912-898857114.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-39 - <span class="title">A light micrograph of a portion of a polytene chromosome from <i>Drosophila</i> salivary glands</span></span></center>
+<p>The distinct pattern produced by bands and interbands is readily seen. The bands are regions of increased <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> concentration that occur in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> chromosomes. Although they are detectable only in polytene chromosomes, it is thought that they reflect a structure common to the chromosomes of most eucaryotes. (Courtesy of Joseph <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Gall.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722237078-835921674.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-40 - <span class="title">An electron micrograph of a small section of a <i>Drosophila</i> polytene chromosome seen in thin section</span></span></center>
+<p>Bands of very different thickness can be readily distinguished, separated by interbands, which contain less condensed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a>. (Courtesy of Veikko Sorsa.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722237241-88426854.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-41 - <span class="title">Chromosome puffs</span></span></center>
+<p>This series of time-lapse photographs shows how puffs arise and recede in the polytene chromosomes of <i>Drosophila</i> during larval <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a>. A region of the <i>left</i> arm of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 3 is shown. It exhibits five very large puffs in salivary gland cells, each active for only a short developmental period. The series of changes shown occur over a period of 22 hours, appearing in a reproducible pattern as the organism develops. The designations of the indicated bands are given at the left of the photographs. (Courtesy of Michael Ashburner.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722237408-356424380.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-42 - <span class="title">RNA synthesis in chromosome puffs</span></span></center>
+<p>(A) Polytene chromosomes from the salivary glands of the insect <i>C. tentans.</i> As outlined in Chapter 1 and described in detail in Chapter 6, the first step in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> is the synthesis of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> using the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a>. In this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a>, newly synthesized RNA from a Balbiani ring gene is indicated in <i>red.</i> Cells were exposed to a brief pulse of BrUTP (an analog of UTP), which was incorporated into RNA. Cells were then fixed and the newly synthesized RNAs were identified by using antibodies against BrU. Balbiani ring RNAs could be distinguished from other RNAs by their characteristic shape (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26847/figure/A662/?report=objectonly" rid-figpopup="figA662" rid-ob="figobA662" target="object">Figure 4-43</a>). The <i>blue dots</i> in the figure represent positions of Balbiani ring RNAs that were synthesized before the addition of BrUTP. The experiment shows that Balbiani ring RNAs are synthesized in puffs and then diffuse through the nucleoplasm. (B) An autoradiogram of a single puff in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5663/">polytene chromosome</a>. The portion of the chromosome indicated is undergoing RNA synthesis and has therefore become labeled with <sup>3</sup>H-uridine. (A, courtesy of B. Daneholt, from O.P Singh et al., <i>Exp. Cell Res.</i> 251:135–146, 1999. © Academic Press; B, courtesy of José Bonner.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722237608-939144660.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-43 - <span class="title">Polytene chromosomes from <i>C. tentans</i></span></span></center>
+<p> The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows a thin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> in a Balbiani ring, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> puff very active in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>. The Balbiani ring gene codes for secretory proteins the larvae uses to spin a protective tube. The chromatin is arranged in loops, but because the sample has been sectioned, only portions of the loops are visible. As they are synthesized on the chromatin, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules are bound up by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> molecules, making them visible as knobs on stalks in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5122/">electron microscope</a>. From the size of the RNA-protein <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>, the extent of RNA synthesis (transcription) can be inferred; a whole chromatin loop (shown on the right) can then be reconstructed from a set of electron micrograph sections such as that shown here. (Courtesy of B. Daneholt, from U. Skoglund et al., <i>Cell</i> 34:847–855, 1983. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722237828-52160806.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-44 - <span class="title">A model for the structure of an interphase chromosome</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> is shown folded into a series of looped domains, each containing 20,000–100,000 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs of double-helical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> condensed into a 30-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> fiber. Individual loops can decondense, perhaps in part through an accordionlike expansion of the 30-nm fiber (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A608/figure/A640/?report=objectonly" rid-figpopup="figA640" rid-ob="figobA640" target="object">Figure 4-29</a>), when the cell requires direct access to the DNA packaged in these loops. This decondensation is brought about by enzymes that directly modify <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> structure—as well as by proteins, such as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5760/">RNA polymerase</a> (discussed in Chapter 6), that act directly on the underlying DNA. It is not understood how the folded 30-nm fiber is anchored to the chromosome axis, but evidence suggests that the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> of chromosomal loops is rich in DNA topoisomerases, which are enzymes that allow DNA to swivel when anchored (see pp. 251–253).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722237997-302158619.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-45 - <span class="title">Position effects on gene expression in two different eucaryotic organisms</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <i>ADE2</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> at its normal chromosomal location is expressed in all cells. When moved near the end of a yeast <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, which is inferred to be folded into a form of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a>, the gene is no longer expressed in most cells of the population. The <i>ADE2</i> gene codes for one of the enzymes of adenine biosynthesis, and the absence of the <i>ADE2</i> gene product leads to the accumulation of a red pigment. Therefore, a colony of cells that expresses <i>ADE2</i> is <i>white,</i> and one composed of cells where the <i>ADE2</i> gene is not expressed is <i>red.</i> The <i>white</i> sectors that fan out from the middle of the <i>red</i> colony grown on an agar surface represent the descendants of cells in which the <i>ADE2</i> gene has spontaneously become active. These white sectors are thought to result from a heritable change to a less tightly packed state of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> near the <i>ADE2</i> gene in these cells. Although yeast chromosomes are too small to be seen under the light microscope, the chromatin structure at the ends of yeast chromosomes is thought to have many of the same structural features as the heterochromatin in the chromosomes of larger organisms.</p><p>(B) Position effects can also be observed for the <i>white</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> in the fruit fly <i>Drosophila.</i> The <i>white</i> gene controls eye pigment production and is named after the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> that first identified it. Wild-type flies with a normal <i>white</i> gene <i>(white</i>
+<sup>–</sup>
+<i>)</i> have normal pigment production, which gives them red eyes, but if the <i>white</i> gene is mutated and inactivated, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> flies <i>(white</i>
+<sup>–</sup>
+<i>)</i> make no pigment and have <i>white</i> eyes. In flies in which a normal <i>white</i>
+<sup><i>+</i></sup> gene has been moved near a region of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a>, the eyes are mottled, with both <i>red</i> and <i>white</i> patches. The <i>white</i> patches represent cells in which the <i>white</i>
+<sup><i>+</i></sup> gene has been silenced by the effects of the heterochromatin. In contrast, the red patches represent cells that express the <i>white</i>
+<sup><i>+</i></sup> gene because the heterochromatin did not spread across this gene at the time, early in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a>, when the heterochromatin first formed. As in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a>, the presence of large patches of <i>red</i> and <i>white</i> cells indicates that the state of transcriptional activity of the gene is inherited, once <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> packaging in the early embryo.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722238199-802307005.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-46 - <span class="title">The cause of position effect variegation in <i>Drosophila.</i></span></span></center>
+<p>(A) Heterochromatin <i>(blue)</i> is normally prevented from spreading into adjacent regions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5159/">euchromatin</a> <i>(green)</i> by special boundary <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences, which we discuss in Chapter 7. In flies that inherit certain chromosomal rearrangements, however, this barrier is no longer present. (B) During the early <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of such flies, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a> can spread into neighboring chromosomal DNA, proceeding for different distances in different cells. This spreading soon stops, but the established pattern of heterochromatin is inherited, so that large clones of progeny cells are produced that have the same neighboring genes condensed into heterochromatin and thereby inactivated (hence the “variegated” appearance of some of these flies; see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26847/figure/A665/?report=objectonly" rid-figpopup="figA665" rid-ob="figobA665" target="object">Figure 4-45B</a>). Although “spreading” is used to describe the formation of new heterochromatin near previously existing heterochromatin, the term may not be wholly accurate. There is evidence that during expansion, heterochromatin can “skip over” some regions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a>, sparing the genes that lie within them from repressive effects. One possibility is that heterochromatin can expand across the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> of some DNA loops, thus bypassing the chromatin contained in the loop.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722238370-171987843.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-47 - <span class="title">Speculative model for the heterochromatin at the ends of yeast chromosomes</span></span></center>
+<p>(A) Heterochromatin is generally underacetylated, and underacetylated tails of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> H4 are proposed to interact with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of Sir proteins, thus stabilizing the association of these proteins with nucleosomes. Although shown as fully unacetylated, the exact pattern of histone H4 tail modification required to bind to the Sir complex is not known with certainty. In some organisms, the methylation of lysine 9 of histone H3 is also a critical signal for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a> formation. In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5159/">euchromatin</a>, histone tails are typically highly acetylated. Those of H4 are shown as partially acetylated but, in reality, the acetylation state varies across euchromatin. (B) Specialized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-binding proteins <i>(blue triangles)</i> recognize DNA sequences near the ends of chromosomes and attract the Sir proteins, one of which (Sir2) is an NAD<sup>+</sup>-dependent histone deacetylase. This then leads to the cooperative spreading of the Sir <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> complex down the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. As this complex spreads, the deacetylation catalyzed by Sir2 helps create new binding sites on nucleosomes for more Sir protein complexes. A “fold back” structure of the type shown may also form.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722238576-688651216.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-48 - <span class="title">Two speculative models for how the tight packaging of DNA in heterochromatin can be inherited during chromosome replication</span></span></center>
+<p>In both cases, half of the specialized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a> components have been distributed to each daughter <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> after <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> duplication. (A) In this model, new heterochromatin components bind cooperatively to the inherited components, thereby beginning the process of new heterochromatin formation. The process is completed with the assembly of additional proteins and the eventual covalent modification of the histones (not shown). (B) In this model, the inherited heterochromatin components change the pattern of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> modification on the newly formed daughter nucleosomes nearby, creating new binding sites for free heterochromatin components, which assemble and complete the structure. Both models can account for the spreading effects of heterochromatin, and indeed, both processes may occur simultaneously in cells.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722238789-392191095.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-49 - <span class="title">The specialized nucleosome formed on centromeres</span></span></center>
+<p>(A) A model for the proteins that assemble on a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a>. The specialized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5566/">nucleosome</a> contains an H3 variant (called CENP-A in most organisms), along with core histones H2A, H2B, and H4. The folding of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> into this nucleosome facilitates the assembly of the other centromere-binding proteins, which form the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5375/">kinetochore</a> that attaches the centromere to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5479/">mitotic spindle</a> (B) The localization of conventional <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5283/">histone</a> H3 on <i>Drosophila</i> mitotic chromosomes. The conventional H3 has been fused to a fluorescent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> and appears <i>green.</i> A component of the kinetochore has been stained <i>red</i> with antibodies against a specific kinetochore protein. (C) The same experiment, but with the centromere-specific histone H3 (instead of the conventional H3) labeled <i>green.</i> When the <i>red</i> and <i>green</i> stains are coincident, the staining appears <i>yellow.</i> (A, adapted from P.B. Meluh et al., <i>Cell</i> 94:607–613, 1998; B and C, from S. Henikoff et al., <i>Proc. Natl. Acad. Sci. USA</i> 97:716–721, 2000. © National Academy of Sciences.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722238960-151590511.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-50 - <span class="title">The structure of a human centromere</span></span></center>
+<p>(A) The organization of the alpha <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5774/">satellite DNA</a> sequences, which are repeated many thousands of times at a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a>. (B) An entire <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. The alpha satellite DNA sequences <i>(red)</i> are AT-rich and consist of a large number of repeats that vary slightly from one another in their DNA sequence. <i>Blue</i> represents the position of flanking centric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a>, which contains DNA sequences composed of different types of repeats. As indicated, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5375/">kinetochore</a> consists of an inner and an outer plate, formed by a set of kinetochore proteins. The spindle microtubules attach to the kinetochore in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a> of the cell cycle (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A608/figure/A628/?report=objectonly" rid-figpopup="figA628" rid-ob="figobA628" target="object">Figure 4-22</a>). (B, adapted from T.D. Murphy and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>.H. Karpen, <i>Cell</i> 93:317–320, 1998.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722239139-374495616.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-51 - <span class="title">The plasticity of human centromere formation</span></span></center>
+<p>(A) Owing to an ancient <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> breakage and rejoining event, some human chromosomes contain two blocks of alpha <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5774/">satellite DNA</a> <i>(red),</i> each of which presumably functioned as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a> in its original chromosome. Usually, these dicentric chromosomes are not stably propagated because they are attached improperly to the spindle and are broken apart during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>. In those chromosomes that survive, one of the centromeres has spontaneously inactivated, even though it contains all the necessary DNA sequences. This allows the chromosome to be stably propagated. (B) In a small fraction (1/2000) of human births, extra chromosomes are observed in cells of the offspring. Some of these extra chromosomes, which have formed from a breakage event, lack alpha satellite DNA altogether, yet new centromeres have arisen from what was originally euchromatic DNA. (C) A model to explain the plasticity and inheritance of centromeres.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722239281-427021231.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-52 - <span class="title">A typical mitotic chromosome at metaphase</span></span></center>
+<p>Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5803/">sister chromatid</a> contains one of two identical daughter <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules generated earlier in the cell cycle by DNA replication.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722239413-578020249.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-53 - <span class="title">A scanning electron micrograph of a region near one end of a typical mitotic chromosome</span></span></center>
+<p>Each knoblike projection is believed to represent the tip of a separate looped <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a>. Note that the two identical paired chromatids drawn in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26847/figure/A676/?report=objectonly" rid-figpopup="figA676" rid-ob="figobA676" target="object">Figure 4-52</a> can be clearly distinguished. (From M.P. Marsden and U.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Laemmli, <i>Cell</i> 17:849–858, 1979. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722239585-110126243.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-54 - <span class="title">An electron micrograph of a mitotic chromosome</span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> (from an insect) was treated to reveal loops of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> fibers that emanate from a central scaffold of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4973/">chromatid</a>. Such micrographs support the idea that the chromatin in all chromosomes is folded into a series of looped domains (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26847/figure/A679/?report=objectonly" rid-figpopup="figA679" rid-ob="figobA679" target="object">Figure 4-55</a>). (Courtesy of Uli Laemmli.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722239755-391819715.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-55 - <span class="title">Chromatin packing</span></span></center>
+<p>This model shows some of the many levels of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> packing postulated to give rise to the highly condensed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5478/">mitotic chromosome</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722239964-201556834.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-56 - <span class="title">The SMC proteins in condensins</span></span></center>
+<p>(A) Electron micrographs of a purified SMC dimer. (B) The structure of an SMC dimer. The long central region of this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4834/">antiparallel</a> coiled coil (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A388/figure/A405/?report=objectonly" rid-figpopup="figA405" rid-ob="figobA405" target="object">Figure 3-11</a>) with a flexible hinge in its middle, as demonstrated by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> in (A). (C) A model for the way in which the SMC proteins in condensins might compact <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a>. In reality, SMC proteins are components of a much larger condensin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. It has been proposed that, in the cell, condensins coil long strings of looped chromatin domains (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26847/figure/A679/?report=objectonly" rid-figpopup="figA679" rid-ob="figobA679" target="object">Figure 4-55</a>). In this way the condensins would form a structural framework that maintains the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> in a highly organized state during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a> of the cell cycle. (A, courtesy of H.P. Erickson; B and C, adapted from T. Hirano, <i>Genes Dev.</i> 13:11–19, 1999.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722240093-124119498.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-57 - <span class="title">Comparison of the Giemsa pattern of the largest human chromosome (chromosome 1) with that of chimpanzee, gorilla, and orangutan</span></span></center>
+<p>Comparisons among the staining patterns of all the chromosomes indicate that human chromosomes are more closely related to those of chimpanzee than to those of gorilla and that they are more distantly related to those of orangutan. (Adapted from M.W. Strickberger, Evolution, 3rd edn. Sudbury, MA: Jones &amp; Bartlett Publishers, 2000.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722240269-697740333.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-58 - <span class="title">The polarized orientation of chromosomes found in certain interphase nuclei</span></span></center>
+<p>(A) Fluorescent light <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> nuclei from the rapidly growing root tip of a plant. Centromeres are stained <i>green</i> and teleomeres <i>red</i> by <i>in situ</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a>- and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a>-specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences coupled to the different fluorescent dyes. (B) Interpretation of (A) showing chromosomes in the Rab1 orientation with all the centromeres facing one side of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> and all the telomeres pointing toward the opposite side. (A, from R. Abranches et al., <i>J. Cell Biol.</i> 143:5–12, 1998. © The Rockefeller University Press.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722240430-513335614.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-59 - <span class="title">A polymer analogy for interphase chromosome organization</span></span></center>
+<p>(A) The behavior of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5655/">polymer</a> in solution. Entropy drives a long polymer into a compact <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> in the absence of an externally applied force. If the polymer is subjected to shear or hydrodynamic force, it becomes extended. But once the force is removed, the polymer chain returns to a more favorable, compact conformation. (B) The behavior of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> chromosomes may reflect the same simple principles. In <i>Drosophila</i> embryos, for example, mitotic divisions occur at intervals of about 10 minutes; during the short intervening interphases, the chromosomes have little time to relax from the Rabl orientation induced by their movement during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>. However, in later stages of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a>, when interphase is much longer, the chromosomes have time to fold up. This folding may be strongly affected by specific associations between different regions of the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. (Adapted from A.F. Dernburg et al., <i>Cell</i> 85:745–759, 1996.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722240594-217384338.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-60 - <span class="title">Selective “painting” of two interphase chromosomes in a human peripheral lymphocyte</span></span></center>
+<p>The fluorescent light <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows that the two copies of human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 18 <i>(red)</i> and chromosome 19 <i>(turquoise)</i> occupy discrete territories of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. (From J.A. Croft et al., <i>J. Cell Biol.</i> 145:1119–1131, 1999. © The Rockefeller University Press.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722240727-616213906.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 4-61 - <span class="title">Specific regions of interphase chromosomes in close proximity to the nuclear envelope</span></span></center>
+<p>This high-resolution microscopic view of nuclei from a <i>Drosophila</i> embryo shows the localization of two different regions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 2 <i>(yellow</i> and <i>magenta)</i> close to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5551/">nuclear envelope</a> (stained green with antilamina antibodies). Other regions of the same chromosome are more distant from the envelope. (From W.F. Marshall et al., <i>Mol. Biol. Cell</i> 7:825–842, 1996.)</p><p>&nbsp;</p></div></div>
+</body>
+</html>

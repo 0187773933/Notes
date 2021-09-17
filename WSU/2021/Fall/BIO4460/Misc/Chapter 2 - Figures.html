@@ -1,0 +1,1605 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+/*blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}*/
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    padding-left: 30px;
+    margin-top: 35px;
+    border-left: 2px solid #D5C5C8;
+    background: #474d54;
+    background-color: #474d54;
+    color: #B197FC;
+}
+
+/*#772D8B , #2660A4 , #D90368 , #048BA8*/
+/*https://coolors.co/d6ffb7-61cc9e-048ba8-ffbfa0-d5c5c8*/
+/*blockquote blockquote { border-left: 3px solid #61CC9E }*/
+blockquote blockquote { border-left: 2px solid #D6FFB7; border-bottom:none; }
+blockquote blockquote blockquote { border-left: 2px solid #FFBFA0; border-bottom:none; }
+blockquote blockquote blockquote blockquote { border-left: 2px solid #048BA8; border-bottom:none; }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #D90368; border-bottom:none; }
+
+blockquote .md-math-block {
+    color: #FFEBFF;
+}
+
+blockquote h2 {
+    color: #EBD6A6;
+}
+
+blockquote h6 {
+    border-radius:2em;
+    opacity: 0.9;
+    background-color:#B1C6FC;
+    color:black;
+    hite-space:normal;
+    display:inline-block;
+    padding:0.2em;
+}
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+/*blockquote {
+    color: #9DA2A6;
+}
+*/
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 2 - Figures</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 2 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721031014-99062101.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-1 - <span class="title">Highly schematic representations of an atom of carbon and an atom of hydrogen</span></span></center>
+<p>Although the electrons are shown here as individual particles, in reality their behavior is governed by the laws of quantum mechanics, and there is no way of predicting exactly where an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> is at any given instant of time. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> of every atom except hydrogen consists of both positively charged protons and electrically neutral neutrons. The number of electrons in an atom is equal to its number of protons (the atomic number), so that the atom has no net charge. The neutrons, protons, and electrons are in reality minute in relation to the atom as a whole; their size is greatly exaggerated here. In addition, the diameter of the nucleus is only about 10<sup>-4</sup> that of the electron cloud.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721031193-934196855.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-2 - <span class="title">Moles and molar solutions</span></span></center><center><img src="https://39363.org/IMAGE_BUCKET/1631721031366-945995736.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-3 - <span class="title">The abundances of some chemical elements in the nonliving world (the Earth's crust) compared with their abundances in the tissues of an animal</span></span></center>
+<p>The abundance of each element is expressed as a percentage of the total number of atoms present in the sample. Thus, for example, nearly 50% of the atoms in a living organism are hydrogen atoms. The survey here excludes mineralized tissues such as bone and teeth, as they contain large amounts of inorganic salts of calcium and phosphorus. The relative abundance of elements is similar in all living organisms.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721031542-320935646.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-4 - <span class="title">Filled and unfilled electron shells in some common elements</span></span></center>
+<p>All the elements commonly found in living organisms have unfilled outermost shells <i>(red)</i> and can thus participate in chemical reactions with other atoms. For comparison, some elements that have only filled shells <i>(yellow)</i> are shown; these are chemically unreactive.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721031708-613292064.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-5 - <span class="title">Comparison of covalent and ionic bonds</span></span></center>
+<p>Atoms can attain a more stable arrangement of electrons in their outermost shell by interacting with one another. An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5356/">ionic bond</a> is formed when electrons are transferred from one atom to the other. A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> is formed when electrons are shared between atoms. The two cases shown represent extremes; often, covalent bonds form with a partial transfer (unequal sharing of electrons), resulting in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5653/">polar</a> covalent bond (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A229/figure/A245/?report=objectonly" rid-figpopup="figA245" rid-ob="figobA245" target="object">Figure 2-43</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721031874-9899915.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-6 - <span class="title">Sodium chloride: an example of ionic bond formation</span></span></center>
+<p>(A) An atom of sodium (Na) reacts with an atom of chlorine (Cl). Electrons of each atom are shown schematically in their different energy levels; electrons in the chemically reactive (incompletely filled) shells are <i>red.</i> The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> takes place with transfer of a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> from sodium to chlorine, forming two electrically charged atoms, or ions, each with complete sets of electrons in their outermost levels. The two ions with opposite charge are held together by electrostatic attraction. (B) The product of the reaction between sodium and chlorine, crystalline sodium chloride, consists of sodium and chloride ions packed closely together in a regular array in which the charges are exactly balanced. (C) Color photograph of crystals of sodium chloride.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721032110-835022435.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-7 - <span class="title">Some energies important for cells</span></span></center>
+<p>Note that these energies are compared on a logarithmic scale.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721032293-456618906.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-8 - <span class="title">The geometry of covalent bonds</span></span></center>
+<p>(A) The spatial arrangement of the covalent bonds that can be formed by oxygen, nitrogen, and carbon. (B) Molecules formed from these atoms have a precise three-dimensional structure, as shown here by ball and stick models for water and propane. A structure can be specified by the bond angles and bond lengths for each covalent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721032436-49417949.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-9 - <span class="title">Carbon-carbon double bonds and single bonds compared</span></span></center>
+<p>(A) The ethane <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, with a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> between the two carbon atoms, illustrates the tetrahedral arrangement of single covalent bonds formed by carbon. One of the CH<sub>3</sub> groups joined by the covalent bond can rotate relative to the other around the bond axis. (B) The double bond between the two carbon atoms in a molecule of ethene (ethylene) alters the bond geometry of the carbon atoms and brings all the atoms into the same plane <i>(blue)</i>; the double bond prevents the rotation of one CH<sub>2</sub> group relative to the other.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721032565-70128926.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-10 - <span class="title">Polar and nonpolar covalent bonds</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> distributions in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5653/">polar</a> water <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> (H<sub>2</sub>O) and the nonpolar oxygen molecule (O<sub>2</sub>) are compared (δ<sup>+</sup>, partial positive charge; δ<sup>-</sup>, partial negative charge).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721032732-743098697.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-11 - <span class="title">The balance of van der Waals forces between two atoms</span></span></center>
+<p>As the nuclei of two atoms approach each other, they initially show a weak bonding interaction due to their fluctuating electric charges. However, the same atoms will strongly repel each other if they are brought too close together. The balance of these van der Waals attractive and repulsive forces occurs at the indicated energy minimum.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721032899-738760316.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-12 - <span class="title">Three representations of a water molecule</span></span></center>
+<p>(A) The usual line drawing of the structural formula, in which each atom is indicated by its standard symbol, and each line represents a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> joining two atoms. (B) A ball and stick model, in which atoms are represented by spheres of arbitrary diameter, connected by sticks representing covalent bonds. Unlike (A), bond angles are accurately represented in this type of model (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26883/figure/A178/?report=objectonly" rid-figpopup="figA178" rid-ob="figobA178" target="object">Figure 2-8</a>). (C) A space-filling model, in which both bond geometry and van der Waals radii are accurately represented.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721033079-1793883.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-13 - <span class="title">Acids in water</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> that takes place when a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of acetic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> dissolves in water. (B) Water molecules are continuously exchanging protons with each other to form hydronium and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">hydroxyl</a> ions. These ions in turn rapidly recombine to form water molecules.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721033251-470577522.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-14 - <span class="title">How the dipoles on water molecules orient to reduce the affinity of oppositely charged ions or polar groups for each other</span></span></center><center><img src="https://39363.org/IMAGE_BUCKET/1631721033417-622666084.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-15 - <span class="title">Hydrogen bonds</span></span></center>
+<p>(A) Ball- and-stick model of a typical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5302/">hydrogen bond</a>. The distance between the hydrogen and the oxygen atom here is less than the sum of their van der Waals radii, indicating a partial sharing of electrons. (B) The most common hydrogen bonds in cells.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721033583-266633305.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-16 - <span class="title">How two macro-molecules with complementary surfaces can bind tightly to one another through noncovalent interactions</span></span></center>
+<p>In this schematic illustration, plus and minus are used to mark chemical groups that can form attractive interactions when paired.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721033757-261511754.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-17 - <span class="title">The four main families of small organic molecules in cells</span></span></center>
+<p>These small molecules form the monomeric building blocks, or subunits, for most of the macromolecules and other assemblies of the cell. Some, like the sugars and the fatty acids, are also energy sources.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721033926-543914675.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-18 - <span class="title">The structure of glucose, a simple sugar</span></span></center>
+<p>As illustrated previously for water (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26883/figure/A185/?report=objectonly" rid-figpopup="figA185" rid-ob="figobA185" target="object">Figure 2-12</a>), any <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> can be represented in several ways. In the structural formulas shown in (A), (B) and (E), the atoms are shown as chemical symbols linked together by lines representing the covalent bonds. The <i>thickened lines</i> here are used to indicate the plane of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> ring, in an attempt to emphasize that the -H and -<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">OH</a> groups are not in the same plane as the ring. (A) The open-chain form of this sugar, which is in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5146/">equilibrium</a> with the more stable cyclic or ring form in (B). (C) A ball-and-stick model in which the three-dimensional arrangement of the atoms in space is shown. (D) A space-filling model, which, as well as depicting the three-dimensional arrangement of the atoms, also uses the van der Waals radii to represent the surface contours of the molecule. (E) The chair form is an alternative way to draw the cyclic molecule that reflects the geometry more accurately than the structural formula in (B). The atoms in (C) and (D) are drawn according to the conventional color coding for atoms. For example, these colors are H, <i>white</i>; C, <i>black</i>; O, <i>red</i>; N, <i>blue</i> (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26883/figure/A178/?report=objectonly" rid-figpopup="figA178" rid-ob="figobA178" target="object">Figure 2-8</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721034091-968023839.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-19 - <span class="title">The reaction of two monosaccharides to form a disaccharide</span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> belongs to a general category of reactions termed <i>condensation reactions,</i> in which two molecules join together as a result of the loss of a water <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>. The reverse reaction (in which water is added) is termed <i>hydrolysis.</i> Note that one of the two partners (the one on the <i>left</i> here) is the carbon joined to two oxygens through which the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> ring forms (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26883/figure/A204/?report=objectonly" rid-figpopup="figA204" rid-ob="figobA204" target="object">Figure 2-18</a>). As indicated, this common type of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> between two sugar molecules is known as a <i>glycosidic bond</i> (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26883/figure/A207/?report=objectonly" rid-figpopup="figA207" rid-ob="figobA207" target="object">Figure 2-20</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721034259-526430796.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-20 - <span class="title">Eleven disaccharides consisting of two D-glucose units</span></span></center>
+<p>Although these differ only in the type of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a> between the two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5234/">glucose</a> units, they are chemically distinct. Since the oligosaccharides associated with proteins and lipids may have six or more different kinds of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> joined in both linear and branched arrangements through glycosidic bonds such as those illustrated here, the number of distinct types of oligosaccharides that can be used in cells is extremely large. For an explanation of α and β linkages, see <a href="https://www.ncbi.nlm.nih.gov/books/NBK26883/box/A205/?report=objectonly" rid-ob="figobA205" target="object">Panel 2-4</a> (pp. 116–117).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721034466-200040529.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-21 - <span class="title">A fatty acid</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5171/">fatty acid</a> is composed of a hydrophobic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5301/">hydrocarbon</a> chain to which is attached a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5305/">hydrophilic</a> carboxylic acid group. Palmitic acid is shown here. Different fatty acids have different hydrocarbon tails. (A) Structural formula. The carboxylic acid group is shown in its ionized form. (B) Ball-and-stick model. (C) Space-filling model.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721034636-626197734.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-22 - <span class="title">Phospholipid structure and the orientation of phospholipids in membranes</span></span></center>
+<p>In an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4840/">aqueous</a> environment, the hydrophobic tails of phospholipids pack together to exclude water. Here they have formed a bilayer with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5305/">hydrophilic</a> head of each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5627/">phospholipid</a> facing the water. Lipid bilayers are the basis for cell membranes, as discussed in detail in Chapter 10.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721034804-639310712.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-23 - <span class="title">The amino acid alanine</span></span></center>
+<p>(A) In the cell, where the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5610/">pH</a> is close to 7, the free <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> exists in its ionized form; but when it is incorporated into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chain, the charges on the amino and carboxyl groups disappear. (B) A ball-and-stick model and (C) a space-filling model of alanine (H, <i>white;</i> C, <i>black;</i> O, <i>red;</i> N, <i>blue</i>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721034985-978443486.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-24 - <span class="title">A small part of a protein molecule</span></span></center>
+<p>The four amino acids shown are linked together by three peptide bonds, one of which is highlighted in <i>yellow.</i> One of the amino acids is shaded in <i>gray.</i> The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> side chains are shown in <i>red.</i> The two ends of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chain are chemically distinct. One end, the N-terminus, terminates in an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4809/">amino group</a>, and the other, the C-terminus, in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4912/">carboxyl group</a>. The sequence is always read from the N-terminal end; hence this sequence is Phe-Ser-Glu-Lys.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721035152-281656423.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-25 - <span class="title">The charge on amino acid side chains depends on the pH</span></span></center>
+<p>The five different side chains that can carry a charge are shown. Carboxylic acids can readily lose <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a> in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4840/">aqueous</a> solution to form a negatively charged <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a>, which is denoted by the suffix “-ate,” as in aspart<i>ate</i> or glutam<i>ate.</i> A comparable situation exists for amines, which in aqueous solution can take up H<sup>+</sup> to form a positively charged ion (which does not have a special name). These reactions are rapidly reversible, and the amounts of the two forms, charged and uncharged, depend on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5610/">pH</a> of the solution. At a high pH, carboxylic acids tend to be charged and amines uncharged. At a low pH, the opposite is true—the carboxylic acids are uncharged and amines are charged. The pH at which exactly <i>half</i> of the carboxylic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4806/">amine</a> residues are charged is known as the pK of that <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5793/">side chain</a>.</p><p>In the cell the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5610/">pH</a> is close to 7, and almost all carboxylic acids and amines are in their fully charged form.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721035365-737512534.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-26 - <span class="title">Chemical structure of adenosine triphosphate (ATP)</span></span></center>
+<p>(A) Structural formula. (B) Space-filling model. In (B) the colors of the atoms are C, <i>black;</i> N, <i>blue;</i> H, <i>white;</i> O, <i>red;</i> and P, <i>yellow.</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721035537-626855160.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-27 - <span class="title">The ATP molecule serves as an energy carrier in cells</span></span></center>
+<p>The energy-requiring formation of ATP from ADP and inorganic phosphate is coupled to the energy-yielding oxidation of foodstuffs (in animal cells, fungi, and some bacteria) or to the capture of light energy (in plant cells and some bacteria). The hydrolysis of this ATP back to ADP and inorganic phosphate in turn provides the energy to drive many cellular reactions.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721035728-744036446.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-28 - <span class="title">A small part of one chain of a deoxyribonucleic acid (DNA) molecule</span></span></center>
+<p>Four nucleotides are shown. One of the phosphodiester bonds that links adjacent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> residues is highlighted in <i>yellow,</i> and one of the nucleotides is shaded in <i>gray.</i> Nucleotides are linked together by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5622/">phosphodiester linkage</a> between specific carbon atoms of the ribose, known as the 5′ and 3′ atoms. For this reason, one end of a polynucleotide chain, the 5′ end, will have a free phosphate group and the other, the 3′ end, a free <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">hydroxyl</a> group. The linear sequence of nucleotides in a polynucleotide chain is commonly abbreviated by a one-letter code, and the sequence is always read from the 5′ end. In the example illustrated the sequence is <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>-A-T-C.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721035924-518615516.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-29 - <span class="title">Macromolecules are abundant in cells</span></span></center>
+<p>The approximate composition of a bacterial cell is shown by weight. The composition of an animal cell is similar (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26883/table/A224/?report=objectonly" rid-figpopup="figA224" rid-ob="figobA224" target="object">Table 2-4</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721036061-493133495.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-30 - <span class="title">Three families of macromolecules</span></span></center>
+<p>Each is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5655/">polymer</a> formed from small molecules (called monomers, or subunits) linked together by covalent bonds.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721036228-933641205.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-31 - <span class="title">Most proteins and many RNA molecules fold into only one stable conformation</span></span></center>
+<p>If the noncovalent bonds maintaining this stable <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> are disrupted, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> becomes a flexible chain that usually has no biological value.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721036395-885033414.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-32 - <span class="title">Small molecules, proteins, and a ribosome drawn approximately to scale</span></span></center>
+<p>Ribosomes are a central part of the machinery that the cell uses to make proteins: each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5754/">ribosome</a> is formed as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of about 90 macromolecules (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722598666-201400511.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-33 - <span class="title">Order in biological structures</span></span></center>
+<p>Well-defined, ornate, and beautiful spatial patterns can be found at every level of organization in living organisms. In order of increasing size: (A) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> molecules in the coat of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a>; (B) the regular array of microtubules seen in a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a sperm tail; (C) surface contours of a pollen grain (a single cell); (D) close-up of the wing of a butterfly showing the pattern created by scales, each scale being the product of a single cell; (E) spiral array of seeds, made of millions of cells, in the head of a sunflower. (A, courtesy of R.A. Grant and J.M. Hogle; B, courtesy of Lewis Tilney; C, courtesy of Colin MacFarlane and Chris Jeffree; D and E, courtesy of Kjell B. Sandved.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722598841-812285653.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-34 - <span class="title">How a set of enzyme-catalyzed reactions generates a metabolic pathway</span></span></center>
+<p>Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> catalyzes a particular chemical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a>, leaving the enzyme unchanged. In this example, a set of enzymes acting in series converts <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> A to molecule F, forming a metabolic pathway.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722599002-668225388.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-35 - <span class="title">Some of the metabolic pathways and their interconnections in a typical cell</span></span></center>
+<p>About 500 common metabolic reactions are shown diagrammatically, with each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> in a metabolic pathway represented by a filled circle, as in the <i>yellow</i> box in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26838/figure/A232/?report=objectonly" rid-figpopup="figA232" rid-ob="figobA232" target="object">Figure 2-34</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722599240-50595844.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-36 - <span class="title">Schematic representation of the relationship between catabolic and anabolic pathways in metabolism</span></span></center>
+<p>As suggested here, since a major portion of the energy stored in the chemical bonds of food molecules is dissipated as heat, the mass of food required by any organism that derives all of its energy from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4921/">catabolism</a> is much greater than the mass of the molecules that can be produced by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4814/">anabolism</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722599410-241258476.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-37 - <span class="title">An everyday illustration of the spontaneous drive toward disorder</span></span></center>
+<p>Reversing this tendency toward disorder requires an intentional effort and an input of energy: it is not spontaneous. In fact, from the second law of thermodynamics, we can be certain that the human intervention required will release enough heat to the environment to more than compensate for the reordering of the items in this room.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722599585-695783224.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-38 - <span class="title">A simple thermodynamic analysis of a living cell</span></span></center>
+<p>In the diagram on the left the molecules of both the cell and the rest of the universe (the sea of matter) are depicted in a relatively disordered state. In the diagram on the right the cell has taken in energy from food molecules and released heat by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> that orders the molecules the cell contains. Because the heat increases the disorder in the environment around the cell (depicted by the <i>jagged arrows</i> and distorted molecules, indicating the increased molecular motions caused by heat), the second law of thermodynamics—which states that the amount of disorder in the universe must always increase—is satisfied as the cell grows and divides. For a detailed discussion, see <a href="https://www.ncbi.nlm.nih.gov/books/NBK26838/box/A256/?report=objectonly" rid-ob="figobA256" target="object">Panel 2-7</a> (pp. 122–123).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722599753-702751385.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-39 - <span class="title">Some interconversions between different forms of energy</span></span></center>
+<p>All energy forms are, in principle, interconvertible. In all these processes the total amount of energy is conserved; thus, for example, from the height and weight of the brick in the first example, we can predict exactly how much heat will be released when it hits the floor. In the second example, note that the large amount of chemical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4890/">bond energy</a> released when water is formed is initially converted to very rapid thermal motions in the two new water molecules; but collisions with other molecules almost instantaneously spread this kinetic energy evenly throughout the surroundings (heat transfer), making the new molecules indistinguishable from all the rest.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722599992-772502145.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-40 - <span class="title">Photosynthesis</span></span></center>
+<p>The two stages of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5633/">photosynthesis</a>. The energy carriers created in the first stage are two molecules that we discuss shortly—ATP and NADPH.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722600161-594004419.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-41 - <span class="title">Photosynthesis and respiration as complementary processes in the living world</span></span></center>
+<p>Photosynthesis uses the energy of sunlight to produce sugars and other organic molecules. These molecules in turn serve as food for other organisms. Many of these organisms carry out <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5738/">respiration</a>, a process that uses O<sub>2</sub> to form CO<sub>2</sub> from the same carbon atoms that had been taken up as CO<sub>2</sub> and converted into sugars by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5633/">photosynthesis</a>. In the process, the organisms that respire obtain the chemical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4890/">bond energy</a> that they need to survive. The first cells on the Earth are thought to have been capable of neither photosynthesis nor respiration (discussed in Chapter 14). However, photosynthesis must have preceded respiration on the Earth, since there is strong evidence that billions of years of photosynthesis were required before O<sub>2</sub> had been released in sufficient quantity to create an atmosphere rich in this gas. (The Earth's atmosphere presently contains 20% O<sub>2</sub>.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722600324-498986293.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-42 - <span class="title">The carbon cycle</span></span></center>
+<p>Individual carbon atoms are incorporated into organic molecules of the living world by the photosynthetic activity of plants, bacteria, and marine algae. They pass to animals, microorganisms, and organic material in soil and oceans in cyclic paths. CO<sub>2</sub> is restored to the atmosphere when organic molecules are oxidized by cells or burned by humans as fossil fuels.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722600491-342602898.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-43 - <span class="title">Oxidation and reduction</span></span></center>
+<p>(A) When two atoms form a <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5653/">polar</a></i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> (see p. 54), the atom ending up with a greater share of electrons is said to be reduced, while the other atom acquires a lesser share of electrons and is said to be oxidized. The reduced atom has acquired a partial negative charge (δ<sup>-</sup>) as the positive charge on the atomic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> is now more than equaled by the total charge of the electrons surrounding it, and conversely, the oxidized atom has acquired a partial positive charge (δ<sup>+</sup>). (B) The single carbon atom of methane can be converted to that of carbon dioxide by the successive replacement of its covalently bonded hydrogen atoms with oxygen atoms. With each step, electrons are shifted away from the carbon (as indicated by the <i>blue</i> shading), and the carbon atom becomes progressively more oxidized. Each of these steps is energetically favorable under the conditions present inside a cell.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722600628-210429148.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-44 - <span class="title">The important principle of activation energy</span></span></center>
+<p>Compound X is in a stable state, and energy is required to convert it to compound Y, even though Y is at a lower overall energy level than X. This conversion will not take place, therefore, unless compound X can acquire enough <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4771/">activation energy</a> (<i>energy a minus energy b</i>) from its surroundings to undergo the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> that converts it into compound Y. This energy may be provided by means of an unusually energetic collision with other molecules. For the reverse reaction, Y → X, the activation energy will be much larger (<i>energy a minus energy c</i>); this reaction will therefore occur much more rarely. Activation energies are always positive; note, however, that the total energy change for the energetically favorable reaction X → Y is <i>energy c minus energy b,</i> a negative number.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722600794-509651875.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-45 - <span class="title">Lowering the activation energy greatly increases the probability of reaction</span></span></center>
+<p>A population of identical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a> molecules will have a range of energies that is distributed as shown on the graph at any one instant. The varying energies come from collisions with surrounding molecules, which make the substrate molecules jiggle, vibrate, and spin. For a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> to undergo a chemical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a>, the energy of the molecule must exceed the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4771/">activation energy</a> for that reaction; for most biological reactions, this almost never happens without <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> catalysis. Even with enzyme catalysis, the substrate molecules must experience a particularly energetic collision to react, as indicated here.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722600964-578423946.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-46 - <span class="title">Floating ball analogies for enzyme catalysis</span></span></center>
+<p>(A) A barrier dam is lowered to represent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> catalysis. The <i>green ball</i> represents a potential enzyme <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a> (compound X) that is bouncing up and down in energy level due to constant encounters with waves (an analogy for the thermal bombardment of the substrate with the surrounding water molecules). When the barrier (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4771/">activation energy</a>) is lowered significantly, it allows the energetically favorable movement of the ball (the substrate) downhill. (B) The four walls of the box represent the activation energy barriers for four different chemical reactions that are all energetically favorable, in the sense that the products are at lower energy levels than the substrates. In the <i>left-hand</i> box, none of these reactions occurs because even the largest waves are not large enough to surmount any of the energy barriers. In the <i>right-hand</i> box, enzyme catalysis lowers the activation energy for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> number 1 only; now the jostling of the waves allows passage of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> over this energy barrier only, inducing reaction 1. (C) A branching river with a set of barrier dams <i>(yellow boxes)</i> serves to illustrate how a series of enzyme-catalyzed reactions determines the exact reaction pathway followed by each molecule inside the cell.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722601157-351463670.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-47 - <span class="title">How enzymes work</span></span></center>
+<p>Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> has an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4772/">active site</a> to which one or two <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a></i> molecules bind, forming an enzyme-substrate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> occurs at the active site, producing an enzyme-product complex. The <i>product</i> is then released, allowing the enzyme to bind additional substrate molecules.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722601292-773190104.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-48 - <span class="title">A random walk</span></span></center>
+<p>Molecules in solution move in a random fashion due to the continual buffeting they receive in collisions with other molecules. This movement allows small molecules to diffuse rapidly from one part of the cell to another, as described in the text.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722601451-622157592.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-49 - <span class="title">The structure of the cytoplasm</span></span></center>
+<p>The drawing is approximately to scale and emphasizes the crowding in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a>. Only the macromolecules are shown: RNAs are shown in <i>blue,</i> ribosomes in <i>green,</i> and proteins in <i>red.</i> Enzymes and other macromolecules diffuse relatively slowly in the cytoplasm, in part because they interact with many other macromolecules; small molecules, by contrast, diffuse nearly as rapidly as they do in water. (Adapted from D.S. Goodsell, <i>Trends Biochem. Sci.</i> 16:203–206, 1991.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722601613-630546009.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-50 - <span class="title">The distinction between energetically favorable and energetically unfavorable reactions</span></span></center><center><img src="https://39363.org/IMAGE_BUCKET/1631722601796-139009103.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-51 - <span class="title">How reaction coupling is used to drive energetically unfavorable reactions</span></span></center><center><img src="https://39363.org/IMAGE_BUCKET/1631722601969-227797200.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-52 - <span class="title">Chemical equilibrium</span></span></center>
+<p>When a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> reaches <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5146/">equilibrium</a>, the forward and backward flux of reacting molecules are equal and opposite.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722602184-850845450.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-53 - <span class="title">Enzymes cannot change the equilibrium point for reactions</span></span></center>
+<p>Enzymes, like all catalysts, speed up the forward and backward rates of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> by the same factor. Therefore, for both the catalyzed and the uncatalyzed reactions shown here, the number of molecules undergoing the transition X → Y is equal to the number of molecules undergoing the transition Y → X when the ratio of Y molecules to X molecules is 3.5 to 1. In other words, the two reactions reach <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5146/">equilibrium</a> at exactly the same point.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722602362-363089607.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-54 - <span class="title">How an energetically unfavorable reaction can be driven by a second, following reaction</span></span></center>
+<p>(A) At <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5146/">equilibrium</a>, there are twice as many X molecules as Y molecules, because X is of lower energy than Y. (B) At equilibrium, there are 25 times more Z molecules than Y molecules, because Z is of much lower energy than Y. (C) If the reactions in (A) and (B) are coupled, nearly all of the X molecules will be converted to Z molecules, as shown.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722602562-388571029.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-55 - <span class="title">Energy transfer and the role of activated carriers in metabolism</span></span></center>
+<p>By serving as energy shuttles, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4770/">activated carrier</a> molecules perform their function as go-betweens that link the breakdown of food molecules and the release of energy <i>(<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4921/">catabolism</a>)</i> to the energy-requiring biosynthesis of small and large organic molecules <i>(<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4814/">anabolism</a>).</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722602734-256853371.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-56 - <span class="title">A mechanical model illustrating the principle of coupled chemical reactions</span></span></center>
+<p>The spontaneous <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> shown in (A) could serve as an analogy for the direct oxidation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5234/">glucose</a> to CO<sub>2</sub> and H<sub>2</sub>O, which produces heat only. In (B) the same reaction is coupled to a second reaction; this second reaction could serve as an analogy for the synthesis of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4770/">activated carrier</a> molecules. The energy produced in (B) is in a more useful form than in (A) and can be used to drive a variety of otherwise energetically unfavorable reactions (C).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722602903-862014409.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-57 - <span class="title">The hydrolysis of ATP to ADP and inorganic phosphate</span></span></center>
+<p>The two outermost phosphates in ATP are held to the rest of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> by high-energy phosphoanhydride bonds and are readily transferred. As indicated, water can be added to ATP to form ADP and inorganic phosphate (P<sub>i</sub>). This hydrolysis of the terminal phosphate of ATP yields between 11 and 13 kcal/<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5483/">mole</a> of usable energy, depending on the intracellular conditions. The large negative Δ<i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a></i> of this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> arises from a number of factors. Release of the terminal phosphate group removes an unfavorable repulsion between adjacent negative charges; in addition, the inorganic phosphate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a> (P<sub>i</sub>) released is stabilized by resonance and by favorable hydrogen-bond formation with water.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722603079-115015232.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-58 - <span class="title">An example of a phosphate transfer reaction</span></span></center>
+<p>Because an energy-rich phosphoanhydride bond in ATP is converted to a phosphoester bond, this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> is energetically favorable, having a large negative Δ<i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a></i>. Reactions of this type are involved in the synthesis of phospholipids and in the initial steps of reactions that catabolize sugars.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722603255-222019518.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-59 - <span class="title">An example of an energetically unfavorable biosynthetic reaction driven by ATP hydrolysis</span></span></center>
+<p>(A) Schematic illustration of the formation of A-B in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5015/">condensation reaction</a> described in the text. (B) The biosynthesis of the common <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> glutamine. Glutamic acid is first converted to a high-energy phosphorylated intermediate (corresponding to the compound B-O-PO<sub>3</sub> described in the text), which then reacts with ammonia (corresponding to A-H) to form glutamine. In this example both steps occur on the surface of the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>, <i>glutamine synthase.</i> Note that, for clarity, the amino acids are shown in their uncharged form.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722603419-805196638.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-60 - <span class="title">NADPH, an important carrier of electrons</span></span></center>
+<p>(A) NADPH is produced in reactions of the general type shown on the left, in which two hydrogen atoms are removed from a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a>. The oxidized form of the carrier <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, NADP<sup>+</sup>, receives one hydrogen atom plus an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> (a hydride <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a>), and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5701/">proton</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a>) from the other H atom is released into solution. Because NADPH holds its hydride ion in a high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a>, the added hydride ion can easily be transferred to other molecules, as shown on the right. (B) The structure of NADP<sup>+</sup> and NADPH. The part of the NADP<sup>+</sup> molecule known as the nicotinamide ring accepts two electrons together with a proton (the equivalent of a hydride ion, H<sup>-</sup>), forming NADPH. The molecules NAD<sup>+</sup> and NADH are identical in structure to NADP<sup>+</sup> and NADPH, respectively, except that the indicated phosphate group is absent from both.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722603597-433130598.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-61 - <span class="title">The final stage in one of the biosynthetic routes leading to cholesterol</span></span></center>
+<p>As in many other biosynthetic reactions, the reduction of the C=C bond is achieved by the transfer of a hydride <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a> from the carrier <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> NADPH, plus a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5701/">proton</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a>) from the solution.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722603762-105155000.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-62 - <span class="title">The structure of the important activated carrier molecule acetyl CoA</span></span></center>
+<p>A space-filling model is shown above the structure. The sulfur atom <i>(yellow)</i> forms a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5867/">thioester bond</a> to acetate. Because this is a high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a>, releasing a large amount of free energy when it is hydrolyzed, the acetate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> can be readily transferred to other molecules.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722603931-188562395.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-63 - <span class="title">A carboxyl group transfer reaction using an activated carrier molecule</span></span></center>
+<p>Carboxylated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4884/">biotin</a> is used by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <i>pyruvate carboxylase</i> to transfer a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4912/">carboxyl group</a> in the production of oxaloacetate, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> needed for the citric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> cycle. The acceptor molecule for this group transfer <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> is pyruvate. Other enzymes use biotin to transfer carboxyl groups to other acceptor molecules. Note that synthesis of carboxylated biotin requires energy that is derived from ATP—a general feature of many activated carriers.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722604121-594036962.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-64 - <span class="title">Condensation and hydrolysis as opposite reactions</span></span></center>
+<p>The macromolecules of the cell are polymers that are formed from subunits (or monomers) by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5015/">condensation reaction</a> and are broken down by hydrolysis. The condensation reactions are all energetically unfavorable.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722604290-577004703.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-65 - <span class="title">The synthesis of polysaccharides, proteins, and nucleic acids</span></span></center>
+<p>Synthesis of each kind of biological <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5655/">polymer</a> involves the loss of water in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5015/">condensation reaction</a>. Not shown is the consumption of high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5565/">nucleoside</a> triphosphates that is required to activate each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> prior to its addition. In contrast, the reverse reaction—the breakdown of all three types of polymers—occurs by the simple addition of water (hydrolysis).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722604527-27963281.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-66 - <span class="title">An alternative route for the hydrolysis of ATP, in which pyrophosphate is first formed and then hydrolyzed</span></span></center>
+<p>This route releases about twice as much free energy as the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> shown earlier in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26838/figure/A269/?report=objectonly" rid-figpopup="figA269" rid-ob="figobA269" target="object">Figure 2-57</a>. (A) In the two successive hydrolysis reactions, oxygen atoms from the participating water molecules are retained in the products, as indicated, whereas the hydrogen atoms dissociate to form free hydrogen ions, (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a>, not shown). (B) Diagram of overall reaction in summary form.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722604696-231038637.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-67 - <span class="title">Synthesis of a polynucleotide, RNA or DNA, is a multistep process driven by ATP hydrolysis</span></span></center>
+<p>In the first step, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5565/">nucleoside</a> monophosphate is activated by the sequential transfer of the terminal phosphate groups from two ATP molecules. The high-energy intermediate formed—a nucleoside triphosphate—exists free in solution until it reacts with the growing end of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> or a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> chain with release of pyrophosphate. Hydrolysis of the latter to inorganic phosphate is highly favorable and helps to drive the overall <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> in the direction of polynucleotide synthesis. For details, see Chapter 5.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722604907-292507283.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-68 - <span class="title">The orientation of the active intermediates in biological polymerization reactions</span></span></center>
+<p>The head growth of polymers is compared with its alternative tail growth. As indicated, these two mechanisms are used to produce different biological macromolecules.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722608647-82200275.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-69 - <span class="title">Schematic representation of the controlled stepwise oxidation of sugar in a cell, compared with ordinary burning</span></span></center>
+<p>(A) In the cell, enzymes catalyze oxidation via a series of small steps in which free energy is transferred in conveniently sized packets to carrier molecules—most often ATP and NADH. At each step, an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> controls the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> by reducing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4771/">activation energy</a> barrier that has to be surmounted before the specific reaction can occur. The total free energy released is exactly the same in (A) and (B). But if the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> was instead oxidized to CO<sub>2</sub> and H<sub>2</sub>O in a single step, as in (B), it would release an amount of energy much larger than could be captured for useful purposes.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722608857-586055397.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-70 - <span class="title">Simplified diagram of the three stages of cellular metabolism that lead from food to waste products in animal cells</span></span></center>
+<p>This series of reactions produces ATP, which is then used to drive biosynthetic reactions and other energy-requiring processes in the cell. Stage 1 occurs outside cells. Stage 2 occurs mainly in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a>, except for the final step of conversion of pyruvate to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4757/">acetyl</a> groups on <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4758/">acetyl CoA</a>, which occurs in mitochondria. Stage 3 occurs in mitochondria.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722609056-908926698.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-71 - <span class="title">An outline of glycolysis</span></span></center>
+<p>Each of the 10 steps shown is catalyzed by a different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>. Note that step 4 cleaves a six-carbon <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> into two three-carbon sugars, so that the number of molecules at every stage after this doubles. As indicated, step 6 begins the energy generation phase of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5240/">glycolysis</a>, which causes the net synthesis of ATP and NADH molecules (see also <a href="https://www.ncbi.nlm.nih.gov/books/NBK26882/box/A293/?report=objectonly" rid-ob="figobA293" target="object">Panel 2-8</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722609263-326837349.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-72 - <span class="title">Two pathways for the anaerobic breakdown of pyruvate</span></span></center>
+<p>(A) When inadequate oxygen is present, for example, in a muscle cell undergoing vigorous contraction, the pyruvate produced by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5240/">glycolysis</a> is converted to lactate as shown. This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> regenerates the NAD<sup>+</sup> consumed in step 6 of glycolysis, but the whole pathway yields much less energy overall than complete oxidation. (B) In some organisms that can grow anaerobically, such as yeasts, pyruvate is converted via acetaldehyde into carbon dioxide and ethanol. Again, this pathway regenerates NAD<sup>+</sup> from NADH, as required to enable glycolysis to continue. Both (A) and (B) are examples of <i>fermentations.</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722609471-347077077.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-73 - <span class="title">Energy storage in steps 6 and 7 of glycolysis</span></span></center>
+<p>In these steps the oxidation of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4794/">aldehyde</a> to a carboxylic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> is coupled to the formation of ATP and NADH. (A) Step 6 begins with the formation of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> between the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a> (glyceraldehyde 3-phosphate) and an -SH group exposed on the surface of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> (glyceraldehyde 3-phosphate dehydrogenase). The enzyme then catalyzes transfer of hydrogen (as a hydride <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a>—a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5701/">proton</a> plus two electrons) from the bound glyceraldehyde 3-phosphate to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of NAD<sup>+</sup>. Part of the energy released in this oxidation is used to form a molecule of NADH and part is used to convert the original <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a> between the enzyme and its substrate to a high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5867/">thioester bond</a> (shown in <i>red).</i> A molecule of inorganic phosphate then displaces this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5279/">high-energy bond</a> on the enzyme, creating a high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a>-phosphate bond instead <i>(red).</i> At this point the enzyme has not only stored energy in NADH, but also coupled the energetically favorable oxidation of an aldehyde to the energetically unfavorable formation of a high-energy phosphate bond. The second <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> has been driven by the first, thereby acting like the “paddle wheel” coupler in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A229/figure/A267/?report=objectonly" rid-figpopup="figA267" rid-ob="figobA267" target="object">Figure 2-56</a>.</p><p>In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> step 7, the high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a>-phosphate intermediate just made, 1,3-bisphosphoglycerate, binds to a second <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>, phosphoglycerate kinase. The reactive phosphate is transferred to ADP, forming a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of ATP and leaving a free carboxylic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> group on the oxidized sugar. (B) Summary of the overall chemical change produced by reactions 6 and 7.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722609720-909744730.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-74 - <span class="title">Schematic view of the coupled reactions that form NADH and ATP in steps 6 and 7 of glycolysis</span></span></center>
+<p>The C-H bond oxidation energy drives the formation of both NADH and a high-energy phosphate bond. The breakage of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5279/">high-energy bond</a> then drives ATP formation.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722609885-353397691.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-75 - <span class="title">Some phosphate bond energies</span></span></center>
+<p>The transfer of a phosphate group from any <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> 1 to any molecule 2 is energetically favorable if the standard free-energy change (Δ<i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a></i>°) for the hydrolysis of the phosphate bond in molecule 1 is more negative than that for hydrolysis of the phosphate bond in molecule 2. Thus, for example, a phosphate group is readily transferred from 1,3-bisphosphoglycerate to ADP, forming ATP. Note that the hydrolysis <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> can be viewed as the transfer of the phosphate group to water.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722610094-826741972.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-76 - <span class="title">The oxidation of pyruvate to acetyl CoA and CO<sub>2</sub></span></span></center>
+<p>(A) The structure of the pyruvate dehydrogenase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>, which contains 60 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chains. This is an example of a large multienzyme complex in which <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> intermediates are passed directly from one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> to another. In eucaryotic cells it is located in the mitochondrion. (B) The reactions carried out by the pyruvate dehydrogenase complex. The complex converts pyruvate to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4758/">acetyl CoA</a> in the mitochondrial matrix; NADH is also produced in this reaction. A, B, and C are the three enzymes <i>pyruvate decarboxylase, lipoamide reductase-transacetylase,</i> and <i>dihydrolipoyl dehydrogenase,</i> respectively. These enzymes are illustrated in (A); their activities are linked as shown.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722610263-874782470.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-77 - <span class="title">The oxidation of fatty acids to acetyl CoA</span></span></center>
+<p>(A) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5399/">lipid</a> droplet in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> <i>(top),</i> and the structure of fats <i>(bottom).</i> Fats are triacylglycerols. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5236/">glycerol</a> portion, to which three fatty acids are linked through <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5156/">ester</a> bonds, is shown here in <i>green.</i> Fats are insoluble in water and form large lipid droplets in the specialized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5169/">fat</a> cells (called adipocytes) in which they are stored. (B) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5171/">fatty acid</a> oxidation cycle. The cycle is catalyzed by a series of four enzymes in the mitochondrion. Each turn of the cycle shortens the fatty acid chain by two carbons (shown in <i>red)</i> and generates one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4758/">acetyl CoA</a> and one molecule each of NADH and FADH<sub>2</sub>. The structure of FADH<sub>2</sub> will be presented in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26882/figure/A306/?report=objectonly" rid-figpopup="figA306" rid-ob="figobA306" target="object">Figure 2-80B</a>. (A, courtesy of Daniel S. Friend.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722610470-341743747.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-78 - <span class="title">Pathways for the production of acetyl CoA from sugars and fats</span></span></center>
+<p>The mitochondrion in eucaryotic cells is the place where <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4758/">acetyl CoA</a> is produced from both types of major food molecules. It is therefore the place where most of the cell's oxidation reactions occur and where most of its ATP is made.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722610642-275145940.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-79 - <span class="title">Simple overview of the citric acid cycle</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4758/">acetyl CoA</a> with oxaloacetate starts the cycle by producing citrate (citric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a>). In each turn of the cycle, two molecules of CO<sub>2</sub> are produced as waste products, plus three molecules of NADH, one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of GTP, and one molecule of FADH<sub>2</sub>. The number of carbon atoms in each intermediate is shown in a <i>yellow box.</i> For details, see <a href="https://www.ncbi.nlm.nih.gov/books/NBK26882/box/A307/?report=objectonly" rid-ob="figobA307" target="object">Panel 2-9</a> (pp. 126–127).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722610808-378632890.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-80 - <span class="title">The structures of GTP and FADH<sub>2</sub></span></span></center>
+<p>(A) GTP and GDP are close relatives of ATP and ADP, respectively. (B) FADH<sub>2</sub> is a carrier of hydrogens and high-energy electrons, like NADH and NADPH. It is shown here in its oxidized form (FAD) with the hydrogen-carrying atoms highlighted in <i>yellow.</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722610969-450034862.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-81 - <span class="title">The generation of an H<sup>+</sup> gradient across a membrane by electron-transport reactions</span></span></center>
+<p>A high-energy <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> (derived, for example, from the oxidation of a metabolite) is passed sequentially by carriers A, B, and C to a lower energy state. In this diagram carrier B is arranged in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> in such a way that it takes up <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a> from one side and releases it to the other as the electron passes. The result is an H<sup>+</sup> gradient. This gradient represents a form of stored energy that is harnessed by other membrane proteins to drive the formation of ATP.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722611172-167953236.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-82 - <span class="title">The final stages of oxidation of food molecules</span></span></center>
+<p>Molecules of NADH and FADH<sub>2</sub> (FADH<sub>2</sub> is not shown) are produced by the citric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> cycle. These activated carriers donate high-energy electrons that are eventually used to reduce oxygen gas to water. A major portion of the energy released during the transfer of these electrons along an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a>-transfer chain in the mitochondrial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5337/">inner membrane</a> (or in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> of bacteria) is harnessed to drive the synthesis of ATP: hence the name <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5595/">oxidative phosphorylation</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722611359-950968652.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-83 - <span class="title">The storage of sugars and fats in animal and plant cells</span></span></center>
+<p>(A) The structures of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5827/">starch</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5238/">glycogen</a>, the storage form of sugars in plants and animals, respectively. Both are storage polymers of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5234/">glucose</a> and differ only in the frequency of branch points (the region in <i>yellow</i> is shown enlarged below). There are many more branches in glycogen than in starch. (B) A thin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4969/">chloroplast</a> from a plant cell, showing the starch granules and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5399/">lipid</a> droplets that have accumulated as a result of the biosyntheses occurring there. (C) Fat droplets (stained <i>red)</i> beginning to accumulate in developing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5169/">fat</a> cells of an animal. (B, courtesy of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Plaskitt; C, courtesy of Ronald M. Evans and Peter Totonoz.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722611576-901023125.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-84 - <span class="title">How the ATP needed for most plant cell metabolism is made</span></span></center>
+<p>In plants, the chloroplasts and mitochondria collaborate to supply cells with metabolites and ATP.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722611745-717497858.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-85 - <span class="title">Some plant seeds that serve as important foods for humans</span></span></center>
+<p>Corn, nuts, and peas all contain rich stores of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5827/">starch</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5169/">fat</a> that provide the young plant embryo in the seed with energy and building blocks for biosynthesis. (Courtesy of the John Innes Foundation.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722611925-39867543.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-86 - <span class="title">The nine essential amino acids</span></span></center>
+<p>These cannot be synthesized by human cells and so must be supplied in the diet.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722612087-76442994.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-87 - <span class="title">Glycolysis and the citric acid cycle provide the precursors needed to synthesize many important biological molecules</span></span></center>
+<p>The amino acids, nucleotides, lipids, sugars, and other molecules—shown here as products—in turn serve as the precursors for the many macromolecules of the cell. Each <i>black arrow</i> in this diagram denotes a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>-catalyzed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a>; the <i>red arrows</i> generally represent pathways with many steps that are required to produce the indicated products.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722612299-878783121.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-88 - <span class="title">Glycolysis and the citric acid cycle are at the center of metabolism</span></span></center>
+<p>Some 500 metabolic reactions of a typical cell are shown schematically with the reactions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5240/">glycolysis</a> and the citric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> cycle in <i>red.</i> Other reactions either lead into these two central pathways—delivering small molecules to be catabolized with production of energy—or they lead outward and thereby supply carbon compounds for the purpose of biosynthesis.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722612536-593590931.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-89 - <span class="title">A representation of all of the known metabolic reactions involving small molecules in a yeast cell</span></span></center>
+<p>As in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26882/figure/A320/?report=objectonly" rid-figpopup="figA320" rid-ob="figobA320" target="object">Figure 2-88</a>, the reactions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5240/">glycolysis</a> and the citric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> cycle are highlighted in <i>red.</i> This metabolic map is unusual in making use of three-dimensions, so as to allow the many interactions between pathways to be emphasized. It is meant to be viewed on a computer screen, where it can be rotated and inspected from every angle. (From H. Jeong, S.P. Mason, A-L. Barabási and N. Oltava, <i>Nature</i> 411:41–42, 2001. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722612731-484845829.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 2-90 - <span class="title">Schematic view of the metabolic cooperation between liver and muscle cells</span></span></center>
+<p>The principal fuel of actively contracting muscle cells is <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5234/">glucose</a>, much of which is supplied by liver cells. Lactic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a>, the end product of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4815/">anaerobic</a> glucose breakdown by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5240/">glycolysis</a> in muscle, is converted back to glucose in the liver by the process of gluconeogenesis.</p></div></div>
+</body>
+</html>

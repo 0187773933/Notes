@@ -1,0 +1,1532 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+/*blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}*/
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    padding-left: 30px;
+    margin-top: 35px;
+    border-left: 2px solid #D5C5C8;
+    background: #474d54;
+    background-color: #474d54;
+    color: #B197FC;
+}
+
+/*#772D8B , #2660A4 , #D90368 , #048BA8*/
+/*https://coolors.co/d6ffb7-61cc9e-048ba8-ffbfa0-d5c5c8*/
+/*blockquote blockquote { border-left: 3px solid #61CC9E }*/
+blockquote blockquote { border-left: 2px solid #D6FFB7; border-bottom:none; }
+blockquote blockquote blockquote { border-left: 2px solid #FFBFA0; border-bottom:none; }
+blockquote blockquote blockquote blockquote { border-left: 2px solid #048BA8; border-bottom:none; }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #D90368; border-bottom:none; }
+
+blockquote .md-math-block {
+    color: #FFEBFF;
+}
+
+blockquote h2 {
+    color: #EBD6A6;
+}
+
+blockquote h6 {
+    border-radius:2em;
+    opacity: 0.9;
+    background-color:#B1C6FC;
+    color:black;
+    hite-space:normal;
+    display:inline-block;
+    padding:0.2em;
+}
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+/*blockquote {
+    color: #9DA2A6;
+}
+*/
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 1 - Figures</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 1 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721009564-293691835.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-1 - <span class="title">The hereditary information in the egg cell determines the nature of the whole multicellular organism</span></span></center>
+<p>(A and B) A sea urchin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> gives rise to a sea urchin. (C and D) A mouse egg gives rise to a mouse. (E and F) An egg of the seaweed <i>Fucus</i> gives rise to a <i>Fucus</i> seaweed. (A, courtesy of David McClay; B, courtesy of M. Gibbs, Oxford Scientific Films; C, courtesy of Patricia Calarco, from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Martin, <i>Science</i> 209:768–776, 1980. © AAAS; D, courtesy of O. Newman, Oxford Scientific Films; E and F, courtesy of Colin Brownlee.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721009920-951551349.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-2 - <span class="title">DNA and its building blocks</span></span></center>
+<p>(A) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is made from simple subunits, called nucleotides, each consisting of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a>-phosphate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> with a nitrogen-containing sidegroup, or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>, attached to it. The bases are of four types (adenine, guanine, cytosine, and thymine), corresponding to four distinct nucleotides, labeled A, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>, C, and T. (B) A single strand of DNA consists of nucleotides joined together by sugar-phosphate linkages. Note that the individual sugar-phosphate units are asymmetric, giving the backbone of the strand a definite directionality, or polarity. This directionality guides the molecular processes by which the information in DNA is interpreted and copied in cells: the information is always “read” in a consistent order, just as written English text is read from left to right. (C) Through templated polymerization, the sequence of nucleotides in an existing DNA strand controls the sequence in which nucleotides are joined together in a new DNA strand; T in one strand pairs with A in the other, and G in one strand with C in the other. The new strand has a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> to that of the old strand, and a backbone with opposite directionality: corresponding to the GTAA... of the original strand, it has ...TTAC. (D) A normal DNA molecule consists of two such complementary strands. The nucleotides within each strand are linked by strong (covalent) chemical bonds; the complementary nucleotides on opposite strands are held together more weakly, by hydrogen bonds. (E) The two strands twist around each other to form a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>—a robust structure that can accommodate any sequence of nucleotides without altering its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4877/">basic</a> structure.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721010125-497066847.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-3 - <span class="title">The duplication of genetic information by DNA replication</span></span></center>
+<p>In this process, the two strands of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> are pulled apart, and each serves as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> for synthesis of a new <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> strand.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721010301-507530821.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-4 - <span class="title">From DNA to protein</span></span></center>
+<p>Genetic information is read out and put to use through a two-step process. First, in <i>transcription</i>, segments of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence are used to guide the synthesis of molecules of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a>. Then, in <i>translation</i>, the RNA molecules are used to guide the synthesis of molecules of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721010470-330418851.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-5 - <span class="title">How genetic information is broadcast for use inside the cell</span></span></center>
+<p>Each cell contains a fixed set of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules—its archive of genetic information. A given segment of this DNA serves to guide the synthesis of many identical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> transcripts, which serve as working copies of the information stored in the archive. Many different sets of RNA molecules can be made by transcribing selected parts of a long DNA sequence, allowing each cell to use its information store differently.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721010648-242163940.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-6 - <span class="title">The conformation of an RNA molecule</span></span></center>
+<p>(A) Nucleotide pairing between different regions of the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5655/">polymer</a> chain causes the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> to adopt a distinctive shape. (B) The three-dimensional structure of an actual RNA molecule, from hepatitis delta <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a>, that catalyzes RNA strand <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a>. (B, based on A.R. Ferré D'Amaré, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Zhou, and J.A. Doudna, <i>Nature</i> 395:567–574, 1998. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721010824-298958217.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-7 - <span class="title">How a protein molecule acts as catalyst for a chemical reaction</span></span></center>
+<p>(A) In a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5655/">polymer</a> chain folds up to into a specific shape defined by its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence. A groove in the surface of this particular folded molecule, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5416/">lysozyme</a>, forms a catalytic site. (B) A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5662/">polysaccharide</a> molecule <i>(red)</i>—a polymer chain of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> monomers—binds to the catalytic site of lysozyme and is broken apart, as a result of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a>-breaking <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> catalyzed by the amino acids lining the groove.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721011020-607852532.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-8 - <span class="title">Life as an autocatalytic process</span></span></center>
+<p>Polynucleotides (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> polymers) and proteins (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> polymers) provide the sequence information and the catalytic functions that serve—through a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> set of chemical reactions—to bring about the synthesis of more polynucleotides and proteins of the same types.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721011188-748865558.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-9 - <span class="title">Transfer RNA</span></span></center>
+<p>(A) A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5902/">tRNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> specific for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> tryptophan. One end of the tRNA molecule has tryptophan attached to it, while the other end displays the triplet <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence CCA (its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4829/">anticodon</a>), which recognizes the tryptophan <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4997/">codon</a> in messenger <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules. (B) The three-dimensional structure of the tryptophan tRNA molecule. Note that the codon and the anticodon in (A) are in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4834/">antiparallel</a> orientations, like the two strands in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26864/figure/A8/?report=objectonly" rid-figpopup="figA8" rid-ob="figobA8" target="object">Figure 1-2</a>), so that the sequence of the anticodon in the tRNA is read from right to left, while that of the codon in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> is read from left to right.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721011401-669026246.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-10 - <span class="title">A ribosome at work</span></span></center>
+<p>(A) The diagram shows how a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5754/">ribosome</a> moves along an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, capturing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5902/">tRNA</a> molecules that match the codons in the mRNA and using them to join amino acids into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> chain. The mRNA specifies the sequence of amino acids. (B) The three-dimensional structure of a bacterial ribosome <i>(pale green</i> and <i>blue),</i> moving along an mRNA molecule <i>(orange</i> beads<i>),</i> with three tRNA molecules <i>(yellow</i>, <i>green</i>, and <i>pink)</i> at different stages in their process of capture and release. The ribosome is a giant assembly of more than 50 individual protein and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules. (B, courtesy of Joachim Frank, Yanhong Li, and Rajendra Agarwal.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721011591-958160606.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-11 - <span class="title">(A) A diagram of a small portion of the genome of the bacterium <a href="/books/n/mboc4/A4754/#A5155" target="mainwindow">Escherichia coli</a>, containing genes (called <i>lacI, lacZ, lacY,</i> and <i>lacA)</i> coding for four different proteins</span></span></center>
+<p> The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>-coding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> segments <i>(red)</i> have regulatory and other noncoding DNA segments <i>(yellow)</i> between them. (B) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of DNA from this region, with a protein <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> (encoded by the <i>lac1</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>) bound to the regulatory segment; this protein controls the rate of transcription of the <i>lacZ</i>, <i>lacY</i>, and <i>lacA</i> genes. (C) A drawing of the structures shown in (B). (B, courtesy of Jack Griffith.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721011756-958062512.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-12 - <span class="title">Formation of a membrane by amphipathic phospholipid molecules</span></span></center>
+<p>These have a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5305/">hydrophilic</a> (water-loving, phosphate) head group and a hydrophobic (water-avoiding, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5301/">hydrocarbon</a>) tail. At an interface between oil and water, they arrange themselves as a single sheet with their head groups facing the water and their tail groups facing the oil. When immersed in water, they aggregate to form bilayers enclosing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4840/">aqueous</a> compartments.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721011943-611899588.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-13 - <span class="title">Membrane transport proteins</span></span></center>
+<p>(A) Structure of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4871/">bacteriorhodopsin</a>, from the archaean (archaebacterium) <i>Halobacterium halobium</i>. This transport <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> uses the energy of absorbed light to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5708/">pump</a> protons (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a> ions) out of the cell. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chain threads to and fro across the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>; in several regions it is twisted into a helical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a>, and the helical segments are arranged to form the walls of a channel through which ions are transported. (B) Diagram of the set of transport proteins found in the membrane of the bacterium <i>Thermotoga maritima</i>. The numbers in parentheses refer to the number of different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5443/">membrane transport</a> proteins of each type. Most of the proteins within each class are evolutionarily related to one another and to their counterparts in other species.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721012118-876932491.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-14</span></center>
+<p> (A) Scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> showing the irregular shape of this small bacterium, reflecting the lack of any rigid wall. (B) Cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> (transmission electron micrograph) of a <i>Mycoplasma</i> cell. Of the 477 genes of <i>Mycoplasma genitalium</i>, 37 code for transfer, ribosomal, and other nonmessenger RNAs. Functions are known, or can be guessed, for 297 of the genes coding for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>: of these, 153 are involved in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication, transcription, and translation and related processes involving DNA, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a>, and protein; 29 in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> and surface structures of the cell; 33 in the transport of nutrients and other molecules across the membrane; 71 in energy conversion and the synthesis and degradation of small molecules; and 11 in the regulation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> and other processes. (A, from S. Razin, M. Banai, H. Gamliel, A. Pollack, W. Bredt, and I. Kahane, <i>Infect. Immun.</i> 30:538–546, 1980; B, courtesy of Roger Cole, in Medical Microbiology, 4th edn., [S. Baron ed.]. Galveston: University of Texas Medical Branch, 1996.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722781789-110863273.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-15 - <span class="title">The geology of a hot hydrothermal vent in the ocean floor</span></span></center>
+<p>. Water percolates down toward the hot molten rock upwelling from the Earth's interior and is heated and driven back upward, carrying minerals leached from the hot rock. A temperature gradient is set up, from more than 350°C near the core of the vent, down to 2–3°C in the surrounding ocean. Minerals precipitate from the water as it cools, forming a chimney. Different classes of organisms, thriving at different temperatures, live in different neighborhoods of the chimney. A typical chimney might be a few meters tall, with a flow rate of 1–2 m/sec.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722781951-842322629.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-16 - <span class="title">Living organisms at a hot hydrothermal vent</span></span></center>
+<p>Close to the vent, at temperatures up to about 150°C, various lithotrophic species of bacteria and archaea (archaebacteria) live, directly fuelled by geochemical energy. A little further away, where the temperature is lower, various invertebrate animals live by feeding on these microorganisms. Most remarkable are the giant (2-meter) tube worms, which, rather than feed on the lithotrophic cells, live in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5846/">symbiosis</a> with them: specialized organs in the worms harbor huge numbers of symbiotic sulfur-oxidizing bacteria. These bacteria harness geochemical energy and supply nourishment to their hosts, which have no mouth, gut, or anus. The dependence of the tube worms on the bacteria for the harnessing of geothermal energy is analogous to the dependence of plants on chloroplasts for the harnessing of solar energy, discussed later in this chapter. The tube worms, however, are thought to have evolved from more conventional animals, and to have become secondarily adapted to life at hydrothermal vents. (Courtesy of Dudley Foster, Woods Hole Oceanographic Institution.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722782109-725458644.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-17 - <span class="title">Shapes and sizes of some bacteria</span></span></center>
+<p>Although most are small, as shown, there are also some giant species. An extreme example (not shown) is the cigar-shaped bacterium <i>Epulopiscium fishelsoni</i>, which lives in the gut of the surgeon fish and can be up to 600 μm long.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722782283-625770415.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-18 - <span class="title">The structure of a bacterium</span></span></center>
+<p>(A) The bacterium <i>Vibrio cholerae,</i> showing its simple internal organization. Like many other species, <i>Vibrio</i> has a helical appendage at one end—a flagellum—that rotates as a propeller to drive the cell forward. (B) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a longitudinal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> through the widely studied bacterium <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5155/">Escherichia coli (E. coli)</a>.</i> This is related to <i>Vibrio</i> but lacks a flagellum. The cell's <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is concentrated in the lightly stained region. (B, courtesy of E. Kellenberger.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722782413-971428724.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-19 - <span class="title">The phototrophic bacterium <i>Anabaena cylindrica</i> viewed in the light microscope</span></span></center>
+<p> The cells of this species form long, multicellular filaments. Most of the cells (labeled <i>V)</i> perform <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5633/">photosynthesis</a>, while others become specialized for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5535/">nitrogen fixation</a> (labeled <i>H),</i> or develop into resistant spores (labeled <i>S).</i> (Courtesy of Dave <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Adams.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722782545-700219021.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-20 - <span class="title">A lithotrophic bacterium</span></span></center>
+<p>
+<i>Beggiatoa</i>, which lives in sulfurous environments, gets its energy by oxidizing H<sub>2</sub>S and can fix carbon even in the dark. Note the yellow deposits of sulfur inside the cells. (Courtesy of Ralph W. Wolfe.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722782725-668970376.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-21 - <span class="title">The three major divisions (domains) of the living world</span></span></center>
+<p>Note that traditionally the word <i>bacteria</i> has been used to refer to procaryotes in general, but more recently has been redefined to refer to eubacteria specifically. Where there might be ambiguity, we use the term <i>eubacteria</i> when the narrow meaning is intended. The tree is based on comparisons of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence of a ribosomal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> in the different species. The lengths of the lines represent the numbers of evolutionary changes that have occurred in this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> in each lineage (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26866/figure/A43/?report=objectonly" rid-figpopup="figA43" rid-ob="figobA43" target="object">Figure 1-22</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722782925-359548081.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-22 - <span class="title">Genetic information conserved since the beginnings of life</span></span></center>
+<p>A part of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> for the smaller of the two main <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> components of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5754/">ribosome</a> is shown. Corresponding segments of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence from an archaean <i>(Methanococcus jannaschii),</i> a eubacterium <i>(Escherichia coli)</i> and a eucaryote <i>(Homo sapiens)</i> are aligned in parallel. Sites where the nucleotides are identical between species are indicated by a vertical line; the human sequence is repeated at the bottom of the alignment so that all three two-way comparisons can be seen. A dot halfway along the <i>E. coli</i> sequence denotes a site where a nucleotide has been either deleted from the eubacterial lineage in the course of evolution, or inserted in the other two lineages. Note that the sequences from these three organisms, representative of the three domains of the living world, all differ from one another to a roughly similar degree, while still retaining unmistakable similarities.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722783100-907092357.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-23 - <span class="title">Four modes of genetic innovation and their effects on the DNA sequence of an organism</span></span></center><center><img src="https://39363.org/IMAGE_BUCKET/1631722783262-582207971.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-24 - <span class="title">Families of evolutionarily related genes in the genome of <i>Bacillus subtilis.</i></span></span></center>
+<p> The biggest family consists of 77 genes coding for varieties of ABC transporters—a class of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5443/">membrane transport</a> proteins found in all three domains of the living world. (After F. Kunst et al., <i>Nature</i> 390:249–256, 1997. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722783435-401228768.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-25 - <span class="title">Paralogous genes and orthologous genes: two types of gene homology based on different evolutionary pathways</span></span></center>
+<p>(A) and (B) The most <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4877/">basic</a> possibilities. (C) A more <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> pattern of events that can occur.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722783631-43957228.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-26 - <span class="title">A complex family of homologous genes</span></span></center>
+<p>This diagram shows the pedigree of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5272/">hemoglobin</a> (Hb), myoglobin, and globin genes of human, chick, shark, and <i>Drosophila</i>. The lengths of the lines represent the amount of divergence in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722783819-105306039.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-27 - <span class="title">The viral transfer of DNA from one cell to another</span></span></center>
+<p>. (A) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of particles of a bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a>, the T4 bacteriophage. The head of this virus contains the viral <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>; the tail contains apparatus for injecting the DNA into a host bacterium. (B) A cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a bacterium with a T4 bacteriophage latched onto its surface. The large dark objects inside the bacterium are the heads of new T4 particles in course of assembly. When they are mature, the bacterium will burst open to release them. (A, courtesy of James Paulson; B, courtesy of Jonathan King and Erika Hartwig from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Karp, Cell and Molecular Biology, 2nd edn. New York: John Wiley &amp; Sons, 1999. © John Wiley.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722783980-859389439.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-28 - <span class="title">Horizontal gene transfers in early evolution</span></span></center>
+<p>In the early days of life on Earth, cells may have been less capable of maintaining their separate identities and may have exchanged genes much more readily than now. In this way, the archaean, eubacterial, and eucaryotic lineages may have inherited different but overlapping subsets of genes from a primordial community of cells that were exchanging genes promiscuously.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722784119-813282040.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-29 - <span class="title">A mutant phenotype reflecting the function of a gene</span></span></center>
+<p>A normal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> (of the species <i>Schizosaccharomyces pombe)</i> is compared with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> in which a change in a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> has converted the cell from a cigar shape <i>(left)</i> to a T shape <i>(right).</i> The mutant gene therefore has a function in the control of cell shape. But how, in molecular terms, does the gene product perform that function? That is a harder question, and needs biochemical analysis to answer it. (Courtesy of Kenneth Sawin and Paul Nurse.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722784290-791957152.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-30 - <span class="title">The genome of <i>E. coli.</i></span></span></center>
+<p> (A) A cluster of <i>E. coli</i> cells. (B) A diagram of the <i>E. coli</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> of 4,639,221 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs (for <i>E. coli</i> strain <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>-12). The diagram is circular because the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> of <i>E. coli</i>, like that of other procaryotes, forms a single, closed loop. Protein-coding genes are shown as <i>yellow</i> or <i>orange bars</i>, depending on the DNA strand from which they are transcribed; genes encoding only <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules are indicated by <i>green arrows</i>. Some genes are transcribed from one strand of the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> (in a clockwise direction in this diagram), others from the other strand (counterclockwise). (A, courtesy of Tony Brain and the Science Photo Library; B, after F. R. Blattner et al., <i>Science</i> 277:1453–1462, 1997. © AAAS.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722788034-332994320.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-31 - <span class="title">The major features of eucaryotic cells</span></span></center>
+<p>The drawing depicts a typical animal cell, but almost all the same components are found in plants and fungi and in single-celled eucaryotes such as yeasts and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5704/">protozoa</a>. Plant cells contain chloroplasts in addition to the components shown here, and their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> is surrounded by a tough external wall formed of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4949/">cellulose</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722788236-608732436.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-32 - <span class="title">Phagocytosis</span></span></center>
+<p>This series of stills from a movie shows a human white blood cell (a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5530/">neutrophil</a>) engulfing a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5726/">red blood cell</a> (artificially colored <i>red)</i> that has been treated with antibody<i>.</i> (Courtesy of Stephen E. Malawista and Anne de Boisfleury Chevance.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722788414-8405017.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-33 - <span class="title">A single-celled eucaryote that eats other cells</span></span></center>
+<p>(A) <i>Didinium</i> is a carnivorous protozoan, belonging to the group known as <i>ciliates</i>. It has a globular body, about 150 μm in diameter, encircled by two fringes of cilia—sinuous, whiplike appendages that beat continually; its front end is flattened except for a single protrusion, rather like a snout. (B) <i>Didinium</i> normally swims around in the water at high speed by means of the synchronous beating of its cilia. When it encounters a suitable prey, usually another type of protozoan, it releases numerous small paralyzing darts from its snout region. Then, the <i>Didinium</i> attaches to and devours the other cell by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5615/">phagocytosis</a>, inverting like a hollow ball to engulf its victim, which is almost as large as itself. (Courtesy of D. Barlow.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722788582-117067836.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-34 - <span class="title">A mitochondrion</span></span></center>
+<p>(A) A cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a>, as seen in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5122/">electron microscope</a>. (B) A drawing of a mitochondrion with part of it cut away to show the three-dimensional structure. (C) A schematic eucaryotic cell, with the interior space of a mitochondrion, containing the mitochondrial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> and ribosomes, colored. Note the smooth <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5589/">outer membrane</a> and the convoluted <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5337/">inner membrane</a>, which houses the proteins that generate ATP from the oxidation of food molecules. (A, courtesy of Daniel S. Friend.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722788808-997352439.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-35 - <span class="title">The origin of mitochondria</span></span></center>
+<p>An ancestral eucaryotic cell is thought to have engulfed the bacterial ancestor of mitochondria, initiating a symbiotic relationship.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722788983-736730805.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-36 - <span class="title">Chloroplasts</span></span></center>
+<p>These organelles capture the energy of sunlight in plant cells and some single-celled eucaryotes. (A) Leaf cells in a moss seen in the light microscope, showing the green chloroplasts. (B) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4969/">chloroplast</a> in a leaf of grass, showing the highly folded system of internal membranes containing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4968/">chlorophyll</a> molecules by which light is absorbed. (C) An interpretative drawing of (B). (B, courtesy of Eldon Newcomb.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722789186-422955972.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-37 - <span class="title">The origin of chloroplasts</span></span></center>
+<p>An early eucaryotic cell, already possessing mitochondria, engulfed a photosynthetic bacterium (a cyanobacterium) and retained it in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5846/">symbiosis</a>. All present-day chloroplasts are thought to trace their ancestry back to a single species of cyanobacterium that was adopted as an internal symbiont (an endosymbiont) over a billion years ago.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722789409-10146433.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-38 - <span class="title">Genome sizes compared</span></span></center>
+<p>Genome size is measured in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> per <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5264/">haploid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>, that is, per single copy of the genome. (The cells of sexually reproducing organisms such as ourselves are generally <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5077/">diploid</a>: they contain two copies of the genome, one inherited from the mother, the other from the father.) Closely related organisms can vary widely in the quantity of DNA in their genomes, even though they contain similar numbers of functionally distinct genes. (Data from W.-H. Li, Molecular Evolution, pp. 380–383. Sunderland, MA: Sinauer, 1997.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722789613-347601702.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-39 - <span class="title">The puffer fish <i>(Fugu rubripes).</i></span></span></center>
+<p> This organism has a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> size of 400 million <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs—about one-quarter as much as a zebrafish, for example, even though the two species of fish have similar numbers of genes. (From a woodcut by Hiroshige, courtesy of Arts and Designs of Japan.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722789779-730342940.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-40 - <span class="title">Controlling gene readout by environmental signals</span></span></center>
+<p>Regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> allows <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> to be controlled by regulatory proteins, which are in turn the products of other genes. This diagram shows how a cell's gene expression is adjusted according to a signal from the cell's environment. The initial effect of the signal is to activate a regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> already present in the cell; the signal may, for example, trigger the attachment of a phosphate group to the regulatory protein, altering its chemical properties.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722789947-235550932.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-41 - <span class="title">Genetic control of the program of multicellular development</span></span></center>
+<p>The role of a regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> is demonstrated in the snapdragon <i>Antirrhinum</i>. In this example, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in a single gene coding for a regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> causes leafy shoots to develop in place of flowers: because a regulatory protein has been changed, the cells adopt characters that would be appropriate to a different location in the normal plant. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> is on the left, the normal plant on the right. (Courtesy of Enrico Coen and Rosemary Carpenter.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722790118-931843789.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-42 - <span class="title">An assortment of protists: a small sample of an extremely diverse class of organisms</span></span></center>
+<p>The drawings are done to different scales, but in each case the scale bar represents 10 μm. The organisms in (A), (B), (E), (F), and (I) are ciliates; (C) is a euglenoid; (D) is an amoeba; (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>) is a dinoflagellate; (H) is a heliozoan. (From M.A. Sleigh, Biology of Protozoa. Cambridge, UK: Cambridge University Press, 1973.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722790391-102430530.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-43 - <span class="title">The yeast <i>Saccharomyces cerevisiae.</i></span></span></center>
+<p> (A) A scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a cluster of the cells. This species is also known as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4893/">budding yeast</a>; it proliferates by forming a protrusion or bud that enlarges and then separates from the rest of the original cell. Many cells with buds are visible in this micrograph. (B) A transmission electron micrograph of a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a yeast cell, showing its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, mitochondrion, and thick <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4943/">cell wall</a>. (A, courtesy of Ira Herskowitz and Eric Schabatach.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722790560-732280090.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-44 - <span class="title">The reproductive cycles of the yeast <i>S. cerevisiae.</i></span></span></center>
+<p>Depending on environmental conditions and on details of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5226/">genotype</a>, cells of this species can exist in either a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5077/">diploid</a> state, with a double <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> set, or a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5264/">haploid</a> state, with a single chromosome set. The diploid form can either proliferate by ordinary cell-division cycles or undergo <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a> to produce haploid cells. The haploid form can either proliferate by ordinary cell-division cycles or undergo sexual fusion with another haploid cell to become diploid. Meiosis is triggered by starvation and gives rise to spores—haploid cells in a dormant state, resistant to harsh environmental conditions.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722790736-357067835.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-45 - <span class="title">Monitoring changes in yeast gene expression using a DNA array</span></span></center>
+<p>Samples of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence corresponding to each of the ~6300 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>-coding genes in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> are deposited in a square array on a glass microscope slide: (A) shows the entire array of 6400 spots; (B) shows a small region at higher magnification; (C) shows the actual size of array (A). The array has been used here to compare the sets of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> molecules produced by yeast cells with and without <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5234/">glucose</a> in their culture medium. If the cells supplied with glucose transcribe a particular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> into mRNA, a preparation of mRNA from these cells will contain molecules that can bind selectively to the corresponding DNA spot in the array. In practice, the mRNA extracted from the cells is not applied directly to the array but is used (as we explain in Chapter 8) to generate another mixture of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5561/">nucleic acid</a> molecules, called <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4931/">cDNA</a> molecules, that correspond in sequence to the mRNA molecules. In this experiment, they are tagged with a chemical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5378/">label</a> that fluoresces green. When the cDNA mixture is applied to the array, each cDNA in the mixture binds to its corresponding spot in the array: a bright <i>green</i> fluorescence at a given spot indicates strong <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> of a specific gene. The whole procedure is now repeated with yeast cells deprived of glucose, tagging their cDNAs with a <i>red</i> fluorescent label and applying it to the same DNA array. Therefore, a <i>green</i> spot indicates a gene expressed more strongly in the presence of glucose than in its absence; a <i>red</i> spot indicates the opposite. Spots in the array corresponding to genes that are expressed equally in the two conditions bind both green and red cDNA molecules equally and therefore glow <i>yellow</i>. (From J.L. DeRisi et al., <i>Science</i> 278:680–686, 1997. © AAAS.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722790902-798507539.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-46</span></center>
+<p>(Courtesy of Toni Hayden and the John Innes Foundation.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722791059-928909647.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-47</span></center>
+<p> This small nematode, about 1 mm long, lives in the soil. Most individuals are hermaphrodites, producing both eggs and sperm. (Courtesy of Ian Hope.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722791224-22006431.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-48</span></center>
+<p> Molecular genetic studies on this fly have provided the main key to understanding how all animals develop from a fertilized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> into an adult. (From E.B. Lewis, <i>Science</i> 221:cover, 1983. © AAAS.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722791364-127388928.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-49 - <span class="title">Giant chromosomes from salivary gland cells of <i>Drosophila.</i></span></span></center>
+<p> Because many rounds of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication have occurred without an intervening <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a>, each of the chromosomes in these unusual cells contains over a 1000 identical DNA molecules, all aligned in register. This makes them easy to see in the light microscope, where they display a characteristic and reproducible banding pattern. Specific bands can be identified as the locations of specific genes: a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> fly with a region of the banding pattern missing shows a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5618/">phenotype</a> reflecting loss of the genes in that region. Genes that are being transcribed at a high rate correspond to bands with a “puffed” appearance. The bands stained dark brown in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> are sites where a particular regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is bound to the DNA. (Courtesy of B. Zink and R. Paro, from R. Paro, <i>Trends Genet</i>. 6:416–421, 1990. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722791533-104655077.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-50 - <span class="title">Two species of the frog genus <i>Xenopus.</i></span></span></center>
+<p>
+<i>X. tropicalis</i>, above, has an ordinary <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5077/">diploid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>; <i>X. laevis</i>, below, has twice as much <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> per cell. From the banding patterns of their chromosomes and the arrangement of genes along them, as well as from comparisons of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> sequences, it is clear that the high-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5650/">ploidy</a> species have evolved through duplications of the whole genome. These duplications are thought to have occurred in the aftermath of matings between frogs of slightly divergent <i>Xenopus</i> species. (Courtesy of E. Amaya, M. Offield, and R. Grainger, <i>Trends Gen.</i> 14:253–255, 1998. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722791719-818253234.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-51 - <span class="title">The consequences of gene duplication for mutational analyses of gene function</span></span></center>
+<p>In this hypothetical example, an ancestral multicellular organism has a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> containing a single copy of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>, which performs its function at several sites in the body, indicated in <i>green</i>. (A) Through gene duplication, a modern descendant of the ancestral organism has two copies of gene G, called G<sub>1</sub> and G<sub>2</sub>. These have diverged somewhat in their patterns of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> and in their activities at the sites where they are expressed, but they still retain important similarities. At some sites, they are expressed together, and each independently performs the same old function as the ancestral gene G (alternating <i>green</i> and <i>yellow stripes);</i> at other sites, they are expressed alone and serve new purposes. (B) Because of a functional overlap, the loss of one of the two genes by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> <i>(red cross)</i> reveals only a part of its role; only the loss of both genes in the double <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> reveals the full range of processes for which these genes are responsible. Analogous principles apply to duplicated genes that operate in the same place (for example, in a single-celled organism) but are called into action together or individually in response to varying circumstances. Thus, gene duplications complicate genetic analyses in all organisms.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722791909-737018525.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-52 - <span class="title">Times of divergence of different vertebrates</span></span></center>
+<p>The scale on the left shows the estimated date and geological era of the last common ancestor of each specified pair of animals. Each time estimate is based on comparisons of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequences of orthologous proteins; the longer a pair of animals have had to evolve independently, the smaller the percentage of amino acids that remain identical. Data from many different classes of proteins have been averaged to arrive at the final estimates, and the time scale has been calibrated to match the fossil evidence that the last common ancestor of mammals and birds lived 310 million years ago. The figures on the right give data on sequence divergence for one particular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> (chosen arbitrarily)—the α chain of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5272/">hemoglobin</a>. Note that although there is a clear general trend of increasing divergence with increasing time for this protein, there are also some irregularities. These reflect the randomness of the evolutionary process and, probably, the action of natural selection driving especially rapid changes of hemoglobin sequence in some organisms that experienced special physiological demands. On average, within any particular evolutionary lineage, hemoglobins accumulate changes at a rate of about 6 altered amino acids per 100 amino acids every 100 million years. Some proteins, subject to stricter functional constraints, evolve much more slowly than this, others as much as 5 times faster. All this gives rise to substantial uncertainties in estimates of divergence times, and some experts believe that the major groups of mammals diverged from one another as much as 60 million years more recently than shown here. (Adapted from S. Kumar and S.B. Hedges, <i>Nature</i> 392:917–920, 1998.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631722792118-973812726.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 1-53 - <span class="title">Human and mouse: similar genes and similar development</span></span></center>
+<p>The human baby and the mouse shown here have similar white patches on their foreheads because both have mutations in the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> (called <i>kit),</i> required for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> and maintenance of pigment cells. (From R.A. Fleischman, <i>Proc. Natl. Acad. Sci. USA</i> 88:10885–10889, 1991. © National Academy of Sciences.)</p></div></div>
+</body>
+</html>

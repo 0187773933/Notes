@@ -1,0 +1,1591 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+/*blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}*/
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    padding-left: 30px;
+    margin-top: 35px;
+    border-left: 2px solid #D5C5C8;
+    background: #474d54;
+    background-color: #474d54;
+    color: #B197FC;
+}
+
+/*#772D8B , #2660A4 , #D90368 , #048BA8*/
+/*https://coolors.co/d6ffb7-61cc9e-048ba8-ffbfa0-d5c5c8*/
+/*blockquote blockquote { border-left: 3px solid #61CC9E }*/
+blockquote blockquote { border-left: 2px solid #D6FFB7; border-bottom:none; }
+blockquote blockquote blockquote { border-left: 2px solid #FFBFA0; border-bottom:none; }
+blockquote blockquote blockquote blockquote { border-left: 2px solid #048BA8; border-bottom:none; }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #D90368; border-bottom:none; }
+
+blockquote .md-math-block {
+    color: #FFEBFF;
+}
+
+blockquote h2 {
+    color: #EBD6A6;
+}
+
+blockquote h6 {
+    border-radius:2em;
+    opacity: 0.9;
+    background-color:#B1C6FC;
+    color:black;
+    hite-space:normal;
+    display:inline-block;
+    padding:0.2em;
+}
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+/*blockquote {
+    color: #9DA2A6;
+}
+*/
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 5 - Figures</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 5 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721056756-976904724.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-2 - <span class="title">The DNA double helix acts as a template for its own duplication</span></span></center>
+<p>Because the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> A will successfully pair only with T, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> only with C, each strand of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> can serve as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> to specify the sequence of nucleotides in its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> strand by DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-pairing. In this way, a double-helical DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> can be copied precisely.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721056922-15774706.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-3 - <span class="title">The chemistry of DNA synthesis</span></span></center>
+<p>The addition of a deoxyribonucleotide to the 3′ end of a polynucleotide chain (the <i>primer strand)</i> is the fundamental <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> by which <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is synthesized. As shown, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-pairing between an incoming deoxyribonucleoside triphosphate and an existing strand of DNA (the <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> strand)</i> guides the formation of the new strand of DNA and causes it to have a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721057127-651566650.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-4 - <span class="title">DNA synthesis catalyzed by DNA polymerase</span></span></center>
+<p>(A) As indicated, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> catalyzes the stepwise addition of a deoxyribonucleotide to the 3′-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">OH</a> end of a polynucleotide chain, the <i>primer strand</i>, that is paired to a second <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> strand</i>. The newly synthesized DNA strand therefore polymerizes in the 5′-to-3′ direction as shown in the previous figure. Because each incoming deoxyribonucleoside triphosphate must pair with the template strand to be recognized by the DNA polymerase, this strand determines which of the four possible deoxyribonucleotides (A, C, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>, or T) will be added. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> is driven by a large, favorable free-energy change, caused by the release of pyrophosphate and its subsequent hydrolysis to two molecules of inorganic phosphate. (B) The structure of an <i>E. coli</i> DNA polymerase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography. Roughly speaking, it resembles a right hand in which the palm, fingers, and thumb grasp the DNA. This drawing illustrates a DNA polymerase that functions during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5094/">DNA repair</a>, but the enzymes that replicate DNA have similar features. (B, adapted from L.S. Beese, V. Derbyshire, and T.A. Steitz, <i>Science</i> 260:352–355, 1993.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721057339-726482758.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-5 - <span class="title">The semiconservative nature of DNA replication</span></span></center>
+<p>In a round of replication, each of the two strands of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is used as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> for the formation of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5011/">complementary DNA</a> strand. The original strands therefore remain intact through many cell generations.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721057508-120849146.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-6 - <span class="title">Two replication forks moving in opposite directions on a circular chromosome</span></span></center>
+<p>An active zone of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication moves progressively along a replicating DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, creating a Y-shaped DNA structure known as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a>: the two arms of each Y are the two daughter DNA molecules, and the stem of the Y is the parental DNA helix. In this diagram, parental strands are <i>orange;</i> newly synthesized strands are <i>red</i>. (Micrograph courtesy of Jerome Vinograd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721057677-986696517.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-7 - <span class="title">An incorrect model for DNA replication</span></span></center>
+<p>Although it might seem to be the simplest possible model for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication, the mechanism illustrated here is not the one that cells use. In this scheme, both daughter DNA strands would grow continuously, using the energy of hydrolysis of the two terminal phosphates <i>(yellow circles</i> highlighted by <i>red rays)</i> to add the next <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> on each strand. This would require chain growth in both the 5′-to-3′ direction <i>(top)</i> and the 3′-to-5′ direction <i>(bottom).</i> No <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> that catalyzes 3′-to-5′ nucleotide polymerization has ever been found.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721057843-789632130.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-8 - <span class="title">The structure of a DNA replication fork</span></span></center>
+<p>Because both daughter <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> strands are polymerized in the 5′-to-3′ direction, the DNA synthesized on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a> must be made initially as a series of short DNA molecules, called <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5571/">Okazaki fragments</a>.</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721058010-710807332.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-9 - <span class="title">Exonucleolytic proofreading by DNA polymerase during DNA replication</span></span></center>
+<p>In this example, the mismatch is due to the incorporation of a rare, transient tautomeric form of C, indicated by an asterisk. But the same proofreading mechanism applies to any misincorporation at the growing 3′-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">OH</a> end.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721058217-524842363.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-10 - <span class="title">Editing by DNA polymerase</span></span></center>
+<p>Outline of the structures of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> complexed with the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> in the polymerizing mode <i>(left)</i> and the editing mode <i>(right).</i> The catalytic site for the exonucleolytic (E) and the polymerization (P) reactions are indicated. To determine these structures by x-ray crystallography, researchers “froze” the polymerases in these two states, by using either a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> polymerase defective in the exonucleolytic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> <i>(right),</i> or by withholding the Mg<sup>2+</sup> required for polymerization <i>(left).</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721058389-860324517.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-11 - <span class="title">An explanation for the 5′-to-3′ direction of DNA chain growth</span></span></center>
+<p>Growth in the 5′-to-3′ direction, shown on the right, allows the chain to continue to be elongated when a mistake in polymerization has been removed by exonucleolytic proofreading (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26850/figure/A765/?report=objectonly" rid-figpopup="figA765" rid-ob="figobA765" target="object">Figure 5-9</a>). In contrast, exonucleolytic proofreading in the hypothetical 3′-to-5′ polymerization scheme, shown on the left, would block further chain elongation. For convenience, only the primer strand of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> is shown.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721058627-891803208.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-12 - <span class="title">RNA primer synthesis</span></span></center>
+<p>A schematic view of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> catalyzed by <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5093/">DNA primase</a>,</i> the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> that synthesizes the short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> primers made on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a> using DNA as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a>. Unlike <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a>, this enzyme can start a new polynucleotide chain by joining two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5565/">nucleoside</a> triphosphates together. The primase synthesizes a short polynucleotide in the 5′-to-3′ direction and then stops, making the 3′ end of this primer available for the DNA polymerase.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721058795-681737144.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-13 - <span class="title">The synthesis of one of the many DNA fragments on the lagging strand</span></span></center>
+<p>In eucaryotes, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> primers are made at intervals spaced by about 200 nucleotides on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a>, and each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5761/">RNA primer</a> is approximately 10 nucleotides long. This primer is erased by a special <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5094/">DNA repair</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> (an RNAse H) that recognizes an RNA strand in an RNA/DNA helix and fragments it; this leaves gaps that are filled in by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5089/">DNA ligase</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721058958-435838394.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-14 - <span class="title">The reaction catalyzed by DNA ligase</span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> seals a broken phosphodiester bond. As shown, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5089/">DNA ligase</a> uses a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of ATP to activate the 5′ end at the nick (step 1) before forming the new bond (step 2). In this way, the energetically unfavorable nick-sealing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> is driven by being coupled to the energetically favorable process of ATP hydrolysis.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721059123-290564507.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-15 - <span class="title">An assay used to test for DNA helicase enzymes</span></span></center>
+<p>A short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> fragment is annealed to a long DNA single strand to form a region of DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>. The double helix is melted as the helicase runs along the DNA single strand, releasing the short DNA fragment in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> that requires the presence of both the helicase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> and ATP. The rapid step-wise movement of the helicase is powered by its ATP hydrolysis (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A452/figure/A522/?report=objectonly" rid-figpopup="figA522" rid-ob="figobA522" target="object">Figure 3-76</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721059302-205142540.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-16 - <span class="title">The structure of a DNA helicase</span></span></center>
+<p>(A) A schematic diagram of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> as a hexameric ring. (B) Schematic diagram showing a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> and helicase to scale. (C) Detailed structure of the bacteriophage T7 replicative helicase, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray diffraction. Six identical subunits bind and hydrolyze ATP in an ordered fashion to propel this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> along a DNA single strand that passes through the central hole. <i>Red</i> indicates bound ATP molecules in the structure. (B, courtesy of Edward H. Egelman; C, from M.R. Singleton et al., <i>Cell</i> 101:589–600, 2000. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721059478-258583581.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-17 - <span class="title">The effect of single-strand DNA-binding proteins (SSB proteins) on the structure of single-stranded DNA</span></span></center>
+<p>Because each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> prefers to bind next to a previously bound molecule, long rows of this protein form on a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> single strand. This <i>cooperative binding</i> straightens out the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> and facilitates the DNA polymerization process. The “hairpin helices” shown in the bare, single-stranded DNA result from a chance matching of short regions of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence; they are similar to the short helices that typically form in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4/figure/A13/?report=objectonly" rid-figpopup="figA13" rid-ob="figobA13" target="object">Figure 1-6</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721059648-107438155.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-18 - <span class="title">The structure of the single-strand binding protein from humans bound to DNA</span></span></center>
+<p>(A) A front view of the two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> binding domains of RPA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, which cover a total of eight nucleotides. Note that the DNA bases remain exposed in this protein–DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. (B) A diagram showing the three-dimensional structure, with the DNA strand <i>(red)</i> viewed end-on. (B, from A. Bochkarev et al., <i>Nature</i> 385:176–181, 1997. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721059820-683240956.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-19 - <span class="title">The regulated sliding clamp that holds DNA polymerase on the DNA</span></span></center>
+<p>(A) The structure of the clamp <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> from <i>E. coli</i>, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography, with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> helix added to indicate how the protein fits around DNA. (B) A similar protein is present in eucaryotes, as illustrated by this comparison of the <i>E. coli</i> sliding clamp <i>(left)</i> with the PCNA protein from humans <i>(right).</i> (C) Schematic illustration showing how the clamp is assembled to hold a moving <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> on the DNA. In the simplified <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> shown here, the clamp loader dissociates into solution once the clamp has been assembled. At a true <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a>, the clamp loader remains close to the lagging-strand polymerase, ready to assemble a new clamp at the start of each new Okazaki fragment (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26850/figure/A784/?report=objectonly" rid-figpopup="figA784" rid-ob="figobA784" target="object">Figure 5-22</a>). (A and B, from X.-P. Kong et al., <i>Cell</i> 69:425–437, 1992. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721060025-868203566.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-20 - <span class="title">A cycle of loading and unloading of DNA polymerase and the clamp protein on the lagging strand</span></span></center>
+<p>The association of the clamp loader with the lagging-strand polymerase shown here is for illustrative purposes only; in reality, the clamp loader is carried along with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> that includes both the leading-strand and lagging-strand <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> polymerases (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26850/figure/A784/?report=objectonly" rid-figpopup="figA784" rid-ob="figobA784" target="object">Figure 5-22</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721060271-941851080.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-21 - <span class="title">The proteins at a bacterial DNA replication fork</span></span></center>
+<p>The major types of proteins that act at a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> are illustrated, showing their approximate positions on the DNA.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721060476-208290556.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-22 - <span class="title">A moving replication fork</span></span></center>
+<p>(A) This schematic diagram shows a current view of the arrangement of replication proteins at a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> when the fork is moving. The diagram in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26850/figure/A783/?report=objectonly" rid-figpopup="figA783" rid-ob="figobA783" target="object">Figure 5-21</a> has been altered by folding the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a> to bring the lagging-strand <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> with the leading-strand DNA polymerase molecule. This folding process also brings the 3′ end of each completed Okazaki fragment close to the start site for the next Okazaki fragment (compare with <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26850/figure/A783/?report=objectonly" rid-figpopup="figA783" rid-ob="figobA783" target="object">Figure 5-21</a>). Because the lagging-strand DNA polymerase molecule remains bound to the rest of the replication proteins, it can be reused to synthesize successive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5571/">Okazaki fragments</a>. In this diagram, it is about to let go of its completed DNA fragment and move to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5761/">RNA primer</a> that will be synthesized nearby, as required to start the next DNA fragment. Note that one daughter DNA helix extends toward the bottom right and the other toward the top left in this diagram. Additional proteins help to hold the different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> components of the fork together, enabling them to function as a well-coordinated protein machine. The actual protein complex is more compact than indicated, and the clamp loader is held in place by interactions not shown here. (B) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> showing the replication machine from the bacteriophage T4 as it moves along a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> synthesizing DNA behind it. (C) An interpretation of the micrograph is given in the sketch: note especially the DNA loop on the lagging strand. Apparently, the replication proteins became partly detached from the very front of the replication fork during the preparation of this sample for electron microscopy. (B, courtesy of Jack Griffith.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721060654-326108709.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-23 - <span class="title">A model for strand-directed mismatch repair in eucaryotes</span></span></center>
+<p>(A) The two proteins shown are present in both bacteria and eucaryotic cells: MutS binds specifically to a mismatched <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4876/">base pair</a>, while MutL scans the nearby <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> for a nick. Once a nick is found, MutL triggers the degradation of the nicked strand all the way back through the mismatch. Because nicks are largely confined to newly replicated strands in eucaryotes, replication errors are selectively removed. In bacteria, the mechanism is the same, except that an additional <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> (MutH) nicks unmethylated (and therefore newly replicated) GATC sequences, thereby beginning the process illustrated here. (B) The structure of the MutS protein bound to a DNA mismatch. This protein is a dimer, which grips the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> as shown, kinking the DNA at the mismatched base pair. It seems that the MutS protein scans the DNA for mismatches by testing for sites that can be readily kinked, which are those without a normal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> base pair. (B, from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Obmolova et al., <i>Nature</i> 407:703–710, 2000. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721060832-923410502.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-24 - <span class="title">The “winding problem” that arises during DNA replication</span></span></center>
+<p>For a bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> moving at 500 nucleotides per second, the parental <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> helix ahead of the fork must rotate at 50 revolutions per second.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721060995-372650623.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-25 - <span class="title">The reversible nicking reaction catalyzed by a eucaryotic DNA topoisomerase I enzyme</span></span></center>
+<p>As indicated, these enzymes transiently form a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5034/">covalent bond</a> with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>; this allows free rotation of the DNA around the covalent backbone bonds linked to the <i>blue</i> phosphate.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721061209-133994464.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-26 - <span class="title">A model for topoisomerase II action</span></span></center>
+<p>As indicated, ATP binding to the two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4853/">ATPase</a> domains causes them to dimerize and drives the reactions shown. Because a single cycle of this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> can occur in the presence of a non-hydrolyzable ATP analog, ATP hydrolysis is thought to be needed only to reset the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> for each new reaction cycle. This model is based on structural and mechanistic studies of the enzyme. (Modified from J.M. Berger, <i>Curr. Opin. Struct. Biol.</i> 8:26–32, 1998.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721061412-614445182.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-27 - <span class="title">The DNA-helix-passing reaction catalyzed by DNA topoisomerase II</span></span></center>
+<p>Identical reactions are used to untangle <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> inside the cell. Unlike type I topoisomerases, type II enzymes use ATP hydrolysis and some of the bacterial versions can introduce superhelical tension into DNA. Type II topoisomerases are largely confined to proliferating cells in eucaryotes; partly for that reason, they have been popular targets for anticancer drugs.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721061618-984973108.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-28 - <span class="title">A mammalian replication fork</span></span></center>
+<p>The fork is drawn to emphasize its similarity to the bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> depicted in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26850/figure/A783/?report=objectonly" rid-figpopup="figA783" rid-ob="figobA783" target="object">Figure 5-21</a>. Although both forks use the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4877/">basic</a> components, the mammalian fork differs in at least two important respects. First, it uses two different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> polymerases on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a>. Second, the mammalian <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5093/">DNA primase</a> is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of one of the lagging-strand DNA polymerases, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> α, while that of bacteria is associated with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5087/">DNA helicase</a> in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5677/">primosome</a>. The polymerase α (with its associated primase) begins chains with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a>, extends them with DNA, and then hands the chains over to the second polymerase (δ), which elongates them. It is not known why eucaryotic DNA replication requires two different polymerases on the lagging strand. The major mammalian DNA helicase seems to be based on a ring formed from six different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5431/">Mcm proteins</a>; this ring may move along the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5385/">leading strand</a>, rather than along the lagging-strand <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> shown here.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721886618-74601583.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-29 - <span class="title">A replication bubble formed by replication fork initiation</span></span></center>
+<p>This diagram outlines the major steps involved in the initiation of replication forks at replication origins. The structure formed at the last step, in which both strands of the parental <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> helix have been separated from each other and serve as templates for DNA synthesis, is called a <i>replication bubble.</i>
+</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721886824-27706329.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-30 - <span class="title">DNA replication of a bacterial genome</span></span></center>
+<p>It takes <i>E. coli</i> about 40 minutes to duplicate its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> of 4.6 × 10<sup>6</sup> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs. For simplicity, no <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5571/">Okazaki fragments</a> are shown on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a>. What happens as the two replication forks approach each other and collide at the end of the replication cycle is not well understood, although the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5677/">primosome</a> is disassembled as part of the process.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721886996-109432896.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-31 - <span class="title">The proteins that initiate DNA replication in bacteria</span></span></center>
+<p>The mechanism shown was established by studies <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a></i> with a mixture of highly purified proteins. For <i>E. coli</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication, the major initiator <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is the dnaA protein; the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5677/">primosome</a> is composed of the dnaB (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5087/">DNA helicase</a>) and dnaG (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5093/">DNA primase</a>) proteins. In solution, the helicase is bound by an inhibitor protein (the dnaC protein), which is activated by the initiator proteins to load the helicase onto DNA at the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5734/">replication origin</a> and then released. This inhibitor prevents the helicase from inappropriately entering other single-stranded stretches of DNA in the bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>. Subsequent steps result in the initiation of three more DNA chains (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26826/figure/A797/?report=objectonly" rid-figpopup="figA797" rid-ob="figobA797" target="object">Figure 5-29</a>) by a pathway whose details are incompletely specified.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721887224-121202422.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-32 - <span class="title">Methylation of the <i>E. coli</i> replication origin creates a refractory period for DNA initiation</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5090/">DNA methylation</a> occurs at GATC sequences, 11 of which are found in the origin of replication (spanning about 250 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs). About 10 minutes after replication is initiated, the hemimethylated origins become fully methylated by a DNA methylase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>. As discussed earlier, the lag in methylation after the replication of GATC sequences is also used by the <i>E. coli</i> mismatch proofreading system to distinguish the newly synthesized DNA strand from the parental DNA strand; in that case, the relevant GATC sequences are scattered throughout the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. A single enzyme, the <i>dam</i> methylase, is responsible for methylating <i>E. coli</i> GATC sequences.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721887396-278788630.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-33 - <span class="title">The experiments that demonstrated the pattern in which replication forks are formed and move on eucaryotic chromosomes</span></span></center>
+<p>The new <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> made in human cells in culture was labeled briefly with a pulse of highly radioactive thymidine (<sup>3</sup>H-thymidine). (A) In this experiment, the cells were lysed, and the DNA was stretched out on a glass slide that was subsequently covered with a photographic emulsion. After several months the emulsion was developed, revealing a line of silver grains over the radioactive DNA. The <i>brown</i> DNA in this figure is shown only to help with the interpretation of the autoradiograph; the unlabeled DNA is invisible in such experiments. (B) This experiment was the same except that a further incubation in unlabeled medium allowed additional DNA, with a lower level of radioactivity, to be replicated. The pairs of dark tracks in (B) were found to have silver grains tapering off in opposite directions, demonstrating bidirectional fork movement from a central <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5734/">replication origin</a> where a replication bubble forms (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26826/figure/A797/?report=objectonly" rid-figpopup="figA797" rid-ob="figobA797" target="object">Figure 5-29</a>). A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5733/">replication fork</a> is thought to stop only when it encounters a replication fork moving in the opposite direction or when it reaches the end of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>; in this way, all the DNA is eventually replicated.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721887559-652362839.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-34 - <span class="title">The four successive phases of a standard eucaryotic cell cycle</span></span></center>
+<p>During the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>1</sub>, S, and G<sub>2</sub> phases, the cell grows continuously. During <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a> growth stops, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> divides, and the cell divides in two. <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication is confined to the part of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> known as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>. G<sub>1</sub> is the gap between M phase and S phase; G<sub>2</sub> is the gap between S phase and M phase.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721887697-757747424.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-35 - <span class="title">Different regions of a chromosome are replicated at different times in S phase</span></span></center>
+<p>These light micrographs show stained mitotic chromosomes in which the replicating <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> has been differentially labeled during different defined intervals of the preceding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>. In these experiments, cells were first grown in the presence of BrdU (a thymidine analog) and in the absence of thymidine to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5378/">label</a> the DNA uniformly. The cells were then briefly pulsed with thymidine in the absence of BrdU during early, middle, or late S phase. Because the DNA made during the thymidine pulse is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> with thymidine on one strand and BrdU on the other, it stains more darkly than the remaining DNA (which has BrdU on both strands) and shows up as a bright band <i>(arrows)</i> on these negatives. Broken lines connect corresponding positions on the three identical copies of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> shown. (Courtesy of Elton Stubblefield.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721887870-708652581.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-36 - <span class="title">The strategy used to identify replication origins in yeast cells</span></span></center>
+<p>Each of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences identified in this way was called an autonomously replicating sequence (ARS), since it enables a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> that contains it to replicate in the host cell without having to be incorporated into a host cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721888073-873765105.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-37 - <span class="title">The origins of DNA replication on chromosome III of the yeast <i>S. cerevisiae</i></span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, one of the smallest eucaryotic chromosomes known, carries a total of 180 genes. As indicated, it contains nine replication origins.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721888205-99295594.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-38 - <span class="title">An origin of replication in yeast</span></span></center>
+<p>Comprising about 150 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs, this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> origin (identified by the procedure shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26826/figure/A810/?report=objectonly" rid-figpopup="figA810" rid-ob="figobA810" target="object">Figure 5-36</a>) has a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a> for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5584/">ORC</a>, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of proteins that binds to every origin of replication. The origin depicted also has binding sites (B1, B2, and B3) for other required proteins, which can differ between various origins. Although best characterized in yeast, a similar ORC is used to initiate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication in more complex eucaryotes, including humans.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721888345-393408579.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-39 - <span class="title">Deletions that inactivate an origin of replication in humans</span></span></center>
+<p>These two deletions are found separately in two individuals who suffer from <i>thalassemia,</i> a disorder caused by the failure to express one or more of the genes in the β-globin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> cluster shown. In both of these <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5062/">deletion</a> mutants, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> in this region is replicated by forks that begin at replication origins outside the β-globin gene cluster. As explained in the text, the deletion on the <i>left</i> removes DNA sequences that control the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4974/">chromatin</a> structure of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5734/">replication origin</a> on the <i>right</i>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721888512-221535108.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-40 - <span class="title">A demonstration that histones remain associated with DNA after the replication fork passes</span></span></center>
+<p>In this experiment, performed <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a>,</i> a mixture of two different-sized circular molecules of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> (only one of which is assembled into nucleosomes) are replicated with purified proteins. After a round of DNA replication, only the daughter DNA molecules that derived from the nucleosomal parent have inherited nucleosomes. This experiment also demonstrates that both newly synthesized DNA helices inherit old histones.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721888679-260030076.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-41 - <span class="title">The addition of new histones to DNA behind a replication fork</span></span></center>
+<p>The new nucleosomes are those colored <i>light yellow</i> in this diagram; as indicated, some of the histones that form them initially have specifically acetylated lysine side chains (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A608/figure/A648/?report=objectonly" rid-figpopup="figA648" rid-ob="figobA648" target="object">Figure 4-35</a>), which are later removed.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721888888-282163078.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-42 - <span class="title">The structure of telomerase</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5858/">telomerase</a> is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>–<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> that carries an RNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> for synthesizing a repeating, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>-rich <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence. Only the part of the telomerase protein <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5749/">reverse transcriptase</a> is shown here <i>(green).</i> A reverse transcriptase is a special form of polymerase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> that uses an RNA template to make a DNA strand; telomerase is unique in carrying its own RNA template with it at all times. (Modified from J. Lingner and T.R. Cech, <i>Curr. Opin. Genet. Dev.</i> 8:226–232, 1998.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721889067-392948063.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-43 - <span class="title">Telomere replication</span></span></center>
+<p>Shown here are the reactions involved in synthesizing the repeating <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>-rich sequences that form the ends of the chromosomes (telomeres) of diverse eucaryotic organisms. The 3′ end of the parental <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> strand is extended by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a>-templated DNA synthesis; this allows the incomplete daughter DNA strand that is paired with it to be extended in its 5′ direction. This incomplete, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5379/">lagging strand</a> is presumed to be completed by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> α, which carries a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5093/">DNA primase</a> as one of its subunits (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A754/figure/A793/?report=objectonly" rid-figpopup="figA793" rid-ob="figobA793" target="object">Figure 5-28</a>). The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a> sequence illustrated is that of the ciliate <i>Tetrahymena,</i> in which these reactions were first discovered. The telomere repeats are GGGTTG in the ciliate <i>Tetrahymena,</i> GGGTTA in humans, and G<sub>1–3</sub>A in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <i>S</i>. <i>cerevisiae</i>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721889272-144082466.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-44 - <span class="title">The t-loops at the end of mammalian chromosomes</span></span></center>
+<p>(A) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> at the end of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a> human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. The chromosome was fixed, deproteinated, and artificially thickened before viewing. The loop seen here is approximately 15,000 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs in length. (B) Model for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a> structure. The insertion of the single-stranded end into the duplex repeats to form a t-loop is carried out and maintained by specialized proteins, schematized in <i>green.</i> In addition it is possible, as shown, that the chromosome end is looped once again on itself through the formation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5276/">heterochromatin</a> adjacent to the t-loop (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A650/figure/A668/?report=objectonly" rid-figpopup="figA668" rid-ob="figobA668" target="object">Figure 4-47</a>). (A, from J.D. Griffith et al., <i>Cell</i> 97:503–514, 1999. © Elsevier.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721889439-704286714.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-45 - <span class="title">A demonstration that yeast cells control the length of their telomeres</span></span></center>
+<p>In this experiment, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a> at one end of a particular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> is artificially made either longer <i>(left)</i> or shorter <i>(right)</i> than average. After many cell divisions, the chromosome recovers, showing an average telomere length and a length distribution that is typical of the other chromosomes in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> cell. A similar feedback mechanism for controlling telomere length has been proposed to exist for the cells in the germ-line cells of animals.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721977972-530099880.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-46 - <span class="title">A summary of spontaneous alterations likely to require DNA repair</span></span></center>
+<p>The sites on each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> that are known to be modified by spontaneous oxidative damage <i>(red arrows),</i> hydrolytic attack <i>(blue arrows),</i> and uncontrolled methylation by the methyl group donor S-adenosylmethionine <i>(green arrows)</i> are shown, with the width of each arrow indicating the relative frequency of each event. (After T. Lindahl, <i>Nature</i> 362:709–715, 1993. © Macmillan Magazines Ltd.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721978141-705134129.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-47 - <span class="title">Depurination and deamination</span></span></center>
+<p>These two reactions are the most frequent spontaneous chemical reactions known to create serious <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> damage in cells. Depurination can release guanine (shown here), as well as adenine, from DNA. The major type of deamination <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> (shown here) converts cytosine to an altered DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>, uracil, but deamination occurs on other bases as well. These reactions take place on double-helical DNA; for convenience, only one strand is shown.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721978347-809834704.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-48 - <span class="title">The thymine dimer</span></span></center>
+<p>This type of damage is introduced into <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> in cells that are exposed to ultraviolet irradiation (as in sunlight). A similar dimer will form between any two neighboring <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5710/">pyrimidine</a> bases (C or T residues) in DNA.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721978512-994623809.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-49 - <span class="title">How chemical modifications of nucleotides produce mutations</span></span></center>
+<p>(A) Deamination of cytosine, if uncorrected, results in the substitution of one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> for another when the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is replicated. As shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26879/figure/A831/?report=objectonly" rid-figpopup="figA831" rid-ob="figobA831" target="object">Figure 5-47</a>, deamination of cytosine produces uracil. Uracil differs from cytosine in its base-pairing properties and preferentially base-pairs with adenine. The DNA replication machinery therefore adds an adenine when it encounters a uracil on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> strand. (B) Depurination, if uncorrected, can lead to either the substitution or the loss of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pair. When the replication machinery encounters a missing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5709/">purine</a> on the template strand, it may skip to the next complete nucleotide as illustrated here, thus producing a nucleotide <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5062/">deletion</a> in the newly synthesized strand. Many other types of DNA damage (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26879/figure/A830/?report=objectonly" rid-figpopup="figA830" rid-ob="figobA830" target="object">Figure 5-46</a>) also produce mutations when the DNA is replicated if left uncorrected.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721978702-92697832.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-50 - <span class="title">A comparison of two major DNA repair pathways</span></span></center>
+<p>(A) <i>Base excision repair</i>. This pathway starts with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> glycosylase. Here the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> uracil DNA glycosylase removes an accidentally deaminated cytosine in DNA. After the action of this glycosylase (or another DNA glycosylase that recognizes a different kind of damage), the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a> phosphate with the missing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> is cut out by the sequential action of AP endonuclease and a phosphodiesterase. (These same enzymes begin the repair of depurinated sites directly.) The gap of a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> is then filled by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5089/">DNA ligase</a>. The net result is that the U that was created by accidental deamination is restored to a C. The AP endonuclease derives its name from the fact that it recognizes any site in the DNA helix that contains a deoxyribose sugar with a missing base; such sites can arise either by the loss of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5709/">purine</a> <i>(ap</i>urinic sites) or by the loss of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5710/">pyrimidine</a> <i>(ap</i>yrimidinic sites). (B) <i>Nucleotide excision repair</i>. After a multienzyme <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> has recognized a bulky lesion such as a pyrimidine dimer (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26879/figure/A832/?report=objectonly" rid-figpopup="figA832" rid-ob="figobA832" target="object">Figure 5-48</a>), one cut is made on each side of the lesion, and an associated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5087/">DNA helicase</a> then removes the entire portion of the damaged strand. The multienzyme complex in bacteria leaves the gap of 12 nucleotides shown; the gap produced in human DNA is more than twice this size. The nucleotide excision repair machinery can recognize and repair many different types of DNA damage.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721978913-342821662.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-51 - <span class="title">The recognition of an unusual nucleotide in DNA by base-flipping</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> glycosylase family of enzymes recognizes specific bases in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> shown. Each of these enzymes cleaves the glycosyl bond that connects a particular recognized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> <i>(yellow)</i> to the backbone <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5842/">sugar</a>, removing it from the DNA. (A) Stick model; (B) space-filling model.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721979084-371192574.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-52 - <span class="title">The deamination of DNA nucleotides</span></span></center>
+<p>In each case the oxygen atom that is added in this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> with water is colored <i>red</i>. (A) The spontaneous deamination products of A and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> are recognizable as unnatural when they occur in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> and thus are readily recognized and repaired. The deamination of C to U was previously illustrated in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26879/figure/A831/?report=objectonly" rid-figpopup="figA831" rid-ob="figobA831" target="object">Figure 5-47</a>; T has no <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4809/">amino group</a> to deaminate. (B) About 3% of the C nucleotides in vertebrate DNAs are methylated to help in controlling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> (discussed in Chapter 7). When these 5-methyl C nucleotides are accidentally deaminated, they form the natural <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> T. This T would be paired with a G on the opposite strand, forming a mismatched <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4876/">base pair</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721979309-279725733.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-53 - <span class="title">Two different types of end-joining for repairing double-strand breaks</span></span></center>
+<p>(A) Nonhomologous end-joining alters the original <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence when repairing broken chromosomes. These alterations can be either deletions (as shown) or short insertions. (B) Homologous end-joining is more difficult to accomplish, but is much more precise.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721981499-521868165.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-54 - <span class="title">General recombination</span></span></center>
+<p>The breaking and rejoining of two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> double helices creates two DNA molecules that have “crossed over.” In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a>, this process causes each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5227/">germ cell</a> to contain a mixture of maternally and paternally inherited genes.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721981665-936565770.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-55 - <span class="title">A heteroduplex joint</span></span></center>
+<p>This structure unites two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules where they have crossed over. Such a joint is often thousands of nucleotides long.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721981826-542929579.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-56 - <span class="title">General recombination in meiosis</span></span></center>
+<p>As indicated, the process begins when an endonuclease makes a double-strand break in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. An exonuclease then creates two protruding 3′ single-stranded ends, which find the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> region of a second chromosome to begin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5849/">synapsis</a>. The joint <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> formed can eventually be resolved by selective strand cuts to produce two chromosomes that have crossed over, as shown.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721982056-920235556.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-57 - <span class="title">DNA hybridization</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> double helices re-form from their separated strands in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> that depends on the random collision of two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5011/">complementary DNA</a> strands. The vast majority of such collisions are not productive, as shown on the left, but a few result in a short region where complementary <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs have formed (helix <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5560/">nucleation</a>). A rapid zippering then leads to the formation of a complete <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>. Through this trial-and-error process, a DNA strand will find its complementary partner even in the midst of millions of nonmatching DNA strands. A related, highly efficient trial-and-error recognition of a complementary partner DNA sequence seems to initiate all general <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> events.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721982245-241935780.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-58 - <span class="title">The structure of the RecA and Rad51 protein–DNA filaments</span></span></center>
+<p>(A) The Rad51 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> bound to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> single strand. Rad51 is a human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5291/">homolog</a> of the bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5719/">RecA protein</a>; three successive monomers in this helical filament are colored. (B) A short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of the RecA filament, with the three-dimensional structure of the protein fitted to the image of the filament <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> microscopy. The two DNA–protein filaments appear to be quite similar. There are about six RecA monomers per turn of the helix, holding 18 nucleotides of single-stranded DNA that is stretched out by the protein. The exact path of the DNA in this structure is not known. (A, courtesy of Edward Egelman; B, from X. Yu et al., <i>J. Mol. Biol.</i> 283:985–992, 1998.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721982421-311073299.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-59 - <span class="title">DNA synapsis catalyzed by the RecA protein</span></span></center>
+<p>
+<i>In vitro</i> experiments show that several types of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> are formed between a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> single strand covered with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5719/">RecA protein</a> <i>(red)</i> and a DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> <i>(green).</i> First a non-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-paired complex is formed, which is converted through transient base-flipping (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A827/figure/A837/?report=objectonly" rid-figpopup="figA837" rid-ob="figobA837" target="object">Figure 5-51</a>) to a three-stranded structure as soon as a region of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> sequence is found. This complex is unstable because it involves an unusual form of DNA, and it spins out a DNA heteroduplex (one strand <i>green</i> and the other strand <i>red)</i> plus a displaced single strand from the original helix <i>(green).</i> Thus the structure shown in this diagram migrates to the left, reeling in the “input DNAs” while producing the “output DNAs.” The net result is a DNA strand exchange identical to that diagrammed earlier in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26898/figure/A850/?report=objectonly" rid-figpopup="figA850" rid-ob="figobA850" target="object">Figure 5-56</a>. (Adapted from S.C. West, <i>Annu. Rev. Biochem</i>. 61:603–640, 1992.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721982605-896523145.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-60 - <span class="title">Two types of DNA branch migration observed in experiments <a href="/books/n/mboc4/A4754/#A5327" target="mainwindow">in vitro</a>.</span></span></center>
+<p>(A) Spontaneous branch migration is a back-and-forth, random-walk process, and it therefore makes little progress over long distances. (B) RecA-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>-directed branch migration proceeds at a uniform rate in one direction and may be driven by the polarized assembly of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5719/">RecA protein</a> filament on a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> single strand, which occurs in the direction indicated. Special DNA helicases that catalyze branch migration even more efficiently are also involved in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> (for example see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26898/figure/A860/?report=objectonly" rid-figpopup="figA860" rid-ob="figobA860" target="object">Figure 5-63</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721982796-348156885.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-61 - <span class="title">A Holliday junction and its isomerization</span></span></center>
+<p>As described in the text, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5849/">synapsis</a> step in general <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> is catalyzed by a RecA type of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> bound to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> single strand. This step is often followed by a reciprocal exchange of strands between two DNA double helices that have thereby paired with each other. This exchange produces a unique DNA structure known as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5287/">Holliday junction</a>, named after the scientist who first proposed its formation. (A) The initially formed structure contains two crossing (inside) strands and two noncrossing (outside) strands. (B) An isomerization of the Holliday junction produces an open, symmetrical structure. (C) Further isomerization can interconvert the crossing and noncrossing strands, producing a structure that is otherwise the same as that in (A).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721982962-519132591.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-62 - <span class="title">Electron micrograph of a Holliday junction</span></span></center>
+<p>This view of the junction corresponds to the open structure illustrated in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26898/figure/A858/?report=objectonly" rid-figpopup="figA858" rid-ob="figobA858" target="object">Figure 5-61B</a>. (Courtesy of Huntington Potter and David Dressler.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721983187-355429033.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-63 - <span class="title">Enzyme-catalyzed double branch migration at a Holliday junction</span></span></center>
+<p>In <i>E. coli</i>, a tetramer of the RuvA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <i>(green)</i> and two hexamers of the RuvB protein <i>(pale gray)</i> bind to the open form of the junction. The RuvB protein uses the energy of ATP hydrolysis to move the crossover point rapidly along the paired <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> helices, extending the heteroduplex region as shown. There is evidence that similar proteins perform this function in vertebrate cells. (Image courtesy of P. Artymiuk; modified from S.C. West, <i>Cell</i> 94:699–701, 1998.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721983389-865468896.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-64 - <span class="title">The resolution of a Holliday junction to produce crossed-over chromosomes</span></span></center>
+<p>In this example, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> regions of a <i>red</i> and a <i>green</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> have formed a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5287/">Holliday junction</a> by exchanging two strands. Cutting these two strands would terminate the exchange without <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5037/">crossing-over</a>. With isomerization of the Holliday junction (steps B and C), the original noncrossing strands become the two crossing strands; cutting them now creates two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules that have crossed over <i>(bottom).</i> This type of isomerization may be involved in the breaking and rejoining of two homologous DNA double helices in meiotic general <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a>. The grey bars in the central panels have been drawn to make it clear that the isomerization events shown can occur without disturbing the rest of the two chromosomes.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721983558-283022956.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-65 - <span class="title">Gene conversion in meiosis</span></span></center>
+<p>As described in Chapter 20, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a> is the process through which a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5077/">diploid</a> cell gives rise to four <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5264/">haploid</a> cells. Germ cells (eggs and sperm, for example) are produced by meiosis.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721983738-529232029.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-66 - <span class="title">Gene conversion by mismatch correction</span></span></center>
+<p>In this process, heteroduplex joints are formed at the sites of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5037/">crossing-over</a> between <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> maternal and paternal chromosomes. If the maternal and paternal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences are slightly different, the heteroduplex joint will include some mismatched <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs. The resulting mismatch in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> may then be corrected by the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5472/">mismatch repair</a> machinery (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A754/figure/A786/?report=objectonly" rid-figpopup="figA786" rid-ob="figobA786" target="object">Figure 5-23</a>), which can erase nucleotides on either the paternal or the maternal strand. The consequence of this mismatch repair is <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5212/">gene conversion</a>, dectected as a deviation from the segregation of equal copies of maternal and paternal alleles that normally occurs in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5436/">meiosis</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721983905-717482980.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-67 - <span class="title">The different resolutions of a general recombination intermediate in mitotic and meiotic cells</span></span></center>
+<p>As shown previously in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26898/figure/A850/?report=objectonly" rid-figpopup="figA850" rid-ob="figobA850" target="object">Figure 5-56</a>, general <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> begins when a double-strand break is generated in one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> <i>(green),</i> followed by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> degradation and strand invasion into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> DNA duplex <i>(red).</i> New DNA synthesis <i>(orange)</i> follows to generate the joint <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> shown. Depending on subsequent events, resolution of the joint molecule can lead either to a precise repair of the initial double-strand break <i>(left)</i> or to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5037/">crossing-over</a> <i>(right).</i> The experimental <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5329/">induction</a> of double-strand breaks at specific DNA sites has allowed the outcome of general recombination to be quantified in both mitotic and meiotic cells. More than 99% of these events fail to produce a crossover in mitotic cells, whereas crossovers are often the outcome in meiotic cells. In either case, if the maternal and paternal chromosomes differ in DNA sequence in the region of new DNA synthesis shown here, the sequence of the <i>green</i> DNA duplex in the region of new DNA synthesis is converted to that of the <i>red</i> duplex (a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5212/">gene conversion</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721984076-497077631.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-68 - <span class="title">The mechanism that prevents general recombination from destabilizing a genome that contains repeated sequences</span></span></center>
+<p>Studies with bacterial and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> cells suggest that components of the mismatch proofreading system, diagrammed previously in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A754/figure/A786/?report=objectonly" rid-figpopup="figA786" rid-ob="figobA786" target="object">Figure 5-23</a>, have the additional function shown here.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721986217-402621599.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-69 - <span class="title">Three of the many types of mobile genetic elements found in bacteria</span></span></center>
+<p>Each of these <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> elements contains a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> that encodes a <i>transposase</i>, an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> that conducts at least some of the DNA breakage and joining reactions needed for the element to move. Each mobile element also carries short DNA sequences (indicated in <i>red)</i> that are recognized only by the transposase encoded by that element and are necessary for movement of the element. In addition, two of the three mobile elements shown carry genes that encode enzymes that inactivate the antibiotics ampicillin <i>(ampR)</i> and tetracycline <i>(tetR).</i> The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5895/">transposable element</a> Tn10, shown in the bottom diagram, is thought to have evolved from the chance landing of two short mobile elements on either side of a tetracyclin-resistance gene; the wide use of tetracycline as an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4827/">antibiotic</a> has aided the spread of this gene through bacterial populations. The three mobile elements shown are all examples of <i>DNA-only transposons</i> (see text).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721986384-263153594.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-70 - <span class="title">Cut-and-paste transposition</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-only transposons can be recognized in chromosomes by the “inverted repeat DNA sequences” <i>(red)</i> at their ends. Experiments show that these sequences, which can be as short as 20 nucleotides, are all that is necessary for the DNA between them to be transposed by the particular transposase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> associated with the element. The cut-and-paste movement of a DNA-only <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5895/">transposable element</a> from one chromosomal site to another begins when the transposase brings the two inverted DNA sequences together, forming a DNA loop. Insertion into the target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, catalyzed by the transposase, occurs at a random site through the creation of staggered breaks in the target chromosome <i>(red arrowheads).</i> As a result, the insertion site is marked by a short direct repeat of the target DNA sequence, as shown. Although the break in the donor chromosome <i>(green)</i> is resealed, the breakage-and-repair process often alters the DNA sequence, causing a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> at the original site of the excised transposable element (not shown).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721986556-801814920.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-71 - <span class="title">The structure of the central intermediate formed by a cut-and-paste transposase</span></span></center>
+<p>(A) Schematic view of the overall structure. (B) The detailed structure of a transposase holding the two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> ends, whose 3′-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">OH</a> groups are poised to attack a target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. (B, from D.R. Davies et al., <i>Science</i> 289:77–85, 2000. © AAAS.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721986756-47832886.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-72 - <span class="title">Replicative transposition</span></span></center>
+<p>In the course of replicative <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5896/">transposition</a>, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence of the transposon is copied by DNA replication. The end products are a DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> that is identical to the original donor and a target DNA molecule that has a transposon inserted into it. In general, a particular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5100/">DNA-only transposon</a> moves either by the cut-and-paste pathway shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26845/figure/A876/?report=objectonly" rid-figpopup="figA876" rid-ob="figobA876" target="object">Figure 5-70</a> or by the replicative pathway outlined here. However, the two mechanisms have many enzymatic similarities, and a few transposons can move by either pathway.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721986920-639142578.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-73 - <span class="title">The life cycle of a retrovirus</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5747/">retrovirus</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> consists of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of about 8500 nucleotides; two such molecules are packaged into each viral particle. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5749/">reverse transcriptase</a></i> first makes a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> copy of the viral RNA molecule and then a second DNA strand, generating a double-stranded DNA copy of the RNA genome. The integration of this DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> into the host <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> is then catalyzed by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a>-encoded <i>integrase</i> enzyme (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26845/figure/A882/?report=objectonly" rid-figpopup="figA882" rid-ob="figobA882" target="object">Figure 5-75</a>). This integration is required for the synthesis of new viral RNA molecules by the host cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5760/">RNA polymerase</a>, the enzyme that transcribes DNA into RNA (discussed in Chapter 6).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721987124-892486011.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-74 - <span class="title">Reverse transcriptase</span></span></center>
+<p>(A) The three-dimensional structure of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5284/">HIV</a> (the human AIDS <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a>) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography. (B) A model showing the enzyme's activity on an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a>. Note that the polymerase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> <i>(yellow</i> in B) has a covalently attached RNAse H (H for “Hybrid”) domain <i>(red)</i> that degrades an RNA strand in an RNA/<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> helix. This activity helps the polymerase to convert the initial hybrid helix into a DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> (A, courtesy of Tom Steitz; B, adapted from L.A. Kohlstaedt et al., <i>Science</i> 256:1783–1790, 1990.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721987289-457125439.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-75 - <span class="title">Transpositional site-specific recombination by a retrovirus or a retroviral-like retrotransposon</span></span></center>
+<p>Outline of the strand-breaking and strand-rejoining events that lead to integration of the linear double-stranded <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <i>(orange)</i> of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5747/">retrovirus</a> (such as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5284/">HIV</a>) or a retroviral-like <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5746/">retrotransposon</a> (such as <i>Ty1</i>) into the host cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> <i>(blue).</i> In an initial step, the integrase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> forms a DNA loop and cuts one strand at each end of the viral DNA sequence, exposing a protruding 3′-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">OH</a> group. Each of these 3′-OH ends then directly attacks a phosphodiester bond on opposite strands of a randomly selected site on a target chromosome <i>(red arrowheads).</i> This inserts the viral DNA sequence into the target chromosome, leaving short gaps on each side that are filled in by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5094/">DNA repair</a> processes. Because of the gap filling, this type of mechanism (like that of cut-and-paste transposons) leaves short repeats of target DNA sequence <i>(black)</i> on each side of the integrated DNA segment; these are 3–12 nucleotides long, depending on the integrase enzyme.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721987460-866549921.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-76 - <span class="title">Transpositional site-specific recombination by a nonretroviral retrotransposon</span></span></center>
+<p>Transposition by the <i>L1</i> element <i>(red)</i> begins when an endonuclease attached to the <i>L1</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5749/">reverse transcriptase</a> and the <i>L1</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <i>(blue)</i> makes a nick in the target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> at the point at which insertion will occur. This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a> releases a 3′-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">OH</a> DNA end in the target DNA, which is then used as a primer for the reverse transcription step shown. This generates a single-stranded DNA copy of the element that is directly linked to the target DNA. In subsequent reactions, not yet understood in detail, further processing of the single-stranded DNA copy results in the generation of a new double-stranded DNA copy of the <i>L1</i> element that is inserted at the site where the initial nick was made.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721987636-531630765.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-77 - <span class="title">The proposed pattern of expansion of the abundant <i>Alu</i> and <i>B1</i> sequences found in the human and mouse genomes, respectively</span></span></center>
+<p>Both of these transposable <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences are thought to have evolved from the essential 7SL <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> which encodes the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5825/">SRP</a> RNA (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2202/figure/A2214/?report=objectonly" rid-figpopup="figA2214" rid-ob="figobA2214" target="object">Figure 12-41</a>). On the basis of the species distribution and sequence similarity of these highly repeated elements, the major expansion in copy numbers seems to have occurred independently in mice and humans (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26845/figure/A887/?report=objectonly" rid-figpopup="figA887" rid-ob="figobA887" target="object">Figure 5-78</a>). (Adapted from P.L. Deininger and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>.R. Daniels, <i>Trends Genet.</i> 2:76–80, 1986 and International Human Genome Sequencing Consortium, <i>Nature</i> 409:860–921, 2001.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721987802-685083080.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-78 - <span class="title">A comparison of the β-globin gene cluster in the human and mouse genomes, showing the location of transposable elements</span></span></center>
+<p>This stretch of human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> contains five functional β-globin-like genes <i>(orange);</i> the comparable region from the mouse genome has only four. The positions of the human <i>Alu</i> sequence are indicated by <i>green circles</i>, and the human <i>L1</i> sequences by <i>red circles</i>. The mouse genome contains different but related transposable elements: the positions of <i>B1</i> elements (which are related to the human Alu sequences) are indicated by <i>blue triangles</i>, and the positions of the mouse <i>L1</i> elements (which are related to the human <i>L1</i> sequences) are indicated by <i>yellow triangles</i>. Because the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences and positions of the transposable elements found in the mouse and human β-globin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> clusters are so different, it is believed that they accumulated in each of these genomes independently, relatively recently in evolutionary time. (Courtesy of Ross Hardison and Webb Miller.)</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721987967-924279334.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-79 - <span class="title">Two types of DNA rearrangement produced by conservative site-specific recombination</span></span></center>
+<p>The only difference between the reactions in (A) and B) is the relative orientation of the two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sites (indicated by <i>arrows)</i> at which a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5805/">site-specific recombination</a> event occurs. (A) Through an integration <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a>, a circular DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> can become incorporated into a second DNA molecule; by the reverse reaction (excision), it can exit to reform the original DNA circle. Bacteriophage lambda and other bacterial viruses move in and out of their host chromosomes in precisely this way. (B) Conservative site-specific recombination can also invert a specific segment of DNA in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. A well-studied example of DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5353/">inversion</a> through site-specific recombination occurs in the bacterium <i>Salmonella typhimurium</i>, an organism that is a major cause of food poisoning in humans; the inversion of a DNA segment changes the type of flagellum that is produced by the bacterium (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1323/figure/A1325/?report=objectonly" rid-figpopup="figA1325" rid-ob="figobA1325" target="object">Figure 7-64</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721988136-659884513.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-80 - <span class="title">The insertion of a circular bacteriophage lambda DNA chromosome into the bacterial chromosome</span></span></center>
+<p>In this example of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5805/">site-specific recombination</a>, the lambda integrase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> binds to a specific “attachment site” <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence on each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, where it makes cuts that bracket a short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> DNA sequence. The integrase then switches the partner strands and reseals them to form a heteroduplex joint that is seven <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs long. A total of four strand-breaking and strand-joining reactions is required; for each of them, the energy of the cleaved phosphodiester bond is stored in a transient covalent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a> between the DNA and the enzyme, so that DNA strand resealing occurs without a requirement for ATP or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5089/">DNA ligase</a>.</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721988327-155815884.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-81 - <span class="title">The life cycle of bacteriophage lambda</span></span></center>
+<p>The double-stranded <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> lambda <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> contains 50,000 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs and encodes 50–60 different proteins. When the lambda DNA enters the cell, the ends join to form a circular DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>. This bacteriophage can multiply in <i>E. coli</i> by a lytic pathway, which destroys the cell, or it can enter a latent prophage state. Damage to a cell carrying a lambda prophage induces the prophage to exit from the host <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> and shift to lytic growth <i>(green arrows).</i> Both the entrance of the lambda DNA to, and its exit from, the bacterial chromosome are accomplished by a conservative <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5805/">site-specific recombination</a> event, catalyzed by the lambda integrase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26845/figure/A892/?report=objectonly" rid-figpopup="figA892" rid-ob="figobA892" target="object">Figure 5-80</a>).</p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1631721988531-899008079.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 5-82 - <span class="title">How a conservative site-specific recombination enzyme is used to turn on a specific gene in a group of cells in a transgenic animal</span></span></center>
+<p>This technique requires the insertion of two specially engineered <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules into the animal's <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5228/">germ line</a>. (A) The DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> shown has been engineered with specific recognition sites <i>(green)</i> so that the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> of interest <i>(red)</i> is transcribed only after a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5805/">site-specific recombination</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> that uses these sites is induced. As shown on the right, this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5329/">induction</a> removes a marker gene <i>(yellow)</i> and brings the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5684/">promoter</a> DNA <i>(orange)</i> adjacent to the gene of interest. The recombination enzyme is inducible, because it is encoded by a second DNA molecule (not shown) that has been engineered to ensure that the enzyme is made only when the animal is treated with a special small molecule or its temperature is raised. (B) Transient induction of the recombination enzyme causes a brief burst of synthesis of that enzyme, which in turn causes a DNA rearrangement in an occasional cell. For this cell and all its progeny, the marker gene is inactivated and the gene of interest is simultaneously activated (as shown in A). Those clones of cells in the developing animal that express the gene of interest can be identified by their loss of the marker <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. This technique is widely used in mice and <i>Drosophila</i>, because it allows one to study the effect of expressing any gene of interest in a group of cells in an intact animal. In one version of the technique, the Cre recombination enzyme of bacteriophage P1 is employed along with its loxP recognition sites (see pp. 542–543).</p></div></div>
+</body>
+</html>
