@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Appendicular Skeleton - Upper - Clavicle- Superior</title>
+	<title>Appendicular Skeleton - Lower - Coxal - Medial - 2</title>
 	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
 	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
 	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
@@ -13,19 +13,34 @@
 <body>
 	<div id="label-container">
 		<map name="image-map">
-			<area target="" alt="Acromial End" title="Acromial End" href="" coords="194,303,460,248" shape="rect">
-			<area target="" alt="Body" title="Body" href="" coords="879,212,1074,156" shape="rect">
-			<area target="" alt="Sternal End" title="Sternal End" href="" coords="1449,281,1705,225" shape="rect">
+			<area target="" alt="Iliac Crest" title="Iliac Crest" href="" coords="184,212,376,164" shape="rect">
+			<area target="" alt="Auricular Surface" title="Auricular Surface" href="" coords="1475,432,1828,376" shape="rect">
+			<area target="" alt="Greater Sciatic Notch" title="Greater Sciatic Notch" href="" coords="1373,715,1799,665" shape="rect">
 		</map>
 	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
 	<div class="container">
-		<div class="row justify-content-start">
-			<div class="col-2">
-				<div id="draggable-label-container"></div>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
 			</div>
-			<div class="col-10">
-				<canvas id="interactive-image-canvas"></canvas>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
 			</div>
+			<div class="col-2"></div>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -42,7 +57,7 @@
 
 		function init() {
 
-			let image_source_url = "https://39363.org/IMAGE_BUCKET/1631309795561-644828789.jpeg";
+			let image_source_url = "https://39363.org/IMAGE_BUCKET/1632184932147-131681903.jpeg";
 			let image_scale_percentage = 50;
 
 
@@ -197,35 +212,39 @@
 					return newArr
 				}
 
-				// Dynamically Create Draggable Text Boxes
-				let label_container = document.getElementById( "draggable-label-container" );
-				areas = shuffleArray( [ ...areas ] );
-				for ( let i = 0; i < areas.length; ++i ) {
-					let id = areas[ i ].alt.toLowerCase().replace( /\s+/g , '-' );
-					let text_box_label = `<p class="text-box-label draggable" id="${id}">${areas[ i ].alt}</p>`;
-					label_container.insertAdjacentHTML( "beforebegin" , text_box_label );
+				// https://www.w3schools.com/graphics/canvas_text.asp
+				function add_text_to_area( rectangle_object ) {
+					context.font = "20px Arial";
+					context.fillStyle = "red";
+					context.textAlign = "center";
+					let x = rectangle_object.translated_coordinates[ 0 ] + ( rectangle_object.translated_coordinates[ 2 ] / 2 );
+					let y = rectangle_object.translated_coordinates[ 1 ] + ( rectangle_object.translated_coordinates[ 3 ] / 3 );
+					context.fillText( rectangle_object.area.alt , x , y );
 				}
 
-				$( ".draggable" ).draggable({
-					// https://api.jqueryui.com/draggable/#event-stop
-					stop: function( event , ui ) {
-						let mouse_translated_x = ( event.clientX - canvas.offsetLeft );
-						let mouse_translated_y = ( event.clientY - canvas.offsetTop );
-						for ( let i = 0; i < rectangle_objects.length; ++i ) {
-							let inside_rectangle = is_point_inside_rectangle( mouse_translated_x , mouse_translated_y , rectangle_objects[ i ].translated_coordinates );
-							if ( inside_rectangle ) {
-								// console.log( `we dropped something inside object ${rectangle_objects[ i ].area.alt}` , rectangle_objects[ i ] );
-								if (  rectangle_objects[ i ].id === ui.helper[ 0 ].id ) {
-									console.log( `we dropped ${ui.helper[ 0 ].id} inside CORRECT location of ${rectangle_objects[ i ].id}` );
-									// draw_rectangle( ...rectangle_objects[ i ].translated_coordinates , "#136937" );
-									draw_rectangle( ...rectangle_objects[ i ].translated_coordinates , "#13E337" );
-								}
-								else {
-									// console.log( `we dropped ${ui.helper[ 0 ].id} inside INCORRECT location of ${rectangle_objects[ i ].id}` );
-								}
-								return;
-							}
-						}
+				// Randomize Items
+				areas = shuffleArray( [ ...areas ] );
+				rectangle_objects = shuffleArray( rectangle_objects );
+
+				// Now we just have to highlight boxes/areas in order , and verify typed answer is right before moving on
+				let answer_input_element = document.getElementById( "input-answer" );
+				let active_rectangle_index = 0;
+				draw_rectangle( ...rectangle_objects[ active_rectangle_index ].translated_coordinates , "red" );
+				let hint_button_element = document.getElementById( "hint-button" );
+				let hint_area_element = document.getElementById( "hint-area" );
+				hint_button_element.addEventListener( "click" , function( event ) {
+					hint_area_element.innerText = rectangle_objects[ active_rectangle_index ].area.alt;
+				});
+				answer_input_element.addEventListener( "keyup" , function( event ) {
+					let input_text = this.value.toLowerCase();
+					let correct_value = rectangle_objects[ active_rectangle_index ].area.alt.toLowerCase();
+					if ( input_text === correct_value ) {
+						add_text_to_area( rectangle_objects[ active_rectangle_index ] );
+						draw_rectangle( ...rectangle_objects[ active_rectangle_index ].translated_coordinates , "#13E337" );
+						this.value = "";
+						active_rectangle_index += 1;
+						draw_rectangle( ...rectangle_objects[ active_rectangle_index ].translated_coordinates , "red" );
+						hint_area_element.innerText = "";
 					}
 				});
 
