@@ -1,0 +1,1574 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+/*blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}*/
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    padding-left: 30px;
+    margin-top: 35px;
+    border-left: 2px solid #D5C5C8;
+    background: #474d54;
+    background-color: #474d54;
+    color: #B197FC;
+}
+
+/*#772D8B , #2660A4 , #D90368 , #048BA8*/
+/*https://coolors.co/d6ffb7-61cc9e-048ba8-ffbfa0-d5c5c8*/
+/*blockquote blockquote { border-left: 3px solid #61CC9E }*/
+blockquote blockquote { border-left: 2px solid #D6FFB7; border-bottom:none; }
+blockquote blockquote blockquote { border-left: 2px solid #FFBFA0; border-bottom:none; }
+blockquote blockquote blockquote blockquote { border-left: 2px solid #048BA8; border-bottom:none; }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #D90368; border-bottom:none; }
+
+blockquote .md-math-block {
+    color: #FFEBFF;
+}
+
+blockquote h2 {
+    color: #EBD6A6;
+}
+
+blockquote h6 {
+    border-radius:2em;
+    opacity: 0.9;
+    background-color:#B1C6FC;
+    color:black;
+    hite-space:normal;
+    display:inline-block;
+    padding:0.2em;
+}
+
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+/*blockquote {
+    color: #9DA2A6;
+}
+*/
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 8 - Figures</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 8 - Figures</h1></center><p>&nbsp;</p><center><img src="https://www.ncbi.nlm.nih.gov/books/NBK21058/bin/ch8f1.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-1 - <span class="title">Microscopic life</span></span></center>
+<p>A sample of “diverse animalcules” seen by van Leeuwenhoek using his simple microscope. (A) Bacteria seen in material he excavated from between his teeth. Those in fig. B he described as “swimming first forward and then backwards” (1692). (B) The eucaryotic green alga <i>Volvox</i> (1700). (Courtesy of the John Innes Foundation.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968861087-892331584.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-2 - <span class="title">A fluorescence-activated cell sorter</span></span></center>
+<p>. A cell passing through the laser beam is monitored for fluorescence. Droplets containing single cells are given a negative or positive charge, depending on whether the cell is fluorescent or not. The droplets are then deflected by an electric field into collection tubes according to their charge. Note that the cell concentration must be adjusted so that most droplets contain no cells and flow to a waste container together with any cell clumps.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968861294-579513043.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-3 - <span class="title">Microdissection techniques allow selected cells to be isolated from tissue slices</span></span></center>
+<p>This method uses a laser beam to excise a region of interest and eject it into a container, and it permits the isolation of even a single cell from a tissue sample.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968861473-996922457.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-4 - <span class="title">Cells in culture</span></span></center>
+<p>(A) Phase-contrast <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of fibroblasts in culture. (B) Micrograph of myoblasts in culture shows cells fusing to form multinucleate muscle cells. (C) Oligodendrocyte precursor cells in culture. (D) Tobacco cells, from a fast-growing immortal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4941/">cell line</a> called BY2, in liquid culture. Nuclei and vacuoles can be seen in these cells. (A, courtesy of Daniel Zicha; B, courtesy of Rosalind Zalin; C, from D.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Tang et al., <i>J. Cell Biol</i>. 148:971–984, 2000. © The Rockefeller University Press; D, courtesy of Gethin Roberts.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968861685-548858219.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-5 - <span class="title">The production of hybrid cells</span></span></center>
+<p>Human cells and mouse cells are fused to produce heterocaryons (each with two or more nuclei), which eventually form hybrid cells (each with one fused <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>). These particular hybrid cells are useful for mapping human genes on specific human chromosomes because most of the human chromosomes are quickly lost in a random manner, leaving clones that retain only one or a few. The hybrid cells produced by fusing other types of cells often retain most of their chromosomes.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968861865-802530207.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-6 - <span class="title">Preparation of hybridomas that secrete monoclonal antibodies against a particular antigen</span></span></center>
+<p>Here the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4830/">antigen</a> of interest is designated as “antigen X.” The selective growth medium used after the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4939/">cell fusion</a> step contains an inhibitor (aminopterin) that blocks the normal biosynthetic pathways by which nucleotides are made. The cells must therefore use a bypass pathway to synthesize their nucleic acids. This pathway is defective in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4941/">cell line</a> derived from the tumor, but it is intact in the cells obtained from the immunized mouse. Because neither cell type used for the initial fusion can grow on its own, only the hybrid cells survive.</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1632968863956-828135628.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-7 - <span class="title">The preparative ultracentrifuge</span></span></center>
+<p>The sample is contained in tubes that are inserted into a ring of cylindrical holes in a metal <i>rotor</i>. Rapid rotation of the rotor generates enormous centrifugal forces, which cause particles in the sample to sediment. The vacuum reduces friction, preventing heating of the rotor and allowing the refrigeration system to maintain the sample at 4°C.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968864122-254480161.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-8 - <span class="title">Cell fractionation by centrifugation</span></span></center>
+<p>Repeated centrifugation at progressively higher speeds will fractionate homogenates of cells into their components. In general, the smaller the subcellular component, the greater is the centrifugal force required to sediment it. Typical values for the various centrifugation steps referred to in the figure are:</p><div class="table" id="A1526"><p class="large-table-link" style="display:none"><span class="right"><a href="https://www.ncbi.nlm.nih.gov/books/NBK26936/table/A1526/?report=objectonly" target="object">View in own window</a></span></p><div class="large_tbl" id="__A1526_lrgtbl__"><table><tbody><tr><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">low speed</td><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">1000 times gravity for 10 minutes</td></tr><tr><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">medium speed</td><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">20,000 times gravity for 20 minutes</td></tr><tr><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">high speed</td><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">80,000 times gravity for 1 hour</td></tr><tr><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">very high speed</td><td colspan="1" rowspan="1" style="text-align:left;vertical-align:top;">150,000 times gravity for 3 hour</td></tr></tbody></table></div></div>
+<p></p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968864491-531881334.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-9 - <span class="title">Comparison of velocity sedimentation and equilibrium sedimentation</span></span></center>
+<p>In velocity sedimentation (A) subcellular components sediment at different speeds according to their size and shape when layered over a dilute solution containing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5841/">sucrose</a>. To stabilize the sedimenting bands against convective mixing caused by small differences in temperature or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5813/">solute</a> concentration, the tube contains a continuous shallow gradient of sucrose that increases in concentration toward the bottom of the tube (typically from 5% to 20% sucrose). Following centrifugation, the different components can be collected individually, most simply by puncturing the plastic centrifuge tube and collecting drops from the bottom, as illustrated here. In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5146/">equilibrium</a> sedimentation (B) subcellular components move up or down when centrifuged in a gradient until they reach a position where their density matches their surroundings. Although a sucrose gradient is shown here, denser gradients, which are especially useful for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5561/">nucleic acid</a> separation, can be formed from cesium chloride. The final bands, at equilibrium, can be collected as in (A).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968864812-806104089.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-10 - <span class="title">The separation of molecules by column chromatography</span></span></center>
+<p>The sample, a mixture of different molecules, is applied to the top of a cylindrical glass or plastic column filled with a permeable solid matrix, such as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4949/">cellulose</a>, immersed in solvent. A large amount of solvent is then pumped slowly through the column and collected in separate tubes as it emerges from the bottom. Because various components of the sample travel at different rates through the column, they are fractionated into different tubes.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968864974-917990013.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-11 - <span class="title">Three types of matrices used for chromatography</span></span></center>
+<p>In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a>-exchange <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4975/">chromatography</a> (A) the insoluble matrix carries ionic charges that retard the movement of molecules of opposite charge. Matrices used for separating proteins include diethylaminoethylcellulose (DEAE-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4949/">cellulose</a>), which is positively charged, and carboxymethylcellulose (CM-cellulose) and phosphocellulose, which are negatively charged. Analogous matrices based on agarose or other polymers are also frequently used. The strength of the association between the dissolved molecules and the ion-exchange matrix depends on both the ionic strength and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5610/">pH</a> of the solution that is passing down the column, which may therefore be varied systematically (as in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26936/figure/A1534/?report=objectonly" rid-figpopup="figA1534" rid-ob="figobA1534" target="object">Figure 8-12</a>) to achieve an effective separation. In gel-filtration chromatography (B) the matrix is inert but porous. Molecules that are small enough to penetrate into the matrix are thereby delayed and travel more slowly through the column. Beads of cross-linked <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5662/">polysaccharide</a> (dextran, agarose, or acrylamide) are available commercially in a wide range of pore sizes, making them suitable for the fractionation of molecules of various molecular weights, from less than 500 to more than 5 × 10<sup>6</sup>. Affinity chromatography (C) uses an insoluble matrix that is covalently linked to a specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a>, such as an antibody <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> or an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a>, that will bind a specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. Enzyme molecules that bind to immobilized substrates on such columns can be eluted with a concentrated solution of the free form of the substrate molecule, while molecules that bind to immobilized antibodies can be eluted by dissociating the antibody-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4830/">antigen</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> with concentrated salt solutions or solutions of high or low pH. High degrees of purification are often achieved in a single pass through an affinity column.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968865354-971275538.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-12 - <span class="title">Protein purification by chromatography</span></span></center>
+<p>Typical results obtained when three different chromatographic steps are used in succession to purify a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. In this example a homogenate of cells was first fractionated by allowing it to percolate through an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5355/">ion</a>-exchange resin packed into a column (A). The column was washed, and the bound proteins were then eluted by passing a solution containing a gradually increasing concentration of salt onto the top of the column. Proteins with the lowest affinity for the ion-exchange resin passed directly through the column and were collected in the earliest fractions eluted from the bottom of the column. The remaining proteins were eluted in sequence according to their affinity for the resin—those proteins binding most tightly to the resin requiring the highest concentration of salt to remove them. The protein of interest was eluted in several fractions and was detected by its enzymatic activity. The fractions with activity were pooled and then applied to a second, gel-filtration column (B). The elution position of the still-impure protein was again <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by its enzymatic activity and the active fractions were pooled and purified to homogeneity on an affinity column (C) that contained an immobilized <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>. (D) Affinity purification of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a>-binding proteins from <i>S. cerevisiae,</i> as analyzed by SDS polyacrylamide-gel electrophoresis (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26936/figure/A1539/?report=objectonly" rid-figpopup="figA1539" rid-ob="figobA1539" target="object">Figure 8-14</a>). Lane 1 is a total cell extract; lane 2 shows the proteins eluted from an affinity column containing cyclin B2; lane 3 shows one major protein eluted from a cyclin B3 affinity column. Proteins in lanes 2 and 3 were eluted with salt and the gels was stained with Coomassie blue. (D, from D. Kellogg et al., <i>J. Cell Biol.</i> 130:675–685, 1995. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968865674-682614036.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-13 - <span class="title">The detergent sodium dodecyl sulfate (SDS) and the reducing agent β-mercaptoethanol</span></span></center>
+<p>These two chemicals are used to solubilize proteins for SDS polyacrylamide-gel electrophoresis. The SDS is shown here in its ionized form.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968865903-253985434.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-14 - <span class="title">SDS polyacrylamide-gel electrophoresis (SDS-PAGE)</span></span></center>
+<p>(A) An electrophoresis apparatus. (B) Individual <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chains form a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> with negatively charged molecules of sodium dodecyl sulfate (SDS) and therefore migrate as a negatively charged SDS-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> complex through a porous gel of polyacrylamide. Because the speed of migration under these conditions is greater the smaller the polypeptide, this technique can be used to determine the approximate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5485/">molecular weight</a> of a polypeptide chain as well as the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> composition of a protein. If the protein contains a large amount of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4908/">carbohydrate</a>, however, it will move anomalously on the gel and its apparent molecular weight estimated by SDS-PAGE will be misleading.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968866206-752952297.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-15 - <span class="title">Analysis of protein samples by SDS polyacrylamide-gel electrophoresis</span></span></center>
+<p>The photograph shows a Coomassie-stained gel that has been used to detect the proteins present at successive stages in the purification of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>. The leftmost lane (lane 1) contains the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> mixture of proteins in the starting cell extract, and each succeeding lane analyzes the proteins obtained after a chromatographic fractionation of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> sample analyzed in the previous lane (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26936/figure/A1534/?report=objectonly" rid-figpopup="figA1534" rid-ob="figobA1534" target="object">Figure 8-12</a>). The same total amount of protein (10 μg) was loaded onto the gel at the top of each lane. Individual proteins normally appear as sharp, dye-stained bands; a band broadens, however, when it contains too much protein. (From T. Formosa and B.M. Alberts, <i>J. Biol. Chem.</i> 261:6107–6118, 1986.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968866596-31888211.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-16 - <span class="title">Separation of protein molecules by isoelectric focusing</span></span></center>
+<p>At low <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5610/">pH</a> (high <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5263/">H<sup>+</sup></a> concentration) the carboxylic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> groups of proteins tend to be uncharged (-COOH) and their nitrogen-containing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4877/">basic</a> groups fully charged (for example, -NH<sub>3</sub>
+<sup>+</sup>), giving most proteins a net positive charge. At high pH the carboxylic acid groups are negatively charged (-COO<sup>-</sup>) and the basic groups tend to be uncharged (for example, -NH<sub>2</sub>), giving most proteins a net negative charge. At its <i>isoelectric pH</i> a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> has no net charge since the positive and negative charges balance. Thus, when a tube containing a fixed pH gradient is subjected to a strong electric field in the appropriate direction, each protein species present migrates until it forms a sharp band at its isoelectric pH, as shown.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968866829-840761071.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-17 - <span class="title">Two-dimensional polyacrylamide-gel electrophoresis</span></span></center>
+<p>All the proteins in an <i>E. coli</i> bacterial cell are separated in this gel, in which each spot corresponds to a different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chain. The proteins were first separated on the basis of their isoelectric points by isoelectric focusing from left to right. They were then further fractionated according to their molecular weights by electrophoresis from top to bottom in the presence of SDS. Note that different proteins are present in very different amounts. The bacteria were fed with a mixture of radioisotope-labeled amino acids so that all of their proteins were radioactive and could be detected by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4859/">autoradiography</a> (see pp. 578–579). (Courtesy of Patrick O'Farrell.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968867170-753938849.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-18 - <span class="title">Western blotting</span></span></center>
+<p>The total proteins from dividing tobacco cells in culture are first separated by two-dimensional polyacrylamide-gel electrophoresis and in (A) their positions are revealed by a sensitive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> stain. In (B) the separated proteins on an identical gel were then transferred to a sheet of nitrocellulose and exposed to an antibody that recognizes only those proteins that are phosphorylated on threonine residues during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>. The positions of the dozen or so proteins that are recognized by this antibody are revealed by an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>-linked second antibody. This technique is also known as immunoblotting. (From J.A. Traas, A.F. Bevan, J.H. Doonan, J. Cordewener, and P.J. Shaw, <i>Plant J.</i> 2:723–732, 1992. © Blackwell Scientific Publications.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968867561-327249689.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-19 - <span class="title">Production of a peptide map, or fingerprint, of a protein</span></span></center>
+<p>Here, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> was digested with trypsin to generate a mixture of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> fragments, which was then fractionated in two dimensions by electrophoresis and partition <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4975/">chromatography</a>. The latter technique separates peptides on the basis of their differential solubilities in water, which is preferentially bound to the solid matrix, as compared to the solvent in which they are applied. The resulting pattern of spots obtained from such a digest is diagnostic of the protein analyzed. It is also used to detect <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5669/">posttranslational</a> modifications of proteins.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968867796-772246980.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-20 - <span class="title">Mass-spectrometric approaches to identify proteins and sequence peptides</span></span></center>
+<p>(A) Mass spectrometry can be used to identify proteins by determining their precise masses, and the masses of peptides derived from them, and using that information to search a genomic database for the corresponding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>. In this example, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> of interest is excised from a two-dimensional polyacrylamide gel and then digested with trypsin. The peptide fragments are loaded into the mass spectrometer and their masses are measured. Sequence databases are then searched to find the gene that encodes a protein whose calculated tryptic digest profile matches these values. (B) Mass spectrometry can also be used to determine directly the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence of peptide fragments. In this example, proteins that form a macromolecular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> have been separated by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4975/">chromatography</a>, and a single protein selected for digestion with trypsin. The masses of these tryptic fragments are then <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by mass spectrometry as in (A). To determine their exact amino acid sequence, each peptide is further fragmented, primarily by cleaving its peptide bonds. This treatment generates a nested set of peptides, each differing in size by one amino acid. These fragments are fed into a second coupled mass spectrometer and their masses are determined. The difference in masses between two closely related peptides can be used to deduce the “missing” amino acid. By repeated applications of this procedure, a partial amino acid sequence of the original protein can be determined. (Micrograph courtesy of Patrick O'Farrell.)</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1632968872014-193752071.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-21 - <span class="title">The DNA nucleotide sequences recognized by four widely used restriction nucleases</span></span></center>
+<p>As in the examples shown, such sequences are often six <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs long and “palindromic” (that is, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence is the same if the helix is turned by 180 degrees around the center of the short region of helix that is recognized). The enzymes cut the two strands of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> at or near the recognition sequence. For some enzymes, such as <i>Hpa</i>I, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a> leaves blunt ends; for others, such as <i>Eco</i>RI, <i>Hin</i>dIII, and <i>Pst</i>I, the cleavage is staggered and creates cohesive ends. Restriction nucleases are obtained from various species of bacteria: <i>Hpa</i>I is from <i>Hemophilus parainfluenzae, Eco</i>RI is from <i>Escherichia coli, Hin</i>dIII is from <i>Hemophilus influenzae,</i> and <i>Pst</i>I is from <i>Providencia stuartii.</i>
+</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968872250-115743921.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-22 - <span class="title">Restriction nucleases produce DNA fragments that can be easily joined together</span></span></center>
+<p>Fragments with the same cohesive ends can readily join by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-pairing between their cohesive ends, as illustrated. The two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> fragments that join in this example were both produced by the <i>Eco</i>RI restriction nuclease, whereas the three other fragments were produced by different restriction nucleases that generated different cohesive ends (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1561/?report=objectonly" rid-figpopup="figA1561" rid-ob="figobA1561" target="object">Figure 8-21</a>). Blunt-ended fragments, like those generated by <i>Hpa</i>I (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1561/?report=objectonly" rid-figpopup="figA1561" rid-ob="figobA1561" target="object">Figure 8-21</a>), can be spliced together with more difficulty.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968872434-464845616.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-23 - <span class="title">Gel electrophoresis techniques for separating DNA molecules by size</span></span></center>
+<p>In the three examples shown, electrophoresis is from top to bottom, so that the largest—and thus slowest-moving—<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules are near the top of the gel. In (A) a polyacrylamide gel with small pores is used to fractionate single-stranded DNA. In the size range 10 to 500 nucleotides, DNA molecules that differ in size by only a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> can be separated from each other. In the example, the four lanes represent sets of DNA molecules synthesized in the course of a DNA-sequencing procedure. The DNA to be sequenced has been artificially replicated from a fixed start site up to a variable stopping point, producing a set of partial replicas of differing lengths. (<a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1584/?report=objectonly" rid-figpopup="figA1584" rid-ob="figobA1584" target="object">Figure 8-36</a> explains how such sets of partial replicas are synthesized.) Lane 1 shows all the partial replicas that terminate in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>, lane 2 all those that terminate in an A, lane 3 all those that terminate in a T, and lane 4 all those that terminate in a C. Since the DNA molecules used in these reactions are radiolabeled, their positions can be <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4859/">autoradiography</a>, as shown. In (B) an agarose gel with medium-sized pores is used to separate double-stranded DNA molecules. This method is most useful in the size range 300 to 10,000 nucleotide pairs. These DNA molecules are fragments produced by cleaving the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> of a bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a> with a restriction nuclease, and they have been detected by their fluorescence when stained with the dye ethidium bromide. In (C) the technique of pulsed-field agarose gel electrophoresis has been used to separate 16 different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <i>(<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5770/">Saccharomyces</a> cerevisiae)</i> chromosomes, which range in size from 220,000 to 2.5 million nucleotide pairs (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A608/figure/A614/?report=objectonly" rid-figpopup="figA614" rid-ob="figobA614" target="object">Figure 4-13</a>). The DNA was stained as in (B). DNA molecules as large as 10<sup>7</sup> nucleotide pairs can be separated in this way. (A, courtesy of Leander Lauffer and Peter Walter; B, courtesy of Ken Kreuzer; C, from D. Vollrath and R.W. Davis, <i>Nucleic Acids Res.</i> 15:7865–7876, 1987. © Oxford University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968872777-299338732.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-24 - <span class="title">Methods for labeling DNA molecules <a href="/books/n/mboc4/A4754/#A5327" target="mainwindow">in vitro</a>.</span></span></center>
+<p>(A) A purified <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> labels all the nucleotides in a DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> and can thereby produce highly radioactive DNA probes. (B) Polynucleotide kinase labels only the 5′ ends of DNA strands; therefore, when labeling is followed by restriction nuclease <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a>, as shown, DNA molecules containing a single 5′-end-labeled strand can be readily obtained. (C) The method in (A) is also used to produce nonradioactive DNA molecules that carry a specific chemical marker that can be detected with an appropriate antibody. The modified <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> shown can be incorporated into DNA by DNA polymerase so as to allow the DNA molecule to serve as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5680/">probe</a> that can be readily detected. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5565/">nucleoside</a> triphosphate shown is an analog of thymine in which the methyl group on T has been replaced by a spacer arm linked to the plant <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5831/">steroid</a> digoxigenin. To visualize the probe, the digoxigenin is detected by a specific antibody coupled to a visible marker such as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5186/">fluorescent dye</a>. Other chemical labels such as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4884/">biotin</a> can be attached to nucleotides and used in essentially the same way.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968873272-308573085.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-28</span></center>
+<p>Here, six different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> probes have been used to mark the location of their respective <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequences on human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> 5 at <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5450/">metaphase</a>. The probes have been chemically labeled and detected with fluorescent antibodies. Both copies of chromosome 5 are shown, aligned side by side. Each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5680/">probe</a> produces two dots on each chromosome, since a metaphase chromosome has replicated its DNA and therefore contains two identical DNA helices. (Courtesy of David C. Ward.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968873673-651242387.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-25 - <span class="title">Different hybridization conditions allow less than perfect DNA matching</span></span></center>
+<p>When only an identical match with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5680/">probe</a> is desired, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> is kept just a few degrees below the temperature at which a perfect DNA helix denatures in the solvent used (its <i>melting temperature),</i> so that all imperfect helices formed are unstable. When a DNA probe is being used to find DNAs that are related, but not identical, in sequence, hybridization is performed at a lower temperature. This allows even imperfectly paired double helices to form. Only the lower-temperature hybridization conditions can be used to search for genes (C and E in this example) that are nonidentical but related to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> A (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1890/figure/A1893/?report=objectonly" rid-figpopup="figA1893" rid-ob="figobA1893" target="object">Figure 10-18</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968873990-281470986.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-26 - <span class="title">The use of nucleic acid hybridization to determine the region of a cloned DNA fragment that is present in an mRNA molecule</span></span></center>
+<p>The method shown requires a nuclease that cuts the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> chain only where it is not <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-paired to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> chain. The positions of the introns in eucaryotic genes are mapped by the method shown; the beginning and the end of an RNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> can be <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> in the same way. For this type of analysis the DNA is electrophoresed through a denaturing agarose gel, which causes it to migrate as single-stranded molecules.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968874164-202731995.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-27 - <span class="title">Detection of specific RNA or DNA molecules by gel-transfer hybridization</span></span></center>
+<p>In this example, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5680/">probe</a> is detected by its radioactivity. DNA probes detected by chemical or fluorescence methods are also widely used (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1566/?report=objectonly" rid-figpopup="figA1566" rid-ob="figobA1566" target="object">Figure 8-24</a>). (A) A mixture of either single-stranded <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> molecules <i>(<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5546/">Northern blotting</a>)</i> or the double-stranded DNA molecules created by restriction nuclease treatment <i>(<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5817/">Southern blotting</a>)</i> is separated according to length by electrophoresis. (B) A sheet of either nitrocellulose paper or nylon paper is laid over the gel, and the separated RNA or DNA fragments are transferred to the sheet by blotting. (C) The nitrocellulose sheet is carefully peeled off the gel. (D) The sheet containing the bound nucleic acids is placed in a sealed plastic bag together with a buffered salt solution containing a radioactively labeled DNA probe. The paper sheet is exposed to a labeled DNA probe for a prolonged period under conditions favoring <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a>. (E) The sheet is removed from the bag and washed thoroughly, so that only probe molecules that have hybridized to the RNA or DNA immobilized on the paper remain attached. After <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4859/">autoradiography</a>, the DNA that has hybridized to the labeled probe shows up as bands on the autoradiograph. For Southern blotting, the strands of the double-stranded DNA molecules on the paper must be separated before the hybridization process; this is done by exposing the DNA to alkaline denaturing conditions after the gel has been run (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968874375-682262503.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-29</span></center>
+<p>(A) Expression pattern of <i>deltaC</i> in the early zebrafish embryo. This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> codes for a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5548/">Notch</a> signaling pathway (discussed in Chapter 15), and the pattern shown here reflects its role in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of somites—the future segments of the vertebrate trunk and tail. (B) High-resolution <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> <i>in situ</i> localization reveals the sites within the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5563/">nucleolus</a> of a pea cell where ribosomal RNA is synthesized. The sausage-like structures, 0.5–1 μm in diameter, correspond to the loops of chromosomal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> that contain the genes encoding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5767/">rRNA</a>. Each small, white spot represents transcription of a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5768/">rRNA gene</a>. (A, courtesy of Yun-Jin Jiang; B, courtesy of Peter Shaw.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968874711-448108204.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-30 - <span class="title">The insertion of a DNA fragment into a bacterial plasmid with the enzyme DNA ligase</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> is cut open with a restriction nuclease (in this case one that produces cohesive ends) and is mixed with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> fragment to be cloned (which has been prepared with the same restriction nuclease), <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5089/">DNA ligase</a>, and ATP. The cohesive ends <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-pair, and DNA ligase seals the nicks in the DNA backbone, producing a complete <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5723/">recombinant DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>. (Micrographs courtesy of Huntington Potter and David Dressler.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968875109-534470953.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-31 - <span class="title">Purification and amplification of a specific DNA sequence by DNA cloning in a bacterium</span></span></center>
+<p>To produce many copies of a particular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence, the fragment is first inserted into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5920/">vector</a>, as shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1575/?report=objectonly" rid-figpopup="figA1575" rid-ob="figobA1575" target="object">Figure 8-30</a>. The resulting recombinant plasmid DNA is then introduced into a bacterium, where it can be replicated many millions of times as the bacterium multiplies.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968875342-57972344.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-32 - <span class="title">The making of a yeast artificial chromosome (YAC)</span></span></center>
+<p>A YAC <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5920/">vector</a> allows the cloning of very large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> molecules. TEL, CEN, and ORI are the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a>, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4954/">centromere</a>, and origin of replication sequences, respectively, for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5770/">Saccharomyces</a> cerevisiae</i>. <i>Bam</i>H1 and <i>Eco</i>R1 are sites where the corresponding restriction nucleases cut the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a>. The sequences denoted A and B encode enzymes that serve as selectable markers to allow the easy isolation of yeast cells that have taken up the artificial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. (Adapted from D.T. Burke, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>.F. Carle, and M.V. Olson, <i>Science</i> 236:806–812, 1987.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968875562-494888675.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-33 - <span class="title">Construction of a human genomic DNA library</span></span></center>
+<p>A genomic library is usually stored as a set of bacteria, each carrying a different fragment of human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>. For simplicity, cloning of just a few representative fragments <i>(colored)</i> is shown. In reality, all of the <i>gray</i> DNA fragments would also be cloned.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968875765-827805906.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-34 - <span class="title">The synthesis of cDNA</span></span></center>
+<p>Total <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> is extracted from a particular tissue, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> copies (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4931/">cDNA</a>) of the mRNA molecules are produced by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5749/">reverse transcriptase</a> (see p. 289). For simplicity, the copying of just one of these mRNAs into cDNA is illustrated. A short oligonucleotide <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> to the poly-A tail at the 3′ end of the mRNA (discussed in Chapter 6) is first hybridized to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> to act as a primer for the reverse transcriptase, which then copies the RNA into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5011/">complementary DNA</a> chain, thereby forming a DNA/RNA hybrid helix. Treating the DNA/RNA hybrid with RNase H (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A754/figure/A772/?report=objectonly" rid-figpopup="figA772" rid-ob="figobA772" target="object">Figure 5-13</a>) creates nicks and gaps in the RNA strand. The remaining single-stranded cDNA is then copied into double-stranded cDNA by the enzyme <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a>. The primer for this synthesis <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> is provided by a fragment of the original mRNA, as shown. Because the DNA polymerase used to synthesize the second DNA strand can synthesize through the bound RNA molecules, the RNA fragment that is <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a>-paired to the 3′ end of the first DNA strand usually acts as the primer for the final product of the second strand synthesis. This RNA is eventually degraded during subsequent cloning steps. As a result, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequences at the extreme 5′ ends of the original mRNA molecules are often absent from cDNA libraries.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968876151-461672757.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-35 - <span class="title">The differences between cDNA clones and genomic DNA clones derived from the same region of DNA</span></span></center>
+<p>In this example <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> A is infrequently transcribed, whereas gene B is frequently transcribed, and both genes contain introns <i>(green).</i> In the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5223/">genomic DNA</a> library, both the introns and the nontranscribed DNA <i>(pink)</i> are included in the clones, and most clones contain, at most, only part of the coding sequence of a gene <i>(red)</i>. In the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4931/">cDNA</a> clones the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5352/">intron</a> sequences <i>(yellow)</i> have been removed by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5763/">RNA splicing</a> during the formation of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> <i>(blue),</i> and a continuous coding sequence is therefore present in each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4994/">clone</a>. Because gene B is transcribed more abundantly than in gene A in the cells from which the cDNA library was made, it is represented much more frequently than A in the cDNA library. In contrast, A and B are in principle represented equally in the genomic DNA library.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968876475-19094238.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-36 - <span class="title">The enzymatic—or dideoxy—method of sequencing DNA</span></span></center>
+<p>(A) This method relies on the use of dideoxyribonucleoside triphosphates, derivatives of the normal deoxyribonucleoside triphosphates that lack the 3′ <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5308/">hydroxyl</a> group. (B) Purified <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is synthesized <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a></i> in a mixture that contains single-stranded molecules of the DNA to be sequenced <i>(gray),</i> the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a>, a short primer DNA <i>(orange)</i> to enable the polymerase to start DNA synthesis, and the four deoxyribonucleoside triphosphates (dATP, dCTP, dGTP, dTTP: <i>green</i> A, C, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>, and T). If a dideoxyribonucleotide analog <i>(red)</i> of one of these nucleotides is also present in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> mixture, it can become incorporated into a growing DNA chain. Because this chain now lacks a 3′ OH group, the addition of the next nucleotide is blocked, and the DNA chain terminates at that point. In the example illustrated, a small amount of dideoxyATP (ddATP, symbolized here as a <i>red</i> A) has been included in the nucleotide mixture. It competes with an excess of the normal deoxyATP (dATP, <i>green</i> A), so that ddATP is occasionally incorporated, at random, into a growing DNA strand. This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> mixture will eventually produce a set of DNAs of different lengths <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> DNA that is being sequenced and terminating at each of the different A's. The exact lengths of the DNA synthesis products can then be used to determine the position of each A in the growing chain. (C) To determine the complete sequence of a DNA fragment, the double-stranded DNA is first separated into its single strands and one of the strands is used as the template for sequencing. Four different chain-terminating dideoxyribonucleoside triphosphates (ddATP, ddCTP, ddGTP, ddTTP, again shown in <i>red)</i> are used in four separate DNA synthesis reactions on copies of the same single-stranded DNA template <i>(gray).</i> Each reaction produces a set of DNA copies that terminate at different points in the sequence. The products of these four reactions are separated by electrophoresis in four parallel lanes of a polyacrylamide gel (labeled here A, T, C, and G). The newly synthesized fragments are detected by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5378/">label</a> (either radioactive or fluorescent) that has been incorporated either into the primer or into one of the deoxyribonucleoside triphosphates used to extend the DNA chain. In each lane, the bands represent fragments that have terminated at a given nucleotide (e.g., A in the leftmost lane) but at different positions in the DNA. By reading off the bands in order, starting at the bottom of the gel and working across all lanes, the DNA sequence of the newly synthesized strand can be <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a>. The sequence is given in the <i>green arrow</i> to the right of the gel. This sequence is identical to that of the 5′ → 3′ strand <i>(green)</i> of the original double-stranded DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968876875-226370941.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-37 - <span class="title">Automated DNA sequencing</span></span></center>
+<p>Shown here is a tiny part of the data from an automated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-sequencing run as it appears on the computer screen. Each colored peak represents a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> in the DNA sequence—a clear stretch of nucleotide sequence can be read here between positions 173 and 194 from the start of the sequence. This particular example is taken from the international project that <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> the complete nucleotide sequence of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> of the plant <i>Arabidopsis</i>. (Courtesy of George Murphy.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968877102-699010870.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-38 - <span class="title">Finding the regions in a DNA sequence that encode a protein</span></span></center>
+<p>(A) Any region of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence can, in principle, code for six different <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequences, because any one of three different reading frames can be used to interpret the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence on each strand. Note that a nucleotide sequence is always read in the 5′-to-3′ chain direction and encodes a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> from the amino (N) to the carboxyl (C) terminus. For a random nucleotide sequence read in a particular frame, a stop signal for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> synthesis is encountered, on average, about once every 21 amino acids (once every 63 nucleotides). In this sample sequence of 48 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> pairs, each such signal <i>(stop <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4997/">codon</a>)</i> is colored <i>green</i>, and only <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5718/">reading frame</a> 2 lacks a stop signal. (B) Search of a 1700 base-pair DNA sequence for a possible protein-encoding sequence. The information is displayed as in (A), with each stop signal for protein synthesis denoted by a <i>green line.</i> In addition, all of the regions between possible start and stop signals for protein synthesis (see pp. 348–350) are displayed as <i>red bars.</i> Only reading frame 1 actually encodes a protein, which is 475 amino acid residues long.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968877318-952450339.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-39 - <span class="title">Amplification of DNA using the PCR technique</span></span></center>
+<p>Knowledge of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequence to be amplified is used to design two synthetic DNA oligonucleotides, each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> to the sequence on one strand of the DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5106/">double helix</a> at opposite ends of the region to be amplified. These oligonucleotides serve as primers for <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a></i> DNA synthesis, which is performed by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a>, and they determine the segment of the DNA that is amplified. (A) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5604/">PCR</a> starts with a double-stranded DNA, and each cycle of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> begins with a brief heat treatment to separate the two strands (step 1). After strand separation, cooling of the DNA in the presence of a large excess of the two primer DNA oligonucleotides allows these primers to hybridize to complementary sequences in the two DNA strands (step 2). This mixture is then incubated with DNA polymerase and the four deoxyribonucleoside triphosphates so that DNA is synthesized, starting from the two primers (step 3). The entire cycle is then begun again by a heat treatment to separate the newly synthesized DNA strands. (B) As the procedure is performed over and over again, the newly synthesized fragments serve as templates in their turn, and within a few cycles the predominant DNA is identical to the sequence bracketed by and including the two primers in the original <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a>. Of the DNA put into the original reaction, only the sequence bracketed by the two primers is amplified because there are no primers attached anywhere else. In the example illustrated in (B), three cycles of reaction produce 16 DNA chains, 8 of which <i>(boxed in yellow)</i> are the same length as and correspond exactly to one or the other strand of the original bracketed sequence shown at the far left; the other strands contain extra DNA downstream of the original sequence, which is replicated in the first few cycles. After three more cycles, 240 of the 256 DNA chains correspond exactly to the original bracketed sequence, and after several more cycles, essentially all of the DNA strands have this unique length.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968877542-951309661.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-40 - <span class="title">Use of PCR to obtain a genomic or cDNA clone</span></span></center>
+<p>(A) To obtain a genomic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4994/">clone</a> by using <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5604/">PCR</a>, chromosomal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is first purified from cells. PCR primers that flank the stretch of DNA to be cloned are added, and many cycles of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> are completed (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1590/?report=objectonly" rid-figpopup="figA1590" rid-ob="figobA1590" target="object">Figure 8-39</a>). Since only the DNA between (and including) the primers is amplified, PCR provides a way to obtain a short stretch of chromosomal DNA selectively in a pure form. (B) To use PCR to obtain a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4931/">cDNA</a> clone of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> is first purified from cells. The first primer is then added to the population of mRNAs, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5749/">reverse transcriptase</a> is used to make a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5011/">complementary DNA</a> strand. The second primer is then added, and the single-stranded DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> is amplified through many cycles of PCR, as shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26837/figure/A1590/?report=objectonly" rid-figpopup="figA1590" rid-ob="figobA1590" target="object">Figure 8-39</a>. For both types of cloning, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> sequence of at least part of the region to be cloned must be known beforehand.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968877756-147189988.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-41 - <span class="title">How PCR is used in forensic science</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences that create the variability used in this analysis contain runs of short, repeated sequences, such as CACACA . . . , which are found in various positions (loci) in the human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>. The number of repeats in each run can be highly variable in the population, ranging from 4 to 40 in different individuals. A run of repeated nucleotides of this type is commonly referred to as a <i>hypervariable microsatellite</i> sequence—also known as a VNTR <i>(variable number of tandem repeat)</i> sequence. Because of the variability in these sequences at each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5405/">locus</a>, individuals usually inherit a different variant from their mother and from their father; two unrelated individuals therefore do not usually contain the same pair of sequences. A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5604/">PCR</a> analysis using primers that bracket the locus produces a pair of bands of amplified DNA from each individual, one band representing the maternal variant and the other representing the paternal variant. The length of the amplified DNA, and thus the position of the band it produces after electrophoresis, depends on the exact number of repeats at the locus. (B) In the schematic example shown here, the same three VNTR loci are analyzed (requiring three different pairs of specially selected oligonucleotide primers) from three suspects (individuals A, B, and C), producing six DNA bands for each person after polyacrylamide gel electrophoresis. Although some individuals have several bands in common, the overall pattern is quite distinctive for each. The band pattern can therefore serve as a “fingerprint” to identify an individual nearly uniquely. The fourth lane (F) contains the products of the same reactions carried out on a forensic sample. The starting material for such a PCR can be a single hair or a tiny sample of blood that was left at the crime scene. When examining the variability at 5 to 10 different VNTR loci, the odds that two random individuals would share the same genetic pattern by chance can be approximately one in 10 billion. In the case shown here, individuals A and C can be eliminated from further enquiries, whereas individual B remains a clear suspect for committing the crime. A similar approach is now routinely used for paternity testing.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968877974-450502328.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-42 - <span class="title">Production of large amounts of a protein from a protein-coding DNA sequence cloned into an expression vector and introduced into cells</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5920/">vector</a> has been engineered to contain a highly active <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5684/">promoter</a>, which causes unusually large amounts of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> to be produced from an adjacent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>-coding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> inserted into the plasmid vector. Depending on the characteristics of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4995/">cloning vector</a>, the plasmid is introduced into bacterial, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a>, insect, or mammalian cells, where the inserted gene is efficiently transcribed and translated into protein.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968878236-652845995.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-43 - <span class="title">Production of large amounts of a protein by using a plasmid expression vector</span></span></center>
+<p>In this example, bacterial cells have been transfected with the coding sequence for an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5087/">DNA helicase</a><i>;</i> transcription from this coding sequence is under the control of a viral <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5684/">promoter</a> that becomes active only at temperatures of 37°C or higher. The total cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> has been analyzed by SDS-polyacrylamide gel electrophoresis, either from bacteria grown at 25°C (no helicase protein made), or after a shift of the same bacteria to 42°C for up to 2 hours (helicase protein has become the most abundant protein species in the lysate). (Courtesy of Jack Barry.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968878637-919167219.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-44 - <span class="title">Knowledge of the molecular biology of cells makes it possible to experimentally move from gene to protein and from protein to gene</span></span></center>
+<p>A small quantity of a purified <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is used to obtain a partial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence. This provides sequence information that enables the corresponding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> to be cloned from a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5088/">DNA library</a>. Once the gene has been cloned, its protein-coding sequence can be inserted into an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5162/">expression vector</a> and used to produce large quantities of the protein from genetically engineered cells.</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1632968880681-238270309.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-45 - <span class="title">X-ray crystallography</span></span></center>
+<p>(A) A narrow parallel beam of x-rays is directed at a well-ordered crystal (B). Shown here is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> crystal of ribulose bisphosphate carboxylase, an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> with a central role in CO<sub>2</sub> fixation during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5633/">photosynthesis</a>. Some of the beam is scattered by the atoms in the crystal. The scattered waves reinforce one another at certain points and appear as a pattern of diffraction spots (C). This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5075/">diffraction pattern</a>, together with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence of the protein, can be used to produce an atomic model (D). The complete atomic model is hard to interpret, but this simplified version, derived from the x-ray diffraction data, shows the protein's structural features clearly (α helices, <i>green</i>; β strands, <i>red</i>). Note that the components pictured in A to D are not shown to scale. (B, courtesy of C. Branden; C, courtesy of J. Hajdu and I. Andersson; D, adapted from original provided by B. Furugren.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968880992-941041870.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-46 - <span class="title">NMR spectroscopy</span></span></center>
+<p>(A) An example of the data from an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5539/">NMR</a> machine. This two-dimensional NMR spectrum is derived from the C-terminal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> cellulase. The spots represent interactions between hydrogen atoms that are near neighbors in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> and hence reflects the distance that separates them. Complex computing methods, in conjunction with the known <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence, enable possible compatible structures to be derived. In (B) 10 structures, which all satisfy the distance constraints equally well, are shown superimposed on one another, giving a good indication of the probable three-dimensional structure. (Courtesy of P. Kraulis.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968881165-892840539.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-47 - <span class="title">Results of a BLAST search</span></span></center>
+<p>Sequence databases can be searched to find similar <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5561/">nucleic acid</a> sequences. Here a search for proteins similar to the human cell-cycle regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> cdc2 <i>(Query)</i> locates maize cdc2 <i>(Subject),</i> which is 68% identical (and 82% similar) to human cdc2 in its amino acid sequence. The alignment begins at <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5737/">residue</a> 57 of the Query protein, suggesting that the human protein has an N-terminal region that is absent from the maize protein. The <i>green</i> blocks indicate differences in sequence, and the <i>yellow</i> bar summarizes the similarities: when the two amino acid sequences are identical, the residue is shown; conservative amino acid substitutions are indicated by a plus sign (+). Only one small gap has been introduced—indicated by the <i>red arrow</i> at position 194 in the Query sequence—to align the two sequences maximally. The alignment score <i>(Score)</i> takes into account penalties for substitution and gaps; the higher the alignment score, the better the match. The significance of the alignment is reflected in the <i>Expectation</i> (E) value, which represents the number of alignments with scores equal to or better than the given score that are expected to occur by chance. The lower the E value, the more significant the match; the extremely low value here indicates certain significance. E values much higher than 0.1 are unlikely to reflect true relatedness.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968881396-25253633.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-48 - <span class="title">Epitope tagging allows the localization or purification of proteins</span></span></center>
+<p>Using standard genetic engineering techniques, a short <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5144/">epitope</a> tag can be added to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> of interest. The resulting protein contains the protein being analyzed plus a short peptide that can be recognized by commercially available antibodies. The labeled antibody can be used to follow the cellular localization of the protein or to purify it by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5325/">immunoprecipitation</a> or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4789/">affinity chromatography</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968881743-788969774.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-49 - <span class="title">Fluorescence resonance energy transfer (FRET)</span></span></center>
+<p>To determine whether (and when) two proteins interact inside the cell, the proteins are first produced as fusion proteins attached to different variants of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5229/">GFP</a>. (A) In this example, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> X is coupled to a blue fluorescent protein, which is excited by violet light (370–440 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a>) and emits blue light (440–480 nm); protein Y is coupled to a green fluorescent protein, which is excited by blue light and emits green light (510 nm). (B) If protein X and Y do not interact, illuminating the sample with violet light yields fluorescence from the blue fluorescent protein only. (C) When protein X and protein Y interact, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5195/">FRET</a> can now occur. Illuminating the sample with violet light excites the blue fluorescent protein, whose emission in turn excites the green fluorescent protein, resulting in an emission of green light. The fluorochromes must be quite close together—within about 1–10 nm of one another—for FRET to occur. Because not every <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of protein X and protein Y is bound at all times, some blue light may still be detected. But as the two proteins begin to interact, emission from the donor GFP falls as the emission from the acceptor GFP rises.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968881970-25800332.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-50 - <span class="title">Purification of protein complexes using a GST-tagged fusion protein</span></span></center>
+<p>GST fusion proteins, generated by standard <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5723/">recombinant DNA</a> techniques, can be captured on an affinity column containing beads coated with glutathione. To look for proteins that bind to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> X, cell extracts can be passed through this column. The hybrid protein and its binding partners can then be eluted with glutathione. The identities of these interacting proteins can be <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by mass spectrometry (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1522/figure/A1551/?report=objectonly" rid-figpopup="figA1551" rid-ob="figobA1551" target="object">Figure 8-20</a>). In an alternative approach, a cell extract can be made from a cell producing the GST fusion protein and passed directly through the glutathione affinity column. The GST fusion protein, along with proteins that have associated with it in the cell, are thereby retained. Affinity columns can also be made to contain antibodies against GST or another convenient small protein or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5144/">epitope</a> tag (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26820/figure/A1535/?report=objectonly" rid-figpopup="figA1535" rid-ob="figobA1535" target="object">Figure 8-48</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968882318-683498876.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-51 - <span class="title">The yeast two-hybrid system for detecting protein-protein interactions</span></span></center>
+<p>The target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is fused to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>-binding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> that localizes it to the regulatory region of a reporter <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> as “bait.” When this target protein binds to another specially designed protein in the cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> (“prey”), their interaction brings together two halves of a transcriptional activator, which then switches on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> of the reporter gene. The reporter gene is often one that will permit growth on a selective medium. Bait and prey fusion proteins are generated by standard <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5723/">recombinant DNA</a> techniques. In most cases, a single bait protein is used to fish for interacting partners among a large collection of prey proteins produced by ligating DNA encoding the activation domain of a transcriptional activator to a large mixture of DNA fragments from a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4931/">cDNA</a> library.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968882552-959605228.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-52 - <span class="title">The phage display method for investigating protein interactions</span></span></center>
+<p>(A) Preparation of the bacteriophage. <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> encoding the desired peptide is ligated into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5613/">phage</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5920/">vector</a>, fused with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> encoding the viral <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> coat. The engineered phage are then introduced into <i>E. coli,</i> which produce phage displaying a hybrid coat protein that contains the peptide. (B) Phage libraries containing billions of different peptides can also be generated. In this example, the library is injected into a mouse with a brain tumor and phage that bind selectively to the blood vessels that supply the tumor are isolated and amplified. A peptide that binds specifically to tumor blood vessels can then be isolated from the purified phage. Such a peptide could be used to target drugs or toxins to the tumor.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968882716-921143494.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-53 - <span class="title">Surface plasmon resonance</span></span></center>
+<p>(A) SPR can detect binding interactions by monitoring the reflection of a beam of light off the interface between an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4840/">aqueous</a> solution of potential binding molecules <i>(green)</i> and a biosensor surface coated with an immobilized bait <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <i>(red).</i> (B) A solution of prey proteins is allowed to flow past the immobilized bait protein. Binding of prey molecules to bait proteins produces a measurable change in the resonance angle. These changes, monitored in real time, reflect the association and dissociation of the molecular complexes.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968882936-312288978.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-54 - <span class="title">The DNA footprinting technique</span></span></center>
+<p>(A) This technique requires a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> that has been labeled at one end (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1553/figure/A1566/?report=objectonly" rid-figpopup="figA1566" rid-ob="figobA1566" target="object">Figure 8-24B</a>). The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> shown binds tightly to a specific DNA sequence that is seven nucleotides long, thereby protecting these seven nucleotides from the cleaving agent. If the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> were performed without the DNA-binding protein, a complete ladder of bands would be seen on the gel (not shown). (B) An actual footprint used to determine the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a> for a human protein that stimulates the transcription of specific eucaryotic genes. These results locate the binding site about 60 nucleotides upstream from the start site for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> synthesis. The cleaving agent was a small, iron-containing organic molecule that normally cuts at every phosphodiester bond with nearly equal frequency. (B, courtesy of Michele Sawadogo and Robert Roeder.)</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1632968885749-112868248.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-55 - <span class="title">Insertional mutant of the snapdragon, <i>Antirrhinum.</i></span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> coding for a regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> causes leafy shoots to develop in place of flowers. The mutation allows cells to adopt a character that would be appropriate to a different part of the normal plant. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> plant is on the left, the normal plant on the right. (Courtesy of Enrico Coen and Rosemary Carpenter.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968885974-693446621.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-56 - <span class="title">Screens can detect mutations that affect an animal's behavior</span></span></center>
+<p>(A) Wild-type <i>C. elegans</i> engage in social feeding. The worms swim around until they encounter their neighbors and commence feeding. (B) Mutant animals feed by themselves. (Courtesy of Cornelia Bargmann, <i>Cell</i> 94:cover, 1998. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968886319-101456572.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-57 - <span class="title">Screening for temperature-sensitive bacterial or yeast mutants</span></span></center>
+<p>Mutagenized cells are plated out at the permissive temperature. The resulting colonies are transferred to two identical Petri dishes by replica plating; one of these plates is incubated at the permissive temperature, the other at the non-permissive temperature. Cells containing a temperature-sensitive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> essential for proliferation can divide at the normal, permissive temperature but fail to divide at the elevated, non-permissive temperature.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968886569-932927911.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-58 - <span class="title">Using genetics to determine the order of function of genes</span></span></center>
+<p>In normal cells, proteins are loaded into vesicles, which fuse with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> and secrete their contents into the extracellular medium. In secretory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> A, proteins accumulate in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5151/">ER</a>. In a different secretory mutant B, proteins accumulate in the Golgi. In the double mutant AB, proteins accumulate in the ER; this indicates that the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> defective in mutant A acts before the gene defective in mutant B in the secretory pathway.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968886905-667957275.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-59 - <span class="title">Genetic linkage analysis using physical markers on the DNA to find a human gene</span></span></center>
+<p>In this example, one studies the coinheritance of a specific human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5618/">phenotype</a> (here a genetic disease) with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5800/">SNP</a> marker. If individuals who inherit the disease nearly always inherit a particular SNP marker, then the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> causing the disease and the SNP are likely to be close together on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, as shown here. To prove that an observed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a> is statistically significant, hundreds of individuals may need to be examined. Note that the linkage will not be absolute unless the SNP marker is located in the gene itself. Thus, occasionally the SNP will be separated from the disease gene by meiotic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5037/">crossing-over</a> during the formation of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> or sperm: this has happened in the case of the chromosome pair on the far right. When working with a sequenced <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>, this procedure would be repeated with SNPs located on either side of the initial SNP, until a 100% coinheritance is found.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968887318-404831196.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-60 - <span class="title">Domain fusions reveal relationships between functionally linked genes</span></span></center>
+<p>In this example, the functional interaction of genes 1 and 2 in organism A is inferred by the fusion of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> domains into a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> (gene 3) in organism B.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968887745-833675303.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-61 - <span class="title">Using a reporter protein to determine the pattern of a gene's expression</span></span></center>
+<p>(A) In this example the coding sequence for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> X is replaced by the coding sequence for protein Y. (B) Various fragments of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> containing candidate regulatory sequences are added in combinations. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5723/">recombinant DNA</a> molecules are then tested for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> after their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5885/">transfection</a> into a variety of different types of mammalian cells, and the results are summarized in (C). For experiments in eucaryotic cells, two commonly used reporter proteins are the enzymes β-galactosidase <i>(β-gal)</i> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5253/">green fluorescent protein</a> or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5229/">GFP</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1777/figure/A1788/?report=objectonly" rid-figpopup="figA1788" rid-ob="figobA1788" target="object">Figure 9-44</a>). <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1269/figure/A1284/?report=objectonly" rid-figpopup="figA1284" rid-ob="figobA1284" target="object">Figure 7-39</a> shows an example in which the <i>β-gal</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> is used to monitor the activity of the <i>eve</i> gene <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5731/">regulatory sequence</a> in a <i>Drosophila</i> embryo.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968888065-656907170.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-62 - <span class="title">Using DNA microarrays to monitor the expression of thousands of genes simultaneously</span></span></center>
+<p>To prepare the microarray, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> fragments—each corresponding to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>—are spotted onto a slide by a robot. Prepared arrays are also available commercially. In this example, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> is collected from two different cell samples for a direct comparison of their relative levels of gene <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>. These samples are converted to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4931/">cDNA</a> and labeled, one with a red fluorochrome, the other with a green fluorochrome. The labeled samples are mixed and then allowed to hybridize to the microarray. After incubation, the array is washed and the fluorescence scanned. In the portion of a microarray shown, which represents the expression of 110 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> genes, <i>red</i> spots indicate that the gene in sample 1 is expressed at a higher level than the corresponding gene in sample 2; <i>green</i> spots indicate that expression of the gene is higher in sample 2 than in sample 1. <i>Yellow</i> spots reveal genes that are expressed at equal levels in both cell samples. Dark spots indicate little or no expression in either sample of the gene whose fragment is located at that position in the array. For details see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A68/figure/A92/?report=objectonly" rid-figpopup="figA92" rid-ob="figobA92" target="object">Figure 1-45</a>. (Microarray courtesy of J.L. DeRisi et al., <i>Science</i> 278:680–686, 1997. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968888231-516228486.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-63 - <span class="title">Using cluster analysis to identify sets of genes that are coordinately regulated</span></span></center>
+<p>Genes that belong to the same cluster may be involved in common cellular pathways or processes. To perform a cluster analysis, microarray data are obtained from cell samples exposed to a variety of different conditions, and genes that show coordinate changes in their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> pattern are grouped together. In this experiment, human fibroblasts were deprived of serum for 48 hours; serum was then added back to the cultures at time 0 and the cells were harvested for microarray analysis at different time points. Of the 8600 genes analyzed on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5091/">DNA microarray</a>, just over 300 showed threefold or greater variation in their expression patterns in response to serum reintroduction. Here, <i>red</i> indicates an increase in expression; <i>green</i> is a decrease in expression. On the basis of the results of many microarray experiments, the 8600 genes have been grouped in clusters based on similar patterns of expression. The results of this analysis show that genes involved in wound healing are turned on in response to serum, while genes involved in regulating cell cycle progression and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4970/">cholesterol</a> biosynthesis are shut down. (From M.B. Eisen et al., <i>Proc. Natl. Acad. Sci. USA</i> 95:14863–14868, 1998. © National Academy of Sciences.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968888577-813037321.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-64 - <span class="title">Gene replacement, gene knockout, and gene addition</span></span></center>
+<p>A normal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> can be altered in several ways in a genetically engineered organism. (A) The normal gene <i>(green)</i> can be completely replaced by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> copy of the gene <i>(red)</i>, a process called gene replacement. This provides information on the activity of the mutant gene without interference from the normal gene, and thus the effects of small and subtle mutations can be <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a>. (B) The normal gene can be inactivated completely, for example, by making a large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5062/">deletion</a> in it; the gene is said to have suffered a knockout. (C) A mutant gene can simply be added to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>. In some organisms this is the easiest type of genetic engineering to perform. This approach can provide useful information when the introduced mutant gene overrides the function of the normal gene.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968888978-311746083.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-65 - <span class="title">The antisense RNA strategy for generating dominant negative mutations</span></span></center>
+<p>Mutant genes that have been engineered to produce <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4836/">antisense RNA</a>, which is <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5012/">complementary</a> in sequence to the RNA made by the normal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> X, can cause double-stranded RNA to form inside cells. If a large excess of the antisense RNA is produced, it can hybridize with—and thereby inactivate—most of the normal RNA produced by gene X. Although in the future it may become possible to inactivate any gene in this way, at present the technique seems to work for some genes but not others.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968889218-873190582.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-66 - <span class="title">Dominant negative mutations created by RNA interference</span></span></center>
+<p>(A) Double-stranded <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5756/">RNA</a> (dsRNA) can be introduced into <i>C. elegans</i> (1) by feeding the worms with <i>E. coli</i> expressing the dsRNA or (2) by injecting dsRNA directly into the gut. (B) Wild-type worm embryo. (C) Worm embryo in which a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> involved in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> has been inactivated by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5764/">RNAi</a>. The embryo shows abnormal migration of the two unfused nuclei of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> and sperm. (B, C, from P. <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>önczy et al., <i>Nature</i> 408:331–336, 2000. © Macmillan Magazines Ltd.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968889401-238713548.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-67 - <span class="title">A dominant negative effect of a protein</span></span></center>
+<p>Here a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> is engineered to produce a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> that prevents the normal copies of the same protein from performing their function. In this simple example, the normal protein must form a multisubunit <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> to be active, and the mutant protein blocks function by forming a mixed complex that is inactive. In this way a single copy of a mutant gene located anywhere in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a> can inactivate the normal products produced by other gene copies.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968889546-631146199.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-68 - <span class="title">Ectopic misexpression of Wnt, a signaling protein that affects development of the body axis in the early <i>Xenopus</i> embryo</span></span></center>
+<p>In this experiment, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> coding for Wnt was injected into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5922/">ventral</a> vegetal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4887/">blastomere</a>, inducing a second body axis (discussed in Chapter 21). (From S. Sokol et al., <i>Cell</i> 67:741–752, 1992. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968889886-788751950.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-69 - <span class="title">The use of a synthetic oligonucleotide to modify the protein-coding region of a gene by site-directed mutagenesis</span></span></center>
+<p>(A) A recombinant <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> containing a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> insert is separated into its two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> strands. A synthetic oligonucleotide primer corresponding to part of the gene sequence but containing a single altered <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> at a predetermined point is added to the single-stranded DNA under conditions that permit less than perfect DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a>. (B) The primer hybridizes to the DNA, forming a single mismatched nucleotide pair. (C) The recombinant plasmid is made double-stranded by <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a></i> DNA synthesis starting from the primer and sealed by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5089/">DNA ligase</a>. (D) The double-stranded DNA is introduced into a cell, where it is replicated. Replication using one strand of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5862/">template</a> produces a normal DNA <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, but replication using the other (the strand that contains the primer) produces a DNA molecule carrying the desired <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a>. Only half of the progeny cells will end up with a plasmid that contains the desired <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> gene. However, a progeny cell that contains the mutated gene can be identified, separated from other cells, and cultured to produce a pure population of cells, all of which carry the mutated gene. Only one of the many changes that can be engineered in this way is shown here. With an oligonucleotide of the appropriate sequence, more than one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> substitution can be made at a time, or one or more amino acids can be inserted or deleted. Although not shown in this figure, it is also possible to create a site-directed mutation by using the appropriate oligonucleotides and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5604/">PCR</a> (instead of plasmid replication) to amplify the mutated gene.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968890222-612047957.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-70 - <span class="title">Summary of the procedures used for making gene replacements in mice</span></span></center>
+<p>In the first step (A), an altered version of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> is introduced into cultured ES (embryonic stem) cells. Only a few rare ES cells will have their corresponding normal genes replaced by the altered gene through a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> event. Although the procedure is often laborious, these rare cells can be identified and cultured to produce many descendants, each of which carries an altered gene in place of one of its two normal corresponding genes. In the next step of the procedure (B), these altered ES cells are injected into a very early mouse embryo; the cells are incorporated into the growing embryo, and a mouse produced by such an embryo will contain some somatic cells (indicated by <i>orange)</i> that carry the altered gene. Some of these mice will also contain germ-line cells that contain the altered gene. When bred with a normal mouse, some of the progeny of these mice will contain the altered gene in all of their cells. If two such mice are in turn bred (not shown), some of the progeny will contain two altered genes (one on each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>) in all of their cells.</p><p>If the original <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> alteration completely inactivates the function of the gene, these mice are known as knockout mice. When such mice are missing genes that function during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a>, they often die with specific defects long before they reach adulthood. These defects are carefully analyzed to help decipher the normal function of the missing gene.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968890395-915021586.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-71 - <span class="title">Mouse with an engineered defect in fibroblast growth factor 5 (FGF5)</span></span></center>
+<p>FGF5 is a negative regulator of hair formation. In a mouse lacking FGF5 <i>(right)</i>, the hair is long compared with its heterozygous littermate <i>(left)</i>. Transgenic mice with phenotypes that mimic aspects of a variety of human disorders, including Alzheimer's disease, atherosclerosis, diabetes, cystic fibrosis, and some type of cancers, have been generated. Their study may lead to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of more effective treatments. (Courtesy of Gail Martin, from J.M. Hebert et al., <i>Cell</i> 78:1017–1025, 1994. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968890564-652637818.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-72 - <span class="title">A procedure used to make a transgenic plant</span></span></center>
+<p>(A) Outline of the process. A disc is cut out of a leaf and incubated in culture with <i>Agrobacteria</i> that carry a recombinant <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> with both a selectable marker and a desired transgene. The wounded cells at the edge of the disc release substances that attract the <i>Agrobacteria</i> and cause them to inject <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> into these cells. Only those plant cells that take up the appropriate DNA and express the selectable marker <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> survive to proliferate and form a callus. The manipulation of growth factors supplied to the callus induces it to form shoots that subsequently root and grow into adult plants carrying the transgene. (B) The preparation of the recombinant plasmid and its transfer to plant cells. An <i>Agrobacterium</i> plasmid that normally carries the T-DNA sequence is modified by substituting a selectable marker (such as the kanamycin-resistance gene) and a desired transgene between the 25-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a>-pair T-DNA repeats. When the <i>Agrobacterium</i> recognizes a plant cell, it efficiently passes a DNA strand that carries these sequences into the plant cell, using the special machinery that normally transfers the plasmid's T-DNA sequence.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1632968890968-993018887.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 8-73 - <span class="title">Making collections of mutant organisms</span></span></center>
+<p>(A) A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5062/">deletion</a> cassette for use in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> contains sequences <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> to each end of a target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> x <i>(red),</i> a selectable marker <i>(blue),</i> and a unique “barcode” sequence, approximately 20 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs in length <i>(green).</i> This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is introduced into yeast, where it readily replaces the target gene by homologous <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a>. (B) A similar approach can be taken to prepare tagged knockout mutants in <i>Arabidopsis</i> and <i>Drosophila</i>. In this case, mutants are generated by the accidental insertion of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5895/">transposable element</a> into a target gene. The total DNA from the resulting organism can be collected and quickly screened for disruption of a gene of interest by using <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5604/">PCR</a> primers that bind to the transposable element and to the target gene. A PCR product is detected on the gel only if the transposable element has inserted into the target gene.</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p></div></div>
+</body>
+</html>
