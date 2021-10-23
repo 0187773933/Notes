@@ -106,7 +106,7 @@ def build_typing_html( options ):
 			<div class="col-8">
 				<div class="input-group">
 					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
-					<input id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
 					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
 				</div>
 			</div>
