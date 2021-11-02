@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cranial Nerves</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+	<script src="https://39363.org/CDN/NOTES/interactive_drag_and_drop.js"></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+    <area target="" alt="Olfactory Nerve" title="Olfactory Nerve" href="" coords="233,117,505,75" shape="rect">
+    <area target="" alt="Optic Nerve" title="Optic Nerve" href="" coords="186,202,393,153" shape="rect">
+    <area target="" alt="Oculomotor Nerve" title="Oculomotor Nerve" href="" coords="160,283,462,241" shape="rect">
+    <area target="" alt="Trochlear Nerve" title="Trochlear Nerve" href="" coords="174,342,440,302" shape="rect">
+    <area target="" alt="Trigeminal Nerve" title="Trigeminal Nerve" href="" coords="172,446,454,405" shape="rect">
+    <area target="" alt="Abducens Nerve" title="Abducens Nerve" href="" coords="177,504,457,463" shape="rect">
+    <area target="" alt="Facial Nerve" title="Facial Nerve" href="" coords="186,593,399,553" shape="rect">
+    <area target="" alt="Vestibulocochlear Nerve" title="Vestibulocochlear Nerve" href="" coords="14,658,396,615" shape="rect">
+    <area target="" alt="Glossopharyngeal Nerve" title="Glossopharyngeal Nerve" href="" coords="25,756,421,715" shape="rect">
+    <area target="" alt="Vagus Nerve" title="Vagus Nerve" href="" coords="186,848,405,804" shape="rect">
+    <area target="" alt="Hypoglossal Nerve" title="Hypoglossal Nerve" href="" coords="160,914,471,873" shape="rect">
+    <area target="" alt="Accessory Nerve" title="Accessory Nerve" href="" coords="177,987,454,944" shape="rect">
+</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1635883163759-128011998.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/005-Nerves/002-Eye Muscles - 1.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		start_interactive_drag_and_drop();
+	</script>
+</body>
+</html>

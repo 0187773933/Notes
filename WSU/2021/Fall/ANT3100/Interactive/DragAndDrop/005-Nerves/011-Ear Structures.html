@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ear Structures</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+	<script src="https://39363.org/CDN/NOTES/interactive_drag_and_drop.js"></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+    <area target="" alt="Auricle" title="Auricle" href="" coords="318,134,449,92" shape="rect">
+    <area target="" alt="External Acoustic Meatus" title="External Acoustic Meatus" href="" coords="500,373,896,331" shape="rect">
+    <area target="" alt="Tympanic Membrane" title="Tympanic Membrane" href="" coords="934,298,1273,258" shape="rect">
+    <area target="" alt="Semicircular Canals" title="Semicircular Canals" href="" coords="1190,358,1532,317" shape="rect">
+    <area target="" alt="Vestibulocochlear Nerve" title="Vestibulocochlear Nerve" href="" coords="1349,490,1733,446" shape="rect">
+    <area target="" alt="Vestibule" title="Vestibule" href="" coords="1366,646,1534,605" shape="rect">
+    <area target="" alt="Cochlea" title="Cochlea" href="" coords="1366,705,1534,660" shape="rect">
+    <area target="" alt="Pharyngotympanic Tube" title="Pharyngotympanic Tube" href="" coords="1180,880,1571,841" shape="rect">
+</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1635885804395-881722523.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/005-Nerves/012-Spinal Column - 1.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		start_interactive_drag_and_drop();
+	</script>
+</body>
+</html>
