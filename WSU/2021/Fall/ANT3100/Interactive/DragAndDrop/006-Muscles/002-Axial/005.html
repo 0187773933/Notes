@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Parotid Gland" title="Parotid Gland" href="" coords="1336.4292913385825,286.2409448818898,1619.999842519685,247.12818897637797" shape="rect">
+			<area target="" alt="Omohyoid Muscle" title="Omohyoid Muscle" href="" coords="1337.1100787401574,635.2170078740157,1662.2609448818898,601.0297637795276" shape="rect">
+			<area target="" alt="Submandibular Gland" title="Submandibular Gland" href="" coords="1334.864094488189,389.93622047244094,1736.167874015748,355.74881889763776" shape="rect">
+			<area target="" alt="Levator Scapulae Muscle" title="Levator Scapulae Muscle" href="" coords="1334.864094488189,472.0573228346457,1786.7974803149607,437.8699212598425" shape="rect">
+			<area target="" alt="Middle Scalene Muscle" title="Middle Scalene Muscle" href="" coords="1334.8642519685038,580.448031496063,1736.1678740157479,546.2607874015748" shape="rect">
+			<area target="" alt="Sternocleidomastoid Muscle" title="Sternocleidomastoid Muscle" href="" coords="1337.1100787401574,517.2009448818898,1789.043464566929,483.0137007874016" shape="rect">
+			<area target="" alt="Clavicle" title="Clavicle" href="" coords="1337.1103937007874,677.0798425196849,1488.5217322834646,645.7826771653542" shape="rect">
+			<area target="" alt="Deltoid Muscle" title="Deltoid Muscle" href="" coords="1334.863937007874,728.3751181102361,1591.8259842519685,694.187874015748" shape="rect">
+			<area target="" alt="Pectoralis Major Muscle" title="Pectoralis Major Muscle" href="" coords="1334.863937007874,974.8237795275589,1724.8696062992126,940.6365354330708" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637002544916-249120047.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/002-Axial/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

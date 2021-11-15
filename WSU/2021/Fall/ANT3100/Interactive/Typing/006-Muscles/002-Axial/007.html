@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Trapezius Muscle" title="Trapezius Muscle" href="" coords="278.6086614173228,332.23102362204725,569.6631496062992,282.13023622047245" shape="rect">
+			<area target="" alt="Triangle of Ausculation" title="Triangle of Ausculation" href="" coords="197.21732283464567,477.7963779527559,570.2089763779528,427.6955905511811" shape="rect">
+			<area target="" alt="Latissimus Dorsi Muscle" title="Latissimus Dorsi Muscle" href="" coords="181.56535433070866,549.3913385826772,569.6633070866142,499.2905511811024" shape="rect">
+			<area target="" alt="Thoracolumbar Facia" title="Thoracolumbar Facia" href="" coords="226.95653543307085,831.6521259842519,569.6633070866142,781.5513385826771" shape="rect">
+			<area target="" alt="Iliac Crest" title="Iliac Crest" href="" coords="391.30425196850393,918.0204724409449,571.228188976378,867.91968503937" shape="rect">
+			<area target="" alt="Gluteus Maximus Muscle" title="Gluteus Maximus Muscle" href="" coords="165.91307086614174,1061.9927559055118,569.6631496062992,1011.891968503937" shape="rect">
+			<area target="" alt="Splenius Capitis Muscle" title="Splenius Capitis Muscle" href="" coords="1344.076220472441,195.41181102362202,1722.7826771653545,145.31102362204723" shape="rect">
+			<area target="" alt="Sternocleidomastoid Muscle" title="Sternocleidomastoid Muscle" href="" coords="1344.076220472441,258.54220472440943,1800.0,208.44141732283464" shape="rect">
+			<area target="" alt="Deltoid Muscle" title="Deltoid Muscle" href="" coords="1344.076220472441,339.80267716535434,1599.652125984252,308.34771653543305" shape="rect">
+			<area target="" alt="Infraspinatus Muscle" title="Infraspinatus Muscle" href="" coords="1342.9499212598425,376.74377952755907,1694.6086614173228,351.13732283464566" shape="rect">
+			<area target="" alt="Teres Minor Muscle" title="Teres Minor Muscle" href="" coords="1344.5061417322834,410.5188976377953,1676.347874015748,384.9124409448819" shape="rect">
+			<area target="" alt="Teres Major Muscle" title="Teres Major Muscle" href="" coords="1344.5061417322834,445.20094488188977,1676.347874015748,419.59448818897636" shape="rect">
+			<area target="" alt="Rhomboid Major Muscle" title="Rhomboid Major Muscle" href="" coords="1342.9499212598425,512.8113385826772,1738.4346456692913,462.71055118110235" shape="rect">
+			<area target="" alt="Vertebral Column" title="Vertebral Column" href="" coords="1342.9499212598425,742.0300787401576,1641.3913385826772,691.9292913385827" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637002545672-37568748.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/Typing/006-Muscles/002-Axial/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>017</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Rectus Abdominis" title="Rectus Abdominis" href="" coords="4.695590551181102,423.77574803149605,307.51212598425195,370.95669291338584" shape="rect">
+			<area target="" alt="External Oblique" title="External Oblique" href="" coords="6.990551181102362,615.7138582677164,288.0,562.8948031496062" shape="rect">
+			<area target="" alt="Internal Oblique" title="Internal Oblique" href="" coords="5.425354330708662,894.844251968504,286.4348031496063,842.0251968503937" shape="rect">
+			<area target="" alt="Transverse Abdominis" title="Transverse Abdominis" href="" coords="1552.695590551181,425.34094488188975,1913.0094488188977,372.52188976377954" shape="rect">
+			<area target="" alt="External Oblique" title="External Oblique" href="" coords="1632.0,566.4094488188977,1913.0094488188977,513.5903937007874" shape="rect">
+			<area target="" alt="Internal Oblique" title="Internal Oblique" href="" coords="1633.5651968503937,693.4152755905512,1914.5746456692914,640.596220472441" shape="rect">
+			<area target="" alt="Rectus Abdominis" title="Rectus Abdominis" href="" coords="1610.1929133858266,808.0741732283465,1913.0094488188975,755.2551181102363" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637002551132-256682472.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/Typing/006-Muscles/002-Axial/018.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

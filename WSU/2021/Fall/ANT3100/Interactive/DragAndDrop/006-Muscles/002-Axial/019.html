@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>019</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Splenius Capitis Muscle" title="Splenius Capitis Muscle" href="" coords="1160.2404724409448,199.98157480314964,1543.304409448819,156.78000000000003" shape="rect">
+			<area target="" alt="Splenius Cervicis Muscle" title="Splenius Cervicis Muscle" href="" coords="454.58251968503936,252.60220472440946,854.5332283464567,209.40062992125985" shape="rect">
+			<area target="" alt="Iliocostalis Muscle" title="Iliocostalis Muscle" href="" coords="389.2492913385827,811.8204724409449,694.9565354330709,768.6188976377953" shape="rect">
+			<area target="" alt="Longissimus Muscle" title="Longissimus Muscle" href="" coords="408.9899212598425,651.9628346456693,736.6100787401575,608.7612598425197" shape="rect">
+			<area target="" alt="Spinalis Muscle" title="Spinalis Muscle" href="" coords="444.20724409448815,561.6007874015748,701.3927559055118,518.3992125984253" shape="rect">
+			<area target="" alt="Semispinalis Muscle" title="Semispinalis Muscle" href="" coords="511.33606299212596,109.30173228346456,838.9562204724409,66.10015748031496" shape="rect">
+			<area target="" alt="Posterior Scaline Muscle" title="Posterior Scaline Muscle" href="" coords="1174.9883464566929,286.84803149606296,1576.1741732283465,243.64645669291338" shape="rect">
+			<area target="" alt="Supraspinous Ligament" title="Supraspinous Ligament" href="" coords="1160.2404724409448,882.9507086614173,1539.5130708661418,839.7491338582677" shape="rect">
+			<area target="" alt="Gluteus Maximus Muscle" title="Gluteus Maximus Muscle" href="" coords="286.12015748031496,1072.1357480314962,701.3927559055119,1028.9341732283465" shape="rect">
+			<area target="" alt="Fascia of Gluteus Medius Muscle" title="Fascia of Gluteus Medius Muscle" href="" coords="176.8696062992126,995.9617322834645,693.5667716535434,952.7601574803149" shape="rect">
+			<area target="" alt="External Oblique Muscle" title="External Oblique Muscle" href="" coords="286.1203149606299,898.1270866141732,686.0872440944881,854.9255118110236" shape="rect">
+			<area target="" alt="External Intercostal Muscle" title="External Intercostal Muscle" href="" coords="256.6955905511811,413.3941732283464,692.2724409448819,370.1925984251968" shape="rect">
+			<area target="" alt="Nuchal Ligament" title="Nuchal Ligament" href="" coords="580.6955905511811,180.95196850393702,864.7330708661418,137.7503937007874" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637002552168-347572981.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/002-Axial/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
