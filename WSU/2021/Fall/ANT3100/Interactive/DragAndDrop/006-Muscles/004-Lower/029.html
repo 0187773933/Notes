@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>029</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="External Oblique" title="External Oblique" href="" coords="435.3105511811023,38.06897637795276,778.2966929133859,0.0" shape="rect">
+			<area target="" alt="Anterior Superior Iliac Spine" title="Anterior Superior Iliac Spine" href="" coords="278.06897637795277,90.20692913385827,795.6760629921259,52.137952755905516" shape="rect">
+			<area target="" alt="Iliopsoas" title="Iliopsoas" href="" coords="594.2069291338582,177.77196850393702,783.2618897637795,129.93133858267717" shape="rect">
+			<area target="" alt="Tensor Fascia Lata" title="Tensor Fascia Lata" href="" coords="435.3107086614173,280.2337007874016,788.2272440944882,232.39307086614173" shape="rect">
+			<area target="" alt="Sartorius" title="Sartorius" href="" coords="594.2067716535433,400.2337007874016,788.2270866141732,352.3930708661417" shape="rect">
+			<area target="" alt="Adductor Longus" title="Adductor Longus" href="" coords="481.6549606299213,461.8724409448819,813.8822047244095,414.031811023622" shape="rect">
+			<area target="" alt="Rectus Femoris" title="Rectus Femoris" href="" coords="504.82740157480316,595.6705511811024,806.4338582677166,547.8299212598425" shape="rect">
+			<area target="" alt="Vastus Medialis" title="Vastus Medialis" href="" coords="481.6549606299213,880.8696062992126,800.6414173228346,833.0289763779527" shape="rect">
+			<area target="" alt="Patella" title="Patella" href="" coords="637.2412598425196,978.7796850393701,787.103779527559,930.9390551181102" shape="rect">
+			<area target="" alt="Gracilis" title="Gracilis" href="" coords="1132.896062992126,718.0267716535433,1297.6551181102361,670.1861417322834" shape="rect">
+			<area target="" alt="Pectineus" title="Pectineus" href="" coords="1131.7725984251967,308.21291338582677,1342.3447244094486,284.29259842519684" shape="rect">
+			<area target="" alt="Femoral Vein" title="Femoral Vein" href="" coords="1140.048346456693,276.92346456692917,1400.275905511811,253.00314960629922" shape="rect">
+			<area target="" alt="Femoral Artery" title="Femoral Artery" href="" coords="1133.695590551181,244.35322834645672,1438.3450393700787,220.4329133858268" shape="rect">
+			<area target="" alt="Femoral Nerve" title="Femoral Nerve" href="" coords="1132.896062992126,211.78299212598426,1437.5455118110235,180.4935433070866" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637081889012-349680415.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/004-Lower/030.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

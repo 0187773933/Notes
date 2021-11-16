@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>017</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Sartorius" title="Sartorius" href="" coords="1158.4382677165356,157.4059842519685,1351.3439370078743,109.56535433070867" shape="rect">
+			<area target="" alt="Tensor Fasciae Latae" title="Tensor Fasciae Latae" href="" coords="1189.230708661417,337.6322834645669,1575.8491338582676,289.79165354330706" shape="rect">
+			<area target="" alt="Vastus Lateralis" title="Vastus Lateralis" href="" coords="1158.4382677165356,654.0611023622048,1457.66031496063,606.220472440945" shape="rect">
+			<area target="" alt="Rectus Femoris" title="Rectus Femoris" href="" coords="1148.476062992126,810.3670866141733,1447.6981102362204,762.5264566929135" shape="rect">
+			<area target="" alt="Iliopsoas" title="Iliopsoas" href="" coords="525.7848818897637,312.3535433070866,718.6905511811024,264.5129133858268" shape="rect">
+			<area target="" alt="Vastus Intermedius" title="Vastus Intermedius" href="" coords="399.3963779527559,558.4866141732284,765.3818897637796,510.6459842519685" shape="rect">
+			<area target="" alt="Vastus Medialis" title="Vastus Medialis" href="" coords="457.8113385826772,813.2034645669293,770.8155905511811,765.3628346456694" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637081881160-807702639.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/004-Lower/018.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

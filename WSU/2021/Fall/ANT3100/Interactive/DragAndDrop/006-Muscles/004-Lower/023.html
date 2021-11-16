@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>023</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Gluteus Medius" title="Gluteus Medius" href="" coords="356.24724409448817,164.03700787401573,670.0535433070866,116.1963779527559" shape="rect">
+			<area target="" alt="Piriformis" title="Piriformis" href="" coords="466.7584251968504,247.63511811023622,670.0533858267717,199.79448818897637" shape="rect">
+			<area target="" alt="Gluteus Maximus" title="Gluteus Maximus" href="" coords="334.34488188976377,305.65779527559056,670.0533858267717,257.8171653543307" shape="rect">
+			<area target="" alt="Sciatic Nerve" title="Sciatic Nerve" href="" coords="408.7340157480315,343.2987401574804,670.5321259842519,314.31354330708666" shape="rect">
+			<area target="" alt="Greater Trochanter" title="Greater Trochanter" href="" coords="304.55165354330705,380.82204724409445,670.0533858267715,350.29937007874014" shape="rect">
+			<area target="" alt="Quadratus Femoris" title="Quadratus Femoris" href="" coords="307.8618897637796,417.7581102362205,673.3636220472441,387.2354330708662" shape="rect">
+			<area target="" alt="Iliotibial Band of Fascia" title="Iliotibial Band of Fascia" href="" coords="240.0,582.2494488188976,673.1011023622048,534.4088188976377" shape="rect">
+			<area target="" alt="Biceps Femoris" title="Biceps Femoris" href="" coords="375.72393700787404,720.1867716535434,671.4929133858268,672.3461417322835" shape="rect">
+			<area target="" alt="Biceps Femoris" title="Biceps Femoris" href="" coords="377.332125984252,786.9870866141733,673.1011023622048,739.1464566929135" shape="rect">
+			<area target="" alt="Sacrum" title="Sacrum" href="" coords="1258.3162204724408,146.73716535433073,1423.448346456693,98.89653543307087" shape="rect">
+			<area target="" alt="Sacrospinous Ligament" title="Sacrospinous Ligament" href="" coords="1250.040472440945,272.2234645669291,1698.6392125984253,224.3828346456693" shape="rect">
+			<area target="" alt="Superior Gemellus" title="Superior Gemellus" href="" coords="1251.695590551181,312.6584251968504,1615.448346456693,284.6896062992126" shape="rect">
+			<area target="" alt="Obturator Internus" title="Obturator Internus" href="" coords="1249.4681889763779,348.2140157480315,1613.2209448818896,320.2451968503937" shape="rect">
+			<area target="" alt="Inferior Gemellus" title="Inferior Gemellus" href="" coords="1250.040472440945,383.22047244094483,1613.7932283464568,355.25165354330704" shape="rect">
+			<area target="" alt="Ischial Tuberosity" title="Ischial Tuberosity" href="" coords="1251.6020472440946,416.85937007874014,1612.1381102362207,395.8524409448819" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637081884476-300863089.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/004-Lower/024.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

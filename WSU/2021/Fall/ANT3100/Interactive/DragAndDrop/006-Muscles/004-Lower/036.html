@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>036</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Soleus" title="Soleus" href="" coords="652.1379527559055,214.49590551181103,799.4483464566929,167.02897637795277" shape="rect">
+			<area target="" alt="Popliteus" title="Popliteus" href="" coords="604.1379527559055,274.90976377952757,799.4483464566929,227.44283464566928" shape="rect">
+			<area target="" alt="Fibula" title="Fibula" href="" coords="652.1379527559055,335.3236220472441,799.4483464566929,287.8566929133858" shape="rect">
+			<area target="" alt="Tibial Nerve" title="Tibial Nerve" href="" coords="547.64,395.73748031496064,802.1768503937008,348.27055118110235" shape="rect">
+			<area target="" alt="Flexor Hallucis Longus" title="Flexor Hallucis Longus" href="" coords="388.9656692913386,517.2494488188977,802.1770078740158,469.7825196850394" shape="rect">
+			<area target="" alt="Flexor Digitorum Longus" title="Flexor Digitorum Longus" href="" coords="345.93102362204723,582.2148031496063,802.1770078740158,534.747874015748" shape="rect">
+			<area target="" alt="Fibularis Longus" title="Fibularis Longus" href="" coords="484.9653543307087,644.5505511811024,802.1768503937008,597.0836220472441" shape="rect">
+			<area target="" alt="Calcaneus" title="Calcaneus" href="" coords="592.5514960629921,940.9264566929133,802.1768503937008,893.4595275590551" shape="rect">
+			<area target="" alt="Flexor Digitorum Brevis" title="Flexor Digitorum Brevis" href="" coords="362.4826771653543,1012.2648818897637,802.1766929133858,964.7979527559055" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637081893448-856936044.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/004-Lower/037.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>030</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pectineus" title="Pectineus" href="" coords="1139.516692913386,364.488188976378,1362.2070866141732,317.0212598425197" shape="rect">
+			<area target="" alt="Femoral Vein" title="Femoral Vein" href="" coords="1141.7034645669291,295.1303937007874,1401.9310236220472,271.2100787401575" shape="rect">
+			<area target="" alt="Femoral Artery" title="Femoral Artery" href="" coords="1140.316062992126,260.9050393700787,1444.9655118110236,236.98472440944883" shape="rect">
+			<area target="" alt="Femoral Nerve" title="Femoral Nerve" href="" coords="1137.8614173228345,228.33480314960633,1442.510866141732,197.04535433070868" shape="rect">
+			<area target="" alt="Adductor Brevis" title="Adductor Brevis" href="" coords="1137.8612598425198,444.33779527559057,1473.1033070866142,396.8708661417323" shape="rect">
+			<area target="" alt="Adductor Longus" title="Adductor Longus" href="" coords="1137.8611023622047,509.9352755905512,1473.1031496062992,462.4683464566929" shape="rect">
+			<area target="" alt="Adductor Magnus" title="Adductor Magnus" href="" coords="1137.8611023622047,659.3957480314959,1484.6896062992128,611.9288188976377" shape="rect">
+			<area target="" alt="Vastus Medialis" title="Vastus Medialis" href="" coords="1139.516692913386,864.1977952755905,1442.5108661417323,816.7308661417322" shape="rect">
+			<area target="" alt="Vastus Lateralis" title="Vastus Lateralis" href="" coords="477.4891338582677,642.844094488189,780.4833070866141,595.3771653543307" shape="rect">
+			<area target="" alt="Rectus Femoris" title="Rectus Femoris" href="" coords="477.4889763779528,586.1544881889763,780.4831496062992,538.6875590551181" shape="rect">
+			<area target="" alt="Illiopsoas" title="Illiopsoas" href="" coords="587.5859842519685,343.13574803149606,784.6869291338583,295.6688188976378" shape="rect">
+			<area target="" alt="Tensor Fascia Lata" title="Tensor Fascia Lata" href="" coords="435.3105511811023,279.0973228346457,794.0831496062992,255.17700787401577" shape="rect">
+			<area target="" alt="Sartorius" title="Sartorius" href="" coords="587.5861417322834,239.54692913385827,788.7940157480314,192.08" shape="rect">
+			<area target="" alt="Anterior Superior Iliac Spine" title="Anterior Superior Iliac Spine" href="" coords="254.89637795275593,102.73464566929133,777.9653543307088,55.26771653543307" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637081889639-416211199.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/004-Lower/031.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
