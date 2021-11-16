@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>020</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Rectus Sheath" title="Rectus Sheath" href="" coords="64.2335433070866,349.35748031496064,360.8836220472441,301.5168503937008" shape="rect">
+			<area target="" alt="Linea Alba" title="Linea Alba" href="" coords="132.57952755905512,397.1283464566929,360.883937007874,361.1379527559055" shape="rect">
+			<area target="" alt="Tendinous Intersection" title="Tendinous Intersection" href="" coords="55.10771653543307,443.44488188976385,493.86519685039366,407.4544881889764" shape="rect">
+			<area target="" alt="Inguinal Ligament" title="Inguinal Ligament" href="" coords="11.883149606299213,486.9581102362205,372.5166929133858,450.96771653543306" shape="rect">
+			<area target="" alt="Rectus Abdominis" title="Rectus Abdominis" href="" coords="24.043779527559057,530.4713385826772,384.6773228346457,494.48094488188974" shape="rect">
+			<area target="" alt="Transverse Abdominis" title="Transverse Abdominis" href="" coords="16.245826771653544,596.4092913385826,437.9543307086614,560.4188976377952" shape="rect">
+			<area target="" alt="Internal Oblique" title="Internal Oblique" href="" coords="103.49590551181102,644.3518110236221,433.5914960629921,608.3614173228347" shape="rect">
+			<area target="" alt="External Oblique" title="External Oblique" href="" coords="55.10755905511812,818.1664566929134,400.14582677165356,770.3258267716535" shape="rect">
+			<area target="" alt="Pectoralis Major" title="Pectoralis Major" href="" coords="1558.716535433071,299.53968503937006,1903.7548031496065,251.69905511811024" shape="rect">
+			<area target="" alt="Pectoralis Minor" title="Pectoralis Minor" href="" coords="1563.0790551181103,540.0,1895.956692913386,492.15937007874015" shape="rect">
+			<area target="" alt="Subclavius" title="Subclavius" href="" coords="1522.7626771653543,590.2710236220473,1751.0670866141731,554.2806299212599" shape="rect">
+			<area target="" alt="Serratus Anterior" title="Serratus Anterior" href="" coords="1502.403937007874,639.0877165354331,1855.7666141732284,603.0973228346456" shape="rect">
+			<area target="" alt="External Intercostal" title="External Intercostal" href="" coords="1542.5940157480316,683.9051968503937,1919.7500787401575,647.9148031496063" shape="rect">
+			<area target="" alt="Deltoid" title="Deltoid" href="" coords="1563.0788976377953,726.9340157480316,1739.560157480315,690.9436220472442" shape="rect">
+			<area target="" alt="Latissimus Dorsi" title="Latissimus Dorsi" href="" coords="1563.0790551181103,771.4905511811023,1895.956692913386,735.5001574803149" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637040497470-726234024.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/Typing/006-Muscles/003-Upper/021.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

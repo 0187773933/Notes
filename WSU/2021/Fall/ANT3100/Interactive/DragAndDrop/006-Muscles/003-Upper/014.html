@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>014</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Trapezius" title="Trapezius" href="" coords="392.87527559055115,314.6340157480315,600.8211023622047,266.79338582677167" shape="rect">
+			<area target="" alt="Triangle of Ausculation" title="Triangle of Ausculation" href="" coords="157.29984251968503,461.50503937007875,600.8211023622047,413.6644094488189" shape="rect">
+			<area target="" alt="Latissimus Dorsi" title="Latissimus Dorsi" href="" coords="243.09622047244093,537.632125984252,567.8604724409448,489.7914960629921" shape="rect">
+			<area target="" alt="Thoracolumbar Facia" title="Thoracolumbar Facia" href="" coords="157.3,831.211968503937,565.4370078740158,783.3713385826771" shape="rect">
+			<area target="" alt="Iliac Crest" title="Iliac Crest" href="" coords="355.06692913385825,917.7047244094488,567.8604724409449,869.8640944881889" shape="rect">
+			<area target="" alt="Gluteus Maximus" title="Gluteus Maximus" href="" coords="218.37527559055118,1070.0823622047246,567.8604724409448,1022.2417322834647" shape="rect">
+			<area target="" alt="Vertebral Column" title="Vertebral Column" href="" coords="1354.563149606299,734.479842519685,1701.6250393700784,686.6392125984252" shape="rect">
+			<area target="" alt="Rhomboid Major" title="Rhomboid Major" href="" coords="1354.563149606299,506.5691338582677,1701.6250393700784,458.7285039370079" shape="rect">
+			<area target="" alt="Teres Major" title="Teres Major" href="" coords="1354.563149606299,434.3496062992126,1602.7418897637795,410.4292913385827" shape="rect">
+			<area target="" alt="Teres Minor" title="Teres Minor" href="" coords="1355.048031496063,390.70866141732284,1603.2267716535434,366.7883464566929" shape="rect">
+			<area target="" alt="Infraspinatus" title="Infraspinatus" href="" coords="1354.5629921259842,353.09811023622046,1626.0085039370078,329.17779527559054" shape="rect">
+			<area target="" alt="Deltoid" title="Deltoid" href="" coords="1353.5935433070865,318.69700787401575,1527.1245669291338,270.8563779527559" shape="rect">
+			<area target="" alt="Sternocleidomastoid" title="Sternocleidomastoid" href="" coords="1352.13968503937,226.7568503937008,1762.7,178.91622047244095" shape="rect">
+			<area target="" alt="Splenius Capitis" title="Splenius Capitis" href="" coords="1352.13968503937,163.68503937007875,1676.904251968504,115.84440944881891" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637040493342-236659077.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/003-Upper/015.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

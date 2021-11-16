@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="subscapularis" title="subscapularis" href="" coords="197.73338582677164,88.98850393700786,473.14283464566927,41.14267716535433" shape="rect">
+			<area target="" alt="upper subscapular nerve" title="upper subscapular nerve" href="" coords="544.5785826771654,143.00062992125984,1036.8000000000002,88.98850393700788" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637040489241-845907912.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/003-Upper/009.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

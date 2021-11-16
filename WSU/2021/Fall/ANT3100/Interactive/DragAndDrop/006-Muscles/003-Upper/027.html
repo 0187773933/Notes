@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>027</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Deltoid" title="Deltoid" href="" coords="603.7292913385827,77.55496062992127,782.5918110236221,29.714330708661418" shape="rect">
+			<area target="" alt="Coracoid Process of Scapula" title="Coracoid Process of Scapula" href="" coords="250.36692913385826,145.28094488188975,776.048346456693,97.44031496062992" shape="rect">
+			<area target="" alt="Pectoralis Major" title="Pectoralis Major" href="" coords="448.13338582677164,279.0644094488189,776.048188976378,231.22377952755906" shape="rect">
+			<area target="" alt="Biceps Brachii" title="Biceps Brachii" href="" coords="529.5667716535432,574.344409448819,812.4025196850394,526.5037795275591" shape="rect">
+			<area target="" alt="Brachialis" title="Brachialis" href="" coords="555.7417322834646,642.0703937007875,771.3217322834646,594.2297637795276" shape="rect">
+			<area target="" alt="Brachioradialis" title="Brachioradialis" href="" coords="462.6752755905512,1006.4798425196851,760.9604724409448,958.6392125984253" shape="rect">
+			<area target="" alt="Medial Epicondyle of Humerus" title="Medial Epicondyle of Humerus" href="" coords="960.0003149606299,884.916220472441,1537.304409448819,837.0755905511811" shape="rect">
+			<area target="" alt="Triceps Brachii" title="Triceps Brachii" href="" coords="934.5533858267718,599.7188976377953,1233.3834645669292,551.8782677165354" shape="rect">
+			<area target="" alt="Latissimus Dorsi" title="Latissimus Dorsi" href="" coords="1150.1329133858267,475.49448818897633,1471.867086614173,427.6538582677165" shape="rect">
+			<area target="" alt="Teres Major" title="Teres Major" href="" coords="1185.8809448818897,389.4620472440945,1436.9666141732282,341.62141732283465" shape="rect">
+			<area target="" alt="Subscapularis" title="Subscapularis" href="" coords="1184.1938582677167,312.6053543307087,1473.5543307086616,264.76472440944883" shape="rect">
+			<area target="" alt="Clavicle" title="Clavicle" href="" coords="1147.6064566929133,80.4288188976378,1326.4689763779527,32.58818897637795" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1637040501229-20416573.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/006-Muscles/003-Upper/028.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 3;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
