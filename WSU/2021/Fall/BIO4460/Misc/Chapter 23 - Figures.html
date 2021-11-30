@@ -1,0 +1,1474 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 23</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 23.1 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072506506-233884674.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-1 - <span class="title">Metastasis</span></span></center>
+<p>Malignant tumors typically give rise to metastases, making the cancer hard to eradicate. The drawing shows common sites in the bone marrow for metastases from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4916/">carcinoma</a> of the prostate gland. (From Union Internationale Contre le Cancer, TNM Atlas: Illustrated Guide to the Classification of Malignant Tumors, 2nd edn., Berlin: Springer-Verlag, 1986.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072506695-884224806.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-2 - <span class="title">Cancer incidence and mortality in the United States</span></span></center>
+<p>These figures are for the year 2000. Total new cases diagnosed in that year in the United States were 1,220,000, and total cancer deaths were 552,200. Note that only about half the number of people who develop cancer die of it.</p><p>In the world as a whole, the five most common cancers are those of the lung, stomach, breast, colon/rectum, and uterine cervix, and the total number of new cancer cases recorded per year is just over 6 million.</p><p>Skin cancers other than melanomas are not included in figures, since almost all are cured easily and many go unrecorded. (Data from American Cancer Society, Cancer Facts and Figures, 2000.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072506921-811087510.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-3 - <span class="title">Benign versus malignant tumors</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4878/">benign</a> glandular tumor (an adenoma) and a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5423/">malignant</a> glandular tumor (an adenocarcinoma) appear structurally distinct. There are many forms that such tumors may take; the diagram illustrates types that might be found in the breast.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072507101-727694157.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-4 - <span class="title">The growth of a typical human tumor such as a tumor of the breast</span></span></center>
+<p>The diameter of the tumor is plotted on a logarithmic scale. Years may elapse before the tumor becomes noticeable. The doubling time of a typical breast tumor, for example, is about 100 days.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072507280-992677936.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-5 - <span class="title">The translocation between chromosomes 9 and 22 responsible for chronic myelogenous leukemia</span></span></center>
+<p>The smaller of the two resulting abnormal chromosomes is called the Philadelphia <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, after the city where the abnormality was first recorded.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072507448-612589629.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-6 - <span class="title">Evidence from X-inactivation mosaics demonstrates the monoclonal origin of cancers</span></span></center>
+<p>As a result of a random process that occurs in the early embryo, practically every normal tissue in a woman's body is a mixture of cells with different X chromosomes heritably inactivated (indicated here by the mixture of <i>red</i> cells and <i>gray</i> cells in the normal tissue). When the cells of a cancer are tested for their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> of an X-linked marker <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>, however, they are usually all found to have the same X <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> inactivated. This implies that they are all derived from a single cancerous founder cell.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072507619-390419087.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-7 - <span class="title">Cancer incidence as a function of age</span></span></center>
+<p>The number of newly diagnosed cases of colon cancer in women in England and Wales in one year is plotted as a function of age at diagnosis and expressed relative to the total number of individuals in each age group. The incidence of cancer rises steeply as a function of age. If only a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> were required to trigger the cancer and this mutation had an equal chance of occurring at any time, the incidence would be independent of age. (Data from C. Muir et al., Cancer Incidence in Five Continents, Vol. V. Lyon: International Agency for Research on Cancer, 1987.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072507782-390159396.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-8 - <span class="title">Delayed onset of cancer following exposure to a carcinogen</span></span></center>
+<p>The graph shows the length of the delay before onset of bladder cancer in a set of 78 workers in the chemical industry who had been exposed to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4914/">carcinogen</a> 2-naphthylamine, grouped according to the duration of their exposure. (Modified from J. Cairns, Cancer: Science and Society. San Francisco: W.H. Freeman, 1978. After M.H.C. Williams, in Cancer, Vol. III [R.W. Raven, ed.]. London: Butterworth Heinemann, 1958.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072507962-763992291.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-9 - <span class="title">The stages of progression in the development of cancer of the epithelium of the uterine cervix</span></span></center>
+<p>Pathologists use standardized terminology to classify the types of disorder they see, so as to guide the choice of treatment. Schematic diagrams are shown in A-D; sections of cervical epithelium corresponding to these changes are shown in E-H. (A, E) In the normal stratified squamous epithelium, dividing cells are confined to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4872/">basal</a> layer. (B, F) In low-grade intraepithelial neoplasia, dividing cells can be found throughout the lower third of the epithelium; the superficial cells are still flattened and show signs of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5074/">differentiation</a>, but this is incomplete. (C, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>) In high-grade intraepithelial neoplasia, cells in all the epithelial layers are proliferating and show no sign of differentiation. (D, H) True malignancy begins when the cells move through or destroy the basal lamina and invade the underlying <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5020/">connective tissue</a>. (Photographs courtesy of Margaret Stanley.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072508207-563850186.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-10 - <span class="title">Photographs of cells collected by scraping the surface of the uterine cervix (the Papanicolaou or “Pap smear” technique)</span></span></center>
+<p>(A) Normal: the cells are large and well differentiated, with highly condensed nuclei. (B) Precancerous lesion: <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5074/">differentiation</a> and proliferation are abnormal but the lesion is not yet invasive; the cells are in various stages of differentiation, some quite immature. (C) Invasive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4916/">carcinoma</a>: the cells all appear undifferentiated, with scanty <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> and a relatively large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. Debris in the background includes some white blood cells. (Courtesy of Winifred Gray.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072508377-971467297.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-11 - <span class="title">Clonal evolution</span></span></center>
+<p>A tumor develops through repeated rounds of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> and proliferation, giving rise eventually to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4994/">clone</a> of fully <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5423/">malignant</a> cancer cells. At each step, a single cell undergoes a mutation that enhances cell proliferation, so that its progeny become the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5103/">dominant</a> clone in the tumor. Proliferation of this clone then hastens occurrence of the next step of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5905/">tumor progression</a> by increasing the size of the cell population at risk of undergoing an additional mutation.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072508550-702047222.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-12 - <span class="title">Chromosomes from a breast tumor displaying abnormalities in structure and number</span></span></center>
+<p>Chromosomes were prepared from a breast tumor cell in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5450/">metaphase</a>, spread on a glass slide, and stained with (A) a general <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> stain or (B) a combination of fluorescent stains that give a different color for each normal human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>. The staining (displayed in false color) shows multiple translocations, including a doubly translocated chromosome <i>(white arrow)</i> made up of two pieces of chromosome 8 <i>(green)</i> and a piece of chromosome 17 <i>(purple).</i> The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5367/">karyotype</a> also contains 48 chromosomes, instead of the normal 46. (Courtesy of Joanne Davidson and Paul Edwards.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072508720-133784680.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-13 - <span class="title">Genetic instability and tumor progression</span></span></center>
+<p>Cells that maintain an optimum level of genetic instability may be the most successful in the race to form a tumor. (A) In normal cells, the intrinsic amount of genetic instability is low. Thus when normal cells hit a selection barrier—low levels of oxygen or a scarcity of proliferation signals, for example—they are very unlikely to be mutable enough to produce a cell that continues proliferating. (B) In tumor cell precursors, an increased level of genetic instability makes it likely that at least one cell will contain the requisite genetic alteration to pass the selection barrier and continue the process of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5905/">tumor progression</a>. This genetic instability is retained in the lineage, and it can be measured in the resulting tumor. (C) If the level of genetic instability is too high, many of the cells suffer deleterious mutations and either proliferate much more slowly than their neighbors or are eliminated by cell death. This excessive mutability can lead to extinction of the cell lineage. (Adapted from D.P. Cahill et al., <i>Trends Cell Biol</i>. 9:M57–M60, 1999.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072508945-893667421.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-14 - <span class="title">Normal and deranged control of cell production from stem cells</span></span></center>
+<p>(A) The normal strategy for producing new differentiated cells. (B and C) Two types of derangement that can give rise to the unbridled proliferation characteristic of cancer. Note that an excessive cell-division rate for the stem cells in (A) will not by itself have this effect, as long as each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> produces only one daughter that is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5829/">stem cell</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072509173-296445367.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-15 - <span class="title">Steps in the process of metastasis</span></span></center>
+<p>This example illustrates the spread of a tumor from an organ such as the lung or bladder to the liver. Tumor cells may enter the bloodstream directly by crossing the wall of a blood vessel, as diagrammed here, or, more commonly perhaps, by crossing the wall of a lymphatic vessel that ultimately discharges its contents (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5410/">lymph</a>) into the bloodstream. Tumor cells that have entered a lymphatic vessel often become trapped in lymph nodes along the way, giving rise to lymph-node metastases. Studies in animals show that typically far less than one in every thousand <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5423/">malignant</a> tumor cells that enter the bloodstream will survive to produce a tumor at a new site.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072509456-771120951.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-16 - <span class="title">Colon cancer invading the smooth muscle layer that lies beneath the colon epithelium</span></span></center>
+<p>In this tissue slice, colorectal cancer cells can be seen growing between the muscle fibers <i>(pink).</i> Some stages in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of this type of cancer are shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4323/figure/A4341/?report=objectonly" rid-figpopup="figA4341" rid-ob="figobA4341" target="object">Figure 23-38</a>. (Courtesy of Paul Edwards and the Department of Pathology, University of Cambridge.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 23.2 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072511368-812674201.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-17 - <span class="title">The Ames test for mutagenicity</span></span></center>
+<p>The test uses a strain of <i>Salmonella</i> bacteria that require histidine in the medium because of a defect in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> necessary for histidine synthesis. Mutagens can cause a further change in this gene that reverses the defect, creating revertant bacteria that do not require histidine. To increase the sensitivity of the test, the bacteria also have a defect in their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5094/">DNA repair</a> machinery that makes them especially susceptible to agents that damage DNA. A majority of compounds that are mutagenic in tests such as this are also carcinogenic and vice versa.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072511540-57971606.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-18 - <span class="title">Metabolic activation of a carcinogen</span></span></center>
+<p>Many chemical carcinogens have to be activated by a metabolic transformation before they will cause mutations by reacting with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>. The compound illustrated here is <i>aflatoxin B1,</i> a toxin from a mold <i>(Aspergillus flavus oryzae)</i> that grows on grain and peanuts when they are stored under humid tropical conditions. It is thought to be a contributory cause of liver cancer in the tropics and is associated with characteristic mutations of the <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a></i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> (discussed later in this chapter).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072511720-838574317.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-19 - <span class="title">Some possible schedules of exposure to a tumor initiator (mutagenic) and a tumor promoter (nonmutagenic) and their outcomes</span></span></center>
+<p>Cancer ensues only if the exposure to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5684/">promoter</a> follows exposure to the initiator and only if the intensity of exposure to the promoter exceeds a certain threshold. Cancer can also occur as a result of repeated exposure to the initiator alone.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072511898-590524327.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-20 - <span class="title">The effect of a tumor promoter</span></span></center>
+<p>The tumor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5684/">promoter</a> expands the population of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> cells, thereby increasing the probability of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5905/">tumor progression</a> by further genetic change.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072512039-220800782.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-21 - <span class="title">A human papillomavirus</span></span></center>
+<p>(Courtesy of Norman Olson.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072512218-705886423.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-22 - <span class="title">Age-adjusted cancer death rates, United States, 1930-1996</span></span></center>
+<p>Selected death rates adjusted to the age distribution of the US population in 1970, are plotted for (A) females and (B) males. Note the dramatic rise in lung cancer for both sexes, following the pattern of tobacco smoking, and the fall in deaths from stomach cancer, possibly related to changes in diet or in patterns of infection with <i>Helicobacter</i>. Recent reductions in other cancer death rates may correspond to improvements in detection and treatment. (Adapted from Cancer Facts and Figures 2000. © American Cancer Society, 2000.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072512390-336102332.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-23 - <span class="title">Effects of childbearing on the risk of breast cancer</span></span></center>
+<p>The relative probability of breast cancer developing at some time in a woman's life is plotted as a function of the age at which she gives birth to her first child. The graph shows the value of the probability relative to that for a childless woman. The longer the period of exposure to reproductive hormones up to birth of the first child, the greater the risk. It is thought that the first full-term pregnancy may result in a permanent change in the state of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5074/">differentiation</a> of the cells of the breast, altering their subsequent responses to hormones. Several other lines of epidemiological evidence also support the view that exposure to certain combinations of reproductive hormones, especially estrogen, can promote <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of breast cancer. (From J. Cairns, Cancer: Science and Society. San Francisco: W.H. Freeman, 1978. After B. MacMahon, P. Cole, and J. Brown, <i>J. Natl. Cancer Inst</i>. 50:21–42, 1973.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 23.3 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072514467-338496149.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-24 - <span class="title">Cancer-critical genes fall into two readily distinguishable categories, dominant and recessive</span></span></center>
+<p>Oncogenes act in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5103/">dominant</a> manner: a gain-of-function <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in a single copy of the cancer-critical <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> can drive a cell toward cancer. Tumor suppressor genes, on the other hand, generally act in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5722/">recessive</a> manner: the function of both alleles of the cancer-critical gene must be lost to drive a cell toward cancer. In this diagram, activating mutations are represented by solid red boxes, inactivating mutations by hollow red boxes.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072514685-973513493.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-25 - <span class="title">Loss of contact inhibition in cell culture</span></span></center>
+<p>Most normal cells stop proliferating once they have carpeted the dish with a single layer of cells: proliferation seems to depend on contact with the dish, and to be inhibited by contacts with other cells. Cancer cells, in contrast, usually disregard these restraints and continue to grow, so that they pile up on top of one another.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072514854-622962876.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-26 - <span class="title">The genetic mechanisms underlying retinoblastoma</span></span></center>
+<p>In the hereditary form, all cells in the body lack one of the normal two functional copies of the <i>Rb</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5906/">tumor suppressor gene</a>, and tumors occur where the remaining copy is lost or inactivated by a somatic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a>. In the nonhereditary form, all cells initially contain two functional copies of the gene, and the tumor arises because both copies are lost or inactivated through the coincidence of two somatic mutations in one line of cells.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072515075-324017991.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-27 - <span class="title">Three ways in which a proto-oncogene can be made overactive to convert it into an oncogene</span></span></center><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072515246-459453782.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-28 - <span class="title">Chromosomal changes in cancer cells reflecting gene amplification</span></span></center>
+<p>In these examples, the numbers of copies of a <i>myc</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5703/">proto-oncogene</a> have been amplified. Amplification of oncogenes is common in carcinomas and is often visible as a curious change in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5367/">karyotype</a>: the cell is seen to contain additional pairs of miniature chromosomes—so-called <i>double minute chromosomes</i>—or to have a <i>homogeneously staining region</i> interpolated in the normal banding pattern of one of its regular chromosomes. Both these aberrations consist of massively amplified numbers of copies of a small segment of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5222/">genome</a>. The chromosomes are stained with a <i>red</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5186/">fluorescent dye</a>, while the multiple copies of the <i>Myc</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> are detected by <i>in situ</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a> with a <i>yellow</i> fluorescent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5680/">probe</a>. (A) Karyotype of a cell in which the <i>Myc</i> gene copies are present as double minute chromosomes (paired <i>yellow specks).</i> (B) Karyotype of a cell in which the multiple <i>Myc</i> gene copies appear as a homogeneously staining region <i>(yellow)</i> interpolated in one of the regular chromosomes. (Ordinary single-copy <i>myc</i> genes can be detected as tiny <i>yellow dots</i> elsewhere in the genome.) (Courtesy of Denise Sheer.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072515417-157334319.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-29 - <span class="title">Six ways of losing the remaining good copy of a tumor suppressor gene</span></span></center>
+<p>A cell that is defective in only one of its two copies of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5906/">tumor suppressor gene</a>—for example, the <i>Rb</i> gene—usually behaves as a normal, healthy cell; the diagrams show how it may come to lose the function of the other gene copy as well and thereby progress toward cancer. Cloned <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> probes can be used in conjunction with tests for polymorphisms (see Chapter 8) to analyze the tumor DNA and discover which type of event has occurred in a given patient. A seventh possibility, encountered with some tumor suppressors, is that the gene may be silenced by an epigenetic change, without alteration of the DNA sequence. (After W.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Cavenee et al., <i>Nature</i> 305:779–784, 1983. © Macmillan Magazines Ltd.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 23.4 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072517655-365285968.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-30 - <span class="title">Oncogene collaboration in transgenic mice</span></span></center>
+<p>The graphs show the incidence of tumors in three types of transgenic mice, one carrying a <i>Myc</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5576/">oncogene</a>, one carrying a <i>Ras</i> oncogene, and one carrying both oncogenes. For these experiments two lines of transgenic mice were first constructed. One carries an inserted copy of an oncogene created by fusing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5703/">proto-oncogene</a> <i>Myc</i> with the mouse mammary tumor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a> regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> (which then drives <i>Myc</i> overexpression in specific tissues such as the mammary gland). The other line carries an inserted copy of the <i>Ras</i> oncogene under control of the same regulatory element. Both strains of mice develop tumors much more frequently than normal, most often in the mammary or salivary glands. Mice that carry both oncogenes together are obtained by crossing the two strains. These hybrids develop tumors at a far higher rate still, much greater than the sum of the rates for the two oncogenes separately. Nevertheless, the tumors arise only after a delay and only from a small proportion of the cells in the tissues where the two genes are expressed. Some further accidental change, in addition to the two oncogenes, is apparently required for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> of cancer. (After E. Sinn et al., <i>Cell</i> 49:465–475, 1987. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072517822-23819560.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-31 - <span class="title">Chart of the major signaling pathways relevant to cancer in human cells, indicating the cellular locations of some of the proteins modified by mutation in cancers</span></span></center>
+<p>Products of both oncogenes and tumor suppressor genes often occur within the same pathways. Individual signaling proteins are indicated by <i>red circles</i>, with the cancer-critical components and control mechanisms discussed in this chapter in <i>green</i>. Stimulatory and inhibitory interactions between proteins are designated as shown in the key. (Adapted from D. Hanahan and R.A. Weinberg, <i>Cell</i> 100:57–70, 2000.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072518060-584427216.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-32 - <span class="title">The pathway that controls cell cycling via Rb protein</span></span></center>
+<p>All the components of this pathway have been found to be altered by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in human cancers (products of proto-oncogenes, <i>green;</i> products of tumor suppressor genes, <i>red;</i> E2F shown in <i>blue</i> because it has both inhibitory and stimulatory actions, depending on the other proteins that are bound to it). In most cases, only one of the components is altered in any individual tumor. (A) A simplified view of the dependency relationships in this pathway; see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3214/figure/A3233/?report=objectonly" rid-figpopup="figA3233" rid-ob="figobA3233" target="object">Figure 17-30</a> for further details. (B) The Rb <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> inhibits entry into the cell-division cycle when it is unphosphorylated.The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of Cdk4 and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> D1 phosphorylates Rb, thereby encouraging cell proliferation. When a cell is stressed, p16 inhibits the formation of an active Cdk4/cyclin D1 complex, preventing proliferation. Inactivation of Rb or p16 by mutation encourages <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> (thus each can be regarded as a tumor suppressor) while overactivity of Cdk4 or cyclin D1 encourages cell division (thus each can be regarded as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5703/">proto-oncogene</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072518265-115656927.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-33 - <span class="title">How the replication of damaged DNA can lead to chromosome abnormalities, gene amplification and gene loss</span></span></center>
+<p>The diagram shows one of several possible mechanisms. The process begins with accidental <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> damage in a cell that lacks functional <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. Instead of halting at the p53-dependent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4961/">checkpoint</a> in the division cycle, where a normal cell with damaged DNA would pause until the damage was repaired, the p53-defective cell enters <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>, with the consequences shown. Once a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> carrying a duplication and lacking a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a> has been generated, repeated rounds of replication, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4973/">chromatid</a> fusion, and unequal breakage (the so-called breakage-fusion-bridge cycle) can increase the number of copies of the duplicated region still further.</p><p>Selection in favor of cells with increased numbers of copies of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> in the affected chromosomal region will thus lead to mutants in which the gene is amplified to a high copy number. The multiple copies may eventually become visible as a homogeneously staining region in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a>, or they may—either through a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5724/">recombination</a> event or through unrepaired <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> strand breakage—become excised from their original <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5405/">locus</a> and so appear as independent double minute chromosomes (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4309/figure/A4319/?report=objectonly" rid-figpopup="figA4319" rid-ob="figobA4319" target="object">Figure 23-28</a>). The chromosomal disorder can also lead to loss of genes, with selection in favor of cells that have lost tumor suppressors.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072518456-732813831.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-34 - <span class="title">How certain papillomaviruses are thought to give rise to cancer of the uterine cervix</span></span></center>
+<p>Papillomaviruses have double-stranded circular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> chromosomes of about 8000 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> pairs. In a wart or other <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4878/">benign</a> infection these chromosomes are stably maintained in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4872/">basal</a> cells of the epithelium as plasmids whose replication is regulated so as to keep step with the chromosomes of the host <i>(left).</i> Rare accidents can cause the integration of a fragment of such a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5643/">plasmid</a> into a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> of the host, altering the environment of the viral genes. This (or possibly some other cause) disrupts the control of viral <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>. The unregulated production of viral replication proteins interferes with the control of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a>, thereby helping to generate a cancer <i>(right).</i></p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072518660-366647648.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-35 - <span class="title">Activation of cell proliferation by a DNA tumor virus</span></span></center>
+<p>Papillomavirus uses two viral proteins, E6 and E7, to sequester the host cell's <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a> and Rb respectively. The SV40 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5926/">virus</a> (a related virus that infects monkeys) uses a single dual-purpose <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> called large T <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4830/">antigen</a>, for the same purpose. The E6 protein binding leads to ubiquitylation of its p53 partner, inducing p53 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5698/">proteolysis</a> (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072518831-404518822.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-36 - <span class="title">A view of how shortened telomeres may lead to chromosomal instability and cancer</span></span></center>
+<p>Most human cells lack <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5858/">telomerase</a>. As such cells divide, the telomeres that cap the ends of their chromosomes shrink. After many divisions, the telomeres become so short that they cease to function correctly, and the inadequately capped <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> ends produce an intracellular signal similar to that produced by double-strand breaks. In the normal cells that still produce functional <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a> and have their cell-cycle checkpoints intact, this triggers an arrest of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> (replicative senescence). But a rare cell within the cell population that has acquired a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in its p53 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> or in its cell-cycle checkpoints may ignore this signal and continue to divide, entering a breakage-fusion-bridge cycle that causes massive chromosomal damage (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26902/figure/A4331/?report=objectonly" rid-figpopup="figA4331" rid-ob="figobA4331" target="object">Figure 23-33</a>). Some cells may survive this period of genetic disruption by reactivating telomerase, which halts the catastrophic cycle and restores enough chromosomal stability for cell survival. These damaged cells can then go on to accumulate the additional mutations needed to produce a cancer.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072519038-496836704.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-37 - <span class="title">The barriers to metastasis</span></span></center>
+<p>Studies of labeled tumor cells leaving a tumor site, entering the circulation, and establishing metastases show which steps in the metastatic process, outlined in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4259/figure/A4284/?report=objectonly" rid-figpopup="figA4284" rid-ob="figobA4284" target="object">Figure 23-15</a>, are difficult or ‘inefficient,’ in the sense that they are steps in which large numbers of cells fail and are lost. It is in these difficult steps that highly metastatic cells are abserved to have much greater success than nonmetastatic cells. It seems that the ability to escape from the parent tissue, and an ability to survive and grow in the foreign tissue, are key properties that cells must acquire to become metastatic. (Adapted from A.F. Chambers et al., <i>Breast Cancer Res</i>. 2:400–407, 2000.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072519244-888372022.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-38 - <span class="title">Cross-sections showing the stages in development of a typical colon cancer</span></span></center>
+<p>(A) An adenomatous polyp from the colon. The polyp protrudes into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5409/">lumen</a>—the space inside the colon. The rest of the wall of the colon is covered with normal colonic epithelium; the epithelium on the polyp appears mildly abnormal. (B) A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4916/">carcinoma</a> that is beginning to invade the underlying muscle layer. A high magnification view of this region showing the tumor cells growing between muscle cells is shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4259/figure/A4285/?report=objectonly" rid-figpopup="figA4285" rid-ob="figobA4285" target="object">Figure 23-16</a>. (Courtesy of Paul Edwards.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072519454-839072901.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-39 - <span class="title">Colon of familial adenomatous polyposis coli patient compared to normal colon</span></span></center>
+<p>(A) The polyposis colon is completely covered by hundreds of projecting polyps (shown in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26902/figure/A4341/?report=objectonly" rid-figpopup="figA4341" rid-ob="figobA4341" target="object">Figure 23-38A</a>), each resembling a tiny cauliflower when viewed with the naked eye. (B) The normal colon wall is a gently undulating but smooth surface. (Courtesy of Andrew Wyllie and Mark Arends.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072519622-721555931.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-40 - <span class="title">Chromosome complements (karyotypes) of colon cancers showing different kinds of genetic instability</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5367/">karyotype</a> of a typical cancer shows many gross abnormalities in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> number and structure. Considerable variation can also exist from cell to cell. (B) The karyotype of a tumor that has a stable chromosome complement with few chromosomal anomalies. Its defects are mostly invisible, having been created by defects in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5472/">mismatch repair</a>. All of the chromosomes in this figure were stained as in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4259/figure/A4278/?report=objectonly" rid-figpopup="figA4278" rid-ob="figobA4278" target="object">Figure 23-12</a>, the DNA of each normal chromosome being stained with a different combination of fluorescent dyes. (Courtesy Wael Abdel-Rahman and Paul Edwards.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072519786-674967293.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-41 - <span class="title">Suggested typical sequence of genetic changes underlying the development of a colorectal carcinoma</span></span></center>
+<p>This over-simplified diagram provides a general idea of the way <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> and tumor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> can fit together. But there are certainly other <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> genes of which we are not yet aware, and different colon cancers can progress through different sequences of mutations. There is still debate about the timing of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a> mutations and of the onset of genetic instability in relation to other mutations.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072519925-323328653.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-42 - <span class="title">Each tumor will generally contain a different set of genetic lesions</span></span></center>
+<p>In this schematic diagram, W, X, Y, and Z denote alterations in as yet undiscovered tumor suppressor genes or oncogenes. Tumors that arise from different tissues are generally more different in their genetic abnormalities than tumors of similar origin.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 23.5 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072521653-37818417.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-43 - <span class="title">Effects of ionizing radiation on normal cells (A) and cancer cells (B)</span></span></center>
+<p>Cancer cells tend to be more susceptible than normal cells to the damaging effects of ionizing radiation because they lack an ability to arrest the cell cycle and make the necessary repairs. Unfortunately, the same genetic defects may render some cancer cells resistant to radiation treatment, as they may also be less adept at activating <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a> in the face of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> damage.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072521860-629249276.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-44 - <span class="title">The conversion of the <i>Abl</i> proto-oncogene into an oncogene in patients with chronic myelogenous leukemia</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5892/">translocation</a> responsible joins the <i>Bcr</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> on chromosome 22 to the <i>Abl</i> gene from chromosome 9, thereby generating a Philadelphia chromosome (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4259/figure/A4266/?report=objectonly" rid-figpopup="figA4266" rid-ob="figobA4266" target="object">Figure 23-5</a>). The resulting fusion <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> has the N-terminus of the Bcr protein joined to the C-terminus of the Abl tyrosine <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a>; in consequence, the Abl kinase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> becomes inappropriately active, driving excessive proliferation of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4994/">clone</a> of hemopoietic cells in the bone marrow.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072522041-660387737.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 23-45 - <span class="title">How Gleevec (STI-571) blocks the activity of Bcr-Abl protein and halts chronic myeloid leukemia</span></span></center>
+<p>(A) The chemical structure of Gleevec. The drug can be given by mouth; it has side effects but they are usually quite tolerable. (B) The structure of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of Gleevec (solid <i>green</i> object) with the tyrosine kinase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> of the Abl <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> (ribbon diagram), as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5936/">X-ray crystallography</a>. (C) Gleevec sits in the ATP-binding pocket of the tyrosine kinase domain of Bcr-Abl and thereby prevents Bcr-Abl from transferring a phosphate group from ATP onto a tyrosine <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5737/">residue</a> in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a> protein. This blocks onward transmission of a signal for cell proliferation and survival. (B, from T. Schindler et al., <i>Science</i> 289:1938–1942, 2000. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p></div></div>
+</body>
+</html>

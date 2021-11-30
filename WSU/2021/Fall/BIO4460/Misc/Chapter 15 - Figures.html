@@ -1,0 +1,1544 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 15</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 15.1 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638071677834-68223042.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-1 - <span class="title">A simple intracellular signaling pathway activated by an extracellular signal molecule</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5794/">signal molecule</a> binds to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> (which is usually embedded in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>), thereby activating an intracellular signaling pathway that is mediated by a series of signaling proteins. Finally, one or more of these intracellular signaling proteins interacts with a target protein, altering the target protein so that it helps to change the behavior of the cell.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 15.2 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638071681035-596335771.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-2 - <span class="title">Budding yeast cells responding to mating factor</span></span></center>
+<p>(A) The cells are normally spherical. (B) In response to mating factor secreted by neighboring <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> cells, they put out a protrusion toward the source of the factor in preparation for mating. (Courtesy of Michael Snyder.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071681212-1778640.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-3 - <span class="title">The binding of extracellular signal molecules to either cell-surface receptors or intracellular receptors</span></span></center>
+<p>Most signal molecules are <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5305/">hydrophilic</a> and are therefore unable to cross the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> directly; instead, they bind to cell-surface receptors, which in turn generate one or more signals inside the target cell. Some small signal molecules, by contrast, diffuse across the plasma membrane and bind to receptors inside the target cell—either in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a> or in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> (as shown here). Many of these small signal molecules are hydrophobic and nearly insoluble in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4840/">aqueous</a> solutions; they are therefore transported in the bloodstream and other extracellular fluids after binding to carrier proteins, from which they dissociate before entering the target cell.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071681383-870864367.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-4 - <span class="title">Forms of intercellular signaling</span></span></center>
+<p>(A) Contact-dependent signaling requires cells to be in direct <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-membrane contact. (B) Paracrine signaling depends on signals that are released into the extracellular space and act locally on neighboring cells. (C) Synaptic signaling is performed by neurons that transmit signals electrically along their axons and release neurotransmitters at synapses, which are often located far away from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4933/">cell body</a>. (D) Endocrine signaling depends on endocrine cells, which secrete hormones into the bloodstream that are then distributed widely throughout the body. Many of the same types of signaling molecules are used in paracrine, synaptic, and endocrine signaling; the crucial differences lie in the speed and selectivity with which the signals are delivered to their targets.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071681604-385999226.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-5 - <span class="title">The contrast between endocrine and synaptic signaling</span></span></center>
+<p>In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> animals, endocrine cells and nerve cells work together to coordinate the diverse activities of the billions of cells. Whereas different endocrine cells must use different hormones to communicate specifically with their target cells, different nerve cells can use the same <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5528/">neurotransmitter</a> and still communicate in a highly specific manner. (A) Endocrine cells secrete hormones into the blood, which signal only the specific target cells that recognize them. These target cells have receptors for binding a specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5295/">hormone</a>, which the cells “pull” from the extracellular fluid. (B) In <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5850/">synaptic signaling</a>, by contrast, specificity arises from the synaptic contacts between a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5520/">nerve cell</a> and the specific target cells it signals. Usually, only a target cell that is in synaptic communication with a nerve cell is exposed to the neurotransmitter released from the nerve terminal (although some neurotransmitters act in a paracrine mode, serving as local mediators that influence multiple target cells in the area).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071681822-986876207.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-6 - <span class="title">Autocrine signaling</span></span></center>
+<p>A group of identical cells produces a higher concentration of a secreted signal than does a single cell. When this signal binds back to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> on the same cell type, it encourages the cells to respond coordinately as a group.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071681954-421575871.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-7 - <span class="title">Signaling via gap junctions</span></span></center>
+<p>Cells connected by gap junctions share small molecules, including small intracellular signaling molecules, and can therefore respond to extracellular signals in a coordinated way.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071682119-672730897.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-8 - <span class="title">An animal cell's dependence on multiple extracellular signals</span></span></center>
+<p>Each cell type displays a set of receptors that enables it to respond to a corresponding set of signal molecules produced by other cells. These signal molecules work in combinations to regulate the behavior of the cell. As shown here, an individual cell requires multiple signals to survive <i>(blue arrows)</i> and additional signals to divide <i>(red arrow)</i> or differentiate <i>(green arrows).</i> If deprived of appropriate survival signals, a cell will undergo a form of cell suicide known as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5682/">programmed cell death</a>, or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071682325-344475817.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-9 - <span class="title">Various responses induced by the neurotransmitter acetylcholine</span></span></center>
+<p>Different cell types are specialized to respond to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4760/">acetylcholine</a> in different ways. (A and B) For these two cell types, acetylcholine binds to similar <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> proteins, but the intracellular signals produced are interpreted differently in cells specialized for different functions. (C) This muscle cell produces a distinct type of receptor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> for acetylcholine, which generates different intracellular signals from the receptor shown in (A) and (B), and results in a different effect. (D) The chemical structure of acetylcholine.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071682495-381310913.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-10 - <span class="title">The importance of rapid turnover</span></span></center>
+<p>The graphs show the predicted relative rates of change in the intracellular concentrations of molecules with differing turnover times when their synthesis rates are either (A) decreased or (B) increased suddenly by a factor of 10. In both cases, the concentrations of those molecules that are normally being rapidly degraded in the cell <i>(red lines)</i> change quickly, whereas the concentrations of those that are normally being slowly degraded <i>(green lines)</i> change proportionally more slowly. The numbers (in <i>blue)</i> on the right are the half-lives assumed for each of the different molecules.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071682700-417694064.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-11 - <span class="title">The role of nitric oxide (NO) in smooth muscle relaxation in a blood vessel wall</span></span></center>
+<p>Acetylcholine released by nerve terminals in the blood vessel wall activates <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5547/">NO</a> synthase in endothelial cells lining the blood vessel, causing the endothelial cells to produce NO. The NO diffuses out of the endothelial cells and into the underlying smooth muscle cells, where it binds to and activates guanylyl cyclase to produce <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5043/">cyclic GMP</a>. The cyclic GMP triggers a response that causes the smooth muscle cells to relax, enhancing blood flow through the blood vessel.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071682871-59289954.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-12 - <span class="title">Some signaling molecules that bind to nuclear receptors</span></span></center>
+<p>Note that all of them are small and hydrophobic. The active, hydroxylated form of vitamin D<sub>3</sub> is shown. Estradiol and testosterone are <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5831/">steroid</a> sex hormones.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071683059-453486123.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-13 - <span class="title">The nuclear receptor superfamily</span></span></center>
+<p>All nuclear <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5295/">hormone</a> receptors bind to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> as either homodimers or heterodimers, but for simplicity we show them as monomers here. (A) The receptors all have a related structure. The short DNA-binding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> in each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> is shown in <i>green.</i> (B) A receptor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> in its inactive state is bound to inhibitory proteins. Domain-swap experiments suggest that many of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a>-binding, transcription-activating, and DNA-binding domains in these receptors can function as interchangeable modules. (C) The binding of ligand to the receptor causes the ligand-binding domain of the receptor to clamp shut around the ligand, the inhibitory proteins to dissociate, and coactivator proteins to bind to the receptor's transcription-activating domain, thereby increasing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> transcription. (D) The three-dimensional structure of a ligand-binding domain with <i>(right)</i> and without <i>(left)</i> ligand bound. Note that the <i>blue</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4755/">α helix</a> acts as a lid that snaps shut when the ligand (shown in <i>red)</i> binds, trapping the ligand in place.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071683273-951747094.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-14 - <span class="title">Responses induced by the activation of a nuclear hormone receptor</span></span></center>
+<p>(A) Early primary response and (B) delayed secondary response. The figure shows the responses to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5831/">steroid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5295/">hormone</a>, but the same principles apply for all ligands that activate this family of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> proteins. Some of the primary-response proteins turn on secondary-response genes, whereas others turn off the primary-response genes. The actual number of primary- and secondary-response genes is greater than shown. As expected, drugs that inhibit <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> synthesis suppress the transcription of secondary-response genes but not primary-response genes, allowing these two classes of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> transcription responses to be readily distinguished.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071683535-765125584.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-15 - <span class="title">Three classes of cell-surface receptors</span></span></center>
+<p>(A) Ion-channel-linked receptors, (B) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5247/">G-protein</a>-linked receptors, and (C) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a>-linked receptors. Although many enzyme-linked receptors have intrinsic enzyme activity, as shown on the left, many others rely on associated enzymes, as shown on the right.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071683746-10696603.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-16 - <span class="title">Different kinds of intracellular signaling proteins along a signaling pathway from a cell-surface receptor to the nucleus</span></span></center>
+<p>In this example, a series of signaling proteins and small intracellular mediators relay the extracellular signal into the cell, causing a change in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a>. The signal is amplified, altered (transduced), and distributed <i>en route.</i> Many of the steps can be modulated by other extracellular and intracellular signals, so that the final result of one signal depends on other factors affecting the cell (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26813/figure/A2755/?report=objectonly" rid-figpopup="figA2755" rid-ob="figobA2755" target="object">Figure 15-8</a>). Ultimately, the signaling pathway activates (or inactivates) target proteins that alter cell behavior. In this example, the target is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5213/">gene regulatory protein</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071683955-534072366.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-17 - <span class="title">Two types of intracellular signaling proteins that act as molecular switches</span></span></center>
+<p>In both cases, a signaling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is activated by the addition of a phosphate group and inactivated by the removal of the phosphate. (A) The phosphate is added covalently to the signaling protein by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a>. (B) A signaling protein is induced to exchange its bound GDP for GTP. To emphasize the similarity in the two mechanisms, ATP is shown as APPP, ADP as APP, GTP as GPPP, and GDP as GPP.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071684123-108652588.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-18 - <span class="title">Signal integration</span></span></center>
+<p>(A) Extracellular signals A and B both activate a different series of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> phosphorylations, each of which leads to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of protein Y but at different sites on the protein. Protein Y is activated only when both of these sites are phosphorylated, and therefore it becomes active only when signals A and B are simultaneously present. For this reason, integrator proteins are sometimes called coincidence detectors. (B) Extracellular signals A and B lead to the phosphorylation of two proteins, a and b, which then bind to each other to create the active protein. In both of the examples illustrated, the proteins themselves are phosphorylated. An equivalent form of control can also occur, however, by the exchange of GTP for GDP on GTP-binding proteins (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26813/figure/A2779/?report=objectonly" rid-figpopup="figA2779" rid-ob="figobA2779" target="object">Figure 15-17</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071684302-479677371.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-19 - <span class="title">Two types of intracellular signaling complexes</span></span></center>
+<p>(A) A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> and some of the intracellular signaling proteins it activates in sequence are preassembled into a signaling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> by a large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5776/">scaffold protein</a>. (B) A large signaling complex is assembled after a receptor has been activated by the binding of an extracellular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5794/">signal molecule</a>; here the activated receptor phosphorylates itself at multiple sites, which then act as docking sites for intracellular signaling proteins.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071684515-551473223.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-20 - <span class="title">A hypothetical signaling pathway using modular binding domains</span></span></center>
+<p>Signaling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> 1 contains three different binding domains, plus a catalytic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a>. It moves to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> when extracellular signals lead to the creation of various phosphorylated docking sites on the cytosolic face of the membrane. Its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5792/">SH2 domain</a> binds to phosphorylated tyrosines on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> protein, and its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5611/">PH domain</a> binds to phosphorylated inositol phospholipids in the inner leaflet of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5400/">lipid bilayer</a>. Protein 1 then phosphorylates signaling protein 2 on tyrosines, which allows protein 2 to bind to the PTB domain on protein 1 and to the SH2 domain on an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4778/">adaptor protein</a>. The adaptor protein then links protein 2 to protein 3, causing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of protein 3 by protein 2. The adaptor protein shown consists of two binding domains—an SH2 domain, which binds to a phosphotyrosine on protein 2, and an SH3 domain, which binds to a proline-rich <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5493/">motif</a> on protein 3.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071684684-937618215.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-21 - <span class="title">The primary response of chick oviduct cells to the steroid sex hormone estradiol</span></span></center>
+<p>When activated, estradiol receptors turn on the transcription of several genes. Dose-response curves for two of these genes are shown, one coding for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> conalbumin and the other coding for the egg protein ovalbumin. The linear response curve for conalbumin indicates that each activated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> that binds to the conalbumin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> increases the activity of the gene by the same amount. In contrast, the lag followed by the steep increase in the response curve for ovalbumin suggests that more than one activated receptor (in this case, two receptors) must bind simultaneously to the ovalbumin gene to initiate its transcription. (Adapted from E.R. Mulvihill and R.D. Palmiter, <i>J. Biol. Chem.</i> 252:2060–2068, 1977.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071684853-679165806.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-22 - <span class="title">Activation curves as a function of signal-molecule concentration</span></span></center>
+<p>The curves show how the sharpness of the response increases with an increase in the number of effector molecules that must bind simultaneously to activate a target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5419/">macromolecule</a>. The curves shown are those expected if the activation requires the simultaneous binding of 1, 2, 8, or 16 effector molecules.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071685075-650733150.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-23 - <span class="title">One type of signaling mechanism expected to show a steep thresholdlike response</span></span></center>
+<p>Here, the simultaneous binding of eight molecules of a signaling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> to a set of eight <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> subunits is required to form an active protein <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. The ability of the subunits to assemble into the active complex depends on an allosteric conformational change that the subunits undergo when they bind their ligand. The binding of the ligand in the formation of such a complex is generally a cooperative process, causing a steep response as the ligand concentration is changed, as explained in Chapter 3. At low ligand concentrations, the number of active complexes increases roughly in proportion to the eighth power of the ligand concentration.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071685243-531295285.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-24 - <span class="title">An accelerating positive feedback mechanism</span></span></center>
+<p>In this example, the initial binding of the signaling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> activates the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> to generate a product that binds back to the enzyme, further increasing the enzyme's activity.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071685468-474962538.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-25 - <span class="title">Five ways in which target cells can become desensitized to a signal molecule</span></span></center>
+<p>The inactivation mechanisms shown here for both the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5351/">intracellular signaling protein</a> often involve <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of the protein that is inactivated, although other types of modification are also known to occur. In bacterial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4966/">chemotaxis</a>, which we discuss later, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5067/">desensitization</a> depends on methylation of the receptor protein.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 15.3 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638071688731-327842341.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-26 - <span class="title">A G-protein-linked receptor</span></span></center>
+<p>Receptors that bind <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> ligands have a large extracellular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> formed by the part of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chain shown in <i>light green.</i> This domain, together with some of the transmembrane segments, binds the protein <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a>. Receptors for small ligands such as adrenaline have small extracellular domains, and the ligand usually binds deep within the plane of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> to a site that is formed by amino acids from several transmembrane segments.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071688895-179057378.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-27 - <span class="title">The structure of an inactive G protein</span></span></center>
+<p>(A) Note that both the α and the γ subunits have covalently attached <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5399/">lipid</a> molecules <i>(red)</i> that help to bind them to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>, and the α <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> has GDP bound. (B) The three-dimensional structure of an inactive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, based on transducin, the G protein in visual transduction (discussed later). The α subunit contains the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5259/">GTPase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> and binds to one side of the β subunit, which locks the GTPase domain in an inactive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> that binds GDP. The γ subunit binds to the opposite side of the β subunit. (B, based on D.G. Lombright et al., <i>Nature</i> 379:311–319, 1996.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071689067-657844670.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-28 - <span class="title">The disassembly of an activated G-protein into two signaling components</span></span></center>
+<p>(A) In the unstimulated state, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> are both inactive. Although they are shown here as separate entities in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>, in some cases, at least, they are associated in a preformed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. (B) Binding of an extracellular signal to the receptor changes the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> of the receptor, which in turn alters the conformation of the G protein that is bound to the receptor. (C) The alteration of the α <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of the G protein allows it to exchange its GDP for GTP. This causes the G protein to break up into two active components—an α subunit and a βγ complex, both of which can regulate the activity of target proteins in the plasma membrane. The receptor stays active while the external <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5794/">signal molecule</a> is bound to it, and it can therefore catalyze the activation of many molecules of G protein.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071689240-528524220.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-29 - <span class="title">The switching off of the G-protein α subunit by the hydrolysis of its bound GTP</span></span></center>
+<p>After a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5247/">G-protein</a> α <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> activates its target protein, it shuts itself off by hydrolyzing its bound GTP to GDP. This inactivates the α subunit, which dissociates from the target protein and reassociates with a βγ <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> to re-form an inactive G protein. Binding to the target protein or to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-bound RGS protein (not shown) usually stimulates the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5259/">GTPase</a> activity of the α subunit; this stimulation greatly speeds up the inactivation process shown here.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071689461-401233983.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-30 - <span class="title">An increase in cyclic AMP in response to an extracellular signal</span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5520/">nerve cell</a> in culture is responding to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5528/">neurotransmitter</a> serotonin, which acts through a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5248/">G-protein-linked receptor</a> to cause a rapid rise in the intracellular concentration of cyclic AMP. To monitor the cyclic AMP level, the cell has been loaded with a fluorescent protein that changes its fluorescence when it binds cyclic AMP. <i>Blue</i> indicates a low level of cyclic AMP, <i>yellow</i> an intermediate level, and <i>red</i> a high level. (A) In the resting cell, the cyclic AMP level is about 5 × 10<sup>-8</sup> M. (B) Twenty seconds after the addition of serotonin to the culture medium, the intracellular level of cyclic AMP has increased to more than 10<sup>-6</sup> M, an increase of more than twentyfold. (From Brian J. Bacskai et al., <i>Science</i> 260:222–226, 1993. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071689631-647652930.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-31 - <span class="title">The synthesis and degradation of cyclic AMP</span></span></center>
+<p>In a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> catalyzed by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> adenylyl cyclase, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5041/">cyclic AMP (cAMP)</a> is synthesized from ATP through a cyclization reaction that removes two phosphate groups as pyrophosphate (<span class="graphic"><img alt="Figure 15-31. The synthesis and degradation of cyclic AMP." src="/books/NBK26912/bin/dclccP.jpg"></span>—<span class="graphic"><img alt="Figure 15-31. The synthesis and degradation of cyclic AMP." src="/books/NBK26912/bin/dclccP.jpg"></span>); a pyrophosphatase drives this synthesis by hydrolyzing the released pyrophosphate to phosphate (not shown). Cyclic AMP is unstable in the cell, because it is itself hydrolyzed by a specific phosphodiesterase to form 5′-AMP, as indicated.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071689809-21361911.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-32 - <span class="title">The activation of cyclic-AMP-dependent protein kinase (PKA)</span></span></center>
+<p>The binding of cyclic AMP to the regulatory subunits induces a conformational change, causing these subunits to dissociate from the catalytic subunits, thereby activating the kinase activity of the catalytic subunits. The release of the catalytic subunits requires the binding of more than two cyclic AMP molecules to the regulatory subunits in the tetramer. This requirement greatly sharpens the response of the kinase to changes in cyclic AMP concentration, as discussed earlier. Mammalian cells have at least two types of PKAs: type I is mainly in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a>, whereas type II is bound via its regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> and special anchoring proteins to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>, nuclear membrane, mitochondrial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5589/">outer membrane</a>, and microtubules. In all cases, however, once the catalytic subunits are freed and active, they can migrate into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> (where they can phosphorylate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> regulatory proteins), while the regulatory subunits remain in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a>. The three-dimensional structure of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5639/">PKA</a> catalytic subunit is shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A452/figure/A505/?report=objectonly" rid-figpopup="figA505" rid-ob="figobA505" target="object">Figure 3-64</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071689984-406328478.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-33 - <span class="title">How gene transcription is activated by a rise in cyclic AMP concentration</span></span></center>
+<p>The binding of an extracellular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5794/">signal molecule</a> to its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5248/">G-protein-linked receptor</a> leads to the activation of adenylyl cyclase and a rise in cyclic AMP concentration. The increase in cyclic AMP concentration activates <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5639/">PKA</a> in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a>, and the released catalytic subunits then move into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, where they phosphorylate the CREB <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5213/">gene regulatory protein</a>. Once phosphorylated, CREB recruits the coactivator CBP, which stimulates gene transcription. This signaling pathway controls many processes in cells, ranging from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5295/">hormone</a> synthesis in endocrine cells to the production of proteins required for long-term memory in the brain. We shall see later that some kinases that are activated by a rise in intracellular Ca<sup>2+</sup> can also phosphorylate and thereby activate CREB.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071690190-992688598.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-34 - <span class="title">Three types of inositol phospholipids (phosphoinositides)</span></span></center>
+<p>The polyphosphoinositides—PI(4)P and PI(4,5)P<sub>2</sub>—are produced by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5621/">phosphatidylinositol</a> (PI) and PI(4)P, respectively. Although all three inositol phospholipids may be broken down in a signaling response, it is the breakdown of PI(4,5)P<sub>2</sub> that is most critical because it generates two intracellular mediators, as shown in the next two figures. Nevertheless, PI(4,5)P<sub>2</sub> is the least abundant, constituting less than 10% of the total inositol lipids and less than 1% of the total phospholipids in a cell. The conventional numbering of the carbon atoms in the inositol ring is shown in <i>red numbers</i> on the PI <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071690393-307053658.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-35 - <span class="title">The hydrolysis of PI(4,5)P<sub>2</sub> by phospholipase C-β</span></span></center>
+<p>Two intracellular mediators are produced when PI(4,5)P<sub>2</sub> is hydrolyzed: inositol 1,4,5-trisphosphate (IP<sub>3</sub>), which diffuses through the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a> and releases Ca<sup>2+</sup> from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5151/">ER</a>, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5072/">diacylglycerol</a>, which remains in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> and helps to activate the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5692/">protein kinase C</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26912/figure/A2812/?report=objectonly" rid-figpopup="figA2812" rid-ob="figobA2812" target="object">Figure 15-36</a>). There are at least three classes of phospholipase C—β, γ, and σ—and it is the β class that is activated by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5247/">G-protein</a>-linked receptors. We shall see later that the γ class is activated by a second class of receptors, called <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> tyrosine kinases, that activate the inositol <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5627/">phospholipid</a> signaling pathway without an intermediary G protein.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071690625-839268348.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-36 - <span class="title">The two branches of the inositol phospholipid pathway</span></span></center>
+<p>The activated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> stimulates the plasma-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-bound <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> phospholipase C-β via a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. Depending on the isoform of the enzyme, it may be activated by the α <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5249/">G<sub>q</sub></a> as shown, by the βγ <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of another G protein, or by both. Two intracellular messenger molecules are produced when PI(4,5)P<sub>2</sub> is hydrolyzed by the activated phospholipase C-β. Inositol 1,4,5-trisphosphate (IP<sub>3</sub>) diffuses through the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a> and releases Ca<sup>2+</sup> from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5131/">endoplasmic reticulum</a> by binding to and opening IP<sub>3</sub>-gated Ca<sup>2+</sup>-release channels in the endoplasmic reticulum membrane. The large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5116/">electrochemical gradient</a> for Ca<sup>2+</sup> across this membrane causes Ca<sup>2+</sup> to escape into the cytosol. Diacylglycerol remains in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> and, together with phosphatidylserine (not shown) and Ca<sup>2+</sup>, helps to activate the enzyme <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5692/">protein kinase C</a>, which is recruited from the cytosol to the cytosolic face of the plasma membrane. Of the 11 or more distinct isoforms of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5640/">PKC</a> in mammals, at least four are activated by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5072/">diacylglycerol</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071690840-563562465.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-37 - <span class="title">Fertilization of an egg by a sperm triggering an increase in cytosolic Ca<sup>2+</sup></span></span></center>
+<p>This starfish <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> was injected with a Ca<sup>2+</sup>-sensitive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5186/">fluorescent dye</a> before it was fertilized. A wave of cytosolic Ca<sup>2+</sup>
+<i>(red),</i> released from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5131/">endoplasmic reticulum</a>, is seen to sweep across the egg from the site of sperm entry <i>(arrow).</i> This Ca<sup>2+</sup> wave provokes a change in the egg cell surface, preventing the entry of other sperm, and it also initiates embryonic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5071/">development</a> (discussed in Chapter 20). (Courtesy of Stephen A. Stricker.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071691012-781105953.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-38 - <span class="title">The main ways eucaryotic cells maintain a very low concentration of free Ca<sup>2+</sup>in their cytosol</span></span></center>
+<p>(A) Ca<sup>2+</sup> is actively pumped out of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a> to the cell exterior. (B) Ca<sup>2+</sup> is pumped into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5151/">ER</a> and mitochondria, and various molecules in the cell bind free Ca<sup>2+</sup> tightly.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071691228-627546816.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-39 - <span class="title">Vasopressin-induced Ca<sup>2+</sup>oscillations in a liver cell</span></span></center>
+<p>The cell was loaded with the Ca<sup>2+</sup>-sensitive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> aequorin and then exposed to increasing concentrations of vasopressin. Note that the frequency of the Ca<sup>2+</sup> spikes increases with an increasing concentration of vasopressin, but that the amplitude of the spikes is not affected. (Adapted from N.M. Woods, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>.S.R. Cuthbertson, and P.H. Cobbold, <i>Nature</i> 319:600–602, 1986.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071691397-875090275.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-40 - <span class="title">The structure of Ca<sup>2+</sup>/calmodulin based on x-ray diffraction and NMR studies</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> has a “dumbbell” shape, with two globular ends connected by a long, exposed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4755/">α helix</a>. Each end has two Ca<sup>2+</sup>-binding domains, each with a loop of 12 amino acids, in which aspartic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4761/">acid</a> and glutamic acid side chains form ionic bonds with Ca<sup>2+</sup>. The two Ca<sup>2+</sup>-binding sites in the carboxyl-terminal part of the molecule have a tenfold higher affinity for Ca<sup>2+</sup> than the two in the amino-terminal part. In solution, the molecule is flexible, displaying a range of forms, from extended (as shown) to more compact. (B) The major structural change in Ca<sup>2+</sup>/<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4899/">calmodulin</a> that occurs when it binds to a target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> (in this example, a peptide that consists of the Ca<sup>2+</sup>/calmodulin-binding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> of a Ca<sup>2+</sup>/calmodulin-dependent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a>). Note that the Ca<sup>2+</sup>/calmodulin has “jack-knifed” to surround the peptide. (A, based on x-ray crystallographic data from Y.S. Babu et al., <i>Nature</i> 315:37–40, 1985; B, based on x-ray crystallographic data from W.E. Meador, A.R. Means, and F.A. Quiocho, <i>Science</i> 257:1251–1255, 1992, and on <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5539/">NMR</a> data from M. Ikura et al., <i>Science</i> 256:632–638, 1992. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071691571-121850293.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-41 - <span class="title">The activation of CaM-kinase II</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> is a large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of about 12 subunits, although, for simplicity, only one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> is shown. The subunits are of four <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5292/">homologous</a> kinds (α, β, γ, and σ), which are expressed in different proportions in different cell types. In the absence of Ca<sup>2+</sup>/<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4899/">calmodulin</a>, the enzyme is inactive as the result of an interaction between the inhibitory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> and the catalytic domain. The binding of Ca<sup>2+</sup>/calmodulin alters the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> of the protein, allowing the catalytic domain to phosphorylate the inhibitory domain of neighboring subunits in the complex, as well as other proteins in the cell (not shown). The autophosphorylation of the enzyme complex (by mutual <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of its subunits) prolongs the activity of the enzyme in two ways. First, it traps the bound Ca<sup>2+</sup>/calmodulin so that it does not dissociate from the enzyme complex until cytosolic Ca<sup>2+</sup> levels return to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4872/">basal</a> values for at least 10 seconds (not shown). Second, it converts the enzyme to a Ca<sup>2+</sup>-independent form so that the kinase remains active even after the Ca<sup>2+</sup>/calmodulin dissociates from it. This activity continues until the autophosphorylation process is overridden by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5694/">protein phosphatase</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071691788-194628259.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-42 - <span class="title">CaM-kinase II as a frequency decoder of Ca<sup>2+</sup>oscillations</span></span></center>
+<p>(A) At low frequencies of Ca<sup>2+</sup> spikes <i>(gray bars),</i> the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> becomes inactive after each spike, as the autophosphorylation induced by Ca<sup>2+</sup>/<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4899/">calmodulin</a> binding does not maintain the enzyme's activity long enough for the enzyme to remain active until the next Ca<sup>2+</sup> spike arrives. (B) At higher spike frequencies, however, the enzyme fails to inactivate completely between Ca<sup>2+</sup> spikes, so its activity ratchets up with each spike. If the spike frequency is high enough, this progressive increase in enzyme activity would continue until the enzyme is autophosphorylated on all subunits and is therefore maximally activated. Once enough of its subunits are autophosphorylated, the enzyme can be maintained in a highly active state even with a relatively low frequency of Ca<sup>2+</sup> spikes (a form of cell memory). The binding of Ca<sup>2+</sup>/calmodulin to the enzyme is enhanced by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4904/">CaM-kinase II</a> autophosphorylation (a form of positive feedback), causing the response of the enzyme to repeated Ca<sup>2+</sup> spikes to exhibit a steep threshold in its frequency response, as discussed earlier.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071691954-111253959.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-43 - <span class="title">Olfactory receptor neurons</span></span></center>
+<p>(A) This drawing shows a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of olfactory epithelium in the nose. Olfactory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> neurons possess modified cilia, which project from the surface of the epithelium and contain the olfactory receptors, as well as the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5799/">signal transduction</a> machinery. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4863/">axon</a>, which extends from the opposite end of the receptor neuron, conveys electrical signals to the brain when the cell is activated by an odorant to produce an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4769/">action potential</a>. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4872/">basal</a> cells act as stem cells, producing new receptor neurons throughout life, to replace the neurons that die.</p><p>(B) A scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of the cilia on the surface of an olfactory neuron. (B, from E.E. Morrison and R.M. Costanzo, <i>J. Comp. Neurol.</i> 297:1–13, 1990. © Wiley-Liss, Inc.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071692128-39205194.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-44 - <span class="title">Cyclic GMP</span></span></center><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071692296-125286747.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-45 - <span class="title">A rod photoreceptor cell</span></span></center>
+<p>There are about 1000 discs in the outer segment. The disc membranes are not connected to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071692462-163788253.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-46 - <span class="title">The response of a rod photoreceptor cell to light</span></span></center>
+<p>Rhodopsin molecules in the outer-segment discs absorb photons. Photon absorption leads to the closure of Na<sup>+</sup> channels in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>, which hyperpolarizes the membrane and reduces the rate of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5528/">neurotransmitter</a> release from the synaptic region. Because the neurotransmitter acts to inhibit many of the postsynaptic retinal neurons, illumination serves to free the neurons from inhibition and thus, in effect, excites them.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071692628-702944991.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-47 - <span class="title">Amplification in the light-induced catalytic cascade in vertebrate rods</span></span></center>
+<p>The divergent arrows indicate the steps where amplification occurs.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071692789-214984756.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-48 - <span class="title">The roles of G-protein-linked receptor kinases (GRKs) and arrestins in receptor desensitization</span></span></center>
+<p>The binding of an arrestin to the phosphorylated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> prevents the receptor from binding to its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> and can direct its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5129/">endocytosis</a>. Mice that are deficient in one form of arrestin fail to desensitize in response to morphine, for example, attesting to the importance of arrestins for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5067/">desensitization</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 15.4 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638071695903-211727815.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-49 - <span class="title">Seven subfamilies of receptor tyrosine kinases</span></span></center>
+<p>Only one or two members of each subfamily are indicated. Note that the tyrosine kinase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> is interrupted by a “kinase insert region” in some of the subfamilies. The functional roles of most of the cysteine-rich, immunoglobulin-like, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5178/">fibronectin</a>-type III-like domains are not known. Some of the ligands and responses for the receptors shown are listed in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26822/table/A2849/?report=objectonly" rid-figpopup="figA2849" rid-ob="figobA2849" target="object">Table 15-4</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071696074-990396261.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-50 - <span class="title">Three ways in which signaling proteins can cross-link receptor chains</span></span></center>
+<p>When the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> chains are cross-linked, the kinase domains of adjacent receptors cross-phosphorylate each other, stimulating the kinase activity of the receptor and creating docking sites for intracellular proteins. (A) Platelet-derived <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5255/">growth factor</a> (PDGF) is a covalently linked dimer with two receptor-binding sites, so it can directly cross-link adjacent receptors to initiate the intracellular signaling process. The PDGF dimers are composed of A and B chains in different combinations, and they can activate different combinations of two types of PDGF receptor chains (α and β), which have somewhat different signaling properties. (B) Some monomeric ligands, such as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5177/">fibroblast</a> growth factors (FGFs), bind in clusters to proteoglycans, enabling the ligands to cross-link their receptors. The proteoglycans can be in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5164/">extracellular matrix</a> or, as shown here, on the cell surface. There are more than 20 types of FGFs and more than 4 types of FGF receptors. (C) Membrane-bound signaling proteins, such as ephrins, can cross-link their receptors even though they are monomeric, because they cluster in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> of the signaling cell. Some ephrins (B-type) are transmembrane proteins (as shown), whereas others (A-type) are linked to the membrane by a glycosylphosphatidylinositol (GPI) anchor (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2202/figure/A2239/?report=objectonly" rid-figpopup="figA2239" rid-ob="figobA2239" target="object">Figure 12-56</a>). For the most part, A-type ephrins activate A-type Eph receptors, and B-type ephrins activate B-type Eph receptors.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071696285-801582251.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-51 - <span class="title">Inhibition of signaling through normal receptor tyrosine kinases by an excess of mutant receptors</span></span></center>
+<p>(A) In this example, the normal receptors dimerize in response to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> binding. The two kinase domains cross-phosphorylate each other, increasing the activity of the kinase domains, which can now further activate the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> dimer by phosphorylating other sites on the receptors. (B) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> receptor with an inactivated kinase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> can dimerize normally, but it cannot cross-phosphorylate a normal receptor in a dimer. For this reason, the mutant receptors, if present in excess, will block signaling by the normal receptors—a process called <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5103/">dominant</a>-negative inhibition.</i> Cell biologists frequently use this strategy to inhibit a specific type of receptor tyrosine kinase in a cell to determine its normal function.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071696488-64332178.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-52 - <span class="title">The docking of intracellular signaling proteins on an activated receptor tyrosine kinase</span></span></center>
+<p>The activated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> and its bound signaling proteins form a signaling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> that can then broadcast signals along multiple signaling pathways.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071696675-249589637.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-53 - <span class="title">The binding of SH2-containing intracellular signaling proteins to an activated PDGF receptor</span></span></center>
+<p>(A) This drawing of a PDGF <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> shows five of the tyrosine autophosphorylation sites, three in the kinase insert region and two on the C-terminal tail, to which the three signaling proteins shown bind as indicated. The numbers on the right indicate the positions of the tyrosines in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chain. These binding sites have been identified by using <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5723/">recombinant DNA</a> technology to mutate specific tyrosines in the receptor. Mutation of tyrosines 1009 and 1021, for example, prevents the binding and activation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5648/">PLC-γ</a>, so that receptor activation no longer stimulates the inositol <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5627/">phospholipid</a> signaling pathway. The locations of the SH2 <i>(red)</i> and SH3 <i>(blue)</i> domains in the three signaling proteins are indicated. (Additional autophosphorylation sites on this receptor are not shown, including those that serve as binding sites for the cytoplasmic tyrosine kinase Src and the adaptor proteins Grb2 and Shc, discussed later.) (B) The three-dimensional structure of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5792/">SH2 domain</a>, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography. The binding pocket for phosphotyrosine is shown in <i>yellow</i> on the right, and a pocket for binding a specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5793/">side chain</a> (isoleucine, in this case) is shown in <i>yellow</i> on the left (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A452/figure/A459/?report=objectonly" rid-figpopup="figA459" rid-ob="figobA459" target="object">Figure 3-40</a>). (C) The SH2 domain is a compact, “plug-in” <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5481/">module</a>, which can be inserted almost anywhere in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> without disturbing the protein's folding or function (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A388/figure/A420/?report=objectonly" rid-figpopup="figA420" rid-ob="figobA420" target="object">Figure 3-19</a>). Because each domain has distinct sites for recognizing phosphotyrosine and for recognizing a particular amino acid side chain, different SH2 domains recognize phosphotyrosine in the context of different flanking amino acid sequences. (B, based on data from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Waksman et al., <i>Cell</i> 72:1–20, 1993. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071696893-717165739.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-54 - <span class="title">The regulation of Ras activity</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5259/">GTPase</a>-activating proteins (GAPs) inactivate Ras by stimulating it to hydrolyze its bound GTP; the inactivated Ras remains tightly bound to GDP. Guanine <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> exchange factors (GEFs) activate Ras by stimulating it to give up its GDP; the concentration of GTP in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a> is 10 times greater than the concentration of GDP, and Ras rapidly binds GTP once GDP has been ejected. Several Ras-regulating GAPs (Ras GAPs) have been characterized in mammalian cells, including <i>p120</i>
+<sup><i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5260/">GAP</a></i></sup> and <i>neurofibromin</i> (so named because it is encoded by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> that is mutated in the common human genetic disease neurofibromatosis, which is associated with tumors of nerves). The Ras GAPs maintain most of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5716/">Ras protein</a> (~95%) in unstimulated cells in an inactive GDP-bound state.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071697056-131728337.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-55 - <span class="title">The activation of Ras by an activated receptor tyrosine kinase</span></span></center>
+<p>Most of the signaling proteins bound to the activated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> are omitted for simplicity. The Grb-2 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4778/">adaptor protein</a> binds to a specific phosphotyrosine on the receptor and to the Ras <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5262/">guanine nucleotide exchange factor</a> (GEF), which stimulates Ras to exchange its bound GDP for GTP. The activated Ras then activates several downstream signaling pathways, one of which is shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26822/figure/A2859/?report=objectonly" rid-figpopup="figA2859" rid-ob="figobA2859" target="object">Figure 15-56</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071697224-461371995.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-56 - <span class="title">The MAP-kinase serine/threonine phosphorylation pathway activated by Ras</span></span></center>
+<p>Multiple such pathways involving structurally and functionally related proteins operate in all eucaryotes, each coupling an extracellular stimulus to a variety of cell outputs. The pathway activated by Ras begins with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5466/">MAP</a>-kinase-kinase-kinase called <i>Raf,</i> which activates the MAP-kinase-kinase <i>Mek,</i> which then activates the MAP-kinase called <i>Erk.</i> Erk in turn phosphorylates a variety of downstream proteins, including other kinases, as well as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> regulatory proteins in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. The resulting changes in gene <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> activity cause <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> changes in cell behavior.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071697467-197704035.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-57 - <span class="title">The organization of MAP-kinase pathways by scaffold proteins in budding yeast</span></span></center>
+<p>Budding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> have at least six three-component <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5466/">MAP</a>-kinase modules involved in a variety of biological processes, including the two responses illustrated here—a mating response and the response to high <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5585/">osmolarity</a>. (A) The mating response is triggered when a mating factor secreted by a yeast of opposite mating type binds to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5248/">G-protein-linked receptor</a>. This activates a G protein, and the βγ <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of the G protein indirectly activates the MAP-kinase-kinase-kinase (kinase A), which then relays the response onward. Once activated, the MAP-kinase (kinase C) phosphorylates and thereby activates several proteins that mediate the mating response, in which the yeast cell stops dividing and prepares for fusion. The three kinases in this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5481/">module</a> are bound to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5776/">scaffold protein</a> 1. (B) In a second response, a yeast cell exposed to a high-osmolarity environment is induced to synthesize <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5236/">glycerol</a> to increase its internal osmolarity. This response is mediated by a transmembrane, osmolarity-sensing, receptor protein and a different MAP-kinase module bound to a second scaffold protein. (Note that the kinase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> of scaffold 2 provides the MAP-kinase-kinase activity of this module.) Although both pathways use the same MAP-kinase-kinase-kinase (kinase A, <i>green),</i> there is no cross talk between them, because the kinases in each module are tightly bound to different scaffold proteins, and the osmosensor is bound to the same scaffold protein as the particular kinase it activates.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071697655-715634895.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-58 - <span class="title">The generation of inositol phospholipid docking sites by PI 3-kinase</span></span></center>
+<p>PI 3-kinase phosphorylates the inositol ring on carbon atom 3 to generate the inositol phospholipids shown at the bottom of the figure; the two lipids shown in <i>red</i> can serve as docking sites for signaling proteins with PH domains. The phosphorylations indicated by the <i>green</i> arrows are catalyzed by other inositol <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5627/">phospholipid</a> kinases. As discussed earlier, phospholipase C (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5647/">PLC-β</a> or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5648/">PLC-γ</a>) can cleave PI(4,5)P<sub>2</sub> to produce the two small signaling molecules <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5072/">diacylglycerol</a> and inositol 1,4,5-trisphosphate (IP<sub>3</sub>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071697864-459544527.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-59 - <span class="title">The recruitment of signaling proteins with PH domains to the plasma membrane during B cell activation</span></span></center>
+<p>(A) PI 3-kinase binds to a phosphotyrosine on the activated B cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> and is thereby activated to phosphorylate the inositol <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5627/">phospholipid</a> PI 4,5-bisphosphate [PI(4,5)P<sub>2</sub>], generating PI 3,4,5-trisphosphate [PI(3,4,5)P<sub>3</sub>]. (B) The PI 3,4,5-trisphosphate serves as a docking site for two signaling proteins with PH domains that then interact with each other. This causes the cytoplasmic tyrosine kinase BTK to phosphorylate and thereby activate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5648/">PLC-γ</a> at the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>. (C) The activated PLC-γ then cleaves PI(4,5)P<sub>2</sub> to generate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5072/">diacylglycerol</a> and IP<sub>3</sub>, which relay the signal onward.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071698071-725784862.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-60 - <span class="title">One way in which signaling through PI 3-kinase promotes cell survival</span></span></center>
+<p>An extracellular survival signal activates a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> tyrosine kinase, which recruits and activates PI 3-kinase. The PI 3-kinase produces PI(3,4,5)P<sub>3</sub> and PI(3,4)P<sub>2</sub> (not shown), both of which serve as docking sites for two serine/threonine kinases with PH domains—<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a> B (PKB) and the phosphoinositol-dependent kinase PDK1. The binding of PKB to the inositol lipids alters its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> so that the protein can be phosphorylated and activated by PDK1. The activated PKB now dissociates from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> and phosphorylates the BAD protein, which, when unphosphorylated, holds one or more death-inhibitory proteins in an inactive state. Once phosphorylated, BAD releases the inhibitory proteins, which now can block <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5682/">programmed cell death</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>) and thereby promote cell survival.</p><p>As shown, once phosphorylated, BAD binds to a ubiquitous cytosolic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> called <i>14-3-3,</i> which keeps BAD out of action. There are about 20 14-3-3 proteins in human cells, all of which bind to specific phosphoserine-containing motifs in proteins. The activation of other signaling pathways can also lead to BAD <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> and the promotion of cell survival (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071698287-477353500.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-61 - <span class="title">Five parallel intracellular signaling pathways activated by G-protein-linked receptors, receptor tyrosine kinases, or both</span></span></center>
+<p>In this schematic example, the five kinases (shaded <i>yellow)</i> at the end of each pathway phosphorylate target proteins (shaded <i>red),</i> some of which are phosphorylated by more than one of the kinases. The specific phospholipase C activated by the two types of receptors is different: <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5247/">G-protein</a>-linked receptors activate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5647/">PLC-β</a>, whereas <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> tyrosine kinases activate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5648/">PLC-γ</a> (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071698449-316300274.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-62 - <span class="title">The three-dimensional structure of human growth hormone bound to its receptor</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5295/">hormone</a> <i>(red)</i> has cross-linked two identical receptors (one shown in <i>green</i> and the other in <i>blue).</i> Hormone binding activates cytoplasmic tyrosine kinases that are tightly bound to the cytosolic tails of the receptors (not shown). The structures shown were <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallographic studies of complexes formed between the hormone and extracellular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> domains produced by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5723/">recombinant DNA</a> technology. It was entirely unexpected that a monomeric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> such as growth hormone would cross-link its receptors, as it requires that the two identical receptors recognize different parts of the hormone. As mentioned earlier, EGF does the same thing. (From A.M. deVos, M. Ultsch, and A.A. Kossiakoff, <i>Science</i> 255:306–312, 1992. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071698621-244436823.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-63 - <span class="title">The Jak-STAT signaling pathway activated by α-interferon</span></span></center>
+<p>The binding of interferon either causes two separate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chains to dimerize (as shown) or reorients the receptor chains in a preformed dimer. In either case, the associated Jaks are brought together so that they can cross-phosphorylate each other on tyrosines, starting the signaling process. The two different receptor chains are associated with different Jaks (Tyk2 and Jak1), and they recruit different STATs (STAT1 and STAT2). The STATs dissociate from the receptors and form heterodimers when activated by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a>, and they bind to specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> sequences in the cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, where, together with other <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> regulatory proteins, they induce the transcription of adjacent genes.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071698839-33301363.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-64 - <span class="title">Some protein tyrosine phosphatases</span></span></center>
+<p>The cytoplasmic tyrosine phosphatases SHP-1 and SHP-2 have similar structures, with two SH2 domains. The three transmembrane receptorlike tyrosine phosphatases have two tandemly arranged intracellular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5619/">phosphatase</a> domains, with the one closest to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> providing most or all of the catalytic activity. DPTP is a <i>Drosophila</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>; the others in the figure are mammalian proteins.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071699001-774632406.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-65 - <span class="title">A model for the Smad-dependent signaling pathway activated by TGF-β</span></span></center>
+<p>Note that TGF-β is a dimer and that Smads open up to expose a dimerization surface when they are phosphorylated. Several features of the pathway have been omitted for simplicity, including the following: (1) The type-I and type-II <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> proteins are both thought to be dimers. (2) The type-I receptors are normally associated with an inhibitory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, which dissociates when the type-I receptor is phosphorylated by a type-II receptor. (3) The individual Smads are thought to be trimers. (4) An anchoring protein (called SARA, for <i>S</i>mad <i>a</i>nchor for <i>r</i>eceptor <i>a</i>ctivation) helps to recruit Smad2 or Smad3 to the activated type I receptor by binding to the receptor, to the Smad, and to inositol phopholipid molecules in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>. (5) The function of certain Smads is regulated by enzymes that enhance their ubiquitylation and thereby their degradation.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071699239-299219251.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-66 - <span class="title">Some of the protein kinases discussed in this chapter</span></span></center>
+<p>The size and location of their catalytic domains <i>(dark green)</i> are shown. In each case the catalytic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> is about 250 amino acids long. These domains are all similar in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence, suggesting that they have all evolved from a common primordial kinase (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A452/figure/A506/?report=objectonly" rid-figpopup="figA506" rid-ob="figobA506" target="object">Figure 3-65</a>). Note that all of the tyrosine kinases shown are bound to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> (Jaks are bound by their association with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5050/">cytokine</a> receptors), whereas most of the serine/threonine kinases are in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5055/">cytosol</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071699458-676242216.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-67 - <span class="title">The bacterial flagellar motor</span></span></center>
+<p>The flagellum is linked to a flexible hook. The hook is attached to a series of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> rings (shown in <i>red),</i> which are embedded in the outer and inner (plasma) membranes. The rings form a rotor, which rotates with the flagellum at more than 100 revolutions per second. The rotation is driven by a flow of protons through an outer ring of proteins (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2495/figure/A2518/?report=objectonly" rid-figpopup="figA2518" rid-ob="figobA2518" target="object">Figure 14-17</a>), the stator, which also contains the proteins responsible for switching the direction of rotation. (Based on data from T. Kubori et al., <i>J. Mol. Biol.</i> 226:433–446, 1992, and N.R. Francis et al., <i>Proc. Natl. Acad. Sci. USA</i> 89:6304–6308, 1992.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071699628-773363415.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-68 - <span class="title">Positions of the flagella on <i>E. coli</i> during swimming</span></span></center>
+<p>(A) When the flagella rotate counterclockwise, they are drawn together into a single bundle, which acts as a propeller to produce smooth swimming. (B) When the flagella rotate clockwise, they fly apart and produce tumbling.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071699819-241644443.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-69 - <span class="title">The two-component signaling pathway that enables chemotaxis receptors to control the flagellar motor during bacterial chemotaxis</span></span></center>
+<p>The histidine kinase CheA is stably bound to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> via the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4778/">adaptor protein</a> CheW. The binding of a repellent increases the activity of the receptor, which stimulates CheA to phosphorylate itself on histidine. CheA quickly transfers its covalently bound, high-energy phosphate directly to CheY to generate CheY-phosphate, which then diffuses away, binds to the flagellar motor, and causes the motor to rotate clockwise, which results in tumbling. The binding of an attractant has the opposite effect: it decreases the activity of the receptor and therefore decreases the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of CheA and CheY, which results in counterclockwise flagellar rotation and smooth swimming. CheZ accelerates the autodephosphorylation of CheY-phosphate, thereby inactivating it. Each of the phosphorylated intermediates decays in about 10 seconds, enabling the bacterium to respond very quickly to changes in its environment (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2743/figure/A2759/?report=objectonly" rid-figpopup="figA2759" rid-ob="figobA2759" target="object">Figure 15-10</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 15.5 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638071701640-612910137.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-70 - <span class="title">Lateral inhibition mediated by Notch and Delta during nerve cell development in <i>Drosophila.</i></span></span></center>
+<p>When individual cells in the epithelium begin to develop as neural cells, they signal to their neighbors not to do the same. This inhibitory, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5026/">contact-dependent signaling</a> is mediated by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> Delta that appears on the surface of the future <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5520/">nerve cell</a> and binds to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5548/">Notch</a> proteins on the neighboring cells. In many tissues, all the cells in a cluster initially express Delta and Notch, and a competition occurs, with one cell emerging as winner, expressing Delta strongly and inhibiting its neighbors from doing likewise. In other cases, additional factors interact with Delta or Notch to make some cells susceptible to the lateral inhibition signal and others deaf to it.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071701810-669858030.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-71 - <span class="title">The processing and activation of Notch by proteolytic cleavage</span></span></center>
+<p>The <i>numbered red arrowheads</i> indicate the sites of proteolytic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a>. The first proteolytic processing step occurs within the <i>trans</i> Golgi network to generate the mature heterodimeric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5548/">Notch</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> that is then displayed on the cell surface. The binding of Delta, which is displayed on a neighboring cell, triggers the next two proteolytic steps. Note that Notch and Delta interact through their repeated EGF-like domains. Some evidence suggests that the tension exerted on Notch by the endocytic machinery of the interacting cells triggers the cleavage at site 2.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071702016-152201922.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-72 - <span class="title">A model for the Wnt activation of the β-catenin signaling pathway</span></span></center>
+<p>(A) In the absence of a Wnt signal, some β-catenin is bound to the cytosolic tail of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4896/">cadherin</a> proteins (not shown) and any cytosolic β-catenin becomes bound by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4779/">APC</a>-axin-GSK-3β degradation <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. In this complex, β-catenin is phosphorylated by GSK-3β, triggering its ubiquitylation and degradation in proteasomes. Wnt-responsive genes are kept inactive by the Groucho corepressor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> bound to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5213/">gene regulatory protein</a> LEF-1/TCF. (B) Wnt binding to Frizzled and LRP activates Dishevelled by an unknown mechanism. By an equally mysterious mechanism, which requires casein kinase 1 (not shown), this leads to the inactivation of GSK-β3 in the degradation complex. As a result, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> and degradation of β-catenin is inhibited, and β-catenin accumulates in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. In the nucleus, β-catenin binds to LEF-1/TCF, displaces Groucho, and acts as a coactivator to stimulate the transcription of Wnt target genes.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071702237-874521797.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-73 - <span class="title">A model for Hedgehog signaling in <i>Drosophila.</i></span></span></center>
+<p>(A) In the absence of Hedgehog, the Patched <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> inhibits Smoothened probably by promoting the degradation or intracellular sequestration of Smoothened. The Ci <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> is located in a protein <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> and is cleaved to form a transcriptional <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5736/">repressor</a>, which accumulates in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> to help keep Hedgehog target genes inactive. The protein complex includes the serine/threonine kinase Fused, the anchoring protein Costal (which binds the complex to microtubules), and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4778/">adaptor protein</a> Suppressor of Fused. (B) Hedgehog binding to Patched relieves the inhibition of Smoothened, which now signals to the protein complex to stop processing Ci, to dissociate from microtubules, and to release the unprocessed Ci so it can accumulate in the nucleus and activate the transcription of Hedgehog-responsive genes. Most of the molecular events in the pathway are unknown.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071702446-765741923.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-74 - <span class="title">The activation of NF-κB by TNF-α</span></span></center>
+<p>Both TNF-α and its receptors are trimers. The binding of TNF-α causes a rearrangement of the clustered cytosolic tails of the receptors, which now recruit a number of intracellular signaling proteins, including the <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a>-interacting <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a> (RIP)</i> and two adaptor proteins, <i>TNF-associated death-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> protein (TRADD)</i> and <i>TNF-receptor-associated factor 2 (TRAF2).</i> These then recruit and activate an unidentified kinase, IκB kinase kinase kinase (IKKK), which phosphorylates and activates IκB kinase kinase (IKK). IKK is a heterotrimer composed of two kinase subunits (IKK-α and IKK-β) and a regulatory adaptor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> called IKK-γ. The IKK-β then phosphorylates IκB on two serines, which marks the protein for ubiquitylation and degradation in proteasomes. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5555/">nuclear localization signal</a> on the free NF-κB now directs the transport of this protein into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> where, in collaboration with coactivator proteins, it stimulates the transcription of its target genes. In addition to target genes involved in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5330/">inflammatory response</a>, NF-κB also activates the <i>IκB</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>, providing negative feedback (not shown). The role of RIP is unclear: although it is required for TNF signaling, its kinase domain is not.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 15.6 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638071704294-213367329.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-75 - <span class="title">The proposed divergence of plant and animal lineages from a common unicellular eucaryotic ancestor</span></span></center>
+<p>The plant lineage acquired chloroplasts after the two lineages diverged. Both lineages independently gave rise to multicellular organisms—plants and animals. (Paintings courtesy of John Innes Foundation.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071704512-103117312.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-76 - <span class="title">The three-dimensional structure of leucine-rich repeats, similar to those found in the LRR serine/threonine receptor kinases</span></span></center>
+<p>(Courtesy of David Lawson.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071704685-325202735.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-77 - <span class="title">A hypothetical model for CLV1 receptor serine/threonine kinase regulation of cell proliferation and/or differentiation in the shoot meristem</span></span></center>
+<p>(A) Cells in the outer layer of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5445/">meristem</a> secrete CLV3 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, which binds to CLV1 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5720/">receptor</a> proteins on target cells in an adjacent, more central region of the meristem, presumably stimulating the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5074/">differentiation</a> of the target cells. (B) Some parts of the intracellular signaling pathway activated by CLV3 binding. The CLV receptor protein is thought to be a homodimer or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5277/">heterodimer</a>, which phosphorylates itself on serines and threonines, thereby activating the receptor and leading to the activation of a Rho-like <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5259/">GTPase</a>. The signaling pathway after this point is unclear, but it leads to the inhibition of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5213/">gene regulatory protein</a> in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, thereby blocking the transcription of genes that otherwise might inhibit differentiation. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5619/">phosphatase</a> dephosphorylates the receptor and thereby negatively regulates the signaling pathway.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071704895-751780412.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-78 - <span class="title">A current view of the ethylene two-component signaling pathway</span></span></center>
+<p>(A) In the absence of ethylene, the receptors and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5426/">MAP</a>-kinase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5481/">module</a> are active, leading to inhibition of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> regulatory proteins in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> that are responsible for the transcription of ethylene-responsive genes. (B) In the presence of ethylene, the receptors and the MAP-kinase module are inactive, so the ethylene-responsive genes are transcribed. (C and D) The ethylene-mediated “triple response” that occurs when the growing shoot of a germinating seedling encounters an obstacle underground. After such an encounter (D), the shoot thickens, and the protective hook (at <i>top)</i> increases its curvature to protect the tip of the shoot. (C and D, courtesy of Melanie Webb.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638071705106-791954402.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 15-79 - <span class="title">A current view of one way in which phytochromes mediate a light response in plant cells</span></span></center>
+<p>When activated by light, the phytochrome, which is a dimer, phosphorylates itself and then moves into the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, where it activates <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> regulatory proteins to stimulate the transcription of specific genes.</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p></div></div>
+</body>
+</html>

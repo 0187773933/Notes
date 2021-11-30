@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right Hypochondriac" title="Right Hypochondriac" href="" coords="45.904566929133864,537.1541732283464,761.6653543307086,449.5022047244094" shape="rect">
+			<area target="" alt="Right Lumbar" title="Right Lumbar" href="" coords="286.1325984251969,724.1259842519686,761.6653543307086,636.4740157480315" shape="rect">
+			<area target="" alt="Right Iliac" title="Right Iliac" href="" coords="404.97511811023617,902.0629921259842,761.6653543307086,814.4110236220472" shape="rect">
+			<area target="" alt="Left Iliac" title="Left Iliac" href="" coords="1091.0215748031496,902.0629921259842,1447.711811023622,814.4110236220472" shape="rect">
+			<area target="" alt="Left Lumbar" title="Left Lumbar" href="" coords="1091.0215748031496,725.1217322834646,1566.5543307086614,637.4697637795275" shape="rect">
+			<area target="" alt="Left Hypochondriac" title="Left Hypochondriac" href="" coords="1091.0215748031496,537.1541732283464,1806.7823622047244,449.5022047244094" shape="rect">
+			<area target="" alt="Epigastric" title="Epigastric" href="" coords="761.6653543307086,412.007716535433,1118.3555905511812,324.35574803149603" shape="rect">
+			<area target="" alt="Hypogastric" title="Hypogastric" href="" coords="748.2727559055118,1054.9212598425197,1171.4770078740157,967.2692913385827" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1638233994777-399330906.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/Final-Exam/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

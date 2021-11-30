@@ -1,0 +1,1587 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 16</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 16.1 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072051822-28449561.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-1 - <span class="title">The cytoskeleton</span></span></center>
+<p>A cell in culture has been fixed and stained with Coomassie blue, a general stain for proteins. Note the variety of filamentous structures that extend throughout the cell. (Courtesy of Colin Smith.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 16.2 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072054817-103236169.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-2 - <span class="title">The cytoskeleton and changes in cell shape</span></span></center>
+<p>The formation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> filaments from much smaller protein subunits allows regulated filament assembly and disassembly to reshape the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5054/">cytoskeleton</a>. (A) Filament formation from a small protein. (B) Rapid reorganization of the cytoskeleton in a cell in response to an external signal.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072055009-275784428.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-3 - <span class="title">The thermal stability of cytoskeletal filaments with dynamic ends</span></span></center>
+<p>Formation of a cytoskeletal filament from more than one <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5700/">protofilament</a> allows the ends to be dynamic, while the filaments themselves are resistant to thermal breakage. In this hypothetical example, the stable filament is formed from five protofilaments. The bonds holding the subunits together in the filaments are shown in <i>red.</i>
+</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072055264-457851041.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-4 - <span class="title">A strong filament formed from elongated fibrous subunits with strong lateral contacts</span></span></center>
+<p>Intermediate filaments are formed in this way and are consequently especially resistant to bending or stretching forces.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072055445-246877905.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-5 - <span class="title">The time course of actin polymerization in a test tube</span></span></center>
+<p>(A) Polymerization is begun by raising the salt concentration in a solution of pure <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> subunits. (B) Polymerization is begun in the same way, but with preformed fragments of actin filaments present to act as nuclei for filament growth.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072055669-558504482.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-6 - <span class="title">The structure of a microtubule and its subunit</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5700/">protofilament</a> is a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5277/">heterodimer</a>, formed from a very tightly linked pair of α- and β-tubulin monomers. The GTP <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> in the α-tubulin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> is so tightly bound that it can be considered an integral part of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. The GTP molecule in the β-tubulin monomer, however, is less tightly bound and has an important role in filament dynamics. Both nucleotides are shown in <i>red</i>. (B) One tubulin subunit (α-β heterodimer) and one protofilament are shown schematically. Each protofilament consists of many adjacent subunits with the same orientation. (C) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> is a stiff hollow tube formed from 13 protofilaments aligned in parallel. (D) A short segment of a microtubule viewed in an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5122/">electron microscope</a>. (E) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a microtubule showing a ring of 13 distinct protofilaments. (D, courtesy of Richard Wade; E, courtesy of Richard Linck.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072055883-229558910.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-7 - <span class="title">The structures of an actin monomer and actin filament</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> has a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> (either ATP or ADP) bound in a deep cleft in the center of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>. (B) Arrangement of monomers in a filament. Although the filament is often described as a single helix of monomers, it can also be thought of as consisting of two protofilaments, held together by lateral contacts, which wind around each other as two parallel strands of a helix, with a twist repeating every 37 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a>. All the subunits within the filament have the same orientation. (C) Electron micrographs of negatively stained actin filaments. (C, courtesy of Roger Craig.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072056052-807964328.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-8 - <span class="title">The preferential growth of microtubules at the plus end</span></span></center>
+<p>Both microtubules and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments grow faster at one end than at the other. In this case, a stable bundle of microtubules obtained from the core of a cilium (discussed later) was incubated with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> subunits under polymerizing conditions. Microtubules grow fastest from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> bundle, the end at the <i>top</i> in this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a>. (Courtesy of Gary Borisy.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072056219-579678744.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-9 - <span class="title">The treadmilling of an actin filament or microtubule, made possible by the nucleoside triphosphate hydrolysis that follows subunit addition</span></span></center>
+<p>(A) Explanation for the different critical concentrations (<i>C</i><sub>c</sub>) at the plus and minus ends. Subunits with bound <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5565/">nucleoside</a> triphosphate (T-form subunits) polymerize at both ends of a growing filament, and then undergo <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> hydrolysis in the filament lattice. As the filament grows, elongation is faster than hydrolysis at the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> in this example, and the terminal subunits at this end are therefore always in the T form. However, hydrolysis is faster than elongation at the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a>, and so terminal subunits at this end are in the D form. (B) Treadmilling occurs at intermediate concentrations of free subunits. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5036/">critical concentration</a> for polymerization on a filament end in the T form is lower than for a filament end in the D form. If the actual <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> concentration is somewhere between these two values, the plus end grows while the minus end shrinks, resulting in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5898/">treadmilling</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072056393-509160446.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-10 - <span class="title">Treadmilling behavior of a microtubule, as observed in a living cell</span></span></center>
+<p>A cell was injected with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> that had been covalently linked to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5186/">fluorescent dye</a> rhodamine, so that approximately 1 tubulin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> in 20 was fluorescent. The fluorescence of individual microtubules was then observed with a sensitive electronic camera. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> shown appears to be sliding from <i>left</i> to <i>right</i>, but, in fact, the microtubule lattice remains stationary (as shown by the dark mark indicated by the <i>red</i> arrowhead), while the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> (on the <i>right</i>) grows and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> (on the <i>left)</i> shrinks. At the same time, the plus end is displaying <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5108/">dynamic instability</a>. (From C.M. Waterman-Storer and E.D. Salmon, <i>J. Cell Biol.</i> 139:417–434, 1997. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072056558-652873218.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-11 - <span class="title">Dynamic instability due to the structural differences between a growing and a shrinking microtubule end</span></span></center>
+<p>(A) If the free <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> concentration in solution is between the critical values indicated in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26862/figure/A2973/?report=objectonly" rid-figpopup="figA2973" rid-ob="figobA2973" target="object">Figure 16-9</a>, a single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> end may undergo transitions between a growing state and a shrinking state. A growing microtubule has GTP-containing subunits at its end, forming a GTP cap. If <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> hydrolysis proceeds more rapidly than <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> addition, the cap is lost and the microtubule begins to shrink, an event called a “catastrophe.” But GTP-containing subunits may still add to the shrinking end, and if enough add to form a new cap, then microtubule growth resumes, an event called “rescue.” (B) Model for the structural consequences of GTP hydrolysis in the microtubule lattice. The addition of GTP-containing tubulin subunits to the end of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5700/">protofilament</a> causes the end to grow in a linear <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> that can readily pack into the cylindrical wall of the microtubule. Hydrolysis of GTP after assembly changes the conformation of the subunits and tends to force the protofilament into a curved shape that is less able to pack into the microtubule wall. (C) In an intact microtubule, protofilaments made from GDP-containing subunits are forced into a linear conformation by the many lateral bonds within the microtubule wall, given a stable cap of GTP-containing subunits. Loss of the GTP cap, however, allows the GDP-containing protofilaments to relax into their more curved conformation. This leads to a progressive disruption of the microtubule. Above the drawings of a growing and a shrinking microtubule, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs show actual microtubules in each of these two states, as observed in preparations in vitreous ice. Note particularly the curling, disintegrating GDP-containing protofilaments at the end of the shrinking microtubule. (C, courtesy of E.M. Mandelkow, E. Mandelkow and R.A. Milligan, <i>J. Cell Biol.</i> 114:977–991, 1991. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072056783-289366341.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-12 - <span class="title">Direct observation of the dynamic instability of microtubules in a living cell</span></span></center>
+<p>Microtubules in a newt lung epithelial cell were observed after the cell was injected with a small amount of rhodamine labeled <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a>, as in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26862/figure/A2974/?report=objectonly" rid-figpopup="figA2974" rid-ob="figobA2974" target="object">Figure 16-10</a>. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5108/">dynamic instability</a> of microtubules at the edge of the cell can be readily observed. Four individual microtubules are highlighted for clarity; each of these shows alternating shrinkage and growth. (Courtesy of Wendy C. Salmon and Clare Waterman-Storer.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072056988-916976257.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-13 - <span class="title">The rapid changes in cytoskeletal organization observed during the development of a<i> Drosophila</i> early embryo</span></span></center>
+<p>In this giant multinuclear cell, the early nuclear divisions occur every 10 minutes or so in a common <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a>. The rapid rearrangements of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments <i>(red)</i> and microtubules <i>(green)</i> seen here in a living embryo, are required to separate the chromosomes at <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>, while keeping each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> from colliding with its neighbors. (Courtesy of William Sullivan.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072057162-115977394.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-14 - <span class="title">The bacterial FtsZ protein, a tubulin homolog in procaryotes</span></span></center>
+<p>(A) A band of FtsZ <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> forms a ring in a dividing bacterial cell. This ring has been labeled by fusing the FtsZ protein to the <i>g</i>reen <i>f</i>luorescent <i>p</i>rotein (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5253/">GFP</a>) and observing the living <i>E. coli</i> cells with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5185/">fluorescence microscope</a>. <i>Top</i>, side view shows the ring as a bar in the middle of the dividing cell. <i>Bottom</i>, rotated view showing the ring structure. (B) FtsZ filaments and rings, formed <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a></i>, as visualized using <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> microscopy. Compare this image with that of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> shown on the <i>right</i> in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26862/figure/A2975/?report=objectonly" rid-figpopup="figA2975" rid-ob="figobA2975" target="object">Figure 16-11</a>. (A, from X. Ma, D.W. Ehrhardt and W. Margolin, <i>Proc. Natl. Acad. Sci. USA</i> 93:12999–13003, 1996. © National Academy of Sciences; B, from H.A. Erickson et al., <i>Proc. Natl. Acad. Sci. USA</i> 93:519–523, 1996. © National Academy of Sciences.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072057330-635676461.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-15 - <span class="title">Actin at the crossroads</span></span></center>
+<p>Actin binds to a very large variety of accessory proteins in all eucaryotic cells. This diagram shows most of the interactions that have been demonstrated, using either genetic or biochemical techniques, in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5770/">Saccharomyces</a> cerevisiae</i>. Accessory proteins that operate in the same intracellular process are shown in the same color, as indicated in the key. (Adapted from D. Botstein et al., in The Molecular and Cellular Biology of the Yeast <i>Saccharomyces</i> [J.R. Broach, J.R. Pringle, E.W. Jones, eds.], Cold Spring Harbor, NY: Cold Spring Harbor Laboratory Press, 1991.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072057564-217993453.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-16 - <span class="title">A model of intermediate filament construction</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> shown in (A) pairs with an identical monomer to form a dimer (B), in which the conserved central rod domains are aligned in parallel and wound together into a coiled coil. (C) Two dimers then line up side by side to form an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4834/">antiparallel</a> tetramer of four <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chains. The tetramer is the soluble <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of intermediate filaments. (D) Within each tetramer, the two dimers are offset with respect to one another, thereby allowing it to associate with another tetramer. (E) In the final 10-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> rope-like filament, tetramers are packed together in a helical array, which has 16 dimers in cross-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a>. Half of these dimers are pointing in each direction. An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of intermediate filaments are shown on the upper left. (Electron micrograph courtesy of Roy Quinlan.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072057789-408492530.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-17 - <span class="title">Mechanical properties of actin, tubulin, and intermediate filament polymers</span></span></center>
+<p>Networks composed of microtubules, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments, or a type of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5347/">intermediate filament</a> called vimentin, all at equal concentration, were exposed to a shear force in a viscometer, and the resulting degree of stretch was measured. The results show that <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> networks are easily deformed but that they rupture (indicated by <i>red starburst)</i> and begin to flow without limit when stretched beyond 150% of their original length. Actin filament networks are much more rigid, but they also rupture easily. Intermediate filament networks, by contrast, are not only easily deformed, but they withstand large stresses and strains without rupture; they are thereby well suited to maintain cell integrity. (Adapted from P. Janmey et al., <i>J. Cell Biol</i>. 113:155–160, 1991.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072057979-52593025.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-18 - <span class="title">Keratin filaments in epithelial cells</span></span></center>
+<p>Immunofluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of the network of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5369/">keratin</a> filaments <i>(green)</i> in a sheet of epithelial cells in culture. The filaments in each cell are indirectly connected to those of its neighbors by desmosomes (discussed in Chapter 19). A second <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <i>(blue)</i> has been stained to reveal the location of the cell boundaries. (Courtesy of Kathleen Green and Evangeline Amargo.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072058147-722884554.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-19 - <span class="title">Blistering of the skin caused by a mutant keratin gene</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> encoding a truncated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5369/">keratin</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> (lacking both the N- and C-terminal domains) was expressed in a transgenic mouse. The defective protein assembles with the normal keratins and thereby disrupts the keratin filament network in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4872/">basal</a> cells of the skin. Light micrographs of cross sections of normal (A) and mutant (B) skin show that the blistering results from the rupturing of cells in the basal layer of the mutant <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5139/">epidermis</a> (small <i>red</i> arrows). (C) A sketch of three cells in the basal layer of the mutant epidermis, as observed by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> microscopy. As indicated by the <i>red</i> arrow, the cells rupture between the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> and the hemidesmosomes (discussed in Chapter 19), which connect the keratin filaments to the underlying basal lamina. (From P.A. Coulombe et al., <i>J. Cell Biol</i>. 115:1661–1674, 1991. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072058348-618792548.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-20 - <span class="title">Two types of intermediate filaments in cells of the nervous system</span></span></center>
+<p>(A) Freeze-etch <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> microscopic image of neurofilaments in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5520/">nerve cell</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4863/">axon</a>, showing the extensive cross-linking through <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> cross-bridges—an arrangement believed to give this long cell process great tensile strength. The cross-bridges are formed by the long, nonhelical extensions at the C-terminus of the largest <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5524/">neurofilament</a> protein (NF-H). (B) Freeze-etch image of glial filaments in glial cells, showing that these intermediate filaments are smooth and have few cross-bridges. (C) Conventional electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of an axon showing the regular side-to-side spacing of the neurofilaments, which greatly outnumber the microtubules. (A and B, courtesy of Nobutaka Hirokawa; C, courtesy of John Hopkins.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072058556-655489848.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-21 - <span class="title">Effect of the drug taxol on microtubule organization</span></span></center>
+<p>(A) Molecular structure of taxol. Recently, organic chemists have succeeded in synthesizing this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, which is widely used for cancer treatment. (B) Immunofluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> showing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> organization in a liver epithelial cell before the addition of taxol. (C) Microtubule organization in the same type of cell after taxol treatment. Note the thick circumferential bundles of microtubules around the periphery of the cell. (D) A Pacific yew tree, the natural source of taxol. (B, C from N.A. Gloushankova et al., <i>Proc. Natl. Acad. Sci. USA</i> 91:8597–8601, 1994. © National Academy of Sciences; D, courtesy of A.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Mitchell 2001. © Her Majesty the Queen in Right of Canada, Canadian Forest Service.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 16.3 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072061887-159232741.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-22 - <span class="title">Polymerization of tubulin nucleated by γ-tubulin ring complexes</span></span></center>
+<p>(A) Model for the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5560/">nucleation</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> growth by the γ-TuRC. The red outline indicates a pair of proteins bound to two molecules of γ-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a>; this group can be isolated as a separate subcomplex of the larger ring. (B) Electron micrographs of purified γ-tubulin ring complexes <i>(top)</i> and single microtubules nucleated from the purified γ-tubulin ring complexes <i>(middle</i> and <i>bottom).</i> (A, modified from M. Moritz et al., <i>Nature Cell Biol</i>. 2:365–370, 2000; B, courtesy of Y. Zheng et al., <i>Nature</i> 378:578–583, 1994. © Macmillan Magazines Ltd.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072062077-497177387.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-23 - <span class="title">The centrosome</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4956/">centrosome</a> is the major <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5467/">MTOC</a> of animal cells. Located in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> next to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, it consists of an amorphous matrix of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> containing the γ-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> ring complexes that nucleate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> growth. This matrix is organized by a pair of centrioles, as described in the text. (B) A centrosome with attached microtubules. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> of each microtubule is embedded in the centrosome, having grown from a γ-tubulin ring <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>, whereas the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of each microtubule is free in the cytoplasm.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072062269-597807302.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-24 - <span class="title">A centriole in the centrosome</span></span></center>
+<p>An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a thick <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4956/">centrosome</a> showing an end-on view of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4953/">centriole</a>. The ring of modified microtubules of the centriole is visible, surrounded by the fibrous centrosome matrix. (Courtesy of P. Witt and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>.G. Borisy.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072062402-562245345.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-25 - <span class="title">The center-seeking behavior of a centrosome</span></span></center>
+<p>(A) Small square wells were micromachined into a plastic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5838/">substrate</a>. A single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4956/">centrosome</a> was placed into one of these wells, along with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> subunits in solution. As the microtubules polymerize, nucleated by the centrosome, they push against the walls of the well. The requirement for equal pushing in all directions if the position is to be stabilized forces the centrosome to the center of the well. The three pictures were taken at three-minute intervals. (B) A similar self-centered centrosome, fixed and stained to show the distribution of the microtubules pushing on all four walls of the enclosure. (From T.E. Holy et al., <i>Proc. Natl. Acad. Sci. USA</i> 94:6228–6231, 1997. © National Academy of Sciences.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072062566-590294706.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-26 - <span class="title">A microtubule array can find the center of a cell</span></span></center>
+<p>After the arm of a fish pigment cell is cut off with a needle, the microtubules in the detached cell fragment reorganize so that their minus ends end up near the center of the fragment, buried in a new <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5467/">microtubule-organizing center</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072062739-179305372.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-27 - <span class="title">The tip of the leading edge of a cell nucleates actin filaments</span></span></center>
+<p>Fibroblasts in culture were gently permeabilized using a nonionic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5069/">detergent</a> and were then incubated with rhodamine-labeled <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> molecules to visualize newly formed actin filaments <i>(red).</i> After 5 minutes, the cells were fixed and stained with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5184/">fluorescein</a>-labeled phalloidin to stain all actin filaments <i>(green).</i> (A) All of the actin filaments, most of which were formed before the cells were permeabilized, are shown in <i>green</i>. (B) The location of the newly formed actin filaments <i>(red)</i> show that the leading edge is the predominant site of actin filament assembly in the cell. Further studies show that this is because new actin filaments are constantly being nucleated here. (From M.H. Symons and T.J. Mitchison, <i>J. Cell Biol</i>. 114:503–513, 1991. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072062920-134834388.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-28 - <span class="title">Nucleation and actin web formation by the ARP complex</span></span></center>
+<p>(A)The structures of Arp2 and Arp3, compared to the structure of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>. Although the face of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> equivalent to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> <i>(top)</i> in both Arp2 and Arp3 is very similar to the plus end of actin itself, differences on the sides and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> <i>(bottom)</i> prevent these actin-related proteins from forming filaments on their own or coassembling into filaments with actin. (B) A model for actin filament <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5560/">nucleation</a> by the ARP <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. Arp2 and Arp3 may be held by their accessory proteins in an orientation that resembles the plus end of an actin filament. Actin subunits can then assemble onto this structure, bypassing the rate-limiting step of filament nucleation (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2957/figure/A2965/?report=objectonly" rid-figpopup="figA2965" rid-ob="figobA2965" target="object">Figure 16-5</a>). (C) The ARP complex nucleates filaments more efficiently when it is bound to the side of a preexisting actin filament. The result is a filament branch that grows at a 70° angle relative to the original filament. Repeated rounds of branching nucleation result in a treelike web of actin filaments. (D) Electron micrographs of branched actin filaments formed by mixing purified actin subunits with purified ARP complexes. (D, courtesy of R.D. Mullins et al., <i>Proc. Natl. Acad. Sci. USA</i> 95:6181–6186, 1998. © National Academy of Sciences.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072063136-663605456.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-29 - <span class="title">Profilin bound to an actin monomer</span></span></center>
+<p>The profilin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> is shown in <i>blue</i>, and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> in <i>red</i>. ATP is shown in <i>green</i>. Profilin binds to the face of actin opposite the ATP-binding cleft. This profilin-actin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5277/">heterodimer</a> can therefore bind to and elongate the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of an actin filament, but it is sterically prevented from binding to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a>. (Courtesy of Michael Rozycki and Clarence E. Schutt.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072063307-502634940.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-30 - <span class="title">Effects of thymosin and profilin on actin polymerization</span></span></center>
+<p>An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> bound to thymosin is sterically prevented from binding to and elongating the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of an actin filament. An actin monomer bound to profilin, on the other hand, is capable of elongating a filament. Thymosin and profilin cannot both bind to a single actin monomer at the same time. In a cell in which most of the actin monomer is bound to thymosin, the activation of a small amount of profilin can produce rapid filament assembly. As indicated, profilin binds to actin monomers that are transiently released from the thymosin-bound monomer pool, shuttles them onto the plus ends of actin filaments, and is then released and recycled for further rounds of filament elongation.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072063524-600769241.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-31 - <span class="title">Effects of stathmin on microtubule polymerization</span></span></center>
+<p>Polymerization of free <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5904/">tubulin</a> subunits to form microtubules is an energetically favorable <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a>. As long as abundant free tubulin subunits are available, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> elongation continues. Stathmin sequesters free tubulin subunits, binding two tubulin αβ-heterodimers per stathmin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>. As the pool of free tubulin subunits shrinks, microtubule elongation slows. This makes it more likely that the rate of GTP hydrolysis will catch up with the rate of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> addition, and the GTP cap will be lost, resulting in a transition of the microtubule from the growing state to the shrinking state. Stathmin has a second activity that promotes this transition, which involves a direct interaction with a microtubule <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> (not shown). Stathmin is also called “oncoprotein 18,” since its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> level is frequently increased in tumor cells, resulting in increased turnover of microtubules.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072063657-258154122.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-32 - <span class="title">Localization of MAPs in axon and dendrites of a neuron</span></span></center>
+<p>This immunofluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows the distribution of tau staining <i>(green)</i> and MAP2 staining <i>(orange)</i> in a hippocampal neuron in culture. Whereas tau staining is confined to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4863/">axon</a> (long and branched in this neuron), MAP2 staining is confined to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4933/">cell body</a> and its dendrites. The antibody used here to detect tau binds only to unphosphorylated tau; phosphorylated tau is also present in dendrites. (Courtesy of James W. Mandell and Gary A. Banker.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072063823-579691984.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-33 - <span class="title">Organization of microtubule bundles by MAPs</span></span></center>
+<p>(A) MAP2 binds along the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> lattice at one end and extends a long projecting arm with a second microtubule-binding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> at the other end. (B) Tau binds to the microtubule lattice at both its N- and C-termini, with a short projecting loop. (C) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> showing a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> through a microtubule bundle in a cell overexpressing MAP2. The regular spacing of the microtubules (MTs) in this bundle result from the constant length of the projecting arms of the MAP2. (D) Similar cross section through a microtubule bundle in a cell overexpressing tau. Here the microtubules are spaced more closely together than they are in (C) because of tau's relatively short projecting arm. (C and D, courtesy of V. Chen et al., <i>Nature</i> 360:674–647, 1992. © Macmillan Magazines Ltd.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072064025-313169801.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-34 - <span class="title">Twisting of an actin filament induced by cofilin</span></span></center>
+<p>(A) Three-dimensional reconstruction from cryo-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs of filaments made of pure <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>. The bracket shows the span of two turns of the actin helix. (B) Reconstruction of an actin filament coated with cofilin, which binds in a 1:1 stoichiometry to actin subunits all along the filament. Cofilin is a small <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> (14 kilodaltons) compared to actin (43 kilodaltons), and so the filament appears only slightly thicker. The energy of cofilin binding serves to deform the actin filament lattice, twisting it more tightly so that the distance spanned by two turns of the helix is reduced. (From A. McGough et al., <i>J. Cell Biol.</i> 138:771–781, 1997. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072064202-983332296.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-35 - <span class="title">Filament capping and its effects on filament dynamics</span></span></center>
+<p>A population of uncapped filaments adds and loses subunits at both the plus and minus ends, resulting in rapid growth or shrinkage, depending on the concentration of available free monomers <i>(green</i> line). In the presence of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> that caps the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> <i>(red</i> line), only the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> is able to add or lose subunits; consequently, filament growth will be slower at all <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> concentrations above the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5036/">critical concentration</a>, and filament shrinkage will be slower at all monomer concentrations below the critical concentration. Plus-end capping of this type is widely used for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments but not for microtubules.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072064375-648864835.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-36 - <span class="title">The effects of proteins that bind to microtubule ends</span></span></center>
+<p>(A) The transition between <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> growth and microtubule shrinking is controlled in cells by special proteins. A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5466/">MAP</a> such as XMAP215 stabilizes the end of a growing microtubule by its preferential binding there. Opposing its action are members of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a> superfamily (discussed later) designated here as catastrophins, but called by a variety of other names (such as, the Kin1 family that includes KIF2 in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3041/figure/A3048/?report=objectonly" rid-figpopup="figA3048" rid-ob="figobA3048" target="object">Figure 16-55</a>). (B) Capping proteins help to localize microtubules. Here, the EBI microtubule capping <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> interacts with localized Kar9 proteins in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4893/">budding yeast</a> <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5770/">Saccharomyces</a> cerevisiae.</i> This interaction directs spindle microtubules into the growing bud during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>. A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> in either protein causes the indicated spindle microtubules to lose their way. The EB1 protein is also found on the plus ends of microtubules in human cells.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072064602-901055513.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-37 - <span class="title">Plectin cross-linking of diverse cytoskeletal elements</span></span></center>
+<p>Plectin <i>(green)</i> makes cross-links from intermediate filaments <i>(blue)</i> to other intermediate filaments, to microtubules <i>(red),</i> and to myosin thick filaments. In this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a>, the dots <i>(yellow)</i> are gold particles linked to anti-plectin antibodies. The entire <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filament network was removed to reveal these proteins. (From T.M. Svitkina and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>.G.Borisy, <i>J. Cell Biol.</i> 135:991–1007, 1996. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072064781-489835247.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-38 - <span class="title">Actin arrays in a cell</span></span></center>
+<p>A crawling cell, drawn to scale, is shown with three areas enlarged to show the arrangement of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments. The actin filaments are shown in <i>red,</i> with arrowheads pointing toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a>. Stress fibers are contractile and exert tension. Filopodia are spike-like projections of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> that allow a cell to explore its environments. The cortex underlies the plasma membrane.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072064990-314390459.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-39 - <span class="title">The modular structures of four actin-cross-linking proteins</span></span></center>
+<p>Each of the proteins shown has two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>-binding sites <i>(red)</i> that are related in sequence. Fimbrin has two directly adjacent actin-binding sites, so that it holds its two actin filaments very close together (14 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> apart), aligned with the same polarity (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26809/figure/A3024/?report=objectonly" rid-figpopup="figA3024" rid-ob="figobA3024" target="object">Figure 16-40A</a>). The two actin-binding sites in α-actinin are separated by a spacer around 30 nm long, so that it forms more loosely packed actin bundles (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26809/figure/A3024/?report=objectonly" rid-figpopup="figA3024" rid-ob="figobA3024" target="object">Figure 16-40</a>). Filamin has two actin-binding sites with a V-shaped <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5397/">linkage</a> between them, so that it cross-links actin filaments into a network with the filaments oriented almost at right angles to one another (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26809/figure/A3026/?report=objectonly" rid-figpopup="figA3026" rid-ob="figobA3026" target="object">Figure 16-42</a>). Spectrin is a tetramer of two α and two β subunits, and the tetramer has two actin-binding sites spaced about 200 nm apart (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1890/figure/A1912/?report=objectonly" rid-figpopup="figA1912" rid-ob="figobA1912" target="object">Figure 10-31</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072065158-10487632.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-40 - <span class="title">The formation of two types of actin filament bundles</span></span></center>
+<p>(A) α-actinin, which is a homodimer, cross-links <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments into loose bundles, which allow the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5494/">motor protein</a> myosin II (not shown) to participate in the assembly. Fimbrin cross-links actin filaments into tight bundles, which exclude myosin. Fimbrin and α-actinin tend to exclude one another because of the very different spacing of the actin filament bundles that they form. (B) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of purified α-actinin molecules. (B, courtesy of John Heuser.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072065368-807025860.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-41 - <span class="title">A microvillus</span></span></center>
+<p>(A) A bundle of parallel <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments cross-linked by the actin-bundling proteins villin and fimbrin forms the core of a microvillus. Lateral sidearms (composed of myosin I and the Ca<sup>2+</sup>-binding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4899/">calmodulin</a>) connect the sides of the actin filament bundle to the overlying <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>. All the plus ends of the actin filaments are at the tip of the microvillus, where they are embedded in an amorphous, densely staining substance of unknown composition. (B) Freeze-fracture <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4838/">apical</a> surface of an intestinal epithelial cell, showing microvilli. Actin bundles from the microvilli extend down into the cell and are rooted in the terminal web, where they are linked together by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> set of proteins that includes <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5818/">spectrin</a> and myosin II. Below the terminal web is a layer of intermediate filaments. (C) Thin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> electron micrograph of microvilli. (B, courtesy of John Heuser; C, from P.T. Matsudaira and D.R. Burgess, <i>Cold Spring Harbor Symp. Quant. Biol</i>. 46:845–854, 1985.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072065577-885936495.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-42 - <span class="title">Filamin cross-links actin filaments into a three-dimensional network with the physical properties of a gel</span></span></center>
+<p>(A) Each filamin homodimer is about 160 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5540/">nm</a> long when fully extended and forms a flexible, high-angle link between two adjacent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments. (B) A set of actin filaments cross-linked by filamin forms a mechanically strong web or gel.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072065746-919268317.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-43 - <span class="title">Loss of filamin causes abnormal cell motility</span></span></center>
+<p>(A) A group of melanoma cells that have an abnormally low level of filamin. These cells are not able to make normal lamellipodia and instead are covered with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> “blebs.” As a result, they crawl poorly and tend not to metastasize. (B) The same melanoma cells in which filamin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5163/">expression</a> has been artificially restored. The cells now make normal lamellipodia and are highly metastatic. This example is one of many demonstrating the profound effect that the presence or absence of a single structural <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> can have on cell morphology and motility. (From C. Cunningham et al., <i>J. Cell Biol.</i> 136:845–857, 1997. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072065923-124416178.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-44 - <span class="title">Filament severing and its effects on filament dynamics</span></span></center>
+<p>Normally, filaments are able to gain and lose subunits only at their ends, limiting the maximum rates of growth and shrinkage of the total amount of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> in filamentous form <i>(green</i> line). If the filaments are severed into smaller pieces, the number of ends increases, so the increase in filament mass in the population can be faster at all <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a> concentrations above the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5036/">critical concentration</a>, and the decrease in filament mass in the population can also be faster at all monomer concentrations below the critical concentration <i>(red</i> line). Thus, severing enhances the rate of filament dynamics.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072066073-877506449.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-45 - <span class="title">Microtubule severing by katanin</span></span></center>
+<p>Taxol-stabilized, rhodamine-labeled microtubules were adsorbed on the surface of a glass slide, and purified katanin was added along with ATP. (A) There are a few breaks in the microtubules 30 seconds after the addition of katanin. (B) The same field 3 minutes after the addition of katanin. The filaments have been severed in many places, leaving a series of small fragments at the previous locations of the long microtubules. (From J.J. Hartman et al., <i>Cell</i> 93:277–287, 1998. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072066248-284118496.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-46 - <span class="title">A model for actin filament severing by gelsolin</span></span></center>
+<p>There are two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>-binding sites in the gelsolin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. These sites allow gelsolin to bind both along the side and at the end of an actin filament. Filaments that have been severed by gelsolin remain capped at their plus ends. Villin, an actin-bundling protein (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26809/figure/A3025/?report=objectonly" rid-figpopup="figA3025" rid-ob="figobA3025" target="object">Figure 16-41A</a>), is a member of the same protein family as gelsolin, but it has gained another actin-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a> and lost its ability to sever filaments except at very high (nonphysiological) Ca<sup>2+</sup> concentrations.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072066428-778195350.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-47 - <span class="title">Platelet activation</span></span></center>
+<p>(A) Platelet activation is a controlled sequence of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filament severing, uncapping, elongation, recapping, and cross-linking that creates a dramatic shape change in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5646/">platelet</a>. (B) Scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of platelets prior to activation. (C) An activated platelet with its large spread lamellipodium. (D) An activated platelet at a later stage than the one shown in C, after myosin II-mediated contraction. (Courtesy of James <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. White.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072066636-739266939.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-48 - <span class="title">The role of ERM-family proteins in attaching actin filaments to the plasma membrane</span></span></center>
+<p>Regulated unfolding of an ERM-family <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, caused by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> or by binding to PIP<sub>2</sub>, exposes two binding sites, one for an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filament and one for a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5893/">transmembrane protein</a>. Activation of ERM-family proteins can thereby generate and stabilize cell-surface protrusions that form in response to extracellular signals.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072066811-392077543.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-49 - <span class="title">Focal contacts and stress fibers in a cultured fibroblast</span></span></center>
+<p>(A) Focal contacts are best seen in living cells by reflection-interference microscopy. In this technique, light is reflected from the lower surface of a cell attached to a glass slide, and the focal contacts appear as dark patches. (B) Immunofluorescence staining of the same cell (after fixation) with antibodies to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> shows that most of the cell's actin filament bundles (or stress fibers) terminate at or close to a focal contact. (Courtesy of Grenham Ireland.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072066983-866821108.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-50 - <span class="title">The dramatic effects of Rac, Rho, and Cdc42 on actin organization in fibroblasts</span></span></center>
+<p>In each case, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments have been labeled with fluorescent phalloidin, and focal contacts have been located with an antibody against vinculin. (A) Serum-starved fibroblasts have actin filaments primarily in the cortex, and relatively few focal contacts. (B) Microinjection of a constitutively activated form of Rho causes the rapid assembly of many prominent stress fibers and focal contacts. (C) Microinjection of a constitutively activated form of Rac, a closely related monomeric <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5259/">GTPase</a>, causes the formation of an enormous lamellipodium that extends from the entire circumference of the cell. (D) Microinjection of a constitutively activated form of Cdc42, another Rho family member, causes the protrusion of many long filopodia at the cell periphery that form adhesive contacts with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a>. The distinct global effects of these three GTPases on the organization of the actin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5054/">cytoskeleton</a> are mediated by the actions of dozens of other <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> molecules that are regulated by the GTPases. Many of these target proteins resemble the various actin-associated proteins that we have discussed in this chapter. (From A. Hall, <i>Science</i> 279:509–514, 1998. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 16.4 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072070401-903987227.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-51 - <span class="title">Myosin II</span></span></center>
+<p>(A) A myosin II <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> is composed of two heavy chains (each about 2000 amino acids long <i>(green)</i> and four light chains <i>(blue).</i> The light chains are of two distinct types, and one copy of each type is present on each myosin head. Dimerization occurs when the two α helices of the heavy chains wrap around each other to form a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5002/">coiled-coil</a>, driven by the association of regularly spaced hydrophobic amino acids (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A388/figure/A405/?report=objectonly" rid-figpopup="figA405" rid-ob="figobA405" target="object">Figure 3-11</a>). The coiled-coil arrangement makes an extended rod in solution, and this part of the molecule is called the tail. (B) The two globular heads and the tail can be clearly seen in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs of myosin molecules shadowed with platinum. (B, courtesy of David Shotton.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072070582-101966959.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-52 - <span class="title">The myosin II bipolar thick filament</span></span></center>
+<p>(A) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a myosin II thick filament isolated from frog muscle. Note the central bare zone, which is free of head domains. (B) Schematic diagram, not drawn to scale. The myosin II molecules aggregate by means of their tail regions, with their heads projecting to the outside of the filament. The bare zone in the center of the filament consists entirely of myosin II tails. (C) A small <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of a myosin II filament as reconstructed from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs. An individual myosin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> is highlighted in <i>green</i>. (A, courtesy of Murray Stewart; C, based on R.A. Crowther, R. Padron and R. Craig, <i>J. Mol. Biol</i>. 184:429–439, 1985. © Academic Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072070762-764242078.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-53 - <span class="title">Direct evidence for the motor activity of the myosin head</span></span></center>
+<p>In this experiment, purified S1 myosin heads were attached to a glass slide, and then <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments labeled with fluorescent phalloidin were added and allowed to bind to the myosin heads. (A) When ATP was added, the actin filaments began to glide along the surface, owing to the many individual steps taken by each of the dozens of myosin heads bound to each filament. The video frames shown in this sequence were recorded about 0.6 second apart; the two actin filaments shown (one <i>red</i> and one <i>green)</i> were moving in opposite directions at a rate of about 4 μm/sec. (B) Diagram of the experiment. The large <i>red</i> arrows indicate the direction of actin filament movement. (A, courtesy of James Spudich.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072070931-158608347.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-54 - <span class="title">Myosin superfamily tree</span></span></center>
+<p>(A) A family tree for a few of the many known members of the myosin superfamily. The length of the lines separating individual family members indicates the amount of difference in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequence of the motor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a>. Groups of related myosins that share a similar structure are assigned a Roman numeral. The species of origin of some of the myosins shown are indicated with colored dots. Some myosin types (such as I and II) have members in many eucaryotic species, ranging from animals to plants to parasitic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5704/">protozoa</a>; others are found only in particular groups of eucaryotes (XIV, for example, has been found so far only in parasitic protozoa such as <i>Toxoplasma</i> and <i>Plasmodium).</i> (B) Comparison of the domain structure of the heavy chains of some myosin types. All myosins share similar motor domains (shown in <i>dark green),</i> but their C-terminal tails <i>(light green)</i> and N-terminal extensions <i>(light blue)</i> are very diverse. On the right are depictions of the molecular structure for these family members. Many myosins form dimers, with two motor domains per <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>, but a few (such as I, IX, and XIV) seem to function as monomers, with just one motor domain. Myosin VI, despite its overall structural similarity to other family members, is unique in moving toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> (instead of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a>) of an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filament. The small insertion within its motor head domain, not found in other myosins, is probably responsible for this change in direction.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072071166-775588571.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-55 - <span class="title">Kinesin and kinesin-related proteins</span></span></center>
+<p>(A) Structures of four <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a> superfamily members. As in the myosin superfamily, only the motor domains are conserved. Conventional kinesin has the motor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> at the N-terminus of the heavy chain. The middle domain forms a long <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5002/">coiled-coil</a>, mediating dimerization. The C-terminal domain forms a tail that attaches to cargo, such as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-enclosed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5582/">organelle</a>. KIFC2 is a member of a family of C-terminal kinesins that includes the <i>Drosophila</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> Ncd and the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> protein KAR3. These kinesins generally travel in the opposite direction from the majority of kinesins, toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> instead of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a>. KIF2 has its motor domain located in the middle of the heavy chain. It is a member of a family of kinesins that have lost typical motor activity and instead bind to microtubule ends to increase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5108/">dynamic instability</a> of microtubules; they are therefore called catastrophins. KIF1B is a member of the unusual class of kinesins that seem to function as monomers and move membrane-enclosed organelles along microtubules. Not shown is the BimC family of kinesins, which form tetramers. (B) Freeze-etch <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a kinesin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> with the head domains on the left. (B, courtesy of John Heuser.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072071345-841188350.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-56 - <span class="title">Dyneins</span></span></center>
+<p>Freeze-etch <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> of cytoplasmic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5110/">dynein</a> and a molecule of ciliary (axonemal) dynein. Like myosin II and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a>, cytoplasmic dynein is a two-headed molecule. The ciliary dynein shown has three heads. Note that the dynein head is very large compared with the head of either myosin or kinesin. (Courtesy of John Heuser.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072071520-889222345.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-57 - <span class="title">X-ray crystal structures of myosin and kinesin heads</span></span></center>
+<p>The central <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a>-binding domains of myosin and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a> (shaded in <i>yellow)</i> are structurally very similar. The very different sizes and functions of the two motors are due to major differences in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5655/">polymer</a>-binding and force-transduction portions of the motor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a>. (Adapted from L.A. Amos and R.A. Cross, <i>Curr. Opin. Struct. Biol.</i> 7:239–246, 1997.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072071724-617009986.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-58 - <span class="title">The cycle of structural changes used by myosin to walk along an actin filament</span></span></center>
+<p>(Based on I. Rayment et al., <i>Science</i> 261:50–58, 1993. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072072058-884532578.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-59 - <span class="title">Comparison of the mechanochemical cycles of kinesin and myosin II</span></span></center>
+<p>The shading in the two circles representing the hydrolysis cycle indicates the proportion of the cycle spent in attached and detached states for each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5494/">motor protein</a>. (A) Summary of the coupling between ATP hydrolysis and conformational changes for <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a>. At the start of the cycle, one of the two kinesin heads, the front or leading head <i>(dark green)</i> is bound to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a>, with the rear or trailing head <i>(light green)</i> detached. Binding of ATP to the front head causes the rear head to be thrown forward, past the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a> of the attached head, to another binding site further toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of the microtubule. Release of ADP from the second head (now in the front) and hydrolysis of ATP on the first head (now in the rear) brings the dimer back to the original state, but the two heads have switched their relative positions, and the motor protein has moved one step along the microtubule <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5700/">protofilament</a>. In this cycle, each head spends about 50% of its time attached to the microtubule and 50% of its time detached. (B) Summary of the coupling between ATP hydrolysis and conformational changes for myosin II. Myosin begins its cycle tightly bound to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filament, with no associated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a>, the so-called “rigor” state. ATP binding releases the head from the filament. ATP hydrolysis occurs while the myosin head is detached from the filament, causing the head to assume a cocked <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a>, although both ADP and inorganic phosphate remain tightly bound to the head. When the head rebinds to the filament, the release of phosphate, followed by the release of ADP, trigger the power stroke that moves the filament relative to the motor protein. ATP binding releases the head to allow the cycle to begin again. In the myosin cycle, the head remains bound to the actin filament for only about 5% of the entire cycle time, allowing many myosins to work together to move a single actin filament.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072072299-163750553.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-60 - <span class="title">Orientation of forward- and backward-walking kinesin superfamily proteins bound to microtubules</span></span></center>
+<p>These images were generated by fitting the structures of the free motor-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> dimers (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography) onto a lower resolution image of the dimers attached to microtubules (determined by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5038/">cryoelectron microscopy</a>). (A) Conventional <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a> has its motor <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5101/">domain</a> at the protein's N-terminus and moves toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a>. When one head of the dimer is bound to the microtubule in a post-stroke state (with ATP in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5567/">nucleotide</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a>), the second, unbound head is pointing toward the microtubule plus end, poised to take the next step. (B) Ncd, a minus-end-directed motor with the motor domain at the C-terminus, forms dimers with the opposite orientation. (From E. Sablin et al., <i>Nature</i> 395:813–816, 1998. © Macmillan Magazines Ltd.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072072510-35595481.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-61 - <span class="title">The effect of lever arm length on the step size for a motor protein</span></span></center>
+<p>The lever arm of myosin II is much shorter than the lever arm of myosin V. The power stroke in the head swings their lever arms through the same angle, so myosin V is able to take a bigger step than myosin II.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072072638-461234061.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-62 - <span class="title">Effect of depolymerizing microtubules on the Golgi apparatus</span></span></center>
+<p>(A) In this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5133/">endothelial cell</a>, the microtubules are labeled in <i>red,</i> and the Golgi apparatus is labeled in <i>green</i> (using an antibody against a Golgi <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>). As long as the system of microtubules remains intact, the Golgi is localized near the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4956/">centrosome</a>, close to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> at the center of the cell. The cell on the <i>right</i> is in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a>, with a single centrosome. The cell on the <i>left</i> is in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5685/">prophase</a>, and the duplicated centrosomes have moved to opposite sides of the nucleus. (B) After exposure to nocodazole, which causes microtubules to depolymerize (see <a href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2957/table/A2992/?report=objectonly" target="object">Table 16-2</a>), the Golgi apparatus fragments and is dispersed throughout the cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a>. (Courtesy of David Shima.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072072807-580460607.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-63 - <span class="title">A model for the attachment of dynein to a membrane-enclosed organelle</span></span></center>
+<p>Dynein requires the presence of a large number of accessory proteins to associate with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-enclosed organelles. Dynactin is a large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> <i>(red)</i> that includes components that bind weakly to microtubules, components that bind to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5110/">dynein</a> itself, and components that form a small actinlike filament made of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>-related <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> Arp1. It is thought that the Arp1 filament may mediate attachment of this large complex to membrane-enclosed organelles through a network of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5818/">spectrin</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4823/">ankyrin</a>, similar to the membrane-associated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5054/">cytoskeleton</a> of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5726/">red blood cell</a> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1890/figure/A1912/?report=objectonly" rid-figpopup="figA1912" rid-ob="figobA1912" target="object">Figure 10-31</a>).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072072938-467578391.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-64 - <span class="title">Myosin V on melanosomes</span></span></center>
+<p>(A) Phase-contrast image of a portion of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5437/">melanocyte</a> isolated from a mouse. The black spots are melanosomes, which are <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-enclosed organelles filled with the skin pigment melanin. (B) The same cell labeled with a fluorescent antibody against myosin V. Every melanosome is associated with a large number of copies of this <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5494/">motor protein</a>. (From X. Wu et al., <i>J. Cell Sci.</i> 110:847–859, 1997. © The Company of Biologists.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072073110-234872718.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-65 - <span class="title">Regulated melanosome movements in fish pigment cells</span></span></center>
+<p>These giant cells, which are responsible for changes in skin coloration in several species of fish, contain large pigment granules, or melanosomes <i>(brown).</i> The melanosomes can change their location in the cell in response to a hormonal or neuronal stimulus. (A) Schematic view of a pigment cell, showing the dispersal and aggregation of melanosomes in response to an increase or decrease in intracellular <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5041/">cyclic AMP (cAMP)</a>, respectively. Both redistributions of melanosomes occur along microtubules. (B) Bright-field images of a single cell in a scale of an African cichlid fish, showing its melanosomes either dispersed throughout the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> <i>(left)</i> or aggregated in the center of the cell <i>(right).</i> (B, courtesy of Leah Haimo.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072073281-629447783.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-66 - <span class="title">Bidirectional movement of a melanosome on a microtubule</span></span></center>
+<p>An isolated melanosome <i>(yellow)</i> moves along a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> on a glass slide, from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a>. Halfway through the video sequence, it abruptly switches direction and moves from the minus end toward the plus end. (From S.L. Rogers et al., <i>Proc. Natl. Acad. Sci. USA</i> 94:3720–3725, 1997. © National Academy of Sciences.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072073449-42306238.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-67 - <span class="title">Light-chain phosphorylation and the regulation of the assembly of myosin II into thick filaments</span></span></center>
+<p>(A) The controlled <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> myosin light-chain kinase (MLCK) of one of the two light chains (the so-called regulatory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5395/">light chain</a>, shown in <i>light blue)</i> on nonmuscle myosin II in a test tube has at least two effects: it causes a change in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5019/">conformation</a> of the myosin head, exposing its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a>, and it releases the myosin tail from a “sticky patch” on the myosin head, thereby allowing the myosin molecules to assemble into short, bipolar, thick filaments. (B) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of negatively stained short filaments of myosin II that have been induced to assemble in a test tube by phosphorylation of their light chains. These myosin II filaments are much smaller than those found in skeletal muscle cells (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26888/figure/A3044/?report=objectonly" rid-figpopup="figA3044" rid-ob="figobA3044" target="object">Figure 16-52</a>). (B, courtesy of John Kendrick-Jones.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072073621-78173956.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-68 - <span class="title">Skeletal muscle cells (also called muscle fibers)</span></span></center>
+<p>(A) These huge multinucleated cells form by the fusion of many muscle cell precursors, called myoblasts. In an adult human, a muscle cell is typically 50 μm in diameter and can be up to several centimeters long. (B) Fluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of rat muscle, showing the peripherally located nuclei <i>(blue)</i> in these giant cells. (B, courtesy of Nancy L. Kedersha.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072073794-860207673.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-69 - <span class="title">Skeletal muscle myofibrils</span></span></center>
+<p>(A) Low-magnification <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a longitudinal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> through a skeletal muscle cell of a rabbit, showing the regular pattern of cross-striations. The cell contains many myofibrils aligned in parallel (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26888/figure/A3066/?report=objectonly" rid-figpopup="figA3066" rid-ob="figobA3066" target="object">Figure 16-68</a>). (B) Detail of the skeletal muscle shown in (A), showing portions of two adjacent myofibrils and the definition of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5772/">sarcomere</a>. (C) Schematic diagram of a single sarcomere, showing the origin of the dark and light bands seen in the electron micrographs. The Z discs, at each end of the sarcomere, are attachment sites for the plus ends of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments (thin filaments); the M line, or midline, is the location of proteins that link adjacent myosin II filaments (thick filaments) to one another. The dark bands, which mark the location of the thick filaments, are sometimes called A bands because they appear anisotropic in polarized light (that is, their refractive index changes with the plane of polarization). The light bands, which contain only thin filaments and therefore have a lower density of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, are relatively isotropic in polarized light and are sometimes called I bands. (A and B, courtesy of Roger Craig.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072073997-252412046.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-70 - <span class="title">Electron micrographs of an insect flight muscle viewed in cross section</span></span></center>
+<p>The myosin and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments are packed together with almost crystalline regularity. Unlike their vertebrate counterparts, these myosin filaments have a hollow center, as seen in the enlargement on the right. The geometry of the hexagonal lattice is slightly different in vertebrate muscle. (From J. Auber, <i>J. de Microsc.</i> 8:197–232, 1969.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072074193-407596647.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-71 - <span class="title">The sliding-filament model of muscle contraction</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> <i>(red)</i> and myosin <i>(green)</i> filaments in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5772/">sarcomere</a> slide past one another without shortening.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072074358-940165801.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-72 - <span class="title">Organization of accessory proteins in a sarcomere</span></span></center>
+<p>Each giant titin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> extends from the Z disc to the M line—a distance of over 1 μm. Part of each titin molecule is closely associated with a myosin thick filament (which switches polarity at the M line); the rest of the titin molecule is elastic and changes length as the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5772/">sarcomere</a> contracts and relaxes. Each nebulin molecule is exactly the length of a thin filament. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments are also coated with tropomyosin and troponin (not shown; see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26888/figure/A3013/?report=objectonly" rid-figpopup="figA3013" rid-ob="figobA3013" target="object">Figure 16-74</a>) and are capped at both ends. Tropomodulin caps the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> of the actin filaments, and CapZ anchors the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5651/">plus end</a> at the Z disc, which also contains α-actinin.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072074578-318391159.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-73 - <span class="title">T tubules and the sarcoplasmic reticulum</span></span></center>
+<p>(A) Drawing of the two <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a> systems that relay the signal to contract from the muscle cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> to all of the myofibrils in the cell. (B) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> showing two T tubules. Note the position of the large Ca<sup>2+</sup>-release channels in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5773/">sarcoplasmic reticulum</a> membrane; they look like square-shaped “feet” that connect to the adjacent T-tubule membrane. (C) Schematic diagram showing how a Ca<sup>2+</sup>-release channel in the sarcoplasmic reticulum membrane is thought to be opened by a voltage-sensitive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5893/">transmembrane protein</a> in the adjacent T-tubule membrane. (B, courtesy of Clara Franzini-Armstrong.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072074795-721136161.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-74 - <span class="title">The control of skeletal muscle contraction by troponin</span></span></center>
+<p>(A) A skeletal muscle cell thin filament, showing the positions of tropomyosin and troponin along the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filament. Each tropomyosin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> has seven evenly spaced regions with similar <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequences, each of which is thought to bind to an actin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> in the filament. (B) A thin filament shown end-on, illustrating how Ca<sup>2+</sup> (binding to troponin) is thought to relieve the tropomyosin blockage of the interaction between actin and the myosin head. (A, adapted from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>.N. Phillips, J.P. Fillers and C. Cohen, <i>J. Mol. Biol.</i> 192:111–131, 1986. © Academic Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072074927-534899406.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-75 - <span class="title">Effect on the heart of a subtle mutation in cardiac myosin</span></span></center>
+<p>
+<i>Left</i>, normal heart from a 6-day old mouse pup. <i>Right</i>, heart from a pup with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5652/">point mutation</a> in both copies of its cardiac myosin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>, changing Arg 403 to Gln. Both atria are greatly enlarged (hypertrophic), and the mice die within a few weeks of birth. (From D. Fatkin et al., <i>J. Clin. Invest.</i> 103:147, 1999.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072075093-925523843.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-76 - <span class="title">The contrasting motions of flagella and cilia</span></span></center>
+<p>(A) The wave-like motion of the flagellum of a sperm cell from a tunicate. The cell was photographed with stroboscopic illumination at 400 flashes per second. Note that waves of constant amplitude move continuously from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> to the tip of the flagellum. (B) The beat of a cilium, which resembles the breast stroke in swimming. A fast power stroke <i>(red</i> arrows), in which fluid is driven over the surface of the cell, is followed by a slow recovery stroke. Each cycle typically requires 0.1–0.2 sec and generates a force perpendicular to the axis of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4865/">axoneme</a>. (A, courtesy of C.J. Brokaw.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072075258-731308039.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-77 - <span class="title">The arrangement of microtubules in a flagellum or cilium</span></span></center>
+<p>(A) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of the flagellum of a green-alga cell <i>(Chlamydomonas)</i> shown in cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a>, illustrating the distinctive “9 + 2” arrangement of microtubules. (B) Diagram of the parts of a flagellum or cilium. The various projections from the microtubules link the microtubules together and occur at regular intervals along the length of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4865/">axoneme</a>. (A, courtesy of Lewis Tilney.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072075439-692677794.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-78 - <span class="title">Ciliary dynein</span></span></center>
+<p>Ciliary (axonemal) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5110/">dynein</a> is a large <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> assembly (nearly 2 million daltons) composed of 9–12 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5658/">polypeptide</a> chains, the largest of which is the heavy chain of more than 500,000 daltons. (A) The heavy chains are believed to form the major portion of the globular head and stem domains, and many of the smaller chains are clustered around the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> of the stem (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26888/figure/A3049/?report=objectonly" rid-figpopup="figA3049" rid-ob="figobA3049" target="object">Figure 16-56</a> for a view of the isolated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a>). The base of the molecule binds tightly to an A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> in an ATP-independent manner, while the large globular heads have an ATP-dependent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a> for a B microtubule (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26888/figure/A3077/?report=objectonly" rid-figpopup="figA3077" rid-ob="figobA3077" target="object">Figure 16-77</a>). When the heads hydrolyze their bound ATP, they move toward the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5471/">minus end</a> of the B microtubule, thereby producing a sliding force between the adjacent microtubule doublets in a cilium or flagellum. The three-headed form of ciliary dynein, formed from three heavy chains, is illustrated here. (B) Freeze-etch <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a cilium showing the dynein arms projecting at regular intervals from the doublet microtubules; only the A microtubule is shown. (B, courtesy of John Heuser.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072075611-52789250.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-79 - <span class="title">The bending of an axoneme</span></span></center>
+<p>(A) When axonemes are exposed to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5699/">proteolytic enzyme</a> trypsin, the linkages holding neighboring doublet microtubules together are broken. In this case, the addition of ATP allows the motor action of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5110/">dynein</a> heads to slide one pair of doublet microtubules against the other pair. (B) In an intact <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4865/">axoneme</a> (such as in a sperm), sliding of the doublet microtubules is prevented by flexible <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> links. The motor action therefore causes a bending motion, creating waves or beating motions, as seen in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26888/figure/A3076/?report=objectonly" rid-figpopup="figA3076" rid-ob="figobA3076" target="object">Figure 16-76</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072075823-540523159.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-80 - <span class="title">Basal bodies</span></span></center>
+<p>(A) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> through three <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4872/">basal</a> bodies in the cortex of a protozoan. (B) Diagram of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4873/">basal body</a> viewed from the side. Each basal body forms the lower portion of a ciliary <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4865/">axoneme</a> and is composed of nine sets of triplet microtubules, each triplet containing one complete <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> (the A microtubule) fused to two incomplete microtubules (the B and C microtubules). Other proteins (shown in <i>red</i> in B) form links that hold the cylindrical array of microtubules together. The arrangement of microtubules in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4953/">centriole</a> is essentially the same (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2995/figure/A3000/?report=objectonly" rid-figpopup="figA3000" rid-ob="figobA3000" target="object">Figure 16-24</a>). (A, courtesy of D.T. Woodrow and R.W. Linck.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 16.5 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072078550-983872511.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-81 - <span class="title">Polarity of actin patches and cables throughout the yeast cell cycle</span></span></center>
+<p>Filamentous <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> structures in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> cell, labeled here with fluorescent phalloidin, include actin patches (round bright spots) and actin cables (extended lines). (A) In a mother cell, before the formation of the bud, most of the patches are clustered at one end. The cables are lined up and point toward the cluster of patches, which is the site where the bud will emerge. (B) As the small bud grows, most patches remain within it. Cables in the mother cell continue to point toward this site of new <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4943/">cell wall</a> growth. (C) Patches are almost uniformly distributed over the surface of a full-sized bud. Cables in the mother cell remain polarized. (D) Immediately after <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a>, mother and daughter cells form new patches, which are concentrated near the division site, although both cells have randomly oriented cables. (From T.S. Karpova et al., <i>J. Cell Biol.</i> 142:1501–1517, 1998. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072078690-168831302.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-82 - <span class="title">Morphological polarization of yeast cells in response to mating factor</span></span></center>
+<p>(A) Cells of <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5770/">Saccharomyces</a> cerevisiae</i> are usually spherical. (B) They become polarized when treated with mating factor from cells of the opposite mating type. The polarized cells are called “shmoos.” (C) Al Capp's famous cartoon character, the original Shmoo. (A and B, courtesy of Michael Snyder; C, © 1948 Capp Enterprises, Inc., all rights reserved.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072078865-95125907.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-83 - <span class="title">The signaling pathway in the yeast mating factor response</span></span></center>
+<p>The extracellular mating factor binds to a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5248/">G-protein-linked receptor</a> in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a>. Activation of the receptor triggers dissociation of the GTP-bound Gα <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> from a heterotrimeric G-protein (discussed in Chapter 15). This in turn activates the Rho family GTP-binding protein, Cdc42, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5291/">homolog</a> of the mammalian small <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5259/">GTPase</a> whose activation triggers the formation of filopodia (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2995/figure/A3038/?report=objectonly" rid-figpopup="figA3038" rid-ob="figobA3038" target="object">Figure 16-50D</a>). As in mammalian cells, Cdc42 activates a protein (Bee1, the homolog of WASp) that activates the ARP <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>, leading to local <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5560/">nucleation</a> at the site of mating factor binding. The local actin nucleation and filament growth lead to polarized growth and acquisition of a shmoo shape. In addition, receptor activation triggers other responses through a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5426/">MAP</a> kinase cascade (discussed in Chapter 15), preparing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5264/">haploid</a> cell for mating (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072079072-142347157.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-84 - <span class="title">Polarized mRNA localization in the yeast bud tip</span></span></center>
+<p>(A) The molecular mechanism of <i>ash1</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5496/">mRNA</a> localization, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by genetics and biochemistry. (B) Fluorescent <i>in situ</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5299/">hybridization</a> (FISH) was used to localize the <i>ash1</i> mRNA (<i>red</i>) in this dividing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> cell. The mRNA is confined to the far tip of the daughter cell (here, still a large bud). Ash1 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, transcribed from this localized mRNA, is also confined to the daughter cell. (B, courtesy of Peter Takizawa and Ron Vale.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072079249-126963210.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-85 - <span class="title">A model of how forces generated in the actin-rich cortex move a cell forward</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>-polymerization-dependent protrusion and firm attachment of a lamellipodium at the leading edge of the cell moves the edge forward <i>(green</i> arrows at front) and stretches the actin cortex. Contraction at the rear of the cell propels the body of the cell forward <i>(green</i> arrow at back) to relax some of the tension (traction). New focal contacts are made at the front, and old ones are disassembled at the back as the cell crawls forward. The same cycle can be repeated, moving the cell forward in a stepwise fashion. Alternatively, all steps can be tightly coordinated, moving the cell forward smoothly. The newly polymerized cortical actin is shown in <i>red</i>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072079457-448497796.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-86 - <span class="title">Migratory keratocytes from a fish epidermis</span></span></center>
+<p>(A) Light micrographs of a keratocyte in culture, taken about 15 sec apart. This cell is moving at about 15 μm/sec. (B) Keratocyte seen by scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> microscopy, showing its broad, flat lamellipodium and small <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4933/">cell body</a>, including the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, carried up above the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a> at the rear. (C) Distribution of cytoskeletal filaments in this cell. Actin filaments <i>(red)</i> fill the large lamellipodium and are responsible for the cell's rapid movement. Microtubules <i>(green)</i> and intermediate filaments <i>(blue)</i> are restricted to the regions close to the nucleus. (A and B, courtesy of Juliet Lee.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072079585-749779785.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-87 - <span class="title">Behavior of lamellipodial fragments</span></span></center>
+<p>Fragments of the large lamellipodium of a keratocyte can be separated from the main cell, either by surgery with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5463/">micropipette</a> or by treating the cell with certain drugs. (A) Many of these fragments continue to move rapidly, with the same overall cytoskeletal organization as the intact keratocytes. Actin <i>(blue)</i> forms a protrusive meshwork at the front of the fragment. Myosin II <i>(pink)</i> is gathered into a band at the rear. This cell fragment was moving toward the top of the photo at the time that it was fixed and stained. (B) Some of the fragments stop moving and assume a symmetric, circular shape. Actin <i>(blue)</i> is distributed uniformly around the circumference, and myosin <i>(pink)</i> is found in spots throughout the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a>. These circular fragments are trying to protrude uniformly in all directions and are therefore paralyzed. Only by coordinating protrusion at the front with contraction at the rear can steady movement be maintained. (From A. Verkovsky et al., <i>Curr. Biol.</i> 9:11–20, 1999. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072079750-219899932.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-88 - <span class="title">Actin filament nucleation and web formation by the ARP complex in lamellipodia</span></span></center>
+<p>(A) A keratocyte with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments labeled in <i>red</i> by fluorescent phalloidin, and the ARP <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> labeled in <i>green</i> with an antibody raised against one of its component proteins. The regions where the two overlap appear <i>yellow</i>. The ARP complex is highly concentrated near the front of the lamellipodium, where actin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5560/">nucleation</a> is most active. (B) Electron <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of a platinum-shadowed replica of the leading edge of a keratocyte, showing the dense actin filament meshwork. The labels denote areas enlarged in C. (C) Closeup views of the marked regions of the actin web at the leading edge shown in B. Numerous branched filaments can be seen, with the characteristic 70° angle formed when the ARP complex nucleates a new actin filament off the side of a preexisting filament (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2995/figure/A3007/?report=objectonly" rid-figpopup="figA3007" rid-ob="figobA3007" target="object">Figure 16-29</a>). (From T. Svitkina and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Borisy, <i>J. Cell Biol.</i> 145:1009–1026, 1999. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072079882-933200375.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-89 - <span class="title">Cofilin in lamellipodia</span></span></center>
+<p>(A) A keratocyte with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments labeled in <i>red</i> by fluorescent phalloidin and cofilin labeled in <i>green</i> with a fluorescent antibody. The regions where the two overlap appear <i>yellow</i>. Although the dense actin meshwork reaches all the way through the lamellipodium, cofilin is not found at the very leading edge. (B) Closeup view of the region marked with the <i>white</i> rectangle in A. The actin filaments closest to the leading edge, which are also the ones that have formed most recently and that are most likely to contain ATP actin (rather than ADP actin) in the filament lattice are generally not associated with cofilin. (From T. Svitkina and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Borisy, <i>J. Cell Biol.</i> 145:1009–1026, 1999. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080050-717659702.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-90 - <span class="title">A model for protrusion of the actin meshwork at the leading edge</span></span></center>
+<p>Two time points during advance of the lamellipodium are illustrated, with newly assembled structures at the later time point shown in a lighter color. Nucleation is mediated by the ARP <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> at the front. Newly nucleated <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments are attached to the sides of preexisting filaments, primarily at a 70° angle. Filaments elongate, pushing the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5642/">plasma membrane</a> forward because of some sort of anchorage of the array behind. At a steady rate, actin filament plus ends become capped. After newly polymerized actin subunits hydrolyze their bound ATP in the filament lattice, the filaments become susceptible to depolymerization by cofilin. This cycle causes a spatial separation between net filament assembly at the front and net filament disassembly at the rear, so that the actin filament network as a whole can move forward, even though the individual filaments within it remain stationary with respect to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080255-654143016.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-91 - <span class="title">Rearward movement of the actin network in a growth-cone lamellipodium</span></span></center>
+<p>(A) A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5254/">growth cone</a> from a neuron of the sea slug <i>Aplysia</i> is cultured on a highly adhesive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a> and viewed by differential-interference-contrast microscopy. Microtubules and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5438/">membrane</a>-enclosed organelles are confined to the bright, rear area of the growth cone (to the <i>left),</i> while a meshwork of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments fills the lamellipodium (on the <i>right).</i> (B) After brief treatment with the drug cytochalasin, which caps the plus ends of actin filaments (see <a href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2957/table/A2992/?report=objectonly" target="object">Table 16-2</a>), the actin meshwork has detached from the front edge of the lamellipodium and has been pulled backward. (C) At the time point shown in B, the cell was fixed and labeled with fluorescent phalloidin to show the distribution of the actin filaments. Some actin filaments persist at the leading edge, but the region behind the leading edge is devoid of filaments. Note the sharp boundary of the rearward-moving actin meshwork. (D) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> cyclic structure of cytochalasin B. (A, B, and C courtesy of Paul Forscher.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080422-771069634.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-92 - <span class="title">Lamellipodia and ruffles at the leading edge of a human fibroblast migrating in culture</span></span></center>
+<p>The <i>arrow</i> in this scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows the direction of cell movement. As the cell moves forward, lamellipodia that fail to attach to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a> are swept backward over the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5104/">dorsal</a> surface of the cell, a movement known as ruffling. (Courtesy of Julian Heath.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080549-988677663.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-93 - <span class="title">The localization of myosin I and myosin II in a normal crawling <i>Dictyostelium</i> amoeba</span></span></center>
+<p>This cell was crawling toward the upper right at the time that it was fixed and labeled with antibodies specific for two myosin isoforms. Myosin I <i>(green)</i> is mainly restricted to the leading edge of pseudopodia at the front of the cell. Myosin II <i>(red)</i> is highest in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5667/">posterior</a>, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a>-rich cortex. Contraction of the cortex at the posterior of the cell by myosin II may help to push the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4933/">cell body</a> forward. (Courtesy of Yoshio Fukui.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080712-686786413.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-94 - <span class="title">Adhesive cells exert traction forces on the substratum</span></span></center>
+<p>These fibroblasts have been cultured on a very thin sheet of silicon rubber. Attachment of the cells, followed by contraction of their <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5054/">cytoskeleton</a>, has caused the rubber <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a> to wrinkle. (From A.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Harris, P. Wild, and D. Stopak, <i>Science</i> 208:177–179, 1980. © AAAS.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080850-405410337.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-95 - <span class="title">Shaping of the extracellular matrix by cell pulling</span></span></center>
+<p>This <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows a region between two pieces of embryonic chick heart (tissue explants rich in fibroblasts and heart muscle cells) that were grown in culture on a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5004/">collagen</a> gel for 4 days. A dense tract of aligned collagen fibers has formed between the two explants, apparently as a result of fibroblasts tugging on the collagen. (From D. Stopak and A.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5365/">K</a>. Harris, <i>Dev. Biol</i>. 90:383–398, 1982. © Academic Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072080986-630170449.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-96 - <span class="title">Neutrophil polarization and chemotaxis</span></span></center>
+<p>The pipette tip at the right is leaking a small amount of the peptide formyl-Met-Leu-Phe. Only bacterial proteins have formylated methionine residues, so the human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5530/">neutrophil</a> recognizes this peptide as the product of a foreign invader (discussed in Chapter 25). The neutrophil quickly extends a new lamellipodium toward the source of the chemoattractant peptide <i>(top).</i> It then extends this lamellipodium and polarizes its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5054/">cytoskeleton</a> so that contractile myosin II is located primarily at the rear, opposite the position of the lamellipodium <i>(middle).</i> Finally, the cell crawls toward the source of this peptide <i>(bottom).</i> If a real bacterium were the source of the peptide, rather than an investigator's pipette, the neutrophil would engulf the bacterium and destroy it. (From O.D. Weiner et al., <i>Nature Cell Biol.</i> 1:75–81, 1999. © Macmillan Magazines Ltd.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072081149-557680641.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-97 - <span class="title">The polarization of a cytotoxic T cell after target-cell recognition</span></span></center>
+<p>(A) Changes in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5054/">cytoskeleton</a> of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5056/">cytotoxic T cell</a> after it has made contact with a target cell. The initial recognition event results in signals that cause <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> polymerization in both cells at the site of contact. In the T cell, interactions between the actin-rich contact zone and microtubules emanating from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4956/">centrosome</a> result in reorientation of the centrosome, so that the associated Golgi apparatus is directly apposed to the target cell. (B) Immuno-fluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> in which both the T cell <i>(top)</i> and its target cell <i>(bottom)</i> have been stained with an antibody against microtubules. The centrosome and the microtubules radiating from it in the T cell are oriented toward the point of cell-cell contact. In contrast, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> array in the target cell is not polarized. (B, from B. Geiger, D. Rosen and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Berke, <i>J. Cell Biol.</i> 95:137–143, 1982. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072081327-856844263.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-98 - <span class="title">Microtubule organization in fibroblasts and neurons</span></span></center>
+<p>(A) In a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5177/">fibroblast</a>, microtubules emanate outward from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4956/">centrosome</a> in the middle of the cell. Vesicles with plus-end-directed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5374/">kinesin</a> attached move outward, and vesicles with minus-end-directed <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5110/">dynein</a> attached move inward. (B) In a neuron, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a> organization is more <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. In the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4863/">axon</a>, all microtubules share the same polarity, with the plus ends pointing outward toward the axon terminus. No one microtubule stretches the entire length of the axon; instead, short overlapping segments of parallel microtubules make the tracks for fast <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4864/">axonal transport</a>. In dendrites, the microtubules are of mixed polarity, with some plus ends pointing outward and some pointing inward.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072081494-534140716.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-99 - <span class="title">Neuronal growth cones</span></span></center>
+<p>(A) Scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of two growth cones at the end of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5523/">neurite</a>, put out by a chick sympathetic neuron in culture. Here, a previously single <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5254/">growth cone</a> has recently split into two. Note the many filopodia and the large lamellipodia. The taut appearance of the neurite is due to tension generated by the forward movement of the growth cones, which are often the only firm points of attachment of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4863/">axon</a> to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a>. (B) Scanning electron micrograph of the growth cone of a sensory neuron crawling over the inner surface of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5139/">epidermis</a> of a <i>Xenopus</i> tadpole. (A, from D. Bray, in Cell Behaviour [R. Bellairs, A. Curtis, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Dunn, eds.]. Cambridge, UK: Cambridge University Press, 1982; B, from A. Roberts, <i>Brain Res</i>. 118:526–530, 1976. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072081661-435718686.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 16-100 - <span class="title">The complex architecture of a vertebrate neuron</span></span></center>
+<p>The neuron shown is from the retina of a monkey. The arrows indicate the direction of travel of the electrical signal along the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4863/">axon</a>. The longest and largest neurons in the human body extend for a distance of about 1 m (1 million μm), from the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4875/">base</a> of the spinal cord to the tip of the big toe, and have an axon diameter of 15 μm. (Adapted from B.B. Boycott, in Essays on the Nervous System [R. Bellairs and E.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Gray, eds.]. Oxford, UK: Clarendon Press, 1974.)</p><p><html><div style="page-break-after: always;"></div></html></p><p>&nbsp;</p></div></div>
+</body>
+</html>

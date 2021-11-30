@@ -1,0 +1,1492 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Chapter 17</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><center><h1>Chapter 17.1 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072296932-544547462.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-2 - <span class="title">The events of eucaryotic cell division as seen under a microscope</span></span></center>
+<p>The easily visible processes of nuclear division (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>) and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5052/">cytokinesis</a>), collectively called <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a>, typically occupy only a small fraction of the cell cycle. The other, much longer, part of the cycle is known as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a>. The five stages of mitosis are shown: an abrupt change in the biochemical state of the cell occurs at the transition from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5450/">metaphase</a> to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4816/">anaphase</a>. A cell can pause in metaphase before this transition point, but once the point has been passed, the cell carries on to the end of mitosis and through cytokinesis into interphase. Note that <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication occurs in interphase. The part of interphase where DNA is replicated is called <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a> (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072297161-611740202.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-3 - <span class="title">The phases of the cell cycle</span></span></center>
+<p>The cell grows continuously in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5350/">interphase</a>, which consists of three phases: <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication is confined to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>; <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>1</sub> is the gap between <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a> and S phase, while G<sub>2</sub> is the gap between S phase and M phase. In M phase, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> and then the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> divide.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072297344-236804846.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-4 - <span class="title">A comparison of the cell cycles of fission yeasts and budding yeasts</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5180/">fission yeast</a> has a typical eucaryotic cell cycle with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>1</sub>, S, G<sub>2</sub>, and M phases. In contrast with what happens in higher eucaryotic cells, however, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5551/">nuclear envelope</a> of the yeast cell does not break down during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a>. The microtubules of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5479/">mitotic spindle</a> <i>(light green)</i> form inside the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> and are attached to spindle pole bodies <i>(dark green)</i> at its periphery. The cell divides by forming a partition (known as the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4942/">cell plate</a>) and splitting in two. The condensed mitotic chromosomes <i>(red)</i> are readily visible in fission yeast, but are less easily seen in budding yeasts. (B) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4893/">budding yeast</a> has normal G<sub>1</sub> and S phases but does not have a normal <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5203/">G<sub>2</sub> phase</a>. Instead, a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5465/">microtubule</a>-based spindle begins to form inside the nucleus early in the cycle, during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>. In contrast with a fission yeast cell, the cell divides by budding. As in fission yeasts, but in contrast with higher eucaryotic cells, the nuclear envelope remains intact during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>, and the spindle forms within the nucleus.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072297515-303054718.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-5 - <span class="title">The behavior of a temperature-sensitive <i>cdc</i>
+<a href="/books/n/mboc4/A4754/#A5500" target="mainwindow">mutant</a>.</span></span></center>
+<p>(A) At the permissive (low) temperature, the cells divide normally and are found in all phases of the cycle (the phase of the cell is indicated by its color). (B) On warming to the restrictive (high) temperature, at which the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> product functions abnormally, the mutant cells continue to progress through the cycle until they come to the specific step that they are unable to complete (initiation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>, in this example). Because the <i>cdc</i> mutants still continue to grow, they become abnormally large. By contrast, non-<i>cdc</i> mutants, if deficient in a process that is necessary throughout the cycle for biosynthesis and growth (such as ATP production), halt haphazardly at any stage of the cycle—depending on when their biochemical reserves run out (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072297649-511771480.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-6 - <span class="title">The morphology of budding yeast cells arrested by a <i>cdc</i>
+<a href="/books/n/mboc4/A4754/#A5502" target="mainwindow">mutation</a>.</span></span></center>
+<p>(A) In a normal population of proliferating <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5937/">yeast</a> cells, buds vary in size according to the cell-cycle stage. (B) In a <i>cdc15</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> grown at the restrictive temperature, cells complete <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4816/">anaphase</a> but cannot complete the exit from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5052/">cytokinesis</a>. As a result, they arrest uniformly with the large buds, which are characteristic of late <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a>. (Courtesy of Jeff Ubersax.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072297797-588604188.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-7 - <span class="title">A mature <i>Xenopus</i> egg, ready for fertilization</span></span></center>
+<p>The pale spot near the top shows the site of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>, which has displaced the <i>brown</i> pigment in the surface layer of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a>. Although this cannot be seen in the picture, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5551/">nuclear envelope</a> has broken down during the process of egg maturation. (Courtesy of Tony Mills.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072297972-701864694.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-8 - <span class="title">Oocyte growth and egg cleavage in <i>Xenopus.</i></span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5577/">oocyte</a> grows without dividing for many months in the ovary of the mother frog and finally matures into an <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a>. Upon <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5175/">fertilization</a>, the egg cleaves very rapidly—initially at a rate of one division cycle every 30 minutes—forming a multicellular tadpole within a day or two. The cells get progressively smaller with each division, and the embryo remains the same size. Growth starts only when the tadpole begins feeding. The drawings in the top row are all on the same scale (but the frog below is not).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072298185-299005387.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-9 - <span class="title">Studying the cell cycle in a cell-free system</span></span></center>
+<p>A large batch of activated frog eggs is broken open by gentle centrifugation, which also separates the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> from other cell components. The undiluted cytoplasm is collected, and sperm nuclei are added to it, together with ATP. The sperm nuclei decondense and then go through repeated cycles of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>, indicating that the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4944/">cell-cycle control system</a> is operating in this cell-free cytoplasmic extract.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072298328-953656564.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-10 - <span class="title">Mammalian cells proliferating in culture</span></span></center>
+<p>The cells in this scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> are rat fibroblasts. (Courtesy of Guenter Albrecht-Buehler.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072298460-962569722.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-11 - <span class="title">Labeling S-phase cells</span></span></center>
+<p>(A) The tissue has been exposed for a short period to <sup>3</sup>H-thymidine and the labeled cells have been visualized by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4859/">autoradiography</a>. Silver grains <i>(black dots)</i> in the photographic emulsion over a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> indicate that the cell incorporated <sup>3</sup>H-thymidine into its <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> and thus was in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a> some time during the labeling period. In this specimen, showing the sensory epithelium from the inner ear of a chicken, the presence of an S-phase cell is evidence of cell proliferation occurring in response to damage. (B) An immunofluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> of BrdU-labeled glial precursor cells in culture. The cells were exposed to BrdU for 4 h and were then fixed and labeled with fluorescent anti-BrdU antibodies <i>(red).</i> All the cells are stained with a <i>blue</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5186/">fluorescent dye</a>. (A, courtesy of Mark Warchol and Jeffrey Corwin; B, from D. Tang, Y. Tokumoto, and M. Raff, <i>J. Cell Biol.</i> 148:971–984, 2000. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072298636-587887929.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-12 - <span class="title">Analysis of DNA content with a flow cytometer</span></span></center>
+<p>This graph shows typical results obtained for a proliferating cell population when the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> content of its individual cells is <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> in a flow cytometer. (A flow cytometer, also called a fluorescence-activated cell sorter, or FACS, can also be used to sort cells according to their fluorescence—see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A1506/figure/A1508/?report=objectonly" rid-figpopup="figA1508" rid-ob="figobA1508" target="object">Figure 8-2</a>). The cells analyzed here were stained with a dye that becomes fluorescent when it binds to DNA, so that the amount of fluorescence is directly proportional to the amount of DNA in each cell. The cells fall into three categories: those that have an unreplicated complement of DNA and are therefore in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5200/">G<sub>1</sub> phase</a>, those that have a fully replicated complement of DNA (twice the G<sub>1</sub> DNA content) and are in G<sub>2</sub> or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a>, and those that have an intermediate amount of DNA and are in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>. The distribution of cells in the case illustrated indicates that there are greater numbers of cells in G<sub>1</sub> phase than in G<sub>2</sub> + M phase, showing that G<sub>1</sub> is longer than G<sub>2</sub> + M in this population.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 17.2 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072300622-307313196.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-13 - <span class="title">The control of the cell cycle</span></span></center>
+<p>The essential processes of the cell cycle—such as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> replication, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5052/">cytokinesis</a>—are triggered by a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4944/">cell-cycle control system</a>. By analogy with a washing machine, the cell-cycle control system is shown here as a central arm—the controller—that rotates clockwise, triggering essential processes when it reaches specific points on the outer dial.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072300821-441343731.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-14 - <span class="title">Checkpoints in the cell-cycle control system</span></span></center>
+<p>Information about the completion of cell-cycle events, as well as signals from the environment, can cause the control system to arrest the cycle at specific checkpoints. The most prominent checkpoints occur at locations marked with <i>yellow boxes</i>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072300969-518715200.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-15 - <span class="title">Two key components of the cell-cycle control system</span></span></center>
+<p>A <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4930/">Cdk</a> acts as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a> to trigger specific cell-cycle events. Without cyclin, Cdk is inactive.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072301139-295046732.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-16 - <span class="title">A simplified view of the core of the cell-cycle control system</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4930/">Cdk</a> associates successively with different cyclins to trigger the different events of the cycle. Cdk activity is usually terminated by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> degradation. For simplicity, only the cyclins that act in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a> (S-cyclin) and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5417/">M phase</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5432/">M-cyclin</a>) are shown, and they interact with a single Cdk; as indicated, the resulting cyclin-Cdk complexes are referred to as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5778/">S-Cdk</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5430/">M-Cdk</a>, respectively.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072301345-535166129.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-17 - <span class="title">The structural basis of Cdk activation</span></span></center>
+<p>These drawings are based on three-dimensional structures of human Cdk2, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography. The location of the bound ATP is indicated. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> is shown in three states. (A) In the inactive state, without <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> bound, the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4772/">active site</a> is blocked by a region of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> called the T-loop (<i>red</i>). (B) The binding of cyclin causes the T-loop to move out of the active site, resulting in partial activation of the Cdk2. (C) Phosphorylation of Cdk2 (by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4929/">CAK</a>) at a threonine <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5737/">residue</a> in the T-loop further activates the enzyme by changing the shape of the T-loop, improving the ability of the enzyme to bind its protein substrates.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072301509-283129053.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-18 - <span class="title">The regulation of Cdk activity by inhibitory phosphorylation</span></span></center>
+<p>The active <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5045/">cyclin-Cdk complex</a> is turned off when the kinase Wee1 phosphorylates two closely spaced sites above the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4772/">active site</a>. Removal of these phosphates by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5619/">phosphatase</a> Cdc25 results in activation of the cyclin-Cdk complex. For simplicity, only one inhibitory phosphate is shown. The activating phosphate is added by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4929/">CAK</a>, as shown in <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/NBK26824/figure/A3206/?report=objectonly" rid-figpopup="figA3206" rid-ob="figobA3206" target="object">Figure 17-17</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072301674-558611330.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-19 - <span class="title">The inhibition of a cyclin-Cdk complex by a CKI</span></span></center>
+<p>This drawing is based on the three-dimensional structure of the human <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> A-Cdk2 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> bound to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4985/">CKI</a> p27, as <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5070/">determined</a> by x-ray crystallography. The p27 binds to both the cyclin and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4930/">Cdk</a> in the complex, distorting the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4772/">active site</a> of the Cdk. It also inserts into the ATP-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4882/">binding site</a>, further inhibiting the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> activity.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072301847-482553601.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-20 - <span class="title">The control of proteolysis by SCF and APC during the cell cycle</span></span></center>
+<p>(A) The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of a target <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>, such as the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4985/">CKI</a> shown, allows the protein to be recognized by SCF, which is constitutively active. With the help of two additional proteins called E1 and E2, SCF serves as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5911/">ubiquitin ligase</a> that transfers multiple ubiquitin molecules onto the CKI protein. The ubiquitylated CKI protein is then immediately recognized and degraded in a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5687/">proteasome</a>. (B) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5432/">M-cyclin</a> ubiquitylation is performed by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4779/">APC</a>, which is activated in late <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> by the addition of an activating <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. Both SCF and APC contain binding sites that recognize specific <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4807/">amino acid</a> sequences of the target protein.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 17.3 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072304327-621216231.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-21 - <span class="title">Evidence from cell-fusion experiments for a rereplication block</span></span></center>
+<p>These experiments were carried out in 1970 in cultured mammalian cells. (A) The results show that S-phase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> contains factors that drive a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>1</sub> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a> directly into <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> synthesis. (B) A G<sub>2</sub> nucleus, having already replicated its DNA, is refractory to these factors. (C) Fusion of a G<sub>2</sub> cell with a G<sub>1</sub> cell does not drive the G<sub>1</sub> nucleus into DNA synthesis, indicating that the cytoplasmic factors for DNA replication that were present in the S-phase cell disappear when the cell moves from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a> into G<sub>2</sub>. (Adapted from R.T. Johnson and P.N. Rao, <i>Nature</i> 226:717–722, 1970.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072304504-844400572.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-22 - <span class="title">The initiation of DNA replication once per cell cycle</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5584/">ORC</a> remains associated with a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5734/">replication origin</a> throughout the cell cycle. In early <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>1</sub>, Cdc6 associates with ORC. Aided by Cdc6, Mcm ring complexes then assemble on the adjacent <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>, resulting in the formation of the pre-replicative <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a>. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5778/">S-Cdk</a> (with assistance from another <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a>, not shown) then triggers origin firing, assembling <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5092/">DNA polymerase</a> and other replication proteins and activating the Mcm protein rings to migrate along DNA strands as DNA helicases. The S-Cdk also blocks rereplication by causing the dissociation of Cdc6 from origins, its degradation, and the export of all excess Mcm out of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. Cdc6 and Mcm cannot return to reset an ORC-containing origin for another round of DNA replication until <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5430/">M-Cdk</a> has been inactivated at the end of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> (see text).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072304718-871991190.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-23 - <span class="title">The activation of M-Cdk</span></span></center>
+<p>Cdk1 associates with <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5432/">M-cyclin</a> as the levels of M-cyclin gradually rise. The resulting <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5430/">M-Cdk</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> is phosphorylated on an activating site by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4929/">Cdk-activating kinase</a> (CAK) and on a pair of inhibitory sites by the Wee1 kinase. The resulting inactive M-Cdk complex is then activated at the end of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>2</sub> by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5619/">phosphatase</a> Cdc25. Cdc25 is stimulated in part by Polo kinase, which is not shown for simplicity. Cdc25 is further stimulated by active M-Cdk, resulting in positive feedback. This feedback is enhanced by the ability of M-Cdk to inhibit WeeI.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072304878-377573797.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-24 - <span class="title">The DNA replication checkpoint</span></span></center>
+<p>In the experiments diagrammed here, mammalian cells in culture were treated with caffeine and hydroxyurea, either alone or in combination. Hydroxyurea blocks <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> synthesis. This block activates a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4961/">checkpoint</a> mechanism that arrests the cells in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>, delaying <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>. But if caffeine is added as well as hydroxyurea, the checkpoint mechanism fails, and the cells proceed into mitosis according to their normal schedule, with incompletely replicated DNA. As a result, the cells die.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072305051-815457829.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-25 - <span class="title">Two experiments that demonstrate the requirement for protein degradation to exit from mitosis</span></span></center>
+<p>(A) An <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4779/">APC</a> inhibitor was added to frog <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5114/">egg</a> extracts undergoing <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> <i><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5327/">in vitro</a></i> (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3169/figure/A3180/?report=objectonly" rid-figpopup="figA3180" rid-ob="figobA3180" target="object">Figure 17-9</a>). The inhibitor arrested mitosis at <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5450/">metaphase</a>, indicating that <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5698/">proteolysis</a> is required for the separation of sister chromatids at the metaphase-to-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4816/">anaphase</a> transition. A similar arrest occurs in budding yeasts with mutations in components of the APC. (B) A nondegradable <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5500/">mutant</a> form of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5432/">M-cyclin</a> was added to mitotic frog egg extracts. This addition arrested mitosis after sister-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4973/">chromatid</a> separation, indicating that destruction of M-cyclin is not required for sister-chromatid separation but is required for the subsequent exit from mitosis. (Based on S.L. Holloway et al., <i>Cell</i> 73:1393–1402, 1993.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072305229-364842193.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-26 - <span class="title">The triggering of sister-chromatid separation by the APC</span></span></center>
+<p>The activation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4817/">APC</a> by Cdc20 leads to the ubiquitylation and destruction of securin, which normally holds separase in an inactive state. The destruction of securin allows separase to cleave a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of the cohesin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> holding the sister chromatids together. The pulling forces of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5479/">mitotic spindle</a> then pull the sister chromatids apart. In budding yeasts at least, cohesin <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a> by separase is facilitated by the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of the cohesin complex adjacent to the cleavage site, just before <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4816/">anaphase</a> begins. The phosphorylation is mediated by Polo kinase and provides an additional control on the timing of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5450/">metaphase</a>-to-anaphase transition.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072305393-447357313.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-27 - <span class="title">Mad2 protein on unattached kinetochores</span></span></center>
+<p>This fluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows a mammalian cell in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5683/">prometaphase</a>, with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5479/">mitotic spindle</a> in <i>green</i> and the sister chromatids in <i>blue</i>. One <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5803/">sister chromatid</a> pair is not yet attached to the spindle. The presence of Mad2 on the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5375/">kinetochore</a> of the unattached <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4977/">chromosome</a> is revealed by the binding of anti-Mad2 antibodies <i>(red dot,</i> indicated by <i>red arrow).</i> Another chromosome has just attached to the spindle, and its kinetochore has a low level of Mad2 still associated with it <i>(pale dot,</i> indicated by <i>white arrow).</i> (From J.C. Waters et al., <i>J. Cell Biol.</i> 141:1181–1191, 1998. © The Rockefeller University Press.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072305572-559482711.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-28 - <span class="title">The creation of a G<sub>1</sub> phase by stable Cdk inhibition after mitosis</span></span></center>
+<p>(A) In early embryonic cell cycles, Cdc20-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4817/">APC</a> activity rises at the end of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5450/">metaphase</a>, triggering <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5432/">M-cyclin</a> destruction. Because <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5430/">M-Cdk</a> activity stimulates Cdc20-APC activity, the loss of M-cyclin leads to APC inactivation after <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a>, which allows M-cyclins to begin accumulating again. (B) In cells containing a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5200/">G<sub>1</sub> phase</a>, the drop in M-Cdk activity in late mitosis leads to the activation of Hct1-APC (as well as to the accumulation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4985/">CKI</a> proteins, not shown). This ensures a continued suppression of Cdk activity after mitosis, as required for a G<sub>1</sub> phase.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072305746-992084908.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-29 - <span class="title">The control of G<sub>1</sub> progression by Cdk activity in budding yeast</span></span></center>
+<p>As cells exit from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5477/">mitosis</a> and inactivate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5430/">M-Cdk</a>, the resulting increase in Hct1 and Sic1 activities results in stable Cdk inactivation during <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a><sub>1</sub>. When conditions are right for entering a new cell cycle, the increase in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5202/">G<sub>1</sub>-Cdk</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5201/">G<sub>1</sub>/S-Cdk</a> activities leads to the inhibition of Sic1 and Hct1 by <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a>, allowing S-Cdk activity to increase.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072305915-976347983.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-30 - <span class="title">Mechanisms controlling S-phase initiation in animal cells</span></span></center>
+<p><a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5202/">G<sub>1</sub>-Cdk</a> activity (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> D-Cdk4) initiates Rb <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a>. This inactivates Rb, freeing E2F to activate the transcription of S-phase genes, including the genes for a G<sub>1</sub>/S-cyclin (cyclin E) and S-cyclin (cyclin A). The resulting appearance of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5201/">G<sub>1</sub>/S-Cdk</a> and S-Cdk activities further enhances Rb phosphorylation, forming a positive feedback loop. E2F acts back to stimulate the transcription of its own <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>, forming another positive feedback loop.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072306117-205055829.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-31 - <span class="title">Cell size control through control of the cell cycle in yeasts</span></span></center>
+<p>These graphs show the relationship between growth rate, cell size, and cell cycle time. (A) If <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a> continued at an unchanged rate when cells were starved and stopped growing, the daughter cells produced at each division would become progressively smaller. (B) Yeast cells respond to some forms of nutritional deprivation by slowing the rate of progress through the cell cycle so that the cells have more time to grow. As a result, cell size remains unchanged or is reduced slightly. (A unit of time is the cycle time observed when nutrients are in excess.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072306320-838617759.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-32 - <span class="title">A hypothetical model of how budding yeast cells might coordinate cell growth and cell-cycle progression</span></span></center>
+<p>The cell contains a fixed number of proteins <i>(red)</i> that are bound to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> and bind and inhibit Cln3 molecules <i>(green).</i> As the cell grows, the total number of Cln3 molecules increases in parallel with total cell <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a>. When the cell is small <i>(left),</i> all of the Cln3 is inactivated by the excess of Cln3-binding protein. As the cell grows, however, it reaches a threshold size at which the number of Cln3 molecules equals the number of Cln3-binding proteins <i>(middle).</i> When the cell exceeds this size, free Cln3 can bind to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4930/">Cdk</a>, which can now trigger the next cell cycle <i>(right).</i>
+</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072306506-390387510.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-33 - <span class="title">How DNA damage arrests the cell cycle in G<sub>1</sub></span></span></center>
+<p>When <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a> is damaged, <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> kinases that phosphorylate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a> are activated. Mdm2 normally binds to p53 and promotes its ubiquitylation and destruction in proteasomes. Phosphorylation of p53 blocks its binding to Mdm2; as a result, p53 accumulates to high levels and stimulates transcription of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> that encodes the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4985/">CKI</a> protein p21. The p21 binds and inactivates <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5201/">G<sub>1</sub>/S-Cdk</a> and S-Cdk complexes, arresting the cell in G<sub>1</sub>. In some cases, DNA damage also induces either the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of Mdm2 or a decrease in Mdm2 production, which causes an increase in p53 (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072306714-182278030.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-34 - <span class="title">An overview of the cell-cycle control system</span></span></center>
+<p>The core of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4944/">cell-cycle control system</a> consists of a series of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a>-<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4930/">Cdk</a> complexes <i>(yellow).</i> The activity of each <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5014/">complex</a> is also influenced by various inhibitory <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4961/">checkpoint</a> mechanisms, which provide information about the extracellular environment, cell damage, and incomplete cell-cycle events <i>(top).</i> These mechanisms are not present in all cell types; many are missing in early embryonic cell cycles, for example.</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 17.4 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072308681-178217822.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-35 - <span class="title">Sculpting the digits in the developing mouse paw by apoptosis</span></span></center>
+<p>(A) The paw in this mouse embryo has been stained with a dye that specifically labels cells that have undergone <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>. The apoptotic cells appear as <i>bright green</i> dots between the developing digits. (B) This interdigital cell death eliminates the tissue between the developing digits, as seen one day later, when few, if any, apoptotic cells can be seen. (From W. Wood et al., <i>Development</i> 127:5245–5252, 2000. © The Company of Biologists.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072308842-882929694.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-36 - <span class="title">Apoptosis during the metamorphosis of a tadpole into a frog</span></span></center>
+<p>As a tadpole changes into a frog, the cells in the tadpole tail are induced to undergo <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>; as a consequence, the tail is lost. All the changes that occur during metamorphosis, including the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5329/">induction</a> of apoptosis in the tail, are stimulated by an increase in thyroid <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5295/">hormone</a> in the blood.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072309012-270707063.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-37 - <span class="title">Cell death</span></span></center>
+<p>These <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs show cells that have died by (A) necrosis or (B and C) <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>. The cells in (A) and (B) died in a culture dish, whereas the cell in (C) died in a developing tissue and has been engulfed by a neighboring cell. Note that the cell in (A) seems to have exploded, whereas those in (B) and (C) have condensed but seem relatively intact. The large vacuoles visible in the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> of the cell in (B) are a variable feature of apoptosis. (Courtesy of Julia Burne.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072309236-40400118.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-38 - <span class="title">The caspase cascade involved in apoptosis</span></span></center>
+<p>(A) Each suicide protease is made as an inactive proenzyme (procaspase), which is usually activated by proteolytic <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a> by another member of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4920/">caspase</a> family. As indicated, two of the cleaved fragments associate to form the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4772/">active site</a> of the caspase. The active <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5137/">enzyme</a> is thought to be a tetramer of two of these units (not shown). (B) Each activated caspase <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> can cleave many procaspase molecules, thereby activating them, and these can then activate even more procaspase molecules. In this way, an initial activation of a small number of procaspase molecules (called initiator caspases) can lead, via an amplifying chain <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5717/">reaction</a> (a cascade), to the explosive activation of a large number of procaspase molecules. Some of the activated caspases (called effector caspases) then cleave a number of key proteins in the cell, including specific cytosolic proteins and nuclear lamins, leading to the controlled death of the cell.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072309432-618711198.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-39 - <span class="title">Induction of apoptosis by either extracellular or intracellular stimuli</span></span></center>
+<p>(A) Extracellular activation. A killer <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5411/">lymphocyte</a> carrying the Fas <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5393/">ligand</a> binds and activates Fas proteins on the surface of the target cell. Adaptor proteins bind to the intracellular region of aggregated Fas proteins, causing the aggregation of procaspase-8 molecules. These then cleave one another to initiate the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4920/">caspase</a> cascade. (B) Intracellular activation. Mitochondria release <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5049/">cytochrome</a> <i>c,</i> which binds to and causes the aggregation of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4778/">adaptor protein</a> Apaf-1. Apaf-1 binds and aggregates procaspase-9 molecules, which leads to the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4992/">cleavage</a> of these molecules and the triggering of a caspase cascade. Other proteins that contribute to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a> are also released from the mitochondrial <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5348/">intermembrane space</a> (not shown).</p><p><html><div style="page-break-after: always;"></div></html></p><center><h1>Chapter 17.5 - Figures</h1></center><p>&nbsp;</p><center><img src="https://39363.org/IMAGE_BUCKET/1638072311921-453629130.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-40 - <span class="title">A platelet</span></span></center>
+<p>Platelets are miniature cells without a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5568/">nucleus</a>. They circulate in the blood and help stimulate blood clotting at sites of tissue damage, thereby preventing excessive bleeding. They also release various factors that stimulate healing. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5646/">platelet</a> shown here has been cut in half to show its secretory vesicles, some of which contain platelet-derived <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5255/">growth factor</a> (PDGF). See also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2995/figure/A3032/?report=objectonly" rid-figpopup="figA3032" rid-ob="figobA3032" target="object">Figure 16-47B</a>-<a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A2995/figure/A3032/?report=objectonly" rid-figpopup="figA3032" rid-ob="figobA3032" target="object">D</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072312089-702632147.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-41 - <span class="title">A simplified model of one way that mitogens stimulate cell division</span></span></center>
+<p>The binding of mitogens to cell-surface receptors leads to the activation of Ras and a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5466/">MAP</a> kinase cascade. One effect of this pathway is the increased production of the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5213/">gene regulatory protein</a> Myc. Myc increases the transcription of several genes, including the gene encoding <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5044/">cyclin</a> D and a gene encoding a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5840/">subunit</a> of the SCF <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5911/">ubiquitin ligase</a>. The resulting increase in <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5202/">G<sub>1</sub>-Cdk</a> and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5201/">G<sub>1</sub>/S-Cdk</a> activities promotes Rb <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> and activation of the gene regulatory protein E2F, resulting in S-phase entry (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3214/figure/A3233/?report=objectonly" rid-figpopup="figA3233" rid-ob="figobA3233" target="object">Figure 17-30</a>). Myc may also promote E2F activity directly by stimulating the transcription of the <i>E2F</i> gene. Although, for simplicity, Myc is shown as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5489/">monomer</a>, it functions as a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5277/">heterodimer</a> with another protein called Max.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072312296-294337520.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-42 - <span class="title">Cell-cycle arrest or apoptosis induced by excessive stimulation of mitogenic pathways</span></span></center>
+<p>Abnormally high levels of Myc cause the activation of p19<sup>ARF</sup>, which binds and inhibits Mdm2 and thereby causes increased <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5596/">p53</a> levels (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3214/figure/A3241/?report=objectonly" rid-figpopup="figA3241" rid-ob="figobA3241" target="object">Figure 17-33</a>). Depending on the cell type and extracellular conditions, p53 then causes either cell-cycle arrest or <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072312477-537794152.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-43 - <span class="title">Overcoming replicative cell senescence by the forced expression of telomerase</span></span></center>
+<p>(A) Normal human fibroblasts do not contain <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5858/">telomerase</a>, and so their telomeres gradually shorten and lose their normal cap structure as the cells proliferate. Cells forced to express telomerase, however, maintain <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5859/">telomere</a> length (and normal cap structures) after many divisions. (B) The normal human fibroblasts stopped dividing after about 50–60 divisions in these experiments, whereas the cells expressing telomerase were still dividing at the end of the experiment. (Based on A. Bodnar et al., <i>Science</i> 279:349–352, 1998.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072312639-21519240.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-44 - <span class="title">One way in which growth factors promote cell growth</span></span></center>
+<p>In this simplified scheme, activation of cell-surface receptors leads to the activation of PI 3-kinase, which promotes <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> synthesis, at least partly through the activation of eIF4E and S6 kinase. Growth factors also inhibit protein breakdown (not shown) by poorly understood pathways.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072312804-695036498.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-45 - <span class="title">The size difference between a neuron (from the retina) and a lymphocyte in a mammal</span></span></center>
+<p>Both cells contain the same amount of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5084/">DNA</a>. A neuron grows progressively larger after it has permanently withdrawn from the cell cycle. During this time, the ratio of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5053/">cytoplasm</a> to DNA increases enormously (by a factor of more than 10<sup>5</sup> for some neurons). (Neuron from B.B. Boycott, in Essays on the Nervous System [R. Bellairs and E.<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Gray, eds]. Oxford, UK: Clarendon Press, 1974.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072313006-61887073.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-46 - <span class="title">The function of cell death in matching the number of developing nerve cells to the number of target cells they contact</span></span></center>
+<p>More nerve cells are produced than can be supported by the limited amount of survival factors released by the target cells. Therefore, some cells receive an insufficient amount of survival factors to keep their suicide program suppressed and, as a consequence, undergo <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a>. This strategy of overproduction followed by culling ensures that all target cells are contacted by nerve cells and that the extra nerve cells are automatically eliminated.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072313183-352040905.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-47 - <span class="title">Two ways in which survival factors suppress apoptosis</span></span></center>
+<p>(A) In mammalian cells, the binding of some survival factors to cell-surface receptors leads to the activation of various <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> kinases, including <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5691/">protein kinase</a> B (PKB), that phosphorylate and inactivate the Bcl-2 family member Bad. When not phosphorylated, Bad promotes <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4839/">apoptosis</a> by binding and inhibiting Bcl-2. Once phosphorylated, Bad dissociates, freeing Bcl-2 to suppress apoptosis. As indicated, PKB also suppresses death by phosphorylating and thereby inhibiting <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a> regulatory proteins of the Forkhead family that stimulate the transcription of genes that encode proteins that promote apoptosis. (B) In <i>Drosophila</i>, some survival factors inhibit apoptosis by stimulating the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5629/">phosphorylation</a> of the Hid protein. When not phosphorylated, Hid promotes cell death by inhibiting IAPs. Once phosphorylated, Hid no longer inhibits IAPs, which become active and block cell death.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072313404-543324337.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-48 - <span class="title">The effect of fresh medium on a confluent cell monolayer</span></span></center>
+<p>Cells in a confluent monolayer do not divide <i>(gray).</i> The cells resume dividing <i>(green)</i> when exposed directly to fresh culture medium. Apparently, in the undisturbed confluent monolayer, proliferation has halted because the medium close to the cells is depleted of mitogens, for which the cells compete.</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072313609-824458292.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-49 - <span class="title">The dependence of cell division on cell shape and anchorage</span></span></center>
+<p>In this experiment, cells are either held in suspension or allowed to settle on patches of an adhesive material (palladium) on a nonadhesive <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a>. The patch diameter, which is variable, determines the extent to which an individual cell spreads and the probability that it will progress into <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5769/">S phase</a>. <sup>3</sup>H-thymidine is added to the culture medium, and after 1 or 2 days, the culture is fixed and autoradiographed to determine the percentage of cells that have entered S phase (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3169/figure/A3184/?report=objectonly" rid-figpopup="figA3184" rid-ob="figobA3184" target="object">Figure 17-11A</a>). (A) Few cells of the 3T3 <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4941/">cell line</a> enter S phase when held rounded up in suspension, but adherence even to a very tiny patch—one that is too small to allow spreading—enables many of them to enter S phase. (B and C) These scanning <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5118/">electron</a> micrographs show a cell perched on a small patch compared with a cell spread on a large patch.</p><p>In contrast to fibroblasts and epithelial cells, some cell types in the body (including lymphocytes and blood cell precursors) can divide readily in suspension (see also <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A3532/figure/A3587/?report=objectonly" rid-figpopup="figA3587" rid-ob="figobA3587" target="object">Figure 19-62</a>). (B and C, from C. O'Neill, P. Jordan, and <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Ireland, <i>Cell</i> 44:489–496, 1986. © Elsevier.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072313776-983575495.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-50 - <span class="title">Focal adhesions as production sites of intracellular signals</span></span></center>
+<p>This fluorescence <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5177/">fibroblast</a> cultured on a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5839/">substratum</a> coated with the <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5164/">extracellular matrix</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5486/">molecule</a> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5178/">fibronectin</a>. Actin filaments have been labeled to fluoresce <i>green</i>, while activated proteins that contain phosphotyrosine have been labeled with an antibody that is tagged to fluoresce <i>red</i>. Where the two components overlap, the resulting color is <i>orange</i>. The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4766/">actin</a> filaments terminate at focal adhesions, where the cell attaches to the substratum. Proteins containing phosphotyrosine are also concentrated at these sites. This is thought to reflect the local activation of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5188/">focal adhesion kinase</a> (<a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5167/">FAK</a>) and other <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5688/">protein</a> kinases stimulated by transmembrane <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5343/">integrin</a> proteins that bind to fibronectin extracellularly and (indirectly) to actin filaments intracellularly. Signals generated at such adhesion sites help regulate <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A4937/">cell division</a>, growth, and survival, in both fibroblasts and epithelial cells. (Courtesy of Keith Burridge.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072313954-895879384.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-51 - <span class="title">The effects of a myostatin mutation on muscle size</span></span></center>
+<p>The <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5502/">mutation</a> leads to a dramatic increase in the mass of muscle tissue, as illustrated in this Belgian Blue bull. The Belgium Blue was produced by cattle breeders and was only recently found to have a mutation in the <i>myostatin</i> <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5215/">gene</a>. Mice purposely made deficient in the same gene also have remarkably big muscles (see <a class="figpopup" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4166/figure/A4173/?report=objectonly" rid-figpopup="figA4173" rid-ob="figobA4173" target="object">Figure 22-43</a>). (From A.C. McPherron and S.-J. Lee, <i>Proc. Natl. Acad. Sci. USA</i> 94:12457–12461, 1997. © National Academy of Sciences.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072314122-270016970.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-52 - <span class="title">Sections of kidney tubules from salamander larvae of different ploidies</span></span></center>
+<p>In all organisms, from bacteria to humans, cell size is proportional to <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5650/">ploidy</a>. Pentaploid salamanders, for example, have cells that are much larger than those of <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5264/">haploid</a> salamanders. The animals and their individual organs, however, are the same size because each tissue in the pentaploid animal contains fewer cells. This indicates that the size of an organism or organ is not controlled simply by counting cell divisions or cell numbers; total cell mass must somehow be regulated. (Adapted from <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Fankhauser, in Analysis of Development [B.H. Willier, P.A. Weiss, and V. Hamburger, eds.], pp. 126–150. Philadelphia: Saunders, 1955.)</p><p><html><div style="page-break-after: always;"></div></html></p><center><img src="https://39363.org/IMAGE_BUCKET/1638072314287-230949637.jpg" style="zoom:100%;"></center>
+<center><span style="color:#97CA8A">Figure 17-53 - <span class="title">The hindbrain in a haploid and in a tetraploid salamander</span></span></center>
+<p>(A) This light <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5460/">micrograph</a> shows a cross <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5785/">section</a> of the hindbrain of a <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5264/">haploid</a> salamander. (B) A corresponding cross section of the hindbrain of a tetraploid salamander, revealing how reduced cell numbers compensate for increased cell size. (From <a class="def" href="https://www.ncbi.nlm.nih.gov/books/n/mboc4/A4754/def-item/A5198/">G</a>. Fankhauser, <i>Int. Rev. Cytol.</i> 1:165–193, 1952.)</p><p><html><div style="page-break-after: always;"></div></html></p></div></div>
+</body>
+</html>
