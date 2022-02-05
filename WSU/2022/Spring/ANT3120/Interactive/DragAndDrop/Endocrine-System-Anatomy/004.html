@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>004</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pharynx" title="Pharynx" href="" coords="1636.05905511811,292.49070866141733,1790.8965354330708,241.18015748031496" shape="rect">
+			<area target="" alt="Parathyroid Glands" title="Parathyroid Glands" href="" coords="1600.4729133858268,443.4083464566929,1915.0344881889764,392.09779527559056" shape="rect">
+			<area target="" alt="Esophagus" title="Esophagus" href="" coords="1658.1970078740158,729.8330708661417,1857.3103937007875,678.5225196850394" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="1658.1970078740158,859.7851968503936,1815.724094488189,808.4746456692912" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="468.9555905511811,729.8330708661417,668.0689763779528,678.5225196850394" shape="rect">
+			<area target="" alt="Inferior Thyroid Artery" title="Inferior Thyroid Artery" href="" coords="331.03448818897635,834.1299212598425,717.103464566929,782.8193700787401" shape="rect">
+			<area target="" alt="Common Carotid Artery" title="Common Carotid Artery" href="" coords="344.8763779527559,660.176220472441,730.9453543307086,608.8656692913386" shape="rect">
+			<area target="" alt="Isthmus" title="Isthmus" href="" coords="537.9108661417323,597.8168503937009,722.6568503937008,546.5062992125985" shape="rect">
+			<area target="" alt="Thyroid Gland" title="Thyroid Gland" href="" coords="468.95543307086615,528.16,722.6566929133859,476.84944881889766" shape="rect">
+			<area target="" alt="Larynx" title="Larynx" href="" coords="459.18488188976374,400.87464566929134,616.6368503937008,349.56409448818897" shape="rect">
+			<area target="" alt="Superior Thyroid Artery" title="Superior Thyroid Artery" href="" coords="296.6274015748032,324.232125984252,682.6963779527559,272.9215748031496" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642230791832-606122715.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Endocrine-System-Anatomy/005.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

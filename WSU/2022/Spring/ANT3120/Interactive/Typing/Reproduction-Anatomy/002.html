@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>002</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="1408.6700787401576,72.00031496062992,1559.172440944882,20.68976377952756" shape="rect">
+			<area target="" alt="Seminal Vesicle" title="Seminal Vesicle" href="" coords="1435.1527559055119,310.3453543307087,1696.551653543307,259.0348031496063" shape="rect">
+			<area target="" alt="Ejaculatory Duct" title="Ejaculatory Duct" href="" coords="1448.8078740157482,419.17228346456693,1730.8963779527562,367.86173228346456" shape="rect">
+			<area target="" alt="Rectum" title="Rectum" href="" coords="1462.8770078740158,468.4138582677166,1612.1381102362207,439.8620472440945" shape="rect">
+			<area target="" alt="Prostate Gland" title="Prostate Gland" href="" coords="1469.4974803149605,527.9992125984252,1730.8963779527558,476.6886614173228" shape="rect">
+			<area target="" alt="Bulbourethral Gland" title="Bulbourethral Gland" href="" coords="1408.6700787401576,595.0354330708661,1749.2214173228347,543.7248818897638" shape="rect">
+			<area target="" alt="Anus" title="Anus" href="" coords="1448.8078740157482,678.2070866141731,1559.172440944882,626.8965354330708" shape="rect">
+			<area target="" alt="Ductus Deferens" title="Ductus Deferens" href="" coords="1047.0148031496062,778.7592125984253,1324.1379527559054,727.4486614173229" shape="rect">
+			<area target="" alt="Epididymis" title="Epididymis" href="" coords="1047.0149606299212,847.4488188976378,1239.724251968504,796.1382677165354" shape="rect">
+			<area target="" alt="Testis" title="Testis" href="" coords="1047.0148031496062,916.1384251968504,1166.8965354330708,864.8278740157481" shape="rect">
+			<area target="" alt="Scrotum" title="Scrotum" href="" coords="1047.0148031496062,989.3796850393701,1206.6206299212597,938.0691338582677" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="129.1036220472441,388.5516535433071,396.6513385826771,337.24110236220474" shape="rect">
+			<area target="" alt="Urethra" title="Urethra" href="" coords="248.39133858267715,702.0,403.2714960629921,650.6894488188976" shape="rect">
+			<area target="" alt="Penis" title="Penis" href="" coords="223.7248818897638,777.1033070866142,378.60503937007877,725.7927559055119" shape="rect">
+			<area target="" alt="Glans Penis" title="Glans Penis" href="" coords="223.7248818897638,916.3445669291339,433.0651968503937,865.0340157480315" shape="rect">
+			<area target="" alt="Prepuce" title="Prepuce" href="" coords="273.45937007874016,987.7248818897638,433.0651968503937,936.4143307086614" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290053975-564840829.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Reproduction-Anatomy/003.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

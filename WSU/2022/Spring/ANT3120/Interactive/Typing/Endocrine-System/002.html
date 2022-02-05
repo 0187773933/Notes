@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>002</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Adrenocorticotropic Hormone" title="Adrenocorticotropic Hormone" href="" coords="459.31007874015745,133.2415748031496,938.4828346456693,91.0348031496063" shape="rect">
+			<area target="" alt="Antidiuretic Hormone" title="Antidiuretic Hormone" href="" coords="464.2755905511811,206.22456692913389,830.8965354330708,164.01779527559057" shape="rect">
+			<area target="" alt="Corticotropin Releasing Hormone" title="Corticotropin Releasing Hormone" href="" coords="464.27543307086614,275.07007874015744,996.4138582677166,232.86330708661416" shape="rect">
+			<area target="" alt="Dehydroepiandrosterone" title="Dehydroepiandrosterone" href="" coords="464.2755905511811,340.91685039370077,870.6207874015747,298.7100787401575" shape="rect">
+			<area target="" alt="Erythropoietin" title="Erythropoietin" href="" coords="464.27543307086614,406.76362204724404,720.0,364.55685039370076" shape="rect">
+			<area target="" alt="Follicle Stimulating Hormone" title="Follicle Stimulating Hormone" href="" coords="462.6203149606299,468.8914960629921,923.5862992125984,426.6847244094488" shape="rect">
+			<area target="" alt="Growth Hormone" title="Growth Hormone" href="" coords="464.27543307086614,531.0193700787402,756.4138582677165,488.8125984251968" shape="rect">
+			<area target="" alt="Growth Hormone Releasing Hormone" title="Growth Hormone Releasing Hormone" href="" coords="464.2751181102362,596.8661417322835,1052.6894488188975,554.6593700787402" shape="rect">
+			<area target="" alt="Gonadotropin Releasing Hormone" title="Gonadotropin Releasing Hormone" href="" coords="462.6203149606299,662.0618897637796,996.4138582677165,619.8551181102363" shape="rect">
+			<area target="" alt="Insulin Like Growth Factors" title="Insulin Like Growth Factors" href="" coords="465.9307086614173,725.880472440945,897.1034645669292,683.6737007874017" shape="rect">
+			<area target="" alt="Luteinizing Hormone" title="Luteinizing Hormone" href="" coords="462.6203149606299,789.8847244094488,808.1554330708661,747.6779527559055" shape="rect">
+			<area target="" alt="Norepinephrine" title="Norepinephrine" href="" coords="462.6203149606299,853.8889763779528,733.2412598425196,811.6822047244094" shape="rect">
+			<area target="" alt="Oxytocin" title="Oxytocin" href="" coords="462.62047244094487,919.3593700787402,630.6207874015747,877.1525984251969" shape="rect">
+			<area target="" alt="Prolactin Inhibiting Hormone" title="Prolactin Inhibiting Hormone" href="" coords="462.6203149606299,983.0858267716536,928.5516535433071,940.8790551181103" shape="rect">
+			<area target="" alt="Prolactin" title="Prolactin" href="" coords="464.2751181102362,1049.0604724409447,632.275433070866,1006.8537007874015" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642208527893-747438819.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Endocrine-System/003.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

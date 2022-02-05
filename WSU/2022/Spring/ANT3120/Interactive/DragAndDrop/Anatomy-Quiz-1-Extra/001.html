@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Seminiferous Tubules" title="Seminiferous Tubules" href="" coords="358.063937007874,263.94047244094486,705.9130708661417,217.98677165354331" shape="rect">
+			<area target="" alt="Epididymis" title="Epididymis" href="" coords="358.063937007874,360.10078740157485,551.7188976377953,308.7902362204725" shape="rect">
+			<area target="" alt="Vas Deferens" title="Vas Deferens" href="" coords="358.06409448818897,456.2611023622047,586.9566929133858,404.95055118110236" shape="rect">
+			<area target="" alt="Ejaculatory Duct" title="Ejaculatory Duct" href="" coords="358.063937007874,552.4214173228346,632.347874015748,501.11086614173223" shape="rect">
+			<area target="" alt="Urethra" title="Urethra" href="" coords="353.9885039370079,724.2787401574803,500.86960629921265,672.968188976378" shape="rect">
+			<area target="" alt="Prostatic" title="Prostatic" href="" coords="458.547874015748,792.7943307086614,632.347874015748,741.483779527559" shape="rect">
+			<area target="" alt="Membranous" title="Membranous" href="" coords="459.5870866141732,861.3099212598426,690.2609448818897,809.9993700787402" shape="rect">
+			<area target="" alt="Penile Urethra" title="Penile Urethra" href="" coords="356.30141732283465,937.900157480315,648.7354330708661,886.5896062992126" shape="rect">
+			<area target="" alt="Vagina" title="Vagina" href="" coords="1113.727874015748,263.94047244094486,1244.347874015748,217.98677165354331" shape="rect">
+			<area target="" alt="Cervical Canal" title="Cervical Canal" href="" coords="1113.727874015748,360.10078740157485,1353.9130708661419,308.7902362204725" shape="rect">
+			<area target="" alt="Body of Uterus" title="Body of Uterus" href="" coords="1113.728031496063,456.2611023622047,1369.5651968503937,404.95055118110236" shape="rect">
+			<area target="" alt="Isthmus of Fallopian Tube" title="Isthmus of Fallopian Tube" href="" coords="1113.727874015748,552.4214173228346,1528.592283464567,501.11086614173223" shape="rect">
+			<area target="" alt="Ampulla of Fallopian Tube" title="Ampulla of Fallopian Tube" href="" coords="1113.727874015748,644.6729133858269,1528.592283464567,593.3623622047245" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1643300526221-573124899.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Anatomy-Quiz-1-Extra/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

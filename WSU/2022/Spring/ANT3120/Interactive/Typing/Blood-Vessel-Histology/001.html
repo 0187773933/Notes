@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Lymph Node" title="Lymph Node" href="" coords="864.2837795275591,379.95401574803145,1084.695590551181,328.6434645669291" shape="rect">
+			<area target="" alt="Muscular Arteries" title="Muscular Arteries" href="" coords="1201.2461417322834,392.9974803149606,1497.9130708661417,341.68692913385826" shape="rect">
+			<area target="" alt="Arterioles" title="Arterioles" href="" coords="1225.2462992125984,794.812283464567,1408.695748031496,743.5017322834647" shape="rect">
+			<area target="" alt="Terminal Arteriole" title="Terminal Arteriole" href="" coords="1225.2462992125984,903.780157480315,1535.4782677165354,852.4696062992126" shape="rect">
+			<area target="" alt="Metarteriole" title="Metarteriole" href="" coords="1225.2462992125984,977.1911811023622,1444.695590551181,925.8806299212598" shape="rect">
+			<area target="" alt="Precapillary Sphincter" title="Precapillary Sphincter" href="" coords="991.8288188976378,1047.967244094488,1347.7332283464566,996.6566929133858" shape="rect">
+			<area target="" alt="Capillaries" title="Capillaries" href="" coords="790.4346456692913,1070.492125984252,979.1851968503936,1019.1815748031496" shape="rect">
+			<area target="" alt="Thoroughfare Channel" title="Thoroughfare Channel" href="" coords="384.5215748031496,1068.3337007874015,761.4907086614173,1017.0231496062993" shape="rect">
+			<area target="" alt="Sinusoid" title="Sinusoid" href="" coords="475.304094488189,993.5262992125984,650.7099212598425,942.215748031496" shape="rect">
+			<area target="" alt="Postcapillary Venule" title="Postcapillary Venule" href="" coords="339.652125984252,919.1955905511811,666.9697637795275,867.8850393700787" shape="rect">
+			<area target="" alt="Lymphatic Capillary" title="Lymphatic Capillary" href="" coords="936.8055118110236,729.8330708661417,1260.0,678.5225196850394" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644025006528-73290893.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessel-Histology/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

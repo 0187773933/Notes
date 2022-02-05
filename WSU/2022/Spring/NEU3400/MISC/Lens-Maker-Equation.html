@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lens Maker Equation</title>
+	<link href="https://39363.org/CDN/NOTES/favicon.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/github-markdown.css" crossorigin="anonymous" />
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<link rel="stylesheet" href="https://39363.org/CDN/NOTES/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://39363.org/CDN/NOTES/katex.min.js"  crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/mhchem.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://39363.org/CDN/NOTES/auto-render.min.js" crossorigin="anonymous"></script>
+	<script src="https://39363.org/CDN/NOTES/ABCEquations.js"></script>
+	<style>
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+</head>
+<body onload="init()">
+	<article class="markdown-body">
+
+		<center>
+			<h1>Lens-Maker's Equation</h1>
+			<blockquote>$$\frac{1}{F} = \left(n-1\right) * \left(\frac{1}{R_1} - \frac{1}{R_2}\right)$$</blockquote>
+			<blockquote>$$F = \frac{1}{\left(n-1\right) * \left(\frac{1}{R_1} - \frac{1}{R_2}\right)}$$</blockquote>
+			<!-- <ul>
+				<li>Where :</li>
+				<ul>
+					<li>$F$ = focal length</li>
+					<li>$n$ = refractive index</li>
+					<li>$R$ = radius of curvature</li>
+				</ul>
+			</ul> -->
+			<img src="https://39363.org/IMAGE_BUCKET/1643561891133-697113901.jpeg" style="zoom:67%;"></img>
+		</center>
+
+		<!-- <input id="show_info" type="checkbox" class="checkbox" name="show_info" checked="0" value="0" onchange="on_show_info(this)"></input>
+		<label for="show_info">&nbsp;Info&nbsp;</label>
+		<div id="info" style="display:none;" >
+			<center></center>
+		</div> -->
+
+		<div class="abc-equation" name="Lens Maker Equation" id="LensMakerEquation" >
+			<!-- <div class="equation-display">
+				<p>$$\Delta G = Heat\ of\ Reaction (\Delta H) - \left(\ Temperature (T_{kelvin}) * Entropy\ Change\ (\Delta S)\ \right)$$</p>
+			</div> -->
+			<div class="operator" name="refractive-index" >
+				<div class="input" unit_name="" default_value="1.513" default_base10="0" slider_min="1.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="R-1" >
+				<div class="input" unit_name="" default_value="2.0" default_base10="0" slider_min="1.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<div class="operator" name="R-2" >
+				<div class="input" unit_name="" default_value="-2.0" default_base10="0" slider_min="1.0" slider_max="100.0" slider_step="1.0"></div>
+				<div class="output" default_base10="0" ></div>
+			</div>
+			<script>
+				function LensMakerEquationCalculationFunction() {
+					this.log( "LensMakerEquationCalculationFunction()" );
+					this.result = ( 1.0 / ( ( this["refractive-index"].output.adjusted_value - 1 ) * ( ( 1.0 / this["R-1"].output.adjusted_value ) - ( 1.0 / this["R-2"].output.adjusted_value ) ) ) );
+					this.equation_live_string_latex = String.raw`$$F = \frac{1}{\left(${this["refractive-index"].output.final_latex_string} - 1 \right) * \left(\frac{1}{${this["R-1"].output.final_latex_string}} - \frac{1}{${this["R-2"].output.final_latex_string}}\right)} = ${this.result}$$`;
+					this.equation_live_string = `F = ( 1 / ( ( ${this["refractive-index"].output.final_string} - 1 ) * ( ( 1 / ${this["R-1"].output.final_string} ) - ( 1 / ${this["R-2"].output.final_string} ) ) ) ) = ${this.result}`;
+
+					// this.equation_live_string = `𝝙G = ( ${this["heat-of-reaction"].output.final_string} - ( ( ${this["temperature"].output.final_string} ) * ( ${this["entropy-change"].output.final_string} ) ) ) = ${this.result} ${this["heat-of-reaction"].output.units.label} Joules`;
+
+				}
+			</script>
+		</div>
+
+	</article>
+
+	<script>
+		function init() {
+			try { document.getElementById( "show_info" ).checked = false; } catch( e ) {}
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+			ABCEquationsHookDIVS();
+			console.log( ABC_EQUATION_WRAPPERS );
+		}
+		function on_show_info( checkbox ) {
+			console.log( `Show Info Enabled === ${checkbox.checked}` );
+			if ( checkbox.checked ) {
+				document.getElementById( "info" ).style.display = "block";
+			} else {
+				document.getElementById( "info" ).style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>

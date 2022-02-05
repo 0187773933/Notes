@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>032</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Vestibule" title="Vestibule" href="" coords="1374.8938582677165,217.4615748031496,1559.1724409448818,166.15102362204723" shape="rect">
+			<area target="" alt="External Urethral Orifice" title="External Urethral Orifice" href="" coords="1333.5144881889762,445.8755905511811,1724.6896062992123,394.56503937007875" shape="rect">
+			<area target="" alt="Vaginal Orifice" title="Vaginal Orifice" href="" coords="1392.472125984252,729.8330708661417,1598.268031496063,678.5225196850394" shape="rect">
+			<area target="" alt="Prepuce of Clitoris" title="Prepuce of Clitoris" href="" coords="259.86204724409447,193.36330708661418,566.6234645669291,142.05275590551182" shape="rect">
+			<area target="" alt="Glans Clitoris" title="Glans Clitoris" href="" coords="339.3103937007874,357.7611023622047,568.2785826771653,306.45055118110236" shape="rect">
+			<area target="" alt="Frenulum of Clitoris" title="Frenulum of Clitoris" href="" coords="221.00456692913386,522.1588976377952,556.6924409448818,470.84834645669287" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290090363-805387472.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Reproduction-Anatomy/033.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

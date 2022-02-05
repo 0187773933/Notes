@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Artery" title="Artery" href="" coords="602.6086614173228,120.12787401574803,733.7307086614172,68.81732283464567" shape="rect">
+			<area target="" alt="Vein" title="Vein" href="" coords="1238.6088188976378,233.3451968503937,1344.5218897637794,182.03464566929134" shape="rect">
+			<area target="" alt="Endothelium" title="Endothelium" href="" coords="793.0434645669292,370.9565354330709,1025.2173228346458,339.67590551181104" shape="rect">
+			<area target="" alt="Subendothelial Layer" title="Subendothelial Layer" href="" coords="770.0869291338582,407.47826771653547,1112.8696062992126,376.1976377952756" shape="rect">
+			<area target="" alt="Internal Elastic Membrane" title="Internal Elastic Membrane" href="" coords="750.2607874015748,443.50188976377956,1169.7390551181102,412.2212598425197" shape="rect">
+			<area target="" alt="External Elastic Membrane" title="External Elastic Membrane" href="" coords="750.2607874015748,551.6371653543307,1186.4348031496063,513.9456692913386" shape="rect">
+			<area target="" alt="Valve" title="Valve" href="" coords="1116.0,733.3385826771654,1231.304566929134,682.028031496063" shape="rect">
+			<area target="" alt="Vasa Vasorum" title="Vasa Vasorum" href="" coords="793.0434645669292,663.7848818897637,1045.0434645669293,626.0933858267716" shape="rect">
+			<area target="" alt="Capillary Network" title="Capillary Network" href="" coords="994.4344881889763,897.9653543307086,1303.8261417322833,860.2738582677165" shape="rect">
+			<area target="" alt="Lumen" title="Lumen" href="" coords="1276.6478740157481,954.2017322834646,1412.3957480314962,902.8911811023622" shape="rect">
+			<area target="" alt="Endothelial Cells" title="Endothelial Cells" href="" coords="1176.7826771653542,1054.3851968503936,1455.6522834645668,1003.0746456692914" shape="rect">
+			<area target="" alt="Basement Membrane" title="Basement Membrane" href="" coords="1197.7738582677166,996.8190551181102,1554.1218897637796,959.1275590551181" shape="rect">
+			<area target="" alt="Lumen" title="Lumen" href="" coords="482.03905511811024,952.9535433070866,617.7869291338583,901.6429921259843" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644025008256-215163302.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessel-Histology/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

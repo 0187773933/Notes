@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>025</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Dorsal Vein" title="Dorsal Vein" href="" coords="539.5861417322834,181.6259842519685,744.827716535433,130.31543307086613" shape="rect">
+			<area target="" alt="Dorsal Vein" title="Dorsal Vein" href="" coords="918.6203149606299,155.97070866141732,1123.8618897637796,104.66015748031495" shape="rect">
+			<area target="" alt="Dorsal Arteries" title="Dorsal Arteries" href="" coords="1339.8615748031498,612.2170078740157,1598.8963779527562,560.9064566929134" shape="rect">
+			<area target="" alt="Urethra" title="Urethra" href="" coords="1305.1031496062992,831.7245669291339,1454.8965354330708,780.4140157480315" shape="rect">
+			<area target="" alt="Corpus Spongiosum" title="Corpus Spongiosum" href="" coords="317.79322834645666,849.7349606299213,649.3384251968504,798.4244094488189" shape="rect">
+			<area target="" alt="Deep Artery" title="Deep Artery" href="" coords="317.79322834645666,602.2862992125985,576.828031496063,550.9757480314961" shape="rect">
+			<area target="" alt="Corpus Cavernosum" title="Corpus Cavernosum" href="" coords="285.7724409448819,354.8376377952756,617.3176377952757,303.52708661417324" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290082479-767314418.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Reproduction-Anatomy/026.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

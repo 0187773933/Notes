@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pericyte" title="Pericyte" href="" coords="1385.2171653543307,55.954015748031495,1543.304251968504,4.643464566929134" shape="rect">
+			<area target="" alt="Red Blood Cell" title="Red Blood Cell" href="" coords="1383.651968503937,188.99732283464567,1635.652125984252,137.6867716535433" shape="rect">
+			<area target="" alt="Intercellular Cleft" title="Intercellular Cleft" href="" coords="1385.2171653543307,366.38866141732285,1673.2173228346458,315.0781102362205" shape="rect">
+			<area target="" alt="Endothelial Cell" title="Endothelial Cell" href="" coords="1385.2171653543307,501.4552755905512,1648.1738582677167,450.1447244094488" shape="rect">
+			<area target="" alt="Pinocytotic Vesicles" title="Pinocytotic Vesicles" href="" coords="1378.1735433070867,790.7275590551181,1699.8261417322835,739.4170078740158" shape="rect">
+			<area target="" alt="Endothelial Nucleus" title="Endothelial Nucleus" href="" coords="433.5651968503937,844.7595275590551,761.2173228346456,793.4489763779527" shape="rect">
+			<area target="" alt="Tight Junction" title="Tight Junction" href="" coords="433.5651968503937,779.7711811023622,683.4781102362205,728.4606299212599" shape="rect">
+			<area target="" alt="Basement Membrane" title="Basement Membrane" href="" coords="153.39133858267718,661.3363779527559,508.69543307086616,610.0258267716536" shape="rect">
+			<area target="" alt="Continuous Capillary" title="Continuous Capillary" href="" coords="412.1738582677165,979.6869291338583,761.2173228346456,928.3763779527559" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644025008766-721668636.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessel-Histology/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

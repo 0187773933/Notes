@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ANT 3100 - Notecards - Physiology - Homeostasis and Metabolism</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index - 1 );
+				if ( window.DECK.active_index < 0 ) { window.DECK.active_index = ( window.DECK.questions.length - 1 ); }
+				render_active_card();
+			}
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index + 1 );
+				if ( window.DECK.active_index > ( window.DECK.questions.length - 1 ) ) { window.DECK.active_index = 0; }
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			// console.log( window.DECK.questions.length , window.DECK.active_index );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.DECK.active_index ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.DECK.active_index ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${window.DECK.active_index + 1}` );
+			render_katex();
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.DECK.active_index = 0;
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			$( "#current-card-number" ).text( `${window.DECK.active_index + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_number": 19 ,
+			"chapter_title": "Cardiovascular System - Blood" ,
+			"questions": [
+				{
+					"prompt": "Which of the following functions is associated with the blood?" ,
+					"choices": [
+						"Delivery of O<sub>2</sub> to tissue cells" ,
+						"Transport of digestive enzymes to the small intestine" ,
+						"Maintenance of DNA content of egg cells" ,
+						"Transport of neurotransmitters across synapses" ,
+						"Electrical stimulation of the heart"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A white blood cell engulfing a bacterium is an example of blood functioning in ________." ,
+					"choices": [
+						"protection" ,
+						"communication" ,
+						"maintenance" ,
+						"transportation"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which type of material is NOT transported by the blood?" ,
+					"choices": [
+						"Blood gases" ,
+						"Nutrients" ,
+						"Lactate" ,
+						"Neurotransmitters" ,
+						"Hormones" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "If a blood buffer is absent, which function of the blood would be compromised?" ,
+					"choices": [
+						"Maintenance of body temperature" ,
+						"Regulation of pH" ,
+						"Clot formation" ,
+						"Transport of ions" ,
+						"Protection against foreign substances"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Plasma is ________ while formed elements are ________." ,
+					"choices": [
+						"a blood gas; blood clots" ,
+						"the liquid portion of blood; the cells" ,
+						"lacking in protein; regulators of blood osmolality" ,
+						"the cellular portion of blood; acellular components" ,
+						"mostly protein; the matrix"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Blood is a type of ________tissue." ,
+					"choices": [
+						"epithelial" ,
+						"glandular" ,
+						"connective" ,
+						"areolar"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Plasma accounts for ________ of total blood volume." ,
+					"choices": [
+						"50%" ,
+						"90%" ,
+						"75%" ,
+						"55%"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following is the most abundant of the plasma proteins?" ,
+					"choices": [
+						"Albumin" ,
+						"Globulins" ,
+						"Fibrinogen" ,
+						"Immunoglobulins" ,
+						"Hemoglobin"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Plasma" ,
+					"choices": [
+						"is one of the formed elements." ,
+						"is the liquid matrix of the blood." ,
+						"transports waste products but not nutrients." ,
+						"accounts for less than half of the blood volume." ,
+						"is serum plus formed elements."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Functions of plasma proteins include" ,
+					"choices": [
+						"body temperature regulation." ,
+						"regulation of osmotic pressure." ,
+						"transportation of O<sub>2</sub> and CO<sub>2</sub>" ,
+						"serving as a source of energy for metabolism."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The plasma component that forms fibrin, the insoluble protein, in a blood clot is ________." ,
+					"choices": [
+						"Na<sup>+</sup>" ,
+						"albumin" ,
+						"globulin" ,
+						"fibrinogen" ,
+						"fibrinolysis"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT true of plasma?" ,
+					"choices": [
+						"Plasma is about 91% water." ,
+						"Plasma is a colloid." ,
+						"Plasma volume can change drastically" ,
+						"The color of plasma is yellow."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which plasma protein is correctly matched to its function?" ,
+					"choices": [
+						"Fibrinogen – transport of fatty acids" ,
+						"Albumin – helps to fight infection" ,
+						"Globulin – transport and immunity" ,
+						"Globulin – blood clotting"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The only formed elements that possess a nucleus when mature are the ________." ,
+					"choices": [
+						"thrombocytes" ,
+						"erythrocytes" ,
+						"leukocytes" ,
+						"RBCs"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Hemocytoblasts" ,
+					"choices": [
+						"are specialized cells." ,
+						"are found in yellow bone marrow." ,
+						"form branches of trees." ,
+						"are abundant in the plasma." ,
+						"give rise to all formed elements in the blood."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following is (are) associated with decreased hematopoiesis?" ,
+					"choices": [
+						"Hemorrhage" ,
+						"Vitamin B<sub>12</sub> deficiency" ,
+						"Iron deficiency anemia" ,
+						"Restricted blood flow to the kidney" ,
+						"Both \"Vitamin B<sub>12</sub> deficiency\" and \"Iron deficiency anemia\" are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Neutrophils are derived from a population of intermediate cells called ________." ,
+					"choices": [
+						"lymphoblasts" ,
+						"proerythroblasts" ,
+						"myeloblasts" ,
+						"megakaryoblasts" ,
+						"monoblasts"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Red blood cells will develop from ________." ,
+					"choices": [
+						"proerythroblasts" ,
+						"monoblasts" ,
+						"myeloblasts" ,
+						"megakaryoblasts" ,
+						"lymphoblasts"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following phrases is <b>least</b> likely to be used in describing erythrocytes?" ,
+					"choices": [
+						"Biconcave cells" ,
+						"Cells can change shape" ,
+						"Cytoplasm contains hemoglobin" ,
+						"Nucleus is centrally located" ,
+						"Main role is transporting blood gases"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Mature erythrocytes" ,
+					"choices": [
+						"have a centrally located nucleus." ,
+						"are actually just cellular fragments." ,
+						"contain hemoglobin in their cytoplas" ,
+						"mature from cells called megakaryocytes." ,
+						"do not contain protein."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Hemoglobin" ,
+					"choices": [
+						"gives white blood cells their color." ,
+						"transports O<sub>2</sub> in the blood." ,
+						"is normally found in both the plasma and erythrocytes." ,
+						"catalyzes the reaction that forms carbonic acid." ,
+						"is only used once then decomposed."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "An increase in hemoglobin increases" ,
+					"choices": [
+						"the ability of the blood to carry O<sub>2</sub> to various tissues." ,
+						"the quantity of plasma protein available for blood clotting." ,
+						"the leukocyte count." ,
+						"the body's immune response." ,
+						"the osmotic pressure of the blood."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "How much O<sub>2</sub> is generally transported in combination with hemoglobin in red blood cells?" ,
+					"choices": [
+						"1.5%" ,
+						"7%" ,
+						"70%" ,
+						"98.5%"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a method of CO<sub>2</sub> transport in the blood?" ,
+					"choices": [
+						"Combined with hemoglobin" ,
+						"Dissolved in the plasma" ,
+						"As bicarbonate ions in the plasma" ,
+						"Held in the depression of a red blood cell"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What may be affected if the enzyme carbonic anhydrase was not made in the body?" ,
+					"choices": [
+						"Conversion of hemoglobin to oxyhemoglobin" ,
+						"Conversion of CO<sub>2</sub> to bicarbonate ion" ,
+						"Transport of O<sub>2</sub> by hemoglobin" ,
+						"Hemolysis of red blood cells"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Rupture of a red blood cell is called hematopoiesis." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Each hemoglobin molecule" ,
+					"choices": [
+						"has one heme group." ,
+						"contains two polypeptide chains." ,
+						"transports four oxygen molecules." ,
+						"has two iron atoms and two globin chains." ,
+						"transports one oxygen molecule."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a form of hemoglobin found in the developing human?" ,
+					"choices": [
+						"Adult" ,
+						"Embryonic" ,
+						"Adolescent" ,
+						"Fetal"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The combination of hemoglobin and carbon dioxide is ________." ,
+					"choices": [
+						"carboxyhemoglobin" ,
+						"oxyhemoglobin" ,
+						"deoxyhemoglobin" ,
+						"carbaminohemoglobin"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which gas, also carried by a hemoglobin, may help regulate blood pressure?" ,
+					"choices": [
+						"Carbon monoxide" ,
+						"Carbon dioxide" ,
+						"Nitrogen" ,
+						"Nitric oxide"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The oxygenated form of hemoglobin is called ________." ,
+					"choices": [
+						"oxyhemoglobin" ,
+						"deoxyhemoglobin" ,
+						"carboxyhemoglobin" ,
+						"carbaminohemoglobin" ,
+						"loaded hemoglobin"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Iron" ,
+					"choices": [
+						"is needed to produce hemoglobin." ,
+						"is a plasma coagulation factor." ,
+						"is the binding site for carbon dioxide on the hemoglobin molecule." ,
+						"prevents carbon monoxide from binding to hemoglobin." ,
+						"interferes with the normal function of hemoglobin."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following cell types is an immature red blood cell?" ,
+					"choices": [
+						"Erythrocyte" ,
+						"Reticulocyte" ,
+						"Thrombocyte" ,
+						"Monocyte" ,
+						"Leukocyte"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is required for erythropoiesis?" ,
+					"choices": [
+						"Iron" ,
+						"Vitamin B<sub>12</sub>" ,
+						"Folate" ,
+						"Vitamin K" ,
+						"All of the choices are correct"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following would lead to increased erythropoiesis?" ,
+					"choices": [
+						"Increased environmental O<sub>2</sub> levels" ,
+						"Increased erythropoietin levels" ,
+						"Increased blood pH" ,
+						"Increased blood pressure" ,
+						"Increased CO<sub>2</sub> levels"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Mr. Smith moved from a low altitude to a high altitude and experienced an increase in RBCs. Which of the following caused this increase?" ,
+					"choices": [
+						"The lower temperature present at higher altitudes" ,
+						"The lower O<sub>2</sub> concentration seen at higher altitudes" ,
+						"The increased metabolic rate seen at higher altitudes" ,
+						"The increased CO<sub>2</sub> retention that occurs at high altitudes" ,
+						"Increased exercise"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Erythropoietin" ,
+					"choices": [
+						"is secreted by the kidney." ,
+						"inhibits the production of erythrocytes." ,
+						"is produced in response to increased" ,
+						"is found both in the plasma and inside red blood cells." ,
+						"is produced by the red bone marrow."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When defective erythrocytes are broken down," ,
+					"choices": [
+						"they are removed from the blood by the lungs." ,
+						"bilirubin is formed from the breakdown of hemoglobin." ,
+						"their heme groups are converted into amino acids." ,
+						"their iron is excreted into the small intestine." ,
+						"their components cannot be recycled."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following events occurs when erythrocytes are destroyed?" ,
+					"choices": [
+						"Urine output increases." ,
+						"Iron is secreted into the bile." ,
+						"Heme is transported by transferrin to the liver." ,
+						"The globin portion of the molecule is broken down into amino acids." ,
+						"Bile is manufactured by the gallbladder."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following formed elements do not have chromosomes?" ,
+					"choices": [
+						"Erythrocytes" ,
+						"Reticulocytes" ,
+						"Erythroblasts" ,
+						"Both \"Erythrocytes\" and \"Reticulocytes\" are correct." ,
+						"All the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Bilirubin" ,
+					"choices": [
+						"is found in white blood cells." ,
+						"may be reused in erythropoiesis." ,
+						"is formed from the globin groups of ???" ,
+						"is made from bile." ,
+						"may build up in the circulation and cause jaundice."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Randolf was suffering from severe hepatitis. His skin appeared to be jaundiced. That color change was due to" ,
+					"choices": [
+						"Randolf was suffering from severe hepatitis. His skin appeared to be jaundiced. That color change was due to" ,
+						"increased globin in his circulatory system." ,
+						"increased bilirubin in his circulatory system." ,
+						"decreased rate of globin breakdown." ,
+						"All the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "In adults, red blood cells are made in one place, spend most of their lifespan in another, and most are finally destroyed in yet another place. Which choice lists these locations in the correct chronological order?" ,
+					"choices": [
+						"Bone marrow; blood vessels; spleen" ,
+						"Bone marrow; spleen; blood vessels" ,
+						"Spleen; blood vessels; spleen" ,
+						"Blood vessels; spleen; bone marrow" ,
+						"Spleen; blood vessels; bone marrow"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which blood component is NOT correctly matched with its function?" ,
+					"choices": [
+						"Erythrocytes – transport oxygen" ,
+						"Leukocytes – protect against disease" ,
+						"Platelets – phagocytize bacteria" ,
+						"Plasma proteins – maintain blood osmotic pressure; involved in clotting" ,
+						"Monocytes – become macrophages"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The mutation that leads to sickle cell is on chromosome" ,
+					"choices": [
+						"3" ,
+						"11" ,
+						"14",
+						"21"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a consequence of sickle-cell anemia?" ,
+					"choices": [
+						"Red blood cells take on the sickle shape when oxygen levels are low." ,
+						"Sickle-shaped red blood cells can become lodged in capillaries." ,
+						"Tissue damage from decreased blood supply." ,
+						"Sickle-shaped red blood cells are less likely to rupture."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following statements regarding leukocytes is TRUE?" ,
+					"choices": [
+						"Leukocytes have no nucleus." ,
+						"Leukocytes play a role in oxygen transport." ,
+						"Leukocytes are the largest of the formed elements." ,
+						"Leukocytes are only fragments of cells." ,
+						"There is only one kind of leukocyte."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is an agranulocyte?" ,
+					"choices": [
+						"Eosinophil" ,
+						"Basophil" ,
+						"Neutrophil" ,
+						"Monocyte" ,
+						"Erythrocyte"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The most numerous of the leukocytes is the ________." ,
+					"choices": [
+						"neutrophil" ,
+						"basophil" ,
+						"eosinophil" ,
+						"lymphocyte" ,
+						"monocyte"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Lymphocytes" ,
+					"choices": [
+						"are the largest of the leukocytes." ,
+						"migrate to lymphatic tissue." ,
+						"produce histamine." ,
+						"release heparin." ,
+						"are phagocytic."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The ability of white blood cells to leave the circulation and enter tissues is called ________." ,
+					"choices": [
+						"chemotaxis" ,
+						"diapedesis" ,
+						"margination" ,
+						"intrusion" ,
+						"exocytosis"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When a person develops a sore throat, white blood cells are drawn to the area of infection by a process called ________." ,
+					"choices": [
+						"chemotaxis" ,
+						"diapedesis" ,
+						"margination" ,
+						"ameboid movement" ,
+						"attraction"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A person with an increased eosinophil count might be suffering from ________." ,
+					"choices": [
+						"a parasitic worm infection" ,
+						"a viral infection" ,
+						"an acute bacterial infection" ,
+						"a chronic bacterial infection" ,
+						"a head cold"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Macrophages are derived from ________." ,
+					"choices": [
+						"neutrophils" ,
+						"lymphocytes" ,
+						"monocytes" ,
+						"basophils" ,
+						"eosinophils"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following cell types is <b>incorrectly</b> matched with its description?" ,
+					"choices": [
+						"Neutrophils – most numerous WBCs" ,
+						"Basophils – release histamine" ,
+						"Lymphocytes – become macrophages" ,
+						"Monocytes – largest of the WBCs" ,
+						"Eosinophils – attack worm parasites"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which white blood cells function primarily as phagocytotic cells?" ,
+					"choices": [
+						"Monocytes and lymphocytes" ,
+						"Basophils and neutrophils" ,
+						"Eosinophils and monocytes" ,
+						"Neutrophils and monocytes"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Platelets" ,
+					"choices": [
+						"are also known as thrombocytes." ,
+						"are actually fragments of cells." ,
+						"play a role in preventing blood loss." ,
+						"can become sticky when exposed to connective tissue" ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following is a stage of hemostasis?" ,
+					"choices": [
+						"Coagulation" ,
+						"Erythropoiesis" ,
+						"Platelet formation" ,
+						"Vascular dilation" ,
+						"Agglutination"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "During platelet plug formation," ,
+					"choices": [
+						"platelets stick to the exposed collagen fibers of injured vessels." ,
+						"thrombin is released from endothelial cells." ,
+						"vitamin K production increases." ,
+						"platelets multiply."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The nervous system and certain chemicals can cause the constriction of a blood vessel. This is known as ________." ,
+					"choices": [
+						"platelet adhesion" ,
+						"vascular spasm" ,
+						"hemostasis" ,
+						"coagulation"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "In the platelet release reaction," ,
+					"choices": [
+						"factor XII is activated." ,
+						"ADP and thromboxanes stimulate other platelets to become activated." ,
+						"activated platelets are connected by fibrinogen." ,
+						"prostaglandin production is inhibited." ,
+						"platelets convert to fibrin."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which protein forms a bridge between exposed vessel wall collagen and platelet surface receptors?" ,
+					"choices": [
+						"Thromboxanes" ,
+						"von Willebrand factor" ,
+						"Endothelin" ,
+						"Fibrinogen"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Aspirin inhibits platelet plug formation by" ,
+					"choices": [
+						"blocking the binding of platelets to collagen." ,
+						"interfering with the synthesis of prostaglandins." ,
+						"blocking the effects of serotonin." ,
+						"making the platelet surface less sticky." ,
+						"stimulating the release of heparin"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When a blood vessel is damaged, which of the following events occurs last?" ,
+					"choices": [
+						"Collagen is exposed." ,
+						"Platelets adhere to collagen." ,
+						"Platelets are activated." ,
+						"Platelets begin to stick to each other and form a plug." ,
+						"von Willebrand factor is produced."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "A deficiency of which of the following intermediate cells would result in a marked increase in the clotting time of blood?" ,
+					"choices": [
+						"Lymphoblast" ,
+						"Megakaryoblast" ,
+						"Monoblast" ,
+						"Myeloblast" ,
+						"Proerythroblast"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following events is one of the three main stages of coagulation?" ,
+					"choices": [
+						"Conversion of fibrinogen to fibrin" ,
+						"Platelet aggregation" ,
+						"Conversion of thrombin to prothrombin" ,
+						"Platelet plug formation" ,
+						"Calcium release"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "In the extrinsic pathway, damaged tissues release ________." ,
+					"choices": [
+						"activated factor V" ,
+						"calcium" ,
+						"factor VII" ,
+						"thromboplastin (tissue factor III)" ,
+						"factor XII"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The cascade of events in the intrinsic pathway can be set into motion when ________ comes into contact with collagen." ,
+					"choices": [
+						"factor III" ,
+						"factor VII" ,
+						"factor X" ,
+						"factor XII" ,
+						"calcium"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Arrange the following events of coagulation in proper sequence.<br>(1) Prothrombin → thrombin<br>(2) Fibrinogen → fibrin<br>(3) Activation of factor XII<br>(4) Formation of prothrombinase" ,
+					"choices": [
+						"4, 3, 1, 2" ,
+						"2, 4, 3, 1" ,
+						"3, 4, 1, 2" ,
+						"3, 2, 4, 1" ,
+						"1, 2, 3, 4"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which ion is necessary for the coagulation process?" ,
+					"choices": [
+						"Na<sup>+</sup>" ,
+						"K<sup>+</sup>" ,
+						"Mg<sup>2+</sup>" ,
+						"Ca<sup>2+</sup>"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Choose the arrangement that lists the chemicals in the order in which they would be used for coagulation.<br>(1) Thrombin<br>(2) Fibrinogen<br>(3) Prothrombinase<br>(4) Activated factor XII" ,
+					"choices": [
+						"3, 2, 4, 1" ,
+						"4, 3, 2, 1" ,
+						"4, 3, 1, 2" ,
+						"3, 4, 1, 2" ,
+						"3, 1, 4, 2"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Coumadin (Warfarin)" ,
+					"choices": [
+						"is a potent anticoagulant." ,
+						"is produced by eosinophils." ,
+						"blocks the action of factor X." ,
+						"dissolves blood clots." ,
+						"promotes coagulation."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "An increased amount of heparin in the blood might" ,
+					"choices": [
+						"speed up the clotting process." ,
+						"slow down the clotting process." ,
+						"stop the clotting process." ,
+						"enhance the clotting process." ,
+						"have no effect on the clotting process."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The function of plasmin is to" ,
+					"choices": [
+						"hydrolyze fibrin." ,
+						"activate factor XII." ,
+						"promote platelet plug formation." ,
+						"control osmotic pressure of the blood." ,
+						"promote the formation of plasma."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+					{
+					"prompt": "Healing after clot formation involves" ,
+					"choices": [
+						"clot retraction." ,
+						"repair of the damaged blood vessel by connective tissue cells." ,
+						"clot dissolution." ,
+						"serum being squeezed out of the clot." ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Fibrinolysis is responsible for" ,
+					"choices": [
+						"activation of the intrinsic pathway of coagulation." ,
+						"activation of the extrinsic pathway of coagulation." ,
+						"clot retraction." ,
+						"clot dissolution." ,
+						"clot consolidation."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "A blood clot attached to a blood vessel wall is called a(n) ________." ,
+					"choices": [
+						"thrombus" ,
+						"embolus" ,
+						"prostacyclin" ,
+						"hemorrhage" ,
+						"anticoagulant"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which vitamin is necessary to produce many clotting factors in the liver?" ,
+					"choices": [
+						"Vitamin C" ,
+						"Vitamin K" ,
+						"Vitamin D" ,
+						"Vitamin B<sub>3</sub>"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When the antigens on erythrocytes bind with antibodies in the plasma," ,
+					"choices": [
+						"agglutination of erythrocytes occurs." ,
+						"hemolysis of leukocytes may occur." ,
+						"the antibodies dissolve." ,
+						"the blood group changes." ,
+						"coagulation occurs."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Agglutination of red blood cells means" ,
+					"choices": [
+						"they rupture." ,
+						"they form a clot." ,
+						"they clump together." ,
+						"they lose their nucleus." ,
+						"they bump into each other."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Type AB blood" ,
+					"choices": [
+						"has no antigens on the red cells." ,
+						"has O antigens on the red cells." ,
+						"has both A and B antigens on the red cells." ,
+						"has both A and B antibodies on the red cells." ,
+						"has both A and B antibodies in the pl..."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A person with type O blood should receive a blood transfusion from a donor with" ,
+					"choices": [
+						"type A blood." ,
+						"type B blood." ,
+						"type O blood." ,
+						"type AB blood." ,
+						"any type of blood."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A person with type B blood" ,
+					"choices": [
+						"has antigen A." ,
+						"has anti-A antibodies" ,
+						"will have a transfusion reaction if given type B blood." ,
+						"has anti-B antibodies." ,
+						"can receive type A blood."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When a person is transfused with the wrong blood type," ,
+					"choices": [
+						"the white cells clot." ,
+						"hemorrhaging occurs." ,
+						"fibrinogen is activated." ,
+						"the erythrocytes agglutinate." ,
+						"they bleed to death."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which blood type is considered the universal recipient?" ,
+					"choices": [
+						"Type A" ,
+						"Type B" ,
+						"Type AB" ,
+						"Type O"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which type of gene expression occurs when a person has type AB blood?" ,
+					"choices": [
+						"Which type of gene expression occurs when a person has type AB blood?" ,
+						"Homozygous recessive" ,
+						"Incomplete dominance" ,
+						"Codominance"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "RhoGam injections are given to" ,
+					"choices": [
+						"desensitize the fetus." ,
+						"activate fetal Rh antigens." ,
+						"protect the father." ,
+						"prevent sensitization of the mother." ,
+						"change the mother's blood type."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The hematocrit is" ,
+					"choices": [
+						"an estimate of blood flow/hour." ,
+						"the number of WBCs per mm<sup>3</sup>" ,
+						"the amount of hemoglobin by weight in the blood." ,
+						"the percentage of RBCs in a given volume of blood." ,
+						"the number of RBCs in the body."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Why would a person have anti-Rh antibodies present in their blood?" ,
+					"choices": [
+						"They are Rh-positive and were exposed to Rh-negative blood." ,
+						"An Rh-negative woman is carrying an Rh-positive fetus." ,
+						"An Rh-positive woman is carrying an Rh-negative fetus." ,
+						"A person cannot have anti-Rh antibodies in their blood."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Hemolytic disease of the newborn (HDN) occurs when" ,
+					"choices": [
+						"an Rh-positive woman is carrying an Rh-positive fetus." ,
+						"an Rh-positive woman is carrying an Rh-negative fetus." ,
+						"an Rh-negative woman is carrying an Rh-negative fetus." ,
+						"an Rh-negative woman is carrying an Rh-positive fetus."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "In which of the following situations might Rh incompatibility develop?" ,
+					"choices": [
+						"Mother is Rh negative; fetus is Rh negative" ,
+						"Mother is Rh positive; father is Rh positive" ,
+						"Mother is Rh negative; fetus is Rh positive" ,
+						"Mother is Rh positive; fetus is Rh negative" ,
+						"Mother is Rh positive; fetus is Rh poitive"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "In hemolytic disease of the newborn," ,
+					"choices": [
+						"antibodies from the mother cross the placenta and affect the fetus." ,
+						"hemolysis of white blood cells may occur." ,
+						"fibrin is hydrolyzed." ,
+						"the mother frequently dies during childbirth." ,
+						"antibodies from the fetus cross the placenta and affect the mother."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is mismatched?" ,
+					"choices": [
+						"Blood typing – determines ABO and Rh blood groups of a blood sample" ,
+						"Blood crossmatch – donor and recipient blood cells are mixed together" ,
+						"Complete blood count – includes RBC and WBC counts" ,
+						"Differential count – determines the p ... kind of leukocyte in the blood" ,
+						"Hematocrit – percentage of total blood volume composed of RBCs"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "For a person whose hematocrit is 45%, in which choice below are the components of blood correctly ranked in order of decreasing percent volume?" ,
+					"choices": [
+						"WBCs, plasma, RBCs" ,
+						"RBCs, WBCs, plasma" ,
+						"Plasma, RBCs, WBCs" ,
+						"Plasma, WBCs, RBCs" ,
+						"WBCs, RBCs, plasma"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The condition characterized by overproduction of erythrocytes is called ________." ,
+					"choices": [
+						"anemia" ,
+						"leukemia" ,
+						"hemophilia" ,
+						"thalassemia" ,
+						"erythrocytosis"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following conditions is mismatched with its description?" ,
+					"choices": [
+						"Aplastic anemia – bone marrow fails to produce erythrocytes" ,
+						"Hemolytic anemia – increased destruction of erythrocytes" ,
+						"Pernicious anemia – loss of blood from the body" ,
+						"Iron deficiency anemia – lack of iron absorption for erythropoiesis" ,
+						"Hemorrhagic anemia – loss of blood from the body"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "If a young boy is diagnosed with hemophilia, he would have" ,
+					"choices": [
+						"a disorder of the clotting process." ,
+						"an infection of the blood." ,
+						"an increased erythrocyte count." ,
+						"a type of cancer affecting white blood cells." ,
+						"an antigen-antibody reaction."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When large quantities of blood are lost, erythrocytes must be replaced to restore" ,
+					"choices": [
+						"the body's ability to fight infection." ,
+						"oxygen-carrying capacity." ,
+						"thrombin levels." ,
+						"normal blood pH." ,
+						"iron levels."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "All of the following describe ways that blood helps maintain homeostasis, except ________." ,
+					"choices": [
+						"stabilizing body fluids" ,
+						"transporting carbon dioxide" ,
+						"limiting the spread of pathogens" ,
+						"transporting nutrients" ,
+						"secretion of neuropeptides"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The globulins are important plasma proteins that functions primarily in ________." ,
+					"choices": [
+						"gas transport" ,
+						"pH control" ,
+						"hormonal regulation" ,
+						"thermoregulation" ,
+						"immunity"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "All of the following are potential locations for hematopoiesis in the embryo and fetus, except" ,
+					"choices": [
+						"the spleen." ,
+						"the lymph nodes." ,
+						"the yolk sac." ,
+						"the red bone marrow." ,
+						"the placenta."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The biconcave structure of an erythrocyte is shaped to better accommodate the crystalline structure of hemoglobin." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The smallest leukocytes are the ________ and the largest are the ________." ,
+					"choices": [
+						"basophils; neutrophils" ,
+						"eosinophils; monocytes" ,
+						"lymphocytes; neutrophils" ,
+						"neutrophils; monocytes" ,
+						"lymphocytes; monocytes"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "During platelet plug formation, platelets release ________ and endothelial cells release ________, which lead to vasoconstriction." ,
+					"choices": [
+						"endothelin; thromboxane" ,
+						"erythropoietin; thromboxane" ,
+						"thromboxane; histamine" ,
+						"histamine; heparin" ,
+						"thromboxane; endothelin"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following accurately describes thromboplastin?" ,
+					"choices": [
+						"A compound released by healed tissues that initiates clot dissolution" ,
+						"A compound that keeps platelets from sticking to the endothelium" ,
+						"A precursor to prothrombin" ,
+						"A compound released by damaged tissue that initiates the intrinsic clotting pathway" ,
+						"A compound released by damaged tissue that initiates the extrinsic clotting pathway"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "A severely dehydrated patient begins to experience the formation of random blood clots. Why is this happening?" ,
+					"choices": [
+						"Dehydration collapses the capillaries and exposes collagen, which triggers the extrinsic mechanism of coagulation." ,
+						"Dehydration stimulates vasospasms, which in turn lead to clot formation." ,
+						"Dehydration leads to a concentration of clotting factors, which triggers the extrinsic mechanism of coagulation." ,
+						"Dehydration leads to a concentration of clotting factors, which triggers the intrinsic mechanism of coagulation." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Mike has blood type A. He needs blood; however, blood type A is not available. The next best choice would be blood type ________." ,
+					"choices": [
+						"AB" ,
+						"B" ,
+						"O"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Normocytes are red blood cells with a diameter of approximately 7.5 micrometers." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "All of the following could be learned from a blood chemistry test except" ,
+					"choices": [
+						"blood urea nitrogen." ,
+						"bilirubin levels." ,
+						"elevated glucose levels." ,
+						"elevated cholesterol levels." ,
+						"heart rate and blood pressure."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following descriptions of a blood sample is most accurate?" ,
+					"choices": [
+						"Most of the cells that can be identified are red blood cells, with much fewer white blood cells." ,
+						"The ratio of red blood cells to white blood cells would be about 1:1." ,
+						"White blood cells, usually much smaller than red blood cells, are represented in much lower numbers than platelets." ,
+						"Platelets are usually present in higher numbers than red blood cells, but lower numbers than white blood cells."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "If an average female lost 10% of her blood volume, she would have lost around 0.5 L of blood." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "How would a decrease in the number of megakaryocytes affect blood composition?" ,
+					"choices": [
+						"A decrease in megakaryocytes would decrease the number of platelets in the blood" ,
+						"A decrease in the number of megakaryocytes would decrease the number of immunoglobulins in the blood." ,
+						"A decrease in the number of megakaryocytes would decrease the number of leukocytes in the blood." ,
+						"A decrease in the number of megakaryocytes would decrease the number of fibrinogens in the blood."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Aspirin affects coagulation by disrupting the activity of thrombin." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "An individual that has both anti-A antibodies and anti-D antibodies is type A+" ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Ginger had her blood analyzed and was informed that both anti-B and anti-D antibodies were present. Which of the following accurately explain her test results?" ,
+					"choices": [
+						"Ginger has type A<sup>−</sup> blood, but has never been exposed to either the B nor D antigens" ,
+						"Ginger has type A<sup>-</sup> blood and has been exposed to the D antigen at some time in her life." ,
+						"Ginger type B<sup>+</sup> and has not been exposed to the B nor the D antigens." ,
+						"Ginger is most likely O<sup>−</sup> and though she has been exposed to the B and D antigen, she has not been exposed to the A antigen."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				}
+			]
+		}
+	</script>
+</body>
+</html>

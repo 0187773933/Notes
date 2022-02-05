@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="1407.0146456692912,519.7248818897638,1698.995433070866,468.4143307086614" shape="rect">
+			<area target="" alt="Ductus Deferens" title="Ductus Deferens" href="" coords="1407.0146456692912,678.5225196850394,1698.995433070866,627.211968503937" shape="rect">
+			<area target="" alt="Testis" title="Testis" href="" coords="1218.3251968503937,806.0692913385827,1344.000157480315,754.7587401574804" shape="rect">
+			<area target="" alt="Gubernaculum" title="Gubernaculum" href="" coords="1218.3253543307087,874.6902362204725,1471.448503937008,823.3796850393701" shape="rect">
+			<area target="" alt="Scrotum" title="Scrotum" href="" coords="1218.3253543307087,943.3111811023623,1378.7587401574804,892.0006299212599" shape="rect">
+			<area target="" alt="Inguinal Canal" title="Inguinal Canal" href="" coords="325.0,514.7595275590551,566.0686614173228,463.44897637795276" shape="rect">
+			<area target="" alt="Process Vaginalis" title="Process Vaginalis" href="" coords="280.7085039370079,652.8672440944882,572.6892913385827,601.5566929133859" shape="rect">
+			<area target="" alt="Tunica Vaginalis" title="Tunica Vaginalis" href="" coords="251.58614173228347,806.0697637795275,526.6949606299213,754.7592125984252" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290059125-188779466.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Reproduction-Anatomy/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

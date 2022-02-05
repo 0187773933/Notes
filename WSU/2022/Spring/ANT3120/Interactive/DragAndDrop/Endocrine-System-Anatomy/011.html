@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>011</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Hypothalamus" title="Hypothalamus" href="" coords="1532.6897637795275,471.88440944881893,1784.275748031496,420.57385826771656" shape="rect">
+			<area target="" alt="Superior Colliculus" title="Superior Colliculus" href="" coords="1532.6897637795275,535.0346456692913,1860.4138582677165,483.724094488189" shape="rect">
+			<area target="" alt="Inferior Colliculus" title="Inferior Colliculus" href="" coords="1532.6897637795275,602.2862992125985,1835.5861417322835,550.9757480314961" shape="rect">
+			<area target="" alt="Mesencephalic Aqueduct" title="Mesencephalic Aqueduct" href="" coords="1444.9658267716534,681.1653543307087,1883.7412598425194,629.8548031496064" shape="rect">
+			<area target="" alt="Cerebellum" title="Cerebellum" href="" coords="1444.9658267716534,771.8428346456693,1651.8620472440944,720.532283464567" shape="rect">
+			<area target="" alt="Fourth Ventricle" title="Fourth Ventricle" href="" coords="1400.276062992126,838.468188976378,1670.0689763779528,787.1576377952756" shape="rect">
+			<area target="" alt="Pineal Gland" title="Pineal Gland" href="" coords="1526.0689763779528,406.68094488188973,1777.6549606299213,355.37039370078736" shape="rect">
+			<area target="" alt="Parieto-Occipital Sulcus" title="Parieto-Occipital Sulcus" href="" coords="1478.8966929133858,337.53874015748033,1860.4138582677165,286.22818897637796" shape="rect">
+			<area target="" alt="Right Thalamus" title="Right Thalamus" href="" coords="1467.7239370078742,273.4442519685039,1743.9719685039372,222.13370078740158" shape="rect">
+			<area target="" alt="Fornix" title="Fornix" href="" coords="1420.675905511811,214.1631496062992,1549.2414173228346,162.85259842519685" shape="rect">
+			<area target="" alt="Cingulate Gyrus" title="Cingulate Gyrus" href="" coords="1344.4138582677165,155.90614173228346,1620.6618897637795,104.5955905511811" shape="rect">
+			<area target="" alt="Postcentral Gyrus" title="Postcentral Gyrus" href="" coords="1191.848188976378,94.52850393700788,1492.9655118110236,43.217952755905515" shape="rect">
+			<area target="" alt="Central Sulcus" title="Central Sulcus" href="" coords="878.7774803149606,68.8732283464567,1121.9636220472441,17.56267716535433" shape="rect">
+			<area target="" alt="Precentral Gyrus" title="Precentral Gyrus" href="" coords="586.9244094488189,111.82047244094488,863.1724409448818,60.50992125984252" shape="rect">
+			<area target="" alt="Corpus Callosum" title="Corpus Callosum" href="" coords="382.34488188976377,180.91748031496064,671.875905511811,129.60692913385827" shape="rect">
+			<area target="" alt="Septum Pellucidum" title="Septum Pellucidum" href="" coords="274.7587401574803,250.0144881889764,591.724409448819,198.70393700787403" shape="rect">
+			<area target="" alt="Interventricular Foramen" title="Interventricular Foramen" href="" coords="142.34503937007875,371.34519685039373,553.1796850393702,320.03464566929136" shape="rect">
+			<area target="" alt="Frontal Lobe" title="Frontal Lobe" href="" coords="274.7587401574803,441.96976377952757,498.3209448818898,390.6592125984252" shape="rect">
+			<area target="" alt="Anterior Commissure" title="Anterior Commissure" href="" coords="142.34503937007875,509.3793700787402,498.3212598425197,458.0688188976378" shape="rect">
+			<area target="" alt="Optic Chiasm" title="Optic Chiasm" href="" coords="288.8275590551181,595.6995275590551,527.1103937007874,544.3889763779528" shape="rect">
+			<area target="" alt="Mamillary Body" title="Mamillary Body" href="" coords="489.1451968503937,686.795748031496,765.3932283464567,635.4851968503937" shape="rect">
+			<area target="" alt="Temporal Lobe" title="Temporal Lobe" href="" coords="569.3793700787402,750.1626771653542,825.2072440944883,698.8521259842519" shape="rect">
+			<area target="" alt="Mesencephalon" title="Mesencephalon" href="" coords="593.3795275590551,823.2348031496064,863.1724409448818,771.924251968504" shape="rect">
+			<area target="" alt="Pons" title="Pons" href="" coords="907.8730708661418,769.76031496063,1022.0796850393701,718.4497637795276" shape="rect">
+			<area target="" alt="Medulla Oblongata" title="Medulla Oblongata" href="" coords="886.3867716535433,838.468188976378,1201.6552755905511,787.1576377952756" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642230794638-872971764.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Endocrine-System-Anatomy/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

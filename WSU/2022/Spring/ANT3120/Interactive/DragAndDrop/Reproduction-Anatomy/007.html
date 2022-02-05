@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Uterine Tube" title="Uterine Tube" href="" coords="221.00456692913386,96.46425196850393,455.46015748031493,45.153700787401576" shape="rect">
+			<area target="" alt="Ovary" title="Ovary" href="" coords="334.34488188976377,185.9444094488189,457.11527559055116,134.63385826771653" shape="rect">
+			<area target="" alt="Uterus" title="Uterus" href="" coords="298.7587401574803,346.2335433070866,441.93102362204723,294.92299212598425" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="140.68960629921258,451.3765354330709,409.8184251968504,400.06598425196853" shape="rect">
+			<area target="" alt="Symphysis Pubis" title="Symphysis Pubis" href="" coords="140.68960629921258,581.0450393700788,434.9782677165354,529.7344881889765" shape="rect">
+			<area target="" alt="Mons Pubis" title="Mons Pubis" href="" coords="238.34488188976377,644.1214173228346,455.46015748031493,592.8108661417323" shape="rect">
+			<area target="" alt="Urethra" title="Urethra" href="" coords="300.4138582677165,705.5428346456692,457.11527559055116,654.2322834645669" shape="rect">
+			<area target="" alt="Clitoris" title="Clitoris" href="" coords="314.4828346456693,762.3223622047244,457.11527559055116,711.011811023622" shape="rect">
+			<area target="" alt="Urethral Orifice" title="Urethral Orifice" href="" coords="238.34488188976377,820.7607874015747,504.28771653543305,769.4502362204723" shape="rect">
+			<area target="" alt="Vaginal Orifice" title="Vaginal Orifice" href="" coords="238.34488188976377,865.9144881889763,504.28771653543305,827.4423622047243" shape="rect">
+			<area target="" alt="Labia Minora" title="Labia Minora" href="" coords="300.4138582677165,924.5296062992126,533.6048818897638,873.2190551181102" shape="rect">
+			<area target="" alt="Labia Majora" title="Labia Majora" href="" coords="318.3826771653543,983.1447244094487,551.5737007874015,931.8341732283463" shape="rect">
+			<area target="" alt="Cervix" title="Cervix" href="" coords="1532.9985826771654,565.6552755905512,1671.724251968504,514.3447244094489" shape="rect">
+			<area target="" alt="Rectum" title="Rectum" href="" coords="1516.1770078740155,644.1214173228346,1671.7242519685037,592.8108661417323" shape="rect">
+			<area target="" alt="Vagina" title="Vagina" href="" coords="1518.1200000000001,739.6138582677165,1671.7242519685042,688.3033070866142" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290061348-921576480.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Reproduction-Anatomy/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>011</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Endothelial Cell" title="Endothelial Cell" href="" coords="1409.1141732283465,90.38866141732282,1675.9294488188978,39.07811023622047" shape="rect">
+			<area target="" alt="Red Blood Cell" title="Red Blood Cell" href="" coords="1423.7228346456693,279.2247244094488,1690.5381102362205,227.91417322834644" shape="rect">
+			<area target="" alt="Large Intercellular Cleft" title="Large Intercellular Cleft" href="" coords="1409.1141732283465,431.6228346456693,1795.784881889764,380.3122834645669" shape="rect">
+			<area target="" alt="Nucleus of Endothelial Cell" title="Nucleus of Endothelial Cell" href="" coords="1336.4036220472442,772.8570078740157,1777.8571653543308,721.5464566929134" shape="rect">
+			<area target="" alt="Incomplete Basement Membrane" title="Incomplete Basement Membrane" href="" coords="18.782519685039368,772.8570078740157,547.2629921259842,721.5464566929134" shape="rect">
+			<area target="" alt="Tight Junction" title="Tight Junction" href="" coords="284.8696062992126,688.840157480315,534.7414173228346,637.5296062992127" shape="rect">
+			<area target="" alt="Sinusoid Capillary" title="Sinusoid Capillary" href="" coords="355.8261417322834,971.1011023622048,652.695748031496,919.7905511811024" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644025010980-197695061.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessel-Histology/012.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

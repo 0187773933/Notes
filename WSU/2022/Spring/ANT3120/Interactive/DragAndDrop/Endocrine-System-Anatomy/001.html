@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pituitary Gland" title="Pituitary Gland" href="" coords="408.8275590551181,192.0004724409449,678.6207874015748,140.68992125984252" shape="rect">
+			<area target="" alt="Hypothalamus" title="Hypothalamus" href="" coords="408.8275590551181,96.00031496062992,678.6207874015748,44.68976377952756" shape="rect">
+			<area target="" alt="Pineal Gland" title="Pineal Gland" href="" coords="1136.275748031496,132.41448818897638,1355.5861417322835,81.10393700787401" shape="rect">
+			<area target="" alt="Parathyroid Glands" title="Parathyroid Glands" href="" coords="1185.1033070866142,360.0007874015748,1496.275748031496,308.69023622047246" shape="rect">
+			<area target="" alt="Thyroid Gland" title="Thyroid Gland" href="" coords="423.72425196850395,345.932283464567,667.0344881889764,294.6217322834646" shape="rect">
+			<area target="" alt="Thymus" title="Thymus" href="" coords="465.89118110236217,463.0341732283465,621.5568503937008,411.72362204724413" shape="rect">
+			<area target="" alt="Adrenal Glands" title="Adrenal Glands" href="" coords="351.7636220472441,554.4807874015748,621.5568503937009,503.1702362204725" shape="rect">
+			<area target="" alt="Kidneys" title="Kidneys" href="" coords="452.6497637795276,667.8590551181103,608.3154330708662,616.5485039370079" shape="rect">
+			<area target="" alt="Ovaries" title="Ovaries" href="" coords="376.471968503937,767.9946456692913,532.1376377952756,716.684094488189" shape="rect">
+			<area target="" alt="Testes" title="Testes" href="" coords="1232.1971653543308,790.3388976377952,1368.8277165354332,739.0283464566928" shape="rect">
+			<area target="" alt="Digestive Tract" title="Digestive Tract" href="" coords="1232.1970078740158,671.5251968503937,1481.3792125984253,620.2146456692914" shape="rect">
+			<area target="" alt="Pancreas" title="Pancreas" href="" coords="1230.9951181102363,507.78566929133865,1400.276062992126,456.4751181102363" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642230790401-527186349.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Endocrine-System-Anatomy/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

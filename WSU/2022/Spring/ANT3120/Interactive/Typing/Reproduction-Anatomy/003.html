@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>003</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Sustentacular Cell" title="Sustentacular Cell" href="" coords="1521.2217322834645,96.82803149606299,1817.37937007874,45.51748031496063" shape="rect">
+			<area target="" alt="Spermatogonia" title="Spermatogonia" href="" coords="1531.1525984251969,198.62141732283467,1792.551496062992,147.3108661417323" shape="rect">
+			<area target="" alt="Spermatocytes" title="Spermatocytes" href="" coords="1658.6011023622045,300.4148031496063,1919.9999999999998,249.10425196850395" shape="rect">
+			<area target="" alt="Basement Membrane" title="Basement Membrane" href="" coords="1142.0689763779528,51.311338582677166,1493.7929133858268,0.0007874015748031496" shape="rect">
+			<area target="" alt="Spermatids" title="Spermatids" href="" coords="1546.872125984252,360.0012598425197,1751.172598425197,308.6907086614173" shape="rect">
+			<area target="" alt="Sperm Cells" title="Sperm Cells" href="" coords="1538.6011023622048,431.172125984252,1751.1727559055118,379.8615748031496" shape="rect">
+			<area target="" alt="Interstitial Cell" title="Interstitial Cell" href="" coords="877.3494488188976,92.6903937007874,1138.7483464566928,41.379842519685035" shape="rect">
+			<area target="" alt="Acrosome" title="Acrosome" href="" coords="1538.6011023622048,511.86204724409447,1726.3450393700787,460.5514960629921" shape="rect">
+			<area target="" alt="Nucleus" title="Nucleus" href="" coords="1540.2562204724409,633.7349606299213,1703.1626771653544,582.4244094488189" shape="rect">
+			<area target="" alt="Centriole" title="Centriole" href="" coords="1538.6011023622048,715.2411023622047,1723.3469291338583,663.9305511811024" shape="rect">
+			<area target="" alt="Mitochondria" title="Mitochondria" href="" coords="1544.399212598425,816.1143307086614,1792.5516535433069,764.8037795275591" shape="rect">
+			<area target="" alt="Tail" title="Tail" href="" coords="1537.775905511811,1027.5615748031496,1633.6551181102363,976.2510236220472" shape="rect">
+			<area target="" alt="Seminiferous Tubule" title="Seminiferous Tubule" href="" coords="826.7587401574804,259.8628346456693,1158.62062992126,208.55228346456693" shape="rect">
+			<area target="" alt="Testis" title="Testis" href="" coords="696.0510236220473,274.7603149606299,811.6379527559055,223.44976377952756" shape="rect">
+			<area target="" alt="Tubulus Rectus" title="Tubulus Rectus" href="" coords="663.0146456692914,185.38078740157482,924.4135433070867,134.07023622047245" shape="rect">
+			<area target="" alt="Rete Testis" title="Rete Testis" href="" coords="460.263937007874,216.36188976377954,653.9188976377952,165.05133858267718" shape="rect">
+			<area target="" alt="Epididymis" title="Epididymis" href="" coords="271.44834645669295,325.57543307086615,465.1033070866142,274.2648818897638" shape="rect">
+			<area target="" alt="Duct of the Epididymus" title="Duct of the Epididymus" href="" coords="0.0,381.51905511811026,392.51322834645674,330.2085039370079" shape="rect">
+			<area target="" alt="Ductus Deferens" title="Ductus Deferens" href="" coords="18.207086614173228,642.5239370078741,310.6411023622047,591.2133858267717" shape="rect">
+			<area target="" alt="Tunica Albuginea" title="Tunica Albuginea" href="" coords="817.9725984251969,715.2411023622047,1106.1943307086615,663.9305511811024" shape="rect">
+			<area target="" alt="Lobules" title="Lobules" href="" coords="875.2310236220472,559.0366929133859,1027.8614173228348,523.0348031496063" shape="rect">
+			<area target="" alt="Septa" title="Septa" href="" coords="868.8247244094488,494.0707086614173,994.7585826771654,458.0688188976378" shape="rect">
+			<area target="" alt="Head" title="Head" href="" coords="1265.9897637795275,616.8686614173229,1380.847559055118,565.5581102362205" shape="rect">
+			<area target="" alt="Midpiece" title="Midpiece" href="" coords="1259.3694488188976,714.4141732283465,1430.0692913385826,663.1036220472441" shape="rect">
+			<area target="" alt="Tail" title="Tail" href="" coords="1234.9902362204723,780.4140157480315,1327.5618897637794,729.1034645669291" shape="rect">
+			<area target="" alt="Efferent Ductules" title="Efferent Ductules" href="" coords="295.8261417322835,267.8382677165354,591.6631496062992,221.88456692913385" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642382617377-280533861.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Reproduction-Anatomy/004.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

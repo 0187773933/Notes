@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Infundibulum" title="Infundibulum" href="" coords="495.4381102362205,831.7245669291339,749.1393700787402,780.4140157480315" shape="rect">
+			<area target="" alt="Mammillary Body" title="Mammillary Body" href="" coords="816.5417322834645,653.9532283464567,1122.2069291338582,602.6426771653544" shape="rect">
+			<area target="" alt="Hypothalamus" title="Hypothalamus" href="" coords="1122.2069291338582,705.2637795275591,1375.908188976378,653.9532283464567" shape="rect">
+			<area target="" alt="Optic Chiasm" title="Optic Chiasm" href="" coords="1122.2069291338582,782.2296062992126,1375.908188976378,730.9190551181102" shape="rect">
+			<area target="" alt="Posterior Pituitary" title="Posterior Pituitary" href="" coords="471.72425196850395,981.5174803149606,770.6568503937008,930.2069291338582" shape="rect">
+			<area target="" alt="Anterior Pituitary" title="Anterior Pituitary" href="" coords="1123.2083464566929,995.5864566929134,1422.1409448818897,944.2759055118111" shape="rect">
+			<area target="" alt="Sella Turcica" title="Sella Turcica" href="" coords="1185.9311811023622,384.0795275590551,1408.551653543307,332.76897637795275" shape="rect">
+			<area target="" alt="Pituitary Gland" title="Pituitary Gland" href="" coords="1185.9311811023622,307.9412598425197,1438.3448818897637,256.6307086614173" shape="rect">
+			<area target="" alt="Optic Chiasm" title="Optic Chiasm" href="" coords="1185.9311811023622,213.26299212598425,1422.1409448818897,161.9524409448819" shape="rect">
+			<area target="" alt="Hypothalamus" title="Hypothalamus" href="" coords="1185.9310236220472,129.42251968503936,1438.3447244094486,78.111968503937" shape="rect">
+			<area target="" alt="Third Ventricle" title="Third Ventricle" href="" coords="465.1031496062992,195.37464566929137,717.5168503937008,144.064094488189" shape="rect">
+			<area target="" alt="Mammillary Body" title="Mammillary Body" href="" coords="417.2768503937008,271.92614173228344,716.2092913385827,220.6155905511811" shape="rect">
+			<area target="" alt="Infundibulum" title="Infundibulum" href="" coords="471.72425196850395,340.96582677165355,724.1379527559055,289.6552755905512" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642230792323-428051566.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Endocrine-System-Anatomy/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

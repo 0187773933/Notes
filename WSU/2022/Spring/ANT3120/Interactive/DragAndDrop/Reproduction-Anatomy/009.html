@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>009</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Rectus Abdominis" title="Rectus Abdominis" href="" coords="1466.1311811023622,187.4064566929134,1772.6897637795275,136.09590551181103" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="1489.303622047244,275.3058267716535,1756.1379527559054,223.99527559055116" shape="rect">
+			<area target="" alt="Uterus" title="Uterus" href="" coords="1505.8552755905512,337.5499212598425,1651.671811023622,286.23937007874014" shape="rect">
+			<area target="" alt="Round Ligament" title="Round Ligament" href="" coords="1482.5755905511812,410.85496062992127,1769.3795275590553,359.5444094488189" shape="rect">
+			<area target="" alt="Ovarian Ligament" title="Ovarian Ligament" href="" coords="1469.5492913385826,473.09905511811024,1776.1077165354332,421.7885039370079" shape="rect">
+			<area target="" alt="Mesovarium" title="Mesovarium" href="" coords="1489.303779527559,539.5442519685039,1706.4828346456693,488.2337007874016" shape="rect">
+			<area target="" alt="Broad Ligament" title="Broad Ligament" href="" coords="1489.303779527559,610.0228346456694,1756.1379527559056,558.712283464567" shape="rect">
+			<area target="" alt="Vermiform Appendix" title="Vermiform Appendix" href="" coords="1489.303622047244,685.0113385826772,1835.5861417322835,633.7007874015749" shape="rect">
+			<area target="" alt="Cardinal Ligament" title="Cardinal Ligament" href="" coords="1499.2346456692912,758.791653543307,1809.103464566929,707.4811023622046" shape="rect">
+			<area target="" alt="Uterosacral Ligament" title="Uterosacral Ligament" href="" coords="1499.2346456692912,830.0228346456693,1845.5171653543307,778.7122834645669" shape="rect">
+			<area target="" alt="Cecum" title="Cecum" href="" coords="1510.7670866141732,898.5702362204726,1651.671968503937,847.2596850393702" shape="rect">
+			<area target="" alt="Common Iliac Artery" title="Common Iliac Artery" href="" coords="1499.2346456692912,964.0436220472441,1845.5171653543307,912.7330708661417" shape="rect">
+			<area target="" alt="Fallopian Tube" title="Fallopian Tube" href="" coords="201.93102362204726,447.44377952755906,452.3209448818898,396.1332283464567" shape="rect">
+			<area target="" alt="Ovary" title="Ovary" href="" coords="196.96535433070866,516.1340157480314,321.4548031496063,464.8234645669291" shape="rect">
+			<area target="" alt="Rectouterine Pouch" title="Rectouterine Pouch" href="" coords="127.4488188976378,577.7470866141732,458.48299212598425,526.4365354330708" shape="rect">
+			<area target="" alt="Suspensory Ligament" title="Suspensory Ligament" href="" coords="46.505826771653545,696.1748031496063,392.7881889763779,644.8642519685039" shape="rect">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="178.4179527559055,796.8782677165354,320.46220472440945,745.5677165354331" shape="rect">
+			<area target="" alt="Ileum" title="Ileum" href="" coords="202.7976377952756,865.5664566929134,327.1259842519685,814.2559055118111" shape="rect">
+			<area target="" alt="Sigmoid Colon" title="Sigmoid Colon" href="" coords="160.55165354330708,927.1645669291339,415.4355905511811,875.8540157480315" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290063685-613383208.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Reproduction-Anatomy/010.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

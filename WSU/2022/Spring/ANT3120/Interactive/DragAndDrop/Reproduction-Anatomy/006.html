@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Ductus" title="Ductus" href="" coords="1479.8423622047244,51.31055118110236,1617.1034645669292,0.0" shape="rect">
+			<area target="" alt="Ampulla of Ductus" title="Ampulla of Ductus" href="" coords="1368.9458267716536,410.4836220472441,1676.6896062992128,359.17307086614176" shape="rect">
+			<area target="" alt="Seminal Vesicle" title="Seminal Vesicle" href="" coords="1349.1428346456694,521.38,1617.1034645669292,470.0694488188976" shape="rect">
+			<area target="" alt="Seminal Vesicle Duct" title="Seminal Vesicle Duct" href="" coords="1349.1428346456694,591.3105511811024,1691.5861417322835,540.0" shape="rect">
+			<area target="" alt="Ejaculatory Duct" title="Ejaculatory Duct" href="" coords="1349.1428346456694,680.484094488189,1638.62062992126,629.1735433070867" shape="rect">
+			<area target="" alt="Urogenital Diaphragm" title="Urogenital Diaphragm" href="" coords="1342.5223622047242,781.1377952755906,1699.8623622047244,729.8272440944883" shape="rect">
+			<area target="" alt="Bulbourethral" title="Bulbourethral" href="" coords="1352.423779527559,844.656062992126,1593.9311811023622,793.3455118110236" shape="rect">
+			<area target="" alt="Corpora Cavernosa Penis" title="Corpora Cavernosa Penis" href="" coords="1347.4288188976377,967.6548031496063,1757.4092913385825,916.344251968504" shape="rect">
+			<area target="" alt="Spongy Penile Urethra" title="Spongy Penile Urethra" href="" coords="1349.1428346456694,1039.3429921259842,1716.4138582677165,988.032440944882" shape="rect">
+			<area target="" alt="Corpus Spongiosum Penis" title="Corpus Spongiosum Penis" href="" coords="196.6403149606299,930.3077165354331,606.6206299212598,878.9971653543307" shape="rect">
+			<area target="" alt="Bulb of Penis" title="Bulb of Penis" href="" coords="298.9062992125984,866.8461417322835,540.4137007874016,815.5355905511811" shape="rect">
+			<area target="" alt="Crus of Penis" title="Crus of Penis" href="" coords="266.6303937007874,808.9662992125984,508.1377952755906,757.655748031496" shape="rect">
+			<area target="" alt="Membranous Urethra" title="Membranous Urethra" href="" coords="175.44834645669292,659.2740157480315,540.4137007874016,607.9634645669291" shape="rect">
+			<area target="" alt="Prostatic Urethra" title="Prostatic Urethra" href="" coords="221.00456692913386,559.4337007874016,508.1377952755905,508.12314960629925" shape="rect">
+			<area target="" alt="Prostate Gland" title="Prostate Gland" href="" coords="209.41811023622049,471.68,472.18708661417327,420.36944881889764" shape="rect">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="272.48976377952755,238.8091338582677,409.11527559055116,187.49858267716533" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="778.1450393700786,73.29212598425197,1042.7587401574801,21.981574803149606" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1642290060141-823223538.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Reproduction-Anatomy/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

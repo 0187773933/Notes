@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pinocytotic Vesicles" title="Pinocytotic Vesicles" href="" coords="1109.7392125984252,57.5192125984252,1430.6088188976378,6.208661417322835" shape="rect">
+			<area target="" alt="Red Blood Cell" title="Red Blood Cell" href="" coords="1328.8696062992126,303.2582677165354,1579.304409448819,251.94771653543305" shape="rect">
+			<area target="" alt="Fenestrations" title="Fenestrations" href="" coords="1351.3338582677166,459.34629921259847,1601.7686614173228,408.0357480314961" shape="rect">
+			<area target="" alt="Intercellular Cleft" title="Intercellular Cleft" href="" coords="1351.3337007874015,649.4395275590551,1638.7826771653542,598.1289763779528" shape="rect">
+			<area target="" alt="Endothelial Cell" title="Endothelial Cell" href="" coords="1351.3337007874015,816.8091338582677,1616.8697637795276,765.4985826771654" shape="rect">
+			<area target="" alt="Tight Junction" title="Tight Junction" href="" coords="839.8765354330709,816.8091338582677,1080.1229921259842,765.4985826771654" shape="rect">
+			<area target="" alt="Basement Membrane" title="Basement Membrane" href="" coords="406.9565354330709,765.4985826771654,759.8133858267718,714.188031496063" shape="rect">
+			<area target="" alt="Endothelial Nucleus" title="Endothelial Nucleus" href="" coords="223.06692913385825,652.5699212598425,553.7264566929134,601.2593700787402" shape="rect">
+			<area target="" alt="Fenestrated Capillary" title="Fenestrated Capillary" href="" coords="449.21748031496065,939.1811023622048,798.2609448818898,887.8705511811024" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644025009142-171247885.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessel-Histology/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
