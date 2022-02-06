@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Diaphragm" title="Diaphragm" href="" coords="1095.6522834645668,149.10866141732285,1294.434803149606,97.79811023622048" shape="rect">
+			<area target="" alt="Adrenal Gland" title="Adrenal Gland" href="" coords="1270.1735433070867,206.59338582677168,1514.3475590551182,155.2828346456693" shape="rect">
+			<area target="" alt="Kidney" title="Kidney" href="" coords="1330.956535433071,260.4905511811023,1466.6088188976378,209.17999999999998" shape="rect">
+			<area target="" alt="Renal Artery" title="Renal Artery" href="" coords="1281.6514960629922,303.18141732283465,1504.9560629921261,264.08503937007873" shape="rect">
+			<area target="" alt="Renal Vein" title="Renal Vein" href="" coords="1313.684566929134,348.93464566929134,1502.608661417323,309.8382677165354" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="1208.0864566929133,396.33811023622053,1514.347559055118,357.2417322834646" shape="rect">
+			<area target="" alt="Abdominal Aorta" title="Abdominal Aorta" href="" coords="1219.8256692913387,443.7415748031496,1502.608503937008,404.6451968503937" shape="rect">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="1261.8256692913385,488.171811023622,1389.651968503937,449.0754330708661" shape="rect">
+			<area target="" alt="Iliac Crest" title="Iliac Crest" href="" coords="1261.8258267716535,552.9644094488189,1438.4349606299213,501.65385826771654" shape="rect">
+			<area target="" alt="Psoas Major Muscle" title="Psoas Major Muscle" href="" coords="1195.0434645669293,624.7507086614173,1522.0434645669293,573.440157480315" shape="rect">
+			<area target="" alt="Uterus" title="Uterus" href="" coords="1151.348031496063,758.852125984252,1294.4349606299213,707.5415748031496" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="1254.8576377952757,818.9234645669292,1519.6951181102363,767.6129133858268" shape="rect">
+			<area target="" alt="Urethra" title="Urethra" href="" coords="1165.1188976377953,944.768031496063,1313.684409448819,893.4574803149607" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161060544-779869929.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/009.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

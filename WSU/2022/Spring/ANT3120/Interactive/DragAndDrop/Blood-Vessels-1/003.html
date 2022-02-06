@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>003</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superficial Temporal Artery" title="Superficial Temporal Artery" href="" coords="187.82614173228347,315.02188976377954,626.2741732283464,263.7113385826772" shape="rect">
+			<area target="" alt="Posterior Auricular Artery" title="Posterior Auricular Artery" href="" coords="215.99984251968505,379.71748031496065,634.0999999999999,328.4069291338583" shape="rect">
+			<area target="" alt="Occipital Artery" title="Occipital Artery" href="" coords="294.2607874015748,441.51574803149606,567.3173228346457,390.2051968503937" shape="rect">
+			<area target="" alt="Maxillary Artery" title="Maxillary Artery" href="" coords="282.5976377952756,500.6522834645669,555.6541732283465,449.3417322834645" shape="rect">
+			<area target="" alt="External Carotid Artery" title="External Carotid Artery" href="" coords="291.13023622047245,559.7862992125984,663.8390551181103,508.47574803149604" shape="rect">
+			<area target="" alt="Internal Carotid Artery" title="Internal Carotid Artery" href="" coords="293.74110236220474,620.0193700787402,666.4499212598425,568.7088188976378" shape="rect">
+			<area target="" alt="Carotid Sinus" title="Carotid Sinus" href="" coords="364.6955905511811,680.6442519685039,593.4044094488189,629.3337007874015" shape="rect">
+			<area target="" alt="Vertebral Artery" title="Vertebral Artery" href="" coords="356.0129133858268,740.9541732283465,626.2740157480315,689.6436220472441" shape="rect">
+			<area target="" alt="Common Carotid Artery" title="Common Carotid Artery" href="" coords="286.43464566929134,818.0787401574803,671.6651968503937,766.7681889763779" shape="rect">
+			<area target="" alt="Thyrocervical Trunk" title="Thyrocervical Trunk" href="" coords="293.74125984251964,884.5211023622047,622.2870866141732,833.2105511811023" shape="rect">
+			<area target="" alt="Facial Artery" title="Facial Artery" href="" coords="1323.6499212598424,586.5381102362205,1541.7390551181102,535.2275590551181" shape="rect">
+			<area target="" alt="Lingual Artery" title="Lingual Artery" href="" coords="1323.6499212598424,645.6746456692913,1566.7826771653542,594.3640944881889" shape="rect">
+			<area target="" alt="Superior Thyroid Artery" title="Superior Thyroid Artery" href="" coords="1323.6499212598424,709.5332283464567,1704.0001574803148,658.2226771653543" shape="rect">
+			<area target="" alt="Subclavian Artery" title="Subclavian Artery" href="" coords="1323.6499212598424,870.7291338582678,1626.2587401574801,819.4185826771654" shape="rect">
+			<area target="" alt="Brachiocephalic Artery" title="Brachiocephalic Artery" href="" coords="1323.6497637795276,980.6144881889765,1691.999842519685,929.3039370078741" shape="rect">
+			<area target="" alt="Internal Thoracic Artery" title="Internal Thoracic Artery" href="" coords="1323.6497637795276,1044.4730708661418,1704.0,993.1625196850395" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161058235-393392995.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-1/004.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="590.0869291338582,433.9782677165354,710.795905511811,382.66771653543304" shape="rect">
+			<area target="" alt="Left Main Coronary Artery" title="Left Main Coronary Artery" href="" coords="1114.4348031496063,368.23905511811023,1532.347874015748,316.92850393700786" shape="rect">
+			<area target="" alt="Left Circumflex Branch" title="Left Circumflex Branch" href="" coords="1179.1305511811024,544.4067716535433,1544.8696062992126,493.09622047244096" shape="rect">
+			<area target="" alt="Left Anterior Descending Branch" title="Left Anterior Descending Branch" href="" coords="1166.6088188976378,729.6242519685039,1676.347874015748,678.3137007874016" shape="rect">
+			<area target="" alt="Right Coronary Artery" title="Right Coronary Artery" href="" coords="317.1303937007874,543.416062992126,682.8694488188976,492.10551181102363" shape="rect">
+			<area target="" alt="Right Marginal Branch" title="Right Marginal Branch" href="" coords="353.3177952755905,755.2795275590552,719.0568503937008,703.9689763779528" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161057297-661982169.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-1/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

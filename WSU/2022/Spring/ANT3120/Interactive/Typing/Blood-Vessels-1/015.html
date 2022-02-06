@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>015</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right Brachiocephalic Vein" title="Right Brachiocephalic Vein" href="" coords="223.44818897637793,125.82818897637796,646.136220472441,74.51763779527559" shape="rect">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="305.57669291338584,256.62173228346455,632.8943307086614,205.3111811023622" shape="rect">
+			<area target="" alt="Azygos Vein" title="Azygos Vein" href="" coords="446.5842519685039,403.89716535433075,656.0669291338583,352.5866141732284" shape="rect">
+			<area target="" alt="Posterior Intercostal Veins" title="Posterior Intercostal Veins" href="" coords="187.34881889763778,523.8622047244095,610.0368503937008,472.5516535433071" shape="rect">
+			<area target="" alt="Ascending Lumbar Veins" title="Ascending Lumbar Veins" href="" coords="223.4483464566929,677.0006299212598,614.6874015748031,625.6900787401574" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="279.72409448818894,878.5003149606299,582.7266141732283,827.1897637795275" shape="rect">
+			<area target="" alt="Left Brachiocephalic Vein" title="Left Brachiocephalic Vein" href="" coords="1227.5083464566928,86.10425196850395,1640.2759055118108,34.793700787401576" shape="rect">
+			<area target="" alt="Aortic Arch" title="Aortic Arch" href="" coords="1234.4935433070868,172.20850393700786,1453.2414173228349,120.89795275590551" shape="rect">
+			<area target="" alt="Accessory Hemiazygos Vein" title="Accessory Hemiazygos Vein" href="" coords="1241.1141732283463,371.62141732283465,1678.3448818897637,320.3108661417323" shape="rect">
+			<area target="" alt="Hemiazygos Vein" title="Hemiazygos Vein" href="" coords="1241.1143307086616,465.9488188976378,1522.7587401574806,414.63826771653544" shape="rect">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="1241.1140157480315,801.9398425196852,1388.6896062992128,750.6292913385828" shape="rect">
+			<area target="" alt="Kidney" title="Kidney" href="" coords="1241.1140157480315,886.8110236220472,1388.6896062992128,835.5004724409448" shape="rect">
+			<area target="" alt="Left Renal Vein" title="Left Renal Vein" href="" coords="1241.1141732283463,974.9924409448819,1497.9310236220472,923.6818897637795" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161063982-540570686.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/016.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

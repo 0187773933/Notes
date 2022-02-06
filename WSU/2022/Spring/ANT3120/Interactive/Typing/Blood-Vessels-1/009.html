@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>009</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Abdominal Aorta" title="Abdominal Aorta" href="" coords="796.3411023622047,53.18173228346457,1123.6587401574802,1.871181102362205" shape="rect">
+			<area target="" alt="Median Sacral Artery" title="Median Sacral Artery" href="" coords="784.5631496062991,97.04377952755905,1155.1303937007874,64.46" shape="rect">
+			<area target="" alt="Internal Iliac Artery" title="Internal Iliac Artery" href="" coords="784.5631496062991,138.43826771653542,1155.1303937007874,105.85448818897638" shape="rect">
+			<area target="" alt="Lateral Sacral Artery" title="Lateral Sacral Artery" href="" coords="784.5631496062991,176.70236220472438,1155.1303937007874,144.11858267716534" shape="rect">
+			<area target="" alt="Internal Pudendal Artery" title="Internal Pudendal Artery" href="" coords="773.6066141732284,214.96645669291337,1173.9130708661419,182.38267716535432" shape="rect">
+			<area target="" alt="Obturator Artery" title="Obturator Artery" href="" coords="814.2379527559054,260.4270866141732,1105.7617322834644,227.84330708661417" shape="rect">
+			<area target="" alt="Femoral Artery" title="Femoral Artery" href="" coords="817.3966929133859,320.8209448818897,1108.9204724409449,288.23716535433067" shape="rect">
+			<area target="" alt="Deep Femoral Artery" title="Deep Femoral Artery" href="" coords="787.7215748031496,379.3688188976378,1138.595433070866,338.80110236220474" shape="rect">
+			<area target="" alt="Popliteal Artery" title="Popliteal Artery" href="" coords="825.9963779527559,495.9661417322835,1094.0031496062993,444.65559055118115" shape="rect">
+			<area target="" alt="Genicular Arteries" title="Genicular Arteries" href="" coords="806.8590551181103,583.5637795275591,1119.4581102362206,532.2532283464567" shape="rect">
+			<area target="" alt="Anterior Tibial Artery" title="Anterior Tibial Artery" href="" coords="787.7215748031496,666.1727559055118,1135.6382677165354,614.8622047244095" shape="rect">
+			<area target="" alt="Posterior Tibial Artery" title="Posterior Tibial Artery" href="" coords="786.47968503937,731.4595275590551,1139.8371653543306,680.1489763779527" shape="rect">
+			<area target="" alt="Fibular Artery" title="Fibular Artery" href="" coords="840.8240944881891,797.0092913385827,1079.1755905511811,745.6987401574803" shape="rect">
+			<area target="" alt="Dorsalis Pedis Artery" title="Dorsalis Pedis Artery" href="" coords="794.8622047244095,889.4377952755905,1128.4973228346457,852.1566929133858" shape="rect">
+			<area target="" alt="Medial Plantar Artery" title="Medial Plantar Artery" href="" coords="786.7193700787402,937.2113385826772,1140.0768503937009,899.9302362204725" shape="rect">
+			<area target="" alt="Digital Arteries" title="Digital Arteries" href="" coords="830.6896062992126,1012.4592125984251,1095.627244094488,961.1486614173227" shape="rect">
+			<area target="" alt="Descending Brach of Lateral Circumflex Artery" title="Descending Brach of Lateral Circumflex Artery" href="" coords="0.0,430.67937007874013,558.7826771653544,379.36881889763777" shape="rect">
+			<area target="" alt="Lateral Circumflex Artery" title="Lateral Circumflex Artery" href="" coords="107.17842519685038,260.4270866141732,507.48472440944886,209.11653543307085" shape="rect">
+			<area target="" alt="External Iliac Artery" title="External Iliac Artery" href="" coords="184.8059842519685,169.58566929133858,518.4411023622048,118.27511811023622" shape="rect">
+			<area target="" alt="Common Iliac Artery" title="Common Iliac Artery" href="" coords="173.73921259842518,110.87165354330708,518.4412598425197,59.56110236220472" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="211.30425196850393,53.48031496062992,515.5979527559055,2.169763779527559" shape="rect">
+			<area target="" alt="Superior Gluteal Artery" title="Superior Gluteal Artery" href="" coords="1457.2940157480314,173.13307086614174,1842.2609448818896,121.82251968503937" shape="rect">
+			<area target="" alt="Lateral Plantar Artery" title="Lateral Plantar Artery" href="" coords="1457.2940157480314,936.7724409448819,1808.1678740157479,885.4618897637795" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161061025-8465009.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/010.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

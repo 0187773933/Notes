@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>017</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="796.3411023622047,53.470551181102365,1123.6587401574802,2.16" shape="rect">
+			<area target="" alt="Common Iliac Vein" title="Common Iliac Vein" href="" coords="799.1407874015747,111.72456692913386,1120.8587401574803,60.4140157480315" shape="rect">
+			<area target="" alt="External Iliac Vein" title="External Iliac Vein" href="" coords="812.535590551181,175.4488188976378,1107.463779527559,124.13826771653544" shape="rect">
+			<area target="" alt="External Iliac Vein" title="External Iliac Vein" href="" coords="812.535590551181,282.20771653543306,1107.463779527559,230.8971653543307" shape="rect">
+			<area target="" alt="Femoral Vein" title="Femoral Vein" href="" coords="836.5185826771653,350.8973228346457,1083.4811023622046,299.58677165354334" shape="rect">
+			<area target="" alt="Great Saphenous Vein" title="Great Saphenous Vein" href="" coords="781.5694488188976,419.5869291338583,1138.4303937007874,368.2763779527559" shape="rect">
+			<area target="" alt="Popliteal Vein" title="Popliteal Vein" href="" coords="836.5184251968503,594.208188976378,1083.4809448818896,542.8976377952756" shape="rect">
+			<area target="" alt="Small Saphenous Vein" title="Small Saphenous Vein" href="" coords="775.3261417322834,642.2067716535432,1144.6738582677165,607.4475590551181" shape="rect">
+			<area target="" alt="Anterior Tibial Veins" title="Anterior Tibial Veins" href="" coords="781.5694488188976,693.5182677165354,1138.4303937007874,657.1029921259842" shape="rect">
+			<area target="" alt="Posterior Tibial Veins" title="Posterior Tibial Veins" href="" coords="790.3552755905512,744.0040944881889,1129.6445669291338,703.4497637795275" shape="rect">
+			<area target="" alt="Fibular Vein" title="Fibular Vein" href="" coords="836.5184251968503,794.4899212598425,1083.4806299212598,753.9355905511811" shape="rect">
+			<area target="" alt="Great Saphenous Vein" title="Great Saphenous Vein" href="" coords="775.3258267716535,845.3792125984252,1144.6735433070867,804.8248818897638" shape="rect">
+			<area target="" alt="Plantar Veins" title="Plantar Veins" href="" coords="836.5181102362205,897.5201574803149,1083.4806299212598,856.9658267716535" shape="rect">
+			<area target="" alt="Dorsal Veins" title="Dorsal Veins" href="" coords="836.2806299212599,946.3508661417322,1083.2431496062993,905.7965354330709" shape="rect">
+			<area target="" alt="Dorsal Venous Arch" title="Dorsal Venous Arch" href="" coords="799.1409448818897,996.416062992126,1120.8587401574803,955.8617322834646" shape="rect">
+			<area target="" alt="Digital Veins" title="Digital Veins" href="" coords="836.2806299212599,1045.2467716535434,1083.2431496062993,1004.6924409448819" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161065281-483677604.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/018.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

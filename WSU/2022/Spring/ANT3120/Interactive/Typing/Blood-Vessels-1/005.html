@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right Common Carotid Artery" title="Right Common Carotid Artery" href="" coords="267.65228346456695,81.80440944881889,740.5351181102362,30.493858267716533" shape="rect">
+			<area target="" alt="Left Common Carotid Artery" title="Left Common Carotid Artery" href="" coords="1052.347874015748,81.80440944881889,1525.2307086614173,30.493858267716533" shape="rect">
+			<area target="" alt="Left Subclavian Artery" title="Left Subclavian Artery" href="" coords="1195.2988976377953,252.9348031496063,1554.2609448818898,201.62425196850393" shape="rect">
+			<area target="" alt="Aortic Arch" title="Aortic Arch" href="" coords="1293.4850393700788,352.0651968503937,1491.652283464567,300.75464566929134" shape="rect">
+			<area target="" alt="Posterior Intercostal Arteries" title="Posterior Intercostal Arteries" href="" coords="1327.0634645669293,466.55133858267715,1779.652125984252,415.2407874015748" shape="rect">
+			<area target="" alt="Thoracic Aorta" title="Thoracic Aorta" href="" coords="1348.6861417322834,580.9022047244094,1598.84,529.5916535433071" shape="rect">
+			<area target="" alt="Visceral Arteries" title="Visceral Arteries" href="" coords="1364.4855118110236,642.5574803149606,1637.2173228346455,591.2469291338582" shape="rect">
+			<area target="" alt="Superior Phrenic Artery" title="Superior Phrenic Artery" href="" coords="1366.803779527559,710.8114960629922,1748.347874015748,659.5009448818898" shape="rect">
+			<area target="" alt="Diaphragm" title="Diaphragm" href="" coords="1362.5858267716535,824.6633070866143,1568.348031496063,773.3527559055119" shape="rect">
+			<area target="" alt="Anterior Intercostal Arteries" title="Anterior Intercostal Arteries" href="" coords="3.891181102362205,830.924094488189,459.04992125984256,779.6135433070866" shape="rect">
+			<area target="" alt="Internal Thoracic Artery" title="Internal Thoracic Artery" href="" coords="113.68740157480315,665.8294488188976,495.23149606299216,614.5188976377952" shape="rect">
+			<area target="" alt="Ascending Aorta" title="Ascending Aorta" href="" coords="259.04456692913385,515.9699212598425,549.5727559055118,464.65937007874015" shape="rect">
+			<area target="" alt="Brachiocephalic Artery" title="Brachiocephalic Artery" href="" coords="249.9100787401575,396.54110236220475,618.4784251968504,345.2305511811024" shape="rect">
+			<area target="" alt="Right Subclavian Artery" title="Right Subclavian Artery" href="" coords="263.11748031496063,246.68157480314963,654.9822047244095,195.37102362204726" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161058839-201142162.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

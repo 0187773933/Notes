@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>018</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="1140.688346456693,55.67968503937008,1442.9691338582677,4.369133858267717" shape="rect">
+			<area target="" alt="Stomach" title="Stomach" href="" coords="1227.0387401574803,170.2363779527559,1391.0102362204725,118.92582677165353" shape="rect">
+			<area target="" alt="Gastric Veins" title="Gastric Veins" href="" coords="1264.39968503937,227.95464566929132,1490.4741732283464,176.64409448818895" shape="rect">
+			<area target="" alt="Gastroomental Veins" title="Gastroomental Veins" href="" coords="1277.9729133858268,287.15748031496065,1621.1133858267717,235.84692913385828" shape="rect">
+			<area target="" alt="Spleen" title="Spleen" href="" coords="1291.828661417323,329.56708661417326,1425.1546456692915,294.16992125984257" shape="rect">
+			<area target="" alt="Splenic Vein" title="Splenic Vein" href="" coords="1291.828661417323,387.8900787401575,1505.3195275590554,336.5795275590551" shape="rect">
+			<area target="" alt="Tail of Pancreas" title="Tail of Pancreas" href="" coords="1291.828661417323,461.37527559055115,1561.7319685039372,417.75338582677165" shape="rect">
+			<area target="" alt="Splenic Vein" title="Splenic Vein" href="" coords="1290.2029921259843,518.4859842519685,1505.3195275590551,473.2755905511811" shape="rect">
+			<area target="" alt="Gastroomental Veins" title="Gastroomental Veins" href="" coords="1290.2028346456693,573.6455118110237,1633.3431496062992,528.4351181102362" shape="rect">
+			<area target="" alt="Inferior Mesenteric Vein" title="Inferior Mesenteric Vein" href="" coords="1277.9730708661416,669.520472440945,1673.072125984252,624.3100787401576" shape="rect">
+			<area target="" alt="Descending Colon" title="Descending Colon" href="" coords="1259.4511811023622,761.4111811023621,1561.731968503937,710.1006299212597" shape="rect">
+			<area target="" alt="Small Intestine" title="Small Intestine" href="" coords="1227.0387401574803,853.3018897637795,1490.4741732283464,801.9913385826771" shape="rect">
+			<area target="" alt="Appendix" title="Appendix" href="" coords="429.0308661417323,932.2297637795276,602.8423622047244,880.9192125984252" shape="rect">
+			<area target="" alt="Ascending Colon" title="Ascending Colon" href="" coords="322.1442519685039,790.0355905511811,604.2483464566928,738.7250393700788" shape="rect">
+			<area target="" alt="Superior Mesenteric Vein" title="Superior Mesenteric Vein" href="" coords="195.95874015748032,667.7094488188977,602.8423622047244,616.3988976377954" shape="rect">
+			<area target="" alt="Head of Pancreas" title="Head of Pancreas" href="" coords="336.9897637795276,590.9548031496063,629.5618897637796,539.6442519685039" shape="rect">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="387.7258267716536,510.72188976377953,602.8423622047245,459.41133858267716" shape="rect">
+			<area target="" alt="Hepatic Portal Vein" title="Hepatic Portal Vein" href="" coords="234.55669291338583,413.5453543307087,552.1062992125984,362.2348031496063" shape="rect">
+			<area target="" alt="Cystic Vein" title="Cystic Vein" href="" coords="336.9897637795276,335.5211023622047,534.5793700787402,284.21055118110235" shape="rect">
+			<area target="" alt="Gallbladder" title="Gallbladder" href="" coords="322.1442519685039,255.3609448818898,534.5793700787401,204.05039370078742" shape="rect">
+			<area target="" alt="Liver" title="Liver" href="" coords="410.388188976378,181.11748031496063,515.936535433071,129.80692913385826" shape="rect">
+			<area target="" alt="Hepatic Veins" title="Hepatic Veins" href="" coords="322.1442519685039,100.88456692913385,554.2674015748031,49.5740157480315" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161065936-350218977.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

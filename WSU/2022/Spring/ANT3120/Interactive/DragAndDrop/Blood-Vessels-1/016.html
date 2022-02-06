@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>016</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superficial Temporal Vein" title="Superficial Temporal Vein" href="" coords="291.31023622047246,248.31118110236218,713.9982677165355,197.00062992125982" shape="rect">
+			<area target="" alt="Retromandibular Vein" title="Retromandibular Vein" href="" coords="357.5171653543307,346.79385826771653,713.9982677165355,295.48330708661416" shape="rect">
+			<area target="" alt="External Jugular Vein" title="External Jugular Vein" href="" coords="357.5171653543307,427.89748031496066,713.9982677165355,376.5869291338583" shape="rect">
+			<area target="" alt="Subclavian Vein" title="Subclavian Vein" href="" coords="370.75858267716535,605.0011023622047,645.3086614173228,553.6905511811024" shape="rect">
+			<area target="" alt="Right Brachiocephalic Vein" title="Right Brachiocephalic Vein" href="" coords="222.62062992125985,664.1555905511811,645.3086614173228,612.8450393700788" shape="rect">
+			<area target="" alt="Cephalic Vein" title="Cephalic Vein" href="" coords="357.5171653543307,711.3277165354332,610.5500787401575,671.9995275590552" shape="rect">
+			<area target="" alt="Axillary Vein" title="Axillary Vein" href="" coords="321.4133858267717,761.0451968503937,574.4462992125984,721.7170078740157" shape="rect">
+			<area target="" alt="Azygos Vein" title="Azygos Vein" href="" coords="357.5171653543307,808.8735433070867,574.4462992125984,771.4346456692914" shape="rect">
+			<area target="" alt="Basilic Vein" title="Basilic Vein" href="" coords="357.5171653543307,863.0272440944883,574.4462992125984,825.588346456693" shape="rect">
+			<area target="" alt="Brachial Veins" title="Brachial Veins" href="" coords="384.0,926.8965354330709,622.963937007874,875.5859842519685" shape="rect">
+			<area target="" alt="Facial Vein" title="Facial Vein" href="" coords="1351.1388976377955,419.62173228346455,1539.3105511811025,368.3111811023622" shape="rect">
+			<area target="" alt="Lingual Vein" title="Lingual Vein" href="" coords="1351.1390551181103,467.22566929133853,1562.4829921259843,427.8974803149606" shape="rect">
+			<area target="" alt="Superior Thyroid Vein" title="Superior Thyroid Vein" href="" coords="1351.1390551181103,514.8296062992126,1723.0344881889764,475.50141732283464" shape="rect">
+			<area target="" alt="Internal Jugular Vein" title="Internal Jugular Vein" href="" coords="1351.1388976377955,579.3458267716536,1697.3793700787403,528.0352755905512" shape="rect">
+			<area target="" alt="Left Brachiocephalic Vein" title="Left Brachiocephalic Vein" href="" coords="1351.1388976377955,663.3633070866141,1756.1379527559056,612.0527559055117" shape="rect">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="1351.1388976377955,727.8795275590551,1671.7240944881892,676.5689763779527" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="1351.1388976377955,926.8965354330709,1671.7240944881892,875.5859842519685" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161064619-566219695.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-1/017.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

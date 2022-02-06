@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>002</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="349.0434645669291,142.84787401574803,476.0132283464567,91.53732283464566" shape="rect">
+			<area target="" alt="Left Pulmonary Artery" title="Left Pulmonary Artery" href="" coords="219.13055118110236,203.89133858267715,576.1872440944883,152.58078740157478" shape="rect">
+			<area target="" alt="Left Pulmonary Veins" title="Left Pulmonary Veins" href="" coords="220.69574803149607,298.5590551181102,577.752440944882,247.24850393700788" shape="rect">
+			<area target="" alt="Auricle of Left Atrium" title="Auricle of Left Atrium" href="" coords="189.91307086614174,394.79196850393697,546.9697637795276,343.4814173228346" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="331.8259842519685,484.41937007874014,533.8324409448819,433.1088188976378" shape="rect">
+			<area target="" alt="Great Cardiac Vein" title="Great Cardiac Vein" href="" coords="220.69574803149607,553.028031496063,537.0562204724409,501.71748031496065" shape="rect">
+			<area target="" alt="Posterior Vein of Left Ventricle" title="Posterior Vein of Left Ventricle" href="" coords="72.0,656.3666141732284,556.5481889763779,605.056062992126" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="316.1738582677165,759.543937007874,556.5481889763779,708.2333858267716" shape="rect">
+			<area target="" alt="Apex" title="Apex" href="" coords="298.9565354330709,861.9351181102363,412.52834645669293,810.624566929134" shape="rect">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="1201.8061417322833,163.64614173228347,1526.0870866141731,112.3355905511811" shape="rect">
+			<area target="" alt="Right Pulmonary Artery" title="Right Pulmonary Artery" href="" coords="1201.8062992125983,229.54661417322836,1585.5653543307085,178.236062992126" shape="rect">
+			<area target="" alt="Right Pulmonary Veins" title="Right Pulmonary Veins" href="" coords="1202.328188976378,296.9938582677165,1586.0872440944881,245.68330708661415" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="1201.8062992125983,409.3294488188977,1427.4782677165354,358.0188976377953" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="1201.8062992125983,496.0097637795276,1504.1738582677165,444.6992125984252" shape="rect">
+			<area target="" alt="Coronary Sinus" title="Coronary Sinus" href="" coords="1212.7628346456693,569.2921259842519,1471.304409448819,517.9815748031496" shape="rect">
+			<area target="" alt="Right Coronary Artery" title="Right Coronary Artery" href="" coords="1204.936535433071,637.4543307086614,1557.3913385826772,586.143779527559" shape="rect">
+			<area target="" alt="Posterior Interventricular Artery" title="Posterior Interventricular Artery" href="" coords="1204.936535433071,723.5584251968504,1718.608503937008,672.247874015748" shape="rect">
+			<area target="" alt="Middle Cardiac Vein" title="Middle Cardiac Vein" href="" coords="1204.9366929133857,896.9190551181102,1543.3045669291337,845.6085039370079" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="1204.9366929133857,962.804251968504,1452.5217322834644,911.4937007874016" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161057714-4006401.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-1/003.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

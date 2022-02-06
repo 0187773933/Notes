@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Vertebral Artery" title="Vertebral Artery" href="" coords="529.0434645669291,127.19574803149607,804.7089763779527,75.8851968503937" shape="rect">
+			<area target="" alt="Thorocoacromial Artery" title="Thorocoacromial Artery" href="" coords="408.52173228346453,195.02188976377954,792.7089763779527,143.71133858267717" shape="rect">
+			<area target="" alt="Humeral Circumflex Arteries" title="Humeral Circumflex Arteries" href="" coords="245.73921259842518,313.05952755905514,694.6223622047244,261.7489763779528" shape="rect">
+			<area target="" alt="Brachial Artery" title="Brachial Artery" href="" coords="480.52173228346453,426.63464566929133,735.3176377952756,375.32409448818896" shape="rect">
+			<area target="" alt="Deep Brachial Artery" title="Deep Brachial Artery" href="" coords="394.4348031496063,489.9393700787401,735.3176377952757,438.62881889763776" shape="rect">
+			<area target="" alt="Radial Artery" title="Radial Artery" href="" coords="377.21732283464564,735.5436220472441,602.3675590551181,684.2330708661417" shape="rect">
+			<area target="" alt="Thyrocervical Trunk" title="Thyrocervical Trunk" href="" coords="1226.0869291338583,34.434803149606296,1585.5651968503937,0.0" shape="rect">
+			<area target="" alt="Right Subclavian Artery" title="Right Subclavian Artery" href="" coords="1226.0869291338583,81.3355905511811,1630.956535433071,46.9007874015748" shape="rect">
+			<area target="" alt="Right Common Carotid Artery" title="Right Common Carotid Artery" href="" coords="1226.0867716535433,146.15590551181103,1693.5650393700787,94.84535433070867" shape="rect">
+			<area target="" alt="Brachiocephalic Artery" title="Brachiocephalic Artery" href="" coords="1226.0867716535433,206.5664566929134,1598.0869291338583,155.25590551181102" shape="rect">
+			<area target="" alt="Internal Thoracic Artery" title="Internal Thoracic Artery" href="" coords="1225.3776377952756,250.10125984251968,1612.1738582677167,215.66645669291339" shape="rect">
+			<area target="" alt="Lateral Thoracic Artery" title="Lateral Thoracic Artery" href="" coords="1225.3776377952756,297.70409448818896,1612.1738582677167,263.26929133858266" shape="rect">
+			<area target="" alt="Axillary Artery" title="Axillary Artery" href="" coords="1225.3776377952756,345.30692913385826,1477.5651968503937,310.87212598425197" shape="rect">
+			<area target="" alt="Subscapular Artery" title="Subscapular Artery" href="" coords="1225.3777952755906,413.1329133858268,1542.7828346456695,361.8223622047244" shape="rect">
+			<area target="" alt="Ulnar Artery" title="Ulnar Artery" href="" coords="792.7089763779528,735.5436220472441,1017.8592125984253,684.2330708661417" shape="rect">
+			<area target="" alt="Deep Palmar Arch" title="Deep Palmar Arch" href="" coords="755.6653543307086,881.5749606299213,1053.3913385826772,830.2644094488189" shape="rect">
+			<area target="" alt="Superficial Palmar Arch" title="Superficial Palmar Arch" href="" coords="754.100157480315,950.4365354330708,1138.2872440944884,899.1259842519685" shape="rect">
+			<area target="" alt="Digital Arteries" title="Digital Arteries" href="" coords="754.100157480315,1022.0762204724409,1006.4348031496063,970.7656692913386" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161059933-414576326.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-1/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

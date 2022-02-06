@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Anterior Communicating Artery" title="Anterior Communicating Artery" href="" coords="725.4314960629921,383.91811023622046,1222.916062992126,332.6075590551181" shape="rect">
+			<area target="" alt="Anterior Cerebral Artery" title="Anterior Cerebral Artery" href="" coords="481.6552755905511,506.0692913385827,873.2577952755905,454.7587401574803" shape="rect">
+			<area target="" alt="Middle Cerebral Artery" title="Middle Cerebral Artery" href="" coords="329.0177952755906,567.7250393700788,720.6203149606299,516.4144881889764" shape="rect">
+			<area target="" alt="Posterior Cerebral Artery" title="Posterior Cerebral Artery" href="" coords="398.8965354330709,693.811811023622,804.2066141732283,642.5012598425196" shape="rect">
+			<area target="" alt="Cerebellar Anterior Artery" title="Cerebellar Anterior Artery" href="" coords="1101.6209448818897,757.6549606299212,1522.7585826771654,706.3444094488189" shape="rect">
+			<area target="" alt="Posterior Communicating Artery" title="Posterior Communicating Artery" href="" coords="1082.7266141732284,603.844094488189,1605.9822047244097,552.5335433070866" shape="rect">
+			<area target="" alt="Basilar Artery" title="Basilar Artery" href="" coords="1056.0,684.4355905511811,1296.1034645669292,633.1250393700788" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644161062094-199551459.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-1/013.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
