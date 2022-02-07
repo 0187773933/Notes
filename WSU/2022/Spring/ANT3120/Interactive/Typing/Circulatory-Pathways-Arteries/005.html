@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="External Iliac Artery" title="External Iliac Artery" href="" coords="743.3160629921259,107.69307086614174,1066.3261417322833,56.38251968503937" shape="rect">
+			<area target="" alt="Femoral Artery" title="Femoral Artery" href="" coords="777.1900787401576,223.02551181102362,1032.452125984252,171.71496062992125" shape="rect">
+			<area target="" alt="Popliteal Artery" title="Popliteal Artery" href="" coords="771.2486614173229,338.35811023622045,1038.3937007874015,287.0475590551181" shape="rect">
+			<area target="" alt="Anterior Tibial Artery" title="Anterior Tibial Artery" href="" coords="416.74645669291334,435.39637795275587,771.2489763779527,384.0858267716535" shape="rect">
+			<area target="" alt="Posterior Tibial Artery" title="Posterior Tibial Artery" href="" coords="1038.3937007874015,435.39637795275587,1392.896062992126,384.0858267716535" shape="rect">
+			<area target="" alt="Dorsalis Pedis Artery" title="Dorsalis Pedis Artery" href="" coords="426.9889763779527,711.5834645669291,763.5472440944882,660.2729133858268" shape="rect">
+			<area target="" alt="Fibular Artery" title="Fibular Artery" href="" coords="1339.1229921259842,573.4899212598425,1582.6529133858267,522.1793700787401" shape="rect">
+			<area target="" alt="Lateral And Medial Plantar Arteries" title="Lateral And Medial Plantar Arteries" href="" coords="1038.3937007874015,711.5834645669291,1589.3820472440943,660.2729133858268" shape="rect">
+			<area target="" alt="Digital Arteries" title="Digital Arteries" href="" coords="777.2872440944882,897.6020472440945,1032.6248818897639,846.2914960629921" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644274922062-617420643.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Circulatory-Pathways-Arteries/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

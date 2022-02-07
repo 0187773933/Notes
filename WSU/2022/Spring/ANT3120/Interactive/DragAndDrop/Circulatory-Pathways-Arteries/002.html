@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>002</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Radial Artery" title="Radial Artery" href="" coords="601.5700787401574,604.5453543307086,835.7223622047244,553.2348031496063" shape="rect">
+			<area target="" alt="Ulnar Artery" title="Ulnar Artery" href="" coords="919.096220472441,604.5453543307086,1153.2485039370079,553.2348031496063" shape="rect">
+			<area target="" alt="Brachial Artery" title="Brachial Artery" href="" coords="730.5521259842519,446.52944881889766,1006.0300787401575,395.2188976377953" shape="rect">
+			<area target="" alt="Axillary Artery" title="Axillary Artery" href="" coords="730.5521259842519,288.5135433070866,1006.0300787401575,237.20299212598425" shape="rect">
+			<area target="" alt="Subclavian Artery" title="Subclavian Artery" href="" coords="722.4990551181102,130.49763779527558,1014.0831496062992,79.18708661417323" shape="rect">
+			<area target="" alt="Superficial and Deep Palmar Arches" title="Superficial and Deep Palmar Arches" href="" coords="613.3702362204724,762.5612598425197,1166.9014173228347,711.2507086614173" shape="rect">
+			<area target="" alt="Digital Arteries" title="Digital Arteries" href="" coords="752.3966929133858,921.8062992125984,1027.8746456692913,870.4957480314961" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644274920663-971462808.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Circulatory-Pathways-Arteries/003.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

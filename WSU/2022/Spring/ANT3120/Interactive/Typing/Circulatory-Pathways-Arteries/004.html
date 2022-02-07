@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>004</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Abdominal Aorta" title="Abdominal Aorta" href="" coords="813.2985826771653,185.4944881889764,1106.7012598425197,134.18393700787402" shape="rect">
+			<area target="" alt="Medial Sacral" title="Medial Sacral" href="" coords="841.7891338582676,825.5188976377952,1078.2105511811023,774.2083464566929" shape="rect">
+			<area target="" alt="Right Suprarenal Arteries" title="Right Suprarenal Arteries" href="" coords="410.4672440944882,285.6850393700787,813.2985826771653,234.37448818897636" shape="rect">
+			<area target="" alt="Left Suprarenal Arteries" title="Left Suprarenal Arteries" href="" coords="1106.7012598425197,285.6850393700787,1487.1225196850394,234.37448818897636" shape="rect">
+			<area target="" alt="Right Renal Artery" title="Right Renal Artery" href="" coords="512.7475590551181,355.48992125984256,813.2984251968504,304.1793700787402" shape="rect">
+			<area target="" alt="Left Renal Artery" title="Left Renal Artery" href="" coords="1106.7014173228347,355.9270866141733,1388.87968503937,304.6165354330709" shape="rect">
+			<area target="" alt="Right Gonadal Artery" title="Right Gonadal Artery" href="" coords="469.6822047244094,425.2948031496063,813.2984251968503,373.98425196850394" shape="rect">
+			<area target="" alt="Left Gonadal Artery" title="Left Gonadal Artery" href="" coords="1106.7014173228347,425.731968503937,1429.2535433070866,374.42141732283466" shape="rect">
+			<area target="" alt="Lumbar Arteries" title="Lumbar Arteries" href="" coords="543.7009448818898,495.9527559055118,813.2982677165355,444.64220472440945" shape="rect">
+			<area target="" alt="Lumbar Arteries" title="Lumbar Arteries" href="" coords="1106.7014173228347,495.9527559055118,1376.2987401574803,444.64220472440945" shape="rect">
+			<area target="" alt="Inferior Mesenteric Artery" title="Inferior Mesenteric Artery" href="" coords="1108.2869291338582,573.9735433070866,1534.4447244094488,522.6629921259843" shape="rect">
+			<area target="" alt="Right Common Iliac Artery" title="Right Common Iliac Artery" href="" coords="393.6537007874016,722.1384251968504,813.2982677165355,670.8278740157481" shape="rect">
+			<area target="" alt="Left Common Iliac Artery" title="Left Common Iliac Artery" href="" coords="1108.2869291338582,722.1384251968504,1508.9729133858266,670.8278740157481" shape="rect">
+			<area target="" alt="Right Internal Iliac" title="Right Internal Iliac" href="" coords="449.3965354330709,825.5188976377952,757.5551181102362,774.2083464566929" shape="rect">
+			<area target="" alt="Left Internal Iliac" title="Left Internal Iliac" href="" coords="1165.6220472440946,825.5188976377952,1450.6464566929135,774.2083464566929" shape="rect">
+			<area target="" alt="Right External Iliac" title="Right External Iliac" href="" coords="11.70488188976378,851.1741732283464,319.86362204724406,799.863622047244" shape="rect">
+			<area target="" alt="Left External Iliac" title="Left External Iliac" href="" coords="1593.5451968503937,851.7211023622048,1878.5696062992126,800.4105511811024" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644274921499-717823692.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Circulatory-Pathways-Arteries/005.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

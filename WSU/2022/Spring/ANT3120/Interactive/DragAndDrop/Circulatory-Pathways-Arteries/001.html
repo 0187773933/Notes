@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Left Subclavian" title="Left Subclavian" href="" coords="1571.9480314960629,588.6417322834645,1827.2089763779527,537.3311811023622" shape="rect">
+			<area target="" alt="Brachiocephalic" title="Brachiocephalic" href="" coords="528.9012598425197,647.943464566929,803.2672440944882,596.6329133858267" shape="rect">
+			<area target="" alt="Left Internal Thoracic" title="Left Internal Thoracic" href="" coords="1470.8611023622047,743.5708661417323,1827.2089763779527,692.2603149606299" shape="rect">
+			<area target="" alt="Right Internal Thoracic" title="Right Internal Thoracic" href="" coords="58.91338582677166,743.3770078740157,423.087874015748,692.0664566929133" shape="rect">
+			<area target="" alt="Right Subclavian" title="Right Subclavian" href="" coords="58.91338582677166,589.9993700787402,333.60913385826774,538.6888188976378" shape="rect">
+			<area target="" alt="Right Common Carotid" title="Right Common Carotid" href="" coords="390.79842519685036,436.62173228346455,762.5374803149607,385.3111811023622" shape="rect">
+			<area target="" alt="Left Common Carotid" title="Left Common Carotid" href="" coords="1157.3645669291338,436.62173228346455,1513.712440944882,385.3111811023622" shape="rect">
+			<area target="" alt="Left Vertebral" title="Left Vertebral" href="" coords="1592.4262992125985,436.62173228346455,1827.2089763779527,385.3111811023622" shape="rect">
+			<area target="" alt="Left External Carotid" title="Left External Carotid" href="" coords="1341.0979527559055,291.1179527559055,1674.6198425196849,239.80740157480315" shape="rect">
+			<area target="" alt="Left Internal Carotid" title="Left Internal Carotid" href="" coords="976.9234645669292,291.1179527559055,1310.4453543307086,239.80740157480315" shape="rect">
+			<area target="" alt="Cerebral Arterial Circle" title="Cerebral Arterial Circle" href="" coords="776.3149606299212,159.99653543307087,1143.6844094488188,108.6859842519685" shape="rect">
+			<area target="" alt="Basilar Artery" title="Basilar Artery" href="" coords="842.575905511811,58.33133858267716,1077.4236220472442,7.020787401574803" shape="rect">
+			<area target="" alt="Right External Carotid" title="Right External Carotid" href="" coords="187.2696062992126,291.1179527559055,551.4439370078741,239.80740157480315" shape="rect">
+			<area target="" alt="Right Internal Carotid" title="Right Internal Carotid" href="" coords="582.0965354330708,291.1179527559055,946.2708661417323,239.80740157480315" shape="rect">
+			<area target="" alt="Right Vertebral" title="Right Vertebral" href="" coords="58.91338582677166,436.62173228346455,312.08456692913387,385.3111811023622" shape="rect">
+			<area target="" alt="Ascending Aorta" title="Ascending Aorta" href="" coords="601.2911811023622,887.5296062992126,876.7691338582677,836.2190551181102" shape="rect">
+			<area target="" alt="Descending Aorta" title="Descending Aorta" href="" coords="1076.5951181102362,888.4069291338583,1372.3072440944882,837.0963779527559" shape="rect">
+			<area target="" alt="Parietal Arteries" title="Parietal Arteries" href="" coords="1470.720157480315,843.463779527559,1744.3072440944884,792.1532283464567" shape="rect">
+			<area target="" alt="Visceral Arteries" title="Visceral Arteries" href="" coords="1470.720157480315,956.3387401574804,1744.3072440944884,905.028188976378" shape="rect">
+			<area target="" alt="Coronary Arteries" title="Coronary Arteries" href="" coords="209.05716535433072,887.5296062992126,502.87826771653545,836.2190551181102" shape="rect">
+			<area target="" alt="Left Ventricle of Heart" title="Left Ventricle of Heart" href="" coords="559.7006299212599,1072.9792125984252,918.3598425196851,1021.6686614173228" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644274920243-655371760.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Circulatory-Pathways-Arteries/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
