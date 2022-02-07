@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>033</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Internal Iliac Artery" title="Internal Iliac Artery" href="" coords="322.40708661417324,150.72929133858267,639.3149606299212,99.41874015748031" shape="rect">
+			<area target="" alt="Inferior Gluteal Artery" title="Inferior Gluteal Artery" href="" coords="279.0796850393701,305.2815748031496,639.3148031496063,253.97102362204726" shape="rect">
+			<area target="" alt="Internal Pudendal Artery" title="Internal Pudendal Artery" href="" coords="252.31858267716538,412.34629921259847,646.9607874015747,361.0357480314961" shape="rect">
+			<area target="" alt="Inferior Vesical Artery" title="Inferior Vesical Artery" href="" coords="279.07984251968503,673.9633070866141,639.3148031496063,622.6527559055118" shape="rect">
+			<area target="" alt="Middle Rectal Artery" title="Middle Rectal Artery" href="" coords="303.291968503937,561.4203149606299,640.164251968504,510.10976377952755" shape="rect">
+			<area target="" alt="Umbilical Artery" title="Umbilical Artery" href="" coords="1349.9606299212599,467.47984251968506,1622.2300787401575,416.1692913385827" shape="rect">
+			<area target="" alt="Superior Vesical Artery" title="Superior Vesical Artery" href="" coords="1349.9606299212599,328.38818897637793,1719.4883464566929,277.07763779527556" shape="rect">
+			<area target="" alt="Obturator Artery" title="Obturator Artery" href="" coords="1348.552125984252,172.00251968503937,1636.247716535433,120.691968503937" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644237335311-12364722.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Blood-Vessels-2/034.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

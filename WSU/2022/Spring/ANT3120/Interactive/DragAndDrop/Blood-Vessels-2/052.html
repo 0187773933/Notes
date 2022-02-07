@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>052</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Hepatic Portal Vein" title="Hepatic Portal Vein" href="" coords="211.54000000000002,395.40188976377954,525.8990551181103,344.09133858267717" shape="rect">
+			<area target="" alt="Superior Mesenteric Vein" title="Superior Mesenteric Vein" href="" coords="131.25685039370077,643.6850393700787,538.4300787401575,592.3744881889763" shape="rect">
+			<area target="" alt="Inferior Mesenteric Vein" title="Inferior Mesenteric Vein" href="" coords="1368.8634645669292,551.720472440945,1757.3097637795277,500.4099212598426" shape="rect">
+			<area target="" alt="Splenic Vein" title="Splenic Vein" href="" coords="1371.7151181102363,383.29559055118114,1585.2744881889764,331.98503937007877" shape="rect">
+			<area target="" alt="Hepatic Artery Proper" title="Hepatic Artery Proper" href="" coords="1363.9174803149608,200.85307086614173,1719.0796850393704,149.54251968503937" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644237345154-42339064.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-2/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

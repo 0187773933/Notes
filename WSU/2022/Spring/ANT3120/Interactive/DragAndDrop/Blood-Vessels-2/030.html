@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>030</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superior Mesenteric Artery" title="Superior Mesenteric Artery" href="" coords="135.07984251968503,436.1806299212598,569.2266141732284,384.87007874015745" shape="rect">
+			<area target="" alt="Inferior Mesenteric Artery" title="Inferior Mesenteric Artery" href="" coords="144.0,623.295748031496,569.2262992125984,571.9851968503937" shape="rect">
+			<area target="" alt="Accessory Renal Artery" title="Accessory Renal Artery" href="" coords="1320.6510236220472,596.3428346456693,1697.415905511811,545.032283464567" shape="rect">
+			<area target="" alt="Left Renal Artery" title="Left Renal Artery" href="" coords="1318.1023622047246,440.00362204724405,1606.9381102362206,388.6930708661417" shape="rect">
+			<area target="" alt="Left Inferior Phrenic Artery" title="Left Inferior Phrenic Artery" href="" coords="1303.8722834645669,262.6585826771654,1734.371653543307,211.34803149606302" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1644237333729-654750087.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Vessels-2/031.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
