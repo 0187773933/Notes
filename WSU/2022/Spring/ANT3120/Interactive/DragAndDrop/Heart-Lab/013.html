@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>013</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right" title="Right" href="" coords="1130.0869291338581,231.31055118110237,1241.2173228346455,180.0" shape="rect">
+			<area target="" alt="Left" title="Left" href="" coords="1118.0869291338583,169.22346456692915,1209.9130708661419,117.91291338582678" shape="rect">
+			<area target="" alt="Anterior" title="Anterior" href="" coords="1118.0869291338583,107.04645669291338,1277.2173228346458,55.73590551181102" shape="rect">
+			<area target="" alt="Left" title="Left" href="" coords="1342.183779527559,243.74204724409452,1438.4348031496063,192.43149606299215" shape="rect">
+			<area target="" alt="Right" title="Right" href="" coords="1342.183779527559,310.00299212598424,1452.5217322834644,258.69244094488187" shape="rect">
+			<area target="" alt="Posterior" title="Posterior" href="" coords="1343.7488188976376,376.263937007874,1513.5650393700787,324.95338582677164" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645037873179-17216937.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Lab/014.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

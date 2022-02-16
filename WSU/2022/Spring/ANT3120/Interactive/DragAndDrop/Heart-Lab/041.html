@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>041</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="SVC" title="SVC" href="" coords="419.47826771653547,98.87874015748031,517.0433070866142,47.568188976377954" shape="rect">
+			<area target="" alt="IVC" title="IVC" href="" coords="538.9565354330708,98.87874015748031,636.5215748031495,47.568188976377954" shape="rect">
+			<area target="" alt="CS" title="CS" href="" coords="658.4348031496063,98.87874015748031,735.6521259842519,47.568188976377954" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="369.1302362204724,235.5651968503937,587.7390551181102,184.25464566929134" shape="rect">
+			<area target="" alt="Tricuspid Valve" title="Tricuspid Valve" href="" coords="355.9571653543307,370.8667716535433,609.7822047244094,319.55622047244094" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="357.52440944881886,508.1196850393701,611.347559055118,456.8091338582677" shape="rect">
+			<area target="" alt="Pulmonary Valve" title="Pulmonary Valve" href="" coords="339.49039370078737,646.3086614173228,629.3812598425197,594.9981102362204" shape="rect">
+			<area target="" alt="Pulmonary Trunk" title="Pulmonary Trunk" href="" coords="337.9248818897638,784.4259842519685,627.8141732283465,733.1154330708662" shape="rect">
+			<area target="" alt="Pulmonary Arteries" title="Pulmonary Arteries" href="" coords="321.9140157480315,920.967874015748,646.9573228346457,869.6573228346456" shape="rect">
+			<area target="" alt="Pulmonary Veins" title="Pulmonary Veins" href="" coords="1260.924251968504,104.96850393700788,1550.8141732283466,53.65795275590551" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1290.5631496062992,235.5651968503937,1509.1714960629922,184.25464566929134" shape="rect">
+			<area target="" alt="Bicuspid Valve" title="Bicuspid Valve" href="" coords="1277.3902362204726,370.8667716535433,1531.2132283464568,319.55622047244094" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1289.1946456692913,509.92755905511814,1519.4088188976377,458.61700787401577" shape="rect">
+			<area target="" alt="Aortic Valve" title="Aortic Valve" href="" coords="1289.1946456692913,646.3086614173228,1519.4088188976377,594.9981102362204" shape="rect">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="1342.4152755905513,784.4259842519685,1466.188031496063,733.1154330708662" shape="rect">
+			<area target="" alt="Systemic Arteries" title="Systemic Arteries" href="" coords="1255.9341732283465,922.0459842519684,1543.80031496063,870.7354330708661" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645037887416-583484976.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Lab/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

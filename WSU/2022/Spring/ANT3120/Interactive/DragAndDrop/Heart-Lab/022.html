@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>022</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Left Anterior Descending Artery" title="Left Anterior Descending Artery" href="" coords="120.52173228346457,719.6584251968504,621.9129133858268,668.3478740157481" shape="rect">
+			<area target="" alt="Coronary Sinus" title="Coronary Sinus" href="" coords="839.7388976377953,641.9190551181102,1111.304094488189,590.6085039370079" shape="rect">
+			<area target="" alt="Left Inferior Pulmonary Vein" title="Left Inferior Pulmonary Vein" href="" coords="1255.0431496062993,506.2669291338583,1702.956535433071,454.95637795275593" shape="rect">
+			<area target="" alt="Right Pulmonary Vein" title="Right Pulmonary Vein" href="" coords="1123.8913385826772,306.4407874015748,1485.3913385826772,255.13023622047245" shape="rect">
+			<area target="" alt="Right Pulmonary Artery" title="Right Pulmonary Artery" href="" coords="1120.7609448818898,164.1859842519685,1499.4782677165356,112.87543307086614" shape="rect">
+			<area target="" alt="Ligamentum Arteriosum" title="Ligamentum Arteriosum" href="" coords="309.9130708661417,97.22346456692912,709.5651968503937,45.91291338582677" shape="rect">
+			<area target="" alt="Left Pulmonary Artery" title="Left Pulmonary Artery" href="" coords="383.15259842519686,280.3537007874016,744.6525984251969,229.0431496062992" shape="rect">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="504.0,408.4409448818898,621.9129133858268,357.1303937007874" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645037878343-681859031.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Lab/023.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

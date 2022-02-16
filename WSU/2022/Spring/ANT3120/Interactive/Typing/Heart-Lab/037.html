@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>037</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Limbus of Fossa Ovalis" title="Limbus of Fossa Ovalis" href="" coords="468.0,120.18015748031496,828.5215748031496,68.86960629921259" shape="rect">
+			<area target="" alt="Fossa Ovalis" title="Fossa Ovalis" href="" coords="433.5651968503937,245.57779527559057,646.6955905511811,194.2672440944882" shape="rect">
+			<area target="" alt="Opening of Coronary Sinus" title="Opening of Coronary Sinus" href="" coords="112.04346456692913,345.32015748031495,540.1303937007874,294.0096062992126" shape="rect">
+			<area target="" alt="Valve of the Coronary Sinus" title="Valve of the Coronary Sinus" href="" coords="28.173858267716536,493.0814173228347,468.0,441.7708661417323" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="56.347874015748026,688.6600000000001,356.86960629921253,637.3494488188977" shape="rect">
+			<area target="" alt="Valve of the Inferior Vena Cava" title="Valve of the Inferior Vena Cava" href="" coords="56.47811023622047,1036.7856692913385,540.1303937007874,985.4751181102362" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645037885853-811784084.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Heart-Lab/038.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chapter 20 - Cardiovascular System - Heart - Practice Test</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index - 1 );
+				if ( window.DECK.active_index < 0 ) { window.DECK.active_index = ( window.DECK.questions.length - 1 ); }
+				render_active_card();
+			}
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index + 1 );
+				if ( window.DECK.active_index > ( window.DECK.questions.length - 1 ) ) { window.DECK.active_index = 0; }
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			// console.log( window.DECK.questions.length , window.DECK.active_index );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.DECK.active_index ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.DECK.active_index ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${window.DECK.active_index + 1}` );
+			render_katex();
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.DECK.active_index = 0;
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			$( "#current-card-number" ).text( `${window.DECK.active_index + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_number": 20 ,
+			"chapter_title": "Cardiovascular System - Heart" ,
+			"questions": [
+				{
+					"prompt": "The right side of the heart receives blood from the body and pumps through the ________ circulation to the lungs." ,
+					"choices": [
+						"hepatic" ,
+						"pulmonary" ,
+						"peripheral" ,
+						"systemic"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The delivery of oxygen and nutrients to the tissues of the body is accomplished through the ________ circulation." ,
+					"choices": [
+						"hepatic" ,
+						"pulmonary" ,
+						"peripheral" ,
+						"systemic"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a function of the heart?" ,
+					"choices": [
+						"Providing a location for gas exchange between oxygen and carbon dioxide" ,
+						"Regulating blood supply to tissues depending on need" ,
+						"Generating blood pressure through contraction" ,
+						"Routing blood to either the pulmonary circulation or the systemic circulation"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT true about the heart?" ,
+					"choices": [
+						"The heart is about the size of a closed fist." ,
+						"The heart is located in the mediastinum." ,
+						"The apex of the heart is directed superiorly and to the left." ,
+						"Knowing the heart's position is important for effective CPR."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The heart" ,
+					"choices": [
+						"is a four-chambered muscular pump." ,
+						"is posterior to the trachea." ,
+						"is lined with an epithelial layer called the epicardium." ,
+						"lies mostly to the right of the midline of the sternum." ,
+						"has a superior apex and an inferior base."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The pericardial sac is lined with" ,
+					"choices": [
+						"fibrous pericardium." ,
+						"parietal pericardium." ,
+						"visceral pericardium." ,
+						"myocardium." ,
+						"epicardium."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The epicardium" ,
+					"choices": [
+						"covers the surface of the heart." ,
+						"lines the walls of the ventricles." ,
+						"is known as the fibrous pericardium." ,
+						"attaches inferiorly to the diaphragm." ,
+						"is also called endocardium."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A serious condition in which a large amount of fluid accumulates in the pericardial cavity and puts pressure on the heart is ________." ,
+					"choices": [
+						"endocarditis" ,
+						"pericarditis" ,
+						"a myocardial infarction" ,
+						"cardiac tamponade"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Ezra is admitted to the cardiac unit with a diagnosis of endocarditis. When Ezra asks the nurse where the infection is located, the nurse replies that the infection is in" ,
+					"choices": [
+						"the outer layer of the heart wall." ,
+						"the inner lining of the heart." ,
+						"a membranous sac that encloses the heart." ,
+						"the muscular layer of the heart." ,
+						"the lining of the mediastinum."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Another name for the visceral pericardium is the ________." ,
+					"choices": [
+						"endocardium" ,
+						"epicardium" ,
+						"isocardium" ,
+						"myocardium" ,
+						"visocardium"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following terms is mismatched with its description?" ,
+					"choices": [
+						"Endocardium - covers the inner surfaces of the heart" ,
+						"Endocardium - covers the inner surfaces of the heart" ,
+						"Trabeculae carneae - found on the interior walls of ventricles" ,
+						"Pectinate muscles - muscles that close valves" ,
+						"Chordae tendineae - connective tissue strings that connect to cusps of valves"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "A stab wound into the heart can result in cardiac tamponade. This means that" ,
+					"choices": [
+						"blood enters the pleural cavity." ,
+						"the heart is compressed by blood inact" ,
+						"the electrical conduction system of the heart is damaged." ,
+						"the left coronary artery has been damaged or cut." ,
+						"the heart has lost all of its blood."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following layers forms the bulk of the heart wall?" ,
+					"choices": [
+						"Epicardium" ,
+						"Pericardium" ,
+						"Endocardium" ,
+						"Myocardium" ,
+						"Visceral pericardium"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The function of the pericardial fluid is to" ,
+					"choices": [
+						"reduce friction between the pericardial membranes." ,
+						"lubricate the heart valves." ,
+						"replace any blood that is lost." ,
+						"provide oxygen and nutrients to the endocardium." ,
+						"stimulate the heart."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Blood vessels enter and exit from the ________ of the heart." ,
+					"choices": [
+						"apex" ,
+						"base" ,
+						"auricles" ,
+						"trigone" ,
+						"inferior aspect"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Blood in the pulmonary veins returns to the" ,
+					"choices": [
+						"right atrium." ,
+						"left atrium." ,
+						"right ventricle." ,
+						"left ventricle." ,
+						"coronary sinus."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The great cardiac vein and middle cardiac vein empty into a venous cavity called the" ,
+					"choices": [
+						"pulmonary vein." ,
+						"inferior vena cava." ,
+						"superior vena cava." ,
+						"coronary sinus." ,
+						"coronary artery."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "All cardiac veins empty into the ________, which then empties into the ________." ,
+					"choices": [
+						"coronary sinus; left atrium" ,
+						"coronary sinus; right atrium" ,
+						"great cardiac vein; right atrium" ,
+						"great cardiac vein; superior vena cava" ,
+						"inferior vena cava; left atrium"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Occlusion of which of the following would primarily damage the posterior wall of the heart?" ,
+					"choices": [
+						"Circumflex artery" ,
+						"Pulmonary artery" ,
+						"Right marginal artery" ,
+						"Coronary sinus artery" ,
+						"Right coronary artery"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following statements about coronary vessels is true?" ,
+					"choices": [
+						"The left coronary artery is a branch of the left pulmonary vein." ,
+						"The coronary sinus returns blood to the left atrium." ,
+						"The coronary arteries arise from the pulmonary trunk." ,
+						"The great cardiac vein collects blood from the left anterior surface of the heart." ,
+						"The pulmonary arteries carry blood to the left atrium."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "A direct connection between arteries is called a/an ________." ,
+					"choices": [
+						"auricle" ,
+						"sulcus" ,
+						"sinus" ,
+						"anastamosis"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Blood flow through the coronary blood vessels decreases during myocardial contraction and increases during myocardial relaxation." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Coronary artery disease can diminish myocardial blood flow resulting in the death of myocardial cells. This condition is known as a myocardial ________." ,
+					"choices": [
+						"attack" ,
+						"angina" ,
+						"necrosis" ,
+						"cirrhosis" ,
+						"infarction"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The procedure whereby a small balloon is placed into a partially occluded coronary artery and then inflated to increase blood flow through the artery is called a/an ________." ,
+					"choices": [
+						"angioplasty" ,
+						"coronary bypass" ,
+						"urokinase injection" ,
+						"tissue plasminogen activation" ,
+						"angiogram"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Angina pectoris is chest pain caused by reduced" ,
+					"choices": [
+						"stimulation of the myocardium." ,
+						"blood supply to cardiac muscle." ,
+						"fluid in the pericardial sac." ,
+						"contractility of the heart." ,
+						"action potentials from SA node."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT an enzyme given to someone experiencing a myocardial infarction to break up blood clots?" ,
+					"choices": [
+						"Streptokinase" ,
+						"Tissue plasminogen activator (t-Pa)" ,
+						"Nitroglycerin" ,
+						"Urokinase"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a major opening into the right atrium?" ,
+					"choices": [
+						"Pulmonary vein" ,
+						"Inferior vena cava" ,
+						"Superior vena cava" ,
+						"Coronary sinus"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The right atrium receives blood from" ,
+					"choices": [
+						"the lungs and the heart." ,
+						"the heart." ,
+						"the body and the heart." ,
+						"the lungs and the body."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What is the foramen ovale?" ,
+					"choices": [
+						"An opening between the right and left atria in the embryo and fetus" ,
+						"An opening between the right and left ventricles in the embryo and fetus" ,
+						"An oval hole in the pericardium in the embryo and fetus" ,
+						"An opening between the pulmonary trunk and aorta in the embryo and fetus"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What vessel exits the left ventricle?" ,
+					"choices": [
+						"Pulmonary trunk" ,
+						"Pulmonary vein" ,
+						"Aorta" ,
+						"Pulmonary artery"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The AV valve that is located on the same side of the heart as the origin of the aorta is the" ,
+					"choices": [
+						"bicuspid or mitral valve." ,
+						"tricuspid valve." ,
+						"aortic semilunar valve." ,
+						"pulmonary semilunar valve." ,
+						"coronary sinus valve."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The valve located between the right ventricle and the pulmonary trunk is the" ,
+					"choices": [
+						"aortic semilunar valve." ,
+						"pulmonary semilunar valve." ,
+						"tricuspid valve." ,
+						"mitral valve." ,
+						"bicuspid valve."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Contraction of the papillary muscles would" ,
+					"choices": [
+						"eject blood from the ventricles." ,
+						"prevent the AV valves from protruding into the atria." ,
+						"close the semilunar valves." ,
+						"cause the atria to eject their contents into the ventricles." ,
+						"open the semilunar valves."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The chordae tendineae" ,
+					"choices": [
+						"connect the atria to the ventricles." ,
+						"are found in the interventricular septum." ,
+						"are part of the conducting system of the heart." ,
+						"connect the cusps of the AV valves to the papillary muscles." ,
+						"are a part of the myocardium."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Blood in the superior vena cava will enter the ________." ,
+					"choices": [
+						"aorta" ,
+						"right atrium" ,
+						"pulmonary trunk" ,
+						"pulmonary arteries" ,
+						"pulmonary veins"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which vessels empty blood into the left atrium?" ,
+					"choices": [
+						"aorta" ,
+						"Right atrium" ,
+						"Pulmonary trunk" ,
+						"Pulmonary arteries" ,
+						"Pulmonary veins"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which blood vessel carries blood away from the left ventricle?" ,
+					"choices": [
+						"Aorta" ,
+						"Right atrium" ,
+						"Pulmonary trunk" ,
+						"Pulmonary arteries" ,
+						"Pulmonary veins"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "From the right ventricle, blood flows directly into the ________." ,
+					"choices": [
+						"aorta" ,
+						"right atrium" ,
+						"pulmonary trunk" ,
+						"pulmonary arteries" ,
+						"pulmonary veins"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which vessels transport blood to the right and left lungs?" ,
+					"choices": [
+						"aorta" ,
+						"Right atrium" ,
+						"Pulmonary trunk" ,
+						"Pulmonary arteries" ,
+						"Pulmonary veins"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "An incompetent pulmonary semilunar valve could result in less blood reaching the" ,
+					"choices": [
+						"lungs" ,
+						"heart muscle." ,
+						"right ventricle." ,
+						"aorta" ,
+						"right atrium."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following heart chambers is <b>correctly</b> associated with the blood vessel that enters or leaves it?" ,
+					"choices": [
+						"Right atrium – pulmonary veins" ,
+						"Left atrium – aorta" ,
+						"Right ventricle – pulmon7ary trunk" ,
+						"Left ventricle – superior vena cava and inferior vena cava" ,
+						"Right atrium – aorta"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is a function of the heart skeleton?" ,
+					"choices": [
+						"Provides electrical insulation between the atria and ventricles" ,
+						"Supplies support and reinforcement" ,
+						"Provides a rigid site for cardiac muscle attachment" ,
+						"All of the choices are functions of the heart skeleton."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Cardiac muscle cells" ,
+					"choices": [
+						"have smooth ER but no T tubules." ,
+						"form the heart valves." ,
+						"are maintained by an extensive capillary network." ,
+						"develop a significant oxygen deficit during systole." ,
+						"do not contain actin and myosin like skeletal muscle fibers."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following phrases would apply to cardiac muscle cells?" ,
+					"choices": [
+						"Organized in parallel columns or bundles" ,
+						"Contain actin but no myosin" ,
+						"Develop a significant oxygen deficit during systole" ,
+						"Multinucleated like skeletal muscle" ,
+						"Possess special cell-to-cell contacts called intercalated discs"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Action potentials pass from one cardiac muscle cell to another through areas of low electrical resistance called" ,
+					"choices": [
+						"gap junctions." ,
+						"fibrous heart rings." ,
+						"electromagnetic discs." ,
+						"sarcolemma sclerotic plaques." ,
+						"tight junctions."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The \"pacemaker\" of the heart is the" ,
+					"choices": [
+						"right bundle branch." ,
+						"left bundle branch." ,
+						"AV node." ,
+						"SA node." ,
+						"PM node."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following sequences for the conducting system is correct?" ,
+					"choices": [
+						"AV node, AV bundle, SA node, Purkinje fibers, bundle branches" ,
+						"Purkinje fibers, bundle branches, AV node, AV bundle, SA node" ,
+						"SA node, AV node, AV bundle, bundle branches, Purkinje fibers" ,
+						"SA node, AV bundle, AV node, bundle branches, Purkinje fibers" ,
+						"AV node, SA node, bundle branches, AV bundle, Purkinje fibers"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What is the importance of the delay in the action potential in the AV node?" ,
+					"choices": [
+						"It allows the action potential to reach both ventricles at the same time." ,
+						"It allows an action potential to reach the left atrium so both atria contract together." ,
+						"It allows an action potential to reach the left atrium so both atria contract together, before the ventricles contract." ,
+						"It allows time for the atria to fill with blood."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Energy for contraction of cardiac muscle cells comes primarily from" ,
+					"choices": [
+						"aerobic respiration in the mitochondria." ,
+						"anaerobic respiration in the cytosol." ,
+						"glycolysis in the cytosol." ,
+						"ATP that is stored while the heart is not contracting." ,
+						"creatine phosphate."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The cardiac electrical impulse normally begins spontaneously in the SA node because" ,
+					"choices": [
+						"of the superior location of the SA node in the right atrium." ,
+						"the SA node is the only area of the heart capable of spontaneous depolarization." ,
+						"of the rich sympathetic innervation of the SA node." ,
+						"this area produces action potentials more rapidly than any other portion of the conduction system." ,
+						"of action potentials from the cardiore"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following will depolarize immediately after the AV node depolarizes?" ,
+					"choices": [
+						"The AV bundle" ,
+						"Purkinje fibers" ,
+						"Atrial myocardium" ,
+						"Bundle branches in the ventricular septum" ,
+						"The SA node"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Ventricular contraction begins at the" ,
+					"choices": [
+						"AV bundle." ,
+						"apex of the heart." ,
+						"base of the heart." ,
+						"superior portion of the interventricular..." ,
+						"top of the ventricles."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The action potentials are slowed at the AV node to allow the" ,
+					"choices": [
+						"ventricles to repolarize." ,
+						"ventricles to completely empty of blood." ,
+						"pacemaker to reset for the next beat." ,
+						"atria to complete their contraction." ,
+						"atria to begin their contraction."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The spontaneous opening of Na<sup>+</sup> channels marks the beginning of ________ of a cardiac muscle cell." ,
+					"choices": [
+						"depolarization" ,
+						"repolarization" ,
+						"hyperpolarization" ,
+						"isopolarization" ,
+						"afterpolarization"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The plateau phase seen during the action potential of a cardiac muscle cell is due to the" ,
+					"choices": [
+						"sodium-potassium pump." ,
+						"opening of Na<sup>+</sup> channels." ,
+						"continuing to have open Ca<sup>2+</sup> channels" ,
+						"closure of Cl<sup>-</sup> channels" ,
+						"closing of Ca<sup>2+</sup> channels"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "When a pacemaker potential in the SA node reaches threshold," ,
+					"choices": [
+						"the permeability to K<sup>+</sup> increases." ,
+						"many voltage-gated Ca<sup>2+</sup> channels open" ,
+						"voltage-gated Ca<sup>2+</sup> channels close." ,
+						"resting membrane potential has been restored." ,
+						"permeability of the cell does not change."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "If the SA node is nonfunctional, which of the following is most likely to occur?" ,
+					"choices": [
+						"The heart will go into asystole (stop)." ,
+						"Tachycardia will develop." ,
+						"Another portion of the heart will become the pacemaker." ,
+						"The heart will go into defibrillation." ,
+						"The heart will be desensitized."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following events occurs first?" ,
+					"choices": [
+						"Threshold" ,
+						"Depolarization" ,
+						"Early repolarization" ,
+						"Final repolarization" ,
+						"Pacemaker potential"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Calcium channel blockers are frequently used to" ,
+					"choices": [
+						"increase the heart rate." ,
+						"treat tachycardia or other arrhythmias." ,
+						"speed up conduction of impulses through the AV node." ,
+						"slow the closing of K<sup>+</sup> channels." ,
+						"treat bradycardia and low blood pressure."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Depolarization of a cardiac muscle cell occurs as the result of" ,
+					"choices": [
+						"a decrease in the permeability of the plasma membrane to Na<sup>+</sup>" ,
+						"the opening of voltage-gated Na<sup>+</sup> channels and voltage-gated Ca<sup>2+</sup> channels" ,
+						"the closure of voltage-gated Ca<sup>2+</sup> channels" ,
+						"the opening ov voltage-gated K<sup>+</sup>" ,
+						"the closure of the voltage-gated Na<sup>+</sup> channels"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When comparing cardiac muscle cells and skeletal muscle cells," ,
+					"choices": [
+						"the rate of action potential propagates in cardiac muscle" ,
+						"both possess intercalated discs." ,
+						"only skeletal muscle has a plateau phase in its contraction cycle." ,
+						"action potentials are conducted from cell to cell only in cardiac muscle." ,
+						"both are voluntary."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What action is most responsible for the resting membrane potential in cardiac muscle cells?" ,
+					"choices": [
+						"Movement of K<sup>+</sup> through voltage-gated K<sup>+</sup> channels" ,
+						"Movement of Na<sup>+</sup> through open Na<sup>+</sup> channels" ,
+						"Movement of Ca<sup>2+</sup> through voltage-gated Ca<sup>2+</sup> channels" ,
+						"Closing of Na<sup>+</sup> and K<sup>+</sup> voltage-gated channels"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following pairs concerning action potentials in cardiac muscle is mismatched?" ,
+					"choices": [
+						"Opening of Na<sup>+</sup> channels - depolarization" ,
+						"Closing of Ca<sup>2+</sup> channels - plateau phase" ,
+						"Opening of K<sup>+</sup> channels - rapid repolarization" ,
+						"Closure of Na<sup>+</sup> channels - early repolarization" ,
+						"Opening of Ca<sup>2+</sup> channels - plateau phase"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following would result from a reduced function of the Na + channels in the SA node?" ,
+					"choices": [
+						"Depolarization would be delayed." ,
+						"The heart rate would decrease." ,
+						"Repolarization would not occur." ,
+						"The plateau phase would be shorter." ,
+						"Depolarization would be delayed, and the heart rate would decrease"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following areas of the conduction system would produce spontaneous action potentials most frequently if the SA node were not functioning?" ,
+					"choices": [
+						"AV bundle" ,
+						"Purkinje fibers" ,
+						"AV node" ,
+						"Bundle branch" ,
+						"The pacemaker"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The long refractory period observed in cardiac muscle" ,
+					"choices": [
+						"prolongs depolarization of the cardiac muscle." ,
+						"prevents tetanic contractions of the cardiac muscle." ,
+						"ensures that the heart has adequate time to contract." ,
+						"prevents the heart rate from slowing down." ,
+						"prevents an increase in heart rate"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The period of time in which cardiac muscle cells are insensitive to further stimulation is called the" ,
+					"choices": [
+						"absolute refractory period." ,
+						"hyperpolarization period." ,
+						"AV period." ,
+						"SA period." ,
+						"ectopic focus."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "If cardiac muscle cells are unable to repolarize, this would cause" ,
+					"choices": [
+						"cardiac output to increase." ,
+						"no harm. These cells can spontaneously depolarize anyway." ,
+						"the heart rate to decrease. It might cause cardiac arrest." ,
+						"an increased demand on mitochondria to produce more ATP." ,
+						"tachycardia"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "In a normal electrocardiogram, the" ,
+					"choices": [
+						"P wave results from repolarization of the atria." ,
+						"QRS complex results from ventricular depolarization." ,
+						"P wave occurs after the QRS complex but before the T wave." ,
+						"T wave represents depolarization of the atria." ,
+						"repolarization of the atria is clearly visible."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The P wave of an electrocardiogram indicates" ,
+					"choices": [
+						"atrial depolarization." ,
+						"atrial repolarization." ,
+						"ventricular depolarization." ,
+						"ventricular repolarization." ,
+						"threshold"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Of the types of damage resulting from a myocardial infarction, which is most likely to cause the greatest increase in the Q-T interval?" ,
+					"choices": [
+						"Infarction in the AV node" ,
+						"Left bundle branch block" ,
+						"Infarction affecting the SA node" ,
+						"Tachycardia" ,
+						"Ectopic focus"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What event(s) occur during the QRS complex of an electrocardiogram?" ,
+					"choices": [
+						"Depolarization of the atria" ,
+						"Repolarization of the ventricles" ,
+						"Depolarization of the atria and repolarization of the ventricles" ,
+						"Depolarization of the ventricles and the atria"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What abnormal heart rhythm could be caused by an elevated body temperature, excessive sympathetic stimulation, or toxic conditions?" ,
+					"choices": [
+						"Bradycardia" ,
+						"Atrial fibrillation" ,
+						"Second-degree AV node block" ,
+						"Tachycardia"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which cardiac arrhythmia will have no QRS complex as a symptom?" ,
+					"choices": [
+						"Atrial fibrillation" ,
+						"Ventricular fibrillation" ,
+						"Bradycardia" ,
+						"Premature ventricular contractions"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Variations in respiratory rate is a symptom of" ,
+					"choices": [
+						"sinus arrhythmia." ,
+						"ventricular tachycardia." ,
+						"SA node block." ,
+						"paroxysmal atrial tachycardia"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "During the cardiac cycle," ,
+					"choices": [
+						"the right atrium and the right ventricle contract simultaneously." ,
+						"the two atria relax while the two ventricles contract." ,
+						"the left atrium contracts before the right atrium." ,
+						"all four chambers of the heart contract at the same time." ,
+						"all four chambers of the heart are in systole at the same time."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The period of isovolumetric contraction is immediately followed by" ,
+					"choices": [
+						"the period of ejection." ,
+						"AV node depolarization." ,
+						"passive ventricular filling." ,
+						"atrial contraction." ,
+						"isovolumetric relaxation."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When left atrial pressure exceeds left ventricular pressure," ,
+					"choices": [
+						"left ventricular ejection begins." ,
+						"aortic blood pressure begins to rise." ,
+						"the bicuspid (mitral) valve opens." ,
+						"ventricular volume decreases." ,
+						"the tricuspid valve opens."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Blood does not enter or leave the ventricles during the period called" ,
+					"choices": [
+						"ejection." ,
+						"rapid filling." ,
+						"atrial systole." ,
+						"isovolumetric contraction." ,
+						"active and passive filling."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "During the ejection phase of the cardiac cycle, blood exits the left ventricle through the" ,
+					"choices": [
+						"aorta" ,
+						"coronary sinus." ,
+						"pulmonary vein." ,
+						"superior vena cava." ,
+						"pulmonary trunk."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Pressure in the right ventricle must exceed pressure in the ________ before the right ventricle can eject blood." ,
+					"choices": [
+						"superior vena cava" ,
+						"coronary sinus" ,
+						"pulmonary trunk" ,
+						"aorta" ,
+						"pulmonary veins"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The chamber of the heart that endures the highest pressure is the" ,
+					"choices": [
+						"right atrium." ,
+						"left atrium." ,
+						"right ventricle." ,
+						"left ventricle." ,
+						"coronary sinus."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The tricuspid valve is closed" ,
+					"choices": [
+						"during active filling of the ventricles." ,
+						"when the mitral valve is open." ,
+						"while the atria are contracting." ,
+						"during ejection." ,
+						"during passive filling of the ventricles."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "As soon as left ventricular pressure exceeds the pressure in the aorta, the" ,
+					"choices": [
+						"AV valves open." ,
+						"aortic semilunar valve opens." ,
+						"atria pump blood into the ventricles." ,
+						"ventricles pump blood into the atria." ,
+						"pulmonary semilunar valve closes."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "During the isovolumetric contraction period of the cardiac cycle," ,
+					"choices": [
+						"AV and semilunar valves are closed." ,
+						"the atria are contracted." ,
+						"ventricular volume increases." ,
+						"blood is pumped into the large arteries." ,
+						"pressure in the ventricles decreases."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When ventricular pressure exceeds atrial pressure, the" ,
+					"choices": [
+						"ejection occurs." ,
+						"atria pump blood into the ventricles." ,
+						"ventricle is in diastole." ,
+						"blood is pumped into the atrium." ,
+						"AV valves close."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "What occurs during the time between the first heart sound and the second heart sound?" ,
+					"choices": [
+						"Ventricular systole" ,
+						"Ventricular diastole" ,
+						"Ventricular filling" ,
+						"Atrial systole" ,
+						"The P wave of the ECG"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Concerning heart sounds, which of the following is correct?" ,
+					"choices": [
+						"The first heart sound occurs at the beginning of ventricular systole." ,
+						"The second heart sound is heard when the AV valves are closing." ,
+						"The first heart sound is the sound of the semilunar valves closing." ,
+						"The second heart sound occurs when blood flows into the superior vena cava." ,
+						"The first heart sound occurs at the beginning of ventricular diastole."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The first and second heart sounds are most directly related to" ,
+					"choices": [
+						"pulse pressure in the aorta." ,
+						"the contraction of the atria." ,
+						"vibrations that occur when the valves close." ,
+						"contraction of the papillary muscles." ,
+						"the flow of the blood."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following statements concerning the cardiac cycle is true?" ,
+					"choices": [
+						"Blood enters the right and left atria only during diastole." ,
+						"Most ventricular filling occurs before the atria contract." ,
+						"During ventricular systole, the AV valves open." ,
+						"The semilunar valves remain closed throughout ventricular systole." ,
+						"Most of end-diastolic volume comes from active filling."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Regurgitation of blood flow through the aortic semilunar valve would give rise to" ,
+					"choices": [
+						"the first heart sound." ,
+						"the second heart sound." ,
+						"a heart murmur." ,
+						"an extra heart beat." ,
+						"end-systolic volume."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "An incompetent mitral valve may cause blood to back up into the" ,
+					"choices": [
+						"aorta" ,
+						"left atrium." ,
+						"left ventricle." ,
+						"coronary circulation." ,
+						"right atrium."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The volume of blood pumped during each cardiac cycle is the" ,
+					"choices": [
+						"stroke volume." ,
+						"cardiac output." ,
+						"cardiac reserve." ,
+						"end-systolic volume." ,
+						"end-diastolic volume."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The product of the stroke volume times the heart rate is known as the" ,
+					"choices": [
+						"end-diastolic volume." ,
+						"end-systolic volume." ,
+						"cardiac output." ,
+						"cardiac reserve." ,
+						"venous return."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "End-diastolic volume minus end-systolic volume is equal to" ,
+					"choices": [
+						"cardiac output." ,
+						"cardiac reserve." ,
+						"pulse volume." ,
+						"venous return." ,
+						"stroke volume."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Mean arterial pressure is" ,
+					"choices": [
+						"cardiac output times peripheral resistance." ,
+						"end-diastolic volume minus end-systolic volume." ,
+						"maximum cardiac output minus cardiac output when at rest." ,
+						"heart rate times stroke volume." ,
+						"heart rate times stroke volume."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The dicrotic notch in the aortic pressure curve is due to the" ,
+					"choices": [
+						"increase in intraventricular pressure during ejection." ,
+						"backflow of blood toward the ventricles." ,
+						"closure of the left AV valve." ,
+						"elasticity of the arterial wall." ,
+						"closure of the semilunar valves."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Afterload is" ,
+					"choices": [
+						"the name given to an increase in end-diastolic volume." ,
+						"the arterial pressure that the ventricles must overcome to eject blood." ,
+						"the amount cardiac output must increase during exercise." ,
+						"another name for venous return" ,
+						"the extent to which ventricular walls are stretched."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following statements regarding intrinsic regulation of the heart is true?" ,
+					"choices": [
+						"Stretching the SA node will decrease generation of action potentials in the node." ,
+						"Decreased venous return increases cardiac output." ,
+						"The heart's pumping effectiveness is greatly influenced by small changes in afterload." ,
+						"If cardiac muscle cells are slightly stretched, they have a stronger contraction force." ,
+						"If cardiac muscle cells are slightly stretched, they have a weaker contraction force."
+					] ,
+					"correct_answer_indexes": [ 34 ]
+				} ,
+				{
+					"prompt": "Within normal limits, an increase in preload leads to" ,
+					"choices": [
+						"an increase in cardiac output and force of left ventricular contraction." ,
+						"a decrease in cardiac output and force of left ventricular contraction." ,
+						"an increase in cardiac output and a decrease in the force of left ventricular contraction." ,
+						"a decrease in cardiac output and an increase in the force of left ventricular contraction." ,
+						"a decrease in stroke volume and heart rate."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The relationship between preload and stroke volume is known as" ,
+					"choices": [
+						"extrinsic regulation" ,
+						"cardiac reserve." ,
+						"Starling Law of the heart." ,
+						"minute volume."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Stimulation of the heart via the sympathetic nerves would" ,
+					"choices": [
+						"decrease heart rate." ,
+						"decrease stroke volume." ,
+						"increase the force of ventricular contraction." ,
+						"increase end-systolic volume." ,
+						"not affect heart rate and force of contraction."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "If the heart receives more sympathetic stimulation than parasympathetic stimulation, the heart will" ,
+					"choices": [
+						"increase its rate and force of contraction" ,
+						"decrease both its rate and force of contraction." ,
+						"contract with less force but at a faster rate." ,
+						"decrease rate, but increase force of contraction."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Increased vagal stimulation would cause" ,
+					"choices": [
+						"the heart rate to decrease." ,
+						"the heart rate to increase." ,
+						"force of contraction to increase." ,
+						"stroke volume to increase." ,
+						"no change in heart rate, stroke volume, or force of contraction."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following factors would cause an increase in heart rate?" ,
+					"choices": [
+						"Increased parasympathetic stimulation" ,
+						"Stimulation of baroreceptors in the aorta" ,
+						"Increased epinephrine release from the adrenal medulla" ,
+						"Increased production of atrial natriuretic factor" ,
+						"Stimulation through the vagus nerve"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The baroreceptor reflex would cause which of the following events to occur if the reflex was caused by an increase in blood pressure?" ,
+					"choices": [
+						"Increased parasympathetic stimulation of the heart" ,
+						"Increased heart rate" ,
+						"Increased cardiac output" ,
+						"Increased force of contraction" ,
+						"Increased sympathetic stimulation of the heart"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Baroreceptor reflexes" ,
+					"choices": [
+						"are triggered by increased blood osmolality." ,
+						"correct changes in blood pH" ,
+						"do not impact the activity of the heart" ,
+						"are of minor importance in humans" ,
+						"can change heart rate."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "In a physiology lab, the students designed an experiment to illustrate how the heart responds to changes in blood pressure. Everyone relaxed and then did a headstand. Which of the following observations are consistent with the change in the function of their hearts?" ,
+					"choices": [
+						"Increased heart rate" ,
+						"Decreased heart rate" ,
+						"Increased stroke volume" ,
+						"Decreased stroke volume" ,
+						"Both decreased heart rate and increased stroke volume"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following will increase the heart rate?" ,
+					"choices": [
+						"A rise in pH" ,
+						"An increase in the level of carbon dioxide in the blood" ,
+						"An increase in the level of blood oxygen" ,
+						"An increase in blood pressure" ,
+						"A decrease in the level of carbon dioxide in the blood"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The cardioregulatory center of the brain is located in the" ,
+					"choices": [
+						"hypothalamus" ,
+						"medulla oblongata" ,
+						"cerebellum" ,
+						"cerebrum" ,
+						"diencephalons"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Chemoreceptors sensitive to blood carbon dioxide levels are primarily located in the" ,
+					"choices": [
+						"medulla oblongata." ,
+						"carotid arteries." ,
+						"right atrium." ,
+						"left ventricle." ,
+						"jugular veins."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Chemoreceptors sensitive to blood oxygen levels are primarily located in the" ,
+					"choices": [
+						"medulla oblongata" ,
+						"carotid arteries." ,
+						"right atrium." ,
+						"left ventricle." ,
+						"jugular veins."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "An increase in extracellular Ca<sup>2+</sup> generally increases" ,
+					"choices": [
+						"the heart rate." ,
+						"the force of contraction." ,
+						"autonomic stimulation of the heart." ,
+						"Na<sup>+</sup> channel opening." ,
+						"the frequency of the action potentials"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Excess K<sup>+</sup> in cardiac tissue causes" ,
+					"choices": [
+						"an increased heart rate." ,
+						"a rapid repolarization of cardiac cells." ,
+						"a decrease in the frequency of action potentials in the conduction system." ,
+						"an increase in stroke volume." ,
+						"an increase in the frequency of action potentials."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Lowered extracellular K<sup>+</sup> levels will lower the heart rate because" ,
+					"choices": [
+						"the resting membrane potential is hyperpolarized." ,
+						"ectopic action potentials occur." ,
+						"action potential amplitude declines." ,
+						"more Na<sup>+</sup> channels open." ,
+						"it blocks Ca<sup>2+</sup> channels."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Why is body temperature sometimes reduced during heart surgery?" ,
+					"choices": [
+						"To slow respiration" ,
+						"To increase heart rate" ,
+						"To decrease heart rate" ,
+						"To increase the oxygen content of blood"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Aortic stenosis results from" ,
+					"choices": [
+						"a hole in the interatrial septum." ,
+						"a weakening of heart muscle." ,
+						"a narrowed opening through the aortic valve." ,
+						"low oxygen levels." ,
+						"leakage from the AV valves."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following might increase the risk for cardiovascular disease?" ,
+					"choices": [
+						"Stopping smoking" ,
+						"Exercise" ,
+						"Maintaining normal cholesterol levels" ,
+						"Chronic stress" ,
+						"High-fiber diet"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Fred was admitted to the cardiac unit with chest pains. No arrhythmias and no large changes in the heart rate were observable. Blood samples taken over the next few days showed no increase in enzymes, such as creatine phosphokinase. A possible treatment of the condition is" ,
+					"choices": [
+						"beta adrenergic blocking agents." ,
+						"nitroglycerin." ,
+						"calcium channel blocking agents." ,
+						"aspirin" ,
+						"exercise"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "During hemorrhagic shock in which blood pressure is decreased, which of the regulatory mechanisms is most important is increasing cardiac output to help maintain blood pressure?" ,
+					"choices": [
+						"Increased sympathetic stimulation of the heart" ,
+						"Increase venous return" ,
+						"Increase in parasympathetic stimulation of the heart" ,
+						"Increase vagal stimulation of the heart" ,
+						"Increase in the amplitude of the heart sounds"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Why is it important to use an antibiotic other than ampicillin in the treatment of bacterial pneumonia?" ,
+					"choices": [
+						"Because antibiotics such as ampicillin destroy the cell walls of cardiac muscle cells." ,
+						"Because antibiotics such as ampicillin cause the cells lining blood vessels to endocytose bacteria and deposit them in cardiac muscle tissue." ,
+						"Because antibiotics such as ampicillin are not effective in the treatment of bacterial pneumonia." ,
+						"Because antibiotics such as ampicillin destroy the cell walls of bacteria which cause a toxin to be released that will destroy cardiac muscle cells."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "All of the following are functions of the heart, except ________." ,
+					"choices": [
+						"generating blood pressure" ,
+						"separating pulmonary and systemic circulations" ,
+						"moving blood in one direction" ,
+						"adjusting blood supply, depending on tissue needs" ,
+						"adjusting blood gas levels, depending on tissue needs"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The adult heart averages ________ grams." ,
+					"choices": [
+						"100-200" ,
+						"50-100" ,
+						"250-300" ,
+						"400-500"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A knowledge of heart location would NOT be important for which of the following?" ,
+					"choices": [
+						"Blood pressure readings" ,
+						"Stethoscope positioning" ,
+						"Electrocardiogram" ,
+						"Cardiopulmonary resucitation"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The inner lining of the pericardial cavity is the ________ pericardium, whereas the outer part of the heart wall is called the epicardium or the ________ pericardium." ,
+					"choices": [
+						"fibrous; parietal" ,
+						"visceral; fibrous" ,
+						"parietal; visceral" ,
+						"visceral; parietal" ,
+						"fibrous; visceral"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What must occur during exercise to ensure adequate oxygen delivery to cardiac muscle?" ,
+					"choices": [
+						"An increased oxygen release to cardiac muscle" ,
+						"A decreased oxygen content to skeletal muscle" ,
+						"Decreased heart rate" ,
+						"Increased coronary blood flow"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "All of the following characteristics of the sarcoplasmic reticulum in cardiac muscle cells are true except" ,
+					"choices": [
+						"it is more irregular than that in skeletal muscle fibers." ,
+						"it is in close association with the transverse tubules." ,
+						"it is involved in the storage and release of Ca<sup>2+</sup>" ,
+						"it has enlarged terminal cisternae like skeletal muscle fibers."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Identify the structures that contribute to the slow onset of contraction and prolonged contraction phase in cardiac muscle tissue." ,
+					"choices": [
+						"Desmosomes" ,
+						"Gap junctions" ,
+						"Intercalated discs" ,
+						"T-tubules" ,
+						"Terminal cisternae"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Calcium-induced calcium release occurs when" ,
+					"choices": [
+						"Ca<sup>2+</sup> from the sarcoplasmic reticulum stimulates the movement of Ca<sup>2+</sup> the plasma membrane." ,
+						"Ca<sup>2+</sup> is released from both the sarcoplasmic reticulum and the cardiac muscle cell." ,
+						"the eflux of Ca<sup>2+</sup> from the cell results in depolarization" ,
+						"Ca<sup>2+</sup> entering through the plasma membrane stimulates release of Ca<sup>2+</sup> from the sarcoplasmic reticulum"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The ion primarily responsible for depolarization in pacemaker cells is ________, whereas the ion primarily responsible for this in other cardiac cells is ________." ,
+					"choices": [
+						"Na<sup>+</sup> ; Ca<sup>2+</sup>" ,
+						"Ca<sup>2+</sup> ; Na<sup>+</sup>" ,
+						"K<sup>+</sup> ; Na<sup>+</sup>" ,
+						"Ca<sup>2+</sup> ; K<sup>+</sup>"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Where is blood moving during the period of ejection?" ,
+					"choices": [
+						"Ventricles to atria" ,
+						"Ventricles to great vessels" ,
+						"Atria to ventricles" ,
+						"Atria to great vessels" ,
+						"Great vessels to ventricles"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Under resting conditions, the normal stroke volume is approximately ________." ,
+					"choices": [
+						"55 mL" ,
+						"70 mL" ,
+						"110 mL" ,
+						"125 mL" ,
+						"180 mL"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "All of the following cardiac measurements will increase during exercise except ________." ,
+					"choices": [
+						"end-diastolic volume" ,
+						"end-systolic volume" ,
+						"stroke volume" ,
+						"cardiac output"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Small changes in ________ will have a large impact on the heart's pumping effectiveness, while large changes in ________ do not impact the effectiveness much." ,
+					"choices": [
+						"afterload; preload" ,
+						"preload; afterload" ,
+						"contractility; preload" ,
+						"afterload; contractility" ,
+						"contractility; afterload"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The peripheral chemoreceptors that respond to oxygen levels of the blood and regulate heart activity are located in" ,
+					"choices": [
+						"the left ventricle." ,
+						"the infundibulum of the hypothalamus." ,
+						"structures near the carotids and aortic arch." ,
+						"the medulla oblongata." ,
+						"the right ventricle."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "All of the following structural changes found in the heart occur with the normal aging process, except" ,
+					"choices": [
+						"hypertrophy of the left ventricle." ,
+						"decreased elasticity of large vessels." ,
+						"decreased valve flexibility." ,
+						"increased elasticity of large vessels." ,
+						"atrophy of conduction cells."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Diagnostic tests done on a patient show that many coronary arteries, including the left main coronary artery are severely narrowed. Which of the following is the best course of action to treat this patient?" ,
+					"choices": [
+						"Angiogram" ,
+						"Angioplasty" ,
+						"Coronary bypass surgery" ,
+						"Electrocardiogram" ,
+						"Urokinase injections"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Oxygen-poor blood passes through the ________." ,
+					"choices": [
+						"right AV (tricuspid) and pulmonary valves" ,
+						"right AV (tricuspid) valve only" ,
+						"left AV (mitral) and aortic valves" ,
+						"left AV (mitral) valve only" ,
+						"pulmonary and aortic valves"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Opening and closing of the heart valves is caused by ________." ,
+					"choices": [
+						"breathing" ,
+						"gravity" ,
+						"valves contracting and relaxing" ,
+						"osmotic gradients" ,
+						"pressure gradients"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The ________ carry blood toward the lungs." ,
+					"choices": [
+						"pulmonary arteries and veins" ,
+						"pulmonary trunk and arteries" ,
+						"pulmonary trunk and veins" ,
+						"superior and inferior venae cavae" ,
+						"aorta and pulmonary arteries"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following blood vessels receives blood directly from the right ventricle?" ,
+					"choices": [
+						"Pulmonary trunk" ,
+						"Ascending aorta" ,
+						"Superior vena cava" ,
+						"Inferior vena cava" ,
+						"Right pulmonary vein"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Obstruction of the ________ will cause a more severe myocardial infarction (MI) than the obstruction of any of the others." ,
+					"choices": [
+						"left marginal vein" ,
+						"left coronary artery (LCA)" ,
+						"posterior interventricular vein" ,
+						"anterior interventricular branch" ,
+						"circumflex branch"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is a feature shared by cardiac muscle and skeletal muscle?" ,
+					"choices": [
+						"Muscle fiber striations" ,
+						"Dependence upon nervous stimulation" ,
+						"Communication via electrical (gap) junctions" ,
+						"Intercalated discs" ,
+						"Autorhythmicity"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When sodium channels are fully open, the membrane of the ventricular cardiac muscle cells ________." ,
+					"choices": [
+						"sharply hyperpolarizes" ,
+						"sharply repolarizes" ,
+						"sharply depolarizes" ,
+						"plateaus" ,
+						"has no response"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Atrial systole begins ________." ,
+					"choices": [
+						"immediately before the P wave" ,
+						"immediately after the P wave" ,
+						"during the Q wave" ,
+						"during the S-T segment" ,
+						"immediately after the T wave"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The long plateau in the action potential observed in cardiac muscle cells is probably related with ________ staying longer in the cytoplasm." ,
+					"choices": [
+						"Na<sup>+</sup>" ,
+						"K<sup>+</sup>" ,
+						"Ca<sup>2+</sup>" ,
+						"Cl<sup>-</sup>" ,
+						"Na<sup>+</sup> , K<sup>+</sup> , and Ca<sup>2+</sup>"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The long absolute refractory period of cardiac muscle cells" ,
+					"choices": [
+						"ensures a short twitch." ,
+						"prevents tetanus." ,
+						"makes the heart prone to arrhythmias." ,
+						"prevents the occurrence of ectopic focuses." ,
+						"causes the pacemaker potential."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "An extended period of time between the P wave and the QRS complex may indicate which of the following?" ,
+					"choices": [
+						"The signal is taking too long to get to the AV node." ,
+						"The signal is traveling too quickly to the AV node." ,
+						"Ventricular contraction is taking longer than usual" ,
+						"The atria are not contracting."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "In a normal ECG, the deflection that is generated by ventricular repolarization is called the ________." ,
+					"choices": [
+						"R wave" ,
+						"QRS wave" ,
+						"P wave" ,
+						"S wave" ,
+						"T wave"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Mitral valve prolapse causes blood to leak back into the ________ when the ventricles contract." ,
+					"choices": [
+						"left atrium" ,
+						"right atrium" ,
+						"aorta" ,
+						"pulmonary trunk" ,
+						"pulmonary arteries"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "During isovolumetric contraction, the pressure in the ventricles ________." ,
+					"choices": [
+						"falls rapidly" ,
+						"rises rapidly" ,
+						"remains constant" ,
+						"rises and then falls" ,
+						"falls and then rises"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Mitral valve prolapse (MVP) generates a murmur associated with the ________ heart sound that occurs when the ________." ,
+					"choices": [
+						"lubb (S1); atria contract" ,
+						"dupp (S2); atria relax" ,
+						"lubb (S1); ventricles contract" ,
+						"dupp (S2); ventricles relax" ,
+						"lubb (S1); ventricles relax"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "When the aortic semilunar valve closes and blood bounces off of it, it produces the ________ heart sound that is ultimately related to when the ________." ,
+					"choices": [
+						"lubb (S1); atria contract" ,
+						"dupp (S2); atria relax" ,
+						"lubb (S1); ventricles contract" ,
+						"dupp (S2); ventricles relax" ,
+						"lubb (S1); ventricles relax"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Most of the ventricle filling occurs ________." ,
+					"choices": [
+						"during atrial systole" ,
+						"when the AV valve is closed" ,
+						"during ventricular systole" ,
+						"during atrial diastole" ,
+						"during isovolumetric contraction"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Stroke volume is increased by ________." ,
+					"choices": [
+						"high arterial blood pressure" ,
+						"negative inotropic agents" ,
+						"increased venous return" ,
+						"increased afterload" ,
+						"dehydration"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "After entering the right atrium, the furthest a red blood cell can travel is the ________." ,
+					"choices": [
+						"right ventricle" ,
+						"pulmonary trunk" ,
+						"superior vena cava" ,
+						"ascending aorta" ,
+						"left atrium"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Assume that the left ventricle of a child's heart has an EDV=90mL, and ESV=60mL, and a cardiac output of 2,400 mL/min. His SV is ________ mL/beat, and his HR is ________ bpm." ,
+					"choices": [
+						"30; 80" ,
+						"40; 60" ,
+						"80; 30" ,
+						"150; 16" ,
+						"16; 150"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The heart skeleton is fibrous connective tissue that acts as an electrical barrier between the atria and ventricles. If this structure was not functional, which of the following conditions might occur?" ,
+					"choices": [
+						"Increase in pericardial fluid in the pericardial space" ,
+						"Occlusion of the coronary arteries" ,
+						"Spread of ectopic stimuli from the atria to the ventricles" ,
+						"Blood flow from the right atrium to the left atrium"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following situations would lead to a decrease in MAP?" ,
+					"choices": [
+						"Participation in a spinning class" ,
+						"Participation in a 3-mile fun run" ,
+						"Practicing silent meditation for 20 minutes" ,
+						"All of the choices would lead to a decrease in MAP."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A red blood cell that is flowing through the aorta would pass through ________ heart valves before reaching the right ventricle." ,
+					"choices": [
+						"one" ,
+						"two" ,
+						"three" ,
+						"four"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following factors would be altered as a result of cardiac tamponade (fluid accumulation in the pericardial cavity)?" ,
+					"choices": [
+						"Preload" ,
+						"Stroke volume" ,
+						"End-diastolic volume" ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following statements accurately describes the pattern of ventricular contraction?" ,
+					"choices": [
+						"The ventricles contract from the base toward the apex moving blood into the great arteries located inferior to the ventricles." ,
+						"The ventricles contract from the apex toward the base moving blood into the great arteries located inferior to the ventricles." ,
+						"The ventricles contract from the apex toward the base moving blood into the great arteries located superior to the ventricles." ,
+						"The ventricles contract from the base toward the apex moving blood into the great arteries located superior to the ventricles."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which statement correctly identifies the phase of the cardiac cycle that occurs when the pressure in the ventricles is lower than the pressure in the great arteries but greater than the pressure in the atria?" ,
+					"choices": [
+						"Passive ventricular filling" ,
+						"Period of ejection" ,
+						"Period of isovolumetric contraction" ,
+						"Active ventricular filling"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A reduction in extracellular Ca<sup>2+</sup> levels would lead to" ,
+					"choices": [
+						"increased force of cardiac muscle contraction due to increased interactions between actin and myosin." ,
+						"decreased force of cardiac muscle contraction due to a lack of release of Ca<sup>2+</sup> from the sarcoplasmic reticulum." ,
+						"heart block due to depolarization of the sarcolemma." ,
+						"heart block due to hyperpolarization of the sarcolemma."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The ________ valve guards the entrance to the ________, which carries ________ blood to the lungs." ,
+					"choices": [
+						"bicuspid; aorta; oxygenated" ,
+						"mitral; pulmonary trunk; oxygenated" ,
+						"pulmonary semilunar; pulmonary trunk" ,
+						"aortic; aorta; deoxygenated"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				}
+			]
+		};
+	</script>
+</body>
+</html>
