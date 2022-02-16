@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Visceral Pericardium" title="Visceral Pericardium" href="" coords="239.47826771653544,312.70251968503936,572.8694488188976,261.391968503937" shape="rect">
+			<area target="" alt="Pericardial Cavity" title="Pericardial Cavity" href="" coords="287.99984251968505,424.3548031496063,572.8692913385827,373.04425196850394" shape="rect">
+			<area target="" alt="Parietal Pericardium" title="Parietal Pericardium" href="" coords="239.47826771653544,562.5248818897637,572.8692913385827,511.2143307086614" shape="rect">
+			<area target="" alt="Fibrous Pericardium" title="Fibrous Pericardium" href="" coords="244.17385826771653,684.0499212598424,577.5648818897638,632.7393700787401" shape="rect">
+			<area target="" alt="Parietal Pleura" title="Parietal Pleura" href="" coords="1157.8022047244094,996.2609448818897,1405.5651968503937,944.9503937007873" shape="rect">
+			<area target="" alt="Pleural Cavity" title="Pleural Cavity" href="" coords="1239.715275590551,902.8696062992126,1474.434803149606,851.5590551181102" shape="rect">
+			<area target="" alt="Visceral Pleura" title="Visceral Pleura" href="" coords="1337.2806299212598,827.3883464566928,1588.695590551181,776.0777952755905" shape="rect">
+			<area target="" alt="Left Lung" title="Left Lung" href="" coords="1432.2373228346457,748.7766929133858,1609.043622047244,697.4661417322834" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029735154-588356361.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Images/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

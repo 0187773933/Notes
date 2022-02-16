@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>010</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="295.8255118110236,341.815748031496,615.1302362204724,290.50519685039365" shape="rect">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="295.8255118110236,405.5442519685039,412.7886614173228,354.2337007874015" shape="rect">
+			<area target="" alt="Branches of Right Pulmonary Artery" title="Branches of Right Pulmonary Artery" href="" coords="16.86267716535433,469.27275590551176,574.7883464566929,417.9622047244094" shape="rect">
+			<area target="" alt="Right Pulmonary Veins" title="Right Pulmonary Veins" href="" coords="209.73889763779528,565.6552755905512,574.788188976378,514.3447244094489" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="257.8322834645669,639.5129133858268,486.3160629921259,588.2023622047244" shape="rect">
+			<area target="" alt="Coronary Sulcus" title="Coronary Sulcus" href="" coords="262.49007874015746,701.748188976378,531.0823622047244,650.4376377952756" shape="rect">
+			<area target="" alt="Right Coronary Artery" title="Right Coronary Artery" href="" coords="278.4924409448819,762.3373228346456,643.5417322834646,711.0267716535433" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="275.3618897637795,864.1390551181103,531.0825196850394,812.8285039370079" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="284.9283464566929,943.5022047244094,591.652125984252,892.191653543307" shape="rect">
+			<area target="" alt="Aortic Arch" title="Aortic Arch" href="" coords="1259.0152755905513,272.5456692913386,1457.2173228346458,221.23511811023621" shape="rect">
+			<area target="" alt="Left Pulmonary Branches" title="Left Pulmonary Branches" href="" coords="1273.6239370078738,332.42456692913385,1673.2173228346455,281.1140157480315" shape="rect">
+			<area target="" alt="Branches of Left Pulmonary Artery" title="Branches of Left Pulmonary Artery" href="" coords="1273.6239370078738,405.5442519685039,1810.9565354330707,354.2337007874015" shape="rect">
+			<area target="" alt="Pulmonary Trunk" title="Pulmonary Trunk" href="" coords="1273.6239370078738,478.11496062992126,1562.0869291338581,426.8044094488189" shape="rect">
+			<area target="" alt="Left Pulmonary Veins" title="Left Pulmonary Veins" href="" coords="1273.623779527559,540.0,1618.4346456692913,488.68944881889763" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1273.623779527559,611.4746456692914,1483.8262992125983,560.164094488189" shape="rect">
+			<area target="" alt="Great Cardiac Vein" title="Great Cardiac Vein" href="" coords="1276.6993700787402,677.3387401574804,1582.4348031496065,626.028188976378" shape="rect">
+			<area target="" alt="Anterior Interventricular Artery" title="Anterior Interventricular Artery" href="" coords="1277.9590551181102,786.0582677165355,1771.8261417322835,734.7477165354331" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1279.0028346456693,859.9474015748032,1534.7234645669291,808.6368503937008" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029738132-8650256.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Heart-Images/011.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="248.8696062992126,150.85905511811023,566.6085039370079,99.54850393700788" shape="rect">
+			<area target="" alt="Branches of Right Pulmonary Artery" title="Branches of Right Pulmonary Artery" href="" coords="7.304409448818897,276.0628346456693,566.6085039370079,224.75228346456691" shape="rect">
+			<area target="" alt="Aortic Semilunar Valve" title="Aortic Semilunar Valve" href="" coords="201.91307086614174,375.61133858267715,569.7388976377953,324.3007874015748" shape="rect">
+			<area target="" alt="Pulmonary Semilunar Valve" title="Pulmonary Semilunar Valve" href="" coords="163.56519685039368,558.7692913385827,608.0867716535433,507.4587401574803" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="401.4822047244095,639.1823622047244,619.5689763779528,587.8718110236221" shape="rect">
+			<area target="" alt="Coronary Sinus" title="Coronary Sinus" href="" coords="417.91228346456694,713.684094488189,682.9555905511811,662.3735433070866" shape="rect">
+			<area target="" alt="Right Atrioventricular Canal" title="Right Atrioventricular Canal" href="" coords="201.91307086614174,779.6006299212598,646.4344881889764,728.2900787401575" shape="rect">
+			<area target="" alt="Tricuspid Valve" title="Tricuspid Valve" href="" coords="291.13023622047245,852.288188976378,550.4340157480315,800.9776377952757" shape="rect">
+			<area target="" alt="Papillary Muscles" title="Papillary Muscles" href="" coords="218.86976377952757,918.2047244094488,507.3908661417323,866.8941732283464" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="240.6540157480315,988.0714960629921,501.00141732283464,936.7609448818897" shape="rect">
+			<area target="" alt="Right Pulmonary Veins" title="Right Pulmonary Veins" href="" coords="201.91307086614174,457.40598425196856,569.7388976377953,406.0954330708662" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="201.91307086614174,1068.1259842519685,515.9996850393701,1016.8154330708662" shape="rect">
+			<area target="" alt="Aortic Arch" title="Aortic Arch" href="" coords="1420.1738582677167,80.9459842519685,1628.8696062992128,29.635433070866142" shape="rect">
+			<area target="" alt="Left Pulmonary Artery" title="Left Pulmonary Artery" href="" coords="1439.4779527559056,205.3,1798.4346456692915,153.98944881889764" shape="rect">
+			<area target="" alt="Pulmonary Trunk" title="Pulmonary Trunk" href="" coords="1449.3911811023622,271.36724409448817,1734.2609448818898,220.05669291338583" shape="rect">
+			<area target="" alt="Left Pulmonary Veins" title="Left Pulmonary Veins" href="" coords="1486.823622047244,345.26047244094485,1832.8696062992126,293.9499212598425" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1486.823622047244,417.7992125984252,1701.1300787401574,366.4886614173228" shape="rect">
+			<area target="" alt="Left Atrioventricular Canal" title="Left Atrioventricular Canal" href="" coords="1449.3911811023622,521.4262992125985,1878.5258267716536,470.1157480314961" shape="rect">
+			<area target="" alt="Bicuspid Valve" title="Bicuspid Valve" href="" coords="1456.5629921259842,625.0533858267717,1701.1302362204724,573.7428346456693" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1451.8674015748031,710.3834645669291,1696.4346456692913,659.0729133858267" shape="rect">
+			<area target="" alt="Chordae Tendineae" title="Chordae Tendineae" href="" coords="1452.8428346456692,779.6006299212598,1781.2173228346455,728.2900787401575" shape="rect">
+			<area target="" alt="Papillary Muscles" title="Papillary Muscles" href="" coords="1451.8674015748031,845.8853543307088,1756.4346456692913,794.5748031496064" shape="rect">
+			<area target="" alt="Interventricular Septum" title="Interventricular Septum" href="" coords="1451.8672440944881,912.7851968503937,1848.5215748031496,861.4746456692914" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029738877-300476532.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Images/013.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

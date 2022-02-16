@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Descending Aorta" title="Descending Aorta" href="" coords="1496.8692913385828,178.43480314960632,1790.608503937008,140.54472440944883" shape="rect">
+			<area target="" alt="Left Pleural Cavity" title="Left Pleural Cavity" href="" coords="1499.999842519685,382.7669291338583,1801.5651968503937,344.8768503937008" shape="rect">
+			<area target="" alt="Visceral Pleura" title="Visceral Pleura" href="" coords="1499.999842519685,429.840157480315,1762.4348031496063,391.9500787401575" shape="rect">
+			<area target="" alt="Left Pulmonary Artery" title="Left Pulmonary Artery" href="" coords="1484.4321259842518,475.7532283464567,1841.823622047244,437.8631496062992" shape="rect">
+			<area target="" alt="Left Pulmonary Vein" title="Left Pulmonary Vein" href="" coords="1484.4321259842518,523.5925984251968,1817.2174803149605,485.70251968503936" shape="rect">
+			<area target="" alt="Pulmonary Trunk" title="Pulmonary Trunk" href="" coords="1483.8256692913385,594.2404724409449,1773.391338582677,542.9299212598426" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1483.8256692913385,659.1157480314961,1686.6979527559054,607.8051968503937" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1483.8256692913385,718.9779527559054,1713.9130708661417,667.6674015748031" shape="rect">
+			<area target="" alt="Visceral Pericardium" title="Visceral Pericardium" href="" coords="1488.0418897637794,777.0826771653543,1820.8272440944882,725.7721259842519" shape="rect">
+			<area target="" alt="Pericardial Cavity" title="Pericardial Cavity" href="" coords="1488.5212598425198,828.1094488188976,1773.3913385826772,789.1151181102362" shape="rect">
+			<area target="" alt="Parietal Pericardium" title="Parietal Pericardium" href="" coords="1227.735748031496,874.9303937007875,1560.5211023622048,835.936062992126" shape="rect">
+			<area target="" alt="Fibrous Pericardium" title="Fibrous Pericardium" href="" coords="1227.735748031496,928.9223622047244,1560.5211023622048,889.928031496063" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="201.91307086614174,764.0277165354331,451.8261417322834,712.7171653543307" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="186.26031496062993,699.0833070866142,416.34771653543305,647.7727559055119" shape="rect">
+			<area target="" alt="Ascending Aorta" title="Ascending Aorta" href="" coords="139.3044094488189,637.8255118110236,414.78251968503935,586.5149606299212" shape="rect">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="97.04346456692913,579.6981102362205,422.4396850393701,528.3875590551181" shape="rect">
+			<area target="" alt="Right Pulmonary Vein" title="Right Pulmonary Vein" href="" coords="97.04346456692913,508.1187401574803,447.651968503937,456.80818897637795" shape="rect">
+			<area target="" alt="Right Pulmonary Artery" title="Right Pulmonary Artery" href="" coords="80.86944881889764,446.6738582677166,458.69307086614174,395.3633070866142" shape="rect">
+			<area target="" alt="Right Pleural Cavity" title="Right Pleural Cavity" href="" coords="125.21732283464567,375.09968503937006,447.65181102362203,323.7891338582677" shape="rect">
+			<area target="" alt="Esophagus" title="Esophagus" href="" coords="286.4344881889764,249.5363779527559,479.9996850393701,198.22582677165354" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029735562-938138180.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Images/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

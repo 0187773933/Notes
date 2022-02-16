@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>004</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="314.6086614173228,224.42425196850394,632.3475590551182,173.11370078740157" shape="rect">
+			<area target="" alt="Right Lung" title="Right Lung" href="" coords="259.8261417322835,317.29385826771653,451.303937007874,265.98330708661416" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="247.30440944881892,471.20692913385824,475.04330708661416,419.89637795275587" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="272.34787401574806,571.6188976377953,522.5215748031496,520.3083464566929" shape="rect">
+			<area target="" alt="Larynx" title="Larynx" href="" coords="1183.8261417322835,85.3579527559055,1316.3478740157482,34.047401574803146" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="1183.8261417322835,157.8796850393701,1336.695590551181,106.56913385826772" shape="rect">
+			<area target="" alt="Aortic Arch" title="Aortic Arch" href="" coords="1353.3913385826772,279.52125984251967,1557.3913385826772,228.2107086614173" shape="rect">
+			<area target="" alt="Base of Heart" title="Base of Heart" href="" coords="1353.3911811023622,349.4206299212599,1596.5217322834646,298.1100787401575" shape="rect">
+			<area target="" alt="Pulmonary Trunk" title="Pulmonary Trunk" href="" coords="1353.3911811023622,423.02677165354334,1638.7826771653545,371.71622047244097" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1380.5217322834646,528.4944881889763,1584.5218897637797,477.183937007874" shape="rect">
+			<area target="" alt="Left Lung" title="Left Lung" href="" coords="1383.6522834645668,597.2741732283465,1557.391496062992,545.9636220472441" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1388.0867716535433,669.4987401574803,1621.5651968503937,618.1881889763779" shape="rect">
+			<area target="" alt="Apex of Heart" title="Apex of Heart" href="" coords="1389.9130708661419,742.1724409448819,1638.7826771653545,690.8618897637796" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029734642-737329822.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Heart-Images/005.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>015</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Sinoatrial Node" title="Sinoatrial Node" href="" coords="439.8259842519685,169.64173228346456,707.4781102362205,118.3311811023622" shape="rect">
+			<area target="" alt="Atrioventricular Node" title="Atrioventricular Node" href="" coords="228.52173228346456,323.01937007874017,579.9127559055119,271.7088188976378" shape="rect">
+			<area target="" alt="Atrioventricular Bundle" title="Atrioventricular Bundle" href="" coords="252.00015748031495,769.628031496063,632.0867716535433,718.3174803149607" shape="rect">
+			<area target="" alt="Left and Right Bundle Branches" title="Left and Right Bundle Branches" href="" coords="212.8696062992126,924.8140157480316,707.4781102362205,873.5034645669292" shape="rect">
+			<area target="" alt="Purkinje Fibers" title="Purkinje Fibers" href="" coords="460.1738582677165,1065.3012598425196,715.3042519685039,1013.9907086614173" shape="rect">
+			<area target="" alt="Apex" title="Apex" href="" coords="1196.8700787401576,1068.7732283464566,1324.1738582677167,1017.4626771653543" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1324.1738582677165,729.8669291338582,1554.2609448818898,678.5563779527558" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1285.9730708661418,184.34062992125985,1494.7828346456695,133.03007874015748" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029739967-447832405.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Images/016.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

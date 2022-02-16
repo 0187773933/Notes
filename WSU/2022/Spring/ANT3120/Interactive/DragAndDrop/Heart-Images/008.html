@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pericardium" title="Pericardium" href="" coords="173.73889763779528,723.7286614173229,383.4779527559055,672.4181102362205" shape="rect">
+			<area target="" alt="Fibrous Pericardium" title="Fibrous Pericardium" href="" coords="429.39181102362204,676.7262992125985,757.5651968503937,625.4157480314962" shape="rect">
+			<area target="" alt="Serous Pericardium" title="Serous Pericardium" href="" coords="419.71354330708664,774.4133858267717,707.4782677165355,723.1028346456693" shape="rect">
+			<area target="" alt="Parietal Pericardium" title="Parietal Pericardium" href="" coords="746.844251968504,735.7743307086614,1042.3173228346457,684.463779527559" shape="rect">
+			<area target="" alt="Visceral Pericardium" title="Visceral Pericardium" href="" coords="746.844251968504,794.8225196850394,1047.0129133858268,743.511968503937" shape="rect">
+			<area target="" alt="Pericardial Cavity" title="Pericardial Cavity" href="" coords="774.1507086614173,888.8286614173229,1069.623779527559,837.5181102362205" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029736926-107063883.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Heart-Images/009.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

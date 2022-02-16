@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>019</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superior Vena Cava" title="Superior Vena Cava" href="" coords="328.69574803149607,231.61874015748032,646.9563779527559,184.40614173228346" shape="rect">
+			<area target="" alt="Right Pulmonary Artery" title="Right Pulmonary Artery" href="" coords="275.47826771653547,301.0100787401575,669.3911811023622,253.79748031496064" shape="rect">
+			<area target="" alt="Pulmonary Trunk" title="Pulmonary Trunk" href="" coords="372.52173228346453,371.15543307086614,662.0864566929133,323.9428346456693" shape="rect">
+			<area target="" alt="Right Atrium" title="Right Atrium" href="" coords="399.13055118110236,425.5444094488189,619.8256692913386,378.33181102362204" shape="rect">
+			<area target="" alt="Right Pulmonary Veins" title="Right Pulmonary Veins" href="" coords="239.47826771653544,521.7433070866141,605.9995275590552,474.5307086614173" shape="rect">
+			<area target="" alt="Fossa Ovalis" title="Fossa Ovalis" href="" coords="372.52157480314963,586.4388976377952,594.9125984251968,539.2262992125984" shape="rect">
+			<area target="" alt="Pectinate Muscles" title="Pectinate Muscles" href="" coords="295.0529133858268,636.2286614173228,605.9993700787402,595.6825196850393" shape="rect">
+			<area target="" alt="Tricuspid Valve" title="Tricuspid Valve" href="" coords="344.347874015748,718.8702362204724,594.9125984251968,671.6576377952756" shape="rect">
+			<area target="" alt="Right Ventricle" title="Right Ventricle" href="" coords="374.2166929133858,757.8738582677165,624.7814173228346,726.727716535433" shape="rect">
+			<area target="" alt="Chordae Tendineae" title="Chordae Tendineae" href="" coords="295.0529133858268,805.2927559055119,624.7814173228346,774.1466141732284" shape="rect">
+			<area target="" alt="Trabeculae Carneae" title="Trabeculae Carneae" href="" coords="295.0529133858268,871.7968503937009,619.8256692913386,840.6507086614174" shape="rect">
+			<area target="" alt="Inferior Vena Cava" title="Inferior Vena Cava" href="" coords="328.69574803149607,961.0182677165353,633.7867716535434,913.8056692913385" shape="rect">
+			<area target="" alt="Aorta" title="Aorta" href="" coords="1368.5217322834646,153.87952755905513,1491.652283464567,106.66692913385828" shape="rect">
+			<area target="" alt="Left Pulmonary Artery" title="Left Pulmonary Artery" href="" coords="1369.5653543307087,216.72062992125984,1728.0,169.50803149606298" shape="rect">
+			<area target="" alt="Left Atrium" title="Left Atrium" href="" coords="1367.4784251968504,277.40377952755904,1576.1740157480315,230.1911811023622" shape="rect">
+			<area target="" alt="Left Pulmonary Veins" title="Left Pulmonary Veins" href="" coords="1372.1740157480317,351.5853543307087,1717.0434645669293,304.37275590551184" shape="rect">
+			<area target="" alt="Bicuspid Valve" title="Bicuspid Valve" href="" coords="1397.4784251968504,478.5669291338583,1643.4782677165354,431.35433070866145" shape="rect">
+			<area target="" alt="Aortic Semilunar Valve" title="Aortic Semilunar Valve" href="" coords="1389.9085039370077,605.5485039370078,1760.8696062992124,558.335905511811" shape="rect">
+			<area target="" alt="Pulmonary Semilunar Valve" title="Pulmonary Semilunar Valve" href="" coords="1372.1740157480317,682.5826771653543,1817.217480314961,635.3700787401575" shape="rect">
+			<area target="" alt="Left Ventricle" title="Left Ventricle" href="" coords="1382.7344881889762,751.6329133858267,1633.2992125984251,704.4203149606299" shape="rect">
+			<area target="" alt="Papillary Muscles" title="Papillary Muscles" href="" coords="1386.0607874015748,807.6034645669291,1677.9129133858269,760.3908661417323" shape="rect">
+			<area target="" alt="Interventricular Septum" title="Interventricular Septum" href="" coords="1389.9085039370077,859.7286614173228,1778.0869291338581,812.516062992126" shape="rect">
+			<area target="" alt="Epicardium" title="Epicardium" href="" coords="1395.256535433071,897.8543307086615,1605.2562204724409,866.708188976378" shape="rect">
+			<area target="" alt="Myocardium" title="Myocardium" href="" coords="1395.2563779527559,941.8214173228346,1619.999842519685,910.6752755905511" shape="rect">
+			<area target="" alt="Endocardium" title="Endocardium" href="" coords="1397.4785826771654,1004.1100787401574,1633.2992125984251,956.8974803149606" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645029742530-211598927.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Heart-Images/020.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
