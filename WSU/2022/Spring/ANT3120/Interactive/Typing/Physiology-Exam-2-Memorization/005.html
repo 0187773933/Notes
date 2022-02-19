@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Thromboplastin" title="Thromboplastin" href="" coords="184.69574803149607,255.52236220472443,453.9132283464567,204.21181102362206" shape="rect">
+			<area target="" alt="Factor VII" title="Factor VII" href="" coords="476.34803149606296,254.36881889763782,654.2611023622046,203.05826771653545" shape="rect">
+			<area target="" alt="Factor X" title="Factor X" href="" coords="822.7223622047244,598.5251968503936,984.7223622047244,547.2146456692913" shape="rect">
+			<area target="" alt="Factor XII" title="Factor XII" href="" coords="1588.1730708661416,326.8683464566929,1766.0861417322833,275.55779527559054" shape="rect">
+			<area target="" alt="Factor XI" title="Factor XI" href="" coords="1535.1140157480315,415.5541732283465,1713.0270866141732,364.2436220472441" shape="rect">
+			<area target="" alt="Factor IX" title="Factor IX" href="" coords="1461.8264566929136,540.0,1639.7395275590552,488.68944881889763" shape="rect">
+			<area target="" alt="Prothrombinase" title="Prothrombinase" href="" coords="537.1511811023622,739.4333858267717,812.759842519685,688.1228346456693" shape="rect">
+			<area target="" alt="Prothrombin" title="Prothrombin" href="" coords="543.7122834645669,832.1576377952756,783.2248818897638,780.8470866141732" shape="rect">
+			<area target="" alt="Thrombin" title="Thrombin" href="" coords="885.9129133858268,832.1576377952756,1064.000157480315,780.8470866141732" shape="rect">
+			<area target="" alt="Factor I" title="Factor I" href="" coords="903.7223622047244,984.9719685039371,1077.8689763779528,933.6614173228347" shape="rect">
+			<area target="" alt="Fibrin" title="Fibrin" href="" coords="1127.3040944881889,984.9719685039371,1250.6086614173228,933.6614173228347" shape="rect">
+			<area target="" alt="Factor XIII" title="Factor XIII" href="" coords="1577.3911811023622,910.8516535433071,1766.456220472441,859.5411023622047" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645306027415-517846749.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Physiology-Exam-2-Memorization/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

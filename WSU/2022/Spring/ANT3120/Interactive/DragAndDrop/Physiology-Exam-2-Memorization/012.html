@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="O+" title="O+" href="" coords="825.7055118110237,330.1308661417323,911.684566929134,278.82031496062996" shape="rect">
+			<area target="" alt="A+" title="A+" href="" coords="825.7055118110237,415.31338582677165,911.684566929134,364.0028346456693" shape="rect">
+			<area target="" alt="B+" title="B+" href="" coords="825.7053543307087,501.8900787401575,911.684409448819,450.5795275590551" shape="rect">
+			<area target="" alt="O-" title="O-" href="" coords="825.7051968503937,589.1699212598425,911.684251968504,537.8593700787401" shape="rect">
+			<area target="" alt="A-" title="A-" href="" coords="826.7351181102363,674.3524409448819,912.7141732283465,623.0418897637795" shape="rect">
+			<area target="" alt="AB+" title="AB+" href="" coords="826.7349606299213,763.0264566929134,928.1738582677166,711.715905511811" shape="rect">
+			<area target="" alt="B-" title="B-" href="" coords="825.7051968503937,851.0503937007874,893.7392125984252,799.739842519685" shape="rect">
+			<area target="" alt="AB-" title="AB-" href="" coords="824.8677165354331,937.6270866141732,910.8469291338583,886.3165354330708" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645306902840-377481751.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Physiology-Exam-2-Memorization/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

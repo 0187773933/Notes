@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>002</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Fibrinogen" title="Fibrinogen" href="" coords="650.3472440944882,125.81574803149607,843.652125984252,74.5051968503937" shape="rect">
+			<area target="" alt="Prothrombin" title="Prothrombin" href="" coords="650.3472440944882,194.99984251968505,871.0429921259843,143.68929133858268" shape="rect">
+			<area target="" alt="Tissue Thromboplastin" title="Tissue Thromboplastin" href="" coords="650.3472440944882,265.75275590551183,1017.3913385826772,214.44220472440946" shape="rect">
+			<area target="" alt="Calcium Ions" title="Calcium Ions" href="" coords="650.3472440944882,404.74629921259844,871.0429921259843,353.4357480314961" shape="rect">
+			<area target="" alt="Labile Factor" title="Labile Factor" href="" coords="650.3472440944882,475.14755905511817,871.0429921259843,423.8370078740158" shape="rect">
+			<area target="" alt="Stable Factor" title="Stable Factor" href="" coords="650.3472440944882,580.3541732283464,875.9998425196851,529.0436220472441" shape="rect">
+			<area target="" alt="Antihemophilic Factor" title="Antihemophilic Factor" href="" coords="650.3474015748031,644.3992125984253,1017.3913385826772,593.0886614173229" shape="rect">
+			<area target="" alt="Christmas Factor" title="Christmas Factor" href="" coords="650.3472440944882,745.6903937007874,939.3914960629921,694.379842519685" shape="rect">
+			<area target="" alt="Stuart-Prower Factor" title="Stuart-Prower Factor" href="" coords="650.3472440944882,818.3354330708661,994.1740157480315,767.0248818897637" shape="rect">
+			<area target="" alt="Plasma Thromboplastin Factor" title="Plasma Thromboplastin Factor" href="" coords="650.3472440944882,882.6314960629921,1131.1303937007874,831.3209448818898" shape="rect">
+			<area target="" alt="Hageman Factor" title="Hageman Factor" href="" coords="650.3472440944882,954.3050393700787,926.4777952755906,902.9944881889763" shape="rect">
+			<area target="" alt="Fibrin Stabilizing Factor" title="Fibrin Stabilizing Factor" href="" coords="650.3472440944882,1032.147716535433,1026.2609448818898,980.8371653543306" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1645306024519-576521860.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Physiology-Exam-2-Memorization/003.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
