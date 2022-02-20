@@ -14,7 +14,7 @@
 	<div id="label-container">
 		<map name="image-map">
 			<area target="" alt="Foolish" title="Foolish" href="" coords="27.39055118110236,124.25055118110237,172.17385826771653,72.94" shape="rect">
-			<area target="" alt="People" title="People" href="" coords="27.39055118110236,882.2111811023623,170.60850393700787,830.9006299212599" shape="rect">
+			<area target="" alt="People" title="People" href="" coords="27.39055118110236,194.99984251968505,172.17385826771653,143.68929133858268" shape="rect">
 			<area target="" alt="Try" title="Try" href="" coords="27.39055118110236,265.7491338582677,106.4348031496063,214.43858267716536" shape="rect">
 			<area target="" alt="Climbing" title="Climbing" href="" coords="27.39055118110236,403.1811023622047,192.52157480314958,351.8705511811023" shape="rect">
 			<area target="" alt="Long" title="Long" href="" coords="27.39055118110236,473.59354330708663,134.60850393700787,422.28299212598426" shape="rect">
@@ -22,7 +22,7 @@
 			<area target="" alt="After" title="After" href="" coords="27.39055118110236,646.1770078740158,140.86929133858266,594.8664566929134" shape="rect">
 			<area target="" alt="Christmas" title="Christmas" href="" coords="19.564409448818896,746.3444094488189,200.34755905511813,695.0338582677165" shape="rect">
 			<area target="" alt="Some" title="Some" href="" coords="27.39055118110236,811.96,147.13023622047245,760.6494488188977" shape="rect">
-			<area target="" alt="People" title="People" href="" coords="27.39055118110236,194.99984251968505,172.17385826771653,143.68929133858268" shape="rect">
+			<area target="" alt="People" title="People" href="" coords="27.39055118110236,882.2111811023623,170.60850393700787,830.9006299212599" shape="rect">
 			<area target="" alt="Have" title="Have" href="" coords="27.39055118110236,947.8267716535433,137.73889763779528,896.516220472441" shape="rect">
 			<area target="" alt="Fallen" title="Fallen" href="" coords="27.39055118110236,1024.9381102362204,151.8259842519685,973.6275590551181" shape="rect">
 		</map>
@@ -70,6 +70,12 @@
 		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
 		interactive_typing_script.onload = load;
 		document.head.appendChild( interactive_typing_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/6f5a0228-91cd-11ec-b62c-149d997d632b?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
 	</script>
 </body>
 </html>
