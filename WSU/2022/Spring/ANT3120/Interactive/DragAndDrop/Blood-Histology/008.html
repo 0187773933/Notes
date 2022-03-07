@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Basophil" title="Basophil" href="" coords="179.47826771653544,609.7451968503937,340.1737007874016,558.4346456692913" shape="rect">
+			<area target="" alt="Eosinophil" title="Eosinophil" href="" coords="410.26897637795275,609.7451968503937,602.6878740157481,558.4346456692913" shape="rect">
+			<area target="" alt="Monocyte" title="Monocyte" href="" coords="669.568188976378,609.7451968503937,854.5014173228346,558.4346456692913" shape="rect">
+			<area target="" alt="Thrombocytes" title="Thrombocytes" href="" coords="921.6872440944883,609.7451968503937,1166.2800000000002,558.4346456692913" shape="rect">
+			<area target="" alt="Neutrophil" title="Neutrophil" href="" coords="1234.5366929133857,609.7451968503937,1430.1338582677163,558.4346456692913" shape="rect">
+			<area target="" alt="Lymphocyte" title="Lymphocyte" href="" coords="1488.331653543307,609.7451968503937,1707.4551181102363,558.4346456692913" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1646678558453-530609555.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Blood-Histology/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Arial";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

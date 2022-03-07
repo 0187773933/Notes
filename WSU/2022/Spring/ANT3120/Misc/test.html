@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>test</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<!-- <script src="https://39363.org/CDN/showdown.min.js" integrity="sha512-f0tcqIsBF8Ux8RCYamMAegjUGgoJ1qn7Y57TKk+punaS1EPEfOoOFEEVSO0dydBBrx6dgZBHQWUi/a1I9QVqgA=="></script> -->
+	<script src="https://39363.org/CDN/markdown-it.min.js" integrity="sha512-TIDbN32lXOg2Mw1VcnKrQLZgfALryJogWCu/NHWtlMCR1jget+mOwMtdehBBZz2f9PKeK2AQPwVxkbl4u/1H5g=="></script>
+	<!-- <script src="https://39363.org/CDN/_markdown-it-mark.js" integrity="sha512-8T8qt3+/+I/Q9HlgN+adGXTpcF8DyStPr/nozxAUq3+CWrpxYATzXNAN8F9kEPMlyeNoS2b7B8pgo4zeRunn2Q=="></script> -->
+	<style>
+		body > p { text-align: center; }
+	</style>
+</head>
+<body>
+	<p>$$\ce{2H + O -> H2O}$$</p>
+	<script>
+		// make sure you escape backslashes !!!! !!!!!!!
+		window.embedded_md = `<center><h2>Basal Ganglia</h2></center>
+
+- $\\text{inline math go} = H_2O = \\ce{H2O}$
+
+$$
+H_2O = \\ce{H2O}
+$$
+
+![](https://39363.org/IMAGE_BUCKET/1626922156170-390717918.png)
+
+<center><img src="https://39363.org/IMAGE_BUCKET/1626922156170-390717918.png" style="zoom:67%;" /></center>
+
+- Parkinson disease is a progressive neurodegenerative disease caused by death of dopaminergic neurons in the substantia nigra, located int he midbrain ( mesencephalon ).
+- The substantia nigra is part of a group of neural structures collectively known as the basal ganglia, which are involved in the selection and execution of voluntary motor programs.
+- Dopamine has several functions in the central nervous system , including mediating the reward pathway and motor control.
+- The basal ganglia are composed of three dopaminergic pathways :
+  - the direct pathway
+  - the indirect pathway
+  - the nigrostratal pathway
+- The direct and indirect pathways have excitatory and inhibitory effects on motor function, respectively, and the nigrostriatal pathway helps maintain the balance between these two pathways.
+- The nigrostriatal pathway is damaged when dopaminergic neurons in teh substantia nigra are destoryed.
+  - Therefore, the balance between excitatory and inhibitory motor commands deteriorates.
+
+> - Test stuff 1
+> - Test stuff 2
+
+#brain`;
+	</script>
+	<div id="something_else"></div>
+	<script>
+
+		function replace_html_elements_in_string (str ) {
+			str = str.replace( /&nbsp;/gi , " " );
+			str = str.replace( /&tab;/gi , "	" );
+			str = str.replace( /&gt;/gi , ">" );
+			str = str.replace( /&lt;/gi , "<" );
+			return str.replace( /&amp;/gi , "&" );
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					// { left: "\[" , right: "\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					// { left: "\(" , right: "\)" , display: false }
+				]
+			});
+		}
+		function render_markdown() {
+			console.log( window.embedded_md );
+			let md = new markdownit( { typographer: true , html: true } )
+				// .disable( [ "escape" ] )
+				// .use( markdownItMark )
+			;
+			let converted_html = md.render( window.embedded_md );
+			console.log( converted_html );
+			$( "#something_else" ).replaceWith( converted_html );
+		}
+		// https://github.com/obedm503/showdown-katex/blob/master/src/showdown-katex.js
+		// function render_markdown() {
+		// 	let converter = new showdown.Converter();
+		// 	let output_html = converter.makeHtml( window.embedded_md );
+		// 	console.log( output_html );
+		// 	$( "#something_else" ).replaceWith( output_html );
+		// }
+		document.addEventListener( "DOMContentLoaded" , function() {
+			render_markdown();
+			render_katex();
+		});
+	</script>
+</body>
+</html>
