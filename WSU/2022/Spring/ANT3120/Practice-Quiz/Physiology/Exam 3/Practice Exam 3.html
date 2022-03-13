@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practice Exam 3</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index - 1 );
+				if ( window.DECK.active_index < 0 ) { window.DECK.active_index = ( window.DECK.questions.length - 1 ); }
+				render_active_card();
+			}
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.DECK.active_index );
+				window.DECK.active_index = ( window.DECK.active_index + 1 );
+				if ( window.DECK.active_index > ( window.DECK.questions.length - 1 ) ) { window.DECK.active_index = 0; }
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			// console.log( window.DECK.questions.length , window.DECK.active_index );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.DECK.active_index ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.DECK.active_index ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.DECK.active_index ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.DECK.active_index ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${window.DECK.active_index + 1}` );
+			render_katex();
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.DECK.active_index = 0;
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			$( "#current-card-number" ).text( `${window.DECK.active_index + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_title": "Practice Exam 3" ,
+			"questions": [
+				{
+					"prompt": "Plateau repolarization of cardiac muscle cells will be absent if __________." ,
+					"choices": [
+						"HCN channels are opened" ,
+						"Voltage-gated Ca<sup>2+</sup> channels are blocked" ,
+						"Voltage-gated Na<sup>+</sup> channels are closed" ,
+						"Phase 2 is absent" ,
+						"Three of the above"
+					] ,
+					"correct_answer_indexes": [ 1 , 2 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "What causes excitation of the cells of the cardiac conduction system?" ,
+					"choices": [
+						"Opening of HCN channels" ,
+						"Intercalated disks" ,
+						"Cardiac muscle cell action potentials" ,
+						"Opening of calcium channels" ,
+						"Two of the above"
+					] ,
+					"correct_answer_indexes": [ 0 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "Atrial repolarization can be seen on an EKG trace if _____________ (assume no ectopic pacemaker develops)." ,
+					"choices": [
+						"The SA node is destroyed" ,
+						"The AV node does not slow the conduction of the action potential" ,
+						"The Purkinje fibers are destroyed" ,
+						"The bundle of His is destroyed" ,
+						"Two of the above"
+					] ,
+					"correct_answer_indexes": [ 2 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "What is the slowest ectopic pacemaker of the heart?" ,
+					"choices": [
+						"SA node" ,
+						"AV node" ,
+						"Purkinje fibers" ,
+						"Bundle of His" ,
+						"Bundle branches"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "If ejection fraction is 60% and stroke volume is 80 ml, what is preload?" ,
+					"choices": [
+						"~ 50 ml" ,
+						"~ 80 ml" ,
+						"~ 120 ml" ,
+						"~ 135 ml" ,
+						"Cannot be determined"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Where would you place a stethoscope to best hear a tricuspid valve stenosis? <br> <img src=\"https://39363.org/IMAGE_BUCKET/1647008691459-273004123.png\" style=\"zoom:80%;\" />" ,
+					"choices": [
+						"Point A" ,
+						"Point B" ,
+						"Point C" ,
+						"Point D"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Type 1 second degree AV heart block is evident in part by ___________." ,
+					"choices": [
+						"Periodic loss of the P wave" ,
+						"Prolonged P wave" ,
+						"Periodic loss of QRS complex" ,
+						"Prolonged T wave" ,
+						"Tachycardia"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What heart sound is evident when ventricular pressure exceeds atrial pressure?" ,
+					"choices": [
+						"S<sub>1</sub>" ,
+						"S<sub>2</sub>"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A valve insufficiency is always heard prior to heart sounds." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What EKG trace is indicative of a normal sinus rhythm (note: each trace is 5 seconds). <br> <img src=\"https://39363.org/IMAGE_BUCKET/1647008760389-91503628.png\" style=\"zoom:80%;\" />" ,
+					"choices": [
+						"Trace A" ,
+						"Trace B" ,
+						"Trace C" ,
+						"Trace D" ,
+						"Trace E"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "If the cardiac conduction system is completely inhibited at the AV node, what would be absent from the  (assume no ectopic pacemaker develops)?" ,
+					"choices": [
+						"QRS Complex" ,
+						"T wave" ,
+						"P wave" ,
+						"P-R interval" ,
+						"Three of the above"
+					] ,
+					"correct_answer_indexes": [ 0 , 1 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "What period of the cardiac cycle are all valves closed?" ,
+					"choices": [
+						"Isovolumetric contraction" ,
+						"Period of ejection" ,
+						"Isovolumetric relxation" ,
+						"Passive ventricular filling" ,
+						"Two of the above"
+					] ,
+					"correct_answer_indexes": [ 0 , 2 , 4 ]
+				} ,
+				{
+					"prompt": "If end diastolic volume remains unchanged but stroke volume increases, ejection fraction increases." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Semilunar insufficiency can first be heard during ______________." ,
+					"choices": [
+						"Passive ventricular filling" ,
+						"Active ventricular filling" ,
+						"Isovolumetric relaxation" ,
+						"Isovolumetric contraction" ,
+						"Period of ejection"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "During passive ventricular filling, ventricular pressure exceeds atrial pressure" ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What is the event that is caused by the QRS complex?" ,
+					"choices": [
+						"Isolvolumetric contraction" ,
+						"Passive ventricular filling" ,
+						"Active ventricular filling" ,
+						"Period of ejection" ,
+						"Two of the above"
+					] ,
+					"correct_answer_indexes": [ 0 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "If heart rate remains unchanged, increased preload will cause __________." ,
+					"choices": [
+						"Stroke volume to increase" ,
+						"Cardiac output to increase" ,
+						"Afterload to decrease" ,
+						"End diastolic volume to increase" ,
+						"Three of the above"
+					] ,
+					"correct_answer_indexes": [ 0 , 1 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "What has a negative chronotropic effect on the heart?" ,
+					"choices": [
+						"Baroreceptor reflex" ,
+						"Vagal stimulation" ,
+						"Decrease in temperature" ,
+						"Parasympathetic stimulation" ,
+						"All of the above"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Sympathetics affect both the cardiac conduction system and myocardium." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A fever of 38ºC (assume a normal temperature of 37 ºC) would increase heart rate by approximately ________." ,
+					"choices": [
+						"0 beats / minute" ,
+						"5 beats / minute" ,
+						"10 beats / minute" ,
+						"15 beats / minute" ,
+						"20 beats / minute"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Cardiac output of the right ventricle ___ cardiac output of the left ventricle." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+						"Equal to"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Mean arterial pressure with a decrease in cardiac output ___ mean arterial pressure with an increase in cardiac output" ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+						"Equal to"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Load against the heart due to turbulent blood flow ___ load against the heart due to laminar blood flow." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+						"Equal to"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Turbulent blood flow is responsible for murmurs." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A change in ___________ has the biggest influence on resistance to blood flow and thus blood pressure." ,
+					"choices": [
+						"Blood viscosity" ,
+						"Blood volume" ,
+						"Friction" ,
+						"Arteriole radius" ,
+						"Blood vessel length"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Polycythemia will decrease blood flow." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Increasing pressure at the right atrium will cause ___________ in the venous system." ,
+					"choices": [
+						"Decreased blood flow" ,
+						"Increased blood flow" ,
+						"No change in blood flow"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Strong parasympathetic stimulation of the heart along with strong sympathetic inhibition of the erioles can lead to _____________." ,
+					"choices": [
+						"Tachycardia" ,
+						"Increased blood pressure" ,
+						"Collapse of blood vessels" ,
+						"Increased compliance" ,
+						"Atherosclerosis"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Increasing the time the heart is in diastole will decrease mean arterial pressure." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What would cause vasodilation in the peripheral circulation?" ,
+					"choices": [
+						"Increase in pH" ,
+						"Decrease in P<sub>CO<sub>2</sub></sub>" ,
+						"Histamine" ,
+						"Increase in O<sub>2</sub>" ,
+						"Thromboxanes"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What will cause an increase in BP?" ,
+					"choices": [
+						"Stimulation of baroreceptors" ,
+						"Vasopressin" ,
+						"Production of angiotensin II" ,
+						"Release of atrial natriuretic factor" ,
+						"Two of the above"
+					] ,
+					"correct_answer_indexes": [ 1 , 2 , 4 ]
+				} ,
+				{
+					"prompt": "An increase in afterload would most likely stimulate the baroreceptor reflex." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Arteriosclerosis increases systolic blood pressure by decreasing arterial ____________." ,
+					"choices": [
+						"Resistance" ,
+						"Viscosity" ,
+						"Friction" ,
+						"Compliance" ,
+						"Pulse rate"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "A diastolic blood pressure of greater than 100 mm Hg is considered Stage 1 hypertension." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Ca<sup>2+</sup> channel blockers have negative chronotropic and negative inotropic effects on the heart." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				}
+			]
+		};
+	</script>
+</body>
+</html>
