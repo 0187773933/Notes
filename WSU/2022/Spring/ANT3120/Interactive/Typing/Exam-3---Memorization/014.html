@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>014</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="120" title="120" href="" coords="705.4327559055118,857.3251968503937,797.2902362204725,806.0146456692913" shape="rect">
+			<area target="" alt="200" title="200" href="" coords="857.8831496062992,857.3251968503937,947.8332283464566,806.0146456692913" shape="rect">
+			<area target="" alt="80" title="80" href="" coords="715.7585826771654,591.3105511811024,788.2017322834646,540.0" shape="rect">
+			<area target="" alt="120" title="120" href="" coords="858.8176377952756,591.3105511811024,948.767716535433,540.0" shape="rect">
+			<area target="" alt="120" title="120" href="" coords="692.46031496063,477.9902362204724,784.3177952755906,426.67968503937004" shape="rect">
+			<area target="" alt="200" title="200" href="" coords="844.9107086614174,477.9902362204724,934.8607874015748,426.67968503937004" shape="rect">
+			<area target="" alt="60" title="60" href="" coords="1145.0373228346457,887.9645669291339,1225.9015748031497,836.6540157480315" shape="rect">
+			<area target="" alt="100" title="100" href="" coords="1286.4944881889764,887.9645669291339,1376.444566929134,836.6540157480315" shape="rect">
+			<area target="" alt="160" title="160" href="" coords="1128.87937007874,529.3007874015748,1220.7368503937007,477.9902362204724" shape="rect">
+			<area target="" alt="200" title="200" href="" coords="1281.3297637795276,529.3007874015748,1371.2798425196852,477.9902362204724" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647133029243-842759452.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Exam-3---Memorization/015.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

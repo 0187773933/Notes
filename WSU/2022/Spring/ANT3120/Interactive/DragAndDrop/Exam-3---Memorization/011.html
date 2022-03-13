@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>011</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="First Heart Sound" title="First Heart Sound" href="" coords="706.5650393700787,380.347874015748,1005.7829921259843,329.03732283464564" shape="rect">
+			<area target="" alt="Second Heart Sound" title="Second Heart Sound" href="" coords="1337.8691338582678,452.95968503937013,1681.0433070866143,401.64913385826776" shape="rect">
+			<area target="" alt="Third Heart Sound" title="Third Heart Sound" href="" coords="1472.999527559055,652.695748031496,1816.1737007874015,601.3851968503936" shape="rect">
+			<area target="" alt="Atrial Systole" title="Atrial Systole" href="" coords="485.60818897637796,762.8729133858268,721.5653543307087,711.5623622047244" shape="rect">
+			<area target="" alt="Ventricular Systole" title="Ventricular Systole" href="" coords="856.1740157480315,762.8729133858268,1169.2173228346455,711.5623622047244" shape="rect">
+			<area target="" alt="Ventricular Diastole" title="Ventricular Diastole" href="" coords="1436.8696062992126,761.1862992125984,1762.4348031496063,709.8757480314961" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647133028294-395144440.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Exam-3---Memorization/012.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

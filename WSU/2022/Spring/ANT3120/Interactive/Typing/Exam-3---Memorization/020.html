@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>020</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Frontal Plane" title="Frontal Plane" href="" coords="876.2603149606299,196.264094488189,1103.4782677165354,144.95354330708662" shape="rect">
+			<area target="" alt="Frontal Plane" title="Frontal Plane" href="" coords="996.1303937007874,594.0,1223.348346456693,542.6894488188976" shape="rect">
+			<area target="" alt="Transverse" title="Transverse" href="" coords="876.2603149606299,1000.7897637795276,1065.9130708661417,949.4792125984252" shape="rect">
+			<area target="" alt="Lead 1" title="Lead 1" href="" coords="140.8685039370079,247.5700787401575,275.47748031496064,196.25952755905513" shape="rect">
+			<area target="" alt="Right Arm" title="Right Arm" href="" coords="306.2603149606299,247.5700787401575,487.8255118110236,196.25952755905513" shape="rect">
+			<area target="" alt="Left Arm" title="Left Arm" href="" coords="620.3474015748031,248.17748031496063,801.9125984251968,196.86692913385826" shape="rect">
+			<area target="" alt="0" title="0" href="" coords="853.0418897637795,282.3466141732283,878.607874015748,241.99732283464567" shape="rect">
+			<area target="" alt="Lead 2" title="Lead 2" href="" coords="140.8685039370079,333.65716535433074,275.47748031496064,282.3466141732284" shape="rect">
+			<area target="" alt="Right Arm" title="Right Arm" href="" coords="306.2603149606299,333.65716535433074,487.8255118110236,282.3466141732284" shape="rect">
+			<area target="" alt="Left Leg" title="Left Leg" href="" coords="617.7382677165355,329.83023622047244,770.607874015748,278.5196850393701" shape="rect">
+			<area target="" alt="+60" title="+60" href="" coords="853.0417322834645,373.6870866141732,943.8245669291338,322.37653543307084" shape="rect">
+			<area target="" alt="Lead 3" title="Lead 3" href="" coords="140.8683464566929,416.6135433070866,275.47732283464563,365.30299212598425" shape="rect">
+			<area target="" alt="Left Arm" title="Left Arm" href="" coords="308.34677165354327,416.6135433070866,475.8253543307086,365.30299212598425" shape="rect">
+			<area target="" alt="Left Leg" title="Left Leg" href="" coords="592.4343307086614,418.4445669291339,745.303937007874,367.1340157480315" shape="rect">
+			<area target="" alt="+120" title="+120" href="" coords="853.8255118110236,454.43464566929134,963.9125984251968,403.124094488189" shape="rect">
+			<area target="" alt="aVR" title="aVR" href="" coords="128.60850393700787,638.6086614173229,220.69574803149607,600.7020472440945" shape="rect">
+			<area target="" alt="Right Arm" title="Right Arm" href="" coords="242.8696062992126,645.3105511811024,424.4348031496063,594.0" shape="rect">
+			<area target="" alt="-150" title="-150" href="" coords="846.7792125984251,675.732440944882,947.2143307086614,637.8258267716536" shape="rect">
+			<area target="" alt="aVL" title="aVL" href="" coords="125.47811023622047,719.3074015748032,217.56535433070866,681.4007874015748" shape="rect">
+			<area target="" alt="Left Arm" title="Left Arm" href="" coords="243.91291338582678,727.7881889763779,407.7395275590551,676.4776377952755" shape="rect">
+			<area target="" alt="-30" title="-30" href="" coords="845.9974803149605,762.424251968504,935.4762204724408,724.5176377952756" shape="rect">
+			<area target="" alt="aVF" title="aVF" href="" coords="125.47811023622047,803.1174803149606,217.56535433070866,765.2108661417323" shape="rect">
+			<area target="" alt="Left Leg" title="Left Leg" href="" coords="256.43433070866143,812.6137007874015,407.7395275590551,761.3031496062991" shape="rect">
+			<area target="" alt="+90" title="+90" href="" coords="845.9974803149605,848.3518110236221,935.4762204724408,810.4451968503937" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647133031212-266539135.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Exam-3---Memorization/021.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

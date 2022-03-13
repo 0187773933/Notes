@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Semilunar Valves Open" title="Semilunar Valves Open" href="" coords="408.9124409448819,429.48173228346457,788.8694488188976,378.1711811023622" shape="rect">
+			<area target="" alt="Diastolic Pressure" title="Diastolic Pressure" href="" coords="432.0,594.4414173228347,728.347716535433,543.1308661417323" shape="rect">
+			<area target="" alt="Dicrotic Notch" title="Dicrotic Notch" href="" coords="1327.8261417322835,524.5285039370079,1574.608661417323,473.21795275590557" shape="rect">
+			<area target="" alt="Semilunar Valves Close" title="Semilunar Valves Close" href="" coords="1327.8261417322835,315.31102362204723,1721.7390551181102,264.00047244094486" shape="rect">
+			<area target="" alt="AV Valves Open" title="AV Valves Open" href="" coords="1428.5217322834644,891.3111811023622,1695.1303937007872,840.0006299212598" shape="rect">
+			<area target="" alt="AV Valves Close" title="AV Valves Close" href="" coords="397.95574803149606,819.2009448818898,664.5644094488189,767.8903937007874" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647133028607-525306236.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Exam-3---Memorization/013.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
