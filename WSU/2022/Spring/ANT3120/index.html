@@ -302,6 +302,25 @@
 			img_1.style.display = "none";
 			document.body.appendChild( img_1 );
 		} catch( e ) {}
+
+		// TO FIX
+		// https://github.com/sindresorhus/devtools-detect/blob/main/index.js
+		// try {
+		// 	$( function() {
+		// 		function isConsoleOpen() {
+		// 			var startTime = new Date();
+		// 			debugger;
+		// 			var endTime = new Date();
+		// 			return endTime - startTime > 100;
+		// 		}
+		// 		$( window ).resize( function() {
+		// 			if( isConsoleOpen() ) {
+		// 				console.log( "Source Code for Converting PowerPoints to Interactive Games : https://github.com/0187773933/PowerPointInteractiveGamesGenerator" );
+		// 			}
+		// 		});
+		// 	});
+		// } catch( e ) {}
+
 	</script>
 </body>
 </html>
