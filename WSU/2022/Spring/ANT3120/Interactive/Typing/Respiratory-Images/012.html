@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Superior Nasal Concha" title="Superior Nasal Concha" href="" coords="118.95653543307087,221.91937007874014,482.8535433070866,170.60881889763778" shape="rect">
+			<area target="" alt="Middle Nasal Concha" title="Middle Nasal Concha" href="" coords="94.4348031496063,447.8324409448819,458.33181102362204,396.52188976377954" shape="rect">
+			<area target="" alt="Inferior Nasal Concha" title="Inferior Nasal Concha" href="" coords="94.43464566929134,673.223937007874,449.00992125984254,621.9133858267717" shape="rect">
+			<area target="" alt="Hard Palate" title="Hard Palate" href="" coords="206.60866141732282,824.45968503937,417.63653543307083,773.1491338582676" shape="rect">
+			<area target="" alt="Soft Palate" title="Soft Palate" href="" coords="1521.9130708661417,837.5031496062992,1713.391338582677,786.1925984251968" shape="rect">
+			<area target="" alt="Inferior Meatus" title="Inferior Meatus" href="" coords="1521.9129133858269,698.8792125984252,1785.9130708661419,647.5686614173228" shape="rect">
+			<area target="" alt="Middle Meatus" title="Middle Meatus" href="" coords="1521.9127559055116,531.9011023622047,1785.9129133858266,480.5905511811024" shape="rect">
+			<area target="" alt="Superior Meatus" title="Superior Meatus" href="" coords="1521.9127559055116,362.38314960629924,1801.0434645669288,311.0725984251969" shape="rect">
+			<area target="" alt="Sphenoidal Sinus" title="Sphenoidal Sinus" href="" coords="1523.4777952755903,192.39070866141734,1839.1303937007872,141.08015748031497" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647737746953-601303153.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Respiratory-Images/013.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

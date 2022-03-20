@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>014</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Terminal Bronchiole" title="Terminal Bronchiole" href="" coords="346.68094488188973,455.13669291338584,674.6086614173228,403.8261417322835" shape="rect">
+			<area target="" alt="Respiratory Bronchioles" title="Respiratory Bronchioles" href="" coords="355.30425196850393,540.0,737.7390551181102,488.68944881889763" shape="rect">
+			<area target="" alt="Alveolar Ducts" title="Alveolar Ducts" href="" coords="346.68094488188973,626.4286614173228,598.1590551181102,575.1181102362204" shape="rect">
+			<area target="" alt="Alveoli" title="Alveoli" href="" coords="355.30425196850393,687.2020472440944,494.9924409448819,635.891496062992" shape="rect">
+			<area target="" alt="Alveolar Sac" title="Alveolar Sac" href="" coords="294.3689763779528,745.3853543307087,510.6447244094488,694.0748031496063" shape="rect">
+			<area target="" alt="Visceral Pleura" title="Visceral Pleura" href="" coords="275.54740157480313,895.7176377952756,527.0255118110235,844.4070866141732" shape="rect">
+			<area target="" alt="Pleural Cavity" title="Pleural Cavity" href="" coords="346.68094488188973,958.0560629921259,580.5577952755905,906.7455118110236" shape="rect">
+			<area target="" alt="Parietal Pleura" title="Parietal Pleura" href="" coords="355.30425196850393,1020.3946456692913,606.7823622047244,969.084094488189" shape="rect">
+			<area target="" alt="Pulmonary Capillaries" title="Pulmonary Capillaries" href="" coords="1288.7645669291337,844.4070866141732,1644.4522834645668,793.0965354330708" shape="rect">
+			<area target="" alt="Branch of Pulmonary Vein" title="Branch of Pulmonary Vein" href="" coords="1284.0689763779528,927.7582677165354,1699.8261417322835,876.4477165354331" shape="rect">
+			<area target="" alt="Alveolus" title="Alveolus" href="" coords="1274.6777952755904,509.64913385826776,1432.1738582677162,458.3385826771654" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647737747653-693581092.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Respiratory-Images/015.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

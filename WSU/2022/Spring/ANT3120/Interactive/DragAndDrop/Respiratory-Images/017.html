@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>017</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Subclavius" title="Subclavius" href="" coords="163.30425196850393,121.74535433070866,355.00409448818897,70.4348031496063" shape="rect">
+			<area target="" alt="Coracoid Process" title="Coracoid Process" href="" coords="163.30425196850393,261.6614173228346,447.652125984252,210.35086614173227" shape="rect">
+			<area target="" alt="Pectoralis Minor" title="Pectoralis Minor" href="" coords="154.10267716535435,327.05889763779527,438.4505511811024,275.7483464566929" shape="rect">
+			<area target="" alt="Subscapularis" title="Subscapularis" href="" coords="166.43464566929134,405.3196850393701,404.4584251968504,372.97165354330707" shape="rect">
+			<area target="" alt="Pectoralis Major" title="Pectoralis Major" href="" coords="93.81811023622048,458.51858267716534,378.16598425196855,415.6644094488189" shape="rect">
+			<area target="" alt="Biceps Brachii" title="Biceps Brachii" href="" coords="137.73905511811023,550.3091338582677,376.6007874015748,498.99858267716536" shape="rect">
+			<area target="" alt="Latissimus Dorsi" title="Latissimus Dorsi" href="" coords="117.39133858267716,645.2300787401575,389.8340157480315,593.9195275590552" shape="rect">
+			<area target="" alt="Serratus Anterior" title="Serratus Anterior" href="" coords="125.83385826771654,764.564251968504,410.1817322834646,713.2537007874016" shape="rect">
+			<area target="" alt="External Abdominal Oblique" title="External Abdominal Oblique" href="" coords="1306.5296062992127,748.3365354330709,1753.0434645669293,697.0259842519686" shape="rect">
+			<area target="" alt="Latissimus Dorsi" title="Latissimus Dorsi" href="" coords="1423.2096062992125,656.4393700787402,1695.6522834645668,605.1288188976379" shape="rect">
+			<area target="" alt="Pectoralis Minor" title="Pectoralis Minor" href="" coords="1423.2096062992125,597.0513385826772,1709.2174803149605,545.7407874015748" shape="rect">
+			<area target="" alt="Teres Major" title="Teres Major" href="" coords="1423.2094488188977,536.8696062992126,1633.7548031496065,485.5590551181102" shape="rect">
+			<area target="" alt="Teres Minor" title="Teres Minor" href="" coords="1454.1581102362204,433.5647244094488,1664.7034645669291,382.2541732283464" shape="rect">
+			<area target="" alt="Subscapularis" title="Subscapularis" href="" coords="1452.1897637795278,370.9544881889764,1695.652283464567,319.64393700787406" shape="rect">
+			<area target="" alt="Supraspinatus Tendon" title="Supraspinatus Tendon" href="" coords="1444.4822047244093,296.67653543307085,1802.6085039370078,245.3659842519685" shape="rect">
+			<area target="" alt="Pectoralis Major" title="Pectoralis Major" href="" coords="1420.0790551181103,201.90897637795277,1692.5218897637797,150.5984251968504" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647737748774-91125761.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Respiratory-Images/018.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

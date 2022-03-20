@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Membranous Part of Trachea" title="Membranous Part of Trachea" href="" coords="753.7941732283465,987.347559055118,1215.316220472441,936.0370078740157" shape="rect">
+			<area target="" alt="Superior Thyroid Notch" title="Superior Thyroid Notch" href="" coords="93.51354330708661,590.9919685039371,474.9648818897637,539.6814173228347" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="320.79007874015747,925.8423622047244,475.6218897637795,874.531811023622" shape="rect">
+			<area target="" alt="Cricothyroid Ligament" title="Cricothyroid Ligament" href="" coords="116.66409448818898,797.5406299212599,474.9648818897638,746.2300787401575" shape="rect">
+			<area target="" alt="Tracheal Cartilage" title="Tracheal Cartilage" href="" coords="821.3650393700788,884.7264566929134,1121.87937007874,833.415905511811" shape="rect">
+			<area target="" alt="Cricoid Cartilage" title="Cricoid Cartilage" href="" coords="821.3650393700788,766.4187401574803,1121.87937007874,715.108188976378" shape="rect">
+			<area target="" alt="Thyroid Cartilage" title="Thyroid Cartilage" href="" coords="821.3650393700788,655.0540157480315,1121.87937007874,603.7434645669291" shape="rect">
+			<area target="" alt="Thyrohyoid Membrane" title="Thyrohyoid Membrane" href="" coords="786.2103937007874,518.9343307086614,1167.228818897638,467.62377952755907" shape="rect">
+			<area target="" alt="Hyoid Bone" title="Hyoid Bone" href="" coords="840.4173228346457,339.7422047244095,1112.495590551181,288.4316535433071" shape="rect">
+			<area target="" alt="Epiglottis" title="Epiglottis" href="" coords="840.4171653543307,254.93307086614175,1112.495433070866,203.62251968503938" shape="rect">
+		</map>
+
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647737744838-723441746.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Respiratory-Images/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

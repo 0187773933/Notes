@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="External Nose" title="External Nose" href="" coords="275.2568503937008,279.2642519685039,511.43354330708667,227.95370078740157" shape="rect">
+			<area target="" alt="Nasal Cavity" title="Nasal Cavity" href="" coords="1060.035590551181,203.8659842519685,1273.0618897637794,152.55543307086614" shape="rect">
+			<area target="" alt="Pharynx" title="Pharynx" href="" coords="1089.2390551181102,292.8571653543307,1243.8582677165355,241.54661417322833" shape="rect">
+			<area target="" alt="Larynx" title="Larynx" href="" coords="1077.5576377952755,439.1935433070866,1210.619527559055,387.88299212598423" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="1077.5576377952755,529.731496062992,1232.1768503937008,478.42094488188974" shape="rect">
+			<area target="" alt="Bronchi" title="Bronchi" href="" coords="1166.5486614173228,740.9505511811024,1321.167874015748,689.64" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647737742976-163862740.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Respiratory-Images/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/c8ad23e6-a7e9-11ec-8df8-149d997d632b?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>

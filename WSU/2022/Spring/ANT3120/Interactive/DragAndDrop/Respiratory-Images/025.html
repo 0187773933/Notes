@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>025</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Macrophage" title="Macrophage" href="" coords="149.51732283464565,293.45023622047245,372.5214173228346,242.13968503937008" shape="rect">
+			<area target="" alt="Nucleus" title="Nucleus" href="" coords="174.93244094488188,476.2272440944882,347.1064566929134,424.9166929133858" shape="rect">
+			<area target="" alt="Mitochondrion" title="Mitochondrion" href="" coords="107.25669291338582,536.8694488188976,370.95637795275593,485.55889763779527" shape="rect">
+			<area target="" alt="Type I Pneumocyte" title="Type I Pneumocyte" href="" coords="1194.0390551181104,421.7862992125984,1508.8696062992126,370.47574803149604" shape="rect">
+			<area target="" alt="Capillary Endothelium" title="Capillary Endothelium" href="" coords="1168.4135433070867,570.3507086614173,1534.4951181102363,519.040157480315" shape="rect">
+			<area target="" alt="Red Blood Cell" title="Red Blood Cell" href="" coords="1168.4135433070867,646.9296062992125,1416.5217322834646,595.6190551181102" shape="rect">
+			<area target="" alt="Alveolar Epithelium" title="Alveolar Epithelium" href="" coords="1548.7620472440944,309.3644094488189,1877.7390551181102,258.0538582677165" shape="rect">
+		</map>
+
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1647737751668-379767409.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Respiratory-Images/026.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
