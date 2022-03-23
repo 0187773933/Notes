@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practice Exam 4</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-0lax{text-align:left;vertical-align:top}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+		<!-- <div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			let url;
+			if ( window.ACTIVE_INDEX === 0 ) {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+			} else {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX ).toString();
+			}
+			console.log( url );
+			window.location.href = url;
+			// history.pushState({
+			// 	id: "question-" + ( window.ACTIVE_INDEX - 1 ).toString() ,
+			// 	source: 'web'
+			// } , url );
+			window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			render_active_card();
+			// if ( window.BACK_IS_RENDERED === false ) {
+			// 	// $( "#card-body-content" ).show();
+			// 	// CHANGED
+			// 	// render_correct_answers();
+			// 	// $( "#row-navigation" ).show();
+			// 	window.BACK_IS_RENDERED = true;
+			// } else {
+			// 	window.BACK_IS_RENDERED = false;
+			// 	console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			// 	window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			// 	if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			// 	render_active_card();
+			// }
+
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+				window.ACTIVE_INDEX = ( window.ACTIVE_INDEX + 1 );
+				if ( window.ACTIVE_INDEX > ( window.DECK.questions.length - 1 ) ) { window.ACTIVE_INDEX = 0; }
+				let url;
+				if ( window.ACTIVE_INDEX === ( window.DECK.questions.length ) ) {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+				} else {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX + 1 ).toString();
+				}
+				console.log( url );
+				window.location.href = url;
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			$( "#card-title-content" ).empty();
+			// console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.ACTIVE_INDEX ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.ACTIVE_INDEX ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
+			render_katex();
+		}
+		function get_url_question_number() {
+			console.log( window.location.href );
+			window.URL_INDEX = window.location.href.split( "#" );
+			if ( window.URL_INDEX.length > 0 ) {
+				window.URL_INDEX = window.location.href.split( ".html" )[ 1 ].split( "#" );
+				if ( window.URL_INDEX.length > 0 ) {
+					window.URL_INDEX = window.URL_INDEX[ 1 ];
+					return window.URL_INDEX;
+				}
+			}
+			return false;
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.ACTIVE_INDEX = 0;
+			if ( get_url_question_number() !== false ) {
+				if ( window.URL_INDEX !== window.ACTIVE_INDEX ) {
+					window.ACTIVE_INDEX = ( parseInt( window.URL_INDEX ) - 1 );
+					console.log( window.ACTIVE_INDEX );
+				}
+			} else {
+				console.log( "no url question number set" );
+			}
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			// $( "#current-card-number" ).text( `${window.ACTIVE_INDEX + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/de87dfac-12a9-47c7-b414-27ed5e84f141?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_title": "Practice Exam 4" ,
+			"questions": [
+				{
+					"prompt": "How does cystic fibrosis causes frequent respiratory infections?" ,
+					"choices": [
+						"How does cystic fibrosis causes frequent respiratory infections?" ,
+						"Decreasing surfactant production" ,
+						"Limiting macrophage efficacy" ,
+						"Limiting humidification of inhaled air" ,
+						"Thickening of secreted mucus" ,
+						"Limiting warming of inhaled air" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "If expiratory reserve volume is 800 ml and residual volume is 1,200 ml and inspiratory capacity is 2,500 ml ____________." ,
+					"choices": [
+						"Functional residual capacity is 2,000 ml" ,
+						"Vital capacity is 3,300 ml" ,
+						"Total lung capacity is 4,500 ml" ,
+						"All of the above" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What occurs during a eupneic breathing cycle?" ,
+					"choices": [
+						"Ppl is lowest at the end of inspiration" ,
+						"Palv is always less than PB" ,
+						"Palv is lowest in the middle of expiration" ,
+						"Ppl equals Palv at the end of inspiration" ,
+						"Palv is greatest during inspiration" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When Ppl is at its lowest level during ventilation, the lungs are at their largest volume." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Surfactant ____________." ,
+					"choices": [
+						"Is increased in people with surfactant deficiency syndrome" ,
+						"Is increased in babies with infant respiratory distress syndrome" ,
+						"Increases surface tension" ,
+						"Contributes to a normal lung compliance" ,
+						"Increases the work of breathing" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": `Put the following sequence of events in the correct order for a normal expiration.<br><span>1.  Alveolar volume decreases / Palv becomes more positive</span><br>
+<span>2.  Thoracic volume decreases</span><br>
+<span>3.  Ppl becomes more positive</span><br>
+<span>4.  Diaphragm and external intercostal muscles relax</span><br>
+<span>5.  Air exits the lungs</span><br>` ,
+					"choices": [
+						"4 , 3 , 1 , 2 , 5" ,
+						"4 , 3 , 2 , 1 , 5" ,
+						"4 , 2 , 3 , 1 , 5" ,
+						"4 , 2 , 1 , 3 , 5" ,
+						"4 , 1 , 2 , 3 , 5"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Stimulating the sympathetics will decrease airflow through the conducting zone." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Volume of air that can be inspired at the end of a normal expiration is known as the _______ and has an average normal volume of _________." ,
+					"choices": [
+						"Inspiratory reserve volume and 3,000 ml" ,
+						"Inspiratory capacity and 3,500 ml" ,
+						"Expiratory reserve volume and 1,000 ml" ,
+						"Functional residual capacity and 2,200 ml" ,
+						"Vital capacity and 4,500 ml " ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Comparing these values, what would one find?" ,
+					"choices": [
+						"PC<sub>O</sub><sub>2</sub> is greater than P<sub>O</sub><sub>2</sub> in venous blood" ,
+						"O<sub>2</sub> capacity is equal in arterial and venous blood" ,
+						"P<sub>O</sub><sub>2</sub> in arterial blood is greater than P<sub>O</sub><sub>2</sub> in the alveoli" ,
+						"O<sub>2</sub> content is greater than O<sub>2</sub> capacity" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 , 1 , 4 ]
+				} ,
+				{
+					"prompt": "	What would be increased in obstructive lung disease but not restrictive lung disease?" ,
+					"choices": [
+						"Ratio of FEV1 / FVC" ,
+						"FEV1" ,
+						"Functional residual capacity" ,
+						"Residual volume" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 2 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "Given the following data on two individuals, which of the answers below is correct.<br><center><img src=\"https://39363.org/IMAGE_BUCKET/1648001908766-358552195.png\"></img></center>",
+					"choices": [
+						"VA is greater in A than in B" ,
+						"VE is greater in A than in B" ,
+						"VA is greater in B than in A" ,
+						"VE is greater in B than in A" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Expiratory Reserve Volume = 1,500 ml<br>Residual Volume = 1,300 ml<br>Vital Capacity = 5,000<br><br>and : Total lung capacity = 6,300 ml" ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Expiratory Reserve Volume = 1,500 ml<br>Residual Volume = 1,300 ml<br>Vital Capacity = 5,000<br><br>and : Functional residual capacity = 3,700 ml" ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "If P<sub>A<sub>O<sub>2</sub></sub></sub> is 80 mmHg and the anatomic shunt is 15 mmHg, what is PO<sub>2</sub> at the arterial end of a systemic capillary?" ,
+					"choices": [
+						"40 mmHg" ,
+						"65 mmHg" ,
+						"80 mmHg" ,
+						"95 mmHg" ,
+						"104 mmHg" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Collapsing pressure within small alveoli of an infant with IRDS is ___________ the collapsing pressure within small alveoli of an infant without IRDS." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+						"Equal to" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What could cause a decrease in FEV1 but a normal FEV1 / FVC?" ,
+					"choices": [
+						"Asthma" ,
+						"Emphysema" ,
+						"Neuromuscular disease" ,
+						"Chronic bronchitis" ,
+						"Cystic fibrosis" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What contributes to atelectasis?" ,
+					"choices": [
+						"Surface tension" ,
+						"Surfactant" ,
+						"Palv being greater than Ppl" ,
+						"Residual volume" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What causes the greatest concentration of dissolved gas , X , in a liquid?" ,
+					"choices": [
+						"Decreasing solubility coefficient of gas X" ,
+						"Decreasing total pressure" ,
+						"Increasing altitude" ,
+						"Increasing PX" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The quantity of oxygen carried in the blood ____________." ,
+					"choices": [
+						"Is increased as one goes up in altitude" ,
+						"Is increased by increasing the number of circulating red blood cells" ,
+						"Is increased by increasing the concentration of hemoglobin in the blood" ,
+						"Is increased by breathing low oxygen levels" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 1 , 2 , 4 ]
+				} ,
+				{
+					"prompt": "Given the P<sbu>C<sub>O<sub>2</sub></sub></sub> at the arterial end of a pulmonary capillary and the PCO2 in the aorta, where is more PCO2 dissolved?" ,
+					"choices": [
+						"At the arterial end of a pulmonary capillary" ,
+						"In the aorta" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Regarding oxygen-hemoglobin binding:" ,
+					"choices": [
+						"It would increase with increased production of CO2" ,
+						"It would decrease with an increase in PO2" ,
+						"It would increase in an individual with a fever" ,
+						"It would decrease with a decrease in pH" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "At the tissues, hemoglobin binds oxygen more tightly." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Comparing the lungs between someone who is standing and lying down: blood flow and ventilation is greater at the base of the lung in the person who is lying down." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The ____________ is involved in anxiety attacks , which commonly causes ____________." ,
+					"choices": [
+						"Hypothalamus			Hyperventilation" ,
+						"Cerebrum			Hyperpnea" ,
+						"Dorsal Respiratory Group	Apnea" ,
+						"Ventral Respiratory Group	Eupnea" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What blood pressures would make it difficult for the kidneys to maintain GFR?" ,
+					"choices": [
+						"Increase in filtration fraction" ,
+						"Increase in renal fraction" ,
+						"Decrease in hematocrit" ,
+						"Decrease in plasma protein concentration" ,
+						"All of the above" ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "What blood pressures would make it difficult for the kidneys to maintain GFR?" ,
+					"choices": [
+						"80 / 60" ,
+						"130 / 90" ,
+						"170 / 100" ,
+						"190 / 70" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 , 3 , 4 ]
+				} ,
+				{
+					"prompt": "Reabsorption of phosphate at the proximal convoluted tubule is ___ the reabsorption of phosphate at the distal convoluted tubule." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "GFR during circulatory shock ___ GFR during normal conditions." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "If “X” is freely filtered and fully secreted, the _____________." ,
+					"choices": [
+						"Concentration of “X” in the plasma will be greater than the concentration of “X” in the urine" ,
+						"Concentration of “X” in the plasma will be less than the concentration of “X” in the urine" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "If “X” is freely filtered and fully reabsorbed, the _____________." ,
+					"choices": [
+						"Concentration of “X” in the plasma will be greater than the concentration of “X” in the urine" ,
+						"Concentration of “X” in the plasma will be less than the concentration of “X” in the urine" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Clearance of substance “X” that is freely filtered and secreted but not reabsorbed." ,
+					"choices": [
+						"Greater than GFR" ,
+						"Less than GFR" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Clearance of albumin." ,
+					"choices": [
+						"Greater than GFR" ,
+						"Less than GFR" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Clearance of inulin is _____________." ,
+					"choices": [
+						"Greater than the clearance of PAH" ,
+						"Less than the clearance of albumin" ,
+						"Not dependent on plasma blood flow since inulin is not reabsorbed or secreted" ,
+						"Approximately the same as the clearance of creatinine" ,
+						"Not affected by strong sympathetic stimulation" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Regarding a juxtamedullary nephron: Filtrate osmolality at the end of the thin ascending loop of Henle is greater than filtrate osmolality at the proximal convoluted tubule." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What structure can reabsorb sodium?" ,
+					"choices": [
+						"Proximal convoluted tubule" ,
+						"Loop of Henle" ,
+						"Distal convoluted tubule" ,
+						"Collecting duct" ,
+						"All of the above" ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The majority of NH<sub>3</sub> (ammonia) secretion occurs at the proximal convoluted tubule." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Secretion of potassium ______________." ,
+					"choices": [
+						"Is stimulated by aldosterone" ,
+						"Takes place in the distal convoluted tubul" ,
+						"Is stimulated by loop diuretic" ,
+						"Is stimulated by thiazide" ,
+						"All of the abov" ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Causing the thin descending loop of Henle to be impermeable to water would cause the filtrate osmolality within the loop to be ___________ from normal conditions." ,
+					"choices": [
+						"Increased" ,
+						"Decreased" ,
+						"Unchanged" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What is not associated with the vasa recta?" ,
+					"choices": [
+						"Water reabsorbed as it approaches the cortex of the kidney" ,
+						"Decreased osmolality as it approaches the cortex of the kidney" ,
+						"Solutes reabsorbed as it approaches the medulla of the kidney" ,
+						"Increased osmolality as it approaches the medulla of the kidney" ,
+						"Rapid blood flow" ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "What is anuria due to a kidney stone in both ureters called?" ,
+					"choices": [
+						"Urinary suppression" ,
+						"Urinary incontinence" ,
+						"Urinary retention" ,
+						"Urinary hyperplasia" ,
+						"Urinary micturition" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				}
+			]
+		};
+	</script>
+</body>
+</html>
