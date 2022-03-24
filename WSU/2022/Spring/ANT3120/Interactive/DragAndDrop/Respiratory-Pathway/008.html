@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Terminal Bronchioles" title="Terminal Bronchioles" href="" coords="506.01700787401575,489.7577952755906,850.5853543307087,438.4472440944882" shape="rect">
+			<area target="" alt="Respiratory Bronchioles" title="Respiratory Bronchioles" href="" coords="504.3415748031496,418.2108661417323,891.1708661417323,366.90031496062994" shape="rect">
+			<area target="" alt="Alveolar Ducts" title="Alveolar Ducts" href="" coords="504.3415748031496,340.88393700787407,753.4318110236221,289.5733858267717" shape="rect">
+			<area target="" alt="Alveoli" title="Alveoli" href="" coords="506.01700787401575,264.97622047244096,643.9766929133858,213.6656692913386" shape="rect">
+			<area target="" alt="Larynx" title="Larynx" href="" coords="503.7885039370079,967.6111811023621,635.9993700787402,916.3006299212598" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="503.7885039370079,894.0678740157481,654.5573228346457,842.7573228346457" shape="rect">
+			<area target="" alt="Primary Bronchus" title="Primary Bronchus" href="" coords="503.7885039370079,781.4670866141732,801.2140157480314,730.1565354330709" shape="rect">
+			<area target="" alt="Secondary Bronchus" title="Secondary Bronchus" href="" coords="504.1307086614173,709.4481889763779,839.5954330708662,658.1376377952755" shape="rect">
+			<area target="" alt="Tertiary Bronchus" title="Tertiary Bronchus" href="" coords="504.00110236220473,639.0091338582678,801.4266141732284,587.6985826771654" shape="rect">
+			<area target="" alt="Conducting Bronchioles" title="Conducting Bronchioles" href="" coords="504.3415748031496,566.0933858267717,886.8626771653544,514.7828346456694" shape="rect">
+			<area target="" alt="Nares" title="Nares" href="" coords="1168.0859842519685,752.8366929133858,1301.1294488188976,701.5261417322835" shape="rect">
+			<area target="" alt="Nasal Cavity" title="Nasal Cavity" href="" coords="1166.2669291338584,676.892440944882,1379.6171653543308,625.5818897637796" shape="rect">
+			<area target="" alt="Nasopharynx" title="Nasopharynx" href="" coords="1166.848188976378,522.7714960629921,1393.0719685039371,471.46094488188976" shape="rect">
+			<area target="" alt="Oropharynx" title="Oropharynx" href="" coords="1166.2670866141732,405.1656692913386,1379.6171653543306,353.8551181102362" shape="rect">
+			<area target="" alt="Laryngopharynx" title="Laryngopharynx" href="" coords="1166.568503937008,334.49779527559053,1435.7858267716538,283.18724409448816" shape="rect">
+			<area target="" alt="Glottis" title="Glottis" href="" coords="1166.568503937008,261.835905511811,1300.444566929134,210.52535433070867" shape="rect">
+			<area target="" alt="Choanae" title="Choanae" href="" coords="1168.0861417322835,596.6697637795276,1336.5711811023623,545.3592125984252" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648134195177-446206192.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Respiratory-Pathway/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

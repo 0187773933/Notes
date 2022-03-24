@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Nares" title="Nares" href="" coords="357.9267716535433,289.4237795275591,490.97023622047243,238.1132283464567" shape="rect">
+			<area target="" alt="Nasal Cavity" title="Nasal Cavity" href="" coords="357.9267716535433,362.44976377952753,571.2770078740157,311.13921259842516" shape="rect">
+			<area target="" alt="Choanae" title="Choanae" href="" coords="357.8913385826772,432.952125984252,526.0381102362205,381.64157480314964" shape="rect">
+			<area target="" alt="Nasopharynx" title="Nasopharynx" href="" coords="354.3603149606299,510.44110236220473,580.584094488189,459.13055118110236" shape="rect">
+			<area target="" alt="Oropharynx" title="Oropharynx" href="" coords="354.14897637795275,583.2141732283465,567.4990551181102,531.9036220472441" shape="rect">
+			<area target="" alt="Laryngopharynx" title="Laryngopharynx" href="" coords="354.3603149606299,703.3179527559055,623.5776377952757,652.0074015748031" shape="rect">
+			<area target="" alt="Glottis" title="Glottis" href="" coords="353.52771653543306,779.3993700787402,487.40377952755904,728.0888188976378" shape="rect">
+			<area target="" alt="Larynx" title="Larynx" href="" coords="353.52771653543306,853.3689763779528,486.5713385826772,802.0584251968504" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="353.527874015748,926.3949606299213,517.1429921259843,875.084409448819" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648134192964-685059975.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Respiratory-Pathway/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/90acb586-b785-4836-a4eb-e1b67b8c916a?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>

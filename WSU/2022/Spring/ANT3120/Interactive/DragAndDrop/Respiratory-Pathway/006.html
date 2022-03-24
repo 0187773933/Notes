@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Nares" title="Nares" href="" coords="352.73228346456693,864.1327559055118,485.77574803149605,812.8222047244094" shape="rect">
+			<area target="" alt="Nasal Cavity" title="Nasal Cavity" href="" coords="350.91322834645666,788.1885039370079,564.2634645669291,736.8779527559055" shape="rect">
+			<area target="" alt="Nasopharynx" title="Nasopharynx" href="" coords="351.49448818897633,634.0675590551181,577.7182677165354,582.7570078740157" shape="rect">
+			<area target="" alt="Oropharynx" title="Oropharynx" href="" coords="350.9133858267717,516.4617322834646,564.2634645669291,465.1511811023622" shape="rect">
+			<area target="" alt="Laryngopharynx" title="Laryngopharynx" href="" coords="351.2148031496063,445.79385826771653,620.432125984252,394.48330708661416" shape="rect">
+			<area target="" alt="Glottis" title="Glottis" href="" coords="351.2148031496063,373.131968503937,485.0908661417323,321.82141732283463" shape="rect">
+			<area target="" alt="Choanae" title="Choanae" href="" coords="352.7324409448819,707.9658267716535,521.2174803149607,656.6552755905511" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648134194586-84555346.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Respiratory-Pathway/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

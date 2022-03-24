@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Nares" title="Nares" href="" coords="506.62236220472437,262.81511811023626,639.6658267716535,211.5045669291339" shape="rect">
+			<area target="" alt="Nasal Cavity" title="Nasal Cavity" href="" coords="506.62236220472437,335.8411023622047,719.9725984251968,284.53055118110234" shape="rect">
+			<area target="" alt="Choanae" title="Choanae" href="" coords="506.58692913385823,406.34346456692913,674.7337007874015,355.03291338582676" shape="rect">
+			<area target="" alt="Nasopharynx" title="Nasopharynx" href="" coords="503.05590551181103,483.8324409448819,729.2796850393701,432.52188976377954" shape="rect">
+			<area target="" alt="Oropharynx" title="Oropharynx" href="" coords="502.84456692913386,556.6055118110236,716.1946456692913,505.29496062992126" shape="rect">
+			<area target="" alt="Laryngopharynx" title="Laryngopharynx" href="" coords="503.05590551181103,676.7092913385827,772.2732283464568,625.3987401574803" shape="rect">
+			<area target="" alt="Glottis" title="Glottis" href="" coords="502.2233070866142,752.7907086614173,636.0993700787402,701.4801574803149" shape="rect">
+			<area target="" alt="Larynx" title="Larynx" href="" coords="502.2233070866142,826.7603149606299,635.2669291338583,775.4497637795275" shape="rect">
+			<area target="" alt="Trachea" title="Trachea" href="" coords="502.2234645669291,899.7862992125985,665.8385826771654,848.4757480314961" shape="rect">
+			<area target="" alt="Primary Bronchus" title="Primary Bronchus" href="" coords="1069.5426771653545,262.4425196850394,1366.968188976378,211.131968503937" shape="rect">
+			<area target="" alt="Secondary Bronchus" title="Secondary Bronchus" href="" coords="1069.5426771653545,372.77322834645673,1405.0074015748032,321.46267716535436" shape="rect">
+			<area target="" alt="Tertiary Bronchus" title="Tertiary Bronchus" href="" coords="1067.5228346456693,448.85464566929136,1364.948346456693,397.544094488189" shape="rect">
+			<area target="" alt="Conducting Bronchioles" title="Conducting Bronchioles" href="" coords="1066.6902362204723,524.936062992126,1449.211338582677,473.62551181102367" shape="rect">
+			<area target="" alt="Terminal Bronchioles" title="Terminal Bronchioles" href="" coords="1068.832440944882,609.4609448818898,1413.4007874015747,558.1503937007874" shape="rect">
+			<area target="" alt="Respiratory Bronchioles" title="Respiratory Bronchioles" href="" coords="1068.832283464567,683.6866141732283,1455.6615748031495,632.376062992126" shape="rect">
+			<area target="" alt="Alveolar Ducts" title="Alveolar Ducts" href="" coords="1068.832283464567,758.0949606299213,1317.9225196850393,706.7844094488189" shape="rect">
+			<area target="" alt="Alveoli" title="Alveoli" href="" coords="1068.832440944882,828.5351181102361,1206.792125984252,777.2245669291337" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648134194908-518108063.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Respiratory-Pathway/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
