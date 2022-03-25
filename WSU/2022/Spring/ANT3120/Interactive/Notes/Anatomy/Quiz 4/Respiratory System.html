@@ -363,6 +363,12 @@
 			});
 		}
 		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/1ed51dea-3256-4866-ac3c-c764cb1d6e25?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
 	</script>
 </body>
 </html>
