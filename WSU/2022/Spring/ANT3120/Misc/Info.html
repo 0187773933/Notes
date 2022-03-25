@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Info</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css">
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css">
+	<script src="https://39363.org/CDN/katex/katex.min.js"></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js"></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js"></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		#toggle-button {
+			margin-top: 1px;
+			margin-right: 2px;
+			position:absolute;
+			top:0;
+			right:0;
+		}
+	</style>
+</head>
+<body>
+	<br>
+	<div class="container">
+		<div class="row slimmed-padding">
+
+			<h2>Interactive Typing Controls</h2>
+			<p>Control Key = Show Hint</p>
+			<p>Control Key + Z = Auto-Enter Prompt</p>
+
+			<br><br>
+			<h2>Interactive Notes Controls</h2>
+			<p>Click into a box and press "Control Key" to auto-enter prompt</p>
+
+			<br><br>
+			<h2>Misc</h2>
+			<br>
+			<p>Change <a target="_blank" href="https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/Typing/005-Nerves/001-Cranial%20Nerves.html">"Typing"</a> in the url to <a target="_blank" href="https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/005-Nerves/001-Cranial%20Nerves.html">"DragAndDrop"</a></p>
+			<p>You can always "manually" navigate to something via the "folder structure"</p>
+			<p>Example : <a href="https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/"> https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/</a></p>
+			<a target="_blank" href="https://miro.com/app/board/uXjVOV9P5PI=/?invite_link_id=136145210822">Miro Board - Endocrine</a>
+
+			<br><br>
+			<h2>Source Code</h2>
+			<ul>
+				<li><a target="_blank" href="https://github.com/0187773933/PowerPointInteractiveGamesGenerator">https://github.com/0187773933/PowerPointInteractiveGamesGenerator</a></li>
+				<li><a target="_blank" href="https://github.com/0187773933/MDToHTMLInteractiveTypingPromptGenerator">https://github.com/0187773933/MDToHTMLInteractiveTypingPromptGenerator</a></li>
+			</ul>
+
+			<br><br>
+			<h2>Help</h2>
+			<p>I am manually typing all the labels. I try to double check as I go, but I sometimes come across things I messed up</p>
+			<p>If anyone finds something mislabeled, or an incomplete figure, please let me <a href="mailto:cerbus.2@wright.edu?subject=ANT3120%20Interactive%20PowerPoints&Body=Error%20Found%20%3a">know</a></p>
+	</div>
+	<script type="text/javascript">
+
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					// { left: "\[" , right: "\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					// { left: "\(" , right: "\)" , display: false }
+				]
+			});
+		}
+		function init() {
+			$( document ).ready( function(){
+				render_katex();
+			});
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/82ae1672-b7a9-4e81-94ea-e2c872d81872?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>
