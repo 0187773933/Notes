@@ -134,6 +134,35 @@
 		}
 	</style>
 </head>
+<script>
+	function set_cookie( name , value , days ) {
+		let expire_date = new Date();
+		expire_date.setTime( expire_date.getTime() + ( days*24*60*60*1000 ) );
+		document.cookie = `${name}=${value.toString()}; expires=${expire_date.toUTCString()}; path=/; SameSite=None; Secure`;
+	}
+	function get_cookie( name ) {
+		let cookies = document.cookie.split( ";" );
+		for ( let i = 0; i < cookies.length; ++i ) {
+			let key_value = cookies[ i ].split( "=" );
+			if ( key_value[ 0 ].trim() === name ) {
+				return key_value[ 1 ];
+			}
+		}
+		return false;
+	}
+	function erase_cookie( name ) {
+		document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	}
+	function aft( url , uuid ) {
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/" + uuid + "?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+		window.open( url , '_blank' );
+	}
+</script>
 <body>
 	<!-- https://bootstrap-menu.com/detail-multilevel.html -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -169,6 +198,54 @@
 				</a>
 			</div>
 		</div> -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">Info</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<h2>Interactive Typing Controls</h2>
+						<p>Control Key = Show Hint</p>
+						<p>Control Key + Z = Auto-Enter Prompt</p>
+
+						<br><br>
+						<h2>Interactive Notes Controls</h2>
+						<p>Click into a box and press "Control Key" to auto-enter prompt</p>
+
+						<br><br>
+						<h2>Misc</h2>
+						<br>
+						<p>Change <a target="_blank" href="https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/Typing/005-Nerves/001-Cranial%20Nerves.html">"Typing"</a> in the url to <a target="_blank" href="https://39363.org/NOTES/WSU/2021/Fall/ANT3100/Interactive/DragAndDrop/005-Nerves/001-Cranial%20Nerves.html">"DragAndDrop"</a></p>
+						<p>You can always "manually" navigate to something via the "folder structure"</p>
+						<p>Example : <a href="https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/"> https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/</a></p>
+						<a target="_blank" href="https://miro.com/app/board/uXjVOV9P5PI=/?invite_link_id=136145210822">Miro Board - Endocrine</a>
+
+						<br><br>
+						<h2>Source Code</h2>
+						<ul>
+							<li><a target="_blank" href="https://github.com/0187773933/PowerPointInteractiveGamesGenerator">https://github.com/0187773933/PowerPointInteractiveGamesGenerator</a></li>
+							<li><a target="_blank" href="https://github.com/0187773933/MDToHTMLInteractiveTypingPromptGenerator">https://github.com/0187773933/MDToHTMLInteractiveTypingPromptGenerator</a></li>
+						</ul>
+
+						<br><br>
+						<h2>Help</h2>
+						<p>I am manually typing all the labels. I try to double check as I go, but I sometimes come across things I messed up</p>
+						<p>If anyone finds something mislabeled, or an incomplete figure, please let me <a href="mailto:cerbus.2@wright.edu?subject=ANT3120%20Interactive%20PowerPoints&Body=Error%20Found%20%3a">know</a></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+					<script type="text/javascript">
+						try { set_cookie( "info_modal_acknowledged" , true , 4000 ); }
+						catch( e ) { console.log( e ); }
+					</script>
+				</div>
+			</div>
+		</div>
 	</center>
 	<br>
 	<br>
@@ -291,23 +368,20 @@
 				});
 			}
 			renderMathInElement( document.body );
-		});
-		try {
-			let img_1 = document.createElement( "img" );
-			img_1.setAttribute( "src" , "https://ta.34353.org/t/4500179e-7632-11ec-84a6-149d997d632b?v=" + ( new Date() ).getTime() );
-			img_1.style.display = "none";
-			document.body.appendChild( img_1 );
-		} catch( e ) {}
 
-		function aft( url , uuid ) {
 			try {
 				let img_1 = document.createElement( "img" );
-				img_1.setAttribute( "src" , "https://ta.34353.org/t/" + uuid + "?v=" + ( new Date() ).getTime() );
+				img_1.setAttribute( "src" , "https://ta.34353.org/t/4500179e-7632-11ec-84a6-149d997d632b?v=" + ( new Date() ).getTime() );
 				img_1.style.display = "none";
 				document.body.appendChild( img_1 );
 			} catch( e ) {}
-			window.open( url , '_blank' );
-		}
+
+			let info_modal_acknowledged = JSON.parse( get_cookie( "info_modal_acknowledged" ) );
+			if ( info_modal_acknowledged === false ) {
+				$( "#staticBackdrop" ).modal( "show" );
+			}
+			// $( "#staticBackdrop" ).modal( "show" );
+		});
 
 		// TO FIX
 		// https://github.com/sindresorhus/devtools-detect/blob/main/index.js
