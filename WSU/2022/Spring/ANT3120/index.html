@@ -205,7 +205,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel">Info</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<button onclick="close_modal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<h2>Interactive Typing Controls</h2>
@@ -237,11 +237,14 @@
 						<p>If anyone finds something mislabeled, or an incomplete figure, please let me <a href="mailto:cerbus.2@wright.edu?subject=ANT3120%20Interactive%20PowerPoints&Body=Error%20Found%20%3a">know</a></p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button onclick="close_modal()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 					</div>
 					<script type="text/javascript">
-						try { set_cookie( "info_modal_acknowledged" , true , 4000 ); }
-						catch( e ) { console.log( e ); }
+						function close_modal() {
+							try { set_cookie( "info_modal_acknowledged" , true , 4000 ); }
+							catch( e ) { console.log( e ); }
+							$( "#staticBackdrop" ).modal( "hide" );
+						}
 					</script>
 				</div>
 			</div>
@@ -376,6 +379,7 @@
 				document.body.appendChild( img_1 );
 			} catch( e ) {}
 
+			// erase_cookie( "info_modal_acknowledged" );
 			let info_modal_acknowledged = JSON.parse( get_cookie( "info_modal_acknowledged" ) );
 			if ( info_modal_acknowledged === false ) {
 				$( "#staticBackdrop" ).modal( "show" );
