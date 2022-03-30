@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>009</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Afferent Arteriole" title="Afferent Arteriole" href="" coords="430.4348031496063,253.2236220472441,723.651968503937,201.91307086614174" shape="rect">
+			<area target="" alt="Glomerulus" title="Glomerulus" href="" coords="535.3044094488189,159.83228346456693,749.2173228346456,108.52173228346456" shape="rect">
+			<area target="" alt="Efferent Arteriole" title="Efferent Arteriole" href="" coords="795.112283464567,179.1363779527559,1090.956692913386,127.82582677165354" shape="rect">
+			<area target="" alt="Bowman Capsule" title="Bowman Capsule" href="" coords="884.851496062992,253.2236220472441,1178.0686614173228,201.91307086614174" shape="rect">
+			<area target="" alt="Proximal Convoluted Tubule" title="Proximal Convoluted Tubule" href="" coords="723.6519685039369,100.95653543307085,1171.2858267716535,49.6459842519685" shape="rect">
+			<area target="" alt="Distal Convoluted Tubule" title="Distal Convoluted Tubule" href="" coords="1200.9886614173229,106.263937007874,1599.652125984252,54.95338582677165" shape="rect">
+			<area target="" alt="Collecting Duct" title="Collecting Duct" href="" coords="1200.9888188976379,1050.7018897637795,1458.7828346456695,999.3913385826772" shape="rect">
+			<area target="" alt="Vasa Recta" title="Vasa Recta" href="" coords="622.9565354330709,1058.1274015748031,819.1307086614174,1006.8168503937009" shape="rect">
+			<area target="" alt="Descending Limb" title="Descending Limb" href="" coords="571.8266141732283,947.9411023622048,865.0437795275591,896.6305511811024" shape="rect">
+			<area target="" alt="Ascending Limb" title="Ascending Limb" href="" coords="604.1738582677166,854.5497637795276,870.2604724409449,803.2392125984252" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648637099755-924203986.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Urinary-Images/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Renal Corpuscle" title="Renal Corpuscle" href="" coords="422.6086614173228,104.52787401574803,692.347716535433,53.217322834645664" shape="rect">
+			<area target="" alt="Bowman Capsule" title="Bowman Capsule" href="" coords="714.2609448818898,65.39795275590551,1001.7392125984252,14.087401574803149" shape="rect">
+			<area target="" alt="Glomerulus" title="Glomerulus" href="" coords="716.2343307086614,130.18314960629922,927.0171653543307,78.87259842519686" shape="rect">
+			<area target="" alt="Proximal Convoluted Tubule" title="Proximal Convoluted Tubule" href="" coords="992.9831496062992,130.18314960629922,1438.4348031496063,78.87259842519686" shape="rect">
+			<area target="" alt="Afferent Arteriole" title="Afferent Arteriole" href="" coords="391.53086614173225,260.6179527559055,692.347716535433,209.30740157480315" shape="rect">
+			<area target="" alt="Distal Convoluted Tubule" title="Distal Convoluted Tubule" href="" coords="316.1738582677165,475.0889763779528,715.1907086614174,423.77842519685043" shape="rect">
+			<area target="" alt="Efferent Arteriole" title="Efferent Arteriole" href="" coords="436.1738582677166,644.6537007874016,723.652125984252,593.3431496062992" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648637098685-44908033.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Urinary-Images/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

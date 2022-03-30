@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Segmental Artery" title="Segmental Artery" href="" coords="408.42393700787403,417.9133858267717,697.4670866141732,366.6028346456693" shape="rect">
+			<area target="" alt="Renal Artery" title="Renal Artery" href="" coords="383.47811023622046,538.1833070866141,605.7387401574803,486.87275590551184" shape="rect">
+			<area target="" alt="Renal Vein" title="Renal Vein" href="" coords="383.47811023622046,655.9346456692913,590.0867716535433,604.6240944881889" shape="rect">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="518.0869291338582,931.4847244094489,653.2171653543306,880.1741732283465" shape="rect">
+			<area target="" alt="Renal Column" title="Renal Column" href="" coords="1279.304409448819,956.6185826771654,1516.1737007874017,905.308031496063" shape="rect">
+			<area target="" alt="Renal Pyramid" title="Renal Pyramid" href="" coords="1278.456535433071,880.1741732283465,1536.5217322834646,828.8636220472441" shape="rect">
+			<area target="" alt="Cortex" title="Cortex" href="" coords="1294.1085039370078,801.9847244094489,1424.347874015748,750.6741732283465" shape="rect">
+			<area target="" alt="Medulla" title="Medulla" href="" coords="1294.108346456693,737.2348031496063,1450.956377952756,685.9242519685039" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648637099381-785108603.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Urinary-Images/009.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

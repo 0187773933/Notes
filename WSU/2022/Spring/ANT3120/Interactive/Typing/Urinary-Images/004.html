@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>004</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Glomerulus" title="Glomerulus" href="" coords="1039.304566929134,63.83228346456693,1247.4784251968504,12.521732283464567" shape="rect">
+			<area target="" alt="Bowman Capsule" title="Bowman Capsule" href="" coords="961.5655118110236,125.75779527559055,1247.4784251968504,74.44724409448818" shape="rect">
+			<area target="" alt="Renal Corpuscle" title="Renal Corpuscle" href="" coords="1279.8264566929133,100.10251968503937,1551.1302362204724,48.79196850393701" shape="rect">
+			<area target="" alt="Nephron" title="Nephron" href="" coords="1551.1302362204726,290.0155905511811,1717.0434645669293,238.70503937007874" shape="rect">
+			<area target="" alt="Cortex" title="Cortex" href="" coords="1579.8259842519683,892.6055118110236,1717.0434645669288,841.2949606299212" shape="rect">
+			<area target="" alt="Distal Convoluted Tubule" title="Distal Convoluted Tubule" href="" coords="1281.391653543307,417.3012598425197,1688.319212598425,365.99070866141733" shape="rect">
+			<area target="" alt="Loop of Henle" title="Loop of Henle" href="" coords="1247.4784251968506,329.7204724409449,1493.217007874016,278.4099212598425" shape="rect">
+			<area target="" alt="Proximal Convoluted Tubule" title="Proximal Convoluted Tubule" href="" coords="1169.739527559055,225.82299212598423,1616.8694488188976,174.51244094488186" shape="rect">
+			<area target="" alt="Renal Corpuscle" title="Renal Corpuscle" href="" coords="692.3475590551182,688.1025196850394,978.26031496063,636.791968503937" shape="rect">
+			<area target="" alt="Proximal Convoluted Tubule" title="Proximal Convoluted Tubule" href="" coords="467.7387401574803,588.180157480315,916.9562204724409,536.8696062992126" shape="rect">
+			<area target="" alt="Distal Convoluted Tubule" title="Distal Convoluted Tubule" href="" coords="129.91307086614174,668.708031496063,537.1300787401575,617.3974803149606" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648637097990-66386069.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Urinary-Images/005.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

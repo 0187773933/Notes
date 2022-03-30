@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Renal Corpuscle" title="Renal Corpuscle" href="" coords="14.086929133858268,289.2234645669291,288.0,237.91291338582676" shape="rect">
+			<area target="" alt="Bowman Capsule" title="Bowman Capsule" href="" coords="346.4348031496063,214.61464566929135,638.6086614173229,163.30409448818898" shape="rect">
+			<area target="" alt="Glomerular Capillary" title="Glomerular Capillary" href="" coords="346.4348031496063,305.23685039370076,684.0,253.92629921259842" shape="rect">
+			<area target="" alt="Juxtaglomerular Apparatus" title="Juxtaglomerular Apparatus" href="" coords="7.826141732283464,567.5264566929134,440.34771653543305,516.215905511811" shape="rect">
+			<area target="" alt="Juxtaglomerular Cells" title="Juxtaglomerular Cells" href="" coords="462.3913385826771,541.8711811023622,814.8259842519685,490.5606299212599" shape="rect">
+			<area target="" alt="Macula Densa" title="Macula Densa" href="" coords="508.95637795275593,606.8381102362205,755.0867716535433,555.5275590551181" shape="rect">
+			<area target="" alt="Distal Convoluted Tubule" title="Distal Convoluted Tubule" href="" coords="462.3913385826771,736.5988976377953,863.6085039370078,685.2883464566929" shape="rect">
+			<area target="" alt="Efferent Arteriole" title="Efferent Arteriole" href="" coords="662.0869291338582,880.5146456692913,952.5648818897637,829.204094488189" shape="rect">
+			<area target="" alt="Proximal Convoluted Tubule" title="Proximal Convoluted Tubule" href="" coords="1318.4348031496063,304.0327559055118,1772.1434645669292,252.72220472440947" shape="rect">
+			<area target="" alt="Capillary" title="Capillary" href="" coords="1575.6521259842518,417.2500787401575,1740.5217322834644,365.93952755905514" shape="rect">
+			<area target="" alt="Podocytes" title="Podocytes" href="" coords="1643.2738582677166,518.0907086614172,1830.1870866141733,466.7801574803149" shape="rect">
+			<area target="" alt="Parietal Layer" title="Parietal Layer" href="" coords="911.2738582677165,160.82125984251968,1147.3042519685039,109.51070866141733" shape="rect">
+			<area target="" alt="Visceral Layer" title="Visceral Layer" href="" coords="906.5781102362205,223.08818897637795,1142.6085039370078,171.77763779527558" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648637099005-732467402.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Urinary-Images/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
