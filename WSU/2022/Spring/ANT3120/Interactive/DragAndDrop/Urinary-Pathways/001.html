@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Minor Calyx" title="Minor Calyx" href="" coords="821.7392125984253,347.431968503937,1029.913228346457,296.12141732283465" shape="rect">
+			<area target="" alt="Major Calyx" title="Major Calyx" href="" coords="821.7392125984253,425.93622047244094,1029.913228346457,374.62566929133857" shape="rect">
+			<area target="" alt="Renal Pelvis" title="Renal Pelvis" href="" coords="821.7393700787401,504.44047244094486,1029.9132283464567,453.1299212598425" shape="rect">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="821.7393700787401,579.5187401574804,960.0001574803149,528.208188976378" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="821.7392125984253,654.5970078740157,1092.5217322834646,603.2864566929134" shape="rect">
+			<area target="" alt="Urethra" title="Urethra" href="" coords="821.7392125984253,729.6752755905512,973.5651968503938,678.3647244094489" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648650885234-283149440.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Urinary-Pathways/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/329a1005-1795-429d-a5cb-dbe92da037c8?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>
