@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Renal Cortex" title="Renal Cortex" href="" coords="476.6018897637795,267.0924409448819,698.7051968503937,215.78188976377953" shape="rect">
+			<area target="" alt="Renal Medulla" title="Renal Medulla" href="" coords="513.3450393700787,350.99858267716536,760.7785826771653,299.688031496063" shape="rect">
+			<area target="" alt="Major Calyx" title="Major Calyx" href="" coords="513.3450393700787,553.1962204724409,725.0974803149605,501.88566929133856" shape="rect">
+			<area target="" alt="Renal Pelvis" title="Renal Pelvis" href="" coords="520.9908661417323,622.0788976377953,732.7433070866142,570.7683464566929" shape="rect">
+			<area target="" alt="Ureter" title="Ureter" href="" coords="592.5661417322835,837.6788976377953,728.92031496063,786.368346456693" shape="rect">
+			<area target="" alt="Renal Column" title="Renal Column" href="" coords="1281.6458267716537,701.1125984251968,1526.6548031496063,649.8020472440944" shape="rect">
+			<area target="" alt="Renal Pyramids" title="Renal Pyramids" href="" coords="1281.6458267716537,519.0811023622047,1539.3982677165357,467.77055118110235" shape="rect">
+			<area target="" alt="Minor Calyx" title="Minor Calyx" href="" coords="1281.6458267716537,412.6944881889764,1493.5220472440947,361.383937007874" shape="rect">
+			<area target="" alt="Renal Papilla" title="Renal Papilla" href="" coords="1293.6456692913387,458.2615748031496,1514.6548031496063,424.25732283464566" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648642312426-686243130.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Lab-Urinary-System/009.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
