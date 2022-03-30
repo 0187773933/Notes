@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Jugular Trunk" title="Jugular Trunk" href="" coords="391.30456692913384,92.00614173228345,635.4782677165354,40.6955905511811" shape="rect">
+			<area target="" alt="Right Lymphatic Duct" title="Right Lymphatic Duct" href="" coords="460.1740157480315,158.35700787401575,805.0436220472441,107.0464566929134" shape="rect">
+			<area target="" alt="Brachiocephalic Vein" title="Brachiocephalic Vein" href="" coords="463.04330708661416,225.8412598425197,807.9130708661417,174.53070866141732" shape="rect">
+			<area target="" alt="Bronchomediastinal Trunk" title="Bronchomediastinal Trunk" href="" coords="439.8262992125984,293.3255118110236,858.2612598425196,242.01496062992126" shape="rect">
+			<area target="" alt="Intercostal Trunk" title="Intercostal Trunk" href="" coords="536.8694488188976,363.86818897637795,827.4784251968504,312.5576377952756" shape="rect">
+			<area target="" alt="Lymphatic Vessels" title="Lymphatic Vessels" href="" coords="1163.4781102362203,725.9551181102362,1468.1738582677165,674.6445669291338" shape="rect">
+			<area target="" alt="Lumbar Trunk" title="Lumbar Trunk" href="" coords="1163.4781102362203,480.7377952755906,1400.8696062992126,429.42724409448823" shape="rect">
+			<area target="" alt="Intestinal Trunk" title="Intestinal Trunk" href="" coords="1163.4779527559056,405.3554330708661,1427.4781102362206,354.04488188976376" shape="rect">
+			<area target="" alt="Thoracic Duct" title="Thoracic Duct" href="" coords="1152.5220472440944,332.47385826771654,1389.9135433070865,281.16330708661417" shape="rect">
+			<area target="" alt="Subclavian Trunk" title="Subclavian Trunk" href="" coords="1152.5218897637797,231.43622047244094,1439.9998425196852,180.12566929133857" shape="rect">
+			<area target="" alt="Thoracic Duct" title="Thoracic Duct" href="" coords="1156.1743307086613,155.26220472440946,1400.8696062992124,103.95165354330709" shape="rect">
+			<area target="" alt="Internal Jugular Vein" title="Internal Jugular Vein" href="" coords="1156.1741732283465,79.08818897637795,1490.0869291338583,27.77763779527559" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607490187-408441622.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Lymphatic-Images/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

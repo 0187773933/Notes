@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>013</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pharynx" title="Pharynx" href="" coords="444.52173228346453,92.00614173228345,604.6955905511811,40.6955905511811" shape="rect">
+			<area target="" alt="Liver" title="Liver" href="" coords="471.4236220472441,598.1831496062991,579.1303937007874,546.8725984251968" shape="rect">
+			<area target="" alt="Gallbladder" title="Gallbladder" href="" coords="501.3340157480315,666.0091338582678,708.0570078740158,614.6985826771654" shape="rect">
+			<area target="" alt="Appendix" title="Appendix" href="" coords="476.11937007874013,834.395905511811,652.695748031496,783.0853543307086" shape="rect">
+			<area target="" alt="Rectum" title="Rectum" href="" coords="471.4234645669291,951.472125984252,621.0979527559055,900.1615748031496" shape="rect">
+			<area target="" alt="Anus" title="Anus" href="" coords="476.11937007874013,1036.8573228346456,602.8368503937007,985.5467716535434" shape="rect">
+			<area target="" alt="Large Intestine" title="Large Intestine" href="" coords="1251.423779527559,623.8384251968504,1513.5651968503935,572.527874015748" shape="rect">
+			<area target="" alt="Small Intestine" title="Small Intestine" href="" coords="1254.4401574803148,523.7362204724409,1513.5651968503935,472.4256692913386" shape="rect">
+			<area target="" alt="Pancreas" title="Pancreas" href="" coords="1251.423779527559,449.2892913385827,1418.0869291338581,397.97874015748033" shape="rect">
+			<area target="" alt="Stomach" title="Stomach" href="" coords="1251.4236220472442,385.1511811023622,1418.0867716535433,333.84062992125985" shape="rect">
+			<area target="" alt="Esophagus" title="Esophagus" href="" coords="1251.3913385826772,321.01307086614173,1457.9675590551183,269.70251968503936" shape="rect">
+			<area target="" alt="Salivary Glands" title="Salivary Glands" href="" coords="1254.4401574803148,210.55763779527558,1513.5651968503935,159.2470866141732" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607492845-486120909.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Lymphatic-Images/014.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

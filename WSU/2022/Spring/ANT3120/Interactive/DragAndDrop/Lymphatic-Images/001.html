@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Lymph Duct" title="Lymph Duct" href="" coords="565.0437795275591,336.5217322834646,774.7828346456693,297.3913385826772" shape="rect">
+			<area target="" alt="Lymph Trunk" title="Lymph Trunk" href="" coords="565.5653543307086,388.695748031496,788.8696062992126,349.5653543307086" shape="rect">
+			<area target="" alt="Lymph Node" title="Lymph Node" href="" coords="565.5653543307086,440.34818897637797,788.8696062992126,401.21779527559056" shape="rect">
+			<area target="" alt="Lymphatic Capillary" title="Lymphatic Capillary" href="" coords="554.0870866141732,782.2670866141733,873.3913385826772,730.9565354330709" shape="rect">
+			<area target="" alt="Tissue Fluid" title="Tissue Fluid" href="" coords="926.6086614173228,730.0031496062992,1135.304409448819,678.6925984251968" shape="rect">
+			<area target="" alt="Tissue Cell" title="Tissue Cell" href="" coords="1030.956535433071,838.2732283464567,1221.3913385826772,786.9626771653543" shape="rect">
+			<area target="" alt="Blood Capillaries" title="Blood Capillaries" href="" coords="1239.6524409448818,889.583779527559,1519.8262992125983,838.2732283464567" shape="rect">
+			<area target="" alt="Lymphatic Capillaries" title="Lymphatic Capillaries" href="" coords="1553.7393700787402,863.9285039370079,1912.6959055118111,812.6179527559055" shape="rect">
+			<area target="" alt="Collecting Vessels" title="Collecting Vessels" href="" coords="565.0437795275591,566.7875590551181,859.3044094488189,515.4770078740157" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607488806-915255374.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Lymphatic-Images/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/1d804bb1-1215-427b-a3fd-edc567db3604?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>

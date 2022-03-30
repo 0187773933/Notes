@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>006</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right Lymphatic Duct" title="Right Lymphatic Duct" href="" coords="350.6086614173228,323.65842519685043,695.4781102362203,272.34787401574806" shape="rect">
+			<area target="" alt="Thymus" title="Thymus" href="" coords="497.7390551181103,413.3976377952756,652.1738582677166,362.08708661417324" shape="rect">
+			<area target="" alt="Axillary Lymph Node" title="Axillary Lymph Node" href="" coords="370.43496062992125,485.91952755905515,715.3044094488189,434.6089763779528" shape="rect">
+			<area target="" alt="Mammary Plexus" title="Mammary Plexus" href="" coords="314.6086614173228,594.5313385826771,606.2609448818897,543.2207874015747" shape="rect">
+			<area target="" alt="Intestinal Lymph Node" title="Intestinal Lymph Node" href="" coords="241.04346456692915,698.9151181102362,607.8261417322835,647.6045669291339" shape="rect">
+			<area target="" alt="Lymphatic Vessel" title="Lymphatic Vessel" href="" coords="353.7388976377953,785.0020472440946,646.9563779527559,733.6914960629922" shape="rect">
+			<area target="" alt="Bone Marrow" title="Bone Marrow" href="" coords="280.1738582677165,900.7938582677166,538.1738582677165,849.4833070866142" shape="rect">
+			<area target="" alt="Inguinal Lymph Node" title="Inguinal Lymph Node" href="" coords="1323.1302362204724,870.4429921259842,1678.956220472441,819.1324409448819" shape="rect">
+			<area target="" alt="Lacteals In Intestinal Wall" title="Lacteals In Intestinal Wall" href="" coords="1323.1300787401574,778.7412598425196,1731.1303937007874,727.4307086614173" shape="rect">
+			<area target="" alt="Spleen" title="Spleen" href="" coords="1270.9559055118111,681.7061417322834,1414.956535433071,630.395590551181" shape="rect">
+			<area target="" alt="Thoracic Duct" title="Thoracic Duct" href="" coords="1270.9557480314961,581.8781102362204,1507.304251968504,530.5675590551181" shape="rect">
+			<area target="" alt="Subclavian Veins" title="Subclavian Veins" href="" coords="1274.3470866141731,483.4466141732284,1559.99968503937,432.136062992126" shape="rect">
+			<area target="" alt="Thoracic Duct" title="Thoracic Duct" href="" coords="1241.4776377952755,380.4124409448819,1477.8261417322833,329.1018897637795" shape="rect">
+			<area target="" alt="Cervical Lymph Node" title="Cervical Lymph Node" href="" coords="1183.0425196850395,272.347874015748,1527.1302362204726,221.03732283464566" shape="rect">
+			<area target="" alt="Tonsils" title="Tonsils" href="" coords="1289.6078740157482,148.26110236220472,1429.6955905511813,96.95055118110236" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607490502-946382771.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Lymphatic-Images/007.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

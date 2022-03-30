@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>014</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Stomach" title="Stomach" href="" coords="471.13039370078735,81.0496062992126,635.999842519685,29.739055118110237" shape="rect">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="484.1737007874016,209.91905511811024,690.2607874015748,158.60850393700787" shape="rect">
+			<area target="" alt="Ascending Colon" title="Ascending Colon" href="" coords="294.2609448818897,419.8381102362205,574.1738582677165,368.5275590551181" shape="rect">
+			<area target="" alt="Jejunum" title="Jejunum" href="" coords="397.5651968503937,511.2143307086614,561.3910236220472,459.90377952755904" shape="rect">
+			<area target="" alt="Mesentery" title="Mesentery" href="" coords="363.13039370078735,616.4253543307086,566.0866141732283,565.1148031496062" shape="rect">
+			<area target="" alt="Ileocecal Junction" title="Ileocecal Junction" href="" coords="280.1738582677165,801.6426771653543,580.4346456692913,750.3321259842519" shape="rect">
+			<area target="" alt="Ileum" title="Ileum" href="" coords="448.4348031496063,910.4703937007874,580.4346456692913,859.1598425196851" shape="rect">
+			<area target="" alt="Cecum" title="Cecum" href="" coords="450.52125984251967,969.5716535433071,597.9130708661418,918.2611023622047" shape="rect">
+			<area target="" alt="Appendix" title="Appendix" href="" coords="451.5651968503937,1030.2381102362203,624.5217322834645,978.9275590551181" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607493163-794190344.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Lymphatic-Images/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

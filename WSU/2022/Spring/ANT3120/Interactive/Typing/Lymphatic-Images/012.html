@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Gallbladder" title="Gallbladder" href="" coords="279.0796850393701,153.10503937007874,485.9467716535433,101.79448818897637" shape="rect">
+			<area target="" alt="Cystic Duct" title="Cystic Duct" href="" coords="293.09732283464564,403.93700787401576,499.96440944881886,352.6264566929134" shape="rect">
+			<area target="" alt="Hepatic Portal Vein" title="Hepatic Portal Vein" href="" coords="248.49543307086617,471.8529133858268,569.6281889763779,420.54236220472444" shape="rect">
+			<area target="" alt="Common Bile Duct" title="Common Bile Duct" href="" coords="267.6105511811024,573.6474015748031,579.6105511811024,522.3368503937007" shape="rect">
+			<area target="" alt="Accessory Pancreatic Duct" title="Accessory Pancreatic Duct" href="" coords="161.84062992125985,636.2018897637795,583.4335433070867,584.8913385826771" shape="rect">
+			<area target="" alt="Minor Duodenal Papilla" title="Minor Duodenal Papilla" href="" coords="149.09732283464567,721.9510236220472,528.3185826771654,670.6404724409448" shape="rect">
+			<area target="" alt="Major Duodenal Papilla" title="Major Duodenal Papilla" href="" coords="140.60157480314962,850.1346456692913,519.8228346456693,798.824094488189" shape="rect">
+			<area target="" alt="Hepatopancreatic Ampulla" title="Hepatopancreatic Ampulla" href="" coords="98.12393700787402,935.5889763779528,523.6456692913387,884.2784251968504" shape="rect">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="248.49543307086617,1021.0433070866142,455.3625196850394,969.7327559055118" shape="rect">
+			<area target="" alt="Pancreas" title="Pancreas" href="" coords="1365.876062992126,884.2784251968504,1533.0266141732284,832.9678740157481" shape="rect">
+			<area target="" alt="Pancreatic Duct" title="Pancreatic Duct" href="" coords="1365.876062992126,798.824094488189,1629.876062992126,747.5135433070866" shape="rect">
+			<area target="" alt="Spleen" title="Spleen" href="" coords="1560.4247244094488,384.3371653543307,1697.415905511811,333.0266141732283" shape="rect">
+			<area target="" alt="Common Hepatic Duct" title="Common Hepatic Duct" href="" coords="1233.875905511811,304.1692913385827,1600.5661417322833,252.85874015748033" shape="rect">
+			<area target="" alt="Left and Right Hepatic Ducts" title="Left and Right Hepatic Ducts" href="" coords="1233.875905511811,220.31700787401576,1697.415905511811,169.0064566929134" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607492479-722188927.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Lymphatic-Images/013.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

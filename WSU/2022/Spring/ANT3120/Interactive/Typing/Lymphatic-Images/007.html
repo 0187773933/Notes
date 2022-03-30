@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right Jugular Vein" title="Right Jugular Vein" href="" coords="120.52188976377953,190.6148031496063,423.1303937007874,139.30425196850393" shape="rect">
+			<area target="" alt="Right Jugular Vein" title="Right Jugular Vein" href="" coords="155.60346456692915,288.18,458.211968503937,236.86944881889764" shape="rect">
+			<area target="" alt="Right Bronchomediastinal Trunk" title="Right Bronchomediastinal Trunk" href="" coords="86.08692913385826,437.91874015748033,588.6466141732284,386.60818897637796" shape="rect">
+			<area target="" alt="Right Lumbar Trunk" title="Right Lumbar Trunk" href="" coords="120.52188976377953,981.5708661417323,458.21196850393704,930.2603149606299" shape="rect">
+			<area target="" alt="Intestinal Trunk" title="Intestinal Trunk" href="" coords="1381.043622047244,1008.2689763779528,1645.043464566929,956.9584251968504" shape="rect">
+			<area target="" alt="Left Lumbar Trunk" title="Left Lumbar Trunk" href="" coords="1384.1738582677167,948.69968503937,1692.0000000000002,897.3891338582677" shape="rect">
+			<area target="" alt="Thoracic Duct" title="Thoracic Duct" href="" coords="1385.7390551181102,806.0100787401575,1627.8261417322833,754.6995275590551" shape="rect">
+			<area target="" alt="Thoracic Lymph Nodes" title="Thoracic Lymph Nodes" href="" coords="1385.7392125984252,604.6187401574803,1749.9130708661419,553.3081889763779" shape="rect">
+			<area target="" alt="Left Bronchomediastinal Trunk" title="Left Bronchomediastinal Trunk" href="" coords="1344.0,336.5318110236221,1828.695433070866,285.2212598425197" shape="rect">
+			<area target="" alt="Left Subclavian Trunk" title="Left Subclavian Trunk" href="" coords="1349.2174803149605,276.00992125984254,1702.9565354330707,224.69937007874017" shape="rect">
+			<area target="" alt="Left Jugular Trunk" title="Left Jugular Trunk" href="" coords="1361.7392125984252,214.17811023622048,1664.347716535433,162.8675590551181" shape="rect">
+			<area target="" alt="Thoracic Duct" title="Thoracic Duct" href="" coords="1385.7390551181102,156.9555905511811,1627.8261417322833,105.64503937007873" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1648607490823-589075135.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Lymphatic-Images/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
