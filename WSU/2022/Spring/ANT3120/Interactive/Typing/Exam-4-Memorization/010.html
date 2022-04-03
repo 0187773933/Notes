@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>010</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Organic Ions" title="Organic Ions" href="" coords="556.1330708661417,485.0885039370079,774.6822047244094,433.7779527559055" shape="rect">
+			<area target="" alt="H" title="H" href="" coords="784.2998425196851,485.6034645669292,832.8015748031496,434.2929133858268" shape="rect">
+			<area target="" alt="NH3" title="NH3" href="" coords="728.4089763779527,552.224251968504,832.8014173228346,500.9137007874016" shape="rect">
+			<area target="" alt="H" title="H" href="" coords="1346.2025196850395,948.2746456692913,1393.2636220472443,896.964094488189" shape="rect">
+			<area target="" alt="NH3" title="NH3" href="" coords="1259.7437795275591,1014.8954330708661,1360.672125984252,963.5848818897638" shape="rect">
+			<area target="" alt="K" title="K" href="" coords="1405.071653543307,948.2746456692913,1452.1329133858267,896.964094488189" shape="rect">
+			<area target="" alt="Urea" title="Urea" href="" coords="1378.8418897637794,1014.8954330708661,1496.9681889763779,963.5848818897638" shape="rect">
+			<area target="" alt="H" title="H" href="" coords="1247.1250393700786,418.9111811023622,1294.1861417322834,367.60062992125984" shape="rect">
+			<area target="" alt="NH3" title="NH3" href="" coords="1364.863464566929,418.396220472441,1465.791811023622,367.0856692913386" shape="rect">
+			<area target="" alt="K" title="K" href="" coords="1305.9941732283467,418.9111811023622,1353.0554330708665,367.60062992125984" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649003660385-692986205.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Exam-4-Memorization/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

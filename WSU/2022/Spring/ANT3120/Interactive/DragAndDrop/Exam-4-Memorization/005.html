@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>005</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="IRV" title="IRV" href="" coords="895.5637795275591,346.263937007874,986.0869291338582,294.95338582677164" shape="rect">
+			<area target="" alt="VT" title="VT" href="" coords="665.2173228346456,628.5247244094488,743.999842519685,577.2141732283465" shape="rect">
+			<area target="" alt="ERV" title="ERV" href="" coords="1053.5782677165355,766.6963779527559,1146.9697637795275,715.3858267716536" shape="rect">
+			<area target="" alt="RV" title="RV" href="" coords="1023.6521259842519,962.9595275590551,1099.3040944881889,911.6489763779527" shape="rect">
+			<area target="" alt="FRC" title="FRC" href="" coords="1331.2688188976379,855.2204724409448,1421.5297637795277,803.9099212598425" shape="rect">
+			<area target="" alt="IC" title="IC" href="" coords="1331.268661417323,371.91921259842525,1421.529606299213,320.6086614173229" shape="rect">
+			<area target="" alt="VC" title="VC" href="" coords="1669.8776377952756,467.04645669291335,1760.1385826771655,415.735905511811" shape="rect">
+			<area target="" alt="500" title="500" href="" coords="798.3546456692914,628.5245669291339,894.684251968504,577.2140157480316" shape="rect">
+			<area target="" alt="3000" title="3000" href="" coords="1004.236062992126,397.57448818897643,1121.484251968504,346.26393700787406" shape="rect">
+			<area target="" alt="3300" title="3300" href="" coords="1003.5190551181103,294.95338582677164,1120.7672440944882,243.6428346456693" shape="rect">
+			<area target="" alt="3500" title="3500" href="" coords="1429.7094488188977,441.3911811023622,1546.9576377952758,390.08062992125986" shape="rect">
+			<area target="" alt="3800" title="3800" href="" coords="1429.7094488188977,305.8190551181102,1546.9576377952758,254.50850393700787" shape="rect">
+			<area target="" alt="2200" title="2200" href="" coords="1429.7094488188977,911.6489763779527,1546.9576377952758,860.3384251968504" shape="rect">
+			<area target="" alt="2400" title="2400" href="" coords="1428.9527559055118,792.9535433070865,1546.2009448818899,741.6429921259842" shape="rect">
+			<area target="" alt="4500" title="4500" href="" coords="1769.7061417322834,518.3570078740157,1886.9543307086615,467.04645669291335" shape="rect">
+			<area target="" alt="5000" title="5000" href="" coords="1769.7061417322834,406.956220472441,1886.9543307086615,355.6456692913386" shape="rect">
+			<area target="" alt="1200" title="1200" href="" coords="1143.063622047244,962.9595275590551,1261.1477165354331,911.6489763779527" shape="rect">
+			<area target="" alt="1000" title="1000" href="" coords="1147.459842519685,817.612125984252,1265.543937007874,766.3015748031496" shape="rect">
+			<area target="" alt="1200" title="1200" href="" coords="1147.9428346456693,713.3974803149606,1266.0269291338584,662.0869291338582" shape="rect">
+			<area target="" alt="5700" title="5700" href="" coords="156.59937007874015,591.3105511811024,273.8475590551181,540.0" shape="rect">
+			<area target="" alt="6200" title="6200" href="" coords="153.33133858267718,445.1233070866142,270.5795275590551,393.81275590551184" shape="rect">
+			<area target="" alt="TLC" title="TLC" href="" coords="51.338267716535434,517.4137007874016,141.5992125984252,466.1031496062992" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649003658857-457276557.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Exam-4-Memorization/006.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

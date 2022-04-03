@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="IRV" title="IRV" href="" coords="895.5637795275591,346.263937007874,986.0869291338582,294.95338582677164" shape="rect">
+			<area target="" alt="VT" title="VT" href="" coords="665.2173228346456,628.5247244094488,743.999842519685,577.2141732283465" shape="rect">
+			<area target="" alt="ERV" title="ERV" href="" coords="913.304251968504,769.4937007874015,1006.6957480314961,718.1831496062991" shape="rect">
+			<area target="" alt="RV" title="RV" href="" coords="1023.6521259842519,962.9595275590551,1099.3040944881889,911.6489763779527" shape="rect">
+			<area target="" alt="FRC" title="FRC" href="" coords="1324.7812598425198,857.7390551181103,1415.0422047244097,806.4285039370079" shape="rect">
+			<area target="" alt="IC" title="IC" href="" coords="1322.2319685039372,371.55811023622044,1412.492913385827,320.2475590551181" shape="rect">
+			<area target="" alt="VC" title="VC" href="" coords="1657.2851968503937,467.04645669291335,1747.5461417322836,415.735905511811" shape="rect">
+			<area target="" alt="500" title="500" href="" coords="798.3546456692914,628.5245669291339,894.684251968504,577.2140157480316" shape="rect">
+			<area target="" alt="3000" title="3000" href="" coords="1052.1768503937008,346.263937007874,1169.4250393700786,294.95338582677164" shape="rect">
+			<area target="" alt="1000" title="1000" href="" coords="1143.063622047244,962.9595275590551,1261.1477165354331,911.6489763779527" shape="rect">
+			<area target="" alt="1000" title="1000" href="" coords="1143.063622047244,767.2982677165355,1261.1477165354331,715.9877165354332" shape="rect">
+			<area target="" alt="TLC" title="TLC" href="" coords="51.338267716535434,517.4137007874016,141.5992125984252,466.1031496062992" shape="rect">
+			<area target="" alt="2000" title="2000" href="" coords="1484.403622047244,857.7390551181103,1602.487716535433,806.4285039370079" shape="rect">
+			<area target="" alt="3500" title="3500" href="" coords="1473.5891338582678,371.55811023622044,1591.6732283464569,320.2475590551181" shape="rect">
+			<area target="" alt="4500" title="4500" href="" coords="1793.331496062992,467.04645669291335,1910.57968503937,415.735905511811" shape="rect">
+			<area target="" alt="5500" title="5500" href="" coords="201.13905511811024,517.4137007874016,319.2231496062992,466.1031496062992" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649003659443-40071904.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Exam-4-Memorization/008.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

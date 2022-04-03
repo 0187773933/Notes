@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>004</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="500" title="500" href="" coords="1204.7785826771653,573.652283464567,1301.108188976378,522.3417322834646" shape="rect">
+			<area target="" alt="3000" title="3000" href="" coords="1134.875748031496,246.78267716535433,1252.1239370078738,195.47212598425196" shape="rect">
+			<area target="" alt="3300" title="3300" href="" coords="1133.4768503937007,410.43795275590554,1250.7250393700788,359.1274015748032" shape="rect">
+			<area target="" alt="1000" title="1000" href="" coords="1145.8908661417322,651.3905511811024,1263.9749606299213,600.08" shape="rect">
+			<area target="" alt="1200" title="1200" href="" coords="1145.1133858267717,762.8825196850394,1263.1974803149608,711.571968503937" shape="rect">
+			<area target="" alt="1200" title="1200" href="" coords="1180.4100787401576,897.9974803149606,1298.4941732283467,846.6869291338583" shape="rect">
+			<area target="" alt="3500" title="3500" href="" coords="929.3757480314961,270.7828346456693,1046.623937007874,219.47228346456694" shape="rect">
+			<area target="" alt="3800" title="3800" href="" coords="927.9768503937008,434.4381102362205,1045.2250393700788,383.1275590551181" shape="rect">
+			<area target="" alt="4500" title="4500" href="" coords="718.3593700787401,362.4379527559055,835.607559055118,311.1274015748031" shape="rect">
+			<area target="" alt="5000" title="5000" href="" coords="716.9604724409448,526.0932283464567,834.2086614173228,474.78267716535436" shape="rect">
+			<area target="" alt="2200" title="2200" href="" coords="920.5086614173229,709.1337007874016,1037.756850393701,657.8231496062992" shape="rect">
+			<area target="" alt="2400" title="2400" href="" coords="919.1097637795276,872.7889763779527,1036.3579527559054,821.4784251968504" shape="rect">
+			<area target="" alt="5700" title="5700" href="" coords="516.7555905511811,420.9491338582677,634.003779527559,369.63858267716535" shape="rect">
+			<area target="" alt="6200" title="6200" href="" coords="515.3566929133858,584.6044094488188,632.6048818897638,533.2938582677165" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649003658587-665225620.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Exam-4-Memorization/005.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>
