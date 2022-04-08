@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>033</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Liver" title="Liver" href="" coords="110.86929133858268,228.77732283464567,229.5645669291339,177.4667716535433" shape="rect">
+			<area target="" alt="Left Hepatic Duct" title="Left Hepatic Duct" href="" coords="1597.8258267716535,423.31307086614174,1902.2607874015748,372.0025196850394" shape="rect">
+			<area target="" alt="Common Hepatic Duct" title="Common Hepatic Duct" href="" coords="1530.7826771653545,592.968188976378,1902.260787401575,541.6576377952756" shape="rect">
+			<area target="" alt="Common Bile Duct" title="Common Bile Duct" href="" coords="1584.0,910.9004724409449,1902.2607874015748,859.5899212598425" shape="rect">
+			<area target="" alt="Gallbladder" title="Gallbladder" href="" coords="134.60850393700787,955.4429921259842,340.4341732283464,904.1324409448819" shape="rect">
+			<area target="" alt="Cystic Duct" title="Cystic Duct" href="" coords="110.86929133858268,766.4492913385827,316.69496062992124,715.1387401574804" shape="rect">
+			<area target="" alt="Right Hepatic Duct" title="Right Hepatic Duct" href="" coords="31.825826771653542,419.04661417322836,351.3914960629922,367.736062992126" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649447559005-565814001.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Lab-Digestive/034.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
