@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>013</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Villus" title="Villus" href="" coords="98.25889763779527,679.3310236220473,221.2171653543307,628.0204724409449" shape="rect">
+			<area target="" alt="Lacteal" title="Lacteal" href="" coords="474.63543307086616,776.1779527559055,611.5763779527559,736.9409448818898" shape="rect">
+			<area target="" alt="Microvilli" title="Microvilli" href="" coords="461.08251968503936,487.8177952755905,642.0707086614173,436.50724409448816" shape="rect">
+			<area target="" alt="Top of Circular Fold" title="Top of Circular Fold" href="" coords="1502.1176377952756,772.7896062992127,1820.0469291338584,721.4790551181103" shape="rect">
+			<area target="" alt="Duodenal Gland" title="Duodenal Gland" href="" coords="1554.9177952755904,699.903779527559,1836.423622047244,648.5932283464566" shape="rect">
+			<area target="" alt="Intestinal Gland" title="Intestinal Gland" href="" coords="1572.1412598425195,537.4341732283465,1836.423622047244,486.1236220472441" shape="rect">
+			<area target="" alt="Epithelium" title="Epithelium" href="" coords="1572.1412598425195,436.5072440944882,1771.1999999999998,385.19669291338585" shape="rect">
+			<area target="" alt="Lacteal" title="Lacteal" href="" coords="1583.153228346457,325.34818897637797,1726.3059842519688,274.0376377952756" shape="rect">
+			<area target="" alt="Blood Capillary Network" title="Blood Capillary Network" href="" coords="1521.7414173228349,253.4984251968504,1910.541102362205,202.18787401574804" shape="rect">
+			<area target="" alt="Villi" title="Villi" href="" coords="1589.9299212598426,60.22,1687.3411023622048,8.909448818897637" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442674036-603305327.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Digestive-Images/014.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

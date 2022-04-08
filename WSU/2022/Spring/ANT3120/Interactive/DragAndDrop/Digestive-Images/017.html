@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>017</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right and Left Hepatic Ducts" title="Right and Left Hepatic Ducts" href="" coords="1221.6061417322835,221.9192125984252,1671.6014173228348,170.60866141732282" shape="rect">
+			<area target="" alt="Common Hepatic Duct" title="Common Hepatic Duct" href="" coords="1188.0061417322834,311.98976377952755,1569.4651968503936,260.6792125984252" shape="rect">
+			<area target="" alt="Spleen" title="Spleen" href="" coords="1569.4651968503938,392.527874015748,1712.7530708661418,341.21732283464564" shape="rect">
+			<area target="" alt="Pancreatic Duct" title="Pancreatic Duct" href="" coords="1369.0617322834646,793.6656692913385,1633.1294488188978,742.3551181102362" shape="rect">
+			<area target="" alt="Pancreas" title="Pancreas" href="" coords="1369.0617322834646,876.511811023622,1538.2588976377954,825.2012598425197" shape="rect">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="252.92047244094488,1012.3234645669291,454.02346456692914,961.0129133858268" shape="rect">
+			<area target="" alt="Hepatopancreatic Ampulla" title="Hepatopancreatic Ampulla" href="" coords="106.72944881889764,931.9412598425197,532.2352755905512,880.6307086614173" shape="rect">
+			<area target="" alt="Major Duodenal Papilla" title="Major Duodenal Papilla" href="" coords="132.14110236220472,849.1623622047244,520.6588976377952,797.8518110236221" shape="rect">
+			<area target="" alt="Minor Duodenal Papilla" title="Minor Duodenal Papilla" href="" coords="132.14094488188977,742.3551181102362,513.7411023622047,691.0445669291338" shape="rect">
+			<area target="" alt="Accessory Pancreatic Duct" title="Accessory Pancreatic Duct" href="" coords="142.7296062992126,637.6409448818898,568.2352755905513,586.3303937007875" shape="rect">
+			<area target="" alt="Common Bile Duct" title="Common Bile Duct" href="" coords="252.92047244094488,575.035905511811,561.0349606299212,523.7253543307087" shape="rect">
+			<area target="" alt="Hepatic Portal Vein" title="Hepatic Portal Vein" href="" coords="224.6807874015748,473.7100787401575,554.5407874015748,422.3995275590551" shape="rect">
+			<area target="" alt="Cystic Duct" title="Cystic Duct" href="" coords="337.12944881889763,403.491968503937,537.1067716535433,352.18141732283465" shape="rect">
+			<area target="" alt="Gallbladder" title="Gallbladder" href="" coords="276.1414173228346,157.14850393700786,494.6818897637795,105.8379527559055" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442675383-208842732.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Digestive-Images/018.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

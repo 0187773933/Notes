@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Pharynx" title="Pharynx" href="" coords="408.52173228346453,106.0932283464567,574.9563779527559,54.782677165354336" shape="rect">
+			<area target="" alt="Oral Cavity" title="Oral Cavity" href="" coords="399.13039370078735,206.44740157480317,597.2946456692913,155.1368503937008" shape="rect">
+			<area target="" alt="Salivary Glands" title="Salivary Glands" href="" coords="1247.4781102362206,221.32629921259843,1505.3135433070868,170.01574803149606" shape="rect">
+			<area target="" alt="Esophagus" title="Esophagus" href="" coords="1219.8259842519683,317.3262992125984,1414.9566929133857,266.01574803149606" shape="rect">
+			<area target="" alt="Stomach" title="Stomach" href="" coords="1272.5696062992124,472.14062992125986,1435.3044094488187,420.8300787401575" shape="rect">
+			<area target="" alt="Pancreas" title="Pancreas" href="" coords="1285.6371653543306,533.9570078740157,1465.043464566929,482.6464566929134" shape="rect">
+			<area target="" alt="Small Intestine" title="Small Intestine" href="" coords="1286.6925984251968,597.3537007874016,1544.527874015748,546.0431496062993" shape="rect">
+			<area target="" alt="Large Intestine" title="Large Intestine" href="" coords="1259.2595275590552,680.2864566929134,1517.0948031496064,628.975905511811" shape="rect">
+			<area target="" alt="Anus" title="Anus" href="" coords="477.39118110236217,998.5710236220473,585.9125984251968,947.2604724409449" shape="rect">
+			<area target="" alt="Rectum" title="Rectum" href="" coords="427.208188976378,932.4341732283465,575.4777952755906,881.1236220472441" shape="rect">
+			<area target="" alt="Appendix" title="Appendix" href="" coords="460.6472440944882,842.2107086614174,649.0914960629922,790.900157480315" shape="rect">
+			<area target="" alt="Gallbladder" title="Gallbladder" href="" coords="477.39102362204727,672.9963779527559,687.1303937007874,621.6858267716535" shape="rect">
+			<area target="" alt="Liver" title="Liver" href="" coords="473.16913385826774,604.4214173228346,582.2606299212598,553.1108661417322" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442669833-425823123.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Images/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/156834bb-cfb3-4b50-a3d2-a9437b6ceadc?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>

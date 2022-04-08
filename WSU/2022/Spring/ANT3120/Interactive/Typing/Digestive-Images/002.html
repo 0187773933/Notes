@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>002</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Coronary Ligament" title="Coronary Ligament" href="" coords="1208.348031496063,51.31055118110236,1521.3913385826772,0.0" shape="rect">
+			<area target="" alt="Liver" title="Liver" href="" coords="1194.7828346456695,188.00614173228348,1306.9565354330712,136.6955905511811" shape="rect">
+			<area target="" alt="Lesser Omentum" title="Lesser Omentum" href="" coords="1191.1308661417322,265.5651968503937,1477.5653543307085,214.25464566929136" shape="rect">
+			<area target="" alt="Stomach" title="Stomach" href="" coords="1179.1308661417322,326.86015748031497,1342.9566929133857,275.5496062992126" shape="rect">
+			<area target="" alt="Pancreas" title="Pancreas" href="" coords="1188.0004724409448,388.15511811023623,1355.4782677165354,336.84456692913386" shape="rect">
+			<area target="" alt="Kidney" title="Kidney" href="" coords="1188.00031496063,449.45007874015744,1324.956692913386,398.13952755905507" shape="rect">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="1177.5656692913385,510.00566929133856,1381.0439370078739,458.6951181102362" shape="rect">
+			<area target="" alt="Transverse Mesocolon" title="Transverse Mesocolon" href="" coords="1160.0872440944884,614.6179527559055,1525.8261417322838,563.3074015748032" shape="rect">
+			<area target="" alt="Transverse Colon" title="Transverse Colon" href="" coords="1163.2177952755906,681.0168503937008,1449.3913385826772,629.7062992125984" shape="rect">
+			<area target="" alt="Mesentery Proper" title="Mesentery Proper" href="" coords="1199.8699212598424,797.948188976378,1501.043464566929,746.6376377952756" shape="rect">
+			<area target="" alt="Rectum" title="Rectum" href="" coords="1179.1308661417322,1025.9407874015747,1333.8911811023622,974.6302362204724" shape="rect">
+			<area target="" alt="Urinary Bladder" title="Urinary Bladder" href="" coords="295.3047244094488,1004.9811023622048,563.4781102362205,953.6705511811024" shape="rect">
+			<area target="" alt="Small Intestine" title="Small Intestine" href="" coords="341.21732283464564,826.7338582677165,592.5332283464567,775.4233070866142" shape="rect">
+			<area target="" alt="Omental Bursa" title="Omental Bursa" href="" coords="341.21732283464564,734.0770078740157,592.5332283464567,682.7664566929134" shape="rect">
+			<area target="" alt="Greater Omentum" title="Greater Omentum" href="" coords="275.11858267716536,563.3074015748032,593.0544881889764,511.9968503937008" shape="rect">
+			<area target="" alt="Parietal Peritoneum" title="Parietal Peritoneum" href="" coords="316.5340157480315,455.1555905511811,651.3270866141731,403.8450393700787" shape="rect">
+			<area target="" alt="Peritoneal Cavity" title="Peritoneal Cavity" href="" coords="363.13023622047245,372.2940157480315,651.5247244094489,320.9834645669291" shape="rect">
+			<area target="" alt="Visceral Peritoneum" title="Visceral Peritoneum" href="" coords="294.81889763779526,295.8209448818898,629.6118110236221,244.5103937007874" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442670154-88335068.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Images/003.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

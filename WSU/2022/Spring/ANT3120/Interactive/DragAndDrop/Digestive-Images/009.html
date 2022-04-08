@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>009</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Esophagus" title="Esophagus" href="" coords="520.8897637795276,201.25543307086613,718.6286614173229,149.94488188976376" shape="rect">
+			<area target="" alt="Gastroesophageal Opening" title="Gastroesophageal Opening" href="" coords="452.347874015748,323.56834645669295,885.3908661417322,272.2577952755906" shape="rect">
+			<area target="" alt="Cardiac Part" title="Cardiac Part" href="" coords="609.0637795275591,383.31700787401576,825.0633070866141,332.0064566929134" shape="rect">
+			<area target="" alt="Fundus" title="Fundus" href="" coords="1324.9565354330707,190.41795275590553,1474.1738582677165,139.10740157480316" shape="rect">
+			<area target="" alt="Body" title="Body" href="" coords="1345.5653543307085,257.2615748031496,1453.5650393700785,205.95102362204724" shape="rect">
+			<area target="" alt="Serosa" title="Serosa" href="" coords="1345.5653543307085,354.53133858267717,1494.7826771653542,303.2207874015748" shape="rect">
+			<area target="" alt="Muscularis" title="Muscularis" href="" coords="1688.8696062992126,480.88346456692915,1883.4782677165354,429.5729133858268" shape="rect">
+			<area target="" alt="Muscularis" title="Muscularis" href="" coords="7.825984251968504,691.3951181102362,202.4346456692913,640.0845669291339" shape="rect">
+			<area target="" alt="Rugae" title="Rugae" href="" coords="1227.6522834645668,821.8297637795276,1376.8696062992126,770.5192125984253" shape="rect">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="270.2606299212598,783.2211023622048,472.6954330708661,731.9105511811024" shape="rect">
+			<area target="" alt="Pyloric Orifice" title="Pyloric Orifice" href="" coords="231.65228346456692,617.8297637795275,483.65228346456695,566.5192125984252" shape="rect">
+			<area target="" alt="Pyloric Sphincter" title="Pyloric Sphincter" href="" coords="230.60818897637793,559.3617322834646,521.7387401574803,508.0511811023622" shape="rect">
+			<area target="" alt="Greater Curvature" title="Greater Curvature" href="" coords="1265.6088188976378,729.3308661417323,1574.7392125984252,678.0203149606299" shape="rect">
+			<area target="" alt="Lesser Curvature" title="Lesser Curvature" href="" coords="575.9666141732283,474.71811023622047,861.2907086614173,423.4075590551181" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442672689-834157700.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Digestive-Images/010.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+	</script>
+</body>
+</html>

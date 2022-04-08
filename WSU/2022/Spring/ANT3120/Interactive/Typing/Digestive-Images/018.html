@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>018</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Epiploic Appendages" title="Epiploic Appendages" href="" coords="1008.1474015748031,565.6552755905512,1362.0705511811025,514.3447244094489" shape="rect">
+			<area target="" alt="Teniae Coli" title="Teniae Coli" href="" coords="1008.1474015748031,499.8670866141732,1202.823464566929,448.55653543307085" shape="rect">
+			<area target="" alt="Haustra" title="Haustra" href="" coords="1054.1710236220472,432.28251968503935,1202.823622047244,380.971968503937" shape="rect">
+			<area target="" alt="Descending Colon" title="Descending Colon" href="" coords="1048.3151181102362,339.9409448818898,1346.823464566929,288.6303937007874" shape="rect">
+			<area target="" alt="Splenic Flexure" title="Splenic Flexure" href="" coords="1035.8548031496064,139.88188976377953,1289.2234645669291,88.57133858267717" shape="rect">
+			<area target="" alt="Transverse Colon" title="Transverse Colon" href="" coords="23.054803149606297,109.90377952755905,308.3294488188976,58.59322834645669" shape="rect">
+			<area target="" alt="Hepatic Flexure" title="Hepatic Flexure" href="" coords="7.341102362204724,223.69212598425196,271.05889763779527,172.3815748031496" shape="rect">
+			<area target="" alt="Ascending Colon" title="Ascending Colon" href="" coords="7.340944881889764,353.2370078740158,284.61165354330706,301.9264566929134" shape="rect">
+			<area target="" alt="Ileum" title="Ileum" href="" coords="45.74125984251969,482.78188976377953,194.3940157480315,431.47133858267716" shape="rect">
+			<area target="" alt="Ileocecal Valve" title="Ileocecal Valve" href="" coords="3.3388976377952755,573.5335433070867,267.05669291338586,522.2229921259843" shape="rect">
+			<area target="" alt="Cecum" title="Cecum" href="" coords="45.74125984251969,662.4168503937008,189.74141732283465,611.1062992125984" shape="rect">
+			<area target="" alt="Appendix" title="Appendix" href="" coords="93.691968503937,740.2519685039371,267.05669291338586,688.9414173228347" shape="rect">
+			<area target="" alt="Rectum" title="Rectum" href="" coords="403.99779527559053,840.4872440944882,552.2823622047244,789.1766929133859" shape="rect">
+			<area target="" alt="Anal Canal" title="Anal Canal" href="" coords="376.09417322834645,930.3543307086615,569.5059842519685,879.0437795275591" shape="rect">
+			<area target="" alt="Internal Anal Sphincter" title="Internal Anal Sphincter" href="" coords="964.5911811023623,895.2651968503937,1334.964566929134,843.9546456692914" shape="rect">
+			<area target="" alt="External Anal Sphincter" title="External Anal Sphincter" href="" coords="964.5911811023623,956.8974803149606,1346.8234645669293,905.5869291338582" shape="rect">
+			<area target="" alt="Sigmoid Colon" title="Sigmoid Colon" href="" coords="971.4229921259843,733.1611023622047,1216.3766929133858,681.8505511811023" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442675751-7359795.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Images/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

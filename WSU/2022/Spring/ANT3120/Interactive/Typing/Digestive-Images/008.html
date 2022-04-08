@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>008</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Parotid Duct" title="Parotid Duct" href="" coords="607.304251968504,84.18015748031496,828.5214173228347,32.8696062992126" shape="rect">
+			<area target="" alt="Buccinator Muscle" title="Buccinator Muscle" href="" coords="1279.304251968504,324.18015748031496,1587.1303937007876,272.8696062992126" shape="rect">
+			<area target="" alt="Mucous Membrane" title="Mucous Membrane" href="" coords="1246.4346456692915,432.7018897637795,1568.3477165354334,381.3913385826771" shape="rect">
+			<area target="" alt="Ducts of Sublingual Gland" title="Ducts of Sublingual Gland" href="" coords="1297.0433070866143,547.5744881889764,1709.50062992126,496.263937007874" shape="rect">
+			<area target="" alt="Sublingual Gland" title="Sublingual Gland" href="" coords="1279.304251968504,725.271811023622,1568.3477165354332,673.9612598425197" shape="rect">
+			<area target="" alt="Submandibular Duct" title="Submandibular Duct" href="" coords="1214.2283464566929,842.7530708661417,1552.695590551181,791.4425196850393" shape="rect">
+			<area target="" alt="Submandibular Gland" title="Submandibular Gland" href="" coords="1141.1850393700788,961.7998425196851,1497.9130708661419,910.4892913385827" shape="rect">
+			<area target="" alt="Masseter Muscle" title="Masseter Muscle" href="" coords="244.17385826771653,826.1477165354331,533.999842519685,774.8371653543308" shape="rect">
+			<area target="" alt="Parotid Gland" title="Parotid Gland" href="" coords="218.32535433070868,696.4861417322835,453.1303937007874,645.1755905511811" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442672366-173071003.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Images/009.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

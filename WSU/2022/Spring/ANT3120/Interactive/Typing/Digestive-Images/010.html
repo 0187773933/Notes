@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>010</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Gastric Pit" title="Gastric Pit" href="" coords="823.4886614173229,83.00157480314961,1009.6941732283465,31.691023622047243" shape="rect">
+			<area target="" alt="Mucosa" title="Mucosa" href="" coords="1252.3828346456692,396.69574803149607,1402.7296062992125,345.3851968503937" shape="rect">
+			<area target="" alt="Submucosa" title="Submucosa" href="" coords="1252.3828346456692,649.4015748031495,1455.247086614173,598.0910236220471" shape="rect">
+			<area target="" alt="Muscularis" title="Muscularis" href="" coords="1252.3828346456692,783.51937007874,1455.247086614173,732.2088188976377" shape="rect">
+			<area target="" alt="Visceral Peritoneum" title="Visceral Peritoneum" href="" coords="1432.2414173228346,968.460472440945,1760.188031496063,917.1499212598426" shape="rect">
+			<area target="" alt="Connective Tissue Layer" title="Connective Tissue Layer" href="" coords="1226.8970078740158,911.1869291338583,1614.4937007874016,859.8763779527559" shape="rect">
+			<area target="" alt="Simple Squamous Epithelium" title="Simple Squamous Epithelium" href="" coords="1110.0398425196852,1026.0946456692914,1570.4467716535435,974.784094488189" shape="rect">
+			<area target="" alt="Endocrine Cells" title="Endocrine Cells" href="" coords="338.8234645669291,565.6552755905512,601.6938582677165,514.3447244094489" shape="rect">
+			<area target="" alt="Chief Cells" title="Chief Cells" href="" coords="350.68236220472437,503.25527559055115,551.1529133858268,451.9447244094488" shape="rect">
+			<area target="" alt="Parietal Cells" title="Parietal Cells" href="" coords="313.69118110236224,444.2436220472441,539.2940157480316,392.93307086614175" shape="rect">
+			<area target="" alt="Gastric Glands" title="Gastric Glands" href="" coords="181.27055118110238,328.8388976377953,426.4925984251969,277.52834645669293" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442673016-942775535.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Images/011.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>

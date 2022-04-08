@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>012</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Duodenum" title="Duodenum" href="" coords="904.6588976377953,133.8251968503937,1105.6941732283465,82.51464566929134" shape="rect">
+			<area target="" alt="Common Bile Duct" title="Common Bile Duct" href="" coords="747.1059842519685,296.74299212598424,1058.5412598425196,245.4324409448819" shape="rect">
+			<area target="" alt="Jejunum" title="Jejunum" href="" coords="1554.123937007874,500.3193700787402,1726.3058267716535,449.0088188976378" shape="rect">
+			<area target="" alt="Pancreatic Ducts" title="Pancreatic Ducts" href="" coords="1445.9826771653543,565.6552755905512,1726.3058267716535,514.3447244094489" shape="rect">
+			<area target="" alt="Head of Pancreas" title="Head of Pancreas" href="" coords="1140.1412598425197,616.9658267716535,1433.5058267716536,565.6552755905511" shape="rect">
+			<area target="" alt="Circular Folds" title="Circular Folds" href="" coords="807.4160629921261,798.7474015748031,1040.188346456693,747.4368503937008" shape="rect">
+			<area target="" alt="Epithelium" title="Epithelium" href="" coords="807.4160629921261,858.0700787401576,1014.7765354330709,806.7595275590552" shape="rect">
+			<area target="" alt="Submucosa" title="Submucosa" href="" coords="815.8869291338583,917.3927559055119,1023.2474015748032,866.0822047244095" shape="rect">
+			<area target="" alt="Circular Muscle" title="Circular Muscle" href="" coords="544.827874015748,947.0678740157481,812.4982677165353,895.7573228346457" shape="rect">
+			<area target="" alt="Longitudinal Muscle" title="Longitudinal Muscle" href="" coords="585.7689763779528,1014.4026771653542,918.211811023622,963.0921259842519" shape="rect">
+			<area target="" alt="Serosa" title="Serosa" href="" coords="591.3593700787401,1077.1944881889763,725.0823622047244,1025.883937007874" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649442673710-254599281.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Images/013.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = false;
+		window.randomize_order = true;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
