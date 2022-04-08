@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Digestive System</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css">
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css">
+	<script src="https://39363.org/CDN/katex/katex.min.js"></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js"></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js"></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		#toggle-button {
+			margin-top: 1px;
+			margin-right: 2px;
+			position:absolute;
+			top:0;
+			right:0;
+		}
+	</style>
+</head>
+<body>
+	<br>
+	<div class="container">
+		<div class="row slimmed-padding">
+			<h2>Introduction</h2>
+<ul>
+<li>The organs of the digestive system are separated into two catagories :<ul>
+<li>the accessory digestive organs and the organs of the gastrointestinal ( digestive ) tract</li>
+</ul>
+</li>
+<li>Digestive Tract :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 25ch;" name="continuous muscular tube"> <span class="hint">&#63;</span></span></span> composed of skeletal muscle and smooth muscle</li>
+<li>organs of the digestive tract include the mouth , pharynx , esophagus , stomach , small intestine , and large intestine</li>
+</ul>
+</li>
+<li>Accessory Digestive Organs :<ul>
+<li>include the teeth , tongue , gallbladder , digestive glands ( salivary glands , liver , and pancreas )</li>
+</ul>
+</li>
+<li>Functions of the digestive system include :<ul>
+<li>ingestion , mastication , propulsion , mixing , secretion , digestion , absorption , and secretion</li>
+</ul>
+</li>
+</ul>
+<h2>Peritoneum</h2>
+<ul>
+<li>membrane which lines the walls and organs of the abdominal cavity</li>
+<li>the peritoneum has two portions : the visceral peritoneum and parietal peritoneum</li>
+<li>VIsceral Peritoneum :<ul>
+<li>covers the external surface of the organs within the abdominal cavity</li>
+</ul>
+</li>
+<li>Parietal Peritoneum :<ul>
+<li>lines the internal surface of the walls of the abdominal cavity</li>
+</ul>
+</li>
+<li>the space between the two layers of peritoneum is the peritoneal cavity ( filled with peritoneal ( serous ) fluid )</li>
+<li>many organs of the abdominal cavity are held in place by <span><input type="text" class="interactive-typing-prompt-input" style="width: 12ch;" name="mesenteries"> <span class="hint">&#63;</span></span></span><ul>
+<li>a mesentery is a fused double layer of peritoneum that extends from the body wall to a digestive organ</li>
+</ul>
+</li>
+<li>other organs of the abdominal cavity are considered to be <span><input type="text" class="interactive-typing-prompt-input" style="width: 16ch;" name="retroperitoneal"> <span class="hint">&#63;</span></span></span><ul>
+<li>lie against the posterior abdominal wall ( <u>not</u> suspended by a mesentery )</li>
+<li>"retro" = "behind"</li>
+<li>examples = pancreas , duodenum , rectum , ascending colon , descending colon , kidneys , ureters , abdominal aorta , inferior vena cava , urinary bladder</li>
+</ul>
+</li>
+</ul>
+<h2>Oral Cavity</h2>
+<ul>
+<li>
+<p>associated structures include : lips , cheeks , palate , tongue , teeth , and salivary glands</p>
+</li>
+<li>
+<p>lips ( labia ) and cheeks :</p>
+<ul>
+<li>composed mainly of muscle :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 17ch;" name="orbicularis oris"> <span class="hint">&#63;</span></span></span> ( lips ) and the <span><input type="text" class="interactive-typing-prompt-input" style="width: 11ch;" name="buccinator"> <span class="hint">&#63;</span></span></span> ( cheeks )<ul>
+<li>innervated by trigeminal and facial nerve</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>involved with the process of mastication and speech</li>
+</ul>
+</li>
+<li>
+<p>palate :</p>
+<ul>
+<li>consists of two portions : the hard palate and soft palate</li>
+<li>hard palate :<ul>
+<li>forms the "<span><input type="text" class="interactive-typing-prompt-input" style="width: 5ch;" name="roof"> <span class="hint">&#63;</span></span></span>" of the mouth</li>
+<li>tongue forces food against hard palate during chewing ( also plays a role in speech )</li>
+</ul>
+</li>
+<li>soft palate :<ul>
+<li>posterior to the hard palate</li>
+<li>composed of <span><input type="text" class="interactive-typing-prompt-input" style="width: 16ch;" name="skeletal muscle"> <span class="hint">&#63;</span></span></span> ( closes off the nasopharynx when we swallow )</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>tongue :</p>
+<ul>
+<li>
+<p>aids in chewing , swallowing , and speech</p>
+<p><img alt="" src="https://39363.org/IMAGE_BUCKET/1649430296560-377677713.jpeg" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>salivary glands :</p>
+<ul>
+<li>produce and secrete saliva</li>
+<li>functions of saliva include :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 15ch;" name="cleanses mouth"> <span class="hint">&#63;</span></span></span></li>
+<li>dissolves food chemicals so that they can be tasted</li>
+<li>contains the enzyme salivary amylase ( begins chemical breakdown of starchy foods )</li>
+</ul>
+</li>
+<li>there are three pairs of salivary glands :<ul>
+<li>the parotid , submandibular , and sublingual glands</li>
+</ul>
+</li>
+<li>parotid glands :<ul>
+<li>one located anterior to each ear</li>
+</ul>
+</li>
+<li>submandibular glands :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 25ch;" name="inferior to the mandible"> <span class="hint">&#63;</span></span></span></li>
+</ul>
+</li>
+<li>sublingual glands :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 17ch;" name="below the tongue"> <span class="hint">&#63;</span></span></span></li>
+<li>much smaller</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Pharynx</h2>
+<ul>
+<li>"throat"</li>
+<li>food from the oral cavity passes through the <span><input type="text" class="interactive-typing-prompt-input" style="width: 7ch;" name="fauces"> <span class="hint">&#63;</span></span></span> into the oropharynx</li>
+<li>food then passes into the <span><input type="text" class="interactive-typing-prompt-input" style="width: 15ch;" name="laryngopharynx"> <span class="hint">&#63;</span></span></span></li>
+</ul>
+<h2>Esophagus</h2>
+<ul>
+<li>food passes from the laryngopharynx into the esophagus ( carries food into the stomach )</li>
+<li>lined with stratified squamous epithelium</li>
+<li><u>no</u> digestion "starts" in the esophagus</li>
+</ul>
+<h2>Stomach</h2>
+<ul>
+<li>food is broken down mechanically and chemically</li>
+<li>three layers of <span><input type="text" class="interactive-typing-prompt-input" style="width: 14ch;" name="smooth muscle"> <span class="hint">&#63;</span></span></span> mechanically digest the food</li>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 15ch;" name="gastric glands"> <span class="hint">&#63;</span></span></span> ( located in the lining of the stomach ) release substances that chemically digest the food</li>
+<li>major structures of the stomach include :<ul>
+<li>the cardiac sphincter , cardiac region , fundus , body , greater and lesser curvatures , pyloric region , pyloric sphincter , and rugae</li>
+</ul>
+</li>
+<li>histology of the stomach :<ul>
+<li>the internal surface of the stomach is lined with simple columnar epithelium</li>
+<li>the epithelium lining of the stomach contains <span><input type="text" class="interactive-typing-prompt-input" style="width: 13ch;" name="gastric pits"> <span class="hint">&#63;</span></span></span></li>
+<li>gastric pits are the openings for the <span><input type="text" class="interactive-typing-prompt-input" style="width: 15ch;" name="gastric glands"> <span class="hint">&#63;</span></span></span> ( produce gastric juice )</li>
+<li>the highly acidic juice ( pH 1.5 to 3.5 ) contains substances that aid in chemical digestion</li>
+<li>the substances that compose gastric juice are produced by the cells that form the gastric glands</li>
+<li>cells of the gastric glands include :<ul>
+<li>mucous cells = different that goblet cells , special alkaline mucous , helps buffer acidity of gastric juice</li>
+<li>parietal cells = produce $HCl$ and intrinsic factor for vitamin B<sub>12</sub> </li>
+<li>chief cells = produce pepsinogen. pepsinogen becomes activated into pepsin via acid produced from parietal cells</li>
+<li>endocrine cells</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Small Intestine</h2>
+<ul>
+<li>digestive organ where digestion is completed and <span><input type="text" class="interactive-typing-prompt-input" style="width: 29ch;" name="nearly all absorption occurs"> <span class="hint">&#63;</span></span></span></li>
+<li>extends from the stomach to the large intestine</li>
+<li>20 feet long in cadaver ( shorter in life due to muscle tone )</li>
+<li>divided into three parts : duodenum , jejunum , and ileum</li>
+<li>duodenum :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 33ch;" name="first portion of small intestine"> <span class="hint">&#63;</span></span></span></li>
+<li>wraps around the head of the pancrease<ul>
+<li>makes a "C" shape</li>
+</ul>
+</li>
+<li>lined with simple columnar epithelium</li>
+<li>contains glands which produce an alkaline substance that <span><input type="text" class="interactive-typing-prompt-input" style="width: 24ch;" name="neutralize acidic chyme"> <span class="hint">&#63;</span></span></span></li>
+<li>only a few inches long</li>
+</ul>
+</li>
+<li>jejunum :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 15ch;" name="middle portion"> <span class="hint">&#63;</span></span></span> of small intestine</li>
+<li>extends from duodenum to ileum</li>
+<li>roughly 9 feet</li>
+</ul>
+</li>
+<li>ileum :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 13ch;" name="last portion"> <span class="hint">&#63;</span></span></span> of the small intestine</li>
+<li>joins the cecum of large intestine</li>
+<li>roughly 9 feet</li>
+</ul>
+</li>
+<li>the small intestine has modifications which allow for an increase in surface area<ul>
+<li>this helps <span><input type="text" class="interactive-typing-prompt-input" style="width: 34ch;" name="increase the amount of absorption"> <span class="hint">&#63;</span></span></span> that takes place</li>
+</ul>
+</li>
+<li>modifications that increase the surface area include :<ul>
+<li>overall length of the small intestine</li>
+<li>the lining of the small intestine is folded ( <span><input type="text" class="interactive-typing-prompt-input" style="width: 15ch;" name="circular folds"> <span class="hint">&#63;</span></span></span> ) and has tiny fingerlike projections called <span><input type="text" class="interactive-typing-prompt-input" style="width: 6ch;" name="villi"> <span class="hint">&#63;</span></span></span><ul>
+<li>plique circularis = circular folds</li>
+</ul>
+</li>
+<li>cells contain <span><input type="text" class="interactive-typing-prompt-input" style="width: 11ch;" name="microvilli"> <span class="hint">&#63;</span></span></span></li>
+</ul>
+</li>
+<li>2,700 square feet = surface area of small intestine</li>
+</ul>
+<h2>Liver</h2>
+<ul>
+<li>second largest organ of the body</li>
+<li>largest gland in the body</li>
+<li>located in the <span><input type="text" class="interactive-typing-prompt-input" style="width: 21ch;" name="right upper quadrant"> <span class="hint">&#63;</span></span></span></li>
+<li>major structures associated with the liver include : the right and left caudate , quadrate lobes , and hepatic porta</li>
+<li>functions of the liver include :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 27ch;" name="stores glucose as glycogen"> <span class="hint">&#63;</span></span></span></li>
+<li>takes waste products out of the blood</li>
+<li>hepatocytes of the liver produce <span><input type="text" class="interactive-typing-prompt-input" style="width: 5ch;" name="bile"> <span class="hint">&#63;</span></span></span> ( stored in the gallbladder )<ul>
+<li>bile helps digest fats</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ducts associated with the liver include :<ul>
+<li>the common heptatic duct , right and left hepatic ducts , cystic duct , and common bile duct</li>
+</ul>
+</li>
+<li>the <span><input type="text" class="interactive-typing-prompt-input" style="width: 20ch;" name="common hepatic duct"> <span class="hint">&#63;</span></span></span> carries bile away from the liver<ul>
+<li>formed by the union of the right and left hepatic ducts</li>
+</ul>
+</li>
+<li>the common hepatic ducts joins the <span><input type="text" class="interactive-typing-prompt-input" style="width: 12ch;" name="cystic duct"> <span class="hint">&#63;</span></span></span> ( from the gallbladder ) to form the <span><input type="text" class="interactive-typing-prompt-input" style="width: 17ch;" name="common bile duct"> <span class="hint">&#63;</span></span></span></li>
+<li>the common bile duct joins the <span><input type="text" class="interactive-typing-prompt-input" style="width: 16ch;" name="pancreatic duct"> <span class="hint">&#63;</span></span></span> ( from the pancreas ) and forms the hepatopancreatic ampulla ( ampulla of vater )<ul>
+<li>cholecystokinin ( CCK ) relaxes sphincter of Oddi</li>
+</ul>
+</li>
+<li>the hepatopancreatic ampulla drains via the <span><input type="text" class="interactive-typing-prompt-input" style="width: 23ch;" name="major duodenal papilla"> <span class="hint">&#63;</span></span></span> into the duodenum of the small intestine</li>
+</ul>
+<h3>Bile Pathway</h3>
+<ol>
+<li>Right and Left Hepatic Ducts</li>
+<li>Merge to form common hepatic duct</li>
+<li>Cystic Duct merges with common hepatic duct</li>
+<li>Common Bile Duct</li>
+<li>Pancreatic Duct</li>
+<li>Ampulla of Vater</li>
+<li>Major Duodenal Papilla</li>
+</ol>
+<p><img alt="" src="https://39363.org/IMAGE_BUCKET/1649432224316-774035621.jpeg" /></p>
+<h2>Pancreas</h2>
+<ul>
+<li>located in the abdomen partially <span><input type="text" class="interactive-typing-prompt-input" style="width: 19ch;" name="behind the stomach"> <span class="hint">&#63;</span></span></span></li>
+<li>remember ... the pancreas is an exocrine and endocrine gland</li>
+<li>substances produced by the endocrine portion of the pancreas include :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 8ch;" name="insulin"> <span class="hint">&#63;</span></span></span> , <span><input type="text" class="interactive-typing-prompt-input" style="width: 9ch;" name="glucagon"> <span class="hint">&#63;</span></span></span> , <span><input type="text" class="interactive-typing-prompt-input" style="width: 13ch;" name="somatostatin"> <span class="hint">&#63;</span></span></span></li>
+</ul>
+</li>
+<li>substances produced by the exocrine portion of the pancreas include :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 8ch;" name="enzymes"> <span class="hint">&#63;</span></span></span> that aid in digestion of carbohydrates , fats , and proteins in the small intestine</li>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 12ch;" name="bicarbonate"> <span class="hint">&#63;</span></span></span> ( $HCO_3^{-}$ ) ions that neutralize acidic chyme in small intestine</li>
+</ul>
+</li>
+<li>exocrine pancreatic secretions exit the pancreas via the pancreatic duct</li>
+</ul>
+<h2>Large Intestine</h2>
+<ul>
+<li>around 5 feet in length</li>
+<li>extends from the small intestine to the anus</li>
+<li>functions of the large intestine include :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 20ch;" name="absorption of water"> <span class="hint">&#63;</span></span></span> ( absorption of nutrients completed in small intestine )</li>
+<li>elimination of waste products ( feces )</li>
+</ul>
+</li>
+<li>divisions of the large intestine include :<ul>
+<li>the cecum , colon , rectum , and anal canal</li>
+</ul>
+</li>
+<li>cecum :<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 11ch;" name="first part"> <span class="hint">&#63;</span></span></span> of large instestine</li>
+<li>joins with ileum of small intestine ( ileocecal junction )</li>
+<li>the veriform appendix is attached to the cecum<ul>
+<li><span><input type="text" class="interactive-typing-prompt-input" style="width: 25ch;" name="plays a role in immunity"> <span class="hint">&#63;</span></span></span> , can collect bacteria</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>colon :<ul>
+<li>consists of the ascending colon , right colic ( hepatic ) flexure , transverse colon , left colic ( splenic ) flexure , descending colon , and sigmoid colon</li>
+</ul>
+</li>
+<li>rectum :<ul>
+<li>portion of large intestine located between the sigmoid colon and anal canal</li>
+<li>stores feces<ul>
+<li>possible fecal inpaction</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>anal canal :<ul>
+<li>last 2 - 3 cm of the digestive tract</li>
+<li>extends from the rectum to the anus ( opening of the anal canal to the "outside" world )</li>
+<li>surrounded by the internal and external sphincters<ul>
+<li>internal anal sphincters composed of <span><input type="text" class="interactive-typing-prompt-input" style="width: 14ch;" name="smooth muscle"> <span class="hint">&#63;</span></span></span></li>
+<li>external anal sphincters composed of <span><input type="text" class="interactive-typing-prompt-input" style="width: 16ch;" name="skeletal muscle"> <span class="hint">&#63;</span></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Digestive Pathway</h2>
+<ol>
+<li>Mouth</li>
+<li>Oral Cavity</li>
+<li>Fauces</li>
+<li>Oral Pharynx</li>
+<li>Laryngopharynx</li>
+<li>Esophagus</li>
+<li>Lower Esophageal Sphincter ( cardiac sphincter )</li>
+<li>Cardiac Region of Stomach</li>
+<li>Body of Stomach</li>
+<li>Pyloric Region of Stomach</li>
+<li>Pyloric Sphincter of Stomach</li>
+<li>Duodenum of Small Intestine</li>
+<li>Jejunum of Small Intestine</li>
+<li>Ileum of Small Intestine</li>
+<li>Ileocecal Juction</li>
+<li>Cecum of Large Intestine</li>
+<li>Ascending Colon of Large Intestine</li>
+<li>Hepatic Flexure of Large Intestine</li>
+<li>Transverse Colon of Large Intestine</li>
+<li>Splenic Flexure of Large Intestine</li>
+<li>Descending Colon of Large Intestine</li>
+<li>Sigmoid Colon of Large Intestine</li>
+<li>Rectum of Large Intestine</li>
+<li>Anal Canal of Large Intestine</li>
+<li>"flush"</li>
+</ol>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function add_toggle_all_button() {
+			window.toggle_button_state = false;
+			let toggle_on_off_button_html = `<button id="toggle-button" type="button"><span>Show All Labels</span></button>`;
+			document.body.insertAdjacentHTML( "afterend" , toggle_on_off_button_html );
+			document.getElementById( "toggle-button" ).addEventListener( "click" , function ( this_button ) {
+				window.toggle_button_state = !window.toggle_button_state;
+				if ( window.toggle_button_state == true ) {
+					// Auto Fill All Labels
+					$( ".interactive-typing-prompt-input" ).each( ( index , element ) => {
+						let name = $( element ).attr( "name" );
+						$( element ).parent().replaceWith( `<span style="border-bottom: 2px solid green">${name}</span>` );
+					});
+					$( "#toggle-button" ).text( "Hide All Labels" );
+					$( "#toggle-button" ).hide();
+				} else {
+					// Turn off All Labels
+					// dealing with this later , probably easiest to just cache the html of each element somewhere
+					// just refresh for now
+					// $( "#toggle-button" ).text( "Show All Labels" );
+				}
+			});
+		}
+		function validate_typing_prompt_input( event ) {
+			if ( event.key === "Control" ) {
+				// console.log( "pressed the control key" );
+				// $( event.currentTarget ).parent().replaceWith( `<span style="border: 2px solid green">${event.currentTarget.name}</span>` );
+				$( event.currentTarget ).parent().replaceWith( `<span style="border-bottom: 2px solid green">${event.currentTarget.name}</span>` );
+				return;
+			}
+			if ( $( event.currentTarget ).val().trim().toLowerCase() === event.currentTarget.name.toLowerCase() ) {
+				console.log( "correct" );
+				// $( event.currentTarget ).parent().replaceWith( `<span style="border: 2px solid green">${event.currentTarget.name}</span>` );
+				$( event.currentTarget ).parent().replaceWith( `<span style="border-bottom: 2px solid green">${event.currentTarget.name}</span>` );
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					// { left: "\[" , right: "\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					// { left: "\(" , right: "\)" , display: false }
+				]
+			});
+		}
+		function setup_hooks() {
+			$( document ).on( "keyup" , ".interactive-typing-prompt-input" , ( event ) => {
+				validate_typing_prompt_input( event );
+			});
+			$( document ).on( "click" , ".hint" , ( event ) => {
+				let target_name = $( event.currentTarget ).prev().attr( "name" );
+				$( event.currentTarget ).prev().val( target_name );
+				setTimeout( function() {
+					$( event.currentTarget ).prev().val( "" );
+				} , 1500 );
+			});
+		}
+		function init() {
+			$( document ).ready( function(){
+				$( ".interactive-typing-prompt-input" ).each( ( index , element ) => {
+					$( element ).val( "" );
+				});
+				render_katex();
+				setup_hooks();
+				add_toggle_all_button();
+			});
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/56981339-57df-47f2-b391-a4b8c61ffaa9?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>
