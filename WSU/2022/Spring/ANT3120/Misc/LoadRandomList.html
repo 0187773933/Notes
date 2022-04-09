@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Randomizes Slides in List of Typing Slides</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css">
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css">
+	<script src="https://39363.org/CDN/katex/katex.min.js"></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js"></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js"></script>
+	<script src="https://39363.org/CDN/cookies.js"></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		#toggle-button {
+			margin-top: 1px;
+			margin-right: 2px;
+			position:absolute;
+			top:0;
+			right:0;
+		}
+	</style>
+</head>
+<body>
+	<br>
+	<div class="container">
+		<div class="row slimmed-padding">
+			<h2>Load Random Typing List</h2>
+				<span>URL : </span><input id="random-list-input" type="text">
+				<br>
+				<span>List Length : </span><input id="random-list-length-input" type="text">
+				<br>
+				<button onclick="load_random_list()" type="button">Load</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function math_seed() {
+			// https://stackoverflow.com/a/23304189
+			Math.seed = function( s ) {
+				return function() {
+					s = Math.sin( s ) * 10000; return s - Math.floor( s );
+				};
+			};
+			let random_seed = Math.seed( new Date().getTime() );
+			let min_seed_iterations = 3;
+			let max_seed_iterations = 10;
+			let random_number_of_seeds = Math.floor( min_seed_iterations + Math.random() * ( max_seed_iterations + 1 - min_seed_iterations ) );
+			for ( let i = 1; i < random_number_of_seeds; ++i ) {
+				random_seed = Math.seed( random_seed() );
+			}
+			Math.random = Math.seed( random_seed() );
+		}
+		function shuffleArray( array ) {
+			math_seed();
+			const newArr = array.slice();
+			for ( let i = newArr.length - 1; i > 0; i-- ) {
+				const rand = Math.floor( Math.random() * ( i + 1 ) );
+				[ newArr[ i ] , newArr[ rand ] ] = [ newArr[ rand ] , newArr[ i ] ];
+			}
+			return newArr
+		}
+		function get_random_int_between_range( min , max ) {
+			math_seed();
+			return Math.floor( Math.random() * ( max - min + 1 ) + min );
+		}
+		function find_list_max( url , callback ) {
+			try{
+				console.log( url );
+				fetch( url )
+				.then((response) => {
+					return response.text();
+				})
+				.then( ( html ) => {
+					console.log( html );
+					callback( html );
+				});
+			}
+			catch( e ) {
+				console.log( e );
+				// return false;
+				callback( false );
+			}
+		}
+		function url_exists( url , callback ) {
+			try{
+				let reader = new XMLHttpRequest();
+				reader.open( "get" , url , true );
+				reader.onreadystatechange = checkReadyState;
+				function checkReadyState() {
+					if ( reader.status === 404 ) {
+						console.log( "here" );
+						callback( false );
+						return false;
+					}
+					if ( reader.readyState === 4 ) {
+						if ( ( reader.status == 200 ) || ( reader.status == 0 ) ) {
+							// document.location.href = url;
+							callback( true );
+							return true;
+						}
+						else {
+							callback( false );
+							return false;
+						}
+					}
+					console.log( reader.status , reader.readyState );
+				}
+				reader.send( null );
+			}
+			catch( e ) {
+				console.log( e );
+				// return false;
+				callback( false );
+			}
+		}
+		function next_in_random_list( next_exists ) {
+			console.log( "next_in_random_list()" );
+			let random_list_state = get_cookie_object( "Interactive-Random-List-STATE" );
+			console.log( random_list_state );
+			let next_slide_number = get_random_int_between_range( 1 , random_list_state.list_length );
+			while( random_list_state.seen.includes( next_slide_number ) === true ) {
+				next_slide_number = get_random_int_between_range( 1 , random_list_state.list_length );
+			}
+			console.log( next_slide_number );
+			console.log( random_list_state.seen );
+			random_list_state.seen.push( next_slide_number );
+			set_cookie_object( "Interactive-Random-List-STATE" , random_list_state , 4000 );
+
+			let next_url = `${random_list_state.url_base}/${ ( "000" + next_slide_number ).slice( -3 ) }.html`;
+			console.log( next_url );
+			// window.open( next_url , "_blank" ).focus();
+			window.open( next_url );
+		}
+		function load_random_list() {
+			let input_url = document.getElementById( "random-list-input" ).value.trim();
+			console.log( input_url );
+			// set_cookie( "Interactive-Random-List-URL" , input_url , 4000 );
+			// let test_max_url = url_exists( "https://39363.org/NOTES/MCAT/Interactive/Biochemistry/Typing/Amino-Acids-Identification/050.html" , next_in_random_list );
+			// let test_max_url = url_exists( "https://39363.org/NOTES/MCAT/Interactive/Biochemistry/Typing/Amino-Acids-Identification/003.html" , next_in_random_list );
+			// console.log( test_max_url );
+
+			let base_list_url = input_url.split( "/" );
+			base_list_url.pop();
+			base_list_url = base_list_url.join( "/" );
+			console.log( base_list_url );
+			// find_list_max( base_list_url , next_in_random_list );
+			let list_length = parseInt( document.getElementById( "random-list-length-input" ).value.trim() );
+
+			let random_list_state_cookie = get_cookie_object( "Interactive-Random-List-STATE" );
+			// set_cookie_object( "Interactive-Random-List-STATE" , {} );
+			if ( !random_list_state_cookie.url ) {
+				set_cookie_object( "Interactive-Random-List-STATE" , {
+					"url": input_url ,
+					"url_base": base_list_url ,
+					"list_length": list_length ,
+					"seen": []
+				} , 4000 );
+
+			}
+			else if ( random_list_state_cookie.seen.length === random_list_state_cookie.list_length ) {
+				set_cookie_object( "Interactive-Random-List-STATE" , {
+					"url": input_url ,
+					"url_base": base_list_url ,
+					"list_length": list_length ,
+					"seen": []
+				} , 4000 );
+			}
+			next_in_random_list();
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					// { left: "\[" , right: "\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					// { left: "\(" , right: "\)" , display: false }
+				]
+			});
+		}
+		function init() {
+			$( document ).ready( function(){
+				render_katex();
+			});
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+	</script>
+</body>
+</html>
