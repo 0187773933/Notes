@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Right and Left Hepatic Ducts" title="Right and Left Hepatic Ducts" href="" coords="302.4727559055118,358.3883464566929,757.9508661417323,307.0777952755905" shape="rect">
+			<area target="" alt="Common Hepatic Duct" title="Common Hepatic Duct" href="" coords="302.4727559055118,437.1708661417323,668.348031496063,385.8603149606299" shape="rect">
+			<area target="" alt="Cystic Duct" title="Cystic Duct" href="" coords="302.4727559055118,515.9533858267716,504.52188976377954,464.64283464566927" shape="rect">
+			<area target="" alt="Common Bile Duct" title="Common Bile Duct" href="" coords="302.4727559055118,594.7359055118111,619.8262992125984,543.4253543307087" shape="rect">
+			<area target="" alt="Pancreatic Duct" title="Pancreatic Duct" href="" coords="302.4727559055118,670.9092913385826,565.0436220472441,619.5987401574803" shape="rect">
+			<area target="" alt="Ampulla of Vater" title="Ampulla of Vater" href="" coords="302.4727559055118,747.6727559055118,586.9566929133858,696.3622047244095" shape="rect">
+			<area target="" alt="Major Duodenal Papilla" title="Major Duodenal Papilla" href="" coords="299.86393700787403,827.272125984252,680.8697637795276,775.9615748031497" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1649776130201-444044086.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Digestive-Pathways/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = true;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/5143e428-288d-4735-8a55-063cf82f54c8?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>
