@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practice Exam 5</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-0lax{text-align:left;vertical-align:top}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+		<!-- <div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			let url;
+			if ( window.ACTIVE_INDEX === 0 ) {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+			} else {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX ).toString();
+			}
+			console.log( url );
+			window.location.href = url;
+			// history.pushState({
+			// 	id: "question-" + ( window.ACTIVE_INDEX - 1 ).toString() ,
+			// 	source: 'web'
+			// } , url );
+			window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			render_active_card();
+			// if ( window.BACK_IS_RENDERED === false ) {
+			// 	// $( "#card-body-content" ).show();
+			// 	// CHANGED
+			// 	// render_correct_answers();
+			// 	// $( "#row-navigation" ).show();
+			// 	window.BACK_IS_RENDERED = true;
+			// } else {
+			// 	window.BACK_IS_RENDERED = false;
+			// 	console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			// 	window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			// 	if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			// 	render_active_card();
+			// }
+
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+				window.ACTIVE_INDEX = ( window.ACTIVE_INDEX + 1 );
+				if ( window.ACTIVE_INDEX > ( window.DECK.questions.length - 1 ) ) { window.ACTIVE_INDEX = 0; }
+				let url;
+				if ( window.ACTIVE_INDEX === ( window.DECK.questions.length ) ) {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+				} else {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX + 1 ).toString();
+				}
+				console.log( url );
+				window.location.href = url;
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			$( "#card-title-content" ).empty();
+			// console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.ACTIVE_INDEX ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.ACTIVE_INDEX ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
+			render_katex();
+		}
+		function get_url_question_number() {
+			console.log( window.location.href );
+			window.URL_INDEX = window.location.href.split( "#" );
+			if ( window.URL_INDEX.length > 0 ) {
+				window.URL_INDEX = window.location.href.split( ".html" )[ 1 ].split( "#" );
+				if ( window.URL_INDEX.length > 0 ) {
+					window.URL_INDEX = window.URL_INDEX[ 1 ];
+					return window.URL_INDEX;
+				}
+			}
+			return false;
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.ACTIVE_INDEX = 0;
+			if ( get_url_question_number() !== false ) {
+				if ( window.URL_INDEX !== window.ACTIVE_INDEX ) {
+					window.ACTIVE_INDEX = ( parseInt( window.URL_INDEX ) - 1 );
+					console.log( window.ACTIVE_INDEX );
+				}
+			} else {
+				console.log( "no url question number set" );
+			}
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			// $( "#current-card-number" ).text( `${window.ACTIVE_INDEX + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/de87dfac-12a9-47c7-b414-27ed5e84f141?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_title": "Practice Exam 5" ,
+			"questions": [
+				{
+					"prompt": "The muscularis layers will be stimulated by all of the following except ______________." ,
+					"choices": [
+						"Acetylcholine" ,
+						"Parasympathetics" ,
+						"Cholecystokinin" ,
+						"Smell or thought of food" ,
+						"Increased stomach volume"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The lower esophageal sphincter is relaxed by peristalsis." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Most potent inhibitor of gastric emptying." ,
+					"choices": [
+						"Sympathetics" ,
+						"Acidic chyme in the stomach" ,
+						"Decreased fluidity of chyme in stomach" ,
+						"Lipid containing chyme in duodenum" ,
+						"Carbohydrate containing chyme in stomach" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Presence of food in the stomach causes which of the following." ,
+					"choices": [
+						"Gastrocolic reflex" ,
+						"Gastric phase" ,
+						"Gastric emptying" ,
+						"Release of gastrin" ,
+						"All of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Hypertonic but not hypotonic chyme in the small intestine stimulates small intestine motility." ,
+					"choices": [
+						"True" ,
+						"False"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The parasympathetics _____________." ,
+					"choices": [
+						"Are part of the defecation reflex" ,
+						"Stimulate gastric motility" ,
+						"Stimulate gastric secretions" ,
+						"Stimulate duodenal motility" ,
+						"All of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The initial step during the production of saliva is filtration, followed by modification of salivary osmolality.<br>If this modification does not take place, the osmolality of saliva would be __________." ,
+					"choices": [
+						"Hypertonic" ,
+						"Hypotonic" ,
+						"Isotonic" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following enzyme function in the stomach?" ,
+					"choices": [
+						"Lipase" ,
+						"Salivary amylase" ,
+						"Pepsin" ,
+						"Trypsin" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Excessive intake of alkaline drugs could prevent which of these from being activated." ,
+					"choices": [
+						"Secretin" ,
+						"Somatostatin" ,
+						"Histamine" ,
+						"Pepsin" ,
+						"Intrinsic factor" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Stimulation of mechanoreceptors of the stomach indirectly stimulates ____________." ,
+					"choices": [
+						"Secretin" ,
+						"Gastric acid" ,
+						"Enterogastric reflex" ,
+						"Cholecystokinin" ,
+						"Somatostatin" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of these directly neutralizes acidic chyme when it enters the duodenum?" ,
+					"choices": [
+						"$HCO_3^-$ from bile" ,
+						"Secretin" ,
+						"$HCO_3^-$ from the pancreas" ,
+						"Cholecystokinin" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of these does the liver NOT produce?" ,
+					"choices": [
+						"Cholesterol" ,
+						"Iron" ,
+						"Glycogen" ,
+						"Bile" ,
+						"Glucose" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The enzymes of the large intestine function to digest material, which is then absorbed." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of these produces enzymes for the final digestion of carbohydrate?" ,
+					"choices": [
+						"Salivary glands" ,
+						"Stomach" ,
+						"Small intestine" ,
+						"Liver" ,
+						"Pancreas" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The conjugated bilirubin in bile is responsible for emuplsification of fat." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of these sets of enzyme are all involved in the digestion of protein?" ,
+					"choices": [
+						"Pepsin, pancreatic amylase, duodenal aminopeptidase" ,
+						"Disaccharidases, salivary amylase, aminopeptidase" ,
+						"Pancreatic proteases, gastric lipase, pepsin" ,
+						"Pancreatic proteases, pepsin, duodenal proteases" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Blood glucose levels due to glycogenolysis ______ blood glucose levels due to glycogenesis." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Gastric acid in the presence of somatostatin ______ gastric acid in the presence of gastrin." ,
+					"choices": [
+						"Greater than" ,
+						"Less than" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Put the following in the correct order of progression involved in lipid digestion:<br>1. Formation of bile acids<br>2. Pancreatic lipase activity<br>3. Emulsification of lipids<br>4. Formation of bile salts<br>" ,
+					"choices": [
+						"1 , 4 , 3 , 2" ,
+						"1 , 4 , 2 , 3" ,
+						"3 , 1 , 4 , 2" ,
+						"3 , 1 , 4 , 2" ,
+						"4 , 1 , 3 , 2" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Dipeptides and tripeptides can be absorbed directly into the blood stream." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Where is most water absorbed?" ,
+					"choices": [
+						"Stomach" ,
+						"Large intestine" ,
+						"Small intestine" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What pH is evidence that the buffers have been overwhelmed?" ,
+					"choices": [
+						"pH 7.25" ,
+						"pH 7.35" ,
+						"pH 7.40" ,
+						"pH 7.45" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When acid is produced in the body, buffers _____________ H+ to blunt changes in pH." ,
+					"choices": [
+						"Release" ,
+						"Bind" ,
+						"Are unaffected by" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following describes the arterial blood of a person with diarrhea?" ,
+					"choices": [
+						"Increased pH , decreased $P_{CO_2}$ , increased $HCO_3^-$" ,
+						"Increased pH , increased $P_{CO_2}$ , increased $HCO_3^-$" ,
+						"Decreased pH , decreased $P_{CO_2}$ , decreased $HCO_3^-$" ,
+						"Decreased pH , increased $P_{CO_2}$ , decreased $HCO_3^-$" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "An opiate overdose can cause a _____________." ,
+					"choices": [
+						"Metabolic alkalosis" ,
+						"Metabolic acidosis" ,
+						"Respiratory alkalosis" ,
+						"Respiratory acidosis" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following would be observed in partially compensated metabolic alkalosis?<br>[ $HCO_3^-$ ]	$P_{CO_2}$		pH" ,
+					"choices": [
+						"17                   19                7.90" ,
+						"31                   80                7.20" ,
+						"10                   30                7.15" ,
+						"36                   50                7.70" ,
+						"30                   40                7.60" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Given these values:  pH = 7.23; $P_{CO_2}$ = 58 mm Hg; [ $HCO_3^-$ ] = 25 mEq/L , how would this disturbance be compensated?" ,
+					"choices": [
+						"Decrease the reabsorption of $HCO_3^-$" ,
+						"Increase the reabsorption of $HCO_3^-$" ,
+						"Hyperventilate" ,
+						"Hypoventilate" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The following arterial blood values indicate a ___________.<br> pH = 7.30     $P_{CO_2}$ = 60mm Hg     $HCO_3^-$ 	= 30mEq / L" ,
+					"choices": [
+						"Respiratory acidosis with partial compensation" ,
+						"Respiratory alkalosis without compensation" ,
+						"Metabolic acidosis with partial compensation" ,
+						"Metabolic alkalosis with partial compensation" ,
+						"Mixed disturbance" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The following arterial blood values indicate a ___________.<br>pH = 7.38     $P_{CO_2}$ = 62mm Hg     $HCO_3^-$ 	= 37mEq / L" ,
+					"choices": [
+						"Respiratory alkalosis with full compensation" ,
+						"Respiratory acidosis with full compensation" ,
+						"Metabolic alkalosis with full compensation" ,
+						"Metabolic acidosis with full compensation" ,
+						"Two of the above" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The following arterial blood values indicate a ___________.<br>pH = 7.09     $P_{CO_2}$ = 58mm Hg    $HCO_3^-$ 	= 17mEq / L" ,
+					"choices": [
+						"Respiratory alkalosis with full compensation" ,
+						"Respiratory acidosis with full compensation" ,
+						"Metabolic alkalosis with full compensation" ,
+						"Metabolic acidosis with full compensation" ,
+						"Mixed disturbance" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+			]
+		};
+	</script>
+</body>
+</html>
