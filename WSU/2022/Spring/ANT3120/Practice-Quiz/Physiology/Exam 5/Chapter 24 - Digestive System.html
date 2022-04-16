@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chapter 24 - Digestive System - Practice Questions</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-0lax{text-align:left;vertical-align:top}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+		<!-- <div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			let url;
+			if ( window.ACTIVE_INDEX === 0 ) {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+			} else {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX ).toString();
+			}
+			console.log( url );
+			window.location.href = url;
+			// history.pushState({
+			// 	id: "question-" + ( window.ACTIVE_INDEX - 1 ).toString() ,
+			// 	source: 'web'
+			// } , url );
+			window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			render_active_card();
+			// if ( window.BACK_IS_RENDERED === false ) {
+			// 	// $( "#card-body-content" ).show();
+			// 	// CHANGED
+			// 	// render_correct_answers();
+			// 	// $( "#row-navigation" ).show();
+			// 	window.BACK_IS_RENDERED = true;
+			// } else {
+			// 	window.BACK_IS_RENDERED = false;
+			// 	console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			// 	window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			// 	if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			// 	render_active_card();
+			// }
+
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+				window.ACTIVE_INDEX = ( window.ACTIVE_INDEX + 1 );
+				if ( window.ACTIVE_INDEX > ( window.DECK.questions.length - 1 ) ) { window.ACTIVE_INDEX = 0; }
+				let url;
+				if ( window.ACTIVE_INDEX === ( window.DECK.questions.length ) ) {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+				} else {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX + 1 ).toString();
+				}
+				console.log( url );
+				window.location.href = url;
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			$( "#card-title-content" ).empty();
+			// console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.ACTIVE_INDEX ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.ACTIVE_INDEX ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
+			render_katex();
+		}
+		function get_url_question_number() {
+			console.log( window.location.href );
+			window.URL_INDEX = window.location.href.split( "#" );
+			if ( window.URL_INDEX.length > 0 ) {
+				window.URL_INDEX = window.location.href.split( ".html" )[ 1 ].split( "#" );
+				if ( window.URL_INDEX.length > 0 ) {
+					window.URL_INDEX = window.URL_INDEX[ 1 ];
+					return window.URL_INDEX;
+				}
+			}
+			return false;
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.ACTIVE_INDEX = 0;
+			if ( get_url_question_number() !== false ) {
+				if ( window.URL_INDEX !== window.ACTIVE_INDEX ) {
+					window.ACTIVE_INDEX = ( parseInt( window.URL_INDEX ) - 1 );
+					console.log( window.ACTIVE_INDEX );
+				}
+			} else {
+				console.log( "no url question number set" );
+			}
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			// $( "#current-card-number" ).text( `${window.ACTIVE_INDEX + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/4c35aea0-b77e-4517-aaf9-ac83c574ed1b?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_title": "Chapter 24 - Digestive System" ,
+			"questions": [
+				{
+					"prompt": "Which of the following is an accessory organ of the digestive tract?" ,
+					"choices": [
+						"Pharynx" ,
+						"Stomach" ,
+						"Liver" ,
+						"Large Intestine" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT an accessory organ of the digestive tract?" ,
+					"choices": [
+						"Esophagus" ,
+						"Salivary glands" ,
+						"Pancreas" ,
+						"Gallbladder" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which is the correct order of the regions of the digestive tract from superior to inferior?" ,
+					"choices": [
+						"Pharynx, esophagus, large intestine, small intestine" ,
+						"Oral cavity, stomach, small intestine, large intestine" ,
+						"Stomach, esophagus, large intestine, small intestine" ,
+						"Anus, large intestine, stomach, esophagus" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following organs is part of the digestive tract?" ,
+					"choices": [
+						"Salivary gland" ,
+						"Liver" ,
+						"Gallbladder" ,
+						"Stomach" ,
+						"Pancreas"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following is a function of the digestive system?" ,
+					"choices": [
+						"Cellular respiration" ,
+						"Food selection" ,
+						"Elimination of undigested food" ,
+						"Regulation of blood pH" ,
+						"Integration and coordination of other systems"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The movement of food through the digestive is ________." ,
+					"choices": [
+						"segmentation" ,
+						"propulsion" ,
+						"mixing" ,
+						"mastication" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a type of propulsion in the digestive tract?" ,
+					"choices": [
+						"Peristalsis" ,
+						"Mass movement" ,
+						"Deglutition" ,
+						"Segmental contraction" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "A mixing contraction in the small intestine is called ________." ,
+					"choices": [
+						"peristalsis" ,
+						"segmental contraction" ,
+						"deglutition" ,
+						"mass movement" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The movement of molecules out of the digestive tract into circulation or the lymphatic system is ________." ,
+					"choices": [
+						"secretion" ,
+						"peristalsis" ,
+						"chemical digestion" ,
+						"absorption" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which digestive activity is NOT correctly matched to its location?" ,
+					"choices": [
+						"Killing microorganisms with lysozyme – stomach" ,
+						"Digestion of carbohydrates – mouth" ,
+						"Absorption of nutrients – small intestine" ,
+						"Production of mucus – esophagus" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a function of the stomach?" ,
+					"choices": [
+						"Storage" ,
+						"Protein digestion" ,
+						"Absorption of aspirin" ,
+						"Segmental contractions" ,
+						""
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a function of the small intestine?" ,
+					"choices": [
+						"Mastication of food" ,
+						"Absorption of nutrients" ,
+						"Complete digestion of food" ,
+						"Mixing by segmental contractions" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Arrange the following in proper sequence as they occur first in the body.<br>(1) Digestions<br>(2) Elimination<br>(3) Ingestion<br>(4) Absorption" ,
+					"choices": [
+						"3 , 4 , 2 , 1" ,
+						"1 , 4 , 3 , 2" ,
+						"4 , 1 , 2 , 3" ,
+						"3 , 4 , 1 , 2" ,
+						"3 , 1 , 4 , 2"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Diffusion and active transport are likely to be important in" ,
+					"choices": [
+						"mastication of food." ,
+						"absorption of food." ,
+						"elimination of undigested food." ,
+						"propulsion of food through the digestive tract." ,
+						"mixing of food."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following occurs in the large intestine?" ,
+					"choices": [
+						"Chemical digestion" ,
+						"Mass movements" ,
+						"Mastication" ,
+						"Mixing waves" ,
+						"Neutralization"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "In order to remove a tumor in the muscular tunic of the stomach, a surgeon must cut through the ________." ,
+					"choices": [
+						"lamina propria" ,
+						"submucosa" ,
+						"serosa" ,
+						"mucosa" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The muscularis layer in the wall of the digestive tract is" ,
+					"choices": [
+						"skeletal muscle throughout the tract, especially in the large intestine." ,
+						"the layer of the digestive tract wall that contains capillaries." ,
+						"in direct contact with the food that is consumed." ,
+						"composed of a layer of circular smooth muscle fibers and a layer of longitudinal smooth muscle fibers." ,
+						"connective tissue and the peritoneum."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The enteric plexus" ,
+					"choices": [
+						"is found in the mucosa." ,
+						"consists of the myenteric plexus and the celiac plexus." ,
+						"contains sympathetic neurons and fibers." ,
+						"controls movement and secretion of the digestive tract." ,
+						"is a valve in the GI tract."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which layer of the digestive tract is in direct contact with ingested food?" ,
+					"choices": [
+						"Mucosa" ,
+						"Muscularis" ,
+						"Submucosa" ,
+						"Serosa" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is correctly matched?" ,
+					"choices": [
+						"Mucosa – controls peristalsis" ,
+						"Serosa – contains an extensive supply of nerves and blood vessels" ,
+						"Submucosa – lamina propria" ,
+						"Serosa – increased surface area" ,
+						"Muscularis – responsible for peristalsis"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The myenteric plexus is found in the ________ of the digestive tract wall." ,
+					"choices": [
+						"mucosa" ,
+						"serosa" ,
+						"submucosa" ,
+						"muscularis" ,
+						"adventitia"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The enteric plexus" ,
+					"choices": [
+						"is found in the mucosa." ,
+						"consists of the myenteric plexus and the celiac plexus." ,
+						"helps control movement and secretions of the digestive tract." ,
+						"contains parasympathetic neurons." ,
+						"Both \"Helps control movement and secretions of the digestive tract\" and \"Contains parasympathetic neurons\" are correct"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "What is the function of interstitial cells of the myenteric plexus?" ,
+					"choices": [
+						"Chemoreceptors that detect the chemical composition of food" ,
+						"Production of mucus for lubrication and protection" ,
+						"Pacemaker cells that promote rhythmic contractions of the smooth muscle" ,
+						"Release of enzymes for chemical digestion" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Secretions that are added as food moves through the GI tract assist in" ,
+					"choices": [
+						"liquefying and digesting the food." ,
+						"vitamin A and D production and storage." ,
+						"distribution of nutrients throughout the body." ,
+						"insulin production." ,
+						"bile production."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What is the function of enteric sensory neurons?" ,
+					"choices": [
+						"Detect changes in chemical composition of digestive tract contents" ,
+						"Stimulate or inhibit smooth muscle contraction in the digestive tract" ,
+						"Stimulate or inhibit glandular secretion in the digestive tract" ,
+						"Detect stretch of the digestive tract wall" ,
+						"Both \"Detect changes in chemical composition of digestive tract contents\" and \"Detect stretch of the digestive tract wall\" are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Parasympathetic nerves extend to the digestive tract through the ________ nerve." ,
+					"choices": [
+						"gastric" ,
+						"cardiac" ,
+						"vagus" ,
+						"accessory" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The enteric nervous system acts independently of the CNS to control local reflexes in the digestive tract." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which disease is caused by the absence of enteric neurons in the distal large intestine?" ,
+					"choices": [
+						"Hirschsprung disease" ,
+						"Multiple endocrine neoplasia type 2" ,
+						"Spastic colon" ,
+						"Gastroenteritis" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What are the two major neurotransmitters of the enteric nervous system?" ,
+					"choices": [
+						"Epinephrine and serotonin" ,
+						"Epinephrine and norepinephrine" ,
+						"Acetylcholine and epinephrine" ,
+						"Norepinephrine and acetylcholine" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The role of acetylcholine in the digestive tract is to ________, while the role of norepinephrine is to ________." ,
+					"choices": [
+						"stimulate; stimulate" ,
+						"stimulate; inhibit" ,
+						"inhibit; inhibit" ,
+						"inhibit; stimulate" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What is the role of serotonin in the digestive tract?" ,
+					"choices": [
+						"Decrease nausea" ,
+						"Stimulate motility" ,
+						"Hormone release" ,
+						"Inhibit motility" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The abdominal cavity is lined with ________." ,
+					"choices": [
+						"the omental bursa" ,
+						"mesenteries" ,
+						"the greater omentum" ,
+						"parietal peritoneum" ,
+						"superficial fascia"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following organs is retroperitoneal?" ,
+					"choices": [
+						"Pancreas" ,
+						"Ascending colon" ,
+						"Duodenum" ,
+						"Descending colon" ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Abdominal organs that lie against the body wall and have no mesenteries are said to be ________." ,
+					"choices": [
+						"retroperitoneal" ,
+						"antiperitoneal" ,
+						"falciperitoneal" ,
+						"hyperperitoneal" ,
+						"mesoperitoneal"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A large amount of adipose tissue accumulates in the ________." ,
+					"choices": [
+						"greater omentum" ,
+						"lesser omentum" ,
+						"coronary ligament" ,
+						"sigmoid mesocolon" ,
+						"visceral peritoneum"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A man had a gunshot wound in his abdomen. The bullet passed through his anterior body and lodged inside the transverse colon. Which layers did the bullet pass through to arrive at the location?<br>(1) Parietal Peritoneum<br>(2) Visceral Peritoneum" ,
+					"choices": [
+						"1 , 2" ,
+						"1 , 2 , 1 , 2" ,
+						"1 , 2 , 2 , 1" ,
+						"1 , 2 , 2 , 2" ,
+						"2 , 1 , 1 , 1"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following attaches the liver to the anterior abdominal wall?" ,
+					"choices": [
+						"Greater omentum" ,
+						"Lesser omentum" ,
+						"Transverse mesocolon" ,
+						"Falciform ligament" ,
+						"Round ligament"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The oral cavity" ,
+					"choices": [
+						"opens into the nasopharynx." ,
+						"directly connects with the esophagus." ,
+						"contains the parotid salivary glands." ,
+						"has boundaries that include the lips, palate, and cheeks." ,
+						"is lined with cuboidal epithelium."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The lips, cheek, and tongue all aid in ________." ,
+					"choices": [
+						"speech and swallowing" ,
+						"mastication, speech, and swallowing" ,
+						"mastication and swallowing" ,
+						"mastication and sense of taste" ,
+						"deglutition and peristalsis"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The tongue" ,
+					"choices": [
+						"secretes saliva." ,
+						"plays a major role in swallowing." ,
+						"contains a lot of connective and lymphatic tissues." ,
+						"is attached to the hard palate." ,
+						"functions in deglutition apnea."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is associated with the tongue?" ,
+					"choices": [
+						"Uvula" ,
+						"Constrictor muscles" ,
+						"Papillae and taste buds" ,
+						"Periodontal ligament" ,
+						"Fauces"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What muscle forms the lips?" ,
+					"choices": [
+						"Buccinator muscle" ,
+						"Orbicularis oculi muscle" ,
+						"Orbicularis oris muscle" ,
+						"Labial frenulum muscle" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What muscle forms the cheek?" ,
+					"choices": [
+						"Buccinator" ,
+						"Orbicularis oculi" ,
+						"Orbicularis oris" ,
+						"Zygomaticus" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following would inhibit normal movements of the tongue?" ,
+					"choices": [
+						"Swollen lips" ,
+						"Decrease in number of taste budsLingual frenulum extending to tip of tongue" ,
+						"Decrease in number of taste buds" ,
+						"Loss of all teeth" ,
+						"Swollen tonsils"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Lipid-soluble drugs placed under the tongue" ,
+					"choices": [
+						"are more easily swallowed." ,
+						"can be detected by taste buds." ,
+						"are quickly dissolved and absorbed." ,
+						"are then easy to chew." ,
+						"are not readily absorbed."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A swollen uvula might interfere with which of the following?" ,
+					"choices": [
+						"Mastication" ,
+						"Deglutition and breathing" ,
+						"Chemical digestion" ,
+						"Chemical digestion" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What is the function of the intrinsic muscles of the tongue?" ,
+					"choices": [
+						"Sticking the tongue out" ,
+						"Moving the tongue side to side" ,
+						"Changing the tongue shape during swallowing" ,
+						"Retracting the tongue" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a necessary function of the tongue?" ,
+					"choices": [
+						"Swallowing" ,
+						"Chewing" ,
+						"Taste" ,
+						"Speech" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Inflammation of the gums is called ________." ,
+					"choices": [
+						"dental caries" ,
+						"pyorrhea" ,
+						"halitosis" ,
+						"gingivitis" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Saliva" ,
+					"choices": [
+						"is produced only when there is food in the mouth." ,
+						"increases ulceration in the mouth." ,
+						"is responsible for peristalsis in the mouth." ,
+						"moistens food and begins starch digestion in the mouth." ,
+						"does not prevent bacterial infection in the mouth."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following components of saliva is mismatched with its function?" ,
+					"choices": [
+						"Mucin – lubricant" ,
+						"Lysozyme – antibacterial properties" ,
+						"Bicarbonate – neutralizes acid" ,
+						"IgA – prevents infection" ,
+						"Salivary amylase – begins protein digestion"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The digestive functions performed by saliva and salivary amylase respectively are ________." ,
+					"choices": [
+						"flushing and protein digestion" ,
+						"swallowing and lipid digestion" ,
+						"peristalsis and polysaccharide digestion" ,
+						"moistening and starch digestion" ,
+						"None of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Salivary gland secretion is primarily controlled by the" ,
+					"choices": [
+						"facial and glossopharyngeal nerves." ,
+						"vagus nerve." ,
+						"taste centers of the medulla." ,
+						"intercostal nerves." ,
+						"trigeminal nerve."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "How much saliva is generally produced each day?" ,
+					"choices": [
+						"½ - 1 L" ,
+						"1 - 1½ L" ,
+						"2 - 3 L" ,
+						"4 - 5 L" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Mastication" ,
+					"choices": [
+						"increases the surface area of food particles." ,
+						"decreases the efficiency of digestion." ,
+						"occurs in both the mouth and stomach." ,
+						"is never under voluntary control." ,
+						"decreases the surface area of food particles."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The epiglottis covers the opening into the larynx during the ________ phase of swallowing." ,
+					"choices": [
+						"voluntary" ,
+						"pharyngeal" ,
+						"esophageal" ,
+						"gastric" ,
+						"oral"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is the correct order for the phases of deglutition?" ,
+					"choices": [
+						"Pharyngeal, voluntary, esophageal" ,
+						"Esophageal, pharyngeal, voluntary" ,
+						"Voluntary, pharyngeal, esophageal" ,
+						"Voluntary, esophageal, pharyngeal" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following statements regarding swallowing is true?" ,
+					"choices": [
+						"The voluntary phase begins in the pharynx." ,
+						"In the pharyngeal phase, food is moved through the pharynx." ,
+						"The uvula rises during the esophageal phase." ,
+						"Peristalsis occurs in all phases of swallowing." ,
+						"Breathing occurs during swallowing."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What moves the bolus during the esophageal phase of deglutition?" ,
+					"choices": [
+						"Pharyngeal constriction" ,
+						"Peristalsis" ,
+						"The tongue" ,
+						"Segmentation" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What prevents the bolus from entering the larynx during deglutition?" ,
+					"choices": [
+						"Epiglottis" ,
+						"Uvula" ,
+						"Tongue" ,
+						"Upper esophageal sphincter" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following might happen if a person begins laughing while swallowing a liquid?" ,
+					"choices": [
+						"Laryngeal constriction forces liquid through the pharynx." ,
+						"Relaxation of the soft palate allows liquid to enter the nasal cavity." ,
+						"The tongue might be swallowed." ,
+						"Nothing; swallowing will be normal" ,
+						"Peristalsis will not begin."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The esophagus" ,
+					"choices": [
+						"extends from the fauces to the stomach." ,
+						"has cartilage in its walls to keep it from collapsing." ,
+						"produces two enzymes that digest proteins." ,
+						"has upper and lower sphincters to regulate movement of food." ,
+						"has thin walls of connective tissue."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following cell types of the stomach is correctly matched with its function?" ,
+					"choices": [
+						"Mucous cells – produce intrinsic factor" ,
+						"Parietal cells – produce hydrochloric acid" ,
+						"Chief cells – produce mucus" ,
+						"Endocrine cells – produce enzymes" ,
+						"Chief cells – produce hormones"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following regions of the stomach is correctly matched with its description?" ,
+					"choices": [
+						"Body - portion closest to the esophagus" ,
+						"Pylorus - the most inferior portion of the stomach" ,
+						"Fundus - opening from the stomach into the duodenum" ,
+						"Cardiac region - the largest portion of the stomach" ,
+						"Pyloric opening - opening from the esophagus"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Inflammation of the stomach mucosa in the area superior to the pyloric sphincter is most appropriately referred to as ________." ,
+					"choices": [
+						"esophagitis" ,
+						"a duodenal ulcer" ,
+						"a hiatal hernia" ,
+						"gastric ulcer" ,
+						"indigestion"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Reflux of gastric contents into the esophagus occurs because of" ,
+					"choices": [
+						"relaxation of the cardiac sphincter." ,
+						"contraction of the pyloric sphincter." ,
+						"spasms of the submucosal layer of the stomach wall." ,
+						"increased hydrochloric acid production by the parietal cells." ,
+						"increased amounts of mucus produced by the stomach"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Inability of the pyloric sphincter to open would prevent" ,
+					"choices": [
+						"food from entering the stomach" ,
+						"stomach acid from being released." ,
+						"digestive enzymes from being released." ,
+						"food from entering the small intestine" ,
+						"the making of chyme"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following are secreted by the stomach?" ,
+					"choices": [
+						"Amylase and lipase" ,
+						"Pepsinogen and intrinsic factor" ,
+						"Bile and lipase" ,
+						"Trypsin and amylase" ,
+						"Bicarbonate and secretin"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Why doesn't the stomach digest itself?" ,
+					"choices": [
+						"The stomach wall lacks proteins so enzymes won't attack it." ,
+						"The digestive enzymes in the stomach aren't efficient enough." ,
+						"The stomach lining is too tough to be digested." ,
+						"The stomach wall is protected by large amounts of mucus." ,
+						"The stomach is protected by HCl."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Intrinsic factor" ,
+					"choices": [
+						"increases gastric motility." ,
+						"causes the release of stomach acid." ,
+						"facilitates the absorption of vitamin B<sub>12</sub>" ,
+						"protects the stomach lining from the effects of stomach acid" ,
+						"stimulates the synthesis of DNA."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following events occurs because of the low pH of the stomach?" ,
+					"choices": [
+						"Activation of salivary amylase" ,
+						"Enhanced carbohydrate digestion" ,
+						"Proper environment for functioning of pepsin" ,
+						"Protein synthesis" ,
+						"Lipid digestion"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The formation of HCl in the stomach involves the" ,
+					"choices": [
+						"active transport of H<sup>+</sup> from parietal cells into the lumen of the stomach" ,
+						"exchange of Na<sup>+</sup> for H<sup>+</sup> in the transport process" ,
+						"active transport of Cl<sup>-</sup> from parietal cells into the lumen of the stomach" ,
+						"exchange of Na<sup>+</sup> and bicarbonate" ,
+						"the combination of CO<sub>2</sub> and water"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Assume we could alter the conditions in the duodenum. Which of the following would be consistent with inserting a large volume of highly acidic chyme which contained a large amount of fat?<br>(1) Decreased gastric acid secretion<br>(2) Increased bile production<br>(3) Increased pancreatic bicarbonate production and pancreatic enzyme secretion<br>(4) Increased secretin and cholecystokinin" ,
+					"choices": [
+						"1 , 2 , 3 , 4" ,
+						"1 , 2 , 3" ,
+						"2 , 3 , 4" ,
+						"1 , 3 , 4" ,
+						"1 , 2 , 4"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Pepsinogen" ,
+					"choices": [
+						"is secreted by parietal cells." ,
+						"is activated by salivary amylase in swallowed food." ,
+						"is packaged in zymogen granules" ,
+						"operates optimally at a pH of 5 or more." ,
+						"helps to form peptide bonds."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Anticipation of eating food causes an increase in secretion of gastric juice. This phase of gastric secretion is called the ________ phase." ,
+					"choices": [
+						"cephalic" ,
+						"gastric" ,
+						"intestinal" ,
+						"pancreatic" ,
+						"conscious"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The gastric phase of gastric secretion" ,
+					"choices": [
+						"decreases the release of gastrin in the stomach" ,
+						"is triggered by taste, sight, thought, or smell of food." ,
+						"is mediated by impulses on sympathetic nerves." ,
+						"leads to the greatest volume of gastric secretion." ,
+						"leads to the least volume of gastric secretion."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The distention of the stomach by food is the primary stimulus to begin the ________ phase of gastric secretion." ,
+					"choices": [
+						"cephalic" ,
+						"gastric" ,
+						"intestinal" ,
+						"cystic" ,
+						"hepatic"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The intestinal phase of gastric secretion" ,
+					"choices": [
+						"is controlled by the entrance of acidic chyme into the duodenum." ,
+						"leads to increased gastric secretion if duodenal pH falls below 2." ,
+						"only stimulates gastric secretion." ,
+						"will decrease gastric secretion when gastrin is released by the duodenum" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following would inhibit both gastric secretion and gastric motility?" ,
+					"choices": [
+						"Vagal stimulation" ,
+						"Chewing and swallowing food" ,
+						"Cholecystokinin (CCK)" ,
+						"Gastrin" ,
+						"Large amounts of fiber in the diet"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following would stimulate gastric secretion?" ,
+					"choices": [
+						"Acidic chyme in duodenum" ,
+						"Secretin" ,
+						"Gastrin" ,
+						"Cholecystokinin" ,
+						"Pepsin"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Fatty acids and certain lipids in the duodenum initiate the release of ________." ,
+					"choices": [
+						"secretin and gastrin" ,
+						"cholecystokinin (CCK)" ,
+						"gastrin and histamine" ,
+						"somatostatin and CCK" ,
+						"insulin and glucagon"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The enterogastric reflex can be triggered by" ,
+					"choices": [
+						"distention of the duodenal wall." ,
+						"the presence of food in the stomach." ,
+						"increased pH in the duodenum." ,
+						"the cerebral cortex." ,
+						"the hormone secretin."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Food in the stomach is squeezed and mixed with gastric juices, forming a semiliquid called ________." ,
+					"choices": [
+						"bolusin" ,
+						"chyme" ,
+						"bile" ,
+						"phlegm" ,
+						"feces"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The pyloric pump" ,
+					"choices": [
+						"mixes stomach contents for digestion." ,
+						"causes hunger contractions." ,
+						"moves chyme through a partially closed pyloric opening." ,
+						"causes rugae to flatten." ,
+						"opens the pyloric sphincter complete"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Duodenal gland secretion prevents" ,
+					"choices": [
+						"digestive enzyme release." ,
+						"release of bile from the liver." ,
+						"irritation of the duodenal mucosa by acidic chyme and digestive enzymes." ,
+						"the release of insulin." ,
+						"peristalsis."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Gastritis, peptic ulcers, and gastric cancer can all be caused by" ,
+					"choices": [
+						"<i>Helicobacter pylori</i> , a bacterium" ,
+						"increased secretion of gastric bicarbonate." ,
+						"pH of the stomach contents continuously greater than 4." ,
+						"increased mucus production by the neck cells." ,
+						"None of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Enzymes secreted by the small intestine include ________." ,
+					"choices": [
+						"disaccharidases" ,
+						"secretin" ,
+						"cholecystokinin" ,
+						"bile" ,
+						"histamine"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The hepatopancreatic ampulla is formed by the union of the" ,
+					"choices": [
+						"pancreatic duct with the lacteals." ,
+						"greater duodenal papilla with the lesser duodenal papilla." ,
+						"common bile duct and pancreatic duct" ,
+						"cystic duct and interlobular duct." ,
+						"hepatic ducts and cystic ducts."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following cell types is correctly matched with its function?" ,
+					"choices": [
+						"Endocrine cells – produce mucus" ,
+						"Absorptive cells – produce digestive enzymes" ,
+						"Granular cells – absorb nutrients" ,
+						"Goblet cells – produce hormones" ,
+						"Granular cells – produce granules"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Blockage of the ileocecal valve would prevent" ,
+					"choices": [
+						"pancreatic juice from entering the duodenum." ,
+						"bile from entering the duodenum." ,
+						"lymph from entering the jejunum." ,
+						"chyme from entering the ileum" ,
+						"chyme from entering the large intestine"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Where does the majority of nutrient absorption occur?" ,
+					"choices": [
+						"The stomach and duodenum" ,
+						"The stomach and duodenum" ,
+						"The jejunum and duodenum" ,
+						"The ileum and jejunum" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What is the purpose of segmental contractions of the small intestine?" ,
+					"choices": [
+						"Propelling the chyme forward" ,
+						"Mixing of intestinal contents" ,
+						"Moving intestinal contents into the colon" ,
+						"Stretching the intestinal wall" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following will stimulate intestinal motility?" ,
+					"choices": [
+						"Distension of the intestinal wall" ,
+						"Low pH" ,
+						"Presence of amino acids" ,
+						"All of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The gallbladder ________." ,
+					"choices": [
+						"produces bile" ,
+						"is attached to the pancreas" ,
+						"stores bile" ,
+						"produces secretin" ,
+						"breaks down red blood cells"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Nutrient-rich blood from the digestive tract comes to the liver by way of the ________." ,
+					"choices": [
+						"hepatic artery" ,
+						"hepatic portal vein" ,
+						"hepatic vein" ,
+						"inferior vena cava" ,
+						"celiac trunk"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is a function of the hepatocytes?" ,
+					"choices": [
+						"Produce digestive enzymes" ,
+						"Synthesize hormones" ,
+						"Produce hydrochloric acid" ,
+						"Synthesize bile" ,
+						"Regulate pH"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Bile is produced by cells of the ________." ,
+					"choices": [
+						"duodenum" ,
+						"liver" ,
+						"gallbladder" ,
+						"pancreas" ,
+						"hepatopancreatic ampulla"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Damage to the liver would hamper digestion of ________." ,
+					"choices": [
+						"carbohydrates" ,
+						"lipids" ,
+						"proteins" ,
+						"disaccharides" ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The liver" ,
+					"choices": [
+						"produces secretions that help neutralize stomach acids and emulsify fats." ,
+						"produces several digestive enzymes." ,
+						"stores vitamin C." ,
+						"receives oxygenated blood from the portal vein." ,
+						"cannot synthesize new molecules."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Bile secretion is" ,
+					"choices": [
+						"performed continuously by the liver." ,
+						"is stimulated by sympathetic nerves." ,
+						"is stimulated by decreased amounts of bile salts." ,
+						"stimulated by increased vitamin B<sub>12</sub> storage" ,
+						"controlled by the gallbladder"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Bile" ,
+					"choices": [
+						"digests proteins in the small intestine." ,
+						"emulsifies fats in the small intestine." ,
+						"is made by the gallbladder and stored by the liver." ,
+						"activates trypsin in the small intestine." ,
+						"activates the pancreas."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Functions of the liver include ________." ,
+					"choices": [
+						"production of many blood proteins" ,
+						"interconversion of nutrients" ,
+						"detoxification of harmful chemicals" ,
+						"bile production" ,
+						"All of the choices are correct"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Hepatocytes" ,
+					"choices": [
+						"phagocytize cells." ,
+						"form phospholipids and hydroxylate vitamin D." ,
+						"convert ammonia to urea." ,
+						"remove sugar from the blood and store it as glycogen." ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT part of a portal triad?" ,
+					"choices": [
+						"Hepatic artery" ,
+						"Hepatic duct" ,
+						"Hepatic portal vein" ,
+						"Central vein" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What is the function of the gallbladder?" ,
+					"choices": [
+						"Produce bile" ,
+						"Store bicarbonate" ,
+						"Add pigment to bile" ,
+						"Store and concentrate bile" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What is the main stimulus for bile secretion from the gallbladder?" ,
+					"choices": [
+						"Cholecystokinin (CCK)" ,
+						"Vagal stimulation" ,
+						"Secretin" ,
+						"Large amounts of protein in the chyme" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The longitudinal layer of smooth muscle in the large intestinal wall forms three bands called the ________." ,
+					"choices": [
+						"teniae coli" ,
+						"haustra" ,
+						"coli longitudini" ,
+						"omental appendages" ,
+						"rugae"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The major secretion of the large intestine is ________." ,
+					"choices": [
+						"bile" ,
+						"hormones" ,
+						"mucus" ,
+						"vitamins" ,
+						"bacteria"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following apply to the small intestine?" ,
+					"choices": [
+						"Secretions from the liver and pancreas enter this organ." ,
+						"Segmentation contractions occur in this organ." ,
+						"Both digestion and absorption occur in this organ." ,
+						"Mixing and propulsion of chyme." ,
+						"All of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Cholecystokinin is produced by endocrine cells of the ________." ,
+					"choices": [
+						"stomach" ,
+						"small intestine" ,
+						"pancreas" ,
+						"large intestine" ,
+						"liver"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is mismatched?" ,
+					"choices": [
+						"Segmental contractions – mix intestinal contents" ,
+						"Peristaltic contractions – propel intestinal contents along G.I. tract" ,
+						"Sympathetic nerve fibers – increase intestinal motility" ,
+						"Distention of intestinal wall – increases intestinal motility" ,
+						"Parasympathetic nerve fibers – stimulate secretion of pancreatic juices"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The gallbladder contracts in response to the hormone ________." ,
+					"choices": [
+						"secretin" ,
+						"cholecystokinin (CCK)" ,
+						"gastrin" ,
+						"somatostatin" ,
+						"insulin"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When chyme enters the duodenum, ________ is released and stimulates the pancreas to secrete bicarbonates." ,
+					"choices": [
+						"gastrin" ,
+						"secretin" ,
+						"insulin" ,
+						"cholecystokinin" ,
+						"glucagon"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The digestive juice that contains enzymes capable of digesting all major food groups is ________." ,
+					"choices": [
+						"gastric juice" ,
+						"biliary juice" ,
+						"salivary juice" ,
+						"pancreatic juice" ,
+						"hepatic juice"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following enzymes is found in inactive form in pancreatic juice?" ,
+					"choices": [
+						"Bile" ,
+						"Trypsin" ,
+						"Sucrase" ,
+						"Pepsin" ,
+						"Lipase"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following enzymes is mismatched with its substrate?" ,
+					"choices": [
+						"Pepsin – protein" ,
+						"Amylase – starch" ,
+						"Trypsin – nucleic acids" ,
+						"Lipase – fat" ,
+						"Deoxyribonucleases – DNA"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Enterokinase ________." ,
+					"choices": [
+						"is a hormone" ,
+						"triggers the release of bile from the gallbladder" ,
+						"activates trypsinogen" ,
+						"increases duodenal motility" ,
+						"digests proteins"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Trypsin can activate" ,
+					"choices": [
+						"pepsinogen." ,
+						"chymotrypsinogen." ,
+						"angiotensinogen." ,
+						"endopeptidase." ,
+						"lipase."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "A proteolytic enzyme secreted by the pancreas is ________." ,
+					"choices": [
+						"ribonuclease" ,
+						"chymotrypsin" ,
+						"amylase" ,
+						"enterogastrone" ,
+						"pancreatic lipase"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following statements concerning cholecystokinin is correct?" ,
+					"choices": [
+						"Cholecystokinin stimulates relaxation of the gallbladder." ,
+						"Cholecystokinin stimulates secretion of mucus by the gastric glands" ,
+						"Cholecystokinin stimulates the pancreas to release an enzyme-rich solution." ,
+						"Cholecystokinin stimulates the intestine to secrete trypsin." ,
+						"Cholecystokinin stimulates gastric secretions."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The mucosa of the colon" ,
+					"choices": [
+						"contains many mucus-secreting goblet cells." ,
+						"exchanges Na<sup>+</sup> for Cl<sup>−</sup>" ,
+						"actively secretes Na<sup>+</sup> for Cl<sup>−</sup>" ,
+						"produces enzymes that complete lipid digestion." ,
+						"consists of stratified columnar epithelium."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "One of the major functions of the large intestine is to" ,
+					"choices": [
+						"produce vitamin C." ,
+						"regulate the release of bile" ,
+						"convert chyme to feces." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Feces consist of ________." ,
+					"choices": [
+						"water" ,
+						"undigestible food" ,
+						"bacteria" ,
+						"sloughed-off epithelial cells" ,
+						"All of the answers are correct"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Gastrocolic reflexes are reflexes that" ,
+					"choices": [
+						"empty the stomach." ,
+						"release gastric secretions into the stomach" ,
+						"cause mass movements of the colon when food is present in the stomach." ,
+						"lead to mass movements of the colon in response to food in the duodenum." ,
+						"stop movement in the colon."
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Strong peristaltic contractions in the large intestine are called ________." ,
+					"choices": [
+						"segmental contractions" ,
+						"churning contractions" ,
+						"mass movements" ,
+						"rectal propulsions" ,
+						"defecation"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The defecation reflex" ,
+					"choices": [
+						"is stimulated by distention of the rectum." ,
+						"inhibits further peristalsis in the rectum and lower colon." ,
+						"constricts the internal anal sphincter." ,
+						"lasts several hours." ,
+						"None of the choices are correct."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following does NOT illustrate digestion?" ,
+					"choices": [
+						"Polysaccharides → disaccharides" ,
+						"Fat → fatty acids and glycerol" ,
+						"CO<sub>2</sub> and H<sub>2</sub>O → carbohydrates" ,
+						"Protein → amino acids" ,
+						"Disaccharides → monosaccharides"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Enzymes for the digestion of disaccharides are produced in the ________." ,
+					"choices": [
+						"mouth" ,
+						"stomach" ,
+						"pancreas" ,
+						"small intestine" ,
+						"liver"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Insulin increases the rate of ________ transport into cells." ,
+					"choices": [
+						"sucrose" ,
+						"fructose" ,
+						"glucose" ,
+						"galactose" ,
+						"lactose"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Enzymes that digest carbohydrates include ________." ,
+					"choices": [
+						"peptidases" ,
+						"amylase, maltase, and sucrase" ,
+						"lipase" ,
+						"maltase and lipase" ,
+						"trypsin and chymotrypsin"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Monosaccharides" ,
+					"choices": [
+						"are emulsified before absorption." ,
+						"are absorbed into lacteals." ,
+						"use a symport process in their absorption" ,
+						"need vitamin C to be absorbed" ,
+						"cannot be absorbed"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "If the thoracic duct were tied off, which of the following classes of nutrients would not enter the circulatory system at their normal rate?" ,
+					"choices": [
+						"Amino acids" ,
+						"Glucose" ,
+						"Lipids" ,
+						"Disaccharides" ,
+						"Monosaccharides"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Emulsification" ,
+					"choices": [
+						"converts small lipid droplets into larger droplets" ,
+						"occurs in the gallbladder." ,
+						"chemically digests lipids." ,
+						"increases surface area for lipid digestion." ,
+						"involves enzymes."
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Small droplets of digested lipids surrounded by bile salts are called ________." ,
+					"choices": [
+						"chylomicrons" ,
+						"micelles" ,
+						"monoglycerides" ,
+						"diglycerides" ,
+						"lacteals"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Chylomicrons" ,
+					"choices": [
+						"are synthesized in intestinal epithelial cells." ,
+						"enter capillaries in the small intestine." ,
+						"help emulsify fats." ,
+						"are a rich source of carbohydrate." ,
+						"are synthesized in the lumen of the small intestines."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Arrange the following events involving lipids in the correct order<br>(1) Absorption of lipids<br>(2) Emulsification<br>(3) Micelle formation<br>(4) Digestion of lipids" ,
+					"choices": [
+						"1 , 2 , 3 , 4" ,
+						"3 , 4 , 2 , 1" ,
+						"4 , 1 , 2 , 3" ,
+						"2 , 4 , 1 , 3" ,
+						"2 , 4 , 3 , 1"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "In comparison to a low-density lipoprotein (LDL), a high density lipoprotein (HDL) contains ________." ,
+					"choices": [
+						"less lipid" ,
+						"less protein" ,
+						"more cholesterol" ,
+						"more carbohydrate" ,
+						"more amino acids"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following lipoproteins contains the highest percentage of cholesterol?" ,
+					"choices": [
+						"LDL" ,
+						"HDL" ,
+						"VLDL" ,
+						"Chylomicron" ,
+						"CDL"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Serum cholesterol levels are solely dependent on a person's dietary intake of cholesterol." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "LDLs are taken into a cell by the process of ________." ,
+					"choices": [
+						"simple diffusion" ,
+						"osmosis" ,
+						"receptor mediated endocytosis" ,
+						"HDL carrier molecules" ,
+						"facilitated diffusion"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A cell needs a receptor in order to absorb LDLs. A disease that interferes with the functioning of these LDL receptors would" ,
+					"choices": [
+						"increase serum cholesterol levels." ,
+						"decrease serum cholesterol levels." ,
+						"halt endocytosis." ,
+						"promote endocytosis." ,
+						"have no effect on serum cholesterol or endocytosis."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following enzymes digests protein?" ,
+					"choices": [
+						"Bile" ,
+						"Pepsin" ,
+						"Isomaltose" ,
+						"Sucrase" ,
+						"Lipase"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Arrange the following in order from largest to smallest.<br>(1) Dipeptide<br>(2) Protein<br>(3) Amino Acid<br>(4) Polypeptide" ,
+					"choices": [
+						"3 , 1 , 4 , 2" ,
+						"4 , 1 , 2 , 3" ,
+						"2 , 4 , 1 , 3" ,
+						"1 , 2 , 3 , 4" ,
+						"2 , 4 , 3 , 1"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is an end product of protein digestion?" ,
+					"choices": [
+						"Glucose" ,
+						"Amino acids" ,
+						"LDL molecules" ,
+						"Micelles" ,
+						"Nucleic acids"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following statements concerning proteins is true?" ,
+					"choices": [
+						"Peptidases are made in the large intestine." ,
+						"Intestinal epithelial cells absorb more dipeptides and tripeptides than single amino acids." ,
+						"The hepatic artery transports amino acids from the small intestine to the liver." ,
+						"Amino acids leave intestinal epithelial cells and enter the lacteals." ,
+						"Protein digestion starts in the duodenum."
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When intestinal chyme is highly concentrated," ,
+					"choices": [
+						"water moves by osmosis into the lumen of the small intestine." ,
+						"water moves by osmosis from the intestinal lumen into the blood." ,
+						"water moves by endocytosis from intestinal lumen into interstitial spaces." ,
+						"water moves by exocytosis from interstitial spaces into the stomach." ,
+						"water does not move."
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "How are ions such as sodium, potassium, calcium, magnesium, and phosphate transported from the intestinal lumen?" ,
+					"choices": [
+						"Passive transport" ,
+						"Osmosis" ,
+						"Diffusion" ,
+						"Active transport" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Most of the water that enters that digestive tract is removed by the body in urine." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following are effects of aging on the digestive system?" ,
+					"choices": [
+						"Blood supply decreases" ,
+						"More likely to develop ulcerations and cancers" ,
+						"Enamel on teeth becomes thinner" ,
+						"All of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Segmental contractions are mixing contractions that occur predominantly in the ________." ,
+					"choices": [
+						"oral cavity" ,
+						"large intestine" ,
+						"esophagus" ,
+						"stomach" ,
+						"small intestine"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "The enteric plexus is composed of the ________ and the ________." ,
+					"choices": [
+						"submucosal plexus; myenteric plexus" ,
+						"submucosal plexus; colonic plexus" ,
+						"myenteric plexus; pancreatic portal" ,
+						"submucosal plexus; pancreatic portal" ,
+						"colonic plexus; pancreatic plexus"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The major types of enteric neurons include all of the following, except" ,
+					"choices": [
+						"neurons that detect changes in chemical composition." ,
+						"neurons that stimulate or inhibit smooth muscle contractions." ,
+						"neurons that connect sensory and motor neurons." ,
+						"neurons that suppress epithelial secretions." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "What is ascites?" ,
+					"choices": [
+						"The excess accumulation of fluid in the abdomen" ,
+						"The increased absorption of water from the chyme in the colon" ,
+						"The increased secretion of digestive enzymes due to nervous stimulation" ,
+						"The rapid elimination of feces due to toxin production" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is not a substance found in saliva?" ,
+					"choices": [
+						"Hydrochloric acid" ,
+						"Bicarbonate ion" ,
+						"Amylase" ,
+						"Mucin" ,
+						"Lysozymes"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The hepatic lobule is a ________ -sided structure with a/an ________ triad at each corner and a central vein located in the center of each lobule." ,
+					"choices": [
+						"6; portal" ,
+						"5; portal" ,
+						"6; venous" ,
+						"5; arterial" ,
+						"6; arterial"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Cholecystokinin and the glossopharyngeal nerve stimulate the release of bile into the small intestine." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "What is the function of bicarbonate when it is secreted by the large intestine?" ,
+					"choices": [
+						"It increases the pH of the feces, which are acidic because of bacterial secretions." ,
+						"It aids in the digestion of proteins." ,
+						"It decreases the pH of feces, which are alkaline because of bacterial secretions." ,
+						"It aids in the digestion of cellulose." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The chemical digestion of the disaccharides occurs in the ________." ,
+					"choices": [
+						"small intestine" ,
+						"large intestine" ,
+						"mouth" ,
+						"stomach" ,
+						"esophagus"
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The enterogastric reflex serves to ________." ,
+					"choices": [
+						"relax the stomach in preparation for swallowed food" ,
+						"stimulate acid and enzyme secretion when food enters the stomach" ,
+						"stimulate intestinal motility when there is food in the stomach" ,
+						"inhibit gastric motility when there is chyme in the small intestine" ,
+						"relax the ileocecal valve when chyme is on its way to the colon"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The ________ synthesizes bile acids by metabolizing ________." ,
+					"choices": [
+						"duodenum; neutral fats" ,
+						"ileum; bilirubin" ,
+						"gallbladder; cholesterol" ,
+						"pancreas; bile salts" ,
+						"liver; cholesterol"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Which of the following enzymes functions at the lowest pH?" ,
+					"choices": [
+						"Salivary amylase" ,
+						"Pancreatic amylase" ,
+						"Pepsin" ,
+						"Trypsin" ,
+						"Dipeptidase"
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Contact digestion takes place in/at the ________." ,
+					"choices": [
+						"gastric pits" ,
+						"surface of the gastric mucosa" ,
+						"intestinal crypts" ,
+						"brush border of the small intestine" ,
+						"cytoplasm in the cells of the small intestine"
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The enzyme(s) called ________ break(s) down the substrate called ________." ,
+					"choices": [
+						"lactase; glucose" ,
+						"peptidases; proteins" ,
+						"lipases; micelles" ,
+						"lactose; lactase" ,
+						"nucleases; nucleotides"
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Amino acids and monosaccharides are absorbed in the ________, and fatty acids are absorbed in the ________." ,
+					"choices": [
+						"small intestine; large intestine" ,
+						"small intestine; liver" ,
+						"stomach; small intestine" ,
+						"stomach; large intestine" ,
+						"small intestine; small intestine"
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Without a properly functioning large intestine a person will have chronic diarrhea." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Sammy is a 67-year-old man that has the following digestive issues: GERD, peptic ulcers, and diarrhea. Which of the following is least likely to be a consequence of Sammy's age?" ,
+					"choices": [
+						"Diarrhea" ,
+						"GERD" ,
+						"Peptic ulcer" ,
+						"Both \"GERD\" and \"peptic ulcer\" are correct" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Harrison loves to entertain his classmates with his strange talents. His newest \"trick\" is to roll his tongue into a tube shape. Which muscles are important for Harrison to perform this trick?" ,
+					"choices": [
+						"Intrinsic muscles of the tongue" ,
+						"Extrinsic muscles of the tongue" ,
+						"Buccinator" ,
+						"Both \"Intrinsic muscles of the tongue\" and \"Buccinator\" are correct." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "During mastication, food molecules are digested as the teeth break chemical bonds." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Oliver received a blow to the left side of his head, just anterior to his ear. Which of the following digestive structures was likely affected?" ,
+					"choices": [
+						"Parotid salivary gland" ,
+						"Submandibular salivary gland" ,
+						"Pharynx" ,
+						"Sublingual salivary gland" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A cracker will \"melt in your mouth\" because of the action of lingual lipase." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "If gases are released as digestion of food begins in the stomach, where is it most likely to accumulate?" ,
+					"choices": [
+						"Body" ,
+						"Fundus" ,
+						"Pyloric" ,
+						"Both \"Fundus\" and \"Pyloric\" are correct" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Celiac disease causes degeneration of the villi of the small intestine. What is a likely affect of this degeneration?" ,
+					"choices": [
+						"Decrease in absorption due to reduced surface area" ,
+						"Increased permeability of the lining of the digestive tract, allowing more material to move into the blood" ,
+						"Lack of lipid absorption as the villi are important for lipid absorption" ,
+						"None of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "George has to have his gallbladder removed. His friend told him he can no longer eat fats because he will no longer produce bile. Is this an accurate description of George's future diet?" ,
+					"choices": [
+						"No; the gallbladder only stores the bile that is produced by the liver." ,
+						"No; bile is involved in protein digestion only." ,
+						"Yes; the gallbladder is the organ that produces bile." ,
+						"Yes; bile must first be stored in the gallbladder before it is functional." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A gallstone has completely blocked flow of bile into the small intestine. Where is the stone most likely lodged?" ,
+					"choices": [
+						"Common bile duct" ,
+						"Cystic duct" ,
+						"Hepatic duct" ,
+						"Pancreatic duct" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Defecation following a meal is usually the result of" ,
+					"choices": [
+						"mass movements stimulated by the gastrocolic and duodenocolic reflexes moving feces towards the rectum." ,
+						"segmentation movements stimulated by the duodenocolic reflexes." ,
+						"peristalsis in the small intestine initiated by entry of chyme into the duodenum" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following statements concerning digestion in the stomach is not true?" ,
+					"choices": [
+						"Salivary amylase will eventually be inactivated in the stomach, halting carbohydrate digestion." ,
+						"Gastric lipase is produced in large volumes, allowing for high levels of lipid digestion." ,
+						"Proteins are digested by HCl only" ,
+						"All of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				}
+			]
+		};
+	</script>
+</body>
+</html>
