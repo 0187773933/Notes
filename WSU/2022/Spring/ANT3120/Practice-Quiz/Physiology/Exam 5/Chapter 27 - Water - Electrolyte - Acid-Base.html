@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chapter 27 - Water - Electrolyte - Acid-Base</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-0lax{text-align:left;vertical-align:top}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+		<!-- <div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			let url;
+			if ( window.ACTIVE_INDEX === 0 ) {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+			} else {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX ).toString();
+			}
+			console.log( url );
+			window.location.href = url;
+			// history.pushState({
+			// 	id: "question-" + ( window.ACTIVE_INDEX - 1 ).toString() ,
+			// 	source: 'web'
+			// } , url );
+			window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			render_active_card();
+			// if ( window.BACK_IS_RENDERED === false ) {
+			// 	// $( "#card-body-content" ).show();
+			// 	// CHANGED
+			// 	// render_correct_answers();
+			// 	// $( "#row-navigation" ).show();
+			// 	window.BACK_IS_RENDERED = true;
+			// } else {
+			// 	window.BACK_IS_RENDERED = false;
+			// 	console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			// 	window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			// 	if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			// 	render_active_card();
+			// }
+
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+				window.ACTIVE_INDEX = ( window.ACTIVE_INDEX + 1 );
+				if ( window.ACTIVE_INDEX > ( window.DECK.questions.length - 1 ) ) { window.ACTIVE_INDEX = 0; }
+				let url;
+				if ( window.ACTIVE_INDEX === ( window.DECK.questions.length ) ) {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+				} else {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX + 1 ).toString();
+				}
+				console.log( url );
+				window.location.href = url;
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			$( "#card-title-content" ).empty();
+			// console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.ACTIVE_INDEX ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.ACTIVE_INDEX ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
+			render_katex();
+		}
+		function get_url_question_number() {
+			console.log( window.location.href );
+			window.URL_INDEX = window.location.href.split( "#" );
+			if ( window.URL_INDEX.length > 0 ) {
+				window.URL_INDEX = window.location.href.split( ".html" )[ 1 ].split( "#" );
+				if ( window.URL_INDEX.length > 0 ) {
+					window.URL_INDEX = window.URL_INDEX[ 1 ];
+					return window.URL_INDEX;
+				}
+			}
+			return false;
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.ACTIVE_INDEX = 0;
+			if ( get_url_question_number() !== false ) {
+				if ( window.URL_INDEX !== window.ACTIVE_INDEX ) {
+					window.ACTIVE_INDEX = ( parseInt( window.URL_INDEX ) - 1 );
+					console.log( window.ACTIVE_INDEX );
+				}
+			} else {
+				console.log( "no url question number set" );
+			}
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			// $( "#current-card-number" ).text( `${window.ACTIVE_INDEX + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/051dfeb6-53d9-41fd-9eb3-816864de9573?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_title": "Chapter 27 - Water - Electrolyte - Acid-Base" ,
+			"questions": [
+				{
+					"prompt": "Which of the following fluid compartments contains the largest volume of water?" ,
+					"choices": [
+						"Plasma" ,
+						"Interstitial compartment" ,
+						"Intracellular compartment" ,
+						"Extracellular compartment",
+						"Lymph" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following fluid compartments contains the smallest volume of water?" ,
+					"choices": [
+						"Plasma" ,
+						"Interstitial compartment" ,
+						"Intracellular compartment" ,
+						"Extracellular compartment",
+						"Cytoplasm" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Synovial fluid is a part of which of the following fluid compartments?" ,
+					"choices": [
+						"Plasma" ,
+						"Interstitial" ,
+						"Intracellular" ,
+						"Extracellular",
+						"Cytoplasm" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following individuals would have the largest percentage of their body weight as water?" ,
+					"choices": [
+						"A 7-month-old female" ,
+						"A lean 35-year-old male athlete" ,
+						"A chunky 52-year-old male athlete" ,
+						"A healthy 88-year-old male",
+						"An adult female marathon runner" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following people would be most severely affected by prolonged vomiting?" ,
+					"choices": [
+						"3-year-old male" ,
+						"15-year-old male" ,
+						"35-year-old male" ,
+						"35-year-old female",
+						"50-year-old male" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Extracellular fluid has a ________." ,
+					"choices": [
+						"higher protein content than intracellular fluid" ,
+						"higher K+ content than intracellular fluid" ,
+						"higher Na+ content than intercellular fluid" ,
+						"higher Mg2+ content than intracellular fluid",
+						"higher number of large organic molecules than intracellular fluid" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The predominant intracellular cation is ________." ,
+					"choices": [
+						"K+" ,
+						"Na+" ,
+						"Ca2+" ,
+						"Mg2+",
+						"Cl-" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The predominant extracellular cation is ________." ,
+					"choices": [
+						"bicarbonate" ,
+						"Na+" ,
+						"Cl-" ,
+						"K+" ,
+						"H+" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The distribution of Na+ and K+ between intracellular and extracellular compartments is ________." ,
+					"choices": [
+						"K+ mainly intracellular; Na+ mainly in extracellular" ,
+						"Na+ mainly intracellular; K+ mainly in extracellular" ,
+						"little of either intracellular but large amounts of both extracellular" ,
+						"equal amounts of both ions, in both intracellular and extracellular fluids" ,
+						"None of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "One difference between the plasma and interstitial fluid is that the plasma has significantly more ________ than interstitial fluid." ,
+					"choices": [
+						"protein" ,
+						"bicarbonate" ,
+						"Cl-" ,
+						"water volume" ,
+						"H+" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Serum electrolyte concentrations are most often expressed as ________." ,
+					"choices": [
+						"mg %" ,
+						"mmHg" ,
+						"mg/dl" ,
+						"mEq/L" ,
+						"None of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The predominant extracellular anion is ________." ,
+					"choices": [
+						"protein" ,
+						"phosphate" ,
+						"bicarbonate" ,
+						"Cl-" ,
+						"Na+" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Where is the highest concentration of bicarbonate ion found?" ,
+					"choices": [
+						"Plasma" ,
+						"Intracellular fluid" ,
+						"Interstitial fluid" ,
+						"Lymph" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Water moves back and forth across the plasma membrane by the process of ________." ,
+					"choices": [
+						"osmosis" ,
+						"filtration" ,
+						"facilitated diffusion" ,
+						"active transport",
+						"endocytosis" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The cation that plays a major role in determining the osmotic pressure of the plasma is ________." ,
+					"choices": [
+						"Na+" ,
+						"K+" ,
+						"Cl-" ,
+						"phosphate",
+						"H+" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The major route of excretion for Na+ ( under normal conditions ) is the _______." ,
+					"choices": [
+						"skin" ,
+						"kidney" ,
+						"GI tract" ,
+						"adrenal cortex",
+						"sweat" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When aldosterone is absent , Na+ reabsorption in the nephron is ________." ,
+					"choices": [
+						"greatly increased" ,
+						"greatly decreased" ,
+						"unchanged" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "As the rate of sweat production increases , the amount of Na+ lost in the urine ________." ,
+					"choices": [
+						"increases" ,
+						"decreases" ,
+						"remains the same" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Receptors sensitive to changes in the osmolality of extracellular fluid are the ________." ,
+					"choices": [
+						"baroreceptors" ,
+						"chemoreceptors" ,
+						"osmoreceptors" ,
+						"pressoreceptors",
+						"proprioreceptors" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Renin is released by the ________." ,
+					"choices": [
+						"lungs" ,
+						"kidney" ,
+						"spleen" ,
+						"liver",
+						"pancreas" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following events occurs <u>last?</u>" ,
+					"choices": [
+						"Release of renin by the kidney" ,
+						"Release of aldosterone by the adrenal cortex" ,
+						"Sodium ion reabsorption by the kidney tubules" ,
+						"Angiotensinogen → angiotensin I",
+						"Angiotensin I → angiotensin II" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The primary regulator of plasma Na+ concentration is ________." ,
+					"choices": [
+						"renin" ,
+						"aldosterone" ,
+						"antidiuretic hormone (ADH)" ,
+						"atrial natriuretic hormone",
+						"insulin" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is most likely to happen to a group of students who relax by drinking a pitcher of their favorite beverage?" ,
+					"choices": [
+						"An increase in urine volume" ,
+						"An increase in urine osmolality" ,
+						"An increase in ADH production" ,
+						"Increased aldosterone secretion",
+						"A decrease in urine volume" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Antidiuretic hormone (ADH)" ,
+					"choices": [
+						"increases plasma osmolality." ,
+						"is secreted by the anterior pituitary." ,
+						"increases water reabsorption in the kidneys." ,
+						"causes the production of a large volume of urine.",
+						"increases urine volume." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "A decrease in plasma osmolality would increase ________." ,
+					"choices": [
+						"ADH production" ,
+						"plasma Na+ levels" ,
+						"renin production" ,
+						"urine production",
+						"thirst" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The stimulus for secretion of atrial natriuretic hormone is increased ________." ,
+					"choices": [
+						"blood osmolality" ,
+						"aldosterone production" ,
+						"blood pressure in atria of heart" ,
+						"blood pressure in the kidneys' afferent arterioles",
+						"blood pressure in the ventricles of the heart." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a principle sensor for thirst regulation?" ,
+					"choices": [
+						"Osmoreceptors in the hypothalamus" ,
+						"Arterial baroreceptors" ,
+						"Juxtaglomerular apparatus" ,
+						"Mouth mucosa",
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Loss of water through diffusion and evaporation from the skin is called ________ and is important in ________ control." ,
+					"choices": [
+						"insensible perspiration; blood volume" ,
+						"insensible perspiration; heat loss" ,
+						"sensible perspiration; blood volume" ,
+						"sensible perspiration; temperature",
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Elevated blood pressure under resting conditions results in increased urinary output because" ,
+					"choices": [
+						"baroreceptors signal the hypothalamus to increase ADH secretion." ,
+						"elevated blood pressure stimulates renin secretion." ,
+						"the amount of angiotensin II formed is increased." ,
+						"aldosterone levels increase.",
+						"baroreceptors signal the hypothalamus to decrease ADH secretion." ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "You've been working outside in the heat and are dripping wet with sweat. Your fluid intake has been minimal as you have been too busy to stop and get a drink. You would expect" ,
+					"choices": [
+						"your blood osmolality to be low." ,
+						"an increase in the production of urine." ,
+						"aldosterone levels to decrease." ,
+						"ADH levels to increase.",
+						"ADH levels to decrease." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Increased ADH secretion could be stimulated by which of the following situations?" ,
+					"choices": [
+						"Increased renal blood flow" ,
+						"Increased blood osmolality" ,
+						"Increased atrial natriuretic hormone production" ,
+						"Increased blood pressure",
+						"Decreased blood osmolality" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Atrial natriuretic hormone increases _________." ,
+					"choices": [
+						"urine volume." ,
+						"ADH secretion." ,
+						"aldosterone secretion." ,
+						"the reabsorption of Na+ ",
+						"blood volume" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which characteristic of the plasma membrane is responsible for maintaining the difference between intracellular and extracellular fluid?" ,
+					"choices": [
+						"Presence of channels in the membrane" ,
+						"Presence of lipids in the membrane" ,
+						"Being selectively permeable" ,
+						"High Na+ concentration inside the cell" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "The composition of extracellular fluid has little affect on intracellular fluid amounts." ,
+					"choices": [
+						"True" ,
+						"False" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following would be expected to cause hyponatremia?" ,
+					"choices": [
+						"High intake of Na+" ,
+						"Increased aldosterone production" ,
+						"Increased urine output" ,
+						"Decreased aldosterone production",
+						"Decreased ADH production" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Oversecretion of aldosterone causes ________." ,
+					"choices": [
+						"hyperkalemia" ,
+						"hypercalcemia" ,
+						"hypernatremia" ,
+						"increased urine volume",
+						"hyponatremia" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Chloride ions" ,
+					"choices": [
+						"are cations." ,
+						"are found only inside cells." ,
+						"are part of the DNA molecule." ,
+						"are regulated with Na+",
+						"are not found in extracellular fluid." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Decreased extracellular K+ levels cause" ,
+					"choices": [
+						"cells to become more excitable" ,
+						"hyperpolarization of plasma membranes." ,
+						"more action potentials to be generated." ,
+						"increased permeability of plasma membranes.",
+						"hypopolarization of plasma membranes." ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following statements concerning K+ is false?" ,
+					"choices": [
+						"An increase in the extracellular K+ concentration leads to depolarization." ,
+						"Potassium ions are secreted into the nephron by the distal convoluted tubule." ,
+						"When aldosterone levels are high, K+ secretion is low." ,
+						"Aldosterone secretion is stimulated by high blood levels of K +",
+						"None of the choices are false" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Potassium levels in the body are regulated by ________." ,
+					"choices": [
+						"ADH" ,
+						"PTH" ,
+						"calcitonin" ,
+						"aldosterone",
+						"insulin" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Oversecretion of aldosterone causes" ,
+					"choices": [
+						"decreased secretion of Ca2+ by the kidney." ,
+						"increased secretion of K+ by the kidney." ,
+						"decreased reabsorption of Na+ by the kidney." ,
+						"increased reabsorption of phosphate ions by the kidney",
+						"decreased secretion of K+ by the kidney." ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Aldosterone secretion may be stimulated by ________." ,
+					"choices": [
+						"ADH" ,
+						"elevated K+ levels" ,
+						"excess water intake" ,
+						"elevated Na+ levels",
+						"low K+ levels" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The most common cause of hyperkalemia is ________." ,
+					"choices": [
+						"vomiting" ,
+						"increased dietary intake" ,
+						"increased urinary output" ,
+						"cellular injury or death",
+						"diarrhea" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following will the body begin to do in order to compensate for hyperkalemia?" ,
+					"choices": [
+						"Vasoconstriction of blood vessels" ,
+						"Increase ADH secretion" ,
+						"Decrease aldosterone secretion" ,
+						"Increase the release of atrial natriuretic hormone",
+						"Increase aldosterone secretion" ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Hyperkalemia is defined as" ,
+					"choices": [
+						"excess excitability of kalems." ,
+						"reduction of plasma Ca2+ level." ,
+						"increase in plasma K+ level." ,
+						"increase in plasma Na+ level.",
+						"decrease in plasma K+ level" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following is correctly matched?" ,
+					"choices": [
+						"Alkalosis – hypokalemia" ,
+						"Cell destruction – hypokalemia" ,
+						"Increased secretion of aldosterone – hyperkalemia" ,
+						"Overuse of diuretics – hyperkalemia",
+						"Acidosis – hypokalemia" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Most of the Ca2+ int he body is in the _________." ,
+					"choices": [
+						"bones" ,
+						"plasma" ,
+						"kidneys" ,
+						"GI tract",
+						"extracellular fluid" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "In hypocalcemia," ,
+					"choices": [
+						"depolarization is prevented." ,
+						"PTH production is reduced." ,
+						"blood Ca2+ levels are increased." ,
+						"neuromuscular excitability increases",
+						"neuromuscular excitability decreases." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Calcium balance is influenced by" ,
+					"choices": [
+						"ADH and parathyroid hormone levels." ,
+						"ADH and aldosterone levels." ,
+						"parathyroid hormone and vitamin D levels." ,
+						"aldosterone and parathyroid hormone levels.",
+						"insulin and glucagon." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Calcium's roles in the body include" ,
+					"choices": [
+						"bone health." ,
+						"muscle contraction" ,
+						"blood clotting." ,
+						"action potentials in heart muscle.",
+						"All of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "An increase in parathyroid hormone levels results in" ,
+					"choices": [
+						"increased rate of bone resorption." ,
+						"increased rate of vitamin D degradation." ,
+						"increased concentration of K+ in the urine." ,
+						"increased rate of Ca2+ excretion by the kidneys." ,
+						"decreased levels of blood Ca 2+ ." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Adequate Ca2+ absorption from the GI tract depends on" ,
+					"choices": [
+						"serum K+ levels." ,
+						"serum calcitonin levels." ,
+						"adequate amounts of vitamin D." ,
+						"the osmolality of the extracellular fluid.",
+						"adequate amounts of vitamin C." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Stimulus for the secretion of parathyroid hormone is a decrease in serum ________ levels." ,
+					"choices": [
+						"K+" ,
+						"Ca2+" ,
+						"calcitonin" ,
+						"phosphate",
+						"Na+" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Parathyroid hormone affects the ________." ,
+					"choices": [
+						"bones, heart, and blood" ,
+						"kidney, liver, and spleen" ,
+						"intestine, kidneys, and bone" ,
+						"liver, stomach, and small intestine",
+						"stomach, pancreas, and bone" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "What is the main role of Mg2+ in the body?" ,
+					"choices": [
+						"Muscle contraction" ,
+						"Nerve impulse" ,
+						"Blood clotting" ,
+						"Cofactors for intracellular enzymes" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The main regulator of serum phosphate levels is a transport process in the ________." ,
+					"choices": [
+						"liver" ,
+						"kidneys" ,
+						"pancreas" ,
+						"small intestine",
+						"large intestine" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "A major complication of thyroid surgery is the accidental damaging or removal of the parathyroid glands. This damage or removal of the parathyroid glands can result in" ,
+					"choices": [
+						"increased Na+ retention." ,
+						"increased plasma volume." ,
+						"decreased plasma Ca2+ ." ,
+						"delayed healing.",
+						"increased plasma Ca2+" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Calcitonin" ,
+					"choices": [
+						"promotes the absorption of Ca 2+ from the gastrointestinal tract." ,
+						"promotes osteoclast activity in the bones." ,
+						"reduces Ca 2+ excretion by the kidneys." ,
+						"reduces extracellular Ca 2+ ion levels.",
+						"increases blood Ca2+ levels." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Increased osmolality of the extracellular fluid" ,
+					"choices": [
+						"increases thirst." ,
+						"inhibits ADH" ,
+						"increases renin secretion." ,
+						"increases aldosterone secretion.",
+						"decreases thirst." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The sensation of thirst results from" ,
+					"choices": [
+						"an increase in the plasma volume." ,
+						"hypertension (increased blood pressure)." ,
+						"stimulation of osmoreceptor cells in the hypothalamus." ,
+						"a decrease in the osmolality of the extracellular fluid.",
+						"stimulation of baroreceptors." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Angiotensin II increases blood volume by stimulating" ,
+					"choices": [
+						"thirst" ,
+						"vasodilatation." ,
+						"water movement into the cells." ,
+						"renal excretion of Na+" ,
+						"ADH production" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Under normal conditions, most water loss from the body is through the ________." ,
+					"choices": [
+						"skin" ,
+						"kidneys" ,
+						"lungs" ,
+						"GI tract",
+						"sweat" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following is an example of water conservation by the body?" ,
+					"choices": [
+						"Diarrhea" ,
+						"Perspiration" ,
+						"Decreased water intake" ,
+						"Decreased urine volume",
+						"Increased urine volume" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Sensible perspiration" ,
+					"choices": [
+						"contains only water." ,
+						"is water lost through simple evaporation." ,
+						"is secreted by the sweat glands." ,
+						"is invisible on the skin.",
+						"is secreted by salivary glands." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Loss of a large volume of sweat will" ,
+					"choices": [
+						"decrease the hematocrit." ,
+						"decrease ADH production." ,
+						"increase the blood pressure." ,
+						"increase the osmolality of body fluids.",
+						"decrease the osmolality of body fluids." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "In which of the following situations does one see large volumes of dilute urine produced?" ,
+					"choices": [
+						"ADH levels decrease." ,
+						"Renin levels increase." ,
+						"Aldosterone levels increase." ,
+						"Parathyroid hormone levels decrease.",
+						"ADH levels increase." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A person working in the hot sun loses the greatest amount of water from the ________." ,
+					"choices": [
+						"lungs" ,
+						"urine" ,
+						"mouth" ,
+						"skin",
+						"GI tract" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "pH" ,
+					"choices": [
+						"increases with acidity." ,
+						"is measured on a scale of 0 to 10." ,
+						"is a measure of the H+ concentration." ,
+						"reflects Na+ content of body fluids.",
+						"is not related to amounts of CO2 in the body." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following substances releases H + into a solution?" ,
+					"choices": [
+						"Acids" ,
+						"Bases" ,
+						"Salts" ,
+						"Glucose",
+						"Water" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Chemicals that function to minimize changes in the pH of body fluids are called ________." ,
+					"choices": [
+						"buffers" ,
+						"inhibitors" ,
+						"accelerators" ,
+						"activators",
+						"stabilizers" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "If the H+ concentration in the blood increases, bicarbonate ions act as buffers by" ,
+					"choices": [
+						"removing excess H+ from the plasma." ,
+						"releasing H+ into the plasma." ,
+						"dissociating into H+ and CO3-" ,
+						"combining with Cl − .",
+						"combining with hemoglobin" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is NOT a buffer system of the body?" ,
+					"choices": [
+						"Bicarbonate buffer system" ,
+						"Phosphate buffer system" ,
+						"Protein buffer system" ,
+						"NaCl buffer system",
+						"Hemoglobin buffer" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Body fluid pH will rise dramatically when" ,
+					"choices": [
+						"Na+ is excreted by the kidney." ,
+						"large amounts of bicarbonate are ingested." ,
+						"carbonic acid is formed." ,
+						"the respiratory rate decreases.",
+						"CO2 levels increase." ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "As a result of hyperventilation," ,
+					"choices": [
+						"the body pH decreases." ,
+						"the plasma PCO2 level decreases." ,
+						"the kidney will increase the rate of H+ excretion" ,
+						"the plasma PCO2 level increases" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "An increase in blood CO2 levels is followed by a/an ________ in H+ ions and a/an ________ in blood pH." ,
+					"choices": [
+						"decrease; decrease" ,
+						"decrease; increase" ,
+						"increase; increase" ,
+						"increase; decrease",
+						"increase; no change" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Which of the following terms does not belong with the other three?" ,
+					"choices": [
+						"Acidosis" ,
+						"pH increases" ,
+						"H+ concentration increases" ,
+						"Carbonic acid levels increase",
+						"pH decreases" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Wilma's plasma pH is 7.2. Which of the following indicates that the body is attempting to compensate and return the body pH to normal?" ,
+					"choices": [
+						"An increase in respiration rate" ,
+						"A decrease in respiration rate" ,
+						"No change in respiration rate" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "In renal compensation of acidosis," ,
+					"choices": [
+						"H+ secretion decreases; bicarbonate excretion increases." ,
+						"H+ secretion decreases; bicarbonate reabsorption increases" ,
+						"H+ secretion increases; bicarbonate reabsorption increases" ,
+						"H+ secretion increases; bicarbonate excretion increases.",
+						"H+ secretion decreases; bicarbonate excretion decreases." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Which of the following can play a role in buffering the pH of urine?" ,
+					"choices": [
+						"Ammonia" ,
+						"Bicarbonate ions" ,
+						"Phosphate ions" ,
+						"All of the choices are correct.",
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "The normal pH for blood plasma is ________." ,
+					"choices": [
+						"7.00" ,
+						"7.25 - 7.35" ,
+						"7.35 - 7.45" ,
+						"7.45 - 7.55",
+						"6.80 - 7.20" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Once alkalosis has occurred, which of the following would you expect to happen?" ,
+					"choices": [
+						"Increased respiratory rate" ,
+						"A plasma pH less than 7.40" ,
+						"Retention of H+ by the kidney" ,
+						"Increased renal reabsorption of bicarbonate ions" ,
+						"Secretion of H+ by the kidney" ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Hyposecretion of aldosterone would lead to" ,
+					"choices": [
+						"increased secretion of H+" ,
+						"decreased secretion of H+" ,
+						"no change in secretion of H+" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "When normal buffer mechanisms are overwhelmed by excessive numbers of H+ , which of the following will result?" ,
+					"choices": [
+						"Acidosis" ,
+						"Alkalosis" ,
+						"Neither of these" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "A falling blood pH and a rising concentration of CO 2 due to emphysema, indicate ________." ,
+					"choices": [
+						"metabolic acidosis" ,
+						"metabolic alkalosis" ,
+						"respiratory acidosis" ,
+						"respiratory alkalosis",
+						"None of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 2 ]
+				} ,
+				{
+					"prompt": "Ingesting large amounts of sodium bicarbonate can lead to ________." ,
+					"choices": [
+						"metabolic acidosis" ,
+						"metabolic alkalosis" ,
+						"respiratory acidosis" ,
+						"respiratory alkalosis",
+						"None of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Respiratory alkalosis can occur as a result of ________." ,
+					"choices": [
+						"asphyxia" ,
+						"asthma" ,
+						"severe emphysema" ,
+						"hyperventilation",
+						"hypoventilation" ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				} ,
+				{
+					"prompt": "Prolonged vomiting of stomach contents will result in ________." ,
+					"choices": [
+						"metabolic acidosis" ,
+						"metabolic alkalosis" ,
+						"respiratory acidosis" ,
+						"respiratory alkalosis",
+						"None of the choices are correct." ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Which of the following regulatory mechanisms would be stimulated as a result of the increased osmolality that results from a Na+ level of 152 mEq/L?" ,
+					"choices": [
+						"Increased urine output" ,
+						"An increased release of ADH" ,
+						"An increase in renin production" ,
+						"An increase in the secretion of aldosterone" ,
+						"A decreased release of ADH" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "The increase in extracellular osmolality would cause" ,
+					"choices": [
+						"water to move out of the cells." ,
+						"water to move into the cells." ,
+						"no change in the net movement of water into or out of the cells." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "The K+ level of 2.8 mEq/L indicates hypokalemia. Low plasma K+ levels will cause ________." ,
+					"choices": [
+						"thirst" ,
+						"muscle weakness" ,
+						"increased body temperature" ,
+						"tremors, tetany, and convulsions",
+						"paralysis" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "Robert has an enteropathogenic E. coli infection resulting in severe diarrhea for 2 days. This could produce which of the following:<br>(1) Acidosis<br>(2) Alkalosis<br>(3) Increased respiration<br>(4) Decreased respiration<br>(5) Increased ADH secretion<br>(6) Increased renin secretion<br>(7) Increased urine concentration" ,
+					"choices": [
+						"1 , 3 , 5 , 6 , 7" ,
+						"2 , 4 , 5 , 6 , 7" ,
+						"1 , 3 , 6" ,
+						"2 , 4 , 5 , 7",
+						"1 , 4 , 5 , 7" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Acetazolamide (Diamox) is a diuretic that functions by blocking the activity of carbonic anhydrase inside kidney tubule cells. This slows the formation of carbonic acid, which slows H the formation in the cells and Na + reabsorption at the tubule. This results in the diuretic effect.<br>Select from the following list the possible side-effects of Azetazolamide.<br>(1) Acidosis<br>(2) Reduced movement of bicarbonate ino into the plasma<br>(3) An alkaline urine is produced<br>(4) Respiration increases" ,
+					"choices": [
+						"1 , 4" ,
+						"2 , 3" ,
+						"1 , 2 , 3" ,
+						"2 , 3 , 4" ,
+						"1 , 2 , 3 , 4" ,
+					] ,
+					"correct_answer_indexes": [ 4 ]
+				} ,
+				{
+					"prompt": "Edema results when the amount of ________ fluid increases." ,
+					"choices": [
+						"interstitial" ,
+						"intracellular" ,
+						"plasma" ,
+						"cerebrospinal",
+						"synovial" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following are sources of water intake? (Check all that apply.)" ,
+					"choices": [
+						"Cellular metabolism" ,
+						"Ingestion" ,
+						"Perspiration" ,
+						"Respiratory intake" ,
+						"Osmosis" ,
+					] ,
+					"correct_answer_indexes": [ 0 , 1 ]
+				} ,
+				{
+					"prompt": "Wetting the oral mucosa and stretching the digestive tract will cause ________ in thirst sensations." ,
+					"choices": [
+						"a temporary interruption" ,
+						"a tremendous increase" ,
+						"an increase in blood osmolarity and an increase" ,
+						"an increase in blood osmolarity and a decrease" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "An increase in the osmolarity of the extracellular fluid will trigger a/an ________ in the secretion of ADH and a/an ________ in thirst." ,
+					"choices": [
+						"increase; increase" ,
+						"increase; decrease" ,
+						"decrease; decrease" ,
+						"decrease; increase" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which cell structure regulates the composition of the intracellular fluid?" ,
+					"choices": [
+						"Plasma membrane" ,
+						"Cell wall" ,
+						"Endoplasmic reticulum" ,
+						"Ribosomes" ,
+						"Nucleus" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which organ(s) play(s) a role in the excretion of Na+ ? (Check all that apply.)" ,
+					"choices": [
+						"Skin" ,
+						"Kidneys" ,
+						"Lungs" ,
+						"Liver",
+					] ,
+					"correct_answer_indexes": [ 0 , 1 ]
+				} ,
+				{
+					"prompt": "Sodium homeostasis leads to the homeostasis of ________." ,
+					"choices": [
+						"chloride" ,
+						"hydrogen" ,
+						"calcium" ,
+						"potassium" ,
+						"magnesium" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which hormone regulates K+ levels, and how does it work?" ,
+					"choices": [
+						"Aldosterone; increases secretion of K+" ,
+						"Aldosterone; increases reabsorption of K+" ,
+						"ADH; increases secretion of K+" ,
+						"ADH; increases reabsorption of K+",
+						"ANH; increases reabsorption of K+" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Parathyroid hormone increases the activity of ________ in bone and increases the rate of Ca2+ ________ in the kidney tubules." ,
+					"choices": [
+						"osteoclast; reabsorption" ,
+						"osteoblast; reabsorption" ,
+						"osteocyte; reabsorption" ,
+						"osteocyte; secretion" ,
+						"osteoblast; secretion" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Name the ion that commonly serves as a cofactor for intracellular enzymes, such as the sodium-potassium pump." ,
+					"choices": [
+						"Magnesium" ,
+						"Calcium" ,
+						"Hydrogen" ,
+						"Carbonate",
+						"Phosphate" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "What roles does phosphate play in the body?" ,
+					"choices": [
+						"It is found in the salts of bone and teeth." ,
+						"It is an important component of several macromolecules." ,
+						"It affects neuromuscular activity." ,
+						"It is part of an important intracellular buffer system." ,
+					] ,
+					"correct_answer_indexes": [ 0 , 1 , 3 ]
+				} ,
+				{
+					"prompt": "Slight deviations from the normal concentration of ________ can shut down metabolic pathways as well as alter the structure and function of other macromolecules." ,
+					"choices": [
+						"H+" ,
+						"K+" ,
+						"Na+" ,
+						"phosphate",
+						"glucose" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Which of the following is not a function of the carbonic acid/bicarbonate system?" ,
+					"choices": [
+						"Regulation of the pH of the intracellular environment." ,
+						"Regulating pH changes of the blood during exercise." ,
+						"Regulation of blood pH in coordination with the respiratory system." ,
+						"Regulation of blood pH in coordination with the kidneys." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "When blood pH decreases, which of the following occurs to correct the imbalance?" ,
+					"choices": [
+						"The respiratory center increases the breathing rate." ,
+						"The respiratory center decreases the breathing rate." ,
+						"Less CO2 is expelled from the lungs." ,
+						"More CO2 is expelled from the lungs.",
+						"The carbonic acid/bicarbonate equation is driven to the right." ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Decreased extracellular K + levels cause" ,
+					"choices": [
+						"cells to become more excitable." ,
+						"hyperpolarization of plasma membranes." ,
+						"more action potentials to be generated." ,
+						"increased permeability of plasma membranes",
+						"hypopolarization of plasma membrane" ,
+					] ,
+					"correct_answer_indexes": [ 1 ]
+				} ,
+				{
+					"prompt": "A force that causes the movement of fluid out of the capillary is ________." ,
+					"choices": [
+						"blood pressure" ,
+						"positive interstitial pressure" ,
+						"blood colloid osmotic pressure" ,
+						"critical closing pressure" ,
+						"lymph pressure" ,
+					] ,
+					"correct_answer_indexes": [ 0 ]
+				} ,
+				{
+					"prompt": "Edema can occur when there is" ,
+					"choices": [
+						"an increase in the amount of plasma proteins" ,
+						"a decrease in capillary permeability to proteins." ,
+						"a decrease in blood pressure." ,
+						"a blockage of the lymphatics." ,
+						"an increase in blood colloid osmotic pressure." ,
+					] ,
+					"correct_answer_indexes": [ 3 ]
+				}
+			]
+		};
+	</script>
+</body>
+</html>
