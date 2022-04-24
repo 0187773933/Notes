@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>001</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="Chief Cells" title="Chief Cells" href="" coords="385.9348031496063,826.1771653543308,591.816062992126,774.8666141732284" shape="rect">
+			<area target="" alt="Amylase" title="Amylase" href="" coords="522.6913385826772,331.50409448818897,679.7699212598425,280.1935433070866" shape="rect">
+			<area target="" alt="Pepsin" title="Pepsin" href="" coords="391.636062992126,727.5475590551181,548.7146456692914,676.2370078740157" shape="rect">
+			<area target="" alt="Intrinsic Factor" title="Intrinsic Factor" href="" coords="823.831968503937,826.1771653543308,1077.3387401574803,774.8666141732284" shape="rect">
+			<area target="" alt="B12 Absorption" title="B12 Absorption" href="" coords="1330.0584251968505,827.4428346456693,1595.0058267716536,776.132283464567" shape="rect">
+			<area target="" alt="Small Intestine" title="Small Intestine" href="" coords="1330.6370078740158,904.1615748031496,1595.5844094488189,852.8510236220473" shape="rect">
+			<area target="" alt="Lipase" title="Lipase" href="" coords="549.3,415.32283464566933,679.7699212598425,364.01228346456696" shape="rect">
+			<area target="" alt="Protease" title="Protease" href="" coords="510.05858267716536,498.8015748031496,682.9003149606299,447.49102362204724" shape="rect">
+			<area target="" alt="Cholesterol Esterase" title="Cholesterol Esterase" href="" coords="354.30346456692916,577.1645669291339,684.2407874015748,525.8540157480315" shape="rect">
+		</map>
+	</div>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-2">
+				<div id="draggable-label-container"></div>
+			</div>
+			<div class="col-10">
+				<canvas id="interactive-image-canvas"></canvas>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_drag_and_drop(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1650829745130-52599959.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/DragAndDrop/Exam-5-Memorization/002.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = true;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_drag_and_drop_script = document.createElement( "script" );
+		interactive_drag_and_drop_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_drag_and_drop.js?v=" + ( new Date() ).getTime() );
+		interactive_drag_and_drop_script.onload = load;
+		document.head.appendChild( interactive_drag_and_drop_script );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/acd21e9a-f430-4283-a1c4-a5446e95c288?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+</body>
+</html>

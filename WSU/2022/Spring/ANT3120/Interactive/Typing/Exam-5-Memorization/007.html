@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>007</title>
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity=""></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity=""></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="" ></script>
+</head>
+<body>
+	<div id="label-container">
+		<map name="image-map">
+			<area target="" alt="7.35" title="7.35" href="" coords="949.0433070866142,376.46015748031493,1048.3968503937008,325.14960629921256" shape="rect">
+			<area target="" alt="7.45" title="7.45" href="" coords="1118.2826771653542,374.98850393700786,1217.6362204724408,323.6779527559055" shape="rect">
+			<area target="" alt="22" title="22" href="" coords="949.0433070866142,463.30425196850393,1048.3968503937008,411.99370078740156" shape="rect">
+			<area target="" alt="26" title="26" href="" coords="1118.2826771653542,461.83259842519686,1217.6362204724408,410.5220472440945" shape="rect">
+			<area target="" alt="35" title="35" href="" coords="949.0433070866142,548.1941732283465,1048.3968503937008,496.8836220472441" shape="rect">
+			<area target="" alt="45" title="45" href="" coords="1118.2826771653542,546.7225196850394,1217.6362204724408,495.41196850393703" shape="rect">
+			<area target="" alt="PCO2" title="PCO2" href="" coords="901.0566929133859,807.5593700787401,1021.2170078740157,756.2488188976378" shape="rect">
+			<area target="" alt="HCO3" title="HCO3" href="" coords="899.3492913385827,716.5113385826772,1019.5096062992127,665.2007874015749" shape="rect">
+		</map>
+	</div>
+	<div>
+		<center><canvas id="interactive-image-canvas"></canvas></center>
+	</div>
+	</br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div class="input-group">
+					<span class="input-group-text" id="bootstrap-answer-companion">Answer</span>
+					<input autofocus id="input-answer" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="bootstrap-answer-companion">
+					<button class="btn btn-outline-secondary" type="button" id="hint-button">Hint</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		</br>
+		<div class="row justify-content-center">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<p id="hint-area" class="text-center"></p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function load() { start_interactive_typing(); }
+		window.image_source_url = "https://39363.org/IMAGE_BUCKET/1650829521495-994549615.jpeg";
+		window.next_challenge_url = "https://39363.org/NOTES/WSU/2022/Spring/ANT3120/Interactive/Typing/Exam-5-Memorization/001.html";
+		window.image_scale_percentage = 60;
+		window.unanswered_color = "red";
+		window.answered_color = "#13E337";
+		window.text_color = "white";
+		window.text_font = "17px Comic Sans MS";
+		window.text_x_offset_factor = 2;
+		window.text_y_offset_factor = 4.5;
+		window.any_position = true;
+		window.randomize_order = false;
+		window.auto_advance = true;
+		let interactive_typing_script = document.createElement( "script" );
+		interactive_typing_script.setAttribute( "src" , "https://39363.org/CDN/NOTES/interactive_typing.js?v=" + ( new Date() ).getTime() );
+		interactive_typing_script.onload = load;
+		document.head.appendChild( interactive_typing_script );
+	</script>
+</body>
+</html>
