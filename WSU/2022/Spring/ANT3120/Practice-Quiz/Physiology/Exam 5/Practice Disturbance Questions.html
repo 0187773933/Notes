@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practice Disturbance Questions</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" >
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" ></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js"  ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" >
+	<script src="https://39363.org/CDN/katex/katex.min.js" ></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" ></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" ></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-0lax{text-align:left;vertical-align:top}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+		<!-- <div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			let url;
+			if ( window.ACTIVE_INDEX === 0 ) {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+			} else {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX ).toString();
+			}
+			console.log( url );
+			window.location.href = url;
+			// history.pushState({
+			// 	id: "question-" + ( window.ACTIVE_INDEX - 1 ).toString() ,
+			// 	source: 'web'
+			// } , url );
+			window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			render_active_card();
+			// if ( window.BACK_IS_RENDERED === false ) {
+			// 	// $( "#card-body-content" ).show();
+			// 	// CHANGED
+			// 	// render_correct_answers();
+			// 	// $( "#row-navigation" ).show();
+			// 	window.BACK_IS_RENDERED = true;
+			// } else {
+			// 	window.BACK_IS_RENDERED = false;
+			// 	console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			// 	window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			// 	if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			// 	render_active_card();
+			// }
+
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				// $( "#card-body-content" ).show();
+				render_correct_answers();
+				// $( "#row-navigation" ).show();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+				window.ACTIVE_INDEX = ( window.ACTIVE_INDEX + 1 );
+				if ( window.ACTIVE_INDEX > ( window.DECK.questions.length - 1 ) ) { window.ACTIVE_INDEX = 0; }
+				let url;
+				if ( window.ACTIVE_INDEX === ( window.DECK.questions.length ) ) {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+				} else {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX + 1 ).toString();
+				}
+				console.log( url );
+				window.location.href = url;
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+		const CHOICES_ENUM = {
+			0: "A" ,
+			1: "B" ,
+			2: "C" ,
+			3: "D" ,
+			4: "E" ,
+			5: "F" ,
+			6: "G" ,
+			7: "H" ,
+			8: "I" ,
+			9: "J" ,
+			10: "K" ,
+			11: "L" ,
+			12: "M" ,
+			13: "N" ,
+			14: "O" ,
+		};
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_active_card() {
+			$( "#card-title-content" ).empty();
+			// console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.ACTIVE_INDEX ].prompt}</h3>` );
+			// $( "#card-body-content" ).hide();
+			// $( "#row-navigation" ).hide();
+
+			// This is where we have to build-out html multi select and what not
+			// $( "#card-body-content" ).html( window.DECK.questions[ window.ACTIVE_INDEX ].back );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].choices.length; ++i ) {
+				// console.log( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( 0 ) );
+				// if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.indexOf( i ) ) {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="correct_answer" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="correct_answer_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+				// } else {
+				// 	choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}<br>`;
+				// }
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						// console.log( "clicked a correct answer" );
+						$( this ).next().addClass( "correct" );
+					} else {
+						// console.log( "clicked an incorrect answer" );
+					}
+				}
+			});
+			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
+			render_katex();
+		}
+		function get_url_question_number() {
+			console.log( window.location.href );
+			window.URL_INDEX = window.location.href.split( "#" );
+			if ( window.URL_INDEX.length > 0 ) {
+				window.URL_INDEX = window.location.href.split( ".html" )[ 1 ].split( "#" );
+				if ( window.URL_INDEX.length > 0 ) {
+					window.URL_INDEX = window.URL_INDEX[ 1 ];
+					if ( window.URL_INDEX === NaN || window.URL_INDEX === undefined ) {
+						window.URL_INDEX = 1;
+					}
+					return window.URL_INDEX;
+				}
+			}
+			return false;
+		}
+		function init() {
+			render_katex();
+			// window.addEventListener( "scroll" , function() {
+			// 	window.scrollTo( 0 , 0 );
+			// });
+
+			// console.log( window.DECK );
+			$( "#row-grading" ).hide();
+			window.ACTIVE_INDEX = 0;
+			get_url_question_number();
+			if ( window.URL_INDEX !== window.ACTIVE_INDEX ) {
+				window.ACTIVE_INDEX = ( parseInt( window.URL_INDEX ) - 1 );
+				console.log( window.ACTIVE_INDEX );
+			}
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			// $( "#current-card-number" ).text( `${window.ACTIVE_INDEX + 1}` );
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		try {
+			let img_1 = document.createElement( "img" );
+			img_1.setAttribute( "src" , "https://ta.34353.org/t/9778728f-4667-4103-8f5b-b7e0e783e9a8?v=" + ( new Date() ).getTime() );
+			img_1.style.display = "none";
+			document.body.appendChild( img_1 );
+		} catch( e ) {}
+	</script>
+	<script type="text/javascript">
+		function math_seed() {
+			// https://stackoverflow.com/a/23304189
+			Math.seed = function(s) {
+				return function() {
+					s = Math.sin(s) * 10000; return s - Math.floor(s);
+				};
+			};
+			let random_seed = Math.seed( new Date().getTime() );
+			let min_seed_iterations = 20;
+			let max_seed_iterations = 100;
+			let random_number_of_seeds = Math.floor( min_seed_iterations + Math.random() * ( max_seed_iterations + 1 - min_seed_iterations ) );
+			for ( let i = 1; i < random_number_of_seeds; ++i ) {
+				Math.random = Math.seed( random_seed() );
+			}
+		}
+		function shuffleArray( array ) {
+			const newArr = array.slice();
+			for (let i = newArr.length - 1; i > 0; i--) {
+				const rand = Math.floor(Math.random() * (i + 1));
+				[newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
+			}
+			return newArr
+		}
+		function random_float( min , max ) {
+			math_seed();
+			math_seed();
+			// return ( min + Math.random() * ( max - min ) );
+			return ( min + Math.random() * ( max - min ) ).toFixed( 2 );
+		}
+		function random_binary_choice() { math_seed(); return Math.round( Math.random() ); }
+		function random_integer( min , max ) {
+			math_seed();
+			math_seed();
+  			const min_ceiling = Math.ceil( min );
+  			const max_floor = Math.floor( max );
+  			return Math.floor( min_ceiling + Math.random() * ( max_floor - min_ceiling ) );
+		}
+		window.DISTURBANCE_TYPES = {
+			"acidosis": {
+				"metabolic": {
+					"compensation": {
+						"none": "" ,
+						"partial": "" ,
+						"full": ""
+					}
+				} ,
+				"respiratory": {
+					"compensation": {
+						"none": "" ,
+						"partial": "" ,
+						"full": ""
+					}
+				}
+			} ,
+			"alkalosis": {
+				"metabolic": {
+					"compensation": {
+						"none": "" ,
+						"partial": "" ,
+						"full": ""
+					}
+				} ,
+				"respiratory": {
+					"compensation": {
+						"none": "" ,
+						"partial": "" ,
+						"full": ""
+					}
+				}
+			} ,
+			"mixed": {
+				"compensation": {
+					"none": "" ,
+					"partial": "" ,
+					"full": ""
+				}
+			}
+		};
+		window.NORMAL_RANGES = {
+			"pH": [ 7.35 , 7.45 ] ,
+			"co2": [ 35.0 , 45.0 ] ,
+			"bicarb": [ 22.0 , 26.0 ]
+		};
+		window.MIX_MAX_RANGES = {
+			"pH": [ 7.0 , 7.8 ] ,
+			"co2": [ 20.0 , 70.0 ] ,
+			"bicarb": [ 10.0 , 40.0 ]
+		};
+		window.DECK = {
+			"chapter_title": "Practice Disturbance Questions" ,
+			"questions": []
+		};
+
+		function get_normal_ph() { return random_float( window.NORMAL_RANGES[ "pH" ][ 0 ] , window.NORMAL_RANGES[ "pH" ][ 1 ] ); }
+		function get_high_ph() { return random_float( window.NORMAL_RANGES[ "pH" ][ 1 ] , window.MIX_MAX_RANGES[ "pH" ][ 1 ] ); }
+		function get_high_mid_ph() { return random_float( window.NORMAL_RANGES[ "pH" ][ 1 ] , ( ( 7.40 + window.MIX_MAX_RANGES[ "pH" ][ 1 ] ) / 2.0 ) ); }
+		function get_low_ph() { return random_float( window.MIX_MAX_RANGES[ "pH" ][ 0 ] , window.NORMAL_RANGES[ "pH" ][ 0 ] ); }
+		function get_low_mid_ph() { return random_float( ( ( window.MIX_MAX_RANGES[ "pH" ][ 0 ] + window.NORMAL_RANGES[ "pH" ][ 0 ] ) / 2.0 ) , window.MIX_MAX_RANGES[ "pH" ][ 0 ] ); }
+		function get_random_ph() { return random_float( window.MIX_MAX_RANGES[ "pH" ][ 0 ] , window.MIX_MAX_RANGES[ "pH" ][ 1 ] ); }
+		function get_ph_state( ph ) {
+			if ( ph >= window.NORMAL_RANGES[ "pH" ][ 0 ] && ph <= window.NORMAL_RANGES[ "pH" ][ 1 ] ) { return "normal"; }
+			else if ( ph < window.NORMAL_RANGES[ "pH" ][ 0 ] ) { return "low" }
+			else if ( ph > window.NORMAL_RANGES[ "pH" ][ 1 ] ) { return "high" }
+			return false;
+		}
+		window.PH_STATE_VERBS = { "low": "acidosis" , "high": "alkalosis" , "normal": "normal" };
+		window.COMPENSATION_STATE = { 1: "none" , 2: "partial" , 3: "full" };
+		function get_random_compensation() { let x = random_integer( 1 , 3 ); return window.COMPENSATION_STATE[ x ]; }
+
+
+		function get_normal_co2() { return random_float( window.NORMAL_RANGES[ "co2" ][ 0 ] , window.NORMAL_RANGES[ "co2" ][ 1 ] ); }
+		function get_high_co2() { return random_float( window.NORMAL_RANGES[ "co2" ][ 1 ] , window.MIX_MAX_RANGES[ "co2" ][ 1 ] ); }
+		function get_high_mid_co2() { return random_float( window.NORMAL_RANGES[ "co2" ][ 1 ] , ( ( window.NORMAL_RANGES[ "co2" ][ 1 ] + window.MIX_MAX_RANGES[ "co2" ][ 1 ] ) / 2.0 ) ); }
+		function get_low_co2() { return random_float( window.MIX_MAX_RANGES[ "co2" ][ 0 ] , window.NORMAL_RANGES[ "co2" ][ 0 ] ); }
+		function get_low_mid_co2() { return random_float( ( ( window.MIX_MAX_RANGES[ "co2" ][ 0 ]  + window.NORMAL_RANGES[ "co2" ][ 0 ] ) / 2.0 ) , ( window.NORMAL_RANGES[ "co2" ][ 0 ] ) ); }
+		function get_random_co2() { return random_float( window.MIX_MAX_RANGES[ "co2" ][ 0 ] , window.MIX_MAX_RANGES[ "co2" ][ 1 ] ); }
+		function get_co2_state( co2 ) {
+			if ( co2 >= window.NORMAL_RANGES[ "co2" ][ 0 ] && co2 <= window.NORMAL_RANGES[ "co2" ][ 1 ] ) { return "normal"; }
+			else if ( co2 < window.NORMAL_RANGES[ "co2" ][ 0 ] ) { return "low" }
+			else if ( co2 > window.NORMAL_RANGES[ "co2" ][ 1 ] ) { return "high" }
+			return false;
+		}
+
+		function get_normal_bicarb() { return random_float( window.NORMAL_RANGES[ "bicarb" ][ 0 ] , window.NORMAL_RANGES[ "bicarb" ][ 1 ] ); }
+		function get_high_bicarb() { return random_float( window.NORMAL_RANGES[ "bicarb" ][ 1 ] , window.MIX_MAX_RANGES[ "bicarb" ][ 1 ] ); }
+		function get_high_mid_bicarb() { return random_float( window.NORMAL_RANGES[ "bicarb" ][ 1 ] , ( ( window.NORMAL_RANGES[ "bicarb" ][ 1 ] + window.MIX_MAX_RANGES[ "bicarb" ][ 1 ] ) / 2.0 ) ); }
+		function get_low_bicarb() { return random_float( window.MIX_MAX_RANGES[ "bicarb" ][ 0 ] , window.NORMAL_RANGES[ "bicarb" ][ 0 ] ); }
+		function get_low_mid_bicarb() { return random_float( ( ( window.MIX_MAX_RANGES[ "bicarb" ][ 0 ]  + window.NORMAL_RANGES[ "bicarb" ][ 0 ] ) / 2.0 ) , ( window.NORMAL_RANGES[ "bicarb" ][ 0 ] ) ); }
+		function get_random_bicarb() { return random_float( window.MIX_MAX_RANGES[ "bicarb" ][ 0 ] , window.MIX_MAX_RANGES[ "bicarb" ][ 1 ] ); }
+		function get_bicarb_state( bicarb ) {
+			if ( bicarb >= window.NORMAL_RANGES[ "bicarb" ][ 0 ] && bicarb <= window.NORMAL_RANGES[ "bicarb" ][ 1 ] ) { return "normal"; }
+			else if ( bicarb < window.NORMAL_RANGES[ "bicarb" ][ 0 ] ) { return "low" }
+			else if ( bicarb > window.NORMAL_RANGES[ "bicarb" ][ 1 ] ) { return "high" }
+			return false;
+		}
+
+		function random_disturbance_source() { let binary_choice = random_binary_choice(); if ( binary_choice === 0 ) { return "respiratory" } else { return "metabolic" } }
+		function build_question_starting_with_ph() {
+			// 1.) Start from Random pH State
+			let ph = get_random_ph();
+			let ph_state = get_ph_state( ph );
+			let ph_state_verb = window.PH_STATE_VERBS[ ph_state ];
+
+			// 2.) Binary Decision of origin of the problem , aka respirtory or metabolic
+			let disturbance_source = random_disturbance_source();
+			// console.log( ph , ph_state , ph_state_verb , disturbance_source );
+
+			// 3.) Decide on Partial , Full , or No Compensation
+			let compensation = get_random_compensation();
+
+			// 4.) Decide on Remaining Variables , assume completely random 3rd variable , without governing compensation states
+			let co2 = 0.0;
+			let bicarb = 0.0;
+			let correct_answer_choices = [];
+			switch( ph_state ) {
+				case "low":
+					switch( disturbance_source ) {
+						case "respiratory": // aka hypoventilation
+							switch( compensation ) {
+								case "none":
+									co2 = get_high_co2();
+									bicarb = get_normal_bicarb();
+									correct_answer_choices = [ 0 ]
+									break;
+								case "partial":
+									co2 = get_high_co2();
+									bicarb = get_high_mid_bicarb();
+									correct_answer_choices = [ 1 ];
+									break;
+								// case "full":
+								// 	co2 = get_high_co2();
+								// 	bicarb = get_high_bicarb();
+								// 	correct_answer_choices = [ 2 ];
+								// 	break;
+							}
+							break;
+						case "metabolic": // aka decreased reabsorption of bicarb , creating acidic environment
+							switch( compensation ) {
+								case "none":
+									co2 = get_normal_co2();
+									bicarb = get_low_bicarb();
+									correct_answer_choices = [ 6 ];
+									break;
+								case "partial":
+									co2 = get_low_mid_co2();
+									bicarb = get_low_bicarb();
+									correct_answer_choices = [ 7 ];
+									break;
+								// case "full":
+								// 	co2 = get_low_co2();
+								// 	bicarb = get_low_bicarb();
+								// 	correct_answer_choices = [ 8 ];
+								// 	break;
+							}
+							break;
+					}
+					break;
+				case "normal":
+					// this state doesn't make sense , because we are getting random values.
+					// have to add-in another decision on which is going to be the abnormal value , and then other other one has to be able to counter it , such that pH is still normal
+					if ( random_binary_choice() === 1 ) { // high pH
+						switch( disturbance_source ) {
+							case "respiratory": // aka hypoventilation
+								co2 = get_low_co2();
+								bicarb = get_low_bicarb();
+								correct_answer_choices = [ 5 , 11 ];
+								break;
+							case "metabolic": // aka decreased reabsorption of bicarb , creating acidic environment
+								co2 = get_high_co2();
+								bicarb = get_high_bicarb();
+								correct_answer_choices = [ 2 , 11 ];
+								break;
+						}
+					}
+					else { // low pH
+						switch( disturbance_source ) {
+							case "respiratory": // aka hypoventilation
+								co2 = get_high_co2();
+								bicarb = get_high_bicarb();
+								correct_answer_choices = [ 2 , 11 ];
+								break;
+							case "metabolic": // aka decreased reabsorption of bicarb , creating acidic environment
+								co2 = get_low_co2();
+								bicarb = get_low_bicarb();
+								correct_answer_choices = [ 5 , 11 ];
+								break;
+						}
+					}
+					break;
+				case "high":
+					switch( disturbance_source ) {
+						case "respiratory": // aka hypoventilation
+							switch( compensation ) {
+								case "none":
+									co2 = get_low_co2();
+									bicarb = get_normal_bicarb();
+									correct_answer_choices = [ 3 ];
+									break;
+								case "partial":
+									co2 = get_low_co2();
+									bicarb = get_low_mid_bicarb();
+									correct_answer_choices = [ 4 ];
+									break;
+								// case "full":
+								// 	co2 = get_low_co2();
+								// 	bicarb = get_low_bicarb();
+								// 	correct_answer_choices = [ 5 ];
+								// 	break;
+							}
+							break;
+						case "metabolic": // aka decreased reabsorption of bicarb , creating acidic environment
+							switch( compensation ) {
+								case "none":
+									co2 = get_normal_co2();
+									bicarb = get_high_bicarb();
+									correct_answer_choices = [ 9 ];
+									break;
+								case "partial":
+									co2 = get_high_mid_co2();
+									bicarb = get_high_bicarb();
+									correct_answer_choices = [ 10 ];
+									break;
+								// case "full":
+								// 	co2 = get_high_co2();
+								// 	bicarb = get_high_bicarb();
+								// 	correct_answer_choices = [ 11 ];
+								// 	break;
+							}
+							break;
+					}
+					break;
+			}
+			let built_question = {
+				"ph": ph ,
+				"ph_state": ph_state ,
+				"ph_state_verb": ph_state_verb ,
+				"disturbance_source": disturbance_source ,
+				"co2": co2 ,
+				"bicarb": bicarb ,
+				"compensation": compensation ,
+				"correct_answer_choices": correct_answer_choices
+			}
+			return built_question;
+		}
+
+		let total_questions = 20;
+		for ( let i = 0; i < total_questions; ++i ) {
+			let question = build_question_starting_with_ph();
+			console.log( question );
+			let question_prompt = `Given these Blood Values , what is the Diagnosis ?<br>pH = ${question["ph"]}<br>$P_{CO_2}$ = ${question["co2"]}<br>$[HCO_3^-]$ = ${question["bicarb"]}`;
+			window.DECK.questions.push({
+				"prompt": question_prompt ,
+				"choices": [
+					"Respiratory acidosis without compensation" ,
+					"Respiratory acidosis with partial compensation" ,
+					"Respiratory acidosis with full compensation" ,
+					"Respiratory alkalosis without compensation" ,
+					"Respiratory alkalosis with partial compensation" ,
+					"Respiratory alkalosis with full compensation" ,
+					"Metabolic acidosis without compensation" ,
+					"Metabolic acidosis with partial compensation" ,
+					"Metabolic acidosis with full compensation" ,
+					"Metabolic alkalosis without compensation" ,
+					"Metabolic alkalosis with partial compensation" ,
+					"Metabolic alkalosis with full compensation" ,
+				] ,
+				"correct_answer_indexes": question.correct_answer_choices
+			});
+		}
+		console.log( window.DECK.questions );
+	</script>
+</body>
+</html>
