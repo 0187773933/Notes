@@ -591,7 +591,7 @@
 		for ( let i = 0; i < total_questions; ++i ) {
 			let question = build_question_starting_with_ph();
 			console.log( question );
-			let question_prompt = `Given these Blood Values , what is the Diagnosis ?<br>pH = ${question["ph"]}<br>$P_{CO_2}$ = ${question["co2"]}<br>$[HCO_3^-]$ = ${question["bicarb"]}`;
+			let question_prompt = `The following arterial blood values indicate a ___________.<br>pH = ${question["ph"]}<br>$P_{CO_2}$ = ${question["co2"]}<br>$[HCO_3^-]$ = ${question["bicarb"]}`;
 			window.DECK.questions.push({
 				"prompt": question_prompt ,
 				"choices": [
