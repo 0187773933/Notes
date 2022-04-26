@@ -243,6 +243,17 @@
 						// console.log( "clicked an incorrect answer" );
 					}
 				}
+				// addon 26APR2022 , if all correct selected , make back rendered true , to avoid double clicking arrows
+				let total_correct_answered = 0;
+				let input_children = $( "input[type=radio]" ).parent().children();
+				for ( let i = 0; i < input_children.length; ++i ) {
+					if ( $( input_children[ i ] ).hasClass( "correct" ) ) {
+						total_correct_answered += 1;
+					}
+				}
+				if ( total_correct_answered === window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length ) {
+					window.BACK_IS_RENDERED = true;
+				}
 			});
 			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
 			render_katex();
