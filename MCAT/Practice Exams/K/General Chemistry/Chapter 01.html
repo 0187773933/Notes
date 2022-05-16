@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MCAT - K - General Chemistry - Chapter 01</title>
+	<!-- https://www.srihash.org/ -->
+	<link rel="stylesheet" href="https://39363.org/CDN/jquery-ui.css" integrity="sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A=" >
+	<script src="https://39363.org/CDN/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
+	<script src="https://39363.org/CDN/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"></script>
+	<script src="https://39363.org/CDN/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" ></script>
+	<link rel="stylesheet" href="https://39363.org/CDN/katex/katex.min.css" integrity="sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=">
+	<script src="https://39363.org/CDN/katex/katex.min.js" integrity="sha256-FyuFDgL3AT2Wi7dlv82fSVvxe2rPx1rRSVtMOWeRp6k="></script>
+	<script src="https://39363.org/CDN/katex/mhchem.min.js" integrity="sha256-rdVHJ96CTjgtCSJGnAZzhrvBOklMB9jN1B6oyg5J8uU="></script>
+	<script src="https://39363.org/CDN/katex/auto-render.min.js" integrity="sha256-G53bYZLObbTLTA3j70xRGPKxKYlBbzvDZ789B6sSFkE="></script>
+	<style type="text/css">
+	 	body {
+			background-color: #2E3033;
+			color: #b8bfc6;
+		}
+		.next-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.previous-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 16px;
+			border-radius: 50%;
+			background-color: #b7b7b7;
+			color: white;
+		}
+		.our-no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.slimmed-padding {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 1 !important;
+			padding-right: 1 !important;
+		}
+		.correct {
+			border: 2px solid green;
+		}
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-0lax{text-align:left;vertical-align:top}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="row justify-content-center" style="border: 1px solid red"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<div class="card" style="background-color: #363B40;">
+					<div class="card-header text-center">
+						<div id="card-title-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-body-container">
+						<div id="card-body-content"></div>
+					</div>
+					<div class="card-body slimmed-padding" id="card-explanation-container">
+						<div id="card-explanation-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br>
+		<!-- <div class="row justify-content-center fixed-row-bottom" id="row-navigation" style="border: 1px solid green"> -->
+		<div class="row justify-content-center fixed-row-bottom" id="row-navigation">
+			<div class="col text-center">
+				<div>
+					<span id="current-card-number"></span>&nbsp;&nbsp;&nbsp;
+					<span id="previous-button" class="previous-button">&#8249;</span>&nbsp;&nbsp;&nbsp;
+					<span id="next-button" class="next-button">&#8250;</span>&nbsp;&nbsp;&nbsp;
+					<span id="total-cards"></span>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row justify-content-center" id="row-grading" style="border: 1px solid blue"> -->
+		<!-- https://getbootstrap.com/docs/5.0/customize/color/ -->
+		<!-- <div class="row justify-content-center" id="row-grading">
+			<div class="col text-center">
+				<button type="button" class="btn btn-danger">Again</button>&nbsp;
+				<button type="button" class="btn btn-warning">Hard</button>&nbsp;
+				<button type="button" class="btn btn-success">Good</button>&nbsp;
+				<button type="button" class="btn btn-primary">Easy</button>
+			</div>
+		</div> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 our-no-gutter">
+				<!-- https://getbootstrap.com/docs/5.0/utilities/sizing/ -->
+				<!-- <div id="row-extra-space" style="height: 80vh; border: 1px solid yellow"></div> -->
+				<div id="row-extra-space" style="height: 80vh;"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function setup_hooks() {
+			// $( ".card" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			// $( "#row-extra-space" ).on( "click" , function( event ) {
+			// 	if ( event.type == "click" ) { window.DOCUMENT_CLICKED = true; }
+			// 	if ( window.DOCUMENT_CLICKED ) { next_card(); }
+			// });
+			$( "#previous-button" ).on( "click" , previous_card );
+			$( "#next-button" ).on( "click" , next_card );
+			$( document ).keydown( function( event ) {
+				switch ( event.keyCode ) {
+					case 32:
+						next_card();
+						setTimeout( () => {
+							window.scrollTo( 0 , 0 );
+						} , 100 );
+						break; // space
+					case 37: previous_card(); break; // left arrow
+					case 39: next_card(); break; // right arrow
+				}
+			});
+		}
+		function previous_card() {
+			let url;
+			if ( window.ACTIVE_INDEX === 0 ) {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+			} else {
+				url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX ).toString();
+			}
+			console.log( url );
+			window.location.href = url;
+			window.ACTIVE_INDEX = ( window.ACTIVE_INDEX - 1 );
+			if ( window.ACTIVE_INDEX < 0 ) { window.ACTIVE_INDEX = ( window.DECK.questions.length - 1 ); }
+			render_active_card();
+		}
+		function next_card() {
+			if ( window.BACK_IS_RENDERED === false ) {
+				render_correct_answers();
+				render_explanation();
+				render_katex();
+				window.BACK_IS_RENDERED = true;
+			} else {
+				window.BACK_IS_RENDERED = false;
+				console.log( window.DECK.questions.length , window.ACTIVE_INDEX );
+				window.ACTIVE_INDEX = ( window.ACTIVE_INDEX + 1 );
+				if ( window.ACTIVE_INDEX > ( window.DECK.questions.length - 1 ) ) { window.ACTIVE_INDEX = 0; }
+				let url;
+				if ( window.ACTIVE_INDEX === ( window.DECK.questions.length ) ) {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.DECK.questions.length ).toString();
+				} else {
+					url = window.location.href.split( ".html" )[ 0 ] + ".html" + "#" + ( window.ACTIVE_INDEX + 1 ).toString();
+				}
+				console.log( url );
+				window.location.href = url;
+				render_active_card();
+			}
+		}
+		function render_katex() {
+			renderMathInElement( document.body , {
+				strict: "ignore" ,
+				delimiters: [ // https://stackoverflow.com/a/45301641
+					{ left: "$$" , right: "$$" , display: true } ,
+					{ left: "\\[" , right: "\\]" , display: true } ,
+					{ left: "$" , right: "$" , display: false } ,
+					{ left: "\\(" , right: "\\)" , display: false }
+				]
+			});
+		}
+
+		let CHOICES_ENUM = {}; [ ...Array( 26 ).keys() ].forEach( i => CHOICES_ENUM[ i ] = String.fromCharCode( i + 65 ) );
+		let CHOICES_ENUM_REVERSE_UPPER = {}; [ ...Array( 26 ).keys() ].forEach( i => CHOICES_ENUM_REVERSE_UPPER[ String.fromCharCode( i + 65 ) ] = i );
+		let CHOICES_ENUM_REVERSE_LOWER = {}; [ ...Array( 26 ).keys() ].forEach( i => CHOICES_ENUM_REVERSE_LOWER[ String.fromCharCode( i + 97 ) ] = i );
+
+		function render_correct_answers() {
+			$( "input[type=radio]" ).each( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+			});
+		}
+		function render_explanation() {
+			$( "#card-explanation-content" ).html( `${window.DECK.questions[ window.ACTIVE_INDEX ].explanation}` );
+		}
+		function render_active_card() {
+			if ( !window.ACTIVE_INDEX ) { window.ACTIVE_INDEX = 0; }
+
+			// addon 09MAY2022 - build indexes if correct answers sent as letters instead of index numbers
+			if ( !window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes ) {
+				if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers ) {
+					window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes = [];
+					for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers.length; ++i ) {
+						if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers[ i ] in CHOICES_ENUM_REVERSE_UPPER ) {
+							window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.push( CHOICES_ENUM_REVERSE_UPPER[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers[ i ] ] )
+						}
+						else if ( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers[ i ] in CHOICES_ENUM_REVERSE_LOWER ) {
+							window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.push( CHOICES_ENUM_REVERSE_LOWER[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers[ i ] ] )
+						}
+						else if ( isNaN(  window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers[ i ] ) === false ) {
+							window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.push( ( parseInt( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answers[ i ] ) - 1 ) )
+						}
+					}
+				}
+			}
+
+			console.log( window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes );
+
+			$( "#card-explanation-content" ).empty();
+			$( "#card-title-content" ).empty();
+			$( "#card-title-content" ).html( `<h3>${window.DECK.questions[ window.ACTIVE_INDEX ].prompt}</h3>` );
+			let choices_html_prefix = `<div><form class="input">`;
+			let choices_html_body = "";
+			for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].choices.length; ++i ) {
+				choices_html_body += `${CHOICES_ENUM[i]}.) <input type="radio" name="answer_choice" value="${CHOICES_ENUM[ i ]}">&nbsp;<span class="choice_text">${window.DECK.questions[ window.ACTIVE_INDEX ].choices[ i ]}</span><br>`;
+			}
+			let choices_html_suffix = `</form></div>`;
+			let choices_html = choices_html_prefix + choices_html_body + choices_html_suffix;
+			$( "#card-body-content" ).html( choices_html );
+			$( "input[type=radio]" ).change( function( element ) {
+				for ( let i = 0; i < window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length; ++i ) {
+					if ( this.value === CHOICES_ENUM[ window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes[ i ] ] ) {
+						$( this ).next().addClass( "correct" );
+					}
+				}
+				// addon 26APR2022 , if all correct selected , make back rendered true , to avoid double clicking arrows
+				let total_correct_answered = 0;
+				let input_children = $( "input[type=radio]" ).parent().children();
+				for ( let i = 0; i < input_children.length; ++i ) {
+					if ( $( input_children[ i ] ).hasClass( "correct" ) ) {
+						total_correct_answered += 1;
+					}
+				}
+				if ( total_correct_answered === window.DECK.questions[ window.ACTIVE_INDEX ].correct_answer_indexes.length ) {
+					window.BACK_IS_RENDERED = true;
+					render_explanation();
+					render_katex();
+				}
+			});
+			$( "#current-card-number" ).text( `${( window.ACTIVE_INDEX + 1 )}` );
+			render_katex();
+		}
+		function get_url_question_number() {
+			console.log( window.location.href );
+			window.URL_INDEX = window.location.href.split( "#" );
+			if ( window.URL_INDEX.length > 0 ) {
+				window.URL_INDEX = window.location.href.split( ".html" )[ 1 ].split( "#" );
+				if ( window.URL_INDEX.length > 0 ) {
+					window.URL_INDEX = window.URL_INDEX[ 1 ];
+					return window.URL_INDEX;
+				}
+			}
+			return false;
+		}
+		function init() {
+			render_katex();
+			$( "#row-grading" ).hide();
+			window.ACTIVE_INDEX = 0;
+			if ( get_url_question_number() !== false ) {
+				if ( window.URL_INDEX !== window.ACTIVE_INDEX ) {
+					window.ACTIVE_INDEX = ( parseInt( window.URL_INDEX ) - 1 );
+					console.log( window.ACTIVE_INDEX );
+				}
+			} else {
+				console.log( "no url question number set" );
+			}
+			window.DOCUMENT_CLICKED = false;
+			window.BACK_IS_RENDERED = false;
+			setup_hooks();
+			// Setup First Card
+			$( "#total-cards" ).text( `${window.DECK.questions.length}` );
+			render_active_card();
+		}
+		document.addEventListener( "DOMContentLoaded" , init );
+		// try {
+		// 	let img_1 = document.createElement( "img" );
+		// 	img_1.setAttribute( "src" , "https://ta.34353.org/t/fa110c8b-20ee-4215-bfc1-840150e48e7f?v=" + ( new Date() ).getTime() );
+		// 	img_1.style.display = "none";
+		// 	document.body.appendChild( img_1 );
+		// } catch( e ) {}
+	</script>
+
+	<script type="text/javascript">
+		window.DECK = {
+			"chapter_title": "Practice Exam 5" ,
+			"questions": [
+				{
+					"prompt": "Which of the following is the correct electron configuration for Zn<sup>2+</sup> ?" ,
+					"choices": [
+						"$1s^22s^22p^63s^23p^64s^03d^{10}$" ,
+						"$1s^22s^22p^63s^23p^64s^23d^8$" ,
+						"$1s^22s^22p^63s^23p^64s^23d^{10}$" ,
+						"$1s^22s^22p^63s^23p^64s^03d^8$" ,
+					] ,
+					"correct_answers": [ "A" ] ,
+					"explanation": "Remember that when electrons are removed from an element, forming a cation, they will be removed from the subshell with the highest n value first. <br>Zn<sup>0</sup> has 30 electrons, so it would have an electron configuration of 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>2</sup>3p<sup>6</sup>4s<sup>2</sup>3d<sup>10</sup><br>The 4s subshell has the highest principal quantum number, so it is emptied first, forming 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>2</sup>3p<sup>6</sup>4s<sup>0</sup>3d<sup>10</sup><br>(B) implies that electrons are pulled out of the d subshell<br>(C) presents the configuration of the uncharged zinc atom, and <br>(D) shows the configuration that would exist if four electrons were removed"
+				} ,
+				{
+					"prompt": "some random test card" ,
+					"choices": [
+						"asdf" ,
+						"asdf 1" ,
+						"asdf 2" ,
+						"asdf 3" ,
+					] ,
+					"correct_answers": [ 3 ] ,
+					"explanation": "can we put $\\ce{H2O}$ here ??"
+				} ,
+			]
+		};
+	</script>
+</body>
+</html>
